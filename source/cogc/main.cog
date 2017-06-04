@@ -1,0 +1,126 @@
+// main.theta
+
+import theta;
+
+func B(a: A);
+
+struct A {}
+
+func parseCommandLine(
+	session: Ptr<Session>,
+	ioArgc: Ptr<Int>,
+	argv: Ptr<Ptr<Char> >)
+{
+	var argCursor = argv;
+    var argEnd = argv + *ioArgc;
+
+	var writeCursor = argv;
+
+	if (argCursor != argEnd)
+	{
+		// consume app name
+		argCursor++;
+	}
+
+	while(argCursor != argEnd)
+	{
+		// TODO(tfoley): should be able to drop the type here...
+        var arg : Ptr<Char> = *argCursor++;
+
+        // TODO(tfoley): need operator precedence!!!
+        if ((arg[0] == '-') && (arg[1] != 0))
+		{
+            if (strcmp(arg, "--") == 0)
+			{
+				// end of options
+				while (argCursor != argEnd)
+				{
+					*writeCursor++ = *argCursor++;
+				}
+				break;
+			}
+			else if (strcmp(arg, "-m") == 0)
+			{
+				if (argCursor == argEnd)
+				{
+					fprintf(stderr, "command line: error: expected an argument after '-m' option\n");
+				}
+				else
+				{
+					let valArg = *argCursor++;
+					setModulePath(session, TerminatedStringSpan(valArg));
+				}
+			}
+			else if (strcmp(arg, "-o") == 0)
+			{
+				if (argCursor == argEnd)
+				{
+					fprintf(stderr, "command line: error: expected an argument after '-o' option\n");
+				}
+				else
+				{
+					let valArg = *argCursor++;
+					// setOutputPath(session, valArg);
+				}
+			}
+			else
+			{
+				fprintf(stderr, "command line: unknown option '%s'\n", arg);
+			}
+		}
+		else
+		{
+			*writeCursor++ = arg;
+		}
+	}
+
+	*ioArgc = writeCursor - argv;
+
+    // Do some implicit options stuff..
+
+    if(!getModuleName(session))
+    {
+        if(*ioArgc == 1)
+        {
+            // exactly one input file, so use it to infer the module name...
+            var name = TerminatedStringSpan(argv[0]).asStringSpan();
+
+            // If it ends with `.theta`, then strip that off
+            name.trimFromEnd(TerminatedStringSpan(".theta").asStringSpan());
+
+            setModulePath(session, name);
+        }
+        else
+        {
+            // error!
+            fprintf(stderr, "module name must be specified when using more than one input file");
+            exit(1);
+        }
+    }
+}
+
+func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
+{
+	let session : Ptr<Session> = createSession();
+
+	parseCommandLine(session, &argc, argv);
+
+	var ii : Int = 0;
+	while(ii < argc)
+	{
+        loadSourceFile(session, TerminatedStringSpan(argv[ii]));
+		ii = ii + 1;
+	}
+
+    if(getErrorCount(session) > 0)
+        return 1;
+
+    checkModule(session);
+
+    if(getErrorCount(session) > 0)
+        return 1;
+
+	emitModule(session);
+
+	return 0;
+}

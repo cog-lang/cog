@@ -1,0 +1,114 @@
+// string.theta
+
+import theta;
+
+struct StringSpan
+{
+	var begin : Ptr<Char>;
+	var end : Ptr<Char>;
+
+	init()
+	{}
+
+	init(
+		begin: Ptr<Char>,
+		end: Ptr<Char>)
+	{
+		this.begin = begin;
+		this.end = end;
+	}
+
+	init(
+		begin: ConstPtr<Char>,
+		end: ConstPtr<Char>)
+	{
+		this.begin = cast<Ptr<Char> >(begin);
+		this.end = cast<Ptr<Char> >(end);
+	}
+
+	func getLength() -> Size
+	{
+		return end - begin;
+	}
+
+	func endsWith(suffix: StringSpan) -> Bool
+	{
+		let len = getLength();
+		let suffixLen = suffix.getLength();
+
+		if(suffixLen > len) return false;
+
+		return StringSpan(end - suffixLen, end) == suffix;
+	}
+
+	func trimFromEnd(suffix: StringSpan) -> Bool
+	{
+		if(!endsWith(suffix))
+			return false;
+
+		let suffixLen = suffix.getLength();
+		end -= suffixLen;
+		return true;
+	}
+
+	func suffixAfterLast(c: Char) -> StringSpan
+	{
+		var cursor = end;
+		while(cursor != begin)
+		{
+			--cursor;
+			if(*cursor == c)
+			{
+				return StringSpan(cursor+1, end);
+			}
+		}
+		return *this;
+	}
+
+}
+
+func ==(left: StringSpan, right: StringSpan) -> Bool
+{
+	let leftSize = left.getLength();
+	let rightSize = right.getLength();
+
+	if(leftSize != rightSize)
+		return false;
+
+	return memcmp(left.begin, right.begin, leftSize) == 0;
+}
+
+func !=(left: StringSpan, right: StringSpan) -> Bool
+{
+	return !(left == right);
+}
+
+
+struct TerminatedStringSpan : StringSpan
+{
+//	var begin : Ptr<Char>;
+//	var end : Ptr<Char>;
+
+	init(text: Ptr<Char>)
+	{
+		this.begin = text;
+		this.end = text + strlen(text);
+	}
+//	init(text: String);
+
+	init()
+	{}
+
+	init(
+		begin: Ptr<Char>,
+		end: Ptr<Char>)
+	{
+		this.begin = begin;
+		this.end = end;
+	}
+
+	func asStringSpan() -> StringSpan
+	{
+		return StringSpan(begin, end);
+	} 
+}

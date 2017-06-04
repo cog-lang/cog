@@ -1,0 +1,265 @@
+// diagnostic.theta
+
+enum Severity
+{
+	kSeverity_Note,
+	kSeverity_Warning,
+	kSeverity_Error,
+	kSeverity_Fatal,
+}
+
+enum DiagnosticID
+{
+/*
+#define DIAGNOSTIC(severity, id, msg) \
+	kDiagnostic_##id,
+#include "thdiagnosticdefs.h"
+*/
+
+	kDiagnostic_unimplemented,
+	kDiagnostic_unexpectedCharacter,
+	kDiagnostic_unexpectedToken,
+	kDiagnostic_unexpectedTokenExpectedToken,
+	kDiagnostic_youMeanDot,
+	kDiagnostic_unexpectedDeclName,
+}
+
+struct DiagnosticSink
+{
+	var session : Ptr<Session>;
+	var errorCount : Int;
+}
+
+struct ArgTypeList
+{
+	var args : Ptr<Arg>;
+
+	init(args: Ptr<Arg>)
+	{
+		this.args = args;
+	}
+}
+
+struct DiagnosticArg
+{
+	enum Flavor
+	{
+		kFlavor_Int,
+		kFlavor_TokenCode,
+		kFlavor_Name,
+		kFlavor_StringSpan,
+		kFlavor_Type,
+		kFlavor_DeclRef,
+		kFlavor_ArgTypeList,
+	}
+
+	init(val: Int) { this.intVal = val; }
+
+//	init(val: TokenCode) { this.tokenCodeVal = val; }
+
+	init(val: Ptr<Name>) { this.nameVal = val; }
+
+	init(val: StringSpan) { this.stringSpanVal = val; }
+
+//	init(val: TerminatedStringSpan) { this.stringSpanVal = val; }
+
+	init(val: Ptr<Char>) { this.stringSpanVal = TerminatedStringSpan(val); }
+
+	var flavor: Flavor;
+//	union {
+		var intVal: Int;
+//		var tokenCodeVal: TokenCode;
+		var nameVal : Ptr<Name>;
+		var stringSpanVal : StringSpan;
+//	}
+}
+
+func diagnose(
+	sink: Ptr<DiagnosticSink>,
+	loc: SourceLoc,
+	id:	DiagnosticID)
+{
+	diagnoseImpl(sink, loc, id, 0, 0);
+}
+
+func diagnose(
+	sink: Ptr<DiagnosticSink>,
+	loc: SourceLoc,
+	id:	DiagnosticID,
+	arg0: DiagnosticArg)
+{
+	var args : FixedSizeArray<1, Ptr<DiagnosticArg> >;
+	args[0] = &arg0;
+	diagnoseImpl(sink, loc, id, 1, args);	
+}
+
+func diagnose(
+	sink: Ptr<DiagnosticSink>,
+	loc: SourceLoc,
+	id:	DiagnosticID,
+	arg0: DiagnosticArg,
+	arg1: DiagnosticArg)
+{
+	var args : FixedSizeArray<2, Ptr<DiagnosticArg> >;
+	args[0] = &arg0;
+	args[1] = &arg1;
+	diagnoseImpl(sink, loc, id, 2, args);	
+}
+
+/*
+DiagnosticArg::DiagnosticArg(
+	int val)
+	: flavor(kFlavor_Int)
+{
+	intVal = val;
+}
+
+DiagnosticArg::DiagnosticArg(
+	TokenCode val)
+	: flavor(kFlavor_TokenCode)
+{
+	tokenCodeVal = val;
+}
+
+DiagnosticArg::DiagnosticArg(
+	Name* val)
+	: flavor(kFlavor_Name)
+{
+	nameVal = val;
+}
+
+DiagnosticArg::DiagnosticArg(
+	StringSpan text)
+	: flavor(kFlavor_StringSpan)
+{
+	stringSpanVal = text;
+}
+
+DiagnosticArg::DiagnosticArg(
+	TerminatedStringSpan text)
+	: flavor(kFlavor_StringSpan)
+{
+	stringSpanVal = text;
+}
+
+DiagnosticArg::DiagnosticArg(
+	char const* text)
+	: flavor(kFlavor_StringSpan)
+{
+	stringSpanVal = TerminatedStringSpan(text);
+}
+
+static const char* kSeverityNames[] =
+{
+	"note",
+	"warning",
+	"error",
+	"fatal",
+};
+
+struct DiagnosticInfo
+{
+	Severity 	severity;
+	char const*	message;
+};
+
+static const DiagnosticInfo kDiagnostics[] =
+{
+#define DIAGNOSTIC(severity, id, msg) \
+	{ kSeverity_##severity, msg },
+#include "thdiagnosticdefs.h"
+};
+
+static void printDiagnosticArg(
+	DiagnosticArg const*	arg)
+{
+	switch(arg->flavor)
+	{
+	case DiagnosticArg::kFlavor_Int:
+		fprintf(stderr, "%d", arg->intVal);
+		break;
+
+	case DiagnosticArg::kFlavor_TokenCode:
+		fprintf(stderr, "%s", getTokenName(arg->tokenCodeVal));
+		break;
+		
+	case DiagnosticArg::kFlavor_Name:
+		{
+			StringSpan text = getText(arg->nameVal);
+			fwrite(text.begin, 1, text.end-text.begin, stderr);
+		}
+		break;
+		
+	case DiagnosticArg::kFlavor_StringSpan:
+		{
+			StringSpan text = arg->stringSpanVal;
+			fwrite(text.begin, 1, text.end-text.begin, stderr);
+		}
+		break;
+						
+	default:
+		assert(!"unimplemented");
+		break;
+	}
+}
+*/
+
+func diagnoseImpl(
+	sink: Ptr<DiagnosticSink>,
+	loc: SourceLoc,
+	id: DiagnosticID,
+	argCount: int,
+	args: Ptr<Ptr<DiagnosticArg> >)
+{
+}
+
+/*
+{
+	DiagnosticInfo const& info = kDiagnostics[id];
+
+	ExpandedSourceLoc expandedLoc = expandLoc(sink->session, loc);
+
+	fprintf(stderr, "%s(%d,%d): %s: ",
+			expandedLoc.file.begin, expandedLoc.line, expandedLoc.column,
+			kSeverityNames[info.severity]);
+
+	char const* cursor = info.message;
+	while(*cursor)
+	{
+		int c = *cursor++;
+		if(c != '$')
+		{
+			fputc(c, stderr);
+		}
+		else
+		{
+			int d = *cursor++;
+			switch(d)
+			{
+			case '0': case '1': case '2': case '3': case '4':
+			case '5': case '6': case '7': case '8': case '9':
+				{
+					int index = d - '0';
+					printDiagnosticArg(args[index]);
+				}
+				break;
+
+			default:
+				break;
+			}
+		}
+	}
+
+	fprintf(stderr, "\n");
+
+    if(info.severity >= kSeverity_Error)
+    {
+        sink->errorCount++;
+        if(info.severity >= kSeverity_Fatal)
+        {
+        	assert(!"fatal");
+            exit(1);
+        }
+    }
+}
+*/

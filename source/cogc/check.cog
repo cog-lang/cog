@@ -1,0 +1,16 @@
+// check.theta
+
+
+func checkModule(
+	session: Ptr<Session>)
+{
+	// TODO: actually do something!
+}
+
+// Explicit entry point for checking a given module
+func checkModule(
+	session: Ptr<Session>,
+	moduleDecl: Ptr<ModuleDecl>)
+{
+	// TODO: actually do something!
+}

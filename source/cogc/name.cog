@@ -1,0 +1,49 @@
+// name.theta
+
+struct Name
+{
+	var text: TerminatedStringSpan;
+	var next: Ptr<Name>;
+}
+
+func getName(
+	session: Session*,
+	text: StringSpan)
+	-> Ptr<Name>
+{
+	for(var nn = session.names; nn; nn = nn.next)
+	{
+		if(nn.text == text)
+			return nn;
+	}
+
+	// create a new one
+	let textSize = text.end - text.begin;
+	let name = cast<Ptr<Name> > ( malloc(sizeof(Name) + textSize + 1) );
+
+	let textBegin = cast<Ptr<Char> >(name + 1);
+	let textEnd = textBegin + textSize;
+
+	memcpy(textBegin, text.begin, textSize);
+	*textEnd = 0;
+
+	name.text = TerminatedStringSpan(textBegin, textEnd);
+	name.next = session.names;
+	session.names = name;
+	return name;
+}
+
+func getText(
+	name: Ptr<Name>)
+	-> TerminatedStringSpan
+{
+	return name.text;
+}
+
+func getName(
+	session: Ptr<Session>,
+	text: Ptr<Char>)
+	-> Ptr<Name>
+{
+	return getName(session, TerminatedStringSpan(text));
+}

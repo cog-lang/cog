@@ -1,0 +1,6 @@
+*.cog.cpp
+.vs
+bin/
+intermediate/
+*.VC.opendb
+*.VC.db

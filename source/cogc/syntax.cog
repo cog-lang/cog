@@ -1,0 +1,629 @@
+// syntax.theta
+
+struct TypeExp
+{
+	var exp : Ptr<Exp>;
+
+	/*
+	operator Exp*()
+	{
+		return exp;
+	}
+	*/
+}
+
+struct SyntaxListIterator<T>
+{
+	var current : Ptr<T>;
+
+	init(
+		current: Ptr<T>)
+	{
+		this.current = current;
+	}
+
+	func !=(other: SyntaxListIterator<T>) -> Bool
+	{
+		return current != other.current;
+	}
+
+	func *() -> Ptr<T>
+	{
+		return current;
+	}
+
+	func ++()
+	{
+		current = cast<Ptr<T> >(current.next);
+	}
+}
+
+
+struct SyntaxList<T>
+{
+	var head: Ptr<T>;
+
+	subscript(index: Size) -> Ptr<T>
+	{
+        var item = head;
+        for(var ii : Size = 0; ii < index; ++ii)
+        {
+            item = cast<Ptr<T> >(item.next);
+        }
+        return item;
+    }
+
+	func begin() -> SyntaxListIterator<T>
+	{
+		return SyntaxListIterator<T>(head);
+	}
+
+	func end() -> SyntaxListIterator<T>
+	{
+		return SyntaxListIterator<T>(0);
+	}
+
+	init()
+	{
+		this.head = 0;
+	}
+
+	init(head: Ptr<T>)
+	{
+		this.head = head;
+	}
+}
+
+struct SyntaxListBuilder<T> : SyntaxList<T>
+{
+	var link : Ptr<Ptr<T> >;
+
+	init()
+	{
+		this.link = &this.head;
+	}
+
+	init(other: SyntaxList<T>)
+	{
+		this.head = other.head;
+		this.link = &this.head;
+
+		adjust();
+	}
+
+	func adjust()
+	{
+		while (*link)
+		{
+			link = cast<Ptr<Ptr<T> > >(&(*link).next);
+		}
+	}
+
+	func add(element: Ptr<T>)
+	{
+		adjust();
+
+		*link = element;
+		element.next = 0;
+	}
+
+	func append(other: SyntaxListBuilder<T>)
+	{
+		adjust();
+
+		if(other.head)
+		{
+			*link = other.head;
+			link = other.link;
+		}
+	}
+}
+
+struct FilteredSyntaxListIterator<T,U>
+{
+	var current : Ptr<T>;
+
+	init(current: Ptr<U>)
+	{
+		this.current = adjust(current);
+	}
+
+	func !=(other: FilteredSyntaxListIterator<T,U>) -> Bool
+	{
+        return current != other.current;
+	}
+
+    func *() -> Ptr<T> { return current; }
+
+	func ++()
+    {
+        current = adjust(current.next);
+    }
+
+	func adjust(obj: Ptr<U>) -> Ptr<T>
+	{
+		while(obj)
+		{
+			let t = as<T>(obj);
+			if(t)
+				return t;
+			obj = obj.next;
+		}
+		return nullptr;
+	}
+
+}
+
+
+struct FilteredSyntaxList<T,U>
+{
+	var head : Ptr<U>;
+
+
+	func begin() -> FilteredSyntaxListIterator<T,U>
+	{
+		return FilteredSyntaxListIterator<T,U>(head);
+	}
+
+	func end() -> FilteredSyntaxListIterator<T,U>
+	{
+		return FilteredSyntaxListIterator<T,U>(nullptr);
+	}
+
+	init()
+	{
+		this.head = nullptr;
+	}
+
+	init(head: Ptr<U>)
+	{
+		this.head = head;
+	}
+
+	init(list: ConstRef<SyntaxList<U> >)
+	{
+		this.head = list.head;
+	}
+}
+
+class Syntax : Object
+{
+	var loc : SourceLoc;
+}
+
+class Attr : Syntax
+{
+	var next : Ptr<Attr>;
+}
+
+class BuiltinAttr : Attr
+{
+	var name : Ptr<Name>;
+}
+
+class Stmt : Syntax
+{
+	var attrs : SyntaxList<Attr>;
+
+	var next : Ptr<Stmt>;
+
+	func findAttrImpl(attrClass: Ptr<Class>) -> Ptr<Attr>
+	{
+		foreach(a in attrs)
+		{
+			// TODO: support `if let`
+			let match = as(a, attrClass);
+			if(match)
+				return cast<Ptr<Attr> >(match);
+		}
+		return nullptr;
+	}
+
+	func findAttr<T>() -> Ptr<T>
+	{
+		return cast<Ptr<T> >(findAttrImpl(getClass<T>()));
+	}
+}
+
+class Decl : Stmt
+{
+	var name : Ptr<Name>;
+	var parent : Ptr<ContainerStmt>;
+
+	func getParent() -> Ptr<ContainerStmt>
+	{
+		return parent;
+	}
+}
+
+// Values
+
+// A value is a literal, and thus not syntax
+// the intention is that values are hashed so
+// that we can compare them with pointer equality
+class Val : Object
+{
+}
+
+class ContainerStmt : Decl
+{
+	var stmts : SyntaxList<Stmt>;
+
+	func getStmts() -> SyntaxList<Stmt>
+	{
+		return stmts;
+	}
+
+	func getDecls() -> FilteredSyntaxList<Decl, Stmt>
+	{
+		return FilteredSyntaxList<Decl, Stmt>(stmts);
+	}
+}
+
+class ContainerDecl : ContainerStmt
+{
+	// TODO: this used to be by-reference, and that is probably counted on somewhere
+
+	func getDecls() -> Ref<SyntaxList<Decl> > { return *cast<Ptr<SyntaxList<Decl> > >(&stmts); }
+}
+
+class GenericDecl : ContainerDecl
+{
+	var inner : Ptr<Decl>;
+}
+
+class TypeVarDecl : Decl
+{
+	var bound : TypeExp;
+	var init : TypeExp;
+}
+
+class ImportDecl : Decl
+{
+	var name : Ptr<Name>;
+}
+
+class GenericParamDecl : TypeVarDecl
+{
+}
+
+class TypeAliasDecl : TypeVarDecl
+{
+}
+
+class ModuleDecl : ContainerDecl
+{
+}
+
+class PatternDecl : ContainerDecl
+{
+}
+
+class AggTypeDecl : PatternDecl
+{
+	var base : TypeExp;
+}
+
+class ClassDecl : AggTypeDecl
+{
+}
+
+class StructDecl : AggTypeDecl
+{
+}
+
+class FuncDeclBase : PatternDecl
+{
+	var resultType : TypeExp;
+	var body : Ptr<Stmt>;
+}
+
+class FuncDecl : FuncDeclBase
+{
+}
+
+class SubscriptDecl : FuncDeclBase
+{
+}
+
+class InitializerDecl : FuncDeclBase
+{
+}
+
+class VarDeclBase : Decl
+{
+	var type : TypeExp;
+	var init : Ptr<Exp>;
+}
+
+class VarDecl : VarDeclBase
+{
+}
+
+class LetDecl : VarDeclBase
+{
+}
+
+class ParamDecl : LetDecl
+{
+}
+
+class SyntaxDecl : Decl
+{
+	var syntaxClass : Ptr<Class>;
+	var callback : SyntaxCallback;
+}
+
+// Statements
+
+class IfStmtBase : Stmt
+{
+	var thenStmt : Ptr<Stmt>;
+	var elseStmt : Ptr<Stmt>;
+}
+
+
+class IfStmt : IfStmtBase
+{
+	var condition : Ptr<Exp>;
+}
+
+class IfLetStmt : IfStmtBase
+{
+	var name : Name*;
+	var init : Exp*;
+}
+
+
+class WhileStmt : Stmt
+{
+	var condition : Ptr<Exp>;
+	var body : Ptr<Stmt>;
+}
+
+class ForStmt : Stmt
+{
+	var init : Ptr<Stmt>;
+	var condition : Ptr<Exp>;
+	var iter : Ptr<Exp>;
+	var body : Ptr<Stmt>;
+}
+
+class ReturnStmt : Stmt
+{
+	var value : Ptr<Exp>;
+}
+
+class BreakStmt : Stmt
+{
+}
+
+class ContinueStmt : Stmt
+{
+}
+
+class SwitchCase : Syntax
+{
+	var values : Ptr<Arg>;
+	var body : Ptr<Stmt>;
+	var next : Ptr<SwitchCase>;
+}
+
+class SwitchStmt : Stmt
+{
+	var condition : Ptr<Exp>;
+	var cases : Ptr<SwitchCase>;
+}
+
+// Arguments
+
+class Arg : Syntax
+{
+	var exp : Ptr<Exp>;
+	var next : Ptr<Arg>;
+}
+
+class PositionalArg : Arg
+{
+}
+
+
+// expressions
+
+class Exp : Stmt
+{
+}
+
+class LitExp : Exp
+{
+}
+
+typealias IntLitVal = Int64;
+
+class IntLitExp : LitExp
+{
+	var val : IntLitVal;
+}
+
+class StringLitExp : LitExp
+{
+	var val : String;
+}
+
+class CharacterLitExp : LitExp
+{
+	var val : String;
+}
+
+
+class AppExpBase : Exp
+{
+	var base : Ptr<Exp>;
+	var args : SyntaxList<Arg>;
+}
+
+class GenericAppExp : AppExpBase
+{
+}
+
+class AppExp : AppExpBase
+{
+}
+
+class IndexExp : AppExpBase
+{
+}
+
+class OperatorAppExp : AppExp
+{
+}
+
+class InfixExp : OperatorAppExp
+{
+}
+
+class PrefixExp : OperatorAppExp
+{
+}
+
+class PostfixExp : OperatorAppExp
+{
+}
+
+class AssignExp : Exp
+{
+	var left : Ptr<Exp>;
+	var right : Ptr<Exp>;
+}
+
+class NameExp : Exp
+{
+	var name : Ptr<Name>;
+	var scope : Ptr<Scope>;
+}
+
+
+class MemberExp : Exp
+{
+	var base : Ptr<Exp>;
+	var memberName : Ptr<Name>;
+}
+
+class ErrorExp : Exp
+{
+}
+
+struct LookupResultItem
+{
+	// TODO: should be a declref
+	var decl : Ptr<Decl>;
+
+	init()
+	{
+		this.decl = nullptr;
+	}
+
+//    LookupResultItem(
+//        LookupResultItem const& other) = default;
+
+	init(decl: Ptr<Decl>)
+	{
+		this.decl = decl;
+	}
+}
+
+class LookupResult
+{
+	var items : Array<LookupResultItem>;
+
+	func begin() -> Ptr<LookupResultItem> { return items.begin(); }
+	func end() -> Ptr<LookupResultItem> { return items.end(); }
+
+
+	func isEmpty() -> Bool { return items.getCount() == 0; }
+    func isUnique() -> Bool { return items.getCount() == 1; }
+    func isOverloaded() -> Bool { return items.getCount() > 1; }
+
+    func getDecl() -> Ptr<Decl>
+    {
+        assert(isUnique());
+        return items[0].decl;
+    }
+
+//    func filterImpl(Class* _class);
+
+//	func filter<T>()
+//	{
+//		filterImpl(getClass<T>());
+//	}
+}
+
+
+class OverloadedExpr : Exp
+{
+	var lookupResult : LookupResult;
+	var base : Ptr<Exp>;
+}
+
+// Statements
+
+class BlockStmt : ContainerDecl
+{
+}
+
+// Types
+
+// A type is a value, since it is immutable
+class Type : Val
+{
+}
+
+// A type that is formed via a declaration reference
+class DeclRefType : Type
+{
+// TODO: fill in decl ref stuff...
+//	var declRef : CompactDeclRef;
+}
+
+// The "type" of another type
+class TypeType : Type
+{
+	var type : Ptr<Type>;
+}
+
+// the type of a function
+class FuncType : Type
+{
+    // TODO: domain/range types here
+}
+
+// The tyep of an errorneous term
+class ErrorType : Type
+{
+}
+
+// The type of a reference to an overload group
+class OverloadGroupType : Type
+{
+}
+
+
+// HACK: TODO: fill these in
+
+class EnumDecl : AggTypeDecl
+{}
+
+class EnumTagDecl : VarDeclBase
+{}
+
+class ForEachStmt : Stmt
+{
+	var name : Name*;
+	var exp: Exp*;
+	var body: Stmt*;
+}
+
+class ParenExp : Exp
+{
+	var base: Exp*;
+}
