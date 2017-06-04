@@ -63,6 +63,11 @@ func parseCommandLine(
 					// setOutputPath(session, valArg);
 				}
 			}
+			else if (strcmp(arg, "-eval") == 0)
+			{
+				// We are going to evaluate rather than compile the input
+				setEvaluate(session);
+			}
 			else
 			{
 				fprintf(stderr, "command line: unknown option '%s'\n", arg);
@@ -120,7 +125,14 @@ func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
     if(getErrorCount(session) > 0)
         return 1;
 
-	emitModule(session);
+	if(session.eval)
+	{
+		// TODO: evaluate things
+	}
+	else
+	{
+		emitModule(session);
+	}
 
 	return 0;
 }
