@@ -22,13 +22,13 @@ struct Object
 	Class* directClass;
 };
 
-#define COGC_GET_CLASS(T) \
+#define COG_GET_CLASS(T) \
 	((Class*) &T::staticClass)
 
 template<typename T>
 Class* getClass()
 {
-	return COGC_GET_CLASS(T);
+	return COG_GET_CLASS(T);
 }
 
 bool isSubClass(Class* sub, Class* sup);
@@ -49,11 +49,11 @@ T* createObject()
 }
 
 
-#define COGC_DECLARE_CLASS(C, Base) \
+#define COG_DECLARE_CLASS(C, Base) \
 	static StaticClass staticClass;
 
-#define COGC_DEFINE_CLASS(C, Base) \
-	C::StaticClass C::staticClass = { #C, sizeof(C), COGC_GET_CLASS(Base) };
+#define COG_DEFINE_CLASS(C, Base) \
+	C::StaticClass C::staticClass = { (char*) #C, sizeof(C), COG_GET_CLASS(Base) };
 
 }
 

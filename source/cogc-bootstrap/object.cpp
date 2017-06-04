@@ -7,7 +7,7 @@ namespace cogc {
 
 
 Object::StaticClass Object::staticClass = {
-	"cogc::Object",
+	(char*) "cogc::Object",
 	sizeof(cogc::Object),
 	0,
 };

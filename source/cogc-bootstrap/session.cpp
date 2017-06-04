@@ -91,7 +91,7 @@ int strcmp(char* left, char* right)
 struct FILE;
 void fprintf(FILE* file, char* message)
 {
-	::fprintf((::FILE*)file, message);
+	::fprintf((::FILE*)file, "%s", message);
 }
 
 

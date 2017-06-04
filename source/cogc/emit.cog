@@ -547,7 +547,7 @@ func emitClassDecl(
 
 	emit(context, "\n{\n");
 
-	emit(context, "typedef theta::Class StaticClass;\n");
+	emit(context, "typedef cog::Class StaticClass;\n");
 	emit(context, "static StaticClass staticClass;\n");
 
 
@@ -806,6 +806,7 @@ func emitDecl(
 
 		emit(context, "enum ");
 		emitDeclName(context, enumDecl, mode);
+		emit(context, " : int");
 
 		if (mode <= kDeclEmitMode_MinimalForward)
 		{
@@ -1119,7 +1120,7 @@ func emitModule(
 		let classDecl = as<ClassDecl>(dd);
 		if (!classDecl) continue;
 
-		emit(&context, "THETA_DEFINE_CLASS(");
+		emit(&context, "COG_DEFINE_CLASS(");
 		emitDeclName(&context, classDecl, kDeclEmitMode_Full);
 		emit(&context, ", ");
 		if (let base = classDecl.base.exp)
@@ -1128,7 +1129,7 @@ func emitModule(
 		}
 		else
 		{
-			emit(&context, "theta::Object");
+			emit(&context, "cog::Object");
 		}
 		emit(&context, ")\n");
 	}

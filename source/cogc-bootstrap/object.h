@@ -53,7 +53,7 @@ T* createObject()
 	static StaticClass staticClass;
 
 #define COGC_DEFINE_CLASS(C, Base) \
-	C::StaticClass C::staticClass = { #C, sizeof(C), COGC_GET_CLASS(Base) };
+	C::StaticClass C::staticClass = { (char*) #C, sizeof(C), COGC_GET_CLASS(Base) };
 
 }
 

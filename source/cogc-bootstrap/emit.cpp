@@ -919,6 +919,7 @@ static void emitDecl(
 
 		emit(context, "enum ");
 		emitDeclName(context, enumDecl, mode);
+		emit(context, " : int");
 
 		if (mode <= kDeclEmitMode_MinimalForward)
 		{

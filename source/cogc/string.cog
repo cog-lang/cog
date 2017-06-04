@@ -1,6 +1,6 @@
 // string.cog
 
-import theta;
+import cog;
 
 struct StringSpan
 {

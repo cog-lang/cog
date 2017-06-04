@@ -6,7 +6,14 @@
 
 using namespace cog;
 
-namespace cogc
+
+#ifdef COGC_BOOTSTRAP
+#define COGC_NAMESPACE cogc_bootstrap
+#else
+#define COGC_NAMESPACE cogc
+#endif
+
+namespace COGC_NAMESPACE
 {
 	struct Parser;
 	struct Syntax;
@@ -41,10 +48,13 @@ namespace cogc
 	}
 }
 
-
+#ifdef COGC_BOOTSTRAP
+#include "cogc_bootstrap.cog.cpp"
+#else
 #include "cogc.cog.cpp"
+#endif
 
 int main(int argc, char** argv)
 {
-	return cogc::main(argc, argv);
+	return COGC_NAMESPACE::main(argc, argv);
 }
