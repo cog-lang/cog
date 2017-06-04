@@ -1064,7 +1064,7 @@ ModuleDecl* findOrImportModule(
     }
     if(!file)
     {
-        sprintf(path, "source/coglib/%.*s.theta", (int)(nameText.end - nameText.begin), nameText.begin);
+        sprintf(path, "source/coglib/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
         file = getSourceFile(session, path);
     }
     if(!file)

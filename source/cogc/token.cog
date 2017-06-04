@@ -1,4 +1,4 @@
-// token.theta
+// token.cog
 
 typealias TokenFlags = UInt16;
 

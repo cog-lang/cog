@@ -1,4 +1,4 @@
-// diagnostic.theta
+// diagnostic.cog
 
 enum Severity
 {

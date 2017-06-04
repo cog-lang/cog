@@ -1,4 +1,4 @@
-// parser.theta
+// parser.cog
 
 
 typealias ParserFlags = UInt32;
@@ -1037,22 +1037,22 @@ func findOrImportModule(
     let nameText = getText(name);
 
 	var path : FixedSizeArray<1024, Char>;
-    sprintf(path, "source/%.*s.theta", (int)(nameText.end - nameText.begin), nameText.begin);
+    sprintf(path, "source/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
 
     let file: SourceFile* = getSourceFile(session, TerminatedStringSpan(path));
     if(!file)
     {
-        sprintf(path, "../../source/%.*s.theta", (int)(nameText.end - nameText.begin), nameText.begin);
+        sprintf(path, "../../source/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
         file = getSourceFile(session, TerminatedStringSpan(path));
     }
     if(!file)
     {
-        sprintf(path, "../../source/thetalib/%.*s.theta", (int)(nameText.end - nameText.begin), nameText.begin);
+        sprintf(path, "../../source/thetalib/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
         file = getSourceFile(session, TerminatedStringSpan(path));
     }
     if(!file)
     {
-        sprintf(path, "source/thetalib/%.*s.theta", (int)(nameText.end - nameText.begin), nameText.begin);
+        sprintf(path, "source/thetalib/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
         file = getSourceFile(session, TerminatedStringSpan(path));
     }
     if(!file)

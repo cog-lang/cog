@@ -1,4 +1,4 @@
-// source.theta
+// source.cog
 
 struct SourceLoc
 {

@@ -1,4 +1,4 @@
-// syntax.theta
+// syntax.cog
 
 struct TypeExp
 {

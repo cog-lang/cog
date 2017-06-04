@@ -85,7 +85,7 @@ static void parseCommandLine(
             // exactly one input file, so use it to infer the module name...
             StringSpan name = TerminatedStringSpan(argv[0]);
 
-            // If it ends with `.theta`, then strip that off
+            // If it ends with `.cog`, then strip that off
             name.trimFromEnd(TerminatedStringSpan(".cog"));
 
             setModulePath(session, name);

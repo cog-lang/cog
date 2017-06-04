@@ -1,4 +1,4 @@
-// lexer.theta
+// lexer.cog
 
 struct Lexer
 {

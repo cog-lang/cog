@@ -1,4 +1,4 @@
-// emit.theta
+// emit.cog
 
 
 
@@ -1077,7 +1077,7 @@ func emitModule(
 
 //	char buffer[1024];
 	var buffer : FixedSizeArray<1024, Char>;
-	sprintf(buffer, "%s.theta.cpp", modulePathText.begin);
+	sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
 
 
 	let stream = fopen(buffer, "wb");

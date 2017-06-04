@@ -1,4 +1,4 @@
-// main.theta
+// main.cog
 
 import theta;
 
@@ -85,8 +85,8 @@ func parseCommandLine(
             // exactly one input file, so use it to infer the module name...
             var name = TerminatedStringSpan(argv[0]).asStringSpan();
 
-            // If it ends with `.theta`, then strip that off
-            name.trimFromEnd(TerminatedStringSpan(".theta").asStringSpan());
+            // If it ends with `.cog`, then strip that off
+            name.trimFromEnd(TerminatedStringSpan(".cog").asStringSpan());
 
             setModulePath(session, name);
         }
