@@ -111,9 +111,20 @@ public:
 struct String
 {
 	String();
+	String(StringSpan text);
 
 	void append(StringSpan text);
 	void append(char c);
+
+	void append(char const* text)
+	{
+		append(TerminatedStringSpan(text));
+	}
+
+	void append(String text)
+	{
+		append(text.asSpan());
+	}
 
 	StringSpan asSpan();
 
@@ -126,6 +137,18 @@ private:
 	// and that it has the given capacity...
 	void ensureUniquelyReferencedWithCapacity(size_t capacity);
 };
+
+inline bool operator==(String left, String right)
+{
+	return left.asSpan() == right.asSpan();
+}
+
+inline String operator+(String left, TerminatedStringSpan right)
+{
+	String result = left;
+	result.append(right);
+	return result;
+}
 
 }
 

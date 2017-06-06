@@ -129,13 +129,31 @@ String::String()
 	storage = getEmptyStringStorage();
 }
 
+String::String(StringSpan text)
+{
+	storage = getEmptyStringStorage();
+	append(text);
+}
 
 void String::append(char c)
 {
-	size_t capacity = storage->getSize() + 1;
+	size_t capacity = storage->getSize() + 2;
 	ensureUniquelyReferencedWithCapacity(capacity);
 
 	*storage->end++ = c;
+	*storage->end = 0;
+}
+
+void String::append(StringSpan text)
+{
+	size_t capacity = storage->getSize() + text.getLength() + 1;
+	ensureUniquelyReferencedWithCapacity(capacity);
+
+	char const* cursor = text.begin;
+	char const* end = text.end;
+	while(cursor != end)
+		*storage->end++ = *cursor++;
+	*storage->end = 0;
 }
 
 StringSpan String::asSpan()

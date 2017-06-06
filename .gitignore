@@ -5,3 +5,5 @@ bin/
 intermediate/
 *.VC.opendb
 *.VC.db
+*.so
+*.so.dSYM

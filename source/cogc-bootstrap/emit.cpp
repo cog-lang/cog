@@ -1224,7 +1224,7 @@ void emitModule(
 		auto classDecl = as<ClassDecl>(dd);
 		if (!classDecl) continue;
 
-		emit(&context, "COGC_DEFINE_CLASS(");
+		emit(&context, "COG_DEFINE_CLASS(");
 		emitDeclName(&context, classDecl, kDeclEmitMode_Full);
 		emit(&context, ", ");
 		if (auto base = classDecl->base)

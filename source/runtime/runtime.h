@@ -1,4 +1,5 @@
 // runtime.h
+#pragma once
 
 #include <stdint.h>
 
@@ -66,8 +67,14 @@ namespace cog
 
 	template<typename T>
 	T* UNCONST(T const* val) { return (T*)val; }
+
+	void loadAndEval(char const* path);
 }
+
+#define COG_EXPORT extern "C"
 
 #include "array.h"
 #include "object.h"
 #include "string.h"
+
+using namespace cog;

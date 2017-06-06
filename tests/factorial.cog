@@ -1,0 +1,25 @@
+// factiorial.cog
+
+func factorial(n : Int) -> Int
+{
+	if(n <= 1) return 1;
+	return n * factorial(n - 1);
+}
+
+func testFactorial(n : Int)
+{
+	printf("%ld! = %ld\n", n, factorial(n));
+}
+
+func main(
+	argc : Int,
+	argv : Ptr<Ptr<Char> >) -> Int
+{
+	testFactorial(1);
+	testFactorial(2);
+	testFactorial(3);
+	testFactorial(4);
+	testFactorial(5);
+
+	return 0;
+}

@@ -1055,38 +1055,22 @@ func sortDecls(
 	}
 }
 
-func emitModule(
-	session: Session*)
+func emitModuleInner(
+	session: 		Session*,
+	moduleNameText:	TerminatedStringSpan,
+	outputPath: 	Ptr<Char>,
+	extra:			Ptr<Char>)
 {
-    if(!session.sourceFiles)
-        return;
-    if(!session.moduleDecl)
-        return;
-
-	// compute a resonable module name
 	let moduleDecl = session.moduleDecl;
-	let moduleName = moduleDecl.name;
-    assert(moduleName);
 
-    let modulePath = session.modulePath2;
-    assert(modulePath);
-
-	let moduleNameText = getText(moduleName);
-    let modulePathText = getText(modulePath);
-
-	// TODO: actually compute a reasonable path
-
-//	char buffer[1024];
-	var buffer : FixedSizeArray<1024, Char>;
-	sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
-
-
-	let stream = fopen(buffer, "wb");
+	let stream = fopen(outputPath, "wb");
 
 //	EmitContext context = { session, stream };
 	var context : EmitContext;
 	context.session = session;
 	context.stream = stream;
+
+	emit(&context, "#include \"runtime/runtime.h\"\n");
 
     for(var mm = session.loadedModules; mm; mm = cast<Ptr<ModuleDecl> >(mm.next))
     {
@@ -1094,7 +1078,7 @@ func emitModule(
 
 		sortDecls(&context, mm);
 
-        fprintf(stderr, "module %p : %s\n", mm, getText(mm.name).begin);
+//        fprintf(stderr, "module %p : %s\n", mm, getText(mm.name).begin);
     emit(&context, "namespace ");
     emit(&context, mm.name);
     emit(&context, " {\n");
@@ -1103,7 +1087,7 @@ func emitModule(
     emit(&context, "}\n");
     }
 
-        fprintf(stderr, "module %p : %s\n", moduleDecl, getText(moduleDecl.name).begin);
+//        fprintf(stderr, "module %p : %s\n", moduleDecl, getText(moduleDecl.name).begin);
 
 	sortDecls(&context, moduleDecl);
 
@@ -1136,5 +1120,43 @@ func emitModule(
 
 	emit(&context, "}\n");
 
-	fclose(stream);
+	if(extra)
+	{
+		emit(&context, TerminatedStringSpan(extra));
+	}
+
+	fclose(stream);	
+}
+
+
+func emitModule(
+	session: Session*)
+{
+    if(!session.sourceFiles)
+        return;
+    if(!session.moduleDecl)
+        return;
+
+	// compute a resonable module name
+	let moduleDecl = session.moduleDecl;
+	let moduleName = moduleDecl.name;
+    assert(moduleName);
+
+    let modulePath = session.modulePath2;
+    assert(modulePath);
+
+	let moduleNameText = getText(moduleName);
+    let modulePathText = getText(modulePath);
+
+	// TODO: actually compute a reasonable path
+
+//	char buffer[1024];
+	var buffer : FixedSizeArray<1024, Char>;
+	sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
+
+	emitModuleInner(
+		session,
+		moduleNameText,
+		buffer,
+		nullptr);
 }

@@ -2051,7 +2051,7 @@ func parseFile(
 	session: Session*,
 	file: SourceFile*)
 {
-    fprintf(stderr, "PARSING\n");
+//    fprintf(stderr, "PARSING\n");
 
 	// set up module if needed
 	var moduleDecl = session.moduleDecl;

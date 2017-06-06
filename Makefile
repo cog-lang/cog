@@ -41,21 +41,25 @@ LDFLAGS += -framework CoreFoundation
 LDFLAGS += -framework CoreServices
 endif
 
-all: mkdirs $(OUTPUTDIR)/cogc
+all: mkdirs $(OUTPUTDIR)/cogc $(OUTPUTDIR)/cog-test
 
 # bootstrapping step 0: a pure C++ compiler
 $(OUTPUTDIR)/cogc-bootstrap0: $(BOOTSTRAP_SOURCES) $(BOOTSTRAP_HEADERS)
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) $(BOOTSTRAP_SOURCES)
 
 # bootstrapping step 1: use the C++ compiler to compile the "real" compiler written in Cog
-$(OUTPUTDIR)/cogc-bootstrap: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap0
+$(OUTPUTDIR)/cogc-bootstrap: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap0 $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
 	$(OUTPUTDIR)/cogc-bootstrap0 -m cogc_bootstrap $(COGC_SOURCES)
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) -DCOGC_BOOTSTRAP source/cogc/main.cpp $(RUNTIME_SOURCES)
 
 # bootstrapping step 2: use the Cog-based compiler to compile itself
-$(OUTPUTDIR)/cogc: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap
+$(OUTPUTDIR)/cogc: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
 	$(OUTPUTDIR)/cogc-bootstrap -m cogc $(COGC_SOURCES)
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) source/cogc/main.cpp $(RUNTIME_SOURCES)
+
+# test-runner program
+$(OUTPUTDIR)/cog-test: source/test/*.cpp $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
+	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) source/test/*.cpp $(RUNTIME_SOURCES)
 
 
 %.cog.cpp %.cog.h: $(OUTPUTDIR)/cogc
