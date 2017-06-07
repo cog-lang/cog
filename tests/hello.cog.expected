@@ -1,0 +1,6 @@
+result: 0
+stdout: {
+Hello, world!
+}
+stderr: {
+}

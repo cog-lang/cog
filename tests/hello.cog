@@ -1,0 +1,12 @@
+// hello.cog
+
+// A basic "hello world" program
+
+func main(
+	argc : Int,
+	argv : Ptr<Ptr<Char> >) -> Int
+{
+	printf("Hello, world!\n");
+
+	return 0;
+}
