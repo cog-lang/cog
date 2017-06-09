@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="array.cpp" />
+    <ClCompile Include="eval.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="string.cpp" />
   </ItemGroup>

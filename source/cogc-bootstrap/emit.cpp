@@ -149,7 +149,8 @@ static void emitDeclNameAndGenericArgs(
 static void emitDeclName(
 	EmitContext*	context,
 	Decl*			decl,
-	DeclEmitMode	mode)
+	DeclEmitMode	mode,
+	bool 			includeModule = false)
 {
 	auto parent = decl->parent;
 
@@ -164,6 +165,14 @@ static void emitDeclName(
 		if (mode == kDeclEmitMode_Full)
 		{
 			emitDeclNameAndGenericArgs(context, parent, mode);
+			emit(context, "::");
+		}
+	}
+	else if(auto moduleDecl = as<ModuleDecl>(parent))
+	{
+		if(includeModule)
+		{
+			emitDeclName(context, parent, mode);
 			emit(context, "::");
 		}
 	}
@@ -191,6 +200,12 @@ static void emitDeclNameAndGenericArgs(
 	auto genericParent = as<GenericDecl>(parent);
 	
 	emitDeclName(context, decl, mode);
+
+	if(auto classDecl = as<ClassDecl>(decl))
+	{
+		emit(context, "Impl");
+	}
+
 
 	if (genericParent && (mode == kDeclEmitMode_Full))
 	{
@@ -622,14 +637,78 @@ static void emitStmt(
 
 static void emitClassDecl(
 	EmitContext* 	context,
-    AggTypeDecl*    aggDecl,
+    ClassDecl*    	aggDecl,
 	DeclEmitMode	mode)
 {
-	if (getText(aggDecl->name) == TerminatedStringSpan("TypeVarDecl"))
+	// We need to emit implementations for class members here!
+	if (mode == kDeclEmitMode_Full)
 	{
-		int f = 9;
+		for (auto dd : aggDecl->getDecls())
+		{
+			if (auto varDecl = as<VarDecl>(dd))
+				continue;
+
+			emitDecl(context, dd, kDeclEmitMode_Full);
+		}
+
+		return;
 	}
 
+	emit(context, "using ");
+    emit(context, aggDecl->name);
+    emit(context, " = struct ");
+    emit(context, aggDecl->name);
+    emit(context, "Impl* ");
+    emit(context, ";\n");
+
+	emit(context, "struct ");
+    emit(context, aggDecl->name);
+    emit(context, "Impl");
+
+	if (mode <= kDeclEmitMode_MinimalForward)
+	{
+		emit(context, ";\n");
+		return;
+	}
+
+    if(Exp* base = aggDecl->base)
+	{
+		emit(context, " : ");
+		emitType(context, base);
+		emit(context, "Impl");
+	}
+	else
+	{
+		emit(context, " : cog::ObjectImpl");
+	}
+
+	emit(context, "\n{\n");
+
+	emit(context, "typedef cog::Class StaticClass;\n");
+	emit(context, "static StaticClass staticClass;\n");
+
+
+    emitDecls(context, aggDecl, kDeclEmitMode_Forward);
+	emit(context, "};\n");
+
+	emit(context, "} namespace cog {\n");
+
+	emit(context, "template<> struct ObjectClassImpl<");
+	emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+	emit(context, " > { typedef ");
+	emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+	emit(context, "Impl Impl; };\n");
+
+	emit(context, "} namespace ");
+	emit(context, context->session->moduleDecl->name);
+	emit(context, " {\n");
+}
+
+static void emitStructDecl(
+	EmitContext* 	context,
+    StructDecl*    	aggDecl,
+	DeclEmitMode	mode)
+{
 	// We need to emit implementations for class members here!
 	if (mode == kDeclEmitMode_Full)
 	{
@@ -779,6 +858,11 @@ static void emitInitializerDecl(
 	}
     emit(context, initDecl->getParent()->name);
 
+    if(as<ClassDecl>(initDecl->getParent()))
+    {
+    	emit(context, "Impl");
+    }
+
     emit(context, "(");
 
     bool first = true;
@@ -825,6 +909,7 @@ static void emitSubscriptDecl(
 	if (decl->resultType)
 	{
 		emitType(context, decl->resultType);
+		emit(context, " ");
 	}
 	else
 	{
@@ -883,7 +968,7 @@ static void emitDecl(
 	}
     else if(StructDecl* structDecl = as<StructDecl>(decl))
     {
-		emitClassDecl(context, structDecl, mode);
+		emitStructDecl(context, structDecl, mode);
     }
 	// Note: this one comes before the base case for variables...
 	else if (EnumTagDecl* tagDecl = as<EnumTagDecl>(decl))

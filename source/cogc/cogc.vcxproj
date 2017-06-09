@@ -149,6 +149,7 @@
     <None Include="check.cog" />
     <None Include="diagnostic.cog" />
     <None Include="emit.cog" />
+    <None Include="eval.cog" />
     <None Include="lexer.cog" />
     <CustomBuild Include="main.cog">
       <FileType>Document</FileType>

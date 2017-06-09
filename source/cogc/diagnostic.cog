@@ -16,61 +16,117 @@ enum DiagnosticID
 #include "thdiagnosticdefs.h"
 */
 
+
 	kDiagnostic_unimplemented,
 	kDiagnostic_unexpectedCharacter,
 	kDiagnostic_unexpectedToken,
 	kDiagnostic_unexpectedTokenExpectedToken,
 	kDiagnostic_youMeanDot,
 	kDiagnostic_unexpectedDeclName,
+	kDiagnostic_undefinedIdentifier,
+	kDiagnostic_noMemberOfNameInType,
+	kDiagnostic_failedToFindBuiltinType,
+	kDiagnostic_cannotConvertType,
+	kDiagnostic_noOverloadCandidatesFound,
+	kDiagnostic_candidate,
+	kDiagnostic_ambiguousCallToOverload,
+	kDiagnostic_noApplicableOverloadForCall,
 }
 
 struct DiagnosticSink
 {
-	var session : Ptr<Session>;
+	var session : Session;
 	var errorCount : Int;
 }
 
 struct ArgTypeList
 {
-	var args : Ptr<Arg>;
+	var args : Arg;
 
-	init(args: Ptr<Arg>)
+	init()
+	{
+		this.args = nullptr;
+	}
+
+	init(args: Arg)
 	{
 		this.args = args;
 	}
 }
 
+enum DiagnosticArgFlavor
+{
+	kFlavor_Int,
+	kFlavor_TokenCode,
+	kFlavor_Name,
+	kFlavor_StringSpan,
+	kFlavor_Type,
+	kFlavor_DeclRef,
+	kFlavor_ArgTypeList,
+}
+
 struct DiagnosticArg
 {
-	enum Flavor
+	init(val: Int)
 	{
-		kFlavor_Int,
-		kFlavor_TokenCode,
-		kFlavor_Name,
-		kFlavor_StringSpan,
-		kFlavor_Type,
-		kFlavor_DeclRef,
-		kFlavor_ArgTypeList,
+		this.flavor = kFlavor_Int;
+		this.intVal = val;
 	}
 
-	init(val: Int) { this.intVal = val; }
+	init(val: TokenCode)
+	{
+		this.flavor = kFlavor_TokenCode;
+		this.tokenCodeVal = val;
+	}
 
-//	init(val: TokenCode) { this.tokenCodeVal = val; }
+	init(val: Ptr<Name>)
+	{
+		this.flavor = kFlavor_Name;
+		this.nameVal = val;
+	}
 
-	init(val: Ptr<Name>) { this.nameVal = val; }
-
-	init(val: StringSpan) { this.stringSpanVal = val; }
+	init(val: StringSpan)
+	{
+		this.flavor = kFlavor_StringSpan;
+		this.stringSpanVal = val;
+	}
 
 //	init(val: TerminatedStringSpan) { this.stringSpanVal = val; }
 
-	init(val: Ptr<Char>) { this.stringSpanVal = TerminatedStringSpan(val); }
+	init(val: ConstPtr<Char>)
+	{
+		this.flavor = kFlavor_StringSpan;
+		this.stringSpanVal = TerminatedStringSpan(val);
+	}
 
-	var flavor: Flavor;
+	init(val: Type)
+	{
+		this.flavor = kFlavor_Type;
+		this.typeVal = val;
+	}
+
+	init(val: DeclRefVal)
+	{
+		this.flavor = kFlavor_DeclRef;
+		this.declRefVal = val;
+	}
+
+	init(val: ConstRef<ArgTypeList>)
+	{
+		this.flavor = kFlavor_ArgTypeList;
+		this.argTypeListVal = val;
+	}
+
+	var flavor: DiagnosticArgFlavor;
 //	union {
 		var intVal: Int;
-//		var tokenCodeVal: TokenCode;
+		var tokenCodeVal: TokenCode;
 		var nameVal : Ptr<Name>;
 		var stringSpanVal : StringSpan;
+		var typeVal : Type;
+
+		var declRefVal : DeclRefVal;
+		var argTypeListVal : ArgTypeList;
 //	}
 }
 
@@ -169,40 +225,109 @@ static const DiagnosticInfo kDiagnostics[] =
 	{ kSeverity_##severity, msg },
 #include "thdiagnosticdefs.h"
 };
+*/
 
-static void printDiagnosticArg(
-	DiagnosticArg const*	arg)
+func printDeclRef(
+	stream: FILE*,
+	declRef: DeclRefVal)
 {
-	switch(arg->flavor)
+	fprintf(stream, "%s", getText(declRef.getDecl().name).begin);
+}
+
+func printType(
+	stream: FILE*,
+	type: Type)
+{
+	if(let declRefType = as<DeclRefType>(type))
 	{
-	case DiagnosticArg::kFlavor_Int:
-		fprintf(stderr, "%d", arg->intVal);
+		printDeclRef(stream, declRefType.declRef);
+	}
+	else if(let typeType = as<TypeType>(type))
+	{
+		fprintf(stream, "typeof(");
+		printType(stream, typeType.type);
+		fprintf(stream, ")");
+	}
+	else if(let funcType = as<FuncType>(type))
+	{
+		fprintf(stream, "FUNC_TYPE");
+	}
+	else if(let errorType = as<ErrorType>(type))
+	{
+		fprintf(stream, "<error>");
+	}
+	else if(let overloadGroupType = as<OverloadGroupType>(type))
+	{
+		fprintf(stream, "<overload group>");
+	}
+	else if(!type)
+	{
+		fprintf(stream, "NULL_TYPE");
+	}
+	else
+	{
+		fprintf(stream, "UNKNOWN_TYPE(%s)", type.directClass.name);
+	}
+}
+
+func printDiagnosticArg(
+	arg: ConstPtr<DiagnosticArg>)
+{
+	switch(arg.flavor)
+	{
+	case kFlavor_Int:
+		fprintf(stderr, "%ld", arg.intVal);
 		break;
 
-	case DiagnosticArg::kFlavor_TokenCode:
-		fprintf(stderr, "%s", getTokenName(arg->tokenCodeVal));
+	case kFlavor_TokenCode:
+//		fprintf(stderr, "%s", getTokenName(arg.tokenCodeVal));
+		fprintf(stderr, "TOKEN: %d", arg.tokenCodeVal);
 		break;
 		
-	case DiagnosticArg::kFlavor_Name:
+	case kFlavor_Name:
 		{
-			StringSpan text = getText(arg->nameVal);
+			let text = getText(arg.nameVal);
 			fwrite(text.begin, 1, text.end-text.begin, stderr);
 		}
 		break;
 		
-	case DiagnosticArg::kFlavor_StringSpan:
+	case kFlavor_StringSpan:
 		{
-			StringSpan text = arg->stringSpanVal;
+			let text = arg.stringSpanVal;
 			fwrite(text.begin, 1, text.end-text.begin, stderr);
+		}
+		break;
+
+	case kFlavor_Type:
+		{
+			printType(stderr, arg.typeVal);
+		}
+		break;
+
+	case kFlavor_ArgTypeList:
+		{
+			var first = true;
+			for(var aa = arg.argTypeListVal.args; aa; aa = aa.next)
+			{
+				if(!first) fprintf(stderr, ", ");
+				printType(stderr, aa.exp.type);
+				first = false;
+			}
+		}
+		break;
+
+	case kFlavor_DeclRef:
+		{
+			printDeclRef(stderr, arg.declRefVal);
 		}
 		break;
 						
 	default:
-		assert(!"unimplemented");
+		fprintf(stderr, "UNIMPLEMENTD:%d", arg.flavor);
+//		assert(!"unimplemented");
 		break;
 	}
 }
-*/
 
 func diagnoseImpl(
 	sink: Ptr<DiagnosticSink>,
@@ -211,17 +336,48 @@ func diagnoseImpl(
 	argCount: int,
 	args: Ptr<Ptr<DiagnosticArg> >)
 {
+//	DiagnosticInfo const& info = kDiagnostics[id];
+
+	let expandedLoc = expandLoc(sink.session, loc);
+
+	let severity = kSeverity_Error;
+
+	fprintf(stderr, "%s(%ld,%ld): %s: ",
+			expandedLoc.file.begin,
+			expandedLoc.line,
+			expandedLoc.column,
+			"error" // kSeverityNames[severity]
+			);
+
+	// HACK: for now just print diagnostic ID
+	fprintf(stderr, "%d", id);
+
+    for(var ii : int = 0; ii < argCount; ii++ )
+    {
+    	fprintf(stderr, "[");
+    	printDiagnosticArg(args[ii]);
+    	fprintf(stderr, "]");
+    }
+
+	fprintf(stderr, "\n");
+
+    if(severity >= kSeverity_Error)
+    {
+        sink.errorCount++;
+        if(severity >= kSeverity_Fatal)
+        {
+        	assert(!"fatal");
+            exit(1);
+        }
+    }
+
+
 }
 
 /*
 {
-	DiagnosticInfo const& info = kDiagnostics[id];
 
-	ExpandedSourceLoc expandedLoc = expandLoc(sink->session, loc);
 
-	fprintf(stderr, "%s(%d,%d): %s: ",
-			expandedLoc.file.begin, expandedLoc.line, expandedLoc.column,
-			kSeverityNames[info.severity]);
 
 	char const* cursor = info.message;
 	while(*cursor)
@@ -250,16 +406,6 @@ func diagnoseImpl(
 		}
 	}
 
-	fprintf(stderr, "\n");
 
-    if(info.severity >= kSeverity_Error)
-    {
-        sink->errorCount++;
-        if(info.severity >= kSeverity_Fatal)
-        {
-        	assert(!"fatal");
-            exit(1);
-        }
-    }
 }
 */

@@ -126,7 +126,7 @@ int main(
 			char const* path = findData.cFileName;
 #endif
 
-			fprintf(stderr, "FILE: %s\n", path);
+//			fprintf(stderr, "FILE: %s\n", path);
 			loadSourceFile(
 				session,
 				TerminatedStringSpan(path));

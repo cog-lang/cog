@@ -2,7 +2,7 @@
 
 struct Lexer
 {
-	var session: Session*;
+	var session: Session;
 	var file: SourceFile*;
 
 	var cursor: ConstPtr<Char>;
@@ -12,7 +12,7 @@ struct Lexer
 
 func initializeLexer(
 	lexer: Lexer*,
-	session: Session*,
+	session: Session,
 	file: SourceFile*)
 {
 	lexer.session 	= session;
@@ -678,7 +678,7 @@ func markUpOperators(
 }
 
 func lexTokens(
-	session: Session*,
+	session: Session,
 	file: SourceFile*)
 	-> TokenSpan
 {

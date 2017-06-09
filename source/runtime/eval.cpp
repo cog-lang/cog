@@ -2,48 +2,135 @@
 #include "runtime.h"
 
 // Includes needed for platform/OS interface
-#include <dirent.h>
-#include <sys/types.h>
+
 #include <stdio.h>
 #include <string.h>
+
+#ifdef _WIN32
+
+#include <Windows.h>
+
+#else
+
+// TODO: These are currently the right ones for MacOS
+
+#include <dirent.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <libproc.h>
 #include <mach-o/dyld.h>
-
 #include <dlfcn.h>
+
+#endif
 
 namespace cog
 {
 
-//
+	//
 
-enum
-{
-	kMaxArgs = 16,
-};
-
-struct ProcessSpawner
-{
-	char* args[kMaxArgs];
-	int argCount = 0;
-
-	ProcessSpawner(char const* appName)
+	enum
 	{
-		addArg(appName);
+		kMaxArgs = 16,
+	};
+
+	struct ProcessSpawner
+	{
+		char* args[kMaxArgs];
+		int argCount = 0;
+
+		ProcessSpawner(char const* appName)
+		{
+			addArg(appName);
+		}
+
+		void addArg(char const* arg)
+		{
+			args[argCount++] = (char*)arg;
+		}
+
+		int spawnAndWait();
+	};
+
+	//
+
+	typedef int(*DynamicFunc)();
+
+	//
+
+#if _WIN32
+
+	int ProcessSpawner::spawnAndWait()
+	{
+		args[argCount] = nullptr;
+
+		char commandLine[4096];
+		char* cursor = commandLine;
+		for (int aa = 0; aa < argCount; ++aa)
+		{
+			cursor += sprintf(cursor, "%s ", args[aa]);
+		}
+
+		PROCESS_INFORMATION processInfo;
+
+		CreateProcessA(
+			args[0],
+			commandLine,
+			nullptr,
+			nullptr,
+			true,
+			0,
+			nullptr,
+			nullptr,
+			nullptr,
+			&processInfo);
+
+		WaitForSingleObject(processInfo.hProcess, INFINITE);
+
+		CloseHandle(processInfo.hProcess);
+		CloseHandle(processInfo.hThread);
+
+		return 0;
+	}
+	void loadAndEval(char const* path)
+	{
+		char const* dynamicLibraryPath = "cog-eval.dll";
+
+		ProcessSpawner compilerSpawner("cl");
+
+		compilerSpawner.addArg("/I");
+		compilerSpawner.addArg(".");
+
+		compilerSpawner.addArg("/I");
+		compilerSpawner.addArg("source");
+
+		compilerSpawner.addArg(path);
+
+		compilerSpawner.addArg("/link");
+
+		compilerSpawner.addArg("/DLL");
+
+		compilerSpawner.addArg("/OUT:");
+		compilerSpawner.addArg(dynamicLibraryPath);
+
+		compilerSpawner.spawnAndWait();
+
+		auto dynamicLibraryHandle = LoadLibraryA(dynamicLibraryPath);
+
+		DynamicFunc func = (DynamicFunc)GetProcAddress(dynamicLibraryHandle, "_cogc_eval");
+
+		func();
+
+		FreeLibrary(dynamicLibraryHandle);
 	}
 
-	void addArg(char const* arg)
-	{
-		args[argCount++] = (char*) arg;
-	}
-
-	int spawnAndWait()
+#else
+	int ProcessSpawner::spawnAndWait()
 	{
 		args[argCount] = nullptr;
 
 		pid_t childProcessID = fork();
 
-		if(childProcessID == 0)
+		if (childProcessID == 0)
 		{
 			// We are the child process
 			execvp(args[0], args);
@@ -55,10 +142,10 @@ struct ProcessSpawner
 		else
 		{
 			int childStatus = 0;
-			for(;;)
+			for (;;)
 			{
 				pid_t terminatedProcessID = wait(&childStatus);
-				if(terminatedProcessID == childProcessID)
+				if (terminatedProcessID == childProcessID)
 				{
 					return childStatus;
 				}
@@ -67,45 +154,42 @@ struct ProcessSpawner
 			}
 		}
 	}
-};
 
-//
+	void loadAndEval(char const* path)
+	{
+		char const* dynamicLibraryPath = "cog-eval.so";
 
-typedef int (*DynamicFunc)();
+		ProcessSpawner compilerSpawner("clang++");
 
-void loadAndEval(char const* path)
-{
-	char const* dynamicLibraryPath = "cog-eval.so";
+		compilerSpawner.addArg("-shared");
+		compilerSpawner.addArg("-o");
+		compilerSpawner.addArg(dynamicLibraryPath);
 
-	ProcessSpawner compilerSpawner("clang++");
+		compilerSpawner.addArg("-I");
+		compilerSpawner.addArg(".");
 
-	compilerSpawner.addArg("-shared");
-	compilerSpawner.addArg("-o");
-	compilerSpawner.addArg(dynamicLibraryPath);
+		compilerSpawner.addArg("-I");
+		compilerSpawner.addArg("source");
 
-	compilerSpawner.addArg("-I");
-	compilerSpawner.addArg(".");
+		compilerSpawner.addArg("-std=c++11");
+		compilerSpawner.addArg("-Wno-writable-strings");
+		compilerSpawner.addArg("-g");
 
-	compilerSpawner.addArg("-I");
-	compilerSpawner.addArg("source");
+		compilerSpawner.addArg(path);
 
-	compilerSpawner.addArg("-std=c++11");
-	compilerSpawner.addArg("-Wno-writable-strings");
-	compilerSpawner.addArg("-g");
+		compilerSpawner.spawnAndWait();
 
-	compilerSpawner.addArg(path);
+		void* dynamicLibraryHandle = dlopen(dynamicLibraryPath, 0);
 
-	compilerSpawner.spawnAndWait();
+		void* symbol = dlsym(dynamicLibraryHandle, "_cogc_eval");
 
-	void* dynamicLibraryHandle = dlopen(dynamicLibraryPath, 0);
+		DynamicFunc func = (DynamicFunc)symbol;
 
-	void* symbol = dlsym(dynamicLibraryHandle, "_cogc_eval");
+		func();
 
-	DynamicFunc func = (DynamicFunc) symbol;
+		dlclose(dynamicLibraryHandle);
+	}
 
-	func();
-
-	dlclose(dynamicLibraryHandle);
-}
+#endif
 
 } // cog

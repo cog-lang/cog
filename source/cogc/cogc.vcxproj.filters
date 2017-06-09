@@ -27,6 +27,7 @@
     <None Include="string.cog" />
     <None Include="syntax.cog" />
     <None Include="token.cog" />
+    <None Include="eval.cog" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="main.cog" />

@@ -6,9 +6,9 @@
 namespace cog {
 
 
-Object::StaticClass Object::staticClass = {
+ObjectImpl::StaticClass ObjectImpl::staticClass = {
 	"cogc::Object",
-	sizeof(cog::Object),
+	sizeof(cog::ObjectImpl),
 	0,
 };
 
@@ -24,17 +24,17 @@ bool isSubClass(Class* sub, Class* sup)
 	return false;
 }
 
-void* as(Object* obj, Class* clazz)
+void* as(Object obj, Class* clazz)
 {
 	if(!obj || !isSubClass(obj->directClass, clazz))
 		return 0;
 	return obj;
 }
 
-Object* createObject(Class* directClass)
+Object createObject(Class* directClass)
 {
 	size_t size = directClass->instanceSize;
-	Object* obj = (Object*) malloc(size);
+	Object obj = (Object) malloc(size);
 	memset(obj, 0, size);
 	obj->directClass = directClass;
 	return obj;

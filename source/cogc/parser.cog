@@ -11,93 +11,93 @@ enum ParserFlag : ParserFlags
 
 struct Parser
 {
-	var session: Session*;
-	var scope: Scope*;
+    var session: Session;
+    var scope: Scope*;
 
-	var begin: ConstPtr<Token>;
-	var cursor: ConstPtr<Token>;
-	var end: ConstPtr<Token>;
+    var begin: ConstPtr<Token>;
+    var cursor: ConstPtr<Token>;
+    var end: ConstPtr<Token>;
 
-	var token: ConstPtr<Token>;
+    var token: ConstPtr<Token>;
 
-	var flags: ParserFlags;
+    var flags: ParserFlags;
 }
 
 func debugState(parser: Parser*)
 {
 /*
 #if 0
-	fprintf(stderr, "c:%p, e:%p, t:%d", parser.cursor, parser.end, parser.token.code);
-	if(parser.token.code == kTokenCode_Identifier)
-	{
-		fprintf(stderr, " name:'%s'", getText((Name*) parser.token.rawData).begin);
-	}
-	fprintf(stderr, "\n");
+    fprintf(stderr, "c:%p, e:%p, t:%d", parser.cursor, parser.end, parser.token.code);
+    if(parser.token.code == kTokenCode_Identifier)
+    {
+        fprintf(stderr, " name:'%s'", getText((Name*) parser.token.rawData).begin);
+    }
+    fprintf(stderr, "\n");
 #endif
 */
 }
 
 func advanceToken(
-	parser: Parser*)
-	-> ConstPtr<Token>
+    parser: Parser*)
+    -> ConstPtr<Token>
 {
-	let result = parser.token;
-	parser.token = parser.cursor;
-	if(parser.cursor != parser.end)
-	{
-		parser.cursor++;
-	}
-	debugState(parser);
-	return result;
+    let result = parser.token;
+    parser.token = parser.cursor;
+    if(parser.cursor != parser.end)
+    {
+        parser.cursor++;
+    }
+    debugState(parser);
+    return result;
 }
 
 func advanceFragment(
-	parser: Parser*)
-	-> ConstPtr<Token>
+    parser: Parser*)
+    -> ConstPtr<Token>
 {
-	let result = parser.token;
+    let result = parser.token;
     parser.token = parser.cursor;
     parser.cursor = parser.cursor + parser.cursor.advance + 1;
-	if(parser.cursor != parser.end)
-	{
-		parser.cursor++;
-	}
-	debugState(parser);
-	return result;
+    if(parser.cursor != parser.end)
+    {
+        parser.cursor++;
+    }
+    debugState(parser);
+    return result;
 }
 
 func initializeParser(
-	parser: Parser*,
-	session: Session*,
-	file: SourceFile*)
+    parser: Parser*,
+    session: Session,
+    file: SourceFile*)
 {
-	let tokens = lexTokens(session, file);
+    let tokens = lexTokens(session, file);
 
-	parser.session = session;
-	parser.scope = 0;
-	parser.begin = tokens.begin_;
-	parser.cursor = tokens.begin_;
-	parser.end = tokens.end_;
-	parser.flags = 0;
+    parser.session = session;
+    parser.scope = 0;
+    parser.begin = tokens.begin_;
+    parser.cursor = tokens.begin_;
+    parser.end = tokens.end_;
+    parser.flags = 0;
 
-	advanceToken(parser);
+    advanceToken(parser);
 }
 
 func finalizeParser(
-	parser: Parser*)
+    parser: Parser*)
 {}
 
 func pushScope(
-	parser: Parser*,
-	container: ContainerDecl*)
+    parser: Parser*,
+    container: ContainerDecl)
 {
-	let scope = alloc<Scope>();
-	scope.parent = parser.scope;
+    let scope = alloc<Scope>();
+    scope.parent = parser.scope;
 
     // TODO: think about how this should be qualified!
-	scope.directLink.container = container;
+    scope.directLink.container = container;
 
-	parser.scope = scope;
+    parser.scope = scope;
 }
 
 func restoreScope(
@@ -109,7 +109,7 @@ func restoreScope(
 }
 
 func popScope(
-	parser: Parser*)
+    parser: Parser*)
 {
     assert(parser.scope);
     restoreScope(parser, parser.scope.parent);
@@ -117,37 +117,37 @@ func popScope(
 
 
 func getSink(parser: Parser*)
-	-> DiagnosticSink*
+    -> DiagnosticSink*
 {
-	return &parser.session.sink;
+    return &parser.session.sink;
 }
 
 func peekLoc(parser: Parser*)
-	-> SourceLoc
+    -> SourceLoc
 {
-	return SourceLoc(parser.token.rawLoc);
+    return SourceLoc(parser.token.rawLoc);
 }
 
 func peekTokenCode(parser: Parser*)
-	-> TokenCode
+    -> TokenCode
 {
-	return parser.token.code;
+    return parser.token.code;
 }
 
 func peekTokenCode(parser: Parser*, code: TokenCode)
-	-> Bool
+    -> Bool
 {
-	return parser.token.code == code;
+    return parser.token.code == code;
 }
 
 func isAtEnd(parser: Parser*)
-	-> Bool
+    -> Bool
 {
-	return parser.cursor == parser.end;
+    return parser.cursor == parser.end;
 }
 
 func isRecovering(parser: Parser*)
-	-> Bool
+    -> Bool
 {
     return (parser.flags & kParserFlag_Recovering) != 0;
 }
@@ -155,26 +155,26 @@ func isRecovering(parser: Parser*)
 func unexpected(parser: Parser*)
 {
     if(!isRecovering(parser))
-	{
-		diagnose(getSink(parser), peekLoc(parser), kDiagnostic_unexpectedToken, peekTokenCode(parser));
-		parser.flags |= kParserFlag_Recovering;
-	}
+    {
+        diagnose(getSink(parser), peekLoc(parser), kDiagnostic_unexpectedToken, peekTokenCode(parser));
+        parser.flags |= kParserFlag_Recovering;
+    }
 }
 
 func unexpected(parser: Parser*, expected: TokenCode)
 {
     if(!isRecovering(parser))
-	{
-		diagnose(getSink(parser), peekLoc(parser), kDiagnostic_unexpectedTokenExpectedToken, peekTokenCode(parser), expected);
+    {
+        diagnose(getSink(parser), peekLoc(parser), kDiagnostic_unexpectedTokenExpectedToken, peekTokenCode(parser), expected);
         parser.flags |= kParserFlag_Recovering;
-	}
+    }
 }
 
 func tokenIsInSet(
-	needle: TokenCode,
-	count: Int,
-	haystack: ConstPtr<TokenCode>)
-	-> Bool
+    needle: TokenCode,
+    count: Int,
+    haystack: ConstPtr<TokenCode>)
+    -> Bool
 {
     for(var ii = 0; ii < count; ++ii)
     {
@@ -188,10 +188,10 @@ func tokenIsInSet(
 
 func recoverIfTokenIsInSet(
     parser: Parser*,
-	needle: TokenCode,
-	count: Int,
-	haystack: ConstPtr<TokenCode>)
-	-> Bool
+    needle: TokenCode,
+    count: Int,
+    haystack: ConstPtr<TokenCode>)
+    -> Bool
 {
     if(tokenIsInSet(needle, count, haystack))
     {
@@ -202,19 +202,19 @@ func recoverIfTokenIsInSet(
 }
 
 func tryRecover(
-	parser: Parser*,
-	recoverBeforeCount: Int,
-	recoverBefore: ConstPtr<TokenCode>,
-	recoverAfterCount: Int,
-	recoverAfter: ConstPtr<TokenCode>)
+    parser: Parser*,
+    recoverBeforeCount: Int,
+    recoverBefore: ConstPtr<TokenCode>,
+    recoverAfterCount: Int,
+    recoverAfter: ConstPtr<TokenCode>)
 {
-	if(!isRecovering(parser))
-		return;
+    if(!isRecovering(parser))
+        return;
 
 
-	while(!isAtEnd(parser))
-	{
-		let peek = peekTokenCode(parser);
+    while(!isAtEnd(parser))
+    {
+        let peek = peekTokenCode(parser);
 
         // if we are beforce a token that allows recovery,
         // then do it...
@@ -225,8 +225,8 @@ func tryRecover(
         }
 
 
-		// if the token we just skipped would let
-		// us recover, then do so...
+        // if the token we just skipped would let
+        // us recover, then do so...
         if(recoverIfTokenIsInSet(parser, peek, recoverAfterCount, recoverAfter))
         {
             // Consume the token.
@@ -259,53 +259,53 @@ func tryRecover(
 // default recovering, suitable for use inside a statement or declaration context...
 func tryRecover(parser: Parser*)
 {
-	if(!isRecovering(parser))
-		return;
+    if(!isRecovering(parser))
+        return;
 
 //    TokenCode recoverBefore[] = { kTokenCode_LCurly };
 //    TokenCode recoverAfter[] = { kTokenCode_Semi, kTokenCode_RCurly };
 
-	var recoverBefore : FixedSizeArray<1, TokenCode>;
-	recoverBefore[0] = kTokenCode_LCurly;
+    var recoverBefore : FixedSizeArray<1, TokenCode>;
+    recoverBefore[0] = kTokenCode_LCurly;
 
-	var recoverAfter : FixedSizeArray<2, TokenCode>;
-	recoverAfter[0] = kTokenCode_Semi;
-	recoverAfter[1] = kTokenCode_RCurly;
+    var recoverAfter : FixedSizeArray<2, TokenCode>;
+    recoverAfter[0] = kTokenCode_Semi;
+    recoverAfter[1] = kTokenCode_RCurly;
 
 
-	tryRecover(parser, 1, recoverBefore, 2, recoverAfter);
+    tryRecover(parser, 1, recoverBefore, 2, recoverAfter);
 }
 
 // custom recovery
 func tryRecoverBefore(parser: Parser*, code: TokenCode)
 {
-	if (!isRecovering(parser))
-		return;
+    if (!isRecovering(parser))
+        return;
 
-//	TokenCode recoverBefore[] = { code };
-	var recoverBefore : FixedSizeArray<1, TokenCode>;
-	recoverBefore[0] = code;
+//  TokenCode recoverBefore[] = { code };
+    var recoverBefore : FixedSizeArray<1, TokenCode>;
+    recoverBefore[0] = code;
 
-	tryRecover(parser, 1, recoverBefore, 0, nullptr);
+    tryRecover(parser, 1, recoverBefore, 0, nullptr);
 }
 
 
 func advanceIf(
-	parser: Parser*,
-	expected: TokenCode)
-	-> ConstPtr<Token>
+    parser: Parser*,
+    expected: TokenCode)
+    -> ConstPtr<Token>
 {
-	if(peekTokenCode(parser) == expected)
-	{
-		return advanceToken(parser);
-	}
-	return 0;
+    if(peekTokenCode(parser) == expected)
+    {
+        return advanceToken(parser);
+    }
+    return 0;
 }
 
 func advanceIf(
     parser: Parser*,
-	expected: StringSpan)
-	-> ConstPtr<Token>
+    expected: StringSpan)
+    -> ConstPtr<Token>
 {
     switch(peekTokenCode(parser))
     {
@@ -322,85 +322,85 @@ func advanceIf(
 }
 
 func advanceIfFragment(
-	parser: Parser*,
-	expected: TokenCode)
-	-> ConstPtr<Token>
+    parser: Parser*,
+    expected: TokenCode)
+    -> ConstPtr<Token>
 {
-	if(peekTokenCode(parser) == expected)
-	{
-		return advanceFragment(parser);
-	}
-	return 0;
+    if(peekTokenCode(parser) == expected)
+    {
+        return advanceFragment(parser);
+    }
+    return 0;
 }
 
 func expect(
-	parser: Parser*,
-	expected: TokenCode)
-	-> ConstPtr<Token>
+    parser: Parser*,
+    expected: TokenCode)
+    -> ConstPtr<Token>
 {
-	if(let token = advanceIf(parser, expected))
-		return token;
+    if(let token = advanceIf(parser, expected))
+        return token;
 
-	unexpected(parser, expected);
-	return 0;
+    unexpected(parser, expected);
+    return 0;
 }
 
 func expectFragment(
-	parser: Parser*,
-	expected: TokenCode)
-	-> ConstPtr<Token>
+    parser: Parser*,
+    expected: TokenCode)
+    -> ConstPtr<Token>
 {
-	if(let token = advanceIfFragment(parser, expected))
-		return token;
+    if(let token = advanceIfFragment(parser, expected))
+        return token;
 
-	unexpected(parser, expected);
-	return 0;
+    unexpected(parser, expected);
+    return 0;
 }
 
 func expectIdentifier(
-	parser: Parser*)
-	-> Name*
+    parser: Parser*)
+    -> Name*
 {
-	if(let token = advanceIf(parser, kTokenCode_Identifier))
-	{
-		let name = cast<Ptr<Name> >(token.rawData);
-		return name;
-	}
-	else
-	{
-		unexpected(parser, kTokenCode_Identifier);
-		return 0;
-	}
+    if(let token = advanceIf(parser, kTokenCode_Identifier))
+    {
+        let name = cast<Ptr<Name> >(token.rawData);
+        return name;
+    }
+    else
+    {
+        unexpected(parser, kTokenCode_Identifier);
+        return 0;
+    }
 }
 
 
 func advanceIfEnd(
-	parser: Parser*,
-	expected: TokenCode)
-	-> ConstPtr<Token>
+    parser: Parser*,
+    expected: TokenCode)
+    -> ConstPtr<Token>
 {
-	if(isAtEnd(parser))
-	{
-		return expect(parser, expected);
-	}
+    if(isAtEnd(parser))
+    {
+        return expect(parser, expected);
+    }
 
-	// TODO: handle recovery
-	return advanceIf(parser, expected);
+    // TODO: handle recovery
+    return advanceIf(parser, expected);
 }
 
 func lookup(
-	parser: Parser*,
-	name: Name*)
-	-> LookupResult
+    parser: Parser*,
+    name: Name*)
+    -> LookupResult
 {
-	return lookup(parser.scope, name);
+    return lookup(parser.scope, name);
 }
 
 // If this indicates we have syntax, then
 // try to pick the right one...
 func getSyntaxDecl(
-	result: ConstRef<LookupResult>)
-	-> SyntaxDecl*
+    result: ConstRef<LookupResult>)
+    -> SyntaxDecl
 {
     foreach(item in UNCONST(result))
     {
@@ -416,21 +416,21 @@ func getSyntaxDecl(
 }
 
 func createNameExp(
-	parser: Parser*,
-	token: ConstPtr<Token>)
-	-> NameExp*
+    parser: Parser*,
+    token: ConstPtr<Token>)
+    -> NameExp
 {
-	let name = cast<Ptr<Name> >(token.rawData);
-	let exp = createObject<NameExp>();
-	exp.loc = token.getLoc();
-	exp.name = name;
-	exp.scope = parser.scope;
-	return exp;	
+    let name = cast<Ptr<Name> >(token.rawData);
+    let exp = createObject<NameExp>();
+    exp.loc = token.getLoc();
+    exp.name = name;
+    exp.scope = parser.scope;
+    return exp; 
 }
 
 func createErrorExp(
     parser: Parser*)
-	-> Exp*
+    -> Exp
 {
     let exp = createObject<ErrorExp>();
     exp.loc = peekLoc(parser);
@@ -438,7 +438,7 @@ func createErrorExp(
 }
 
 func parseArg(parser: Parser*)
--> Arg*
+-> Arg
 {
     let argExp = parseExp(parser);
     return createPositionalArg(parser, argExp);
@@ -446,7 +446,7 @@ func parseArg(parser: Parser*)
 
 func parseArgs(
     parser: Parser*)
-	-> SyntaxList<Arg>
+    -> SyntaxList<Arg>
 {
     var args: SyntaxListBuilder<Arg>;
     switch(peekTokenCode(parser))
@@ -483,12 +483,12 @@ func parseArgs(
 
         expect(parser, kTokenCode_Comma);
 
-		tryRecoverBefore(parser, kTokenCode_RParen);
+        tryRecoverBefore(parser, kTokenCode_RParen);
     }
 }
 
 func parseGenericArg(parser: Parser*)
-	-> Arg*
+    -> Arg
 {
     let flags = parser.flags; 
     parser.flags |= kParserFlag_InsideGenericClause;
@@ -499,7 +499,7 @@ func parseGenericArg(parser: Parser*)
 
 func parseGenericArgs(
     parser: Parser*)
-	-> SyntaxList<Arg> 
+    -> SyntaxList<Arg> 
 {
     var args: SyntaxListBuilder<Arg>;
     if(peekGenericClose(parser))
@@ -522,7 +522,7 @@ func parseGenericArgs(
 
 func peekGenericApp(
     inParser: Parser*)
-	-> Bool
+    -> Bool
 {
     // Save the parser state so we can rewind it!
     let parserImpl = *inParser;
@@ -544,8 +544,8 @@ func peekGenericApp(
         case kTokenCode_RParen:
         case kTokenCode_RSquare:
         case kTokenCode_RCurly:
-		case kTokenCode_Semi:
-			return false;
+        case kTokenCode_Semi:
+            return false;
 
         default:
             // TODO: handle the annoying case of
@@ -567,8 +567,8 @@ func peekGenericApp(
 
 func maybeParseGenericApp(
     parser: Parser*,
-	base: Exp*)
-	-> Exp*
+    base: Exp)
+    -> Exp
 {
     if(!peekGenericApp(parser))
         return base;
@@ -587,8 +587,8 @@ func maybeParseGenericApp(
 }
 
 func getIntegerLiteralVal(
-	token: ConstRef<Token>)
-	-> IntLitVal 
+    token: ConstRef<Token>)
+    -> IntLitVal 
 {
     let textBegin = cast<ConstPtr<Char> >(token.rawData);
     let textEnd = textBegin + token.rawSize;
@@ -631,8 +631,8 @@ func getIntegerLiteralVal(
 }
 
 func getStringLiteralVal(
-	token: ConstRef<Token>)
-	-> String
+    token: ConstRef<Token>)
+    -> String
 {
     let textBegin = cast<ConstPtr<Char> >(token.rawData);
     let textEnd = textBegin + token.rawSize;
@@ -641,7 +641,7 @@ func getStringLiteralVal(
 
     var cursor = textBegin;
 
-	var val : String;
+    var val : String;
 
     let delimeter = *cursor++;
     for(;;)
@@ -662,8 +662,8 @@ func getStringLiteralVal(
                 case 'n': val.append('\n'); break;
                 case 't': val.append('\t'); break;
                 case '\\': val.append('\\'); break;
-				case '\"': val.append('\"'); break;
-				case '\'': val.append('\''); break;
+                case '\"': val.append('\"'); break;
+                case '\'': val.append('\''); break;
 
                 default:
                     assert(!"unimplemented");
@@ -681,17 +681,45 @@ func getStringLiteralVal(
 }
 
 func parseAtomicExp(
-	parser: Parser*)
-	-> Exp*
+    parser: Parser*)
+    -> Exp
 {
-	switch(peekTokenCode(parser))
-	{
-	case kTokenCode_Identifier:
-		{
-			let nameToken = advanceToken(parser);
-			let exp = createNameExp(parser, nameToken);
+    switch(peekTokenCode(parser))
+    {
+    case kTokenCode_Identifier:
+        {
+            // An identifier might name a syntax decl
+            let loc = peekLoc(parser);
+            let name = cast<Ptr<Name> >(parser.token.rawData);
+            let result = lookup(parser, name);
+
+            if(let syntax = getSyntaxDecl(result))
+            {
+                if(isSubClass(syntax.syntaxClass, getClass<Exp>()))
+                {
+                    advanceToken(parser);
+
+                    let result = syntax.callback(parser);
+                    let resultExp = as<Exp>(result);
+
+                    // TODO: enforce validity
+
+                    resultExp.loc = loc;
+
+                    return resultExp;
+                }
+            }
+
+            // default case is to parse a name expression
+            let nameToken = advanceToken(parser);
+            let exp = createNameExp(parser, nameToken);
             return maybeParseGenericApp(parser, exp);
-		}
+        }
+        break;
+
+
+
+
 
     case kTokenCode_IntegerLiteral:
         {
@@ -728,76 +756,76 @@ func parseAtomicExp(
 
             // TODO: actual construct an identity expression here
 
-			let exp = createObject<ParenExp>();
-			exp.loc = open.getLoc();
-			exp.base = inner;
+            let exp = createObject<ParenExp>();
+            exp.loc = open.getLoc();
+            exp.base = inner;
 
             return exp;
         }
 
     default:
-		unexpected(parser);
+        unexpected(parser);
         return createErrorExp(parser);
-	}
+    }
 }
 
 func createPositionalArg(
-	parser: Parser*,
-	exp: Exp*)
-	-> Arg*
+    parser: Parser*,
+    exp: Exp)
+    -> Arg
 {
-	let arg = createObject<PositionalArg>();
-	arg.loc = exp.loc;
-	arg.exp = exp;
-	return arg;
+    let arg = createObject<PositionalArg>();
+    arg.loc = exp.loc;
+    arg.exp = exp;
+    return arg;
 }
 
 func createApp(
-	parser: Parser*,
-	exp: AppExpBase*,
-	op: ConstPtr<Token>,
-	argExp: Exp*)
-	-> AppExpBase*
+    parser: Parser*,
+    exp: AppExpBase,
+    op: ConstPtr<Token>,
+    argExp: Exp)
+    -> AppExpBase
 {
-	exp.loc = op.getLoc();
-	exp.base = createNameExp(parser, op);
+    exp.loc = op.getLoc();
+    exp.base = createNameExp(parser, op);
 
-	var args: SyntaxListBuilder<Arg>;
-	args.add(createPositionalArg(parser, argExp));
-	exp.args = args;
-	return exp;
+    var args: SyntaxListBuilder<Arg>;
+    args.add(createPositionalArg(parser, argExp));
+    exp.args = args;
+    return exp;
 }
 
 func createApp(
-	parser: Parser*,
-	exp: AppExpBase*,
-	op: ConstPtr<Token>,
-	argExp0: Exp*,
-	argExp1: Exp*)
-	-> AppExpBase*
+    parser: Parser*,
+    exp: AppExpBase,
+    op: ConstPtr<Token>,
+    argExp0: Exp,
+    argExp1: Exp)
+    -> AppExpBase
 {
-	exp.loc = op.getLoc();
-	exp.base = createNameExp(parser, op);
+    exp.loc = op.getLoc();
+    exp.base = createNameExp(parser, op);
 
-	var args: SyntaxListBuilder<Arg>;
-	args.add(createPositionalArg(parser, argExp0));
-	args.add(createPositionalArg(parser, argExp1));
-	exp.args = args;
-	return exp;
+    var args: SyntaxListBuilder<Arg>;
+    args.add(createPositionalArg(parser, argExp0));
+    args.add(createPositionalArg(parser, argExp1));
+    exp.args = args;
+    return exp;
 }
 
 func isInGenericClause(
     parser: Parser*)
-	-> Bool
+    -> Bool
 {
     return (parser.flags & kParserFlag_InsideGenericClause) != 0;
 }
 
 func parsePostfixExp(
-	parser: Parser*)
-	-> Exp*
+    parser: Parser*)
+    -> Exp
 {
-	var exp = parseAtomicExp(parser);
+    var exp = parseAtomicExp(parser);
     for(;;)
     {
         switch(peekTokenCode(parser))
@@ -841,9 +869,9 @@ func parsePostfixExp(
             }
             break;
 
-		case kTokenCode_Arrow:
-			diagnose(getSink(parser), peekLoc(parser), kDiagnostic_youMeanDot);
-		case kTokenCode_Dot:
+        case kTokenCode_Arrow:
+            diagnose(getSink(parser), peekLoc(parser), kDiagnostic_youMeanDot);
+        case kTokenCode_Dot:
             {
                 let dot = advanceToken(parser);
                 let memberName = expectIdentifier(parser);
@@ -853,7 +881,7 @@ func parsePostfixExp(
                 memberExp.base = exp;
                 memberExp.memberName = memberName;
 
-				exp = maybeParseGenericApp(parser, memberExp);
+                exp = maybeParseGenericApp(parser, memberExp);
             }
             break;
 
@@ -864,27 +892,27 @@ func parsePostfixExp(
 }
 
 func parsePrefixExp(
-	parser: Parser*)
-	-> Exp*
+    parser: Parser*)
+    -> Exp
 {
-	if(peekTokenCode(parser) == kTokenCode_PrefixOperator)
-	{
-		let op = advanceToken(parser);
-		let arg = parsePrefixExp(parser);
+    if(peekTokenCode(parser) == kTokenCode_PrefixOperator)
+    {
+        let op = advanceToken(parser);
+        let arg = parsePrefixExp(parser);
 
-		return createApp(parser, createObject<PrefixExp>(), op, arg);
-	}
-	else
-	{
-		return parsePostfixExp(parser);
-	}
+        return createApp(parser, createObject<PrefixExp>(), op, arg);
+    }
+    else
+    {
+        return parsePostfixExp(parser);
+    }
 }
 
 func parseInfixExp(
-	parser: Parser*)
-	-> Exp*
+    parser: Parser*)
+    -> Exp
 {
-	var left = parsePrefixExp(parser);
+    var left = parsePrefixExp(parser);
     for(;;)
     {
         switch(peekTokenCode(parser))
@@ -924,26 +952,26 @@ func parseInfixExp(
 }
 
 func parseExp(
-	parser: Parser*)
-	-> Exp*
+    parser: Parser*)
+    -> Exp
 {
-	return parseInfixExp(parser);
+    return parseInfixExp(parser);
 }
 
 func parseType(
-	parser: Parser*)
-	-> TypeExp
+    parser: Parser*)
+    -> TypeExp
 {
-	let exp = parsePostfixExp(parser);
+    let exp = parsePostfixExp(parser);
 
-	var typeExp : TypeExp;
-	typeExp.exp = exp;
-	return typeExp;
+    var typeExp : TypeExp;
+    typeExp.exp = exp;
+    return typeExp;
 }
 
 func parseDecl(
-	parser: Parser*)
-	-> Decl*
+    parser: Parser*)
+    -> Decl
 {
     var attrs: SyntaxListBuilder<Attr>;
 
@@ -1017,14 +1045,14 @@ func parseDecl(
 }
 
 func findOrImportModule(
-    session: Session*,
-	loc: SourceLoc,
-	name: Name*)
-	-> ModuleDecl*
+    session: Session,
+    loc: SourceLoc,
+    name: Name*)
+    -> ModuleDecl
 {
     // we need to find the damn module
 
-    for(var mm = session.loadedModules; mm; mm = cast<Ptr<ModuleDecl> >(mm.next))
+    for(var mm = session.loadedModules; mm; mm = cast<ModuleDecl>(mm.next))
     {
         if(mm.name == name)
         {
@@ -1036,8 +1064,12 @@ func findOrImportModule(
     
     let nameText = getText(name);
 
-	var path : FixedSizeArray<1024, Char>;
-    sprintf(path, "source/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
+    var path : FixedSizeArray<1024, Char>;
+    sprintf(path, "source/%.*s/%.*s.cog",
+        (int)(nameText.end - nameText.begin),
+        nameText.begin,
+        (int)(nameText.end - nameText.begin),
+        nameText.begin);
 
     let file: SourceFile* = getSourceFile(session, TerminatedStringSpan(path));
     if(!file)
@@ -1057,7 +1089,7 @@ func findOrImportModule(
     }
     if(!file)
     {
-	assert(!"unimplemented");
+    assert(!"unimplemented");
 //        throw 99;
     }
 
@@ -1080,68 +1112,68 @@ func findOrImportModule(
 }
 
 func parseDeclsInBody(
-	parser: Parser* )
-	-> SyntaxList<Decl> 
+    parser: Parser* )
+    -> SyntaxList<Decl> 
 {
     let savedScope = parser.scope;
 
-	var decls: SyntaxListBuilder<Decl>;
+    var decls: SyntaxListBuilder<Decl>;
     while(!isAtEnd(parser))
-	{
-		switch(peekTokenCode(parser))
-		{
-		case kTokenCode_RParen:
-		case kTokenCode_RCurly:
-		case kTokenCode_EndOfFile:
-			return decls;
+    {
+        switch(peekTokenCode(parser))
+        {
+        case kTokenCode_RParen:
+        case kTokenCode_RCurly:
+        case kTokenCode_EndOfFile:
+            return decls;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		let decl = parseDecl(parser);
-		if(decl)
-		{
+        let decl = parseDecl(parser);
+        if(decl)
+        {
             decl.parent = parser.scope.directLink.container;
             decls.add(decl);
 
-		}
+        }
 
         restoreScope(parser, savedScope);
 
-		tryRecover(parser);
-	}
+        tryRecover(parser);
+    }
     return decls;
 }
 
 func  parseDeclBody(
-	parser: Parser* )
-	-> SyntaxList<Decl> 
+    parser: Parser* )
+    -> SyntaxList<Decl> 
 {
-	expect(parser, kTokenCode_LCurly);
-	let decls = parseDeclsInBody(parser);
-	expect(parser, kTokenCode_RCurly);
-	return decls;
+    expect(parser, kTokenCode_LCurly);
+    let decls = parseDeclsInBody(parser);
+    expect(parser, kTokenCode_RCurly);
+    return decls;
 }
 
 func  parseDeclBody(
-	parser: Parser*,
-	decl: ContainerDecl*)
+    parser: Parser*,
+    decl: ContainerDecl)
 {
-	pushScope(parser, decl);
-	decl.getDecls() = parseDeclBody(parser);
+    pushScope(parser, decl);
+    decl.getDecls() = parseDeclBody(parser);
 
     foreach(dd in decl.getDecls())
     {
         dd.parent = decl;
     }
 
-	popScope(parser);
+    popScope(parser);
 }
 
 func  parseExpStmt(
     parser: Parser*)
-	-> Stmt*
+    -> Stmt
 {
     let exp = parseExp(parser);
     expect(parser, kTokenCode_Semi);
@@ -1149,41 +1181,48 @@ func  parseExpStmt(
 }
 
 func  parseStmt(
-	parser: Parser*)
-	-> Stmt*
+    parser: Parser*)
+    -> Stmt
 {
-	switch(peekTokenCode(parser))
-	{
-	case kTokenCode_Identifier:
-		{
-			// An identifier might name a declaration keyword
+    switch(peekTokenCode(parser))
+    {
+    case kTokenCode_Identifier:
+        {
+            // An identifier might name a declaration keyword
             let loc = peekLoc(parser);
             let name = cast<Ptr<Name> >(parser.token.rawData);
-			let result = lookup(parser, name);
+            let result = lookup(parser, name);
 
             if(let syntax = getSyntaxDecl(result))
             {
-                advanceToken(parser);
+                if(isSubClass(syntax.syntaxClass, getClass<Exp>()))
+                {
+                    // let expressions be handled below
+                }
+                else if(isSubClass(syntax.syntaxClass, getClass<Stmt>()))
+                {
+                    advanceToken(parser);
 
-                // TODO: also check that it defines a statement or declaration...
-                // (don't want to use this branch to parse an expression)
+                    // TODO: also check that it defines a statement or declaration...
+                    // (don't want to use this branch to parse an expression)
 
-                // now we need to parse using that decl
+                    // now we need to parse using that decl
 
-                let result = syntax.callback(parser);
-                let resultStmt = as<Stmt>(result);
+                    let result = syntax.callback(parser);
+                    let resultStmt = as<Stmt>(result);
 
-                // TODO: enforce validity
+                    // TODO: enforce validity
 
-                resultStmt.loc = loc;
+                    resultStmt.loc = loc;
 
-                return resultStmt;
+                    return resultStmt;                
+                }
             }
 
             // default case is to parse an expression statement
             return parseExpStmt(parser);
-		}
-		break;
+        }
+        break;
 
     case kTokenCode_LCurly:
         return parseStmtBody(parser);
@@ -1191,136 +1230,136 @@ func  parseStmt(
     case kTokenCode_PrefixOperator:
         return parseExpStmt(parser);
 
-	default:
-		// TODO: error
-		unexpected(parser);
-		return 0;
-	}
+    default:
+        // TODO: error
+        unexpected(parser);
+        return 0;
+    }
 }
 
 func parseStmtsInBody(
-	parser: Parser* )
-	-> SyntaxListBuilder<Stmt> 
+    parser: Parser* )
+    -> SyntaxListBuilder<Stmt> 
 {
-	var stmts: SyntaxListBuilder<Stmt>;
+    var stmts: SyntaxListBuilder<Stmt>;
     while(!isAtEnd(parser))
-	{
-		switch(peekTokenCode(parser))
-		{
-		case kTokenCode_RParen:
-		case kTokenCode_RCurly:
-		case kTokenCode_EndOfFile:
-			return stmts;
+    {
+        switch(peekTokenCode(parser))
+        {
+        case kTokenCode_RParen:
+        case kTokenCode_RCurly:
+        case kTokenCode_EndOfFile:
+            return stmts;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		let stmt = parseStmt(parser);
-		if(stmt)
-		{
-			stmts.add(stmt);
-		}
+        let stmt = parseStmt(parser);
+        if(stmt)
+        {
+            stmts.add(stmt);
+        }
 
-		tryRecover(parser);
-	}
+        tryRecover(parser);
+    }
     return stmts;
 }
 
 func parseStmtBody(
-	parser: Parser* )
-	-> Stmt*
+    parser: Parser* )
+    -> Stmt
 {
-	let stmt = createObject<BlockStmt>();
+    let stmt = createObject<BlockStmt>();
 
     pushScope(parser, stmt);
-	expect(parser, kTokenCode_LCurly);
-	let stmts = parseStmtsInBody(parser);
-	expect(parser, kTokenCode_RCurly);
+    expect(parser, kTokenCode_LCurly);
+    let stmts = parseStmtsInBody(parser);
+    expect(parser, kTokenCode_RCurly);
     popScope(parser);
 
-	stmt.stmts = stmts;
+    stmt.stmts = stmts;
 
-	return stmt;
+    return stmt;
 }
 
 func peekGenericClose(parser: Parser*) -> Bool
 {
-	switch(peekTokenCode(parser))
-	{
-	default:
-		// definitely not a generic close
-		return false;
+    switch(peekTokenCode(parser))
+    {
+    default:
+        // definitely not a generic close
+        return false;
 
-	case kTokenCode_InfixOperator:
-	case kTokenCode_PrefixOperator:
-	case kTokenCode_PostfixOperator:
-		break;
-	}
+    case kTokenCode_InfixOperator:
+    case kTokenCode_PrefixOperator:
+    case kTokenCode_PostfixOperator:
+        break;
+    }
 
-	let name = cast<Ptr<Name> >( parser.token.rawData );
-	let nameText = getText(name);
+    let name = cast<Ptr<Name> >( parser.token.rawData );
+    let nameText = getText(name);
 
-	// TODO: allow `>` to be just a prefix
-	if(nameText != TerminatedStringSpan(">"))
-		return false;
+    // TODO: allow `>` to be just a prefix
+    if(nameText != TerminatedStringSpan(">"))
+        return false;
 
-	return true;
+    return true;
 }
 
 func tryParseGenericClose(parser: Parser*) -> Bool
 {
-	if(!peekGenericClose(parser))
-		return false;
+    if(!peekGenericClose(parser))
+        return false;
 
-	// consume the `>`
-	advanceToken(parser);
-	return true;
+    // consume the `>`
+    advanceToken(parser);
+    return true;
 }
 
 func expectGenericClose(parser: Parser*)
 {
-	if(!tryParseGenericClose(parser))
-	{
-		// TODO: proper diagnostic
-		unexpected(parser);
-	}
+    if(!tryParseGenericClose(parser))
+    {
+        // TODO: proper diagnostic
+        unexpected(parser);
+    }
 }
 
-func parseGenericParam(parser: Parser*) -> Decl*
+func parseGenericParam(parser: Parser*) -> Decl
 {
-	let loc = peekLoc(parser);
-	let name = expectIdentifier(parser);
+    let loc = peekLoc(parser);
+    let name = expectIdentifier(parser);
 
-	// TODO: handle constraints
+    // TODO: handle constraints
 
-	let decl = createObject<GenericParamDecl>();
-	decl.loc = loc;
-	decl.name = name;
-	return decl;
+    let decl = createObject<GenericParamDecl>();
+    decl.loc = loc;
+    decl.name = name;
+    return decl;
 }
 
 func parseGenericParams(parser: Parser*, ioDecls: Ptr<SyntaxListBuilder<Decl> >)
 {
-	// TODO: should we keep references?
-	let decls : ConstRef<SyntaxListBuilder<Decl> > = *ioDecls;
+    // TODO: should we keep references?
+    let decls : ConstRef<SyntaxListBuilder<Decl> > = *ioDecls;
 
-	if(peekGenericClose(parser))
-		return;
+    if(peekGenericClose(parser))
+        return;
 
-	for(;;)
-	{
-		let decl = parseGenericParam(parser);
-		if(decl)
-		{
-			decls.add(decl);
-		}
+    for(;;)
+    {
+        let decl = parseGenericParam(parser);
+        if(decl)
+        {
+            decls.add(decl);
+        }
 
-		if(peekGenericClose(parser))
-			return;
+        if(peekGenericClose(parser))
+            return;
 
-		expect(parser, kTokenCode_Comma);
-	}
+        expect(parser, kTokenCode_Comma);
+    }
 }
 
 func tryParseGenericOpen(parser: Parser*) -> Bool
@@ -1329,7 +1368,7 @@ func tryParseGenericOpen(parser: Parser*) -> Bool
     {
     default:
         // definitely not a generic param list
-//		diagnose(getSink(parser), peekLoc(parser), kDiagnostic_notGeneric, "start");
+//      diagnose(getSink(parser), peekLoc(parser), kDiagnostic_notGeneric, "start");
         return false;
 
     case kTokenCode_InfixOperator:
@@ -1351,172 +1390,173 @@ func tryParseGenericOpen(parser: Parser*) -> Bool
     return true;
 }
 
-func maybeParseGenericParams(parser: Parser*,decl: Decl*) -> Decl*
+func maybeParseGenericParams(parser: Parser*,decl: Decl) -> Decl
 {
     if(!tryParseGenericOpen(parser))
         return decl;
 
 
-	let genericDecl = createObject<GenericDecl>();
+    let genericDecl = createObject<GenericDecl>();
 
-	var decls: SyntaxListBuilder<Decl>;
-	parseGenericParams(parser, &decls);
+    var decls: SyntaxListBuilder<Decl>;
+    parseGenericParams(parser, &decls);
 
-	genericDecl.name = decl.name;
-	genericDecl.getDecls() = decls;
-	genericDecl.inner = decl;
+    genericDecl.name = decl.name;
+    genericDecl.getDecls() = decls;
+    genericDecl.inner = decl;
 
     decl.parent = genericDecl;
 
     pushScope(parser, genericDecl);
 
-	expectGenericClose(parser);
-	return genericDecl;
+    expectGenericClose(parser);
+    return genericDecl;
 }
 
-func parseAggTypeDeclCommon(parser: Parser*, decl: AggTypeDecl*) -> Decl* 
+func parseAggTypeDeclCommon(parser: Parser*, decl: AggTypeDecl) -> Decl
 {
-	decl.name = expectIdentifier(parser);
+    decl.name = expectIdentifier(parser);
 
-	// generic args, if any
-	let result = maybeParseGenericParams(parser, decl);
+    // generic args, if any
+    let result = maybeParseGenericParams(parser, decl);
 
     // DEBUGGING
     if(result != decl)
     {
-        fprintf(stderr, "BEGIN PARSE GENERIC: %s\n", getText(decl.name).begin);
+//        fprintf(stderr, "BEGIN PARSE GENERIC: %s\n", getText(decl.name).begin);
     }
 
-	// inheritance clause
-	if(advanceIf(parser, kTokenCode_Colon))
-	{
-		decl.base = parseType(parser);
-	}
+    // inheritance clause
+    if(advanceIf(parser, kTokenCode_Colon))
+    {
+        decl.base = parseType(parser);
+    }
 
-	// body
-	parseDeclBody(parser, decl);
+    // body
+    parseDeclBody(parser, decl);
 
     if(result != decl)
     {
-        fprintf(stderr, "END PARSE GENERIC: %s\n", getText(decl.name).begin);
+//        fprintf(stderr, "END PARSE GENERIC: %s\n", getText(decl.name).begin);
     }
 
     return result;
 }
 
-func parseClassDecl(parser: Parser*) -> Syntax*
+func parseClassDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<ClassDecl>();
+    let decl = createObject<ClassDecl>();
     return parseAggTypeDeclCommon(parser, decl);
 }
 
-func parseStructDecl(parser: Parser*) -> Syntax*
+func parseStructDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<StructDecl>();
-	return parseAggTypeDeclCommon(parser, decl);
+    let decl = createObject<StructDecl>();
+    return parseAggTypeDeclCommon(parser, decl);
 }
 
 func parseEnumTags(parser: Parser*) -> SyntaxList<Decl>
 {
-	var decls: SyntaxListBuilder<Decl>;
-	for (;;)
-	{
-		switch (peekTokenCode(parser))
-		{
-		case kTokenCode_RCurly:
-		case kTokenCode_RParen:
-		case kTokenCode_EndOfFile:
-			return decls;
+    var decls: SyntaxListBuilder<Decl>;
+    for (;;)
+    {
+        switch (peekTokenCode(parser))
+        {
+        case kTokenCode_RCurly:
+        case kTokenCode_RParen:
+        case kTokenCode_EndOfFile:
+            return decls;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		// parse one tag
-		let tag = createObject<EnumTagDecl>();
-		tag.name = expectIdentifier(parser);
-		if (advanceIf(parser, kTokenCode_Assign))
-		{
-			tag.init = parseExp(parser);
-		}
+        // parse one tag
+        let tag = createObject<EnumTagDecl>();
+        tag.name = expectIdentifier(parser);
+        if (advanceIf(parser, kTokenCode_Assign))
+        {
+            tag.init = parseExp(parser);
+        }
 
-		decls.add(tag);
+        decls.add(tag);
 
-		switch (peekTokenCode(parser))
-		{
-		case kTokenCode_RCurly:
-		case kTokenCode_RParen:
-		case kTokenCode_EndOfFile:
-			return decls;
+        switch (peekTokenCode(parser))
+        {
+        case kTokenCode_RCurly:
+        case kTokenCode_RParen:
+        case kTokenCode_EndOfFile:
+            return decls;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		expect(parser, kTokenCode_Comma);
-	}
+        expect(parser, kTokenCode_Comma);
+    }
 }
 
-func parseEnumDecl(parser: Parser*) -> Syntax*
+func parseEnumDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<EnumDecl>();
+    let decl = createObject<EnumDecl>();
 
-	decl.name = expectIdentifier(parser);
+    decl.name = expectIdentifier(parser);
 
-	// generic args, if any
-	let result = maybeParseGenericParams(parser, decl);
+    // generic args, if any
+    let result = maybeParseGenericParams(parser, decl);
 
-	// TODO: have an enum be a general-purpose type declaration...
+    // TODO: have an enum be a general-purpose type declaration...
 
-	if (advanceIf(parser, kTokenCode_Colon))
-	{
-		decl.base = parseType(parser);
-	}
+    if (advanceIf(parser, kTokenCode_Colon))
+    {
+        decl.base = parseType(parser);
+    }
 
-	expect(parser, kTokenCode_LCurly);
-	let decls = parseEnumTags(parser);
-	expect(parser, kTokenCode_RCurly);
+    expect(parser, kTokenCode_LCurly);
+    let decls = parseEnumTags(parser);
+    expect(parser, kTokenCode_RCurly);
 
-	decl.stmts = decls.head;
+    decl.stmts = decls.head;
 
-	return result;
+    return result;
 }
 
-func parseImportDecl(parser: Parser*) -> Syntax*
+func parseImportDecl(parser: Parser*) -> Syntax
 {
     let decl = createObject<ImportDecl>();
+    decl.scope = parser.scope;
     decl.name = expectIdentifier(parser);
     expect(parser, kTokenCode_Semi);
     return decl;
 }
 
 
-func parseVarDeclCommon(parser: Parser*, decl: VarDeclBase*)
+func parseVarDeclCommon(parser: Parser*, decl: VarDeclBase)
 {
-	decl.name = expectIdentifier(parser);
+    decl.name = expectIdentifier(parser);
 
-	// type clause
-	if(advanceIf(parser, kTokenCode_Colon))
-	{
-		decl.type = parseType(parser);
-	}
+    // type clause
+    if(advanceIf(parser, kTokenCode_Colon))
+    {
+        decl.type = parseType(parser);
+    }
 
-	// init clause
-	if(advanceIf(parser, kTokenCode_Assign))
-	{
-		decl.init = parseExp(parser);
-	}
+    // init clause
+    if(advanceIf(parser, kTokenCode_Assign))
+    {
+        decl.init = parseExp(parser);
+    }
 }
 
-func parseVarDecl(parser: Parser*) -> Syntax*
+func parseVarDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<VarDecl>();
-	parseVarDeclCommon(parser, decl);
-	expect(parser, kTokenCode_Semi);
-	return decl;
+    let decl = createObject<VarDecl>();
+    parseVarDeclCommon(parser, decl);
+    expect(parser, kTokenCode_Semi);
+    return decl;
 }
 
-func parseLetDecl(parser: Parser*) -> Syntax*
+func parseLetDecl(parser: Parser*) -> Syntax
 {
     let decl = createObject<LetDecl>();
     parseVarDeclCommon(parser, decl);
@@ -1524,88 +1564,88 @@ func parseLetDecl(parser: Parser*) -> Syntax*
     return decl;
 }
 
-func parseTypeVarDeclSuffixCommon(parser: Parser*, decl: TypeVarDecl*)
+func parseTypeVarDeclSuffixCommon(parser: Parser*, decl: TypeVarDecl)
 {
-	// constraint clause
-	if(advanceIf(parser, kTokenCode_Colon))
-	{
-		decl.bound = parseType(parser);
-	}
+    // constraint clause
+    if(advanceIf(parser, kTokenCode_Colon))
+    {
+        decl.bound = parseType(parser);
+    }
 
-	// init clause
-	if(advanceIf(parser, kTokenCode_Assign))
-	{
-		decl.init = parseType(parser);
-	}
+    // init clause
+    if(advanceIf(parser, kTokenCode_Assign))
+    {
+        decl.init = parseType(parser);
+    }
 }
 
-func parseTypeVarDeclCommon(parser: Parser*, decl: TypeVarDecl*)
+func parseTypeVarDeclCommon(parser: Parser*, decl: TypeVarDecl)
 {
-	decl.name = expectIdentifier(parser);
-	parseTypeVarDeclSuffixCommon(parser, decl);
+    decl.name = expectIdentifier(parser);
+    parseTypeVarDeclSuffixCommon(parser, decl);
 }
 
 func expectOperatorOrIdentifier(parser: Parser*) -> Name*
 {
-	switch(peekTokenCode(parser))
-	{
-	default:
-		return expectIdentifier(parser);
+    switch(peekTokenCode(parser))
+    {
+    default:
+        return expectIdentifier(parser);
 
-	case kTokenCode_Identifier:
-	case kTokenCode_InfixOperator:
-	case kTokenCode_PrefixOperator:
-	case kTokenCode_PostfixOperator:
-		return cast<Ptr<Name> >(advanceToken(parser).rawData);
-	}
+    case kTokenCode_Identifier:
+    case kTokenCode_InfixOperator:
+    case kTokenCode_PrefixOperator:
+    case kTokenCode_PostfixOperator:
+        return cast<Ptr<Name> >(advanceToken(parser).rawData);
+    }
 }
 
-func parseTypeAliasDecl(parser: Parser*) -> Syntax*
+func parseTypeAliasDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<TypeAliasDecl>();
+    let decl = createObject<TypeAliasDecl>();
 
-	decl.name = expectOperatorOrIdentifier(parser);
-	let result = maybeParseGenericParams(parser, decl);
+    decl.name = expectOperatorOrIdentifier(parser);
+    let result = maybeParseGenericParams(parser, decl);
 
-	parseTypeVarDeclSuffixCommon(parser, decl);
-	expect(parser, kTokenCode_Semi);
-	return result;
+    parseTypeVarDeclSuffixCommon(parser, decl);
+    expect(parser, kTokenCode_Semi);
+    return result;
 }
 
-func parseIfStmt(parser: Parser*) -> Syntax*
+func parseIfStmt(parser: Parser*) -> Syntax
 {
     expect(parser, kTokenCode_LParen);
 
-	// special case `if(let ...)` for now
-	if (advanceIf(parser, TerminatedStringSpan("let")))
-	{
-		let stmt = createObject<IfLetStmt>();
-		stmt.name = expectIdentifier(parser);
-		expect(parser, kTokenCode_Assign);
-		stmt.init = parseExp(parser);
-		expect(parser, kTokenCode_RParen);
-		stmt.thenStmt = parseStmt(parser);
-		if (advanceIf(parser, TerminatedStringSpan("else")))
-		{
-			stmt.elseStmt = parseStmt(parser);
-		}
-		return stmt;
-	}
-	else
-	{
-		let stmt = createObject<IfStmt>();
-		stmt.condition = parseExp(parser);
-		expect(parser, kTokenCode_RParen);
-		stmt.thenStmt = parseStmt(parser);
-		if (advanceIf(parser, TerminatedStringSpan("else")))
-		{
-			stmt.elseStmt = parseStmt(parser);
-		}
-		return stmt;
-	}
+    // special case `if(let ...)` for now
+    if (advanceIf(parser, TerminatedStringSpan("let")))
+    {
+        let stmt = createObject<IfLetStmt>();
+        stmt.name = expectIdentifier(parser);
+        expect(parser, kTokenCode_Assign);
+        stmt.init = parseExp(parser);
+        expect(parser, kTokenCode_RParen);
+        stmt.thenStmt = parseStmt(parser);
+        if (advanceIf(parser, TerminatedStringSpan("else")))
+        {
+            stmt.elseStmt = parseStmt(parser);
+        }
+        return stmt;
+    }
+    else
+    {
+        let stmt = createObject<IfStmt>();
+        stmt.condition = parseExp(parser);
+        expect(parser, kTokenCode_RParen);
+        stmt.thenStmt = parseStmt(parser);
+        if (advanceIf(parser, TerminatedStringSpan("else")))
+        {
+            stmt.elseStmt = parseStmt(parser);
+        }
+        return stmt;
+    }
 }
 
-func parseWhileStmt(parser: Parser*) -> Syntax*
+func parseWhileStmt(parser: Parser*) -> Syntax
 {
     let stmt = createObject<WhileStmt>();
     expect(parser, kTokenCode_LParen);
@@ -1615,148 +1655,148 @@ func parseWhileStmt(parser: Parser*) -> Syntax*
     return stmt;
 }
 
-func parseForStmt(parser: Parser*) -> Syntax*
+func parseForStmt(parser: Parser*) -> Syntax
 {
-	let stmt = createObject<ForStmt>();
-	expect(parser, kTokenCode_LParen);
+    let stmt = createObject<ForStmt>();
+    expect(parser, kTokenCode_LParen);
 
-	// initialization clause
-	switch (peekTokenCode(parser))
-	{
-	case kTokenCode_Semi:
-		advanceToken(parser);
-		break;
+    // initialization clause
+    switch (peekTokenCode(parser))
+    {
+    case kTokenCode_Semi:
+        advanceToken(parser);
+        break;
 
-	default:
-		// HACK: accept *any* statement, even if it doesn't make sense
-		stmt.init = parseStmt(parser);
-		break;
-	}
+    default:
+        // HACK: accept *any* statement, even if it doesn't make sense
+        stmt.init = parseStmt(parser);
+        break;
+    }
 
-	// condition clause
-	switch (peekTokenCode(parser))
-	{
-	case kTokenCode_Semi:
-		advanceToken(parser);
-		break;
+    // condition clause
+    switch (peekTokenCode(parser))
+    {
+    case kTokenCode_Semi:
+        advanceToken(parser);
+        break;
 
-		// TODO: handle a declaration keyword here!!!
+        // TODO: handle a declaration keyword here!!!
 
-	default:
-		stmt.condition = parseExp(parser);
-		expect(parser, kTokenCode_Semi);
-		break;
-	}
+    default:
+        stmt.condition = parseExp(parser);
+        expect(parser, kTokenCode_Semi);
+        break;
+    }
 
-	// iteration clause
-	switch (peekTokenCode(parser))
-	{
-	case kTokenCode_RParen:
-		break;
+    // iteration clause
+    switch (peekTokenCode(parser))
+    {
+    case kTokenCode_RParen:
+        break;
 
-	default:
-		stmt.iter = parseExp(parser);
-		break;
-	}
+    default:
+        stmt.iter = parseExp(parser);
+        break;
+    }
 
-	expect(parser, kTokenCode_RParen);
-	stmt.body = parseStmt(parser);
-	return stmt;
+    expect(parser, kTokenCode_RParen);
+    stmt.body = parseStmt(parser);
+    return stmt;
 }
 
-func parseForEachStmt(parser: Parser*) -> Syntax*
+func parseForEachStmt(parser: Parser*) -> Syntax
 {
-	let stmt = createObject<ForEachStmt>();
-	expect(parser, kTokenCode_LParen);
+    let stmt = createObject<ForEachStmt>();
+    expect(parser, kTokenCode_LParen);
 
-	stmt.name = expectIdentifier(parser);
+    stmt.name = expectIdentifier(parser);
 
-	if (!advanceIf(parser, TerminatedStringSpan("in")))
-	{
-		expect(parser, kTokenCode_Colon);
-	}
+    if (!advanceIf(parser, TerminatedStringSpan("in")))
+    {
+        expect(parser, kTokenCode_Colon);
+    }
 
-	stmt.exp = parseExp(parser);
+    stmt.exp = parseExp(parser);
 
-	expect(parser, kTokenCode_RParen);
-	stmt.body = parseStmt(parser);
-	return stmt;
+    expect(parser, kTokenCode_RParen);
+    stmt.body = parseStmt(parser);
+    return stmt;
 }
 
-func parseSwitchStmt(parser: Parser*) -> Syntax*
+func parseSwitchStmt(parser: Parser*) -> Syntax
 {
-	let stmt = createObject<SwitchStmt>();
-	expect(parser, kTokenCode_LParen);
-	stmt.condition = parseExp(parser);
-	expect(parser, kTokenCode_RParen);
+    let stmt = createObject<SwitchStmt>();
+    expect(parser, kTokenCode_LParen);
+    stmt.condition = parseExp(parser);
+    expect(parser, kTokenCode_RParen);
 
-	expect(parser, kTokenCode_LCurly);
+    expect(parser, kTokenCode_LCurly);
 
-	var caseLink = &stmt.cases;
+    var caseLink = &stmt.cases;
 
-	for (;;)
-	{
-		switch (peekTokenCode(parser))
-		{
-		case kTokenCode_RCurly:
-		case kTokenCode_RParen:
-		case kTokenCode_EndOfFile:
-			expect(parser, kTokenCode_RCurly);
-			return stmt;
-		
-		default:
-			break;
-		}
+    for (;;)
+    {
+        switch (peekTokenCode(parser))
+        {
+        case kTokenCode_RCurly:
+        case kTokenCode_RParen:
+        case kTokenCode_EndOfFile:
+            expect(parser, kTokenCode_RCurly);
+            return stmt;
+        
+        default:
+            break;
+        }
 
-		let caseStart = peekLoc(parser);
-		let c = createObject<SwitchCase>();
-		c.loc = caseStart;
+        let caseStart = peekLoc(parser);
+        let c = createObject<SwitchCase>();
+        c.loc = caseStart;
 
-		var valueLink = &c.values;
+        var valueLink = &c.values;
 
-		// parse cases...
-		for (;;)
-		{
-			var arg : Arg* = nullptr;
-			if (advanceIf(parser, TerminatedStringSpan("case")))
-			{
-				arg = createObject<Arg>();
-				arg.exp = parseExp(parser);
-				expect(parser, kTokenCode_Colon);
-			}
-			else if (advanceIf(parser, TerminatedStringSpan("default")))
-			{
-				arg = createObject<Arg>();
-				arg.exp = nullptr;
-				expect(parser, kTokenCode_Colon);
-			}
-			else
-			{
-				// done with cases, I guess
-				break;
-			}
+        // parse cases...
+        for (;;)
+        {
+            var arg : Arg = nullptr;
+            if (advanceIf(parser, TerminatedStringSpan("case")))
+            {
+                arg = createObject<Arg>();
+                arg.exp = parseExp(parser);
+                expect(parser, kTokenCode_Colon);
+            }
+            else if (advanceIf(parser, TerminatedStringSpan("default")))
+            {
+                arg = createObject<Arg>();
+                arg.exp = nullptr;
+                expect(parser, kTokenCode_Colon);
+            }
+            else
+            {
+                // done with cases, I guess
+                break;
+            }
 
-			*valueLink = arg;
-			valueLink = &arg.next;
-		}
+            *valueLink = arg;
+            valueLink = &arg.next;
+        }
 
-		if (!*valueLink)
-		{
-			// there was nothing to match!!!
-			// TODO: diagnose!
-		}
+        if (!*valueLink)
+        {
+            // there was nothing to match!!!
+            // TODO: diagnose!
+        }
 
-		// TODO: need to handle stmts until we see another `case` or `default`...
-		c.body = parseStmt(parser);
+        // TODO: need to handle stmts until we see another `case` or `default`...
+        c.body = parseStmt(parser);
 
-		*caseLink = c;
-		caseLink = &c.next;
+        *caseLink = c;
+        caseLink = &c.next;
 
-		tryRecover(parser);
-	}
+        tryRecover(parser);
+    }
 }
 
-func parseReturnStmt(parser: Parser*) -> Syntax*
+func parseReturnStmt(parser: Parser*) -> Syntax
 {
     let stmt = createObject<ReturnStmt>();
     if(peekTokenCode(parser) != kTokenCode_Semi)
@@ -1767,21 +1807,21 @@ func parseReturnStmt(parser: Parser*) -> Syntax*
     return stmt;
 }
 
-func parseBreakStmt(parser: Parser*) -> Syntax*
+func parseBreakStmt(parser: Parser*) -> Syntax
 {
     let stmt = createObject<BreakStmt>();
     expect(parser, kTokenCode_Semi);
     return stmt;
 }
 
-func parseContinueStmt(parser: Parser*) -> Syntax*
+func parseContinueStmt(parser: Parser*) -> Syntax
 {
     let stmt = createObject<ContinueStmt>();
     expect(parser, kTokenCode_Semi);
     return stmt;
 }
 
-func parseBuiltinAttr(parser: Parser*) -> Syntax*
+func parseBuiltinAttr(parser: Parser*) -> Syntax
 {
     let attr = createObject<BuiltinAttr>();
     expect(parser, kTokenCode_LParen);
@@ -1790,100 +1830,100 @@ func parseBuiltinAttr(parser: Parser*) -> Syntax*
     return attr;
 }
 
-func parseParam(parser: Parser*) -> ParamDecl*
+func parseParam(parser: Parser*) -> ParamDecl
 {
-	let decl = createObject<ParamDecl>();
-	parseVarDeclCommon(parser, decl);
-	return decl;
+    let decl = createObject<ParamDecl>();
+    parseVarDeclCommon(parser, decl);
+    return decl;
 }
 
-func parseParams(parser: Parser*, decl: ContainerDecl*)
+func parseParams(parser: Parser*, decl: ContainerDecl)
 {
-	var params: SyntaxListBuilder<Decl>;
+    var params: SyntaxListBuilder<Decl>;
 
-	switch(peekTokenCode(parser))
-	{
-	case kTokenCode_RCurly:
-	case kTokenCode_RParen:
-	case kTokenCode_EndOfFile:
-		return;
+    switch(peekTokenCode(parser))
+    {
+    case kTokenCode_RCurly:
+    case kTokenCode_RParen:
+    case kTokenCode_EndOfFile:
+        return;
 
-	default:
-		break;
-	}
+    default:
+        break;
+    }
 
 
-	for(;;)
-	{
-		let param = parseParam(parser);
-		if(param)
-		{
-			params.add(param);
-		}
+    for(;;)
+    {
+        let param = parseParam(parser);
+        if(param)
+        {
+            params.add(param);
+        }
 
-		tryRecover(parser);
+        tryRecover(parser);
 
-		switch(peekTokenCode(parser))
-		{
-		case kTokenCode_RCurly:
-		case kTokenCode_RParen:
-		case kTokenCode_EndOfFile:
-			{
-				decl.getDecls() = params;
-			}
-			return;
+        switch(peekTokenCode(parser))
+        {
+        case kTokenCode_RCurly:
+        case kTokenCode_RParen:
+        case kTokenCode_EndOfFile:
+            {
+                decl.getDecls() = params;
+            }
+            return;
 
-		default:
-			break;
-		}
+        default:
+            break;
+        }
 
-		expect(parser, kTokenCode_Comma);
+        expect(parser, kTokenCode_Comma);
 
-	}
+    }
 
-	decl.getDecls() = params;
+    decl.getDecls() = params;
 }
 
 
 
-func parseFuncDecl(parser: Parser*) -> Syntax*
+func parseFuncDecl(parser: Parser*) -> Syntax
 {
-	let decl = createObject<FuncDecl>();
+    let decl = createObject<FuncDecl>();
     decl.loc = peekLoc(parser);
 
-	decl.name = expectOperatorOrIdentifier(parser);
+    decl.name = expectOperatorOrIdentifier(parser);
 
     // generic args, if any
     let result = maybeParseGenericParams(parser, decl);
 
     pushScope(parser, decl);
 
-	if(expect(parser, kTokenCode_LParen))
-	{
-		parseParams(parser, decl);
-	}
-	expect(parser, kTokenCode_RParen);
+    if(expect(parser, kTokenCode_LParen))
+    {
+        parseParams(parser, decl);
+    }
+    expect(parser, kTokenCode_RParen);
 
-	if(advanceIf(parser, kTokenCode_Arrow))
-	{
-		decl.resultType = parseType(parser);
-	}
+    if(advanceIf(parser, kTokenCode_Arrow))
+    {
+        decl.resultType = parseType(parser);
+    }
 
-	if(peekTokenCode(parser, kTokenCode_LCurly))
-	{
-		decl.body = parseStmtBody(parser);
-	}
-	else
-	{
-		expect(parser, kTokenCode_Semi);
-	}
+    if(peekTokenCode(parser, kTokenCode_LCurly))
+    {
+        decl.body = parseStmtBody(parser);
+    }
+    else
+    {
+        expect(parser, kTokenCode_Semi);
+    }
 
     popScope(parser);
 
-	return result;
+    return result;
 }
 
-func parseSubscriptDecl(parser: Parser*) -> Syntax*
+func parseSubscriptDecl(parser: Parser*) -> Syntax
 {
     let decl = createObject<SubscriptDecl>();
 
@@ -1914,7 +1954,7 @@ func parseSubscriptDecl(parser: Parser*) -> Syntax*
     return decl;
 }
 
-func parseInitializerDecl(parser: Parser*) -> Syntax*
+func parseInitializerDecl(parser: Parser*) -> Syntax
 {
     let decl = createObject<InitializerDecl>();
 
@@ -1946,33 +1986,55 @@ func parseInitializerDecl(parser: Parser*) -> Syntax*
     return decl;
 }
 
-func createSyntaxDecl(
-	session: Session*,
-	name: ConstPtr<Char>,
-	callback: SyntaxCallback,
-	syntaxClass: Class*)
-	-> SyntaxDecl*
+func parseThisExpr(parser: Parser*) -> Syntax
 {
-	let syntaxDecl = createObject<SyntaxDecl>();
-	syntaxDecl.name = getName(session, UNCONST(name));
+    let expr = createObject<ThisExpr>();
+    expr.scope = parser.scope;
+    return expr;
+}
+
+func parseCastExpr(parser: Parser*) -> Syntax
+{
+    tryParseGenericOpen(parser);
+    let args = parseGenericArgs(parser);
+    expectGenericClose(parser);
+
+    let expr = createObject<CastExpr>();
+    expr.toType.exp = args.head.exp;
+    expect(parser, kTokenCode_LParen);
+    expr.arg = parseExp(parser);
+    expect(parser, kTokenCode_RParen);
+
+    return expr;
+}
+
+func createSyntaxDecl(
+    session: Session,
+    name: ConstPtr<Char>,
+    callback: SyntaxCallback,
+    syntaxClass: Class*)
+    -> SyntaxDecl
+{
+    let syntaxDecl = createObject<SyntaxDecl>();
+    syntaxDecl.name = getName(session, UNCONST(name));
     syntaxDecl.syntaxClass = syntaxClass;
-	syntaxDecl.callback = callback;
-	return syntaxDecl;
+    syntaxDecl.callback = callback;
+    return syntaxDecl;
 }
 
 func createSyntaxDecl<T>(
-	session: Session*,
-	name: ConstPtr<Char>,
-	callback: SyntaxCallback)
-	-> SyntaxDecl*
+    session: Session,
+    name: ConstPtr<Char>,
+    callback: SyntaxCallback)
+    -> SyntaxDecl
 {
     return createSyntaxDecl(session, name, callback, getClass<T>());
 }
 
 func parseFileIntoModule(
-    session: Session*,
+    session: Session,
     file: SourceFile*,
-    moduleDecl: ModuleDecl*)
+    moduleDecl: ModuleDecl)
 {
     var parser: Parser;
     initializeParser(&parser, session, file);
@@ -1981,18 +2043,18 @@ func parseFileIntoModule(
     var moduleDeclList: SyntaxListBuilder<Decl>;
     moduleDeclList.head = moduleDecl.getDecls().head;
 
-	// TODO: support ?:
+    // TODO: support ?:
     //moduleDeclList.link = moduleDeclList.head ? session.moduleDeclLink : &moduleDeclList.head;
-	if(moduleDeclList.head)
-	{
-	    moduleDeclList.link = cast<Ptr<Ptr<Decl> > >(session.moduleDeclLink);
-	}
-	else
-	{
-	    moduleDeclList.link = &moduleDeclList.head;
-	}
+    if(moduleDeclList.head)
+    {
+        moduleDeclList.link = cast<Ptr<Decl> >(session.moduleDeclLink);
+    }
+    else
+    {
+        moduleDeclList.link = &moduleDeclList.head;
+    }
 
-    //	parser.stmtList = &moduleDeclList;
+    //  parser.stmtList = &moduleDeclList;
 
     // set up super-global scope
 
@@ -2003,8 +2065,8 @@ func parseFileIntoModule(
     globalDecls.add(createSyntaxDecl<Decl>(session, "import", &parseImportDecl));
     globalDecls.add(createSyntaxDecl<Decl>(session, "class", &parseClassDecl));
     globalDecls.add(createSyntaxDecl<Decl>(session, "struct", &parseStructDecl));
-	globalDecls.add(createSyntaxDecl<Decl>(session, "enum", &parseEnumDecl));
-	globalDecls.add(createSyntaxDecl<Decl>(session, "var", &parseVarDecl));
+    globalDecls.add(createSyntaxDecl<Decl>(session, "enum", &parseEnumDecl));
+    globalDecls.add(createSyntaxDecl<Decl>(session, "var", &parseVarDecl));
     globalDecls.add(createSyntaxDecl<Decl>(session, "let", &parseLetDecl));
     globalDecls.add(createSyntaxDecl<Decl>(session, "func", &parseFuncDecl));
     globalDecls.add(createSyntaxDecl<Decl>(session, "subscript", &parseSubscriptDecl));
@@ -2012,13 +2074,16 @@ func parseFileIntoModule(
     globalDecls.add(createSyntaxDecl<Decl>(session, "typealias", &parseTypeAliasDecl));
     globalDecls.add(createSyntaxDecl<Stmt>(session, "if", &parseIfStmt));
     globalDecls.add(createSyntaxDecl<Stmt>(session, "while", &parseWhileStmt));
-	globalDecls.add(createSyntaxDecl<Stmt>(session, "for", &parseForStmt));
-	globalDecls.add(createSyntaxDecl<Stmt>(session, "foreach", &parseForEachStmt));
-	globalDecls.add(createSyntaxDecl<Stmt>(session, "return", &parseReturnStmt));
+    globalDecls.add(createSyntaxDecl<Stmt>(session, "for", &parseForStmt));
+    globalDecls.add(createSyntaxDecl<Stmt>(session, "foreach", &parseForEachStmt));
+    globalDecls.add(createSyntaxDecl<Stmt>(session, "return", &parseReturnStmt));
     globalDecls.add(createSyntaxDecl<Stmt>(session, "break", &parseBreakStmt));
     globalDecls.add(createSyntaxDecl<Stmt>(session, "continue", &parseContinueStmt));
-	globalDecls.add(createSyntaxDecl<Stmt>(session, "switch", &parseSwitchStmt));
-	globalDecls.add(createSyntaxDecl<Attr>(session, "@__builtin", &parseBuiltinAttr));
+    globalDecls.add(createSyntaxDecl<Stmt>(session, "switch", &parseSwitchStmt));
+    globalDecls.add(createSyntaxDecl<Attr>(session, "@__builtin", &parseBuiltinAttr));
+
+    globalDecls.add(createSyntaxDecl<Exp>(session, "this", &parseThisExpr));
+    globalDecls.add(createSyntaxDecl<Exp>(session, "cast", &parseCastExpr));
 
     globals.getDecls() = globalDecls;
 
@@ -2048,20 +2113,20 @@ func parseFileIntoModule(
 }
 
 func parseFile(
-	session: Session*,
-	file: SourceFile*)
+    session: Session,
+    file: SourceFile*)
 {
 //    fprintf(stderr, "PARSING\n");
 
-	// set up module if needed
-	var moduleDecl = session.moduleDecl;
-	if(!moduleDecl)
-	{
-		moduleDecl = createObject<ModuleDecl>();
+    // set up module if needed
+    var moduleDecl = session.moduleDecl;
+    if(!moduleDecl)
+    {
+        moduleDecl = createObject<ModuleDecl>();
         moduleDecl.name = getModuleName(session);
-		session.moduleDecl = moduleDecl;
-		session.moduleDeclLink = &moduleDecl.getDecls().head;
-	}
+        session.moduleDecl = moduleDecl;
+        session.moduleDeclLink = &moduleDecl.getDecls().head;
+    }
 
     parseFileIntoModule(session, file, moduleDecl);
 }

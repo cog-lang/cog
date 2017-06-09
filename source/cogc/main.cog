@@ -1,13 +1,13 @@
 // main.cog
 
-import theta;
+import cog;
 
 func B(a: A);
 
 struct A {}
 
 func parseCommandLine(
-	session: Ptr<Session>,
+	session: Session,
 	ioArgc: Ptr<Int>,
 	argv: Ptr<Ptr<Char> >)
 {
@@ -106,7 +106,7 @@ func parseCommandLine(
 
 func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
 {
-	let session : Ptr<Session> = createSession();
+	let session = createSession();
 
 	parseCommandLine(session, &argc, argv);
 
