@@ -3,6 +3,7 @@
 struct TypeExp
 {
 	var exp : Ptr<Exp>;
+	var type : Ptr<Type>;
 
 	/*
 	operator Exp*()

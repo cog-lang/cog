@@ -1406,7 +1406,7 @@ Decl* parseAggTypeDeclCommon(Parser* parser, AggTypeDecl* decl)
     // DEBUGGING
     if(result != decl)
     {
-        fprintf(stderr, "BEGIN PARSE GENERIC: %s\n", getText(decl->name).begin);
+//        fprintf(stderr, "BEGIN PARSE GENERIC: %s\n", getText(decl->name).begin);
     }
 
 	// inheritance clause
@@ -1420,7 +1420,7 @@ Decl* parseAggTypeDeclCommon(Parser* parser, AggTypeDecl* decl)
 
     if(result != decl)
     {
-        fprintf(stderr, "END PARSE GENERIC: %s\n", getText(decl->name).begin);
+//        fprintf(stderr, "END PARSE GENERIC: %s\n", getText(decl->name).begin);
     }
 
     return result;
@@ -2071,7 +2071,7 @@ void parseFile(
 	Session*	session,
 	SourceFile*	file)
 {
-    fprintf(stderr, "PARSING\n");
+//    fprintf(stderr, "PARSING\n");
 
 	// set up module if needed
 	ModuleDecl* moduleDecl = session->moduleDecl;

@@ -211,17 +211,37 @@ func diagnoseImpl(
 	argCount: int,
 	args: Ptr<Ptr<DiagnosticArg> >)
 {
+//	DiagnosticInfo const& info = kDiagnostics[id];
+
+	let expandedLoc = expandLoc(sink.session, loc);
+
+	let severity = kSeverity_Error;
+
+	fprintf(stderr, "%s(%ld,%ld): %s: ",
+			expandedLoc.file.begin,
+			expandedLoc.line,
+			expandedLoc.column,
+			"error" // kSeverityNames[severity]
+			);
+
+	fprintf(stderr, "\n");
+
+    if(severity >= kSeverity_Error)
+    {
+        sink.errorCount++;
+        if(severity >= kSeverity_Fatal)
+        {
+        	assert(!"fatal");
+            exit(1);
+        }
+    }
+
 }
 
 /*
 {
-	DiagnosticInfo const& info = kDiagnostics[id];
 
-	ExpandedSourceLoc expandedLoc = expandLoc(sink->session, loc);
 
-	fprintf(stderr, "%s(%d,%d): %s: ",
-			expandedLoc.file.begin, expandedLoc.line, expandedLoc.column,
-			kSeverityNames[info.severity]);
 
 	char const* cursor = info.message;
 	while(*cursor)
@@ -250,16 +270,6 @@ func diagnoseImpl(
 		}
 	}
 
-	fprintf(stderr, "\n");
 
-    if(info.severity >= kSeverity_Error)
-    {
-        sink->errorCount++;
-        if(info.severity >= kSeverity_Fatal)
-        {
-        	assert(!"fatal");
-            exit(1);
-        }
-    }
 }
 */
