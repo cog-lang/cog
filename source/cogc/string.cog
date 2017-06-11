@@ -1,6 +1,6 @@
 // string.cog
 
-import cog;
+//import cog;
 
 struct StringSpan
 {

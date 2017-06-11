@@ -397,6 +397,9 @@ class TypeVarDecl : Decl
 
 class ImportDecl : Decl
 {
+	// The scope to extend
+	var scope : Ptr<Scope>;
+
 	var name : Ptr<Name>;
 }
 

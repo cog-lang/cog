@@ -1037,7 +1037,11 @@ func findOrImportModule(
     let nameText = getText(name);
 
 	var path : FixedSizeArray<1024, Char>;
-    sprintf(path, "source/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
+    sprintf(path, "source/%.*s/%.*s.cog",
+        (int)(nameText.end - nameText.begin),
+        nameText.begin,
+        (int)(nameText.end - nameText.begin),
+        nameText.begin);
 
     let file: SourceFile* = getSourceFile(session, TerminatedStringSpan(path));
     if(!file)
@@ -1485,6 +1489,7 @@ func parseEnumDecl(parser: Parser*) -> Syntax*
 func parseImportDecl(parser: Parser*) -> Syntax*
 {
     let decl = createObject<ImportDecl>();
+    decl.scope = parser.scope;
     decl.name = expectIdentifier(parser);
     expect(parser, kTokenCode_Semi);
     return decl;

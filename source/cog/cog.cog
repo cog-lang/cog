@@ -1,0 +1,6 @@
+// cog.cog
+
+// This file provides the Cog "standard library"
+
+struct Ptr<T>
+{}

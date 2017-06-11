@@ -16,13 +16,13 @@ enum DiagnosticID
 #include "thdiagnosticdefs.h"
 */
 
+
 	kDiagnostic_unimplemented,
 	kDiagnostic_unexpectedCharacter,
 	kDiagnostic_unexpectedToken,
 	kDiagnostic_unexpectedTokenExpectedToken,
 	kDiagnostic_youMeanDot,
 	kDiagnostic_unexpectedDeclName,
-
 	kDiagnostic_undefinedIdentifier,
 	kDiagnostic_noMemberOfNameInType,
 	kDiagnostic_failedToFindBuiltinType,
@@ -253,6 +253,9 @@ func diagnoseImpl(
 			expandedLoc.column,
 			"error" // kSeverityNames[severity]
 			);
+
+	// HACK: for now just print diagnostic ID
+	fprintf(stderr, "%d", id);
 
 	fprintf(stderr, "\n");
 

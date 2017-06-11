@@ -1,7 +1,9 @@
 // check.cog
 
+import cog;
+
 func checkModule(
-	session: Ptr<Session>)
+    session: Ptr<Session>)
 {
 	checkModule(session, session.moduleDecl);
 }
@@ -40,7 +42,7 @@ func checkModule(
 	context: CheckContext*,
 	moduleDecl:	ModuleDecl*)
 {
-//	checkDecls(context, moduleDecl);
+	checkDecls(context, moduleDecl);
 }
 
 func checkDecls(
@@ -51,6 +53,18 @@ func checkDecls(
 	{
 		checkDecl(context, decl);
 	}
+}
+
+func attachToScope(
+	scope:	Scope*,
+	decl: 	ContainerDecl*)
+{
+	let link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
+	link.container = decl;
+	link.next = nullptr;
+
+	link.next = scope.directLink.next;
+	scope.directLink.next = link;
 }
 
 func checkDecl(
@@ -87,7 +101,11 @@ func checkDecl(
 	}
     else if(let importDecl = as<ImportDecl>(decl))
     {
-        // TODO: implement
+    	// Need to wire the import up into the current scope
+
+    	let module = findOrImportModule(context.shared.session, importDecl.loc, importDecl.name);
+
+    	attachToScope(importDecl.scope, module);
     }
 	else
 	{
@@ -823,19 +841,19 @@ func getBuiltinType(
 	name: ConstPtr<Char>)
     -> Type*
 {
-    let thetaModuleName = getName(context.shared.session, "theta");
-    var thetaModule : ModuleDecl* = nullptr;
-    if(context.shared.session.moduleDecl.name == thetaModuleName)
+    let cogModuleName = getName(context.shared.session, "cog");
+    var cogModule : ModuleDecl* = nullptr;
+    if(context.shared.session.moduleDecl.name == cogModuleName)
     {
-        thetaModule = context.shared.session.moduleDecl;
+        cogModule = context.shared.session.moduleDecl;
     }
     else
     {
-        thetaModule = findOrImportModule(context.shared.session, loc, thetaModuleName);        
+        cogModule = findOrImportModule(context.shared.session, loc, cogModuleName);        
     }
 
     let nameSpan = TerminatedStringSpan(name);
-    foreach(decl in thetaModule.getDecls())
+    foreach(decl in cogModule.getDecls())
     {
         if(decl.name && getText(decl.name) == nameSpan)
         {
