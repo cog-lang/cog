@@ -7,32 +7,32 @@ class Session
 	var names : Ptr<Name>;
 	var lastSourceLoc : USize;
 	var sink : DiagnosticSink;
-	var moduleDecl : Ptr<ModuleDecl>;
-	var moduleDeclLink : Ptr<Ptr<Decl> >;
+	var moduleDecl : ModuleDecl;
+	var moduleDeclLink : Ptr<Decl>;
 
 	var moduleName2 : Ptr<Name>;
 	var modulePath2 : Ptr<Name>;
 
-	var loadedModules : Ptr<ModuleDecl>;
+	var loadedModules : ModuleDecl;
 
 	// Should we evaluate rather than compile?
 	var eval : Bool;
 }
 
-func createSession() -> Ptr<Session>
+func createSession() -> Session
 {
 	let session = createObject<Session>();
 	session.sink.session = session;
 	return session;
 }
 
-func destroySession(session: Ptr<Session>)
+func destroySession(session: Session)
 {
 	free(session);
 }
 
 func setModulePath(
-	session: Ptr<Session>,
+	session: Session,
 	path:		StringSpan)
 {
 	session.modulePath2 = getName(session, path);
@@ -44,34 +44,34 @@ func setModulePath(
 }
 
 func setModulePath(
-	session: Ptr<Session>,
+	session: Session,
 	path: TerminatedStringSpan)
 {
 	setModulePath(session, StringSpan(path));
 }
 
 func getModulePath(
-	session: Ptr<Session>)
+	session: Session)
 	-> Ptr<Name>
 {
 	return session.modulePath2;
 }
 
 func getModuleName(
-	session: Ptr<Session>)
+	session: Session)
 	-> Ptr<Name>
 {
 	return session.moduleName2;
 }
 
 func setEvaluate(
-	session: Ptr<Session>)
+	session: Session)
 {
 	session.eval = true;
 }
 
 func loadSourceFile(
-	session: Ptr<Session>,
+	session: Session,
 	path: TerminatedStringSpan)
 {
 	let file = getSourceFile(session, path);
@@ -81,7 +81,7 @@ func loadSourceFile(
 }
 
 func getErrorCount(
-	session: Ptr<Session>)
+	session: Session)
 	-> Int
 {
     return session.sink.errorCount;

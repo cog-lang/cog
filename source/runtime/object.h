@@ -13,7 +13,7 @@ struct Class
 	Class*		base;
 };
 
-struct Object
+struct ObjectImpl
 {
 	typedef Class StaticClass;
 
@@ -22,8 +22,16 @@ struct Object
 	Class* directClass;
 };
 
+typedef ObjectImpl* Object;
+
+template<typename T>
+struct ObjectClassImpl {};
+
+template<>
+struct ObjectClassImpl<Object> { typedef ObjectImpl Impl; };
+
 #define COG_GET_CLASS(T) \
-	((Class*) &T::staticClass)
+	((Class*) &ObjectClassImpl<T>::Impl::staticClass)
 
 template<typename T>
 Class* getClass()
@@ -32,20 +40,20 @@ Class* getClass()
 }
 
 bool isSubClass(Class* sub, Class* sup);
-void* as(Object* obj, Class* clazz);
+void* as(ObjectImpl* obj, Class* clazz);
 
 template<typename T>
-T* as(Object* obj)
+T as(ObjectImpl* obj)
 {
-	return (T*) as(obj, getClass<T>());
+	return (T) as(obj, getClass<T>());
 }
 
-Object* createObject(Class* directClass);
+ObjectImpl* createObject(Class* directClass);
 
 template<typename T>
-T* createObject()
+T createObject()
 {
-	return (T*) createObject(getClass<T>());
+	return (T) createObject(getClass<T>());
 }
 
 
@@ -53,7 +61,7 @@ T* createObject()
 	static StaticClass staticClass;
 
 #define COG_DEFINE_CLASS(C, Base) \
-	C::StaticClass C::staticClass = { (char*) #C, sizeof(C), COG_GET_CLASS(Base) };
+	C##Impl::StaticClass C##Impl::staticClass = { (char*) #C, sizeof(C##Impl), COG_GET_CLASS(Base) };
 
 }
 

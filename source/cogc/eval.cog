@@ -3,7 +3,7 @@
 
 // Evaluate a module as a top-level thing...
 func evalModule(
-	session: Session*)
+	session: Session)
 {
 	// We will try to evaluate the module we just loaded
 	let moduleDecl = session.moduleDecl;

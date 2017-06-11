@@ -2,8 +2,8 @@
 
 struct TypeExp
 {
-	var exp : Ptr<Exp>;
-	var type : Ptr<Type>;
+	var exp : Exp;
+	var type : Type;
 
 	/*
 	operator Exp*()
@@ -20,10 +20,10 @@ func asBool(typeExp: TypeExp) -> Bool
 
 struct SyntaxListIterator<T>
 {
-	var current : Ptr<T>;
+	var current : T;
 
 	init(
-		current: Ptr<T>)
+		current: T)
 	{
 		this.current = current;
 	}
@@ -33,28 +33,28 @@ struct SyntaxListIterator<T>
 		return current != other.current;
 	}
 
-	func *() -> Ptr<T>
+	func *() -> T
 	{
 		return current;
 	}
 
 	func ++()
 	{
-		current = cast<Ptr<T> >(current.next);
+		current = cast<T>(current.next);
 	}
 }
 
 
 struct SyntaxList<T>
 {
-	var head: Ptr<T>;
+	var head: T;
 
-	subscript(index: Size) -> Ptr<T>
+	subscript(index: Size) -> T
 	{
         var item = head;
         for(var ii : Size = 0; ii < index; ++ii)
         {
-            item = cast<Ptr<T> >(item.next);
+            item = cast<T>(item.next);
         }
         return item;
     }
@@ -74,7 +74,7 @@ struct SyntaxList<T>
 		this.head = 0;
 	}
 
-	init(head: Ptr<T>)
+	init(head: T)
 	{
 		this.head = head;
 	}
@@ -82,7 +82,7 @@ struct SyntaxList<T>
 
 struct SyntaxListBuilder<T> : SyntaxList<T>
 {
-	var link : Ptr<Ptr<T> >;
+	var link : Ptr<T>;
 
 	init()
 	{
@@ -101,11 +101,11 @@ struct SyntaxListBuilder<T> : SyntaxList<T>
 	{
 		while (*link)
 		{
-			link = cast<Ptr<Ptr<T> > >(&(*link).next);
+			link = cast<Ptr<T> >(&(*link).next);
 		}
 	}
 
-	func add(element: Ptr<T>)
+	func add(element: T)
 	{
 		adjust();
 
@@ -127,9 +127,9 @@ struct SyntaxListBuilder<T> : SyntaxList<T>
 
 struct FilteredSyntaxListIterator<T,U>
 {
-	var current : Ptr<T>;
+	var current : T;
 
-	init(current: Ptr<U>)
+	init(current: U)
 	{
 		this.current = adjust(current);
 	}
@@ -139,14 +139,14 @@ struct FilteredSyntaxListIterator<T,U>
         return current != other.current;
 	}
 
-    func *() -> Ptr<T> { return current; }
+    func *() -> T { return current; }
 
 	func ++()
     {
         current = adjust(current.next);
     }
 
-	func adjust(obj: Ptr<U>) -> Ptr<T>
+	func adjust(obj: U) -> T
 	{
 		while(obj)
 		{
@@ -163,7 +163,7 @@ struct FilteredSyntaxListIterator<T,U>
 
 struct FilteredSyntaxList<T,U>
 {
-	var head : Ptr<U>;
+	var head : U;
 
 
 	func begin() -> FilteredSyntaxListIterator<T,U>
@@ -181,7 +181,7 @@ struct FilteredSyntaxList<T,U>
 		this.head = nullptr;
 	}
 
-	init(head: Ptr<U>)
+	init(head: U)
 	{
 		this.head = head;
 	}
@@ -199,7 +199,7 @@ class Syntax : Object
 
 class Attr : Syntax
 {
-	var next : Ptr<Attr>;
+	var next : Attr;
 }
 
 class BuiltinAttr : Attr
@@ -211,32 +211,32 @@ class Stmt : Syntax
 {
 	var attrs : SyntaxList<Attr>;
 
-	var next : Ptr<Stmt>;
+	var next : Stmt;
 
-	func findAttrImpl(attrClass: Ptr<Class>) -> Ptr<Attr>
+	func findAttrImpl(attrClass: Ptr<Class>) -> Attr
 	{
 		foreach(a in attrs)
 		{
 			// TODO: support `if let`
 			let match = as(a, attrClass);
 			if(match)
-				return cast<Ptr<Attr> >(match);
+				return cast<Attr>(match);
 		}
 		return nullptr;
 	}
 
-	func findAttr<T>() -> Ptr<T>
+	func findAttr<T>() -> T
 	{
-		return cast<Ptr<T> >(findAttrImpl(getClass<T>()));
+		return cast<T>(findAttrImpl(getClass<T>()));
 	}
 }
 
 class Decl : Stmt
 {
 	var name : Ptr<Name>;
-	var parent : Ptr<ContainerStmt>;
+	var parent : ContainerStmt;
 
-	func getParent() -> Ptr<ContainerStmt>
+	func getParent() -> ContainerStmt
 	{
 		return parent;
 	}
@@ -244,8 +244,8 @@ class Decl : Stmt
 
 class SpecializationArg : Object
 {
-	var next : SpecializationArg*;
-	var value : Val*;
+	var next : SpecializationArg;
+	var value : Val;
 }
 
 class Specializations : Object
@@ -257,8 +257,8 @@ class Specializations : Object
 
 class SpecializedDecl : Object
 {
-	var decl : Decl*;
-	var specializations: Specializations*;
+	var decl : Decl;
+	var specializations: Specializations;
 }
 
 // Values
@@ -294,10 +294,10 @@ class ContainerDecl : ContainerStmt
 
 struct DeclRefListIterator<T>
 {
-	var decl : Decl*;
-	var specializations : Specializations*;
+	var decl : Decl;
+	var specializations : Specializations;
 
-	init(decl: Decl*, specializations: Specializations*)
+	init(decl: Decl, specializations: Specializations)
 	{
 		this.decl = decl;
 		this.specializations = specializations;
@@ -309,14 +309,14 @@ struct DeclRefListIterator<T>
 	{
 		if(!decl)
 			return;
-		decl = cast<Ptr<Decl>>(decl.next);
+		decl = cast<Decl>(decl.next);
 		adjust();
 	}
 
 	func *() -> DeclRefValImpl<T>
 	{
 		return DeclRefValImpl<T>(
-			cast<Ptr<T> >(decl),
+			cast<T>(decl),
 			specializations);
 	}
 
@@ -328,15 +328,15 @@ struct DeclRefListIterator<T>
 			if(declAsT)
 				return;
 
-			decl = cast<Ptr<Decl>>(decl.next);
+			decl = cast<Decl>(decl.next);
 		}
 	}
 }
 
 struct DeclRefList<T>
 {
-	var decl : Decl*;
-	var specializations : Specializations*;
+	var decl : Decl;
+	var specializations : Specializations;
 
 	func begin() -> DeclRefListIterator<T>
 	{
@@ -354,7 +354,7 @@ struct DeclRefList<T>
 		this.specializations = nullptr;
 	}
 
-	init(decl: Decl*, specializations: Specializations*)
+	init(decl: Decl, specializations: Specializations)
 	{
 		this.decl = decl;
 		this.specializations = specializations;
@@ -378,7 +378,7 @@ func getDecls(container: DeclRefValImpl<ContainerDecl>)
 
 class GenericDecl : ContainerDecl
 {
-	var inner : Ptr<Decl>;
+	var inner : Decl;
 }
 
 func getInner(declRef: DeclRefValImpl<GenericDecl>)
@@ -435,12 +435,12 @@ class StructDecl : AggTypeDecl
 class FuncDeclBase : PatternDecl
 {
 	var resultType : TypeExp;
-	var body : Ptr<Stmt>;
+	var body : Stmt;
 }
 
 func getResultType(
 	declRef: DeclRefValImpl<FuncDeclBase>)
-	-> Type*
+	-> Type
 {
 	return specializeType(
 		declRef.getDecl().resultType.type,
@@ -462,10 +462,10 @@ class InitializerDecl : FuncDeclBase
 class VarDeclBase : Decl
 {
 	var type : TypeExp;
-	var init : Ptr<Exp>;
+	var init : Exp;
 }
 
-func getType(declRef: DeclRefValImpl<VarDeclBase>) -> Type*
+func getType(declRef: DeclRefValImpl<VarDeclBase>) -> Type
 {
 	return specializeType(
 		declRef.getDecl().type.type,
@@ -494,40 +494,40 @@ class SyntaxDecl : Decl
 
 class IfStmtBase : Stmt
 {
-	var thenStmt : Ptr<Stmt>;
-	var elseStmt : Ptr<Stmt>;
+	var thenStmt : Stmt;
+	var elseStmt : Stmt;
 }
 
 
 class IfStmt : IfStmtBase
 {
-	var condition : Ptr<Exp>;
+	var condition : Exp;
 }
 
 class IfLetStmt : IfStmtBase
 {
 	var name : Name*;
-	var init : Exp*;
+	var init : Exp;
 }
 
 
 class WhileStmt : Stmt
 {
-	var condition : Ptr<Exp>;
-	var body : Ptr<Stmt>;
+	var condition : Exp;
+	var body : Stmt;
 }
 
 class ForStmt : Stmt
 {
-	var init : Ptr<Stmt>;
-	var condition : Ptr<Exp>;
-	var iter : Ptr<Exp>;
-	var body : Ptr<Stmt>;
+	var init : Stmt;
+	var condition : Exp;
+	var iter : Exp;
+	var body : Stmt;
 }
 
 class ReturnStmt : Stmt
 {
-	var value : Ptr<Exp>;
+	var value : Exp;
 }
 
 class BreakStmt : Stmt
@@ -540,23 +540,23 @@ class ContinueStmt : Stmt
 
 class SwitchCase : Syntax
 {
-	var values : Ptr<Arg>;
-	var body : Ptr<Stmt>;
-	var next : Ptr<SwitchCase>;
+	var values : Arg;
+	var body : Stmt;
+	var next : SwitchCase;
 }
 
 class SwitchStmt : Stmt
 {
-	var condition : Ptr<Exp>;
-	var cases : Ptr<SwitchCase>;
+	var condition : Exp;
+	var cases : SwitchCase;
 }
 
 // Arguments
 
 class Arg : Syntax
 {
-	var exp : Ptr<Exp>;
-	var next : Ptr<Arg>;
+	var exp : Exp;
+	var next : Arg;
 }
 
 class PositionalArg : Arg
@@ -568,7 +568,7 @@ class PositionalArg : Arg
 
 class Exp : Stmt
 {
-	var type : Type*;
+	var type : Type;
 }
 
 class LitExp : Exp
@@ -595,7 +595,7 @@ class CharacterLitExp : LitExp
 
 class AppExpBase : Exp
 {
-	var base : Ptr<Exp>;
+	var base : Exp;
 	var args : SyntaxList<Arg>;
 }
 
@@ -629,8 +629,8 @@ class PostfixExp : OperatorAppExp
 
 class AssignExp : Exp
 {
-	var left : Ptr<Exp>;
-	var right : Ptr<Exp>;
+	var left : Exp;
+	var right : Exp;
 }
 
 class DeclRefExp : Exp
@@ -647,7 +647,7 @@ class NameExp : DeclRefExp
 
 class MemberExp : DeclRefExp
 {
-	var base : Ptr<Exp>;
+	var base : Exp;
 	var memberName : Ptr<Name>;
 }
 
@@ -658,7 +658,7 @@ class ErrorExp : Exp
 struct LookupResultItem
 {
 	// TODO: should be a declref
-	var decl : Ptr<Decl>;
+	var decl : Decl;
 
 	init()
 	{
@@ -668,13 +668,13 @@ struct LookupResultItem
 //    LookupResultItem(
 //        LookupResultItem const& other) = default;
 
-	init(decl: Ptr<Decl>)
+	init(decl: Decl)
 	{
 		this.decl = decl;
 	}
 }
 
-class LookupResult
+struct LookupResult
 {
 	var items : Array<LookupResultItem>;
 
@@ -686,7 +686,7 @@ class LookupResult
     func isUnique() -> Bool { return items.getCount() == 1; }
     func isOverloaded() -> Bool { return items.getCount() > 1; }
 
-    func getDecl() -> Ptr<Decl>
+    func getDecl() -> Decl
     {
         assert(isUnique());
         return items[0].decl;
@@ -704,7 +704,7 @@ class LookupResult
 class OverloadedExpr : Exp
 {
 	var lookupResult : LookupResult;
-	var base : Ptr<Exp>;
+	var base : Exp;
 }
 
 // Statements
@@ -729,7 +729,7 @@ class DeclRefType : Type
 // The "type" of another type
 class TypeType : Type
 {
-	var type : Ptr<Type>;
+	var type : Type;
 }
 
 // the type of a function
@@ -760,11 +760,11 @@ class EnumTagDecl : VarDeclBase
 class ForEachStmt : Stmt
 {
 	var name : Name*;
-	var exp: Exp*;
-	var body: Stmt*;
+	var exp: Exp;
+	var body: Stmt;
 }
 
 class ParenExp : Exp
 {
-	var base: Exp*;
+	var base: Exp;
 }

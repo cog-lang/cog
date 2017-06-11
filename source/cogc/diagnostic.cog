@@ -35,20 +35,20 @@ enum DiagnosticID
 
 struct DiagnosticSink
 {
-	var session : Ptr<Session>;
+	var session : Session;
 	var errorCount : Int;
 }
 
 struct ArgTypeList
 {
-	var args : Ptr<Arg>;
+	var args : Arg;
 
 	init()
 	{
 		this.args = nullptr;
 	}
 
-	init(args: Ptr<Arg>)
+	init(args: Arg)
 	{
 		this.args = args;
 	}
@@ -99,7 +99,7 @@ struct DiagnosticArg
 		this.stringSpanVal = TerminatedStringSpan(val);
 	}
 
-	init(val: Type*)
+	init(val: Type)
 	{
 		this.flavor = kFlavor_Type;
 		this.typeVal = val;
@@ -123,7 +123,7 @@ struct DiagnosticArg
 		var tokenCodeVal: TokenCode;
 		var nameVal : Ptr<Name>;
 		var stringSpanVal : StringSpan;
-		var typeVal : Type*;
+		var typeVal : Type;
 
 		var declRefVal : DeclRefVal;
 		var argTypeListVal : ArgTypeList;

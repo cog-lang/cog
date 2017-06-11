@@ -38,7 +38,7 @@ struct SourceFile
 }
 
 func getSourceFile(
-	session: Ptr<Session>,
+	session: Session,
 	path: TerminatedStringSpan)
 	-> Ptr<SourceFile>
 {
@@ -95,7 +95,7 @@ func getSourceFile(
 }
 
 func expandLoc(
-	session: Ptr<Session>,
+	session: Session,
 	loc: SourceLoc)
 	-> ExpandedSourceLoc
 {

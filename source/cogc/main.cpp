@@ -16,9 +16,9 @@ using namespace cog;
 namespace COGC_NAMESPACE
 {
 	struct Parser;
-	struct Syntax;
+	class SyntaxImpl;
 
-	typedef Syntax* (*SyntaxCallback)(Parser* parser);
+	typedef SyntaxImpl* (*SyntaxCallback)(Parser* parser);
 
 	template<int N, typename T>
 	struct FixedSizeArray
@@ -49,15 +49,15 @@ namespace COGC_NAMESPACE
 
 	//
 
-	class Decl;
-	class Specializations;
-	class SpecializedDecl;
+	class DeclImpl;
+	class SpecializationsImpl;
+	class SpecializedDeclImpl;
 	struct CompactDeclRef;
 
 	struct DeclRefVal
 	{
-		Decl* decl;
-		Specializations* specializations;
+		DeclImpl* decl;
+		SpecializationsImpl* specializations;
 
 		DeclRefVal()
 		{
@@ -66,15 +66,15 @@ namespace COGC_NAMESPACE
 		}
 
 		explicit DeclRefVal(
-			Decl* decl)
+			DeclImpl* decl)
 		{
 			this->decl = decl;
 			this->specializations = nullptr;
 		}
 
 		DeclRefVal(
-			Decl* decl,
-			Specializations* specializations)
+			DeclImpl* decl,
+			SpecializationsImpl* specializations)
 		{
 			this->decl = decl;
 			this->specializations = specializations;
@@ -83,8 +83,8 @@ namespace COGC_NAMESPACE
 		DeclRefVal(
 			CompactDeclRef const& declRef);
 
-		Decl* getDecl() { return decl; }
-		Specializations* getSpecializations() { return specializations; }
+		DeclImpl* getDecl() { return decl; }
+		SpecializationsImpl* getSpecializations() { return specializations; }
 	};
 
 	template<typename T>
@@ -95,47 +95,47 @@ namespace COGC_NAMESPACE
 		{}
 
 		DeclRefValImpl(
-			T* decl,
-			Specializations* specializations)
+			T decl,
+			SpecializationsImpl* specializations)
 			: DeclRefVal(decl, specializations)
 		{}
 
 		template<typename U>
 		DeclRefValImpl(
 			DeclRefValImpl<U> const& other,
-			T* t = (U*)0)
+			T t = (U)0)
 			: DeclRefVal(other.decl, other.specializations)
 		{}
 
-		T* getDecl() { return (T*) decl; }
+		T getDecl() { return (T) decl; }
 
-		operator T*() { return getDecl(); };
+		operator T() { return getDecl(); };
 	};
 
 
 	struct CompactDeclRef
 	{
-		Object* value;
+		ObjectImpl* value;
 
 		CompactDeclRef()
 		{
 			this->value = nullptr;
 		}
 
-		CompactDeclRef(Decl* decl)
+		CompactDeclRef(DeclImpl* decl)
 		{
-			this->value = (Object*) decl;
+			this->value = (ObjectImpl*) decl;
 		}
 
-		CompactDeclRef(SpecializedDecl* specialized)
+		CompactDeclRef(SpecializedDeclImpl* specialized)
 		{
-			this->value = (Object*) specialized;
+			this->value = (ObjectImpl*) specialized;
 		}
 
 		CompactDeclRef(DeclRefVal const& declRef);
 
-		Decl* getDecl() { return DeclRefVal(*this).getDecl(); }
-		Specializations* getSpecializations() { return DeclRefVal(*this).getSpecializations(); }
+		DeclImpl* getDecl() { return DeclRefVal(*this).getDecl(); }
+		SpecializationsImpl* getSpecializations() { return DeclRefVal(*this).getSpecializations(); }
 
 	};
 

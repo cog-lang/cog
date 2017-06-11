@@ -3,15 +3,15 @@
 import cog;
 
 func checkModule(
-    session: Ptr<Session>)
+    session: Session)
 {
 	checkModule(session, session.moduleDecl);
 }
 
 // Explicit entry point for checking a given module
 func checkModule(
-	session: Ptr<Session>,
-	moduleDecl: Ptr<ModuleDecl>)
+	session: Session,
+	moduleDecl: ModuleDecl)
 {
 	var sharedContext : SharedCheckContext;
 	sharedContext.session = session;
@@ -24,7 +24,7 @@ func checkModule(
 
 struct SharedCheckContext
 {
-	var session : Session*;	
+	var session : Session;
 }
 
 struct CheckContext
@@ -40,14 +40,14 @@ func getSink(
 
 func checkModule(
 	context: CheckContext*,
-	moduleDecl:	ModuleDecl*)
+	moduleDecl:	ModuleDecl)
 {
 	checkDecls(context, moduleDecl);
 }
 
 func checkDecls(
 	context: 		CheckContext*,
-	containerDecl: 	ContainerDecl*)
+	containerDecl: 	ContainerDecl)
 {
 	foreach(decl in containerDecl.getDecls())
 	{
@@ -57,7 +57,7 @@ func checkDecls(
 
 func attachToScope(
 	scope:	Scope*,
-	decl: 	ContainerDecl*)
+	decl: 	ContainerDecl)
 {
 	let link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
 	link.container = decl;
@@ -69,7 +69,7 @@ func attachToScope(
 
 func checkDecl(
 	context: 	CheckContext*,
-	decl:		Decl*)
+	decl:		Decl)
 {
 	if(let classDecl = as<ClassDecl>(decl))
 	{
@@ -115,7 +115,7 @@ func checkDecl(
 
 func checkGenericDecl(
 	context: CheckContext*,
-	decl: GenericDecl*)
+	decl: GenericDecl)
 {
     fprintf(stderr, "CHECKING GENERIC\n");
 
@@ -128,14 +128,14 @@ func checkGenericDecl(
 
 func checkTypeAliasDecl(
 	context: CheckContext*,
-	decl: TypeAliasDecl*)
+	decl: TypeAliasDecl)
 {
 	// TODO: implement this...
 }
 
 func checkVarDecl(
 	context: CheckContext*,
-	decl: VarDeclBase*)
+	decl: VarDeclBase)
 {
 	// check type, if any
 	checkTypeExp(context, &decl.type);
@@ -171,7 +171,7 @@ func checkVarDecl(
 
 func checkFuncDecl(
 	context: CheckContext*,
-	decl: FuncDeclBase*)
+	decl: FuncDeclBase)
 {
 	// check parameters
 	checkDecls(context, decl);
@@ -191,21 +191,21 @@ func checkFuncDecl(
 
 func checkClassDecl(
 	context: CheckContext*,
-	decl: ClassDecl*)
+	decl: ClassDecl)
 {
 	checkAggTypeDeclCommon(context, decl);
 }
 
 func checkStructDecl(
 	context: CheckContext*,
-	decl: StructDecl*)
+	decl: StructDecl)
 {
 	checkAggTypeDeclCommon(context, decl);
 }
 
 func checkAggTypeDeclCommon(
 	context: CheckContext*,
-	decl: AggTypeDecl*)
+	decl: AggTypeDecl)
 {
 	// check base clause, if any
 	checkTypeExp(context, &decl.base);
@@ -221,8 +221,8 @@ func checkAggTypeDeclCommon(
 
 func checkStmt(
 	context: CheckContext*,
-	stmt: Stmt*)
-	-> Stmt*
+	stmt: Stmt)
+	-> Stmt
 {
     if(!stmt)
         return nullptr;
@@ -275,8 +275,8 @@ func checkStmt(
 
 func checkBlockStmt(
 	context: CheckContext*,
-	stmt: BlockStmt*)
-	-> Stmt*
+	stmt: BlockStmt)
+	-> Stmt
 {
 	foreach(stmt in stmt.stmts)
 	{
@@ -290,8 +290,8 @@ func checkBlockStmt(
 
 func checkExp(
 	context: CheckContext*,
-	exp: Exp*)
-	-> Exp*
+	exp: Exp)
+	-> Exp
 {
 	// TODO: what?
 	return coerceToExp(context, checkTerm(context, exp));	
@@ -299,8 +299,8 @@ func checkExp(
 
 func coerceToExp(
 	context: CheckContext*,
-	term: Syntax*)
-	-> Exp*
+	term: Syntax)
+	-> Exp
 {
     if(let exp = as<Exp>(term))
     {
@@ -314,8 +314,8 @@ func coerceToExp(
 
 func checkType(
 	context: CheckContext*,
-	exp: Exp*)
-	-> Type*
+	exp: Exp)
+	-> Type
 {
 	// TODO: what?
 	return coerceToType(context, checkTerm(context, exp));
@@ -335,8 +335,8 @@ func checkTypeExp(
 
 func coerceToType(
 	context: CheckContext*,
-	exp: Exp*)
-	-> Type*
+	exp: Exp)
+	-> Type
 {
 	let expType = exp.type;
 	if(let typeType = as<TypeType>(expType))
@@ -358,8 +358,8 @@ func coerceToType(
 
 func checkTerm(
 	context: CheckContext*,
-	exp: Exp*)
-	-> Exp*
+	exp: Exp)
+	-> Exp
 {
 	if(!exp) return nullptr;
 
@@ -527,14 +527,14 @@ func checkTerm(
             let baseDeclRef = baseDeclRefExp.declRef;
             if(let patternDeclRef = as<PatternDecl>(baseDeclRef))
 			{
-				var argIter : Arg* = appExp.args.head;
+				var argIter : Arg = appExp.args.head;
 
 				foreach(declRef in getDecls(patternDeclRef))
 				{
 					let paramRef = as<ParamDecl>(declRef);
 					if(!paramRef) continue;
 
-					let arg : Arg* = argIter;
+					let arg : Arg = argIter;
 					argIter = argIter.next;
 
 					// try to match things up!
@@ -604,8 +604,8 @@ func checkTerm(
 //
 
 func extractVal(
-	exp: Exp*)
-    -> Val*
+	exp: Exp)
+    -> Val
 {
     if(let typeType = as<TypeType>(exp.type))
     {
@@ -621,8 +621,8 @@ func extractVal(
 
 func checkMemberExp(
 	context: CheckContext*,
-	exp: MemberExp*)
-    -> Exp*
+	exp: MemberExp)
+    -> Exp
 {
     var base = exp.base;
     base = checkTerm(context, base);
@@ -679,7 +679,7 @@ func checkMemberExp(
 
 func addAppOverloadCandidates(
 	context: OverloadResolveContext*,
-	baseExp: Exp*)
+	baseExp: Exp)
 {
 //    fprintf(stderr, "<<<\n");
     if(let typeType = as<TypeType>(baseExp.type))
@@ -720,7 +720,7 @@ func addAppOverloadCandidates(
 func createFuncType(
 	context: CheckContext*,
 	funcDeclRef: DeclRefValImpl<FuncDeclBase>)
-    -> Type*
+    -> Type
 {
     let funcType = createObject<FuncType>();
     return funcType;
@@ -731,7 +731,7 @@ func createFuncType(
 func createDeclRefType(
 	context: CheckContext*,
 	declRef: DeclRefVal)
-	-> Type*
+	-> Type
 {
 	let type = createObject<DeclRefType>();
 	type.declRef = CompactDeclRef(declRef);
@@ -741,7 +741,7 @@ func createDeclRefType(
 func createDeclRefTypeType(
 	context: CheckContext*,
 	declRef: DeclRefVal)
-	-> Type*
+	-> Type
 {
 	let type = createDeclRefType(context, declRef);
 	let typeType = createTypeType(context, type);
@@ -750,8 +750,8 @@ func createDeclRefTypeType(
 
 func createTypeType(
 	context: CheckContext*,
-	type: Type*)
-	-> TypeType*
+	type: Type)
+	-> TypeType
 {
 	let typeType = createObject<TypeType>();
 	typeType.type = type;
@@ -760,9 +760,9 @@ func createTypeType(
 
 func specializeTypeForDeclRef(
 	context: 	CheckContext*,
-	type:		Type*,
+	type:		Type,
 	declRef:	DeclRefVal)
-	-> Type*
+	-> Type
 {
 	return specializeType(
 		type,
@@ -774,7 +774,7 @@ func specializeTypeForDeclRef(
 func getTypeForDeclRefImpl(
 	context: CheckContext*,
 	declRef: DeclRefVal)
-	-> Type*
+	-> Type
 {
     let decl = declRef.getDecl();
     if(let varDecl = as<VarDeclBase>(decl))
@@ -808,7 +808,7 @@ func getTypeForDeclRefImpl(
 func getTypeForDeclRef(
 	context: CheckContext*,
 	declRef: DeclRefVal)
-	-> Type*
+	-> Type
 {
     let result = getTypeForDeclRefImpl(context, declRef);
 //    fprintf(stderr, "getTypeForDeclRef(%s) = ",
@@ -821,7 +821,7 @@ func getTypeForDeclRef(
 func getTypeForDeclRef(
 	context: CheckContext*,
 	declRef: CompactDeclRef)
-	-> Type*
+	-> Type
 {
 	return getTypeForDeclRef(
 		context,
@@ -830,7 +830,7 @@ func getTypeForDeclRef(
 
 func createErrorType(
 	context: CheckContext*)
-	-> Type*
+	-> Type
 {
     return createObject<ErrorType>();
 }
@@ -839,10 +839,10 @@ func getBuiltinType(
 	context: CheckContext*,
 	loc: SourceLoc,
 	name: ConstPtr<Char>)
-    -> Type*
+    -> Type
 {
     let cogModuleName = getName(context.shared.session, "cog");
-    var cogModule : ModuleDecl* = nullptr;
+    var cogModule : ModuleDecl = nullptr;
     if(context.shared.session.moduleDecl.name == cogModuleName)
     {
         cogModule = context.shared.session.moduleDecl;
@@ -871,7 +871,7 @@ func getBuiltinType(
 func getResultType(
 	context: CheckContext*,
 	decl: DeclRefValImpl<PatternDecl>)
-	-> Type*
+	-> Type
 {
     // TODO(tfoley): this should be simplified to
     // just use the `FuncDeclBaseRef`
@@ -898,8 +898,8 @@ func getResultType(
 
 func createErrorExp(
 	context: CheckContext*,
-	exp: Exp*)
-    -> Exp*
+	exp: Exp)
+    -> Exp
 {
     exp.type = createErrorType(context);
     return exp;
@@ -908,7 +908,7 @@ func createErrorExp(
 func createErrorExp(
 	context: CheckContext*,
 	loc: SourceLoc)
-    -> Exp*
+    -> Exp
 {
     let exp = createObject<ErrorExp>();
     exp.loc = loc;
@@ -916,8 +916,8 @@ func createErrorExp(
 }
 
 func isSameVal(
-	left: Val*,
-	right: Val*)
+	left: Val,
+	right: Val)
     -> Bool
 {
     if(let leftType = as<Type>(left))
@@ -936,8 +936,8 @@ func isSameVal(
 }
 
 func isSameSpecializations(
-	left: Specializations*,
-    right: Specializations*)
+	left: Specializations,
+    right: Specializations)
     -> Bool
 {
     // Null specializations are equal.
@@ -989,8 +989,8 @@ func isSameDeclRef(
 }
 
 func isSameType(
-	left: Type*,
-	right: Type*)
+	left: Type,
+	right: Type)
     -> Bool
 {
     if(left.directClass != right.directClass)
@@ -1015,10 +1015,10 @@ func isSameType(
 
 func tryCoerceImpl(
 	context: 	CheckContext*,
-    fromExp: 	Exp*,
-    fromType: 	Type*,
-    toExp: 		Exp**,
-    toType:		Type*)
+    fromExp: 	Exp,
+    fromType: 	Type,
+    toExp: 		Exp*,
+    toType:		Type)
     -> Bool
 {
     if(isSameType(fromType, toType))
@@ -1051,9 +1051,9 @@ func tryCoerceImpl(
 
 func tryCoerceImpl(
 	context: 	CheckContext*,
-    fromExp: 	Exp*,
-    toExp: 		Exp**,
-    toType:		Type*)
+    fromExp: 	Exp,
+    toExp: 		Exp*,
+    toType:		Type)
     -> Bool
 {
     if(let fromOverloadedExpr = as<OverloadedExpr>(fromExp))
@@ -1075,11 +1075,11 @@ func tryCoerceImpl(
 
 func coerce(
 	context: 	CheckContext*,
-    exp: 		Exp*,
-    type: 		Type*)
-    -> Exp*
+    exp: 		Exp,
+    type: 		Type)
+    -> Exp
 {
-    var result : Exp* = nullptr;
+    var result : Exp = nullptr;
     if(tryCoerceImpl(
         context,
         exp,
@@ -1095,8 +1095,8 @@ func coerce(
 
 func canCoerce(
 	context: 	CheckContext*,
-    exp: 		Exp*,
-    type: 		Type*)
+    exp: 		Exp,
+    type: 		Type)
     -> Bool
 {
     return tryCoerceImpl(
@@ -1120,7 +1120,7 @@ struct OverloadCandidate
 {
 	var state 		: OverloadCandidateState;
 	var declRef 	: DeclRefVal;
-	var resultType 	: Type*;
+	var resultType 	: Type;
 }
 
 enum OverloadResolveMode
@@ -1132,8 +1132,8 @@ enum OverloadResolveMode
 struct OverloadResolveContext
 {
 	var checkContext 	: CheckContext*;
-    var appExp 			: AppExpBase*;
-    var baseExp 		: Exp* = 0;
+    var appExp 			: AppExpBase;
+    var baseExp 		: Exp = nullptr;
 
     var mode : OverloadResolveMode = kOverloadResolveMode_justTrying;
 
@@ -1389,7 +1389,7 @@ func addFuncOverloadCandidate(
 
 func addInitializerOverloadCandidate(
     context: 	OverloadResolveContext*,
-    type: 		Type*,
+    type: 		Type,
     declRef: 	DeclRefValImpl<InitializerDecl>)
 {
     var candidate: OverloadCandidate;
@@ -1402,10 +1402,10 @@ func createDeclRefExp(
 	context: CheckContext*,
 	declRef: CompactDeclRef,
 	loc: SourceLoc,
-	baseExp: Exp*)
-    -> Exp*
+	baseExp: Exp)
+    -> Exp
 {
-    var declRefExp: DeclRefExp* = 0;
+    var declRefExp: DeclRefExp = nullptr;
     if(baseExp)
     {
         let memberRefExp = createObject<MemberExp>();
@@ -1427,8 +1427,8 @@ func createDeclRefExp(
 	context: CheckContext*,
 	declRef: DeclRefVal,
 	loc: SourceLoc,
-	baseExp: Exp*)
-    -> Exp*
+	baseExp: Exp)
+    -> Exp
 {
 
     let decl = declRef.getDecl();
@@ -1451,14 +1451,14 @@ func createDeclRefExp(
 	context: CheckContext*,
 	declRef: DeclRefVal,
 	loc: SourceLoc)
-    -> Exp*
+    -> Exp
 {
 	return createDeclRefExp(context, declRef, loc, nullptr);
 }
 
 func completeOverload(
     overloadContext: OverloadResolveContext*)
-    -> Exp*
+    -> Exp
 {
     let context = overloadContext.checkContext;
     let appExp = overloadContext.appExp;
@@ -1554,7 +1554,7 @@ func completeOverload(
 }
 
 func isError(
-	type: Type*)
+	type: Type)
     -> Bool
 {
     return as<ErrorType>(type) != nullptr;
@@ -1562,7 +1562,7 @@ func isError(
 
 func isError(
 	context: CheckContext*,
-	exp: Exp*)
+	exp: Exp)
     -> Bool
 {
     return as<ErrorExp>(exp) || isError(exp.type);
@@ -1570,8 +1570,8 @@ func isError(
 
 func addTypeOverloadCandidates(
 	context: OverloadResolveContext*,
-	typeExp: Exp*,
-	type: Type*)
+	typeExp: Exp,
+	type: Type)
 {
     if(let declRefType = as<DeclRefType>(type))
     {
@@ -1594,7 +1594,7 @@ func addTypeOverloadCandidates(
 struct GenericInferenceArg
 {
 	var paramDeclRef: DeclRefValImpl<GenericParamDecl>;
-	var val: Val* = nullptr;
+	var val: Val = nullptr;
 }
 
 struct GenericInferenceContext
@@ -1605,8 +1605,8 @@ struct GenericInferenceContext
 
 func doInferenceForVals(
 	context: GenericInferenceContext*,
-	argVal: Val*,
-	paramVal: Val*)
+	argVal: Val,
+	paramVal: Val)
     -> Bool
 {
     if(let argType = as<Type>(argVal))
@@ -1623,8 +1623,8 @@ func doInferenceForVals(
 
 func doInferenceForSpecializations(
 	context: GenericInferenceContext*,
-    argSpec: Specializations*,
-    paramSpec: Specializations*)
+    argSpec: Specializations,
+    paramSpec: Specializations)
     -> Bool
 {
     // Make sure we can align the generic being referened
@@ -1674,8 +1674,8 @@ func doInferenceForDeclRefs(
 
 func doInferenceForTypes(
     context: GenericInferenceContext*,
-    argType: Type*,
-    paramType: Type*)
+    argType: Type,
+    paramType: Type)
     -> Bool
 {
     //
@@ -1707,7 +1707,7 @@ func doInferenceForTypes(
 
 func doInferenceForArgAndParam(
     context: GenericInferenceContext*,
-    argExpr: Exp*,
+    argExpr: Exp,
     paramDeclRef: DeclRefValImpl<ParamDecl>)
     -> Bool
 {
@@ -1720,8 +1720,8 @@ func doInferenceForArgAndParam(
 func inferGenericArgsForApp(
     context: CheckContext*,
     genericDeclRef: DeclRefValImpl<GenericDecl>,
-    appExpr: AppExpBase*)
-    -> Specializations*
+    appExpr: AppExpBase)
+    -> Specializations
 {
     // Need to find a suitable value to substitute
     // for each parameter of the given generic.
@@ -1854,9 +1854,9 @@ func addDeclRefOverloadCandidates(
 //
 
 func specializeType(
-	type: Type*,
-	specializations: Specializations*)
-	-> Type*
+	type: Type,
+	specializations: Specializations)
+	-> Type
 {
 	if(!specializations)
 		return type;

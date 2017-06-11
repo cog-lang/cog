@@ -2,7 +2,7 @@
 
 struct ScopeLink
 {
-	var container : Ptr<ContainerStmt>;
+	var container : ContainerStmt;
 	var next : Ptr<ScopeLink> = nullptr;
 }
 
@@ -13,7 +13,7 @@ struct Scope
 }
 
 func lookupDirectImpl(
-	container: Ptr<ContainerStmt>,
+	container: ContainerStmt,
 	name: Ptr<Name>,
 	ioResult: Ptr<LookupResult>)
 {
@@ -30,7 +30,7 @@ func lookupDirectImpl(
 }
 
 func lookupDirect(
-	container: Ptr<ContainerStmt>,
+	container: ContainerStmt,
 	name: Ptr<Name>)
 	-> LookupResult
 {

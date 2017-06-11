@@ -7,7 +7,7 @@ struct Name
 }
 
 func getName(
-	session: Session*,
+	session: Session,
 	text: StringSpan)
 	-> Ptr<Name>
 {
@@ -41,7 +41,7 @@ func getText(
 }
 
 func getName(
-	session: Ptr<Session>,
+	session: Session,
 	text: Ptr<Char>)
 	-> Ptr<Name>
 {

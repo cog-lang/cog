@@ -4,7 +4,7 @@
 
 struct EmitContext
 {
-	var session: Session*;
+	var session: Session;
 	var stream: FILE*;
 }
 
@@ -43,7 +43,7 @@ func emit(
 
 func emitType(
 	context: EmitContext*,
-	type: Exp*)
+	type: Exp)
 {
     if(!type)
     {
@@ -56,7 +56,7 @@ func emitType(
 
 func emitVal(
     context: EmitContext*,
-    val: Val*)
+    val: Val)
 {
     {
         assert(!"unimplemented");
@@ -66,7 +66,7 @@ func emitVal(
 
 func emitGenericQuals(
 	context: EmitContext*,
-	decl: Decl*)
+	decl: Decl)
 {
 	var pp = decl.parent;
 	while (pp)
@@ -97,7 +97,7 @@ func emitGenericQuals(
 
 func emitDeclName(
 	context: EmitContext*,
-	decl: Decl*,
+	decl: Decl,
 	mode: DeclEmitMode)
 {
 	var parent = decl.parent;
@@ -133,7 +133,7 @@ func emitDeclName(
 
 func emitDeclNameAndGenericArgs(
 	context: EmitContext*,
-	decl: Decl*,
+	decl: Decl,
 	mode: DeclEmitMode)
 {
 	let parent = decl.parent;
@@ -163,8 +163,8 @@ func emitDeclNameAndGenericArgs(
 
 func emitDeclarator(
 	context: EmitContext*,
-	type: Exp*,
-	decl: Decl*,
+	type: Exp,
+	decl: Decl,
 	mode: DeclEmitMode)
 {
 	emitType(context, type);
@@ -176,7 +176,7 @@ func emitDeclarator(
 func emitDeclarator(
 	context: EmitContext*,
 	type: TypeExp,
-	decl: Decl*,
+	decl: Decl,
 	mode: DeclEmitMode)
 {
 	emitDeclarator(context, type.exp, decl, mode);
@@ -186,7 +186,7 @@ func emitDeclarator(
 
 func emitBinaryExp(
     context: EmitContext*,
-    exp: AppExpBase*,
+    exp: AppExpBase,
     op: Char*)
 {
     emitExp(context, exp.args.head.exp);
@@ -236,7 +236,7 @@ func emitStringVal(
 
 func emitExp(
     context: EmitContext*,
-	exp: Exp*)
+	exp: Exp)
 {
 	if (let nameExp = as<NameExp>(exp))
 	{
@@ -350,7 +350,7 @@ func emitExp(
 
 func emitBlockStmt(
 	context: EmitContext*,
-	stmt: BlockStmt*)
+	stmt: BlockStmt)
 {
 	emit(context, "{\n");
 	foreach(stmt in stmt.getStmts())
@@ -362,7 +362,7 @@ func emitBlockStmt(
 
 func emitBlockStmt(
     context: EmitContext*,
-	stmt: Stmt*)
+	stmt: Stmt)
 {
     if(let blockStmt = as<BlockStmt>(stmt))
     {
@@ -378,7 +378,7 @@ func emitBlockStmt(
 
 func emitStmt(
 	context: EmitContext*,
-	stmt: Stmt*)
+	stmt: Stmt)
 {
 	if(let blockStmt = as<BlockStmt>(stmt))
 	{
@@ -513,7 +513,7 @@ func emitStmt(
 
 func emitClassDecl(
 	context: EmitContext*,
-    aggDecl: AggTypeDecl*,
+    aggDecl: AggTypeDecl,
 	mode: DeclEmitMode)
 {
 	// We need to emit implementations for class members here!
@@ -557,7 +557,7 @@ func emitClassDecl(
 
 func emitVarDecl(
 	context: EmitContext*,
-	varDecl: VarDeclBase*,
+	varDecl: VarDeclBase,
 	mode: DeclEmitMode)
 {
 	if (mode == kDeclEmitMode_MinimalForward)
@@ -582,14 +582,14 @@ func emitVarDecl(
 
 func emitParamDecl(
 	context: EmitContext*,
-	paramDecl: ParamDecl*)
+	paramDecl: ParamDecl)
 {
 	emitDeclarator(context, paramDecl.type, paramDecl, kDeclEmitMode_Full);
 }
 
 func emitFuncDecl(
 	context: EmitContext*,
-	funcDecl: FuncDecl*,
+	funcDecl: FuncDecl,
 	mode: DeclEmitMode)
 {
 	if (mode == kDeclEmitMode_MinimalForward)
@@ -642,7 +642,7 @@ func emitFuncDecl(
 
 func emitInitializerDecl(
     context: EmitContext*,
-    initDecl: InitializerDecl*,
+    initDecl: InitializerDecl,
 	mode: DeclEmitMode)
 {
 	if (mode == kDeclEmitMode_MinimalForward)
@@ -694,7 +694,7 @@ func emitInitializerDecl(
 
 func emitSubscriptDecl(
 	context: EmitContext*,
-	decl: SubscriptDecl*,
+	decl: SubscriptDecl,
 	mode: DeclEmitMode)
 {
 	if (mode == kDeclEmitMode_MinimalForward)
@@ -754,7 +754,7 @@ func emitSubscriptDecl(
 
 func emitDecl(
 	context: EmitContext*,
-	decl: Decl*,
+	decl: Decl,
 	mode: DeclEmitMode)
 {
 	let builtinAttr = decl.findAttr<BuiltinAttr>();
@@ -873,7 +873,7 @@ func emitDecl(
 
 func emitDecls(
 	context: EmitContext*,
-	containerDecl: ContainerDecl*,
+	containerDecl: ContainerDecl,
 	mode: DeclEmitMode)
 {
 	foreach(decl in containerDecl.getDecls())
@@ -885,12 +885,12 @@ func emitDecls(
 struct DeclSortContext
 {
 	var sortedDecls: SyntaxListBuilder<Decl>;
-	var unsortedDecls: Decl*;
+	var unsortedDecls: Decl;
 }
 
 func addDecl(
 	context: DeclSortContext*,
-	decl: Decl*)
+	decl: Decl)
 {
 	decl.next = nullptr;
 	context.sortedDecls.add(decl);
@@ -898,10 +898,10 @@ func addDecl(
 
 func addDecl(
 	context: DeclSortContext*,
-	declPtr: Decl**)
+	declPtr: Decl*)
 {
 	let decl = *declPtr;
-	*declPtr = cast<Ptr<Decl> >(decl.next);
+	*declPtr = cast<Decl>(decl.next);
 	decl.next = nullptr;
 
 	context.sortedDecls.add(decl);
@@ -909,7 +909,7 @@ func addDecl(
 
 func addDependencies(
 	context: DeclSortContext*,
-	decl: Decl*);
+	decl: Decl);
 
 
 func addDependencies(
@@ -926,7 +926,7 @@ func addDependencies(
 	// that had a name match, before moving on to add it.
 	var dd = context.unsortedDecls;
 
-	var matchingDecls : Decl* = nullptr;
+	var matchingDecls : Decl = nullptr;
 	var matchingDeclLink = &matchingDecls;
 
 	var unsortedDeclLink = &context.unsortedDecls;
@@ -934,18 +934,18 @@ func addDependencies(
 
 	while (dd)
 	{
-		let next = cast<Ptr<Decl> >(dd.next);
+		let next = cast<Decl>(dd.next);
 		dd.next = nullptr;
 
 		if (dd.name == name)
 		{
 			*matchingDeclLink = dd;
-			matchingDeclLink = cast<Ptr<Ptr<Decl> > >(&dd.next);
+			matchingDeclLink = cast<Ptr<Decl> >(&dd.next);
 		}
 		else
 		{
 			*unsortedDeclLink = dd;
-			unsortedDeclLink = cast<Ptr<Ptr<Decl> > >(&dd.next);
+			unsortedDeclLink = cast<Ptr<Decl> >(&dd.next);
 		}
 
 		dd = next;
@@ -960,7 +960,7 @@ func addDependencies(
 	dd = matchingDecls;
 	while (dd)
 	{
-		let next = cast<Ptr<Decl> >(dd.next);
+		let next = cast<Decl>(dd.next);
 		dd.next = nullptr;
 
 		addDependencies(context, dd);
@@ -972,7 +972,7 @@ func addDependencies(
 
 func addDependencies(
 	context: DeclSortContext*,
-	exp: Exp*)
+	exp: Exp)
 {
 	if (!exp) return;
 
@@ -1009,7 +1009,7 @@ func addDependencies(
 
 func addDependencies(
 	context: DeclSortContext*,
-	decl: Decl*)
+	decl: Decl)
 {
 	// Try to find what this decl depends on, and add them!
 	if (let varDecl = as<VarDeclBase>(decl))
@@ -1037,7 +1037,7 @@ func addDependencies(
 
 func sortDecls(
 	context: EmitContext*,
-	container: ContainerDecl*)
+	container: ContainerDecl)
 {
 	var sortContext : DeclSortContext;
 	sortContext.unsortedDecls = container.getDecls().head;
@@ -1045,7 +1045,7 @@ func sortDecls(
 	while (sortContext.unsortedDecls)
 	{
 		let decl = sortContext.unsortedDecls;
-		sortContext.unsortedDecls = cast<Ptr<Decl> >(decl.next);
+		sortContext.unsortedDecls = cast<Decl>(decl.next);
 		decl.next = nullptr;
 
 		// add dependent decls!!
@@ -1056,7 +1056,7 @@ func sortDecls(
 }
 
 func emitModuleInner(
-	session: 		Session*,
+	session: 		Session,
 	moduleNameText:	TerminatedStringSpan,
 	outputPath: 	Ptr<Char>,
 	extra:			Ptr<Char>)
@@ -1072,7 +1072,7 @@ func emitModuleInner(
 
 	emit(&context, "#include \"runtime/runtime.h\"\n");
 
-    for(var mm = session.loadedModules; mm; mm = cast<Ptr<ModuleDecl> >(mm.next))
+    for(var mm = session.loadedModules; mm; mm = cast<ModuleDecl>(mm.next))
     {
         if(mm == moduleDecl) continue;
 
@@ -1130,7 +1130,7 @@ func emitModuleInner(
 
 
 func emitModule(
-	session: Session*)
+	session: Session)
 {
     if(!session.sourceFiles)
         return;
