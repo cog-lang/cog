@@ -43,8 +43,6 @@ func checkModule(
 //	checkDecls(context, moduleDecl);
 }
 
-/*
-
 func checkDecls(
 	context: 		CheckContext*,
 	containerDecl: 	ContainerDecl*)
@@ -162,7 +160,7 @@ func checkFuncDecl(
 
 	// check result type clause, if any
 	checkTypeExp(context, &decl.resultType);
-    if(!decl.resultType)
+    if(!asBool(decl.resultType))
     {
         decl.resultType.type = getBuiltinType(context, decl.loc, "Void");
     }
@@ -361,7 +359,7 @@ func checkTerm(
         {
             // form a decl-ref
             let declRef = CompactDeclRef(result.getDecl());
-            let declRefExp = allocateObject<DeclRefExp>();
+            let declRefExp = createObject<DeclRefExp>();
             declRefExp.loc = exp.loc;
             declRefExp.declRef = declRef;
             declRefExp.type = getTypeForDeclRef(context, declRef);
@@ -369,10 +367,10 @@ func checkTerm(
         }
 		else
 		{
-            let overloadedExpr = allocateObject<OverloadedExpr>();
+            let overloadedExpr = createObject<OverloadedExpr>();
             overloadedExpr.loc = exp.loc;
             overloadedExpr.lookupResult = result;
-            overloadedExpr.type =  allocateObject<OverloadGroupType>();
+            overloadedExpr.type =  createObject<OverloadGroupType>();
             return overloadedExpr;
 		}
 	}
@@ -439,7 +437,7 @@ func checkTerm(
             {
                 // now scan through the type's members looking for a subscript
 
-                foreach(memberDeclRef in aggTypeDeclRef.getDecls())
+                foreach(memberDeclRef in getDecls(aggTypeDeclRef))
                 {
                     if(let memberSubscriptDeclRef = as<SubscriptDecl>(memberDeclRef))
                     {
@@ -474,7 +472,7 @@ func checkTerm(
         overloadContext.baseExp = nullptr;
 
 
-        if(let baseMemberRef = as<MemberRefExp>(base))
+        if(let baseMemberRef = as<MemberExp>(base))
         {
             overloadContext.baseExp = baseMemberRef.base;
         }
@@ -513,7 +511,7 @@ func checkTerm(
 			{
 				var argIter : Arg* = appExp.args.head;
 
-				foreach(declRef in patternDeclRef.getDecls())
+				foreach(declRef in getDecls(patternDeclRef))
 				{
 					let paramRef = as<ParamDecl>(declRef);
 					if(!paramRef) continue;
@@ -532,7 +530,7 @@ func checkTerm(
 			{
 				var argIter = appExp.args.head;
 
-				foreach(decl in genericDeclRef.getDecls())
+				foreach(decl in getDecls(genericDeclRef))
 				{
 					let param = as<GenericParamDecl>(decl);
 					if(!param) continue;
@@ -548,7 +546,7 @@ func checkTerm(
 
                 var specArgLink = &specializations.args.head;
                 argIter = appExp.args.head;
-                foreach(decl in genericDeclRef.getDecls())
+                foreach(decl in getDecls(genericDeclRef))
                 {
                     let param = as<GenericParamDecl>(decl);
                     if(!param) continue;
@@ -605,7 +603,7 @@ func extractVal(
 
 func checkMemberExp(
 	context: CheckContext*,
-	exp: Exp*)
+	exp: MemberExp*)
     -> Exp*
 {
     var base = exp.base;
@@ -644,10 +642,10 @@ func checkMemberExp(
             }
             else if(lookupResult.isOverloaded())
             {
-                let overloadedExpr = allocateObject<OverloadedExpr>();
+                let overloadedExpr = createObject<OverloadedExpr>();
                 overloadedExpr.loc = exp.loc;
                 overloadedExpr.lookupResult = lookupResult;
-                overloadedExpr.type =  allocateObject<OverloadGroupType>();
+                overloadedExpr.type =  createObject<OverloadGroupType>();
                 overloadedExpr.base = base;
                 return overloadedExpr;
             }
@@ -703,12 +701,57 @@ func addAppOverloadCandidates(
 
 func createFuncType(
 	context: CheckContext*,
-	funcDeclRef: DeclRefValImpl<FuncDecLBase>)
+	funcDeclRef: DeclRefValImpl<FuncDeclBase>)
     -> Type*
 {
-    let funcType = allocateObject<FuncType>();
+    let funcType = createObject<FuncType>();
     return funcType;
 }
+
+//
+
+func createDeclRefType(
+	context: CheckContext*,
+	declRef: DeclRefVal)
+	-> Type*
+{
+	let type = createObject<DeclRefType>();
+	type.declRef = CompactDeclRef(declRef);
+	return type;
+}
+
+func createDeclRefTypeType(
+	context: CheckContext*,
+	declRef: DeclRefVal)
+	-> Type*
+{
+	let type = createDeclRefType(context, declRef);
+	let typeType = createTypeType(context, type);
+	return typeType;
+}
+
+func createTypeType(
+	context: CheckContext*,
+	type: Type*)
+	-> TypeType*
+{
+	let typeType = createObject<TypeType>();
+	typeType.type = type;
+	return typeType;
+}
+
+func specializeTypeForDeclRef(
+	context: 	CheckContext*,
+	type:		Type*,
+	declRef:	DeclRefVal)
+	-> Type*
+{
+	return specializeType(
+		type,
+		declRef.specializations);
+}
+
+//
 
 func getTypeForDeclRefImpl(
 	context: CheckContext*,
@@ -719,7 +762,7 @@ func getTypeForDeclRefImpl(
     if(let varDecl = as<VarDeclBase>(decl))
 	{
 		// TODO: need to force decl here?
-		return specializeTypeForDeclRef(context, varDecl.type, declRef);
+		return specializeTypeForDeclRef(context, varDecl.type.type, declRef);
 	}
 	else if(let aggTypeDecl = as<AggTypeDecl>(decl))
 	{
@@ -757,11 +800,21 @@ func getTypeForDeclRef(
     return result;
 }
 
+func getTypeForDeclRef(
+	context: CheckContext*,
+	declRef: CompactDeclRef)
+	-> Type*
+{
+	return getTypeForDeclRef(
+		context,
+		DeclRefVal(declRef));
+}
+
 func createErrorType(
 	context: CheckContext*)
 	-> Type*
 {
-    return allocateObject<ErrorType>();
+    return createObject<ErrorType>();
 }
 
 func getBuiltinType(
@@ -806,11 +859,11 @@ func getResultType(
     // just use the `FuncDeclBaseRef`
 	if(let funcDeclRef = as<FuncDecl>(decl))
 	{
-		return funcDeclRef.getResultType();
+		return getResultType(funcDeclRef);
 	}
     else if(let subscriptDeclRef = as<SubscriptDecl>(decl))
     {
-        return subscriptDeclRef.getResultType();
+        return getResultType(subscriptDeclRef);
     }
     else if(let typeDeclRef = as<AggTypeDecl>(decl))
     {
@@ -839,7 +892,7 @@ func createErrorExp(
 	loc: SourceLoc)
     -> Exp*
 {
-    let exp = allocateObject<ErrorExp>();
+    let exp = createObject<ErrorExp>();
     exp.loc = loc;
     return createErrorExp(context, exp);
 }
@@ -1064,7 +1117,7 @@ struct OverloadResolveContext
     var appExp 			: AppExpBase*;
     var baseExp 		: Exp* = 0;
 
-    var mode : Mode = kOverloadResolveMode_justTrying;
+    var mode : OverloadResolveMode = kOverloadResolveMode_justTrying;
 
     // candidates being considered
     var candidates : Array<OverloadCandidate>;
@@ -1081,7 +1134,7 @@ func checkOverloadCandidateArity(
 
     if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
     {
-        foreach(dd in funcDeclRef.getDecls())
+        foreach(dd in getDecls(funcDeclRef))
         {
             if(let paramDeclRef = as<ParamDecl>(dd))
             {
@@ -1123,7 +1176,7 @@ func checkOverloadCandidateTypes(
 
     if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
     {
-        foreach(dd in funcDeclRef.getDecls())
+        foreach(dd in getDecls(funcDeclRef))
         {
             if(let paramDeclRef = as<ParamDecl>(dd))
             {
@@ -1137,13 +1190,13 @@ func checkOverloadCandidateTypes(
                 let arg = *argCursor;
                 let argExpr = &arg.exp;
 
-                let paramType = paramDeclRef.getType();
+                let paramType = getType(paramDeclRef);
 
                 if(context.mode == kOverloadResolveMode_justTrying)
                 {
                     if(!canCoerce(
                         context.checkContext,
-                        argExpr,
+                        *argExpr,
                         paramType))
                     {
                         return false;
@@ -1151,9 +1204,9 @@ func checkOverloadCandidateTypes(
                 }
                 else
                 {
-                    argExpr = coerce(
+                    *argExpr = coerce(
                         context.checkContext,
-                        argExpr,
+                        *argExpr,
                         paramType);
                 }
 
@@ -1337,7 +1390,7 @@ func createDeclRefExp(
     var declRefExp: DeclRefExp* = 0;
     if(baseExp)
     {
-        let memberRefExp = createObject<MemberRefExp>();
+        let memberRefExp = createObject<MemberExp>();
         memberRefExp.base = baseExp;
         declRefExp = memberRefExp;
     }
@@ -1356,7 +1409,7 @@ func createDeclRefExp(
 	context: CheckContext*,
 	declRef: DeclRefVal,
 	loc: SourceLoc,
-	baseExp: Exp* = 0)
+	baseExp: Exp*)
     -> Exp*
 {
 
@@ -1373,6 +1426,16 @@ func createDeclRefExp(
     {
         return createDeclRefExp(context, CompactDeclRef(decl), loc, baseExp);
     }
+}
+
+// TODO(tfoley): support default arguments
+func createDeclRefExp(
+	context: CheckContext*,
+	declRef: DeclRefVal,
+	loc: SourceLoc)
+    -> Exp*
+{
+	return createDeclRefExp(context, declRef, loc, nullptr);
 }
 
 func completeOverload(
@@ -1423,7 +1486,7 @@ func completeOverload(
             overloadContext.mode = kOverloadResolveMode_forReal;
             checkOverloadCandidate(
                 overloadContext,
-                candidate);
+                *candidate);
             return createErrorExp(context, appExp.loc);
         }
     }
@@ -1487,20 +1550,20 @@ func isError(
     return as<ErrorExp>(exp) || isError(exp.type);
 }
 
-static void addTypeOverloadCandidates(
-    OverloadResolveContext* context,
-    Exp*                    typeExp,
-    Type*                   type)
+func addTypeOverloadCandidates(
+	context: OverloadResolveContext*,
+	typeExp: Exp*,
+	type: Type*)
 {
-    if(auto declRefType = as<DeclRefType>(type))
+    if(let declRefType = as<DeclRefType>(type))
     {
-        if(auto aggTypeDeclRef = as<AggTypeDecl>(declRefType->declRef))
+        if(let aggTypeDeclRef = as<AggTypeDecl>(declRefType.declRef))
         {
             // Need to look for constructors
 
-            for(auto memberDeclRef : aggTypeDeclRef.getDecls())
+            foreach( memberDeclRef in getDecls(aggTypeDeclRef))
             {
-                if(auto initializerDeclRef = as<InitializerDecl>(memberDeclRef))
+                if(let initializerDeclRef = as<InitializerDecl>(memberDeclRef))
                 {
                     addInitializerOverloadCandidate(context, type, initializerDeclRef);
                 }
@@ -1512,34 +1575,25 @@ static void addTypeOverloadCandidates(
 
 struct GenericInferenceArg
 {
-    DeclRefValImpl<GenericParamDecl> paramDeclRef;
-    Val* val = nullptr;
-};
+	var paramDeclRef: DeclRefValImpl<GenericParamDecl>;
+	var val: Val* = nullptr;
+}
 
 struct GenericInferenceContext
 {
-    CheckContext*           checkContext;
-    GenericInferenceArg*    args;
-};
+	var checkContext: CheckContext*;
+	var args: GenericInferenceArg*;
+}
 
-static bool doInferenceForTypes(
-    GenericInferenceContext*    context,
-    Type*                       argType,
-    Type*                       paramType);
-
-static bool doInferenceForDeclRefs(
-    GenericInferenceContext*    context,
-    DeclRefVal                  argDeclRef,
-    DeclRefVal                  paramDeclRef);
-
-static bool doInferenceForVals(
-    GenericInferenceContext*    context,
-    Val*                        argVal,
-    Val*                        paramVal)
+func doInferenceForVals(
+	context: GenericInferenceContext*,
+	argVal: Val*,
+	paramVal: Val*)
+    -> Bool
 {
-    if(auto argType = as<Type>(argVal))
+    if(let argType = as<Type>(argVal))
     {
-        if(auto paramType = as<Type>(paramVal))
+        if(let paramType = as<Type>(paramVal))
         {
             return doInferenceForTypes(context, argType, paramType);
         }
@@ -1549,39 +1603,41 @@ static bool doInferenceForVals(
     return false;
 }
 
-static bool doInferenceForSpecializations(
-    GenericInferenceContext*    context,
-    Specializations*            argSpec,
-    Specializations*            paramSpec)
+func doInferenceForSpecializations(
+	context: GenericInferenceContext*,
+    argSpec: Specializations*,
+    paramSpec: Specializations*)
+    -> Bool
 {
     // Make sure we can align the generic being referened
     if(!doInferenceForDeclRefs(
         context,
-        argSpec->genericDeclRef,
-        paramSpec->genericDeclRef))
+        argSpec.genericDeclRef,
+        paramSpec.genericDeclRef))
     {
         return false;
     }
 
     // Now walk through the arguments and try to unify
-    auto aa = argSpec->args.head;
-    auto pp = paramSpec->args.head;
+    var aa = argSpec.args.head;
+    var pp = paramSpec.args.head;
     while(aa)
     {
-        if(!doInferenceForVals(context, aa->value, pp->value))
+        if(!doInferenceForVals(context, aa.value, pp.value))
             return false;
 
-        aa = aa->next;
-        pp = pp->next;
+        aa = aa.next;
+        pp = pp.next;
     }
 
     return true;
 }
 
-static bool doInferenceForDeclRefs(
-    GenericInferenceContext*    context,
-    DeclRefVal                  argDeclRef,
-    DeclRefVal                  paramDeclRef)
+func doInferenceForDeclRefs(
+	context: 		GenericInferenceContext*,
+    argDeclRef:		DeclRefVal,
+    paramDeclRef: 	DeclRefVal)
+    -> Bool
 {
     // TODO: need to handle possible inheritance here!
     if(paramDeclRef.getDecl()
@@ -1598,31 +1654,31 @@ static bool doInferenceForDeclRefs(
         paramDeclRef.specializations);    
 }
 
-static bool doInferenceForTypes(
-    GenericInferenceContext*    context,
-    Type*                       argType,
-    Type*                       paramType)
+func doInferenceForTypes(
+    context: GenericInferenceContext*,
+    argType: Type*,
+    paramType: Type*)
+    -> Bool
 {
     //
     if(isSameType(argType, paramType))
         return true;
 
-    if(auto paramDeclRefType = as<DeclRefType>(paramType))
+    if(let paramDeclRefType = as<DeclRefType>(paramType))
     {
-        if(auto genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType->declRef))
+        if(let genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType.declRef))
         {
             assert(!"unimplemented");
-            throw 99;
         }
 
         // Is the argument type a reference to the same
         // type declaration (maybe with different parameters)?
-        if(auto argDeclRefType = as<DeclRefType>(argType))
+        if(let argDeclRefType = as<DeclRefType>(argType))
         {
             return doInferenceForDeclRefs(
                 context,
-                argDeclRefType->declRef,
-                paramDeclRefType->declRef);
+                argDeclRefType.declRef,
+                paramDeclRefType.declRef);
         }
     }
 
@@ -1631,21 +1687,23 @@ static bool doInferenceForTypes(
 }
 
 
-static bool doInferenceForArgAndParam(
-    GenericInferenceContext*    context,
-    Exp*                        argExpr,
-    DeclRefValImpl<ParamDecl>   paramDeclRef)
+func doInferenceForArgAndParam(
+    context: GenericInferenceContext*,
+    argExpr: Exp*,
+    paramDeclRef: DeclRefValImpl<ParamDecl>)
+    -> Bool
 {
     return doInferenceForTypes(
         context,
-        argExpr->type,
-        paramDeclRef.getType());
+        argExpr.type,
+        getType(paramDeclRef));
 }
 
-static Specializations* inferGenericArgsForApp(
-    CheckContext*               context,
-    DeclRefValImpl<GenericDecl> genericDeclRef,
-    AppExpBase*                 appExpr)
+func inferGenericArgsForApp(
+    context: CheckContext*,
+    genericDeclRef: DeclRefValImpl<GenericDecl>,
+    appExpr: AppExpBase*)
+    -> Specializations*
 {
     // Need to find a suitable value to substitute
     // for each parameter of the given generic.
@@ -1654,8 +1712,8 @@ static Specializations* inferGenericArgsForApp(
     // argument and parameter types, and find
     // constraints that they place on each parameter
 
-    auto innerDeclRef = genericDeclRef.getInner();
-    auto innerFuncDeclRef = as<FuncDeclBase>(innerDeclRef);
+    let innerDeclRef = getInner(genericDeclRef);
+    let innerFuncDeclRef = as<FuncDeclBase>(innerDeclRef);
     if(!innerFuncDeclRef)
     {
         // TODO: consider generic types...
@@ -1663,12 +1721,12 @@ static Specializations* inferGenericArgsForApp(
     }
 
 
-    Array<GenericInferenceArg> args;
-    for(auto member : genericDeclRef.getDecls())
+    var args: Array<GenericInferenceArg>;
+    foreach( member in getDecls(genericDeclRef))
     {
-        if(auto genericParamDeclRef = as<GenericParamDecl>(member))
+        if(let genericParamDeclRef = as<GenericParamDecl>(member))
         {
-            GenericInferenceArg arg;
+            var arg: GenericInferenceArg;
             arg.paramDeclRef = genericParamDeclRef;
 
             args.append(arg);
@@ -1679,15 +1737,15 @@ static Specializations* inferGenericArgsForApp(
         }
     }
 
-    GenericInferenceContext inferenceContext;
+    var inferenceContext : GenericInferenceContext;
     inferenceContext.checkContext = context;
     inferenceContext.args = &args[0];
 
-    auto aa = appExpr->args.begin();
-    auto ae = appExpr->args.end();
-    for(auto member : innerFuncDeclRef.getDecls())
+    var aa = appExpr.args.begin();
+    let ae = appExpr.args.end();
+    foreach(member in getDecls(innerFuncDeclRef))
     {
-        auto paramDeclRef = as<ParamDecl>(member);
+        let paramDeclRef = as<ParamDecl>(member);
         if(!paramDeclRef)
             continue;
 
@@ -1697,14 +1755,14 @@ static Specializations* inferGenericArgsForApp(
             return nullptr;
         }
 
-        auto arg = *aa;
+        let arg = *aa;
         ++aa;
 
         // We have an arg and param,
         // and need to match them up!
         if(!doInferenceForArgAndParam(
             &inferenceContext,
-            arg->exp,
+            arg.exp,
             paramDeclRef))
         {
             return nullptr;
@@ -1718,7 +1776,7 @@ static Specializations* inferGenericArgsForApp(
 
     // Now let's see if the arguments can be inferred from what
     // we've seen!
-    for(auto arg : args)
+    foreach(arg in args)
     {
         if(!arg.val)
             return nullptr;
@@ -1728,13 +1786,9 @@ static Specializations* inferGenericArgsForApp(
     return nullptr;
 }
 
-static void addDeclRefOverloadCandidates(
-    OverloadResolveContext* context,
-    DeclRefVal              val);
-
-static void addGenericOverloadCandidate(
-    OverloadResolveContext* context,
-    DeclRefValImpl<GenericDecl> genericDeclRef)
+func addGenericOverloadCandidate(
+    context: OverloadResolveContext*,
+    genericDeclRef: DeclRefValImpl<GenericDecl>)
 {
     // Need to infer argument types and then apply
     // based on those.
@@ -1744,11 +1798,11 @@ static void addGenericOverloadCandidate(
     // for right now lets just do the easy thing
     // and use a local inference step.
 
-    auto innerDeclRef = genericDeclRef.getInner();
-    auto specializations = inferGenericArgsForApp(
-        context->checkContext,
+    let innerDeclRef = getInner(genericDeclRef);
+    let specializations = inferGenericArgsForApp(
+        context.checkContext,
         genericDeclRef,
-        context->appExp);
+        context.appExp);
     if(specializations)
     {
         innerDeclRef.specializations = specializations;
@@ -1761,15 +1815,15 @@ static void addGenericOverloadCandidate(
     addDeclRefOverloadCandidates(context, innerDeclRef);
 }
 
-static void addDeclRefOverloadCandidates(
-    OverloadResolveContext* context,
-    DeclRefVal              val)
+func addDeclRefOverloadCandidates(
+    context: OverloadResolveContext*,
+    val: DeclRefVal)
 {
-    if(auto funcDeclRef = as<FuncDeclBase>(val))
+    if(let funcDeclRef = as<FuncDeclBase>(val))
     {
         addFuncOverloadCandidate(context, funcDeclRef);
     }
-    else if(auto genericDeclRef = as<GenericDecl>(val))
+    else if(let genericDeclRef = as<GenericDecl>(val))
     {
         addGenericOverloadCandidate(context, genericDeclRef);
     }
@@ -1779,8 +1833,17 @@ static void addDeclRefOverloadCandidates(
     }
 }
 
+//
 
+func specializeType(
+	type: Type*,
+	specializations: Specializations*)
+	-> Type*
+{
+	if(!specializations)
+		return type;
 
+	assert(!"unimplemented");
+	return nullptr;
+}
 
-
-*/

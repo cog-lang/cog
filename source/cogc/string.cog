@@ -89,10 +89,10 @@ struct TerminatedStringSpan : StringSpan
 //	var begin : Ptr<Char>;
 //	var end : Ptr<Char>;
 
-	init(text: Ptr<Char>)
+	init(text: ConstPtr<Char>)
 	{
-		this.begin = text;
-		this.end = text + strlen(text);
+		this.begin = cast<Ptr<Char> >(text);
+		this.end = cast<Ptr<Char> >(text + strlen(text));
 	}
 //	init(text: String);
 

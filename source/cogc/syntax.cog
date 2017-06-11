@@ -13,6 +13,11 @@ struct TypeExp
 	*/
 }
 
+func asBool(typeExp: TypeExp) -> Bool
+{
+	return typeExp.exp;
+}
+
 struct SyntaxListIterator<T>
 {
 	var current : Ptr<T>;
@@ -237,6 +242,25 @@ class Decl : Stmt
 	}
 }
 
+class SpecializationArg : Object
+{
+	var next : SpecializationArg*;
+	var value : Val*;
+}
+
+class Specializations : Object
+{
+	var genericDeclRef : DeclRefValImpl<GenericDecl>;
+	var args : SyntaxList<SpecializationArg>;
+}
+
+
+class SpecializedDecl : Object
+{
+	var decl : Decl*;
+	var specializations: Specializations*;
+}
+
 // Values
 
 // A value is a literal, and thus not syntax
@@ -268,9 +292,101 @@ class ContainerDecl : ContainerStmt
 	func getDecls() -> Ref<SyntaxList<Decl> > { return *cast<Ptr<SyntaxList<Decl> > >(&stmts); }
 }
 
+struct DeclRefListIterator<T>
+{
+	var decl : Decl*;
+	var specializations : Specializations*;
+
+	init(decl: Decl*, specializations: Specializations*)
+	{
+		this.decl = decl;
+		this.specializations = specializations;
+
+		adjust();
+	}
+
+	func ++()
+	{
+		if(!decl)
+			return;
+		decl = cast<Ptr<Decl>>(decl.next);
+		adjust();
+	}
+
+	func *() -> DeclRefValImpl<T>
+	{
+		return DeclRefValImpl<T>(
+			cast<Ptr<T> >(decl),
+			specializations);
+	}
+
+	func adjust()
+	{
+		while(decl)
+		{
+			let declAsT = as<T>(decl);
+			if(declAsT)
+				return;
+
+			decl = cast<Ptr<Decl>>(decl.next);
+		}
+	}
+}
+
+struct DeclRefList<T>
+{
+	var decl : Decl*;
+	var specializations : Specializations*;
+
+	func begin() -> DeclRefListIterator<T>
+	{
+		return DeclRefListIterator<T>(decl, specializations);
+	}
+
+	func end() -> DeclRefListIterator<T>
+	{
+		return DeclRefListIterator<T>(nullptr, nullptr);
+	}
+
+	init()
+	{
+		this.decl = nullptr;
+		this.specializations = nullptr;
+	}
+
+	init(decl: Decl*, specializations: Specializations*)
+	{
+		this.decl = decl;
+		this.specializations = specializations;
+	}
+}
+
+func != <T>(
+	left: DeclRefListIterator<T>,
+	right: DeclRefListIterator<T>) -> Bool
+{
+	return left.decl != right.decl;
+}
+
+func getDecls(container: DeclRefValImpl<ContainerDecl>)
+	-> DeclRefList<Decl>
+{
+	return DeclRefList<Decl>(
+		container.getDecl().getDecls().head,
+		container.specializations);
+}
+
 class GenericDecl : ContainerDecl
 {
 	var inner : Ptr<Decl>;
+}
+
+func getInner(declRef: DeclRefValImpl<GenericDecl>)
+	-> DeclRefVal
+{
+	return DeclRefVal(
+		declRef.getDecl().inner,
+		declRef.specializations);
 }
 
 class TypeVarDecl : Decl
@@ -319,6 +435,15 @@ class FuncDeclBase : PatternDecl
 	var body : Ptr<Stmt>;
 }
 
+func getResultType(
+	declRef: DeclRefValImpl<FuncDeclBase>)
+	-> Type*
+{
+	return specializeType(
+		declRef.getDecl().resultType.type,
+		declRef.specializations);
+}
+
 class FuncDecl : FuncDeclBase
 {
 }
@@ -335,6 +460,13 @@ class VarDeclBase : Decl
 {
 	var type : TypeExp;
 	var init : Ptr<Exp>;
+}
+
+func getType(declRef: DeclRefValImpl<VarDeclBase>) -> Type*
+{
+	return specializeType(
+		declRef.getDecl().type.type,
+		declRef.specializations);
 }
 
 class VarDecl : VarDeclBase
@@ -433,6 +565,7 @@ class PositionalArg : Arg
 
 class Exp : Stmt
 {
+	var type : Type*;
 }
 
 class LitExp : Exp
@@ -497,14 +630,19 @@ class AssignExp : Exp
 	var right : Ptr<Exp>;
 }
 
-class NameExp : Exp
+class DeclRefExp : Exp
+{
+	var declRef : CompactDeclRef;
+}
+
+class NameExp : DeclRefExp
 {
 	var name : Ptr<Name>;
 	var scope : Ptr<Scope>;
 }
 
 
-class MemberExp : Exp
+class MemberExp : DeclRefExp
 {
 	var base : Ptr<Exp>;
 	var memberName : Ptr<Name>;
@@ -582,8 +720,7 @@ class Type : Val
 // A type that is formed via a declaration reference
 class DeclRefType : Type
 {
-// TODO: fill in decl ref stuff...
-//	var declRef : CompactDeclRef;
+	var declRef : CompactDeclRef;
 }
 
 // The "type" of another type

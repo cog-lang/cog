@@ -22,6 +22,15 @@ enum DiagnosticID
 	kDiagnostic_unexpectedTokenExpectedToken,
 	kDiagnostic_youMeanDot,
 	kDiagnostic_unexpectedDeclName,
+
+	kDiagnostic_undefinedIdentifier,
+	kDiagnostic_noMemberOfNameInType,
+	kDiagnostic_failedToFindBuiltinType,
+	kDiagnostic_cannotConvertType,
+	kDiagnostic_noOverloadCandidatesFound,
+	kDiagnostic_candidate,
+	kDiagnostic_ambiguousCallToOverload,
+	kDiagnostic_noApplicableOverloadForCall,
 }
 
 struct DiagnosticSink
@@ -33,6 +42,11 @@ struct DiagnosticSink
 struct ArgTypeList
 {
 	var args : Ptr<Arg>;
+
+	init()
+	{
+		this.args = nullptr;
+	}
 
 	init(args: Ptr<Arg>)
 	{
@@ -63,7 +77,19 @@ struct DiagnosticArg
 
 //	init(val: TerminatedStringSpan) { this.stringSpanVal = val; }
 
-	init(val: Ptr<Char>) { this.stringSpanVal = TerminatedStringSpan(val); }
+	init(val: ConstPtr<Char>) { this.stringSpanVal = TerminatedStringSpan(val); }
+
+	init(val: Type*) { this.typeVal = val; }
+
+	init(val: DeclRefVal)
+	{
+		this.declRefVal = val;
+	}
+
+	init(val: ConstRef<ArgTypeList>)
+	{
+		this.argTypeListVal = val;
+	}
 
 	var flavor: Flavor;
 //	union {
@@ -71,6 +97,10 @@ struct DiagnosticArg
 //		var tokenCodeVal: TokenCode;
 		var nameVal : Ptr<Name>;
 		var stringSpanVal : StringSpan;
+		var typeVal : Type*;
+
+		var declRefVal : DeclRefVal;
+		var argTypeListVal : ArgTypeList;
 //	}
 }
 
