@@ -79,7 +79,7 @@ func attachToScope(
 	scope:	Scope*,
 	decl: 	ContainerDecl)
 {
-	let link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
+    let link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
 	link.container = decl;
 	link.next = nullptr;
 
@@ -153,7 +153,7 @@ func checkGenericDecl(
 	context: CheckContext*,
 	decl: GenericDecl)
 {
-    fprintf(stderr, "CHECKING GENERIC\n");
+//    fprintf(stderr, "CHECKING GENERIC\n");
 
 	// check params
 	checkDecls(context, decl);
@@ -639,6 +639,40 @@ func checkTerm(
 		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
 		assert(!"unimplemented");
 		return 0;
+	}
+	else if(let thisExpr = as<ThisExpr>(exp))
+	{
+		var scope = thisExpr.scope;
+		while(scope)
+		{
+			let containerDecl = scope.directLink.container;
+			let aggTypeDecl = as<AggTypeDecl>(containerDecl);
+			if(aggTypeDecl)
+			{
+				thisExpr.type = createDeclRefType(
+					context,
+					DeclRefVal(aggTypeDecl));
+				return thisExpr;
+			}
+
+			scope = scope.parent;
+		}
+
+		// TODO: need to fill in the type!
+
+		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, "this expression type");
+
+		return createErrorExp(context, exp);
+	}
+	else if(let castExpr = as<CastExpr>(exp))
+	{
+		checkTypeExp(context, &castExpr.toType);
+		castExpr.arg = checkTerm(context, castExpr.arg);
+
+		// TODO: should validate the cast
+
+		castExpr.type = castExpr.toType.type;
+		return castExpr;
 	}
 	else
 	{
@@ -1677,6 +1711,12 @@ func doInferenceForSpecializations(
     paramSpec: Specializations)
     -> Bool
 {
+	// Empty specializations only match empty ones
+    if(!argSpec || !paramSpec)
+    {
+    	return argSpec == paramSpec;
+    }
+
     // Make sure we can align the generic being referened
     if(!doInferenceForDeclRefs(
         context,
@@ -1685,6 +1725,7 @@ func doInferenceForSpecializations(
     {
         return false;
     }
+
 
     // Now walk through the arguments and try to unify
     var aa = argSpec.args.head;

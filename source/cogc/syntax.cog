@@ -777,3 +777,16 @@ class ParenExp : Exp
 {
 	var base: Exp;
 }
+
+//
+
+class ThisExpr : Exp
+{
+	var scope : Scope*;
+}
+
+class CastExpr : Exp
+{
+	var toType : TypeExp;
+	var arg : Exp;
+}
