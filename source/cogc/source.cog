@@ -1,5 +1,7 @@
 // source.cog
 
+import cog;
+
 struct SourceLoc
 {
 	var raw : USize;

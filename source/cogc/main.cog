@@ -1,6 +1,6 @@
 // main.cog
 
-import theta;
+import cog;
 
 func B(a: A);
 

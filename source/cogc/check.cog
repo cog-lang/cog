@@ -45,10 +45,30 @@ func checkModule(
 	checkDecls(context, moduleDecl);
 }
 
+func checkImportDecls(
+	context: CheckContext*,
+	containerDecl: ContainerDecl)
+{
+	foreach(decl in containerDecl.getDecls())
+	{
+		if(let importDecl = as<ImportDecl>(decl))
+		{
+	    	// Need to wire the import up into the current scope
+
+	    	let module = findOrImportModule(context.shared.session, importDecl.loc, importDecl.name);
+
+	    	attachToScope(importDecl.scope, module);
+		}
+	}
+	
+}
+
 func checkDecls(
 	context: 		CheckContext*,
 	containerDecl: 	ContainerDecl)
 {
+	checkImportDecls(context, containerDecl);
+
 	foreach(decl in containerDecl.getDecls())
 	{
 		checkDecl(context, decl);
@@ -68,6 +88,26 @@ func attachToScope(
 }
 
 func checkDecl(
+	context: 	CheckContext*,
+	decl:		Decl)
+{
+	// don't check decl we've already checked
+	if(decl.checkState == kDeclCheckState_Checked)
+		return;
+
+	if(decl.checkState != kDeclCheckState_Unchecked)
+	{
+		// we are already checking this one!
+		diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, "circularity");
+		return;
+	}
+
+	decl.checkState = kDeclCheckState_CheckingHead;
+	checkDeclImpl(context, decl);
+	decl.checkState = kDeclCheckState_Checked;
+}
+
+func checkDeclImpl(
 	context: 	CheckContext*,
 	decl:		Decl)
 {
@@ -101,11 +141,7 @@ func checkDecl(
 	}
     else if(let importDecl = as<ImportDecl>(decl))
     {
-    	// Need to wire the import up into the current scope
-
-    	let module = findOrImportModule(context.shared.session, importDecl.loc, importDecl.name);
-
-    	attachToScope(importDecl.scope, module);
+    	// Skip in this phase
     }
 	else
 	{
@@ -121,6 +157,8 @@ func checkGenericDecl(
 
 	// check params
 	checkDecls(context, decl);
+
+	decl.checkState = kDeclCheckState_CheckedHead;
 
 	// check inner decl
 	checkDecl(context, decl.inner);
@@ -165,6 +203,11 @@ func checkVarDecl(
         }
     }
 
+//    fprintf(stderr, "VAR(%s) TYPE(",
+//    	getText(decl.name).begin);
+//    printType(stderr, type);
+//    fprintf(stderr, ")\n");
+
     decl.init = initExpr;
     decl.type.type = type;
 }
@@ -182,6 +225,8 @@ func checkFuncDecl(
     {
         decl.resultType.type = getBuiltinType(context, decl.loc, "Void");
     }
+
+	decl.checkState = kDeclCheckState_CheckedHead;    
 
 	if(let body = decl.body)
 	{
@@ -209,6 +254,8 @@ func checkAggTypeDeclCommon(
 {
 	// check base clause, if any
 	checkTypeExp(context, &decl.base);
+
+	decl.checkState = kDeclCheckState_CheckedHead;
 
 	// TODO: validate that the base (if any)
 	// names a class, and satisfies any constraints
@@ -777,6 +824,9 @@ func getTypeForDeclRefImpl(
 	-> Type
 {
     let decl = declRef.getDecl();
+
+    ensureDecl(context, decl);
+
     if(let varDecl = as<VarDeclBase>(decl))
 	{
 		// TODO: need to force decl here?
@@ -812,8 +862,8 @@ func getTypeForDeclRef(
 {
     let result = getTypeForDeclRefImpl(context, declRef);
 //    fprintf(stderr, "getTypeForDeclRef(%s) = ",
-//        getText(declRef.decl->name).begin);
-//    formatType(stderr, result);
+//        getText(declRef.decl.name).begin);
+//    printType(stderr, result);
 //    fprintf(stderr, "\n");
     return result;
 }
@@ -1865,3 +1915,22 @@ func specializeType(
 	return nullptr;
 }
 
+//
+
+func ensureDecl(
+	context: CheckContext*,
+	decl: Decl,
+	state: DeclCheckState)
+{
+	if(decl.checkState >= state)
+		return;
+
+	checkDecl(context, decl);
+}
+
+func ensureDecl(
+	context: CheckContext*,
+	decl: Decl)
+{
+	ensureDecl(context, decl, kDeclCheckState_CheckedHead);
+}

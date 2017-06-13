@@ -2,8 +2,8 @@
 
 struct TypeExp
 {
-	var exp : Exp;
-	var type : Type;
+	var exp : Exp = nullptr;
+	var type : Type = nullptr;
 
 	/*
 	operator Exp*()
@@ -231,10 +231,19 @@ class Stmt : Syntax
 	}
 }
 
+enum DeclCheckState
+{
+	kDeclCheckState_Unchecked = 0,
+	kDeclCheckState_CheckingHead,
+	kDeclCheckState_CheckedHead,
+	kDeclCheckState_Checked,
+}
+
 class Decl : Stmt
 {
 	var name : Ptr<Name>;
 	var parent : ContainerStmt;
+	var checkState : DeclCheckState = kDeclCheckState_Unchecked;
 
 	func getParent() -> ContainerStmt
 	{

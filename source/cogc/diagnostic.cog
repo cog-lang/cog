@@ -227,6 +227,49 @@ static const DiagnosticInfo kDiagnostics[] =
 };
 */
 
+func printDeclRef(
+	stream: FILE*,
+	declRef: DeclRefVal)
+{
+	fprintf(stream, "%s", getText(declRef.getDecl().name).begin);
+}
+
+func printType(
+	stream: FILE*,
+	type: Type)
+{
+	if(let declRefType = as<DeclRefType>(type))
+	{
+		printDeclRef(stream, declRefType.declRef);
+	}
+	else if(let typeType = as<TypeType>(type))
+	{
+		fprintf(stream, "typeof(");
+		printType(stream, typeType.type);
+		fprintf(stream, ")");
+	}
+	else if(let funcType = as<FuncType>(type))
+	{
+		fprintf(stream, "FUNC_TYPE");
+	}
+	else if(let errorType = as<ErrorType>(type))
+	{
+		fprintf(stream, "<error>");
+	}
+	else if(let overloadGroupType = as<OverloadGroupType>(type))
+	{
+		fprintf(stream, "<overload group>");
+	}
+	else if(!type)
+	{
+		fprintf(stream, "NULL_TYPE");
+	}
+	else
+	{
+		fprintf(stream, "UNKNOWN_TYPE(%s)", type.directClass.name);
+	}
+}
+
 func printDiagnosticArg(
 	arg: ConstPtr<DiagnosticArg>)
 {
@@ -252,6 +295,30 @@ func printDiagnosticArg(
 		{
 			let text = arg.stringSpanVal;
 			fwrite(text.begin, 1, text.end-text.begin, stderr);
+		}
+		break;
+
+	case kFlavor_Type:
+		{
+			printType(stderr, arg.typeVal);
+		}
+		break;
+
+	case kFlavor_ArgTypeList:
+		{
+			var first = true;
+			for(var aa = arg.argTypeListVal.args; aa; aa = aa.next)
+			{
+				if(!first) fprintf(stderr, ", ");
+				printType(stderr, aa.exp.type);
+				first = false;
+			}
+		}
+		break;
+
+	case kFlavor_DeclRef:
+		{
+			printDeclRef(stderr, arg.declRefVal);
 		}
 		break;
 						

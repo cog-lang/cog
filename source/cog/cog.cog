@@ -4,5 +4,23 @@
 
 struct Void {}
 
-struct Ptr<T>
-{}
+struct Bool {}
+let true : Bool;
+let false : Bool;
+
+struct Char {}
+
+struct Int {}
+struct UInt {}
+
+struct Size {}
+
+struct Ptr<T> {}
+struct ConstPtr<T> {}
+
+func -(left: Int, right: Int) -> Int;
+
+func - <T>(left: Ptr<T>, right: Ptr<T>) -> Int;
+
+func >(left: Int, right: Int) -> Bool;
+
