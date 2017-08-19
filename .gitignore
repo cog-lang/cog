@@ -2,6 +2,7 @@
 *.cog.cpp
 .vs
 bin/
+dependencies/cog/
 intermediate/
 *.VC.opendb
 *.VC.db
