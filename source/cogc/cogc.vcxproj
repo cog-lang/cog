@@ -19,10 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{22FAAF10-49F3-4CCD-B3A8-F3A6ABE2A41E}</ProjectGuid>
+    <ProjectGuid>{F3DAF015-5BA0-48E0-A178-E12BF27B5DDB}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>cogc</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>cogc</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -96,6 +97,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,6 +111,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,6 +129,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,49 +147,46 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="check.cog" />
-    <None Include="diagnostic.cog" />
-    <None Include="emit.cog" />
-    <None Include="eval.cog" />
-    <None Include="lexer.cog" />
-    <CustomBuild Include="main.cog">
-      <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-    </CustomBuild>
-    <None Include="name.cog" />
-    <None Include="parser.cog" />
-    <None Include="scope.cog" />
-    <None Include="session.cog" />
-    <None Include="source.cog" />
-    <None Include="string.cog" />
-    <None Include="syntax.cog" />
-    <None Include="token.cog" />
+    <ClInclude Include="alloc.h" />
+    <ClInclude Include="array.h" />
+    <ClInclude Include="check.h" />
+    <ClInclude Include="diagnostic.h" />
+    <ClInclude Include="diagnosticdefs.h" />
+    <ClInclude Include="emit.h" />
+    <ClInclude Include="format.h" />
+    <ClInclude Include="lexer.h" />
+    <ClInclude Include="name.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="scope.h" />
+    <ClInclude Include="session.h" />
+    <ClInclude Include="source.h" />
+    <ClInclude Include="string.h" />
+    <ClInclude Include="syntax.h" />
+    <ClInclude Include="token.h" />
+    <ClInclude Include="tokendefs.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="array.cpp" />
+    <ClCompile Include="check.cpp" />
+    <ClCompile Include="diagnostic.cpp" />
+    <ClCompile Include="emit.cpp" />
+    <ClCompile Include="format.cpp" />
+    <ClCompile Include="lexer.cpp" />
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\runtime\runtime.vcxproj">
-      <Project>{9e0a7354-29d9-4525-be90-9c557d8c36ae}</Project>
-    </ProjectReference>
+    <ClCompile Include="name.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="parser.cpp" />
+    <ClCompile Include="scope.cpp" />
+    <ClCompile Include="session.cpp" />
+    <ClCompile Include="source.cpp" />
+    <ClCompile Include="string.cpp" />
+    <ClCompile Include="syntax.cpp" />
+    <ClCompile Include="token.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

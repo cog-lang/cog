@@ -1,202 +1,155 @@
-// main.cpp
 
-#include "runtime/runtime.h"
+#include "check.h"
+#include "emit.h"
+#include "session.h"
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-using namespace cog;
-
-
-#ifdef COGC_BOOTSTRAP
-#define COGC_NAMESPACE cogc_bootstrap
-#else
-#define COGC_NAMESPACE cogc
+#ifdef _WIN32
+#include <Windows.h>
 #endif
 
-namespace COGC_NAMESPACE
+using namespace cogc;
+
+static void parseCommandLine(
+	Session*	session,
+	int*		ioArgc,
+	char**		argv)
 {
-	struct Parser;
-	class SyntaxImpl;
+	char** argCursor = argv;
+	char** argEnd = argv + *ioArgc;
 
-	typedef SyntaxImpl* (*SyntaxCallback)(Parser* parser);
+	char** writeCursor = argv;
 
-	template<int N, typename T>
-	struct FixedSizeArray
+	if (argCursor != argEnd)
 	{
-		T _elements[N];
-
-		T& operator[](int index) { return _elements[index]; }
-		operator T*() { return _elements; }
-	};
-
-	template<typename T, typename U>
-	T cast(U const& val)
-	{
-		return (T)val;
+		// consume app name
+		argCursor++;
 	}
 
-	template<typename T>
-	size_t sizeOf()
+	while(argCursor != argEnd)
 	{
-		return sizeof(T);
-	}
-
-	template<typename T>
-	T* alloc()
-	{
-		return new T();
-	}
-
-	//
-
-	class DeclImpl;
-	class SpecializationsImpl;
-	class SpecializedDeclImpl;
-	struct CompactDeclRef;
-
-	struct DeclRefVal
-	{
-		DeclImpl* decl;
-		SpecializationsImpl* specializations;
-
-		DeclRefVal()
+		char* arg = *argCursor++;
+		if (arg[0] == '-' && arg[1] != 0)
 		{
-			this->decl = nullptr;
-			this->specializations = nullptr;
-		}
-
-		explicit DeclRefVal(
-			DeclImpl* decl)
-		{
-			this->decl = decl;
-			this->specializations = nullptr;
-		}
-
-		DeclRefVal(
-			DeclImpl* decl,
-			SpecializationsImpl* specializations)
-		{
-			this->decl = decl;
-			this->specializations = specializations;
-		}
-
-		DeclRefVal(
-			CompactDeclRef const& declRef);
-
-		DeclImpl* getDecl() { return decl; }
-		SpecializationsImpl* getSpecializations() { return specializations; }
-	};
-
-	template<typename T>
-	struct DeclRefValImpl : DeclRefVal
-	{
-		DeclRefValImpl()
-			: DeclRefVal(nullptr, nullptr)
-		{}
-
-		DeclRefValImpl(
-			T decl,
-			SpecializationsImpl* specializations)
-			: DeclRefVal(decl, specializations)
-		{}
-
-		template<typename U>
-		DeclRefValImpl(
-			DeclRefValImpl<U> const& other,
-			T t = (U)0)
-			: DeclRefVal(other.decl, other.specializations)
-		{}
-
-		T getDecl() { return (T) decl; }
-
-		operator T() { return getDecl(); };
-	};
-
-
-	struct CompactDeclRef
-	{
-		ObjectImpl* value;
-
-		CompactDeclRef()
-		{
-			this->value = nullptr;
-		}
-
-		CompactDeclRef(DeclImpl* decl)
-		{
-			this->value = (ObjectImpl*) decl;
-		}
-
-		CompactDeclRef(SpecializedDeclImpl* specialized)
-		{
-			this->value = (ObjectImpl*) specialized;
-		}
-
-		CompactDeclRef(DeclRefVal const& declRef);
-
-		DeclImpl* getDecl() { return DeclRefVal(*this).getDecl(); }
-		SpecializationsImpl* getSpecializations() { return DeclRefVal(*this).getSpecializations(); }
-
-	};
-
-	template<typename T>
-	DeclRefValImpl<T> as(DeclRefVal const& declRef)
-	{
-		return DeclRefValImpl<T>(
-			as<T>(declRef.decl),
-			declRef.specializations);
-	}
-
-	template<typename T>
-	DeclRefValImpl<T> as(CompactDeclRef const& declRef)
-	{
-		return as<T>(DeclRefVal(declRef));
-	}
-}
-
-#ifdef COGC_BOOTSTRAP
-#include "cogc_bootstrap.cog.cpp"
-#else
-#include "cogc.cog.cpp"
-#endif
-
-namespace COGC_NAMESPACE
-{
-	DeclRefVal::DeclRefVal(
-		CompactDeclRef const& declRef)
-	{
-		auto value = declRef.value;
-		if(auto specializedDecl = as<SpecializedDecl>(value))
-		{
-			this->decl = specializedDecl->decl;
-			this->specializations = specializedDecl->specializations;
+			if (strcmp(arg, "--") == 0)
+			{
+				// end of options
+				while (argCursor != argEnd)
+				{
+					*writeCursor++ = *argCursor++;
+				}
+				break;
+			}
+			else if (strcmp(arg, "-m") == 0)
+			{
+				if (argCursor == argEnd)
+				{
+					fprintf(stderr, "command line: error: expected an argument after '-m' option\n");
+				}
+				else
+				{
+					char const* valArg = *argCursor++;
+					setModulePath(session, TerminatedStringSpan(valArg));
+				}
+			}
+			else if (strcmp(arg, "-o") == 0)
+			{
+				if (argCursor == argEnd)
+				{
+					fprintf(stderr, "command line: error: expected an argument after '-o' option\n");
+				}
+				else
+				{
+					char const* valArg = *argCursor++;
+					// setOutputPath(session, valArg);
+				}
+			}
 		}
 		else
 		{
-			auto declVal = as<Decl>(value);
-			this->decl = declVal;
-			this->specializations = nullptr;
+			*writeCursor++ = arg;
 		}
 	}
 
-	CompactDeclRef::CompactDeclRef(DeclRefVal const& declRef)
-	{
-		auto specializations = declRef.specializations;
-		if(!specializations)
-		{
-			this->value = declRef.decl;
-		}
-		else
-		{
-			auto specializedDecl = createObject<SpecializedDecl>();
-			specializedDecl->decl = declRef.decl;
-			specializedDecl->specializations = declRef.specializations;
-			this->value = specializedDecl;
-		}
-	}
+	*ioArgc = writeCursor - argv;
+
+    // Do some implicit options stuff..
+
+    if(!getModuleName(session))
+    {
+        if(*ioArgc == 1)
+        {
+            // exactly one input file, so use it to infer the module name...
+            StringSpan name = TerminatedStringSpan(argv[0]);
+
+            // If it ends with `.cog`, then strip that off
+            name.trimFromEnd(TerminatedStringSpan(".cog"));
+
+            setModulePath(session, name);
+        }
+        else
+        {
+            // error!
+            fprintf(stderr, "module name must be specified when using more than one input file");
+            exit(1);
+        }
+    }
 }
 
-int main(int argc, char** argv)
+int main(
+    int argc,
+    char** argv)
 {
-	return COGC_NAMESPACE::main(argc, argv);
+    Session* session = createSession();
+
+	// TODO: parse command line options
+	parseCommandLine(session, &argc, argv);
+
+    for(int ii = 0; ii < argc; ++ii)
+    {
+		char const* path = argv[ii];
+#if 0
+
+		// TODO: Unicode!
+		WIN32_FIND_DATAA findData;
+		HANDLE findHandle = FindFirstFileA(path, &findData);
+		if (findHandle == INVALID_HANDLE_VALUE)
+		{
+			fprintf(stderr, "could not find file '%s'\n", path);
+		}
+
+		for (;;)
+		{
+			char const* path = findData.cFileName;
+#endif
+
+//			fprintf(stderr, "FILE: %s\n", path);
+			loadSourceFile(
+				session,
+				TerminatedStringSpan(path));
+
+#if 0
+
+			if (!FindNextFileA(findHandle, &findData))
+				break;
+		}
+#endif
+
+	}
+
+    if(getErrorCount(session) > 0)
+        return 1;
+
+    checkModule(session);
+
+    if(getErrorCount(session) > 0)
+        return 1;
+
+    // TODO: emit code
+    emitModule(session);
+
+    return 0;
 }
