@@ -897,6 +897,7 @@ void emit(EmitContext* context, Name* name);
 void emitType(EmitContext* context, Exp type);
 void emitVal(EmitContext* context, Val val);
 void emitGenericQuals(EmitContext* context, Decl decl);
+void emitDeclName(EmitContext* context, Decl decl, DeclEmitMode mode, Bool includeModule);
 void emitDeclName(EmitContext* context, Decl decl, DeclEmitMode mode);
 void emitDeclNameAndGenericArgs(EmitContext* context, Decl decl, DeclEmitMode mode);
 void emitDeclarator(EmitContext* context, Exp type, Decl decl, DeclEmitMode mode);
@@ -908,7 +909,8 @@ void emitExp(EmitContext* context, Exp exp);
 void emitBlockStmt(EmitContext* context, BlockStmt stmt);
 void emitBlockStmt(EmitContext* context, Stmt stmt);
 void emitStmt(EmitContext* context, Stmt stmt);
-void emitClassDecl(EmitContext* context, AggTypeDecl aggDecl, DeclEmitMode mode);
+void emitClassDecl(EmitContext* context, ClassDecl aggDecl, DeclEmitMode mode);
+void emitStructDecl(EmitContext* context, StructDecl aggDecl, DeclEmitMode mode);
 void emitVarDecl(EmitContext* context, VarDeclBase varDecl, DeclEmitMode mode);
 void emitParamDecl(EmitContext* context, ParamDecl paramDecl);
 using FuncDecl = struct FuncDeclImpl* ;
@@ -3548,7 +3550,7 @@ pp = DEREF(pp).parent;
 }
 }
 }
-void emitDeclName(EmitContext* context, Decl decl, DeclEmitMode mode)
+void emitDeclName(EmitContext* context, Decl decl, DeclEmitMode mode, Bool includeModule)
 {
 auto parent = DEREF(decl).parent;
 auto genericParent = as<GenericDecl> (parent);
@@ -3563,6 +3565,17 @@ if(mode == kDeclEmitMode_Full)
 {
 emitDeclNameAndGenericArgs(context, parent, mode);
 emit(context, "::");
+}
+}
+else
+{
+if(auto moduleDecl = as<ModuleDecl> (parent))
+{
+if(includeModule)
+{
+emitDeclName(context, parent, mode);
+emit(context, "::");
+}
 }
 }
 auto name = DEREF(decl).name;
@@ -3589,11 +3602,19 @@ emit(context, "operator");
 }
 emit(context, DEREF(decl).name);
 }
+void emitDeclName(EmitContext* context, Decl decl, DeclEmitMode mode)
+{
+emitDeclName(context, decl, mode, false);
+}
 void emitDeclNameAndGenericArgs(EmitContext* context, Decl decl, DeclEmitMode mode)
 {
 auto parent = DEREF(decl).parent;
 auto genericParent = as<GenericDecl> (parent);
 emitDeclName(context, decl, mode);
+if(auto classDecl = as<ClassDecl> (decl))
+{
+emit(context, "Impl");
+}
 if(genericParent && (mode == kDeclEmitMode_Full))
 {
 emit(context, "<");
@@ -4078,7 +4099,62 @@ assert(!"unimplemented");
 }
 }
 }
-void emitClassDecl(EmitContext* context, AggTypeDecl aggDecl, DeclEmitMode mode)
+void emitClassDecl(EmitContext* context, ClassDecl aggDecl, DeclEmitMode mode)
+{
+if(mode == kDeclEmitMode_Full)
+{
+for(auto dd : DEREF(aggDecl).getDecls())
+{
+{
+if(auto varDecl = as<VarDecl> (dd))
+{
+continue;
+}
+emitDecl(context, dd, kDeclEmitMode_Full);
+}
+}
+return;
+}
+emit(context, "using ");
+emit(context, DEREF(aggDecl).name);
+emit(context, " = struct ");
+emit(context, DEREF(aggDecl).name);
+emit(context, "Impl* ");
+emit(context, ";\n");
+emit(context, "struct ");
+emit(context, DEREF(aggDecl).name);
+emit(context, "Impl");
+if(mode <= kDeclEmitMode_MinimalForward)
+{
+emit(context, ";\n");
+return;
+}
+if(auto base = DEREF(DEREF(aggDecl).base).exp)
+{
+emit(context, " : ");
+emitType(context, base);
+emit(context, "Impl");
+}
+else
+{
+emit(context, " : cog::ObjectImpl");
+}
+emit(context, "\n{\n");
+emit(context, "typedef cog::Class StaticClass;\n");
+emit(context, "static StaticClass staticClass;\n");
+emitDecls(context, aggDecl, kDeclEmitMode_Forward);
+emit(context, "};\n");
+emit(context, "} namespace cog {\n");
+emit(context, "template<> struct ObjectClassImpl<");
+emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+emit(context, " > { typedef ");
+emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+emit(context, "Impl Impl; };\n");
+emit(context, "} namespace ");
+emit(context, DEREF(DEREF(DEREF(context).session).moduleDecl).name);
+emit(context, " {\n");
+}
+void emitStructDecl(EmitContext* context, StructDecl aggDecl, DeclEmitMode mode)
 {
 if(mode == kDeclEmitMode_Full)
 {
@@ -4211,6 +4287,10 @@ emitDeclNameAndGenericArgs(context, DEREF(initDecl).getParent(), mode);
 emit(context, "::");
 }
 emit(context, DEREF(DEREF(initDecl).getParent()).name);
+if(as<ClassDecl> (DEREF(initDecl).getParent()))
+{
+emit(context, "Impl");
+}
 emit(context, "(");
 auto first = true;
 for(auto decl : DEREF(initDecl).getDecls())
@@ -4258,6 +4338,7 @@ emitGenericQuals(context, decl);
 if(auto resultType = DEREF(DEREF(decl).resultType).exp)
 {
 emitType(context, resultType);
+emit(context, " ");
 }
 else
 {
@@ -4313,7 +4394,7 @@ else
 {
 if(auto structDecl = as<StructDecl> (decl))
 {
-emitClassDecl(context, structDecl, mode);
+emitStructDecl(context, structDecl, mode);
 }
 else
 {

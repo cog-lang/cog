@@ -98,7 +98,8 @@ func emitGenericQuals(
 func emitDeclName(
 	context: EmitContext*,
 	decl: Decl,
-	mode: DeclEmitMode)
+	mode: DeclEmitMode,
+	includeModule: Bool)
 {
 	var parent = decl.parent;
 
@@ -117,6 +118,14 @@ func emitDeclName(
 			emit(context, "::");
 		}
 	}
+	else if(let moduleDecl = as<ModuleDecl>(parent))
+	{
+		if(includeModule)
+		{
+			emitDeclName(context, parent, mode);
+			emit(context, "::");
+		}
+	}
 
 	let name = decl.name;
 	let text = getText(name).begin;
@@ -131,6 +140,14 @@ func emitDeclName(
 	emit(context, decl.name);
 }
 
+func emitDeclName(
+	context: EmitContext*,
+	decl: Decl,
+	mode: DeclEmitMode)
+{
+	emitDeclName(context, decl, mode, false);
+}
+
 func emitDeclNameAndGenericArgs(
 	context: EmitContext*,
 	decl: Decl,
@@ -141,6 +158,11 @@ func emitDeclNameAndGenericArgs(
 	let genericParent = as<GenericDecl>(parent);
 	
 	emitDeclName(context, decl, mode);
+
+	if(let classDecl = as<ClassDecl>(decl))
+	{
+		emit(context, "Impl");
+	}
 
 	if (genericParent && (mode == kDeclEmitMode_Full))
 	{
@@ -525,7 +547,77 @@ func emitStmt(
 
 func emitClassDecl(
 	context: EmitContext*,
-    aggDecl: AggTypeDecl,
+    aggDecl: ClassDecl,
+	mode: DeclEmitMode)
+{
+	// We need to emit implementations for class members here!
+	if (mode == kDeclEmitMode_Full)
+	{
+		foreach(dd in aggDecl.getDecls())
+		{
+			if (let varDecl = as<VarDecl>(dd))
+				continue;
+
+			emitDecl(context, dd, kDeclEmitMode_Full);
+		}
+
+		return;
+	}
+
+	emit(context, "using ");
+    emit(context, aggDecl.name);
+    emit(context, " = struct ");
+    emit(context, aggDecl.name);
+    emit(context, "Impl* ");
+    emit(context, ";\n");
+
+	emit(context, "struct ");
+    emit(context, aggDecl.name);
+	emit(context, "Impl");
+
+	if (mode <= kDeclEmitMode_MinimalForward)
+	{
+		emit(context, ";\n");
+		return;
+	}
+
+    if(let base = aggDecl.base.exp)
+	{
+		emit(context, " : ");
+		emitType(context, base);
+		emit(context, "Impl");
+	}
+	else
+	{
+		emit(context, " : cog::ObjectImpl");
+	}
+
+	emit(context, "\n{\n");
+
+	emit(context, "typedef cog::Class StaticClass;\n");
+	emit(context, "static StaticClass staticClass;\n");
+
+
+    emitDecls(context, aggDecl, kDeclEmitMode_Forward);
+	emit(context, "};\n");
+
+	emit(context, "} namespace cog {\n");
+
+	emit(context, "template<> struct ObjectClassImpl<");
+	emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+	emit(context, " > { typedef ");
+	emitDeclName(context, aggDecl, kDeclEmitMode_Full, true);
+	emit(context, "Impl Impl; };\n");
+
+	emit(context, "} namespace ");
+	emit(context, context.session.moduleDecl.name);
+	emit(context, " {\n");
+}
+
+
+func emitStructDecl(
+	context: EmitContext*,
+    aggDecl: StructDecl,
 	mode: DeclEmitMode)
 {
 	// We need to emit implementations for class members here!
@@ -677,6 +769,11 @@ func emitInitializerDecl(
 	}
     emit(context, initDecl.getParent().name);
 
+    if(as<ClassDecl>(initDecl.getParent()))
+    {
+    	emit(context, "Impl");
+    }
+
     emit(context, "(");
 
     var first = true;
@@ -723,6 +820,7 @@ func emitSubscriptDecl(
 	if (let resultType = decl.resultType.exp)
 	{
 		emitType(context, resultType);
+		emit(context, " ");
 	}
 	else
 	{
@@ -782,7 +880,7 @@ func emitDecl(
 	}
     else if(let structDecl = as<StructDecl>(decl))
     {
-		emitClassDecl(context, structDecl, mode);
+		emitStructDecl(context, structDecl, mode);
     }
 	// Note: this one comes before the base case for variables...
 	else if (let tagDecl = as<EnumTagDecl>(decl))
