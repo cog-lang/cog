@@ -3878,9 +3878,9 @@ else
 {
 if(auto castExpr = as<CastExpr> (exp))
 {
-emit(context, "((");
+emit(context, "cast<");
 emitType(context, DEREF(DEREF(castExpr).toType).exp);
-emit(context, ") ");
+emit(context, ">(");
 emitExp(context, DEREF(castExpr).arg);
 emit(context, ")");
 }
