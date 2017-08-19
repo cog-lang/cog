@@ -366,9 +366,9 @@ func emitExp(
     }
     else if(let castExpr = as<CastExpr>(exp))
     {
-        emit(context, "((");
+        emit(context, "cast<");
 		emitType(context, castExpr.toType.exp);
-        emit(context, ") ");
+        emit(context, ">(");
 		emitExp(context, castExpr.arg);
         emit(context, ")");
     }
