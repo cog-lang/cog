@@ -1,3 +1,4 @@
+#include "runtime/runtime.h"
 namespace cogc {
 struct DiagnosticSink;
 struct SourceLoc;
@@ -1691,7 +1692,7 @@ Size ii = 0;
 for(;ii < index;++ii)
 {
 {
-item = cast<T> (DEREF(item).next);
+item = cast<T>(DEREF(item).next);
 }
 }}
 return item;
@@ -1720,7 +1721,7 @@ for(auto a : attrs)
 auto match = as(a, attrClass);
 if(match)
 {
-return cast<Attr> (match);
+return cast<Attr>(match);
 }
 }
 }
@@ -1728,7 +1729,7 @@ return nullptr;
 }
 template<typename T > T StmtImpl::findAttr()
 {
-return cast<T> (findAttrImpl(getClass<T> ()));
+return cast<T>(findAttrImpl(getClass<T> ()));
 }
 ContainerStmt DeclImpl::getParent()
 {
@@ -1764,7 +1765,7 @@ return FilteredSyntaxList<Decl, Stmt> (stmts);
 }
 Ref<SyntaxList<Decl> >  ContainerDeclImpl::getDecls()
 {
-return *cast<Ptr<SyntaxList<Decl> > > (&stmts);
+return *cast<Ptr<SyntaxList<Decl> > >(&stmts);
 }
 void checkModule(Session session)
 {
@@ -1811,7 +1812,7 @@ checkDecl(context, decl);
 }
 void attachToScope(Scope* scope, ContainerDecl decl)
 {
-auto link = cast<Ptr<ScopeLink> > (malloc(sizeof(ScopeLink)));
+auto link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
 DEREF(link).container = decl;
 DEREF(link).next = nullptr;
 DEREF(link).next = DEREF(DEREF(scope).directLink).next;
@@ -3202,8 +3203,8 @@ DEREF(this).end = end;
 }
 StringSpan::StringSpan(ConstPtr<Char>  begin, ConstPtr<Char>  end)
 {
-DEREF(this).begin = cast<Ptr<Char> > (begin);
-DEREF(this).end = cast<Ptr<Char> > (end);
+DEREF(this).begin = cast<Ptr<Char> >(begin);
+DEREF(this).end = cast<Ptr<Char> >(end);
 }
 Size StringSpan::getLength()
 {
@@ -3481,8 +3482,8 @@ emit(context, TerminatedStringSpan(text));
 }
 TerminatedStringSpan::TerminatedStringSpan(ConstPtr<Char>  text)
 {
-DEREF(this).begin = cast<Ptr<Char> > (text);
-DEREF(this).end = cast<Ptr<Char> > (text + strlen(text));
+DEREF(this).begin = cast<Ptr<Char> >(text);
+DEREF(this).end = cast<Ptr<Char> >(text + strlen(text));
 }
 TerminatedStringSpan::TerminatedStringSpan()
 {
@@ -4547,7 +4548,7 @@ template<typename T > void SyntaxListBuilder<T > ::adjust()
 while(*link)
 {
 {
-link = cast<Ptr<T> > (&DEREF((*link)).next);
+link = cast<Ptr<T> >(&DEREF((*link)).next);
 }
 }
 }
@@ -4574,7 +4575,7 @@ DEREF(DEREF(context).sortedDecls).add(decl);
 void addDecl(DeclSortContext* context, Decl* declPtr)
 {
 auto decl = *declPtr;
-*declPtr = cast<Decl> (DEREF(decl).next);
+*declPtr = cast<Decl>(DEREF(decl).next);
 DEREF(decl).next = nullptr;
 DEREF(DEREF(context).sortedDecls).add(decl);
 }
@@ -4589,17 +4590,17 @@ DEREF(context).unsortedDecls = nullptr;
 while(dd)
 {
 {
-auto next = cast<Decl> (DEREF(dd).next);
+auto next = cast<Decl>(DEREF(dd).next);
 DEREF(dd).next = nullptr;
 if(DEREF(dd).name == name)
 {
 *matchingDeclLink = dd;
-matchingDeclLink = cast<Ptr<Decl> > (&DEREF(dd).next);
+matchingDeclLink = cast<Ptr<Decl> >(&DEREF(dd).next);
 }
 else
 {
 *unsortedDeclLink = dd;
-unsortedDeclLink = cast<Ptr<Decl> > (&DEREF(dd).next);
+unsortedDeclLink = cast<Ptr<Decl> >(&DEREF(dd).next);
 }
 dd = next;
 }
@@ -4610,7 +4611,7 @@ dd = matchingDecls;
 while(dd)
 {
 {
-auto next = cast<Decl> (DEREF(dd).next);
+auto next = cast<Decl>(DEREF(dd).next);
 DEREF(dd).next = nullptr;
 addDependencies(context, dd);
 addDecl(context, dd);
@@ -4699,7 +4700,7 @@ while(DEREF(sortContext).unsortedDecls)
 {
 {
 auto decl = DEREF(sortContext).unsortedDecls;
-DEREF(sortContext).unsortedDecls = cast<Decl> (DEREF(decl).next);
+DEREF(sortContext).unsortedDecls = cast<Decl>(DEREF(decl).next);
 DEREF(decl).next = nullptr;
 addDependencies(&sortContext, decl);
 addDecl(&sortContext, &decl);
@@ -4716,7 +4717,7 @@ DEREF(context).stream = stream;
 emit(&context, "#include \"runtime/runtime.h\"\n");
 {
 auto mm = DEREF(session).loadedModules;
-for(;mm;mm = cast<ModuleDecl> (DEREF(mm).next))
+for(;mm;mm = cast<ModuleDecl>(DEREF(mm).next))
 {
 {
 if(mm == moduleDecl)
@@ -4806,7 +4807,7 @@ DEREF(lexer).session = session;
 DEREF(lexer).file = file;
 DEREF(lexer).cursor = DEREF(DEREF(file).text).begin;
 DEREF(lexer).tokenFlags = kTokenFlag_AtStartOfLine | kTokenFlag_AfterSpace;
-DEREF(lexer).rawStartPtr = cast<UIntPtr> (DEREF(DEREF(file).text).begin) - DEREF(DEREF(file).firstLoc).raw;
+DEREF(lexer).rawStartPtr = cast<UIntPtr>(DEREF(DEREF(file).text).begin) - DEREF(DEREF(file).firstLoc).raw;
 }
 void finalizeLexer(Lexer* lexer)
 {
@@ -4826,7 +4827,7 @@ return peekByte(lexer);
 SourceLoc peekLoc(Lexer* lexer)
 {
 SourceLoc loc;
-DEREF(loc).raw = cast<UIntPtr> (DEREF(lexer).cursor) - DEREF(lexer).rawStartPtr;
+DEREF(loc).raw = cast<UIntPtr>(DEREF(lexer).cursor) - DEREF(lexer).rawStartPtr;
 return loc;
 }
 void advanceByte(Lexer* lexer)
@@ -5448,7 +5449,7 @@ auto begin = DEREF(lexer).cursor;
 auto flags = DEREF(lexer).tokenFlags;
 auto code = lexTokenImpl(lexer);
 auto end = DEREF(lexer).cursor;
-auto rawData = cast<Ptr<Void> > (begin);
+auto rawData = cast<Ptr<Void> >(begin);
 switch(code)
 {
 case kTokenCode_Identifier:
@@ -5487,7 +5488,7 @@ DEREF(token).code = code;
 DEREF(token).flags = flags;
 DEREF(token).rawData = rawData;
 DEREF(token).rawSize = end - begin;
-DEREF(token).rawLoc = cast<UIntPtr> (begin) - DEREF(lexer).rawStartPtr;
+DEREF(token).rawLoc = cast<UIntPtr>(begin) - DEREF(lexer).rawStartPtr;
 DEREF(token).advance = 0;
 return token;
 }
@@ -5632,7 +5633,7 @@ TokenSpan lexTokens(Session session, SourceFile* file)
 Lexer lexer;
 initializeLexer(&lexer, session, file);
 SizeT tokenLimit = 16;
-auto tokens = cast<Ptr<Token> > (malloc(tokenLimit * sizeOf<Token> ()));
+auto tokens = cast<Ptr<Token> >(malloc(tokenLimit * sizeOf<Token> ()));
 SizeT tokenCount = 0;
 {
 for(;;)
@@ -5642,7 +5643,7 @@ auto token = lexToken(&lexer);
 if(tokenCount == tokenLimit)
 {
 tokenLimit *= 2;
-tokens = cast<Ptr<Token> > (realloc(tokens, tokenLimit * sizeOf<Token> ()));
+tokens = cast<Ptr<Token> >(realloc(tokens, tokenLimit * sizeOf<Token> ()));
 }
 tokens[tokenCount++] = token;
 if(DEREF(token).code == kTokenCode_EndOfFile)
@@ -5651,7 +5652,7 @@ break;
 }
 }
 }}
-tokens = cast<Ptr<Token> > (realloc(tokens, tokenLimit * sizeOf<Token> ()));
+tokens = cast<Ptr<Token> >(realloc(tokens, tokenLimit * sizeOf<Token> ()));
 auto endToken = tokens + tokenCount - 1;
 auto tokenSpan = TokenSpan(tokens, endToken);
 matchDelimeters(&lexer, tokens, endToken);
@@ -5791,8 +5792,8 @@ return nn;
 }
 }}
 auto textSize = DEREF(text).end - DEREF(text).begin;
-auto name = cast<Ptr<Name> > (malloc(sizeof(Name) + textSize + 1));
-auto textBegin = cast<Ptr<Char> > (name + 1);
+auto name = cast<Ptr<Name> >(malloc(sizeof(Name) + textSize + 1));
+auto textBegin = cast<Ptr<Char> >(name + 1);
 auto textEnd = textBegin + textSize;
 memcpy(textBegin, DEREF(text).begin, textSize);
 *textEnd = 0;
@@ -6046,7 +6047,7 @@ Name* expectIdentifier(Parser* parser)
 {
 if(auto token = advanceIf(parser, kTokenCode_Identifier))
 {
-auto name = cast<Ptr<Name> > (DEREF(token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(token).rawData);
 return name;
 }
 else
@@ -6115,7 +6116,7 @@ return nullptr;
 }
 NameExp createNameExp(Parser* parser, ConstPtr<Token>  token)
 {
-auto name = cast<Ptr<Name> > (DEREF(token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(token).rawData);
 auto exp = createObject<NameExp> ();
 DEREF(exp).loc = DEREF(token).getLoc();
 DEREF(exp).name = name;
@@ -6266,7 +6267,7 @@ return exp;
 typedef Int64 IntLitVal;
 IntLitVal getIntegerLiteralVal(ConstRef<Token>  token)
 {
-auto textBegin = cast<ConstPtr<Char> > (DEREF(token).rawData);
+auto textBegin = cast<ConstPtr<Char> >(DEREF(token).rawData);
 auto textEnd = textBegin + DEREF(token).rawSize;
 IntLitVal val = 0;
 auto base = 10;
@@ -6322,7 +6323,7 @@ return val;
 }
 String getStringLiteralVal(ConstRef<Token>  token)
 {
-auto textBegin = cast<ConstPtr<Char> > (DEREF(token).rawData);
+auto textBegin = cast<ConstPtr<Char> >(DEREF(token).rawData);
 auto textEnd = textBegin + DEREF(token).rawSize;
 auto cursor = textBegin;
 String val;
@@ -6419,7 +6420,7 @@ case kTokenCode_Identifier:
 {
 {
 auto loc = peekLoc(parser);
-auto name = cast<Ptr<Name> > (DEREF(DEREF(parser).token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(DEREF(parser).token).rawData);
 auto result = lookup(parser, name);
 if(auto syntax = getSyntaxDecl(result))
 {
@@ -6743,7 +6744,7 @@ ModuleDecl findOrImportModule(Session session, SourceLoc loc, Name* name)
 {
 {
 auto mm = DEREF(session).loadedModules;
-for(;mm;mm = cast<ModuleDecl> (DEREF(mm).next))
+for(;mm;mm = cast<ModuleDecl>(DEREF(mm).next))
 {
 {
 if(DEREF(mm).name == name)
@@ -6848,7 +6849,7 @@ case kTokenCode_Identifier:
 {
 {
 auto loc = peekLoc(parser);
-auto name = cast<Ptr<Name> > (DEREF(DEREF(parser).token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(DEREF(parser).token).rawData);
 auto result = lookup(parser, name);
 if(auto syntax = getSyntaxDecl(result))
 {
@@ -6945,7 +6946,7 @@ case kTokenCode_PostfixOperator:
 break;
 }
 }
-auto name = cast<Ptr<Name> > (DEREF(DEREF(parser).token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(DEREF(parser).token).rawData);
 auto nameText = getText(name);
 if(nameText != TerminatedStringSpan(">"))
 {
@@ -7017,7 +7018,7 @@ case kTokenCode_PostfixOperator:
 break;
 }
 }
-auto name = cast<Ptr<Name> > (DEREF(DEREF(parser).token).rawData);
+auto name = cast<Ptr<Name> >(DEREF(DEREF(parser).token).rawData);
 auto nameText = getText(name);
 if(nameText != TerminatedStringSpan("<"))
 {
@@ -7192,7 +7193,7 @@ case kTokenCode_InfixOperator:
 case kTokenCode_PrefixOperator:
 case kTokenCode_PostfixOperator:
 {
-return cast<Ptr<Name> > (DEREF(advanceToken(parser)).rawData);
+return cast<Ptr<Name> >(DEREF(advanceToken(parser)).rawData);
 }
 }
 }
@@ -7585,7 +7586,7 @@ SyntaxListBuilder<Decl>  moduleDeclList;
 DEREF(moduleDeclList).head = DEREF(DEREF(moduleDecl).getDecls()).head;
 if(DEREF(moduleDeclList).head)
 {
-DEREF(moduleDeclList).link = cast<Ptr<Decl> > (DEREF(session).moduleDeclLink);
+DEREF(moduleDeclList).link = cast<Ptr<Decl> >(DEREF(session).moduleDeclLink);
 }
 else
 {
@@ -7749,8 +7750,8 @@ fseek(file, 0, SEEK_END);
 auto fileSize = ftell(file);
 fseek(file, 0, SEEK_SET);
 auto pathSize = DEREF(path).end - DEREF(path).begin;
-auto sourceFile = cast<Ptr<SourceFile> > (malloc(sizeOf<SourceFile> () + pathSize + 1 + fileSize + 1));
-auto pathData = cast<Ptr<Char> > (sourceFile + 1);
+auto sourceFile = cast<Ptr<SourceFile> >(malloc(sizeOf<SourceFile> () + pathSize + 1 + fileSize + 1));
+auto pathData = cast<Ptr<Char> >(sourceFile + 1);
 auto fileData = pathData + pathSize + 1;
 memcpy(pathData, DEREF(path).begin, pathSize);
 pathData[pathSize] = 0;
@@ -7870,7 +7871,7 @@ return current;
 }
 template<typename T > void SyntaxListIterator<T > ::operator++()
 {
-current = cast<T> (DEREF(current).next);
+current = cast<T>(DEREF(current).next);
 }
 template<typename T, typename U > FilteredSyntaxListIterator<T, U > ::FilteredSyntaxListIterator(U current)
 {
@@ -7915,12 +7916,12 @@ if(!decl)
 {
 return;
 }
-decl = cast<Decl> (DEREF(decl).next);
+decl = cast<Decl>(DEREF(decl).next);
 adjust();
 }
 template<typename T > DeclRefValImpl<T>  DeclRefListIterator<T > ::operator*()
 {
-return DeclRefValImpl<T> (cast<T> (decl), specializations);
+return DeclRefValImpl<T> (cast<T>(decl), specializations);
 }
 template<typename T > void DeclRefListIterator<T > ::adjust()
 {
@@ -7932,7 +7933,7 @@ if(declAsT)
 {
 return;
 }
-decl = cast<Decl> (DEREF(decl).next);
+decl = cast<Decl>(DEREF(decl).next);
 }
 }
 }
