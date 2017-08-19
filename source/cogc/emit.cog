@@ -338,6 +338,18 @@ func emitExp(
         emitStringVal(context, charLitExp.val);
         emit(context, "\'");
     }
+    else if(let thisExpr = as<ThisExpr>(exp))
+    {
+        emit(context, "this");
+    }
+    else if(let castExpr = as<CastExpr>(exp))
+    {
+        emit(context, "((");
+		emitType(context, castExpr.toType.exp);
+        emit(context, ") ");
+		emitExp(context, castExpr.arg);
+        emit(context, ")");
+    }
     else
     {
         diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);

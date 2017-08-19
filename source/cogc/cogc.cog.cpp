@@ -3849,8 +3849,26 @@ emit(context, "\'");
 }
 else
 {
+if(auto thisExpr = as<ThisExpr> (exp))
+{
+emit(context, "this");
+}
+else
+{
+if(auto castExpr = as<CastExpr> (exp))
+{
+emit(context, "((");
+emitType(context, DEREF(DEREF(castExpr).toType).exp);
+emit(context, ") ");
+emitExp(context, DEREF(castExpr).arg);
+emit(context, ")");
+}
+else
+{
 diagnose(getSink(context), DEREF(exp).loc, kDiagnostic_unimplemented, DEREF(DEREF(exp).directClass).name);
 assert(!"unimplemented");
+}
+}
 }
 }
 }
