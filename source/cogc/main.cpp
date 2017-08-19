@@ -7,13 +7,7 @@
 using namespace cog;
 
 
-#ifdef COGC_BOOTSTRAP
-#define COGC_NAMESPACE cogc_bootstrap
-#else
-#define COGC_NAMESPACE cogc
-#endif
-
-namespace COGC_NAMESPACE
+namespace cogc
 {
 	struct Parser;
 	class SyntaxImpl;
@@ -154,13 +148,9 @@ namespace COGC_NAMESPACE
 	}
 }
 
-#ifdef COGC_BOOTSTRAP
-#include "cogc_bootstrap.cog.cpp"
-#else
 #include "cogc.cog.cpp"
-#endif
 
-namespace COGC_NAMESPACE
+namespace cogc
 {
 	DeclRefVal::DeclRefVal(
 		CompactDeclRef const& declRef)
@@ -198,5 +188,5 @@ namespace COGC_NAMESPACE
 
 int main(int argc, char** argv)
 {
-	return COGC_NAMESPACE::main(argc, argv);
+	return cogc::main(argc, argv);
 }

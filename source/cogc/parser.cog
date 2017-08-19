@@ -1074,7 +1074,11 @@ func findOrImportModule(
     let file: SourceFile* = getSourceFile(session, TerminatedStringSpan(path));
     if(!file)
     {
-        sprintf(path, "../../source/%.*s.cog", (int)(nameText.end - nameText.begin), nameText.begin);
+        sprintf(path, "../../source/%.*s/%.*s.cog",
+			(int)(nameText.end - nameText.begin),
+			nameText.begin,
+			(int)(nameText.end - nameText.begin),
+			nameText.begin);
         file = getSourceFile(session, TerminatedStringSpan(path));
     }
     if(!file)

@@ -5664,7 +5664,6 @@ if(getErrorCount(session) > 0)
 {
 return 1;
 }
-checkModule(session);
 if(getErrorCount(session) > 0)
 {
 return 1;
@@ -6660,7 +6659,7 @@ sprintf(path, "source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText
 SourceFile* file = getSourceFile(session, TerminatedStringSpan(path));
 if(!file)
 {
-sprintf(path, "../../source/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
+sprintf(path, "../../source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin, (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
 file = getSourceFile(session, TerminatedStringSpan(path));
 }
 if(!file)

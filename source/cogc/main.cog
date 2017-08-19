@@ -120,7 +120,7 @@ func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
     if(getErrorCount(session) > 0)
         return 1;
 
-    checkModule(session);
+//    checkModule(session);
 
     if(getErrorCount(session) > 0)
         return 1;

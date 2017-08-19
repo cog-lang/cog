@@ -96,6 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,6 +110,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,6 +128,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,6 +146,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>setargv.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -153,22 +157,34 @@
     <None Include="lexer.cog" />
     <CustomBuild Include="main.cog">
       <FileType>Document</FileType>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+)
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cogc -m $(ProjectName) *.cog</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+)
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cogc -m $(ProjectName) *.cog</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+)
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cogc -m $(ProjectName) *.cog</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)cogc-bootstrap.exe -m $(ProjectName) *.cog</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cogc-bootstrap.exe -m $(ProjectName) *.cog</Message>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+)
+</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cogc -m $(ProjectName) *.cog</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName).cog.cpp</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)cogc-bootstrap.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
     </CustomBuild>
     <None Include="name.cog" />
     <None Include="parser.cog" />
