@@ -26,7 +26,7 @@ struct StringSpan
 		this.end = cast<Ptr<Char> >(end);
 	}
 
-	func getLength() -> Size
+	func getLength() -> UInt
 	{
 		return end - begin;
 	}

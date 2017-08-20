@@ -1,5 +1,6 @@
 // parser.cog
 
+import cog;
 
 typealias ParserFlags = UInt32;
 

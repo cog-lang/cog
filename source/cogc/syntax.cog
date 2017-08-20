@@ -1,5 +1,7 @@
 // syntax.cog
 
+import cog;
+
 struct TypeExp
 {
 	var exp : Exp = nullptr;
@@ -49,10 +51,10 @@ struct SyntaxList<T>
 {
 	var head: T;
 
-	subscript(index: Size) -> T
+	subscript(index: UInt) -> T
 	{
         var item = head;
-        for(var ii : Size = 0; ii < index; ++ii)
+        for(var ii : UInt = UInt(0); ii < index; ++ii)
         {
             item = cast<T>(item.next);
         }
@@ -192,7 +194,7 @@ struct FilteredSyntaxList<T,U>
 	}
 }
 
-class Syntax : Object
+class Syntax
 {
 	var loc : SourceLoc;
 }

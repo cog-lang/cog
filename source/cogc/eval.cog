@@ -1,5 +1,6 @@
 // eval.cog
 
+import cog;
 
 // Evaluate a module as a top-level thing...
 func evalModule(

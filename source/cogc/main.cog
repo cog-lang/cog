@@ -2,10 +2,6 @@
 
 import cog;
 
-func B(a: A);
-
-struct A {}
-
 func parseCommandLine(
 	session: Session,
 	ioArgc: Ptr<Int>,

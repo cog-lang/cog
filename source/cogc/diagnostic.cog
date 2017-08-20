@@ -1,5 +1,7 @@
 // diagnostic.cog
 
+import cog;
+
 enum Severity
 {
 	kSeverity_Note,

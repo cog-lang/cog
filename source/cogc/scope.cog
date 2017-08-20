@@ -1,5 +1,7 @@
 // scope.cog
 
+import cog;
+
 struct ScopeLink
 {
 	var container : ContainerStmt;

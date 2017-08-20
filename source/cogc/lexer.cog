@@ -1,5 +1,7 @@
 // lexer.cog
 
+import cog;
+
 struct Lexer
 {
 	var session: Session;

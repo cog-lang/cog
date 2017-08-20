@@ -1,3 +1,4 @@
+// session.cog
 
 import cog;
 
@@ -5,7 +6,7 @@ class Session
 {
 	var sourceFiles : Ptr<SourceFile>;
 	var names : Ptr<Name>;
-	var lastSourceLoc : USize;
+	var lastSourceLoc : UInt;
 	var sink : DiagnosticSink;
 	var moduleDecl : ModuleDecl;
 	var moduleDeclLink : Ptr<Decl>;

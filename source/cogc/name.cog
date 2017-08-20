@@ -1,5 +1,7 @@
 // name.cog
 
+import cog;
+
 struct Name
 {
 	var text: TerminatedStringSpan;

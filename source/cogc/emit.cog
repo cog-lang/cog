@@ -1,6 +1,6 @@
 // emit.cog
 
-
+import cog;
 
 struct EmitContext
 {

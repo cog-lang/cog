@@ -1,5 +1,7 @@
 // token.cog
 
+import cog;
+
 typealias TokenFlags = UInt16;
 
 enum TokenFlag : TokenFlags

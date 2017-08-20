@@ -4,11 +4,11 @@ import cog;
 
 struct SourceLoc
 {
-	var raw : USize;
+	var raw : UInt;
 
-	init() { this.raw = 0; }
+	init() { this.raw = UInt(0); }
 
-	init(raw: USize)
+	init(raw: UInt)
 	{
 		this.raw = raw;
 	}
