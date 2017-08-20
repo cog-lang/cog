@@ -574,6 +574,7 @@ func maybeParseGenericApp(
     if(!peekGenericApp(parser))
         return base;
 
+	let loc = peekLoc(parser);
     tryParseGenericOpen(parser);
 
 
@@ -582,6 +583,7 @@ func maybeParseGenericApp(
     expectGenericClose(parser);
 
     let exp = createObject<GenericAppExp>();
+	exp.loc = loc;
     exp.base = base;
     exp.args = args;
     return exp;

@@ -432,28 +432,94 @@ func checkTypeExp(
 	typeExp.type = type;
 }
 
-func coerceToType(
+func tryCoerceToTypeExpr(
 	context: CheckContext*,
 	exp: Exp)
-	-> Type
+	-> Exp
 {
 	let expType = exp.type;
 	if(let typeType = as<TypeType>(expType))
 	{
-		return typeType.type;
+		return exp;
 	}
     else if(let errorType = as<ErrorType>(expType))
+    {
+        return exp;
+    }
+	else
+	{
+		return nullptr;
+	}
+}
+
+
+func tryCoerceToType(
+	context: CheckContext*,
+	exp: Exp)
+	-> Type
+{
+	let typeExpr = tryCoerceToTypeExpr(context, exp);
+	if(!typeExpr)
+		return nullptr;
+
+	let exprType = typeExpr.type;
+	if(let typeType = as<TypeType>(exprType))
+	{
+		return typeType.type;
+	}
+    else if(let errorType = as<ErrorType>(exprType))
     {
         return errorType;
     }
 	else
 	{
-        diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, expType.directClass.name);
-		cogAssert(!"unimplemented");
+		return nullptr;
+	}
+}
+
+func coerceToType(
+	context: CheckContext*,
+	exp: Exp)
+	-> Type
+{
+	if(let type = tryCoerceToType(context, exp))
+	{
+		return type;
+	}
+	else
+	{
+        diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.type.directClass.name);
+		return createErrorType(context);
+	}
+}
+
+func coerceToTypeExpr(
+	context: CheckContext*,
+	exp: Exp)
+	-> Exp
+{
+	if(let typeExpr = tryCoerceToTypeExpr(context, exp))
+	{
+		return typeExpr;
+	}
+	else
+	{
+        diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.type.directClass.name);
+		return createErrorExp(context, exp);
 	}
 }
 
 //
+
+func makeErrorExpr(
+	context: CheckContext*,
+	expr: Exp)
+	-> Exp
+{
+	let errorType = createObject<ErrorType>();
+	expr.type = errorType;
+	return expr;
+}
 
 func checkTerm(
 	context: CheckContext*,
@@ -600,6 +666,44 @@ func checkTerm(
 
         return completeOverload(&overloadContext);
     }
+	else if(let subscriptExpr = as<IndexExp>(exp))
+	{
+		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
+		return makeErrorExpr(context, exp);
+	}
+	else if(let genericAppExpr = as<GenericAppExp>(exp))
+	{
+        let base = checkTerm(context, genericAppExpr.base);
+        genericAppExpr.base = base;
+        foreach(arg in genericAppExpr.args)
+        {
+            arg.exp = checkTerm(context, arg.exp);
+        }
+
+        // If the base expression or any argument is in error,
+        // en don't bother trying to resolve things
+        if(isError(context, base))
+        {
+            return createErrorExp(context, exp);
+        }
+
+        var overloadContext : OverloadResolveContext;
+        overloadContext.checkContext = context;
+        overloadContext.appExp = genericAppExpr;
+        overloadContext.baseExp = nullptr;
+
+        if(let baseMemberRef = as<MemberExp>(base))
+        {
+            overloadContext.baseExp = baseMemberRef.base;
+        }
+
+        addGenericAppOverloadCandidates(
+            &overloadContext,
+            base);
+
+        return completeOverload(&overloadContext);
+	}
+	/*
 	else if(let appExp = as<AppExpBase>(exp))
 	{
 		let base = checkTerm(context, appExp.base);
@@ -693,6 +797,7 @@ func checkTerm(
 		cogAssert(!"unimplemented");
 		return 0;
 	}
+	*/
 	else if(let thisExpr = as<ThisExpr>(exp))
 	{
 		var scope = thisExpr.scope;
@@ -856,6 +961,64 @@ func addAppOverloadCandidates(
     }
 //    fprintf(stderr, ">>>\n");
 }
+
+//
+
+func addGenericGenericOverloadCandidate(
+    context: OverloadResolveContext*,
+	genericDeclRef: DeclRefValImpl<GenericDecl>)
+{
+	ensureDecl(context.checkContext, genericDeclRef.getDecl());
+
+    var candidate: OverloadCandidate;
+    candidate.declRef = genericDeclRef;
+    candidate.resultType = nullptr;
+
+    addOverloadCandidate(context, candidate);
+}
+
+func addDeclRefGenericOverloadCandidates(
+    context: OverloadResolveContext*,
+    val: DeclRefVal)
+{
+    if(let genericDeclRef = as<GenericDecl>(val))
+    {
+        addGenericGenericOverloadCandidate(context, genericDeclRef);
+    }
+    else
+    {
+//        diagnose(getSink(context->checkContext), val.getDecl()->loc, kDiagnostic_unimplemented, "can't apply this!");
+    }
+}
+
+
+func addGenericAppOverloadCandidates(
+	context: OverloadResolveContext*,
+	baseExp: Exp)
+{
+	if(let declRefExp = as<DeclRefExp>(baseExp))
+    {
+        addDeclRefGenericOverloadCandidates(context, declRefExp.declRef);
+    }
+    else if(let overloadedExpr = as<OverloadedExpr>(baseExp))
+    {
+        cogAssert(!context.baseExp);
+        context.baseExp = overloadedExpr.base;
+
+        cogAssert(overloadedExpr.lookupResult.items.getCount() != 0);
+        foreach(item in overloadedExpr.lookupResult)
+        {
+            addDeclRefGenericOverloadCandidates(
+                context,
+                DeclRefVal(item.decl));
+        }
+    }
+    else
+    {
+//        diagnose(getSink(context->checkContext), baseExp->loc, kDiagnostic_unimplemented, "can't apply this!");
+    }
+}
+
 
 
 func createFuncType(
@@ -1285,6 +1448,18 @@ struct OverloadResolveContext
     var candidates : Array<OverloadCandidate>;
 }
 
+func issueTooFewArgsError(
+	context: OverloadResolveContext*)
+{
+	diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooFewArgs);
+}
+
+func issueTooManyArgsError(
+	context: OverloadResolveContext*)
+{
+	diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooManyArgs);
+}
+
 func checkOverloadCandidateArity(
 	context: OverloadResolveContext*,
     candidate: Ref<OverloadCandidate>)
@@ -1303,6 +1478,7 @@ func checkOverloadCandidateArity(
                 if(!(argCursor != argEnd))
                 {
                     // not enough args!
+					issueTooFewArgsError(context);
                     return false;
                 }
 
@@ -1315,11 +1491,40 @@ func checkOverloadCandidateArity(
         if(argCursor != argEnd)
         {
             // too many args!
+			issueTooManyArgsError(context);
             return false;
         }
 
         return true;
     }
+	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+	{
+		foreach(dd in getDecls(genericDeclRef))
+		{
+			if(let genericParamDeclRef = as<GenericParamDecl>(dd))
+			{
+				if(!(argCursor != argEnd))
+				{
+					// not enough arg!
+					issueTooFewArgsError(context);
+					return false;
+				}
+
+				++argCursor;
+			}
+			else
+			{}
+		}
+
+        if(argCursor != argEnd)
+        {
+            // too many args!
+			issueTooManyArgsError(context);
+            return false;
+        }
+
+        return true;
+	}
     else
     {
         // TODO: other cases here?
@@ -1387,6 +1592,52 @@ func checkOverloadCandidateTypes(
 
         return true;
     }
+	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+	{
+        foreach(dd in getDecls(genericDeclRef))
+        {
+            if(let paramDeclRef = as<GenericParamDecl>(dd))
+            {
+                if(!(argCursor != argEnd))
+                {
+                    cogAssert(false);
+                    // not enough args!
+                    return false;
+                }
+
+                let arg = *argCursor;
+                let argExpr = &arg.exp;
+
+                if(context.mode == kOverloadResolveMode_justTrying)
+                {
+					if(let type = tryCoerceToType(context.checkContext, *argExpr))
+					{}
+					else
+					{
+						return false;
+					}
+                }
+                else
+                {
+					*argExpr = coerceToTypeExpr(context.checkContext, *argExpr);
+                }
+
+                ++argCursor;
+            }
+            else
+            {}
+        }
+
+        if(argCursor != argEnd)
+        {
+            cogAssert(false);
+            // too many args!
+            return false;
+        }
+
+        return true;
+
+	}
     else
     {
         // TODO: other cases here?
@@ -1604,6 +1855,86 @@ func createDeclRefExp(
 	return createDeclRefExp(context, declRef, loc, nullptr);
 }
 
+func getGenericArgVal(
+	context: CheckContext*,
+	expr:	Exp)
+	-> Val
+{
+	let type = expr.type;
+	if(let typeType = as<TypeType>(type))
+	{
+		return typeType.type;
+	}
+	if(let errorType = as<ErrorType>(type))
+	{
+		return errorType;
+	}
+
+	diagnose(getSink(context), expr.loc, kDiagnostic_unimplemented, "generic arg flavor");
+
+	return createErrorType(context);
+}
+
+func completeOverloadCandidate(
+	overloadContext: OverloadResolveContext*,
+	candidate: OverloadCandidate*)
+	-> Exp
+{
+    let context = overloadContext.checkContext;
+    let appExp = overloadContext.appExp;
+	let loc = appExp.loc;
+	if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
+	{
+		let baseExp = createDeclRefExp(
+			context,
+			funcDeclRef,
+			appExp.loc,
+			overloadContext.baseExp);
+
+		appExp.base = baseExp;
+		appExp.type = candidate.resultType;
+		return appExp;
+	}
+	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+	{
+		// We need to construct a representation of the inner declaration
+		let innerDecl = genericDeclRef.getDecl().inner;
+		let specializations = createObject<Specializations>();
+		specializations.genericDeclRef = genericDeclRef;
+
+		var argCursor = appExp.args.begin();
+
+		var argLink = &specializations.args.head;
+
+		foreach(dd in getDecls(genericDeclRef))
+		{
+			if(let paramDeclRef = as<GenericParamDecl>(dd))
+			{
+				let arg = *argCursor;
+				++argCursor;
+
+				let specializationArg = createObject<SpecializationArg>();
+				specializationArg.param = paramDeclRef.getDecl();
+				specializationArg.value = getGenericArgVal(context, arg.exp);
+
+				*argLink = specializationArg;
+				argLink = &specializationArg.next;
+			}
+		}
+
+		let innerDeclRef = DeclRefVal(innerDecl, specializations);
+		return createDeclRefExp(
+			context,
+			innerDeclRef,
+			appExp.loc,
+			overloadContext.baseExp);
+	}
+	else
+	{
+		diagnose(getSink(context), loc, kDiagnostic_unimplemented, "overload candidate flavor");
+	}
+}
+
 func completeOverload(
     overloadContext: OverloadResolveContext*)
     -> Exp
@@ -1634,16 +1965,7 @@ func completeOverload(
         let candidate = &overloadContext.candidates[0];
         if(candidate.state == kOverloadCandidateState_Applicable)
         {
-            // we can use it!
-            let baseExp = createDeclRefExp(
-                context,
-                candidate.declRef,
-                appExp.loc,
-                overloadContext.baseExp);
-
-            appExp.base = baseExp;
-            appExp.type = candidate.resultType;
-            return appExp;            
+			return completeOverloadCandidate(overloadContext, candidate);
         }
         else
         {

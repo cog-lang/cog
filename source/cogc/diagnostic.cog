@@ -33,6 +33,8 @@ enum DiagnosticID
 	kDiagnostic_candidate,
 	kDiagnostic_ambiguousCallToOverload,
 	kDiagnostic_noApplicableOverloadForCall,
+	kDiagnostic_tooFewArgs,
+	kDiagnostic_tooManyArgs,
 }
 
 struct DiagnosticSink
