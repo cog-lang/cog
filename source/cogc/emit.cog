@@ -6,6 +6,7 @@ struct EmitContext
 {
 	var session: Session;
 	var stream: FILE*;
+	var suppressLineDirective : Int;
 }
 
 func getSink(context: EmitContext*) -> DiagnosticSink*
@@ -260,6 +261,8 @@ func emitExp(
     context: EmitContext*,
 	exp: Exp)
 {
+	emitLineDirective(context, exp);
+
 	if (let nameExp = as<NameExp>(exp))
 	{
 		emit(context, nameExp.name);
@@ -410,15 +413,41 @@ func emitBlockStmt(
     }
 }
 
+func emit(
+	context: EmitContext*,
+	value: Int)
+{
+	var buffer : FixedSizeArray<32,Char>;
+	sprintf(buffer, "%lld", Int64(value));
+	emit(context, buffer);
+}
+
 func emitLineDirective(
 	context: EmitContext*,
 	syn: Syntax)
 {
+	if(context.suppressLineDirective > 0)
+		return;
+
 	let loc = syn.loc;
 	if(!loc.raw)
 		return;
 
+	let expandedLoc = expandLoc(context.session, loc);
+
 	// TODO: actually expand and emit the loc!
+
+	emit(context, "\n\n#line ");
+	emit(context, expandedLoc.line);
+	emit(context, " \"");
+	emit(context, expandedLoc.file);
+	emit(context, "\"\n");
+
+	// indent as needed for next line
+	for(var ii : Int = 0; ii < expandedLoc.column; ++ii)
+	{
+		emit(context, " ");
+	}
 }
 
 func emitStmt(
@@ -887,6 +916,8 @@ func emitDecl(
         return;
     }
 
+	emitLineDirective(context, decl);
+
 	if(let classDecl = as<ClassDecl>(decl))
 	{
 		emitClassDecl(context, classDecl, mode);
@@ -1192,6 +1223,7 @@ func emitModuleInner(
 	var context : EmitContext;
 	context.session = session;
 	context.stream = stream;
+	context.suppressLineDirective = 0;
 
 	emit(&context, "#include \"runtime/runtime.h\"\n");
 
@@ -1227,6 +1259,8 @@ func emitModuleInner(
 		let classDecl = as<ClassDecl>(dd);
 		if (!classDecl) continue;
 
+		context.suppressLineDirective += 1;
+
 		emit(&context, "COG_DEFINE_CLASS(");
 		emitDeclName(&context, classDecl, kDeclEmitMode_Full);
 		emit(&context, ", ");
@@ -1239,6 +1273,8 @@ func emitModuleInner(
 			emit(&context, "cog::Object");
 		}
 		emit(&context, ")\n");
+
+		context.suppressLineDirective -= 1;
 	}
 
 	emit(&context, "}\n");

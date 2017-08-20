@@ -868,6 +868,7 @@ typedef cog::Class StaticClass;
 static StaticClass staticClass;
 Session session;
 FILE* stream;
+Int suppressLineDirective;
 };
 DiagnosticSink* getSink(EmitContext* context);
 enum DeclEmitMode : int
@@ -909,6 +910,7 @@ void emitStringVal(EmitContext* context, String str);
 void emitExp(EmitContext* context, Exp exp);
 void emitBlockStmt(EmitContext* context, BlockStmt stmt);
 void emitBlockStmt(EmitContext* context, Stmt stmt);
+void emit(EmitContext* context, Int value);
 void emitLineDirective(EmitContext* context, Syntax syn);
 void emitStmt(EmitContext* context, Stmt stmt);
 void emitClassDecl(EmitContext* context, ClassDecl aggDecl, DeclEmitMode mode);
@@ -3732,6 +3734,7 @@ emitStringVal(context, StringSpan(DEREF(strSpan).begin, DEREF(strSpan).end));
 }
 void emitExp(EmitContext* context, Exp exp)
 {
+emitLineDirective(context, exp);
 if(auto nameExp = as<NameExp> (exp))
 {
 emit(context, DEREF(nameExp).name);
@@ -3930,13 +3933,37 @@ emitStmt(context, stmt);
 emit(context, "}\n");
 }
 }
+void emit(EmitContext* context, Int value)
+{
+FixedSizeArray<32, Char>  buffer;
+sprintf(buffer, "%lld", Int64(value));
+emit(context, buffer);
+}
 void emitLineDirective(EmitContext* context, Syntax syn)
 {
+if(DEREF(context).suppressLineDirective > 0)
+{
+return;
+}
 auto loc = DEREF(syn).loc;
 if(!DEREF(loc).raw)
 {
 return;
 }
+auto expandedLoc = expandLoc(DEREF(context).session, loc);
+emit(context, "\n\n#line ");
+emit(context, DEREF(expandedLoc).line);
+emit(context, " \"");
+emit(context, DEREF(expandedLoc).file);
+emit(context, "\"\n");
+{
+Int ii = 0;
+for(;ii < DEREF(expandedLoc).column;++ii)
+{
+{
+emit(context, " ");
+}
+}}
 }
 void emitStmt(EmitContext* context, Stmt stmt)
 {
@@ -4397,6 +4424,7 @@ if(builtinAttr)
 {
 return;
 }
+emitLineDirective(context, decl);
 if(auto classDecl = as<ClassDecl> (decl))
 {
 emitClassDecl(context, classDecl, mode);
@@ -4724,6 +4752,7 @@ auto stream = fopen(outputPath, "wb");
 EmitContext context;
 DEREF(context).session = session;
 DEREF(context).stream = stream;
+DEREF(context).suppressLineDirective = 0;
 emit(&context, "#include \"runtime/runtime.h\"\n");
 {
 auto mm = DEREF(session).loadedModules;
@@ -4758,6 +4787,7 @@ if(!classDecl)
 {
 continue;
 }
+DEREF(context).suppressLineDirective += 1;
 emit(&context, "COG_DEFINE_CLASS(");
 emitDeclName(&context, classDecl, kDeclEmitMode_Full);
 emit(&context, ", ");
@@ -4770,6 +4800,7 @@ else
 emit(&context, "cog::Object");
 }
 emit(&context, ")\n");
+DEREF(context).suppressLineDirective -= 1;
 }
 }
 emit(&context, "}\n");
@@ -6765,11 +6796,11 @@ return mm;
 }}
 auto nameText = getText(name);
 FixedSizeArray<1024, Char>  path;
-sprintf(path, "source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin, (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
+sprintf(path, "../../source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin, (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
 SourceFile* file = getSourceFile(session, TerminatedStringSpan(path));
 if(!file)
 {
-sprintf(path, "../../source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin, (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
+sprintf(path, "source/%.*s/%.*s.cog", (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin, (int)(DEREF(nameText).end - DEREF(nameText).begin), DEREF(nameText).begin);
 file = getSourceFile(session, TerminatedStringSpan(path));
 }
 if(!file)

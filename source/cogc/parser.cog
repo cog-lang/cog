@@ -1065,7 +1065,7 @@ func findOrImportModule(
     let nameText = getText(name);
 
     var path : FixedSizeArray<1024, Char>;
-    sprintf(path, "source/%.*s/%.*s.cog",
+    sprintf(path, "../../source/%.*s/%.*s.cog",
         (int)(nameText.end - nameText.begin),
         nameText.begin,
         (int)(nameText.end - nameText.begin),
@@ -1074,7 +1074,7 @@ func findOrImportModule(
     let file: SourceFile* = getSourceFile(session, TerminatedStringSpan(path));
     if(!file)
     {
-        sprintf(path, "../../source/%.*s/%.*s.cog",
+        sprintf(path, "source/%.*s/%.*s.cog",
 			(int)(nameText.end - nameText.begin),
 			nameText.begin,
 			(int)(nameText.end - nameText.begin),
