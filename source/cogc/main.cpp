@@ -10,7 +10,7 @@ using namespace cog;
 namespace cogc
 {
 	struct Parser;
-	class SyntaxImpl;
+	struct SyntaxImpl;
 
 	typedef SyntaxImpl* (*SyntaxCallback)(Parser* parser);
 
@@ -43,9 +43,9 @@ namespace cogc
 
 	//
 
-	class DeclImpl;
-	class SpecializationsImpl;
-	class SpecializedDeclImpl;
+	struct DeclImpl;
+	struct SpecializationsImpl;
+	struct SpecializedDeclImpl;
 	struct CompactDeclRef;
 
 	struct DeclRefVal

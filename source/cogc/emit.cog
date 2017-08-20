@@ -410,10 +410,23 @@ func emitBlockStmt(
     }
 }
 
+func emitLineDirective(
+	context: EmitContext*,
+	syn: Syntax)
+{
+	let loc = syn.loc;
+	if(!loc.raw)
+		return;
+
+	// TODO: actually expand and emit the loc!
+}
+
 func emitStmt(
 	context: EmitContext*,
 	stmt: Stmt)
 {
+	emitLineDirective(context, stmt);
+
 	if(let blockStmt = as<BlockStmt>(stmt))
 	{
 		emitBlockStmt(context, blockStmt);

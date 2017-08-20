@@ -909,6 +909,7 @@ void emitStringVal(EmitContext* context, String str);
 void emitExp(EmitContext* context, Exp exp);
 void emitBlockStmt(EmitContext* context, BlockStmt stmt);
 void emitBlockStmt(EmitContext* context, Stmt stmt);
+void emitLineDirective(EmitContext* context, Syntax syn);
 void emitStmt(EmitContext* context, Stmt stmt);
 void emitClassDecl(EmitContext* context, ClassDecl aggDecl, DeclEmitMode mode);
 void emitStructDecl(EmitContext* context, StructDecl aggDecl, DeclEmitMode mode);
@@ -3929,8 +3930,17 @@ emitStmt(context, stmt);
 emit(context, "}\n");
 }
 }
+void emitLineDirective(EmitContext* context, Syntax syn)
+{
+auto loc = DEREF(syn).loc;
+if(!DEREF(loc).raw)
+{
+return;
+}
+}
 void emitStmt(EmitContext* context, Stmt stmt)
 {
+emitLineDirective(context, stmt);
 if(auto blockStmt = as<BlockStmt> (stmt))
 {
 emitBlockStmt(context, blockStmt);
