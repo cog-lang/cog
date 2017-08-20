@@ -60,7 +60,7 @@ func emitVal(
     val: Val)
 {
     {
-        assert(!"unimplemented");
+        cogAssert(!"unimplemented");
         emit(context, "UnknownVal");        
     }
 }
@@ -378,7 +378,7 @@ func emitExp(
     else
     {
         diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
-        assert(!"unimplemented");
+        cogAssert(!"unimplemented");
     }
 }
 
@@ -581,7 +581,7 @@ func emitStmt(
     else
     {
         diagnose(getSink(context), stmt.loc, kDiagnostic_unimplemented, stmt.directClass.name);
-        assert(!"unimplemented");
+        cogAssert(!"unimplemented");
     }
 }
 
@@ -1020,7 +1020,7 @@ func emitDecl(
 	}
 	else
 	{
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
 //		throw 99;
 	}
 }
@@ -1070,7 +1070,7 @@ func addDependencies(
 	context: DeclSortContext*,
 	name: Name*)
 {
-	assert(name);
+	cogAssert(name);
 
 	// Split remaining declarations into two lists:
 	// 1) Declarations that match the desired name
@@ -1299,10 +1299,10 @@ func emitModule(
 	// compute a resonable module name
 	let moduleDecl = session.moduleDecl;
 	let moduleName = moduleDecl.name;
-    assert(moduleName);
+    cogAssert(moduleName);
 
     let modulePath = session.modulePath2;
-    assert(modulePath);
+    cogAssert(modulePath);
 
 	let moduleNameText = getText(moduleName);
     let modulePathText = getText(modulePath);

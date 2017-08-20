@@ -316,7 +316,7 @@ func checkStmt(
 	else
 	{
         diagnose(getSink(context), stmt.loc, kDiagnostic_unimplemented, stmt.directClass.name);
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
 	}
 }
 
@@ -354,7 +354,7 @@ func coerceToExp(
         return exp;
     }
 
-    assert(!"need an exp");
+    cogAssert(!"need an exp");
 }
 
 //
@@ -397,7 +397,7 @@ func coerceToType(
 	else
 	{
         diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, expType.directClass.name);
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
 	}
 }
 
@@ -637,7 +637,7 @@ func checkTerm(
 		}
 
 		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
 		return 0;
 	}
 	else if(let thisExpr = as<ThisExpr>(exp))
@@ -677,7 +677,7 @@ func checkTerm(
 	else
 	{
 		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
 		return 0;
 	}
 }
@@ -694,7 +694,7 @@ func extractVal(
     }
     else
     {
-        assert(!"unimplemented");
+        cogAssert(!"unimplemented");
     }
 }
 
@@ -777,11 +777,11 @@ func addAppOverloadCandidates(
     }
     else if(let overloadedExpr = as<OverloadedExpr>(baseExp))
     {
-        assert(!context.baseExp);
+        cogAssert(!context.baseExp);
         context.baseExp = overloadedExpr.base;
 
 //        fprintf(stderr, "CCC\n");
-        assert(overloadedExpr.lookupResult.items.getCount() != 0);
+        cogAssert(overloadedExpr.lookupResult.items.getCount() != 0);
         foreach(item in overloadedExpr.lookupResult)
         {
 //            fprintf(stderr, "item: %s\n", getText(item.decl->name).begin);
@@ -884,7 +884,7 @@ func getTypeForDeclRefImpl(
     }
 	else
 	{
-		assert(!"unimplemented");
+		cogAssert(!"unimplemented");
         return 0;
 	}
 }
@@ -1015,7 +1015,7 @@ func isSameVal(
 
     //
 
-    assert(!"unimplemented");
+    cogAssert(!"unimplemented");
     return false;
 }
 
@@ -1144,7 +1144,7 @@ func tryCoerceImpl(
     {
         // TODO: implement this case!
 
-        assert(!"unimplemented");
+        cogAssert(!"unimplemented");
     }
     else
     {
@@ -1284,7 +1284,7 @@ func checkOverloadCandidateTypes(
             {
                 if(!(argCursor != argEnd))
                 {
-                    assert(false);
+                    cogAssert(false);
                     // not enough args!
                     return false;
                 }
@@ -1320,7 +1320,7 @@ func checkOverloadCandidateTypes(
 
         if(argCursor != argEnd)
         {
-            assert(false);
+            cogAssert(false);
             // too many args!
             return false;
         }
@@ -1427,7 +1427,7 @@ func addCheckedOverloadCandidate(
 
     if(anyWorse)
     {
-        assert(!anyBetter);
+        cogAssert(!anyBetter);
 
         // our candidate was strictly worse
         // an at least one alternative,
@@ -1777,7 +1777,7 @@ func doInferenceForTypes(
     {
         if(let genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType.declRef))
         {
-            assert(!"unimplemented");
+            cogAssert(!"unimplemented");
         }
 
         // Is the argument type a reference to the same
@@ -1952,7 +1952,7 @@ func specializeType(
 	if(!specializations)
 		return type;
 
-	assert(!"unimplemented");
+	cogAssert(!"unimplemented");
 	return nullptr;
 }
 

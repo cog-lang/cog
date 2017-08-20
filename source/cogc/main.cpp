@@ -146,6 +146,11 @@ namespace cogc
 	{
 		return as<T>(DeclRefVal(declRef));
 	}
+
+	inline void cogAssert(bool condition)
+	{
+		assert(condition);
+	}
 }
 
 #include "cogc.cog.cpp"

@@ -324,7 +324,7 @@ func printDiagnosticArg(
 						
 	default:
 		fprintf(stderr, "UNIMPLEMENTD:%d", arg.flavor);
-//		assert(!"unimplemented");
+//		cogAssert(!"unimplemented");
 		break;
 	}
 }
@@ -366,7 +366,7 @@ func diagnoseImpl(
         sink.errorCount++;
         if(severity >= kSeverity_Fatal)
         {
-        	assert(!"fatal");
+        	cogAssert(!"fatal");
             exit(1);
         }
     }

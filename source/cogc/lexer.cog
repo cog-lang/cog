@@ -58,7 +58,7 @@ func peekLoc(lexer: Lexer*) -> SourceLoc
 
 func advanceByte(lexer: Lexer*)
 {
-	assert(lexer.cursor != lexer.file.text.end);
+	cogAssert(lexer.cursor != lexer.file.text.end);
 	lexer.cursor++;
 }
 

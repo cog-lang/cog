@@ -111,7 +111,7 @@ func restoreScope(
 func popScope(
     parser: Parser*)
 {
-    assert(parser.scope);
+    cogAssert(parser.scope);
     restoreScope(parser, parser.scope.parent);
 }
 
@@ -666,7 +666,7 @@ func getStringLiteralVal(
                 case '\'': val.append('\''); break;
 
                 default:
-                    assert(!"unimplemented");
+                    cogAssert(!"unimplemented");
                     break;
                 }
             }
@@ -1030,7 +1030,7 @@ func parseDecl(
             {
                 diagnose(getSink(parser), peekLoc(parser), kDiagnostic_unexpectedDeclName, name);
                 // error
-                assert(false);
+                cogAssert(false);
                 return 0;
             }
         }
@@ -1093,7 +1093,7 @@ func findOrImportModule(
     }
     if(!file)
     {
-    assert(!"unimplemented");
+    cogAssert(!"unimplemented");
 //        throw 99;
     }
 
