@@ -552,13 +552,16 @@ struct ParamDeclImpl;
 #line 232 "diagnostic.cog"
  
 
-#line 239 "diagnostic.cog"
+#line 246 "diagnostic.cog"
  
 
-#line 275 "diagnostic.cog"
+#line 269 "diagnostic.cog"
  
 
-#line 334 "diagnostic.cog"
+#line 305 "diagnostic.cog"
+ 
+
+#line 364 "diagnostic.cog"
  
 
 #line 5 "emit.cog"
@@ -4957,7 +4960,7 @@ static StaticClass staticClass;
 
 
 #line 232 "diagnostic.cog"
- void printDeclRef(
+ void printVal(
 
 #line 233 "diagnostic.cog"
               
@@ -4969,60 +4972,76 @@ static StaticClass staticClass;
               * stream, 
 
 #line 234 "diagnostic.cog"
+       Val val);
+
+
+#line 246 "diagnostic.cog"
+ void printDeclRef(
+
+#line 247 "diagnostic.cog"
+              
+
+#line 247 "diagnostic.cog"
+          FILE
+
+#line 247 "diagnostic.cog"
+              * stream, 
+
+#line 248 "diagnostic.cog"
            DeclRefVal declRef);
 
 
-#line 239 "diagnostic.cog"
+#line 269 "diagnostic.cog"
  void printType(
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
           FILE
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               * stream, 
 
-#line 241 "diagnostic.cog"
+#line 271 "diagnostic.cog"
         Type type);
 
 
-#line 275 "diagnostic.cog"
+#line 305 "diagnostic.cog"
  void printDiagnosticArg(
 
-#line 276 "diagnostic.cog"
+#line 306 "diagnostic.cog"
        ConstPtr<
 
-#line 276 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                 DiagnosticArg>  arg);
 
 
-#line 334 "diagnostic.cog"
+#line 364 "diagnostic.cog"
  void diagnoseImpl(
 
-#line 335 "diagnostic.cog"
+#line 365 "diagnostic.cog"
         Ptr<
 
-#line 335 "diagnostic.cog"
+#line 365 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 336 "diagnostic.cog"
+#line 366 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 337 "diagnostic.cog"
+#line 367 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 338 "diagnostic.cog"
+#line 368 "diagnostic.cog"
             int argCount, 
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
         Ptr<
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
             Ptr<
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                 DiagnosticArg> >  args);
 
 
@@ -26416,7 +26435,7 @@ else
 
 
 #line 232 "diagnostic.cog"
- void printDeclRef(
+ void printVal(
 
 #line 233 "diagnostic.cog"
               
@@ -26428,338 +26447,592 @@ else
               * stream, 
 
 #line 234 "diagnostic.cog"
+       Val val)
+{
+
+
+#line 236 "diagnostic.cog"
+  if(auto type = 
+
+#line 236 "diagnostic.cog"
+                        
+
+#line 236 "diagnostic.cog"
+                as<
+
+#line 236 "diagnostic.cog"
+                   Type> (
+
+#line 236 "diagnostic.cog"
+                         val))
+{
+
+
+#line 238 "diagnostic.cog"
+            
+
+#line 238 "diagnostic.cog"
+            
+
+#line 238 "diagnostic.cog"
+   printType(
+
+#line 238 "diagnostic.cog"
+             stream, 
+
+#line 238 "diagnostic.cog"
+                     type);
+}
+else
+{
+
+
+#line 242 "diagnostic.cog"
+          
+
+#line 242 "diagnostic.cog"
+          
+
+#line 242 "diagnostic.cog"
+   fprintf(
+
+#line 242 "diagnostic.cog"
+           stream, 
+
+#line 242 "diagnostic.cog"
+                   "<val>");
+}
+}
+
+
+#line 246 "diagnostic.cog"
+ void printDeclRef(
+
+#line 247 "diagnostic.cog"
+              
+
+#line 247 "diagnostic.cog"
+          FILE
+
+#line 247 "diagnostic.cog"
+              * stream, 
+
+#line 248 "diagnostic.cog"
            DeclRefVal declRef)
 {
 
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
          
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
          
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
   fprintf(
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
           stream, 
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                   "%s", 
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                        DEREF(
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                         getText(
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                  DEREF(
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                        DEREF(
 
-#line 236 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                 declRef).getDecl()).name)).begin);
+
+
+#line 252 "diagnostic.cog"
+  if(auto spec = 
+
+#line 252 "diagnostic.cog"
+                                          
+
+#line 252 "diagnostic.cog"
+                       DEREF(
+
+#line 252 "diagnostic.cog"
+                declRef).getSpecializations())
+{
+
+
+#line 254 "diagnostic.cog"
+   if(
+
+#line 254 "diagnostic.cog"
+                               
+
+#line 254 "diagnostic.cog"
+                       DEREF(
+
+#line 254 "diagnostic.cog"
+                     
+
+#line 254 "diagnostic.cog"
+             DEREF(
+
+#line 254 "diagnostic.cog"
+      declRef).getDecl()).parent 
+
+#line 254 "diagnostic.cog"
+                               == 
+
+#line 254 "diagnostic.cog"
+                                                             
+
+#line 254 "diagnostic.cog"
+                                                     DEREF(
+
+#line 254 "diagnostic.cog"
+                                      DEREF(
+
+#line 254 "diagnostic.cog"
+                                  spec).genericDeclRef).getDecl())
+{
+
+
+#line 256 "diagnostic.cog"
+           
+
+#line 256 "diagnostic.cog"
+           
+
+#line 256 "diagnostic.cog"
+    fprintf(
+
+#line 256 "diagnostic.cog"
+            stream, 
+
+#line 256 "diagnostic.cog"
+                    "<");
+
+
+#line 257 "diagnostic.cog"
+    
+
+#line 257 "diagnostic.cog"
+    auto firstArg = 
+
+#line 257 "diagnostic.cog"
+                            DEREF(
+
+#line 257 "diagnostic.cog"
+                       DEREF(
+
+#line 257 "diagnostic.cog"
+                   spec).args).head;
+
+
+#line 258 "diagnostic.cog"
+    {
+
+
+#line 258 "diagnostic.cog"
+        
+
+#line 258 "diagnostic.cog"
+        auto arg = 
+
+#line 258 "diagnostic.cog"
+                  firstArg;
+for(;
+
+#line 258 "diagnostic.cog"
+                            arg;
+
+#line 258 "diagnostic.cog"
+                                 arg = 
+
+#line 258 "diagnostic.cog"
+                                          DEREF(
+
+#line 258 "diagnostic.cog"
+                                       arg).next)
+{
+{
+
+
+#line 260 "diagnostic.cog"
+     if(
+
+#line 260 "diagnostic.cog"
+            
+
+#line 260 "diagnostic.cog"
+        arg 
+
+#line 260 "diagnostic.cog"
+            != 
+
+#line 260 "diagnostic.cog"
+               firstArg)
+{
+
+
+#line 260 "diagnostic.cog"
+                                
+
+#line 260 "diagnostic.cog"
+                                
+
+#line 260 "diagnostic.cog"
+                         fprintf(
+
+#line 260 "diagnostic.cog"
+                                 stream, 
+
+#line 260 "diagnostic.cog"
+                                         ",");
 }
 
 
-#line 239 "diagnostic.cog"
+#line 262 "diagnostic.cog"
+             
+
+#line 262 "diagnostic.cog"
+             
+
+#line 262 "diagnostic.cog"
+     printVal(
+
+#line 262 "diagnostic.cog"
+              stream, 
+
+#line 262 "diagnostic.cog"
+                         DEREF(
+
+#line 262 "diagnostic.cog"
+                      arg).value);
+}
+}}
+
+
+#line 264 "diagnostic.cog"
+           
+
+#line 264 "diagnostic.cog"
+           
+
+#line 264 "diagnostic.cog"
+    fprintf(
+
+#line 264 "diagnostic.cog"
+            stream, 
+
+#line 264 "diagnostic.cog"
+                    ">");
+}
+}
+}
+
+
+#line 269 "diagnostic.cog"
  void printType(
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
           FILE
 
-#line 240 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               * stream, 
 
-#line 241 "diagnostic.cog"
+#line 271 "diagnostic.cog"
         Type type)
 {
 
 
-#line 243 "diagnostic.cog"
+#line 273 "diagnostic.cog"
   if(auto declRefType = 
 
-#line 243 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                                       
 
-#line 243 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                        as<
 
-#line 243 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                           DeclRefType> (
 
-#line 243 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                                        type))
 {
 
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
    printDeclRef(
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                 stream, 
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                                    DEREF(
 
-#line 245 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                         declRefType).declRef);
 }
 else
 {
 
 
-#line 247 "diagnostic.cog"
+#line 277 "diagnostic.cog"
        if(auto typeType = 
 
-#line 247 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                                      
 
-#line 247 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                          as<
 
-#line 247 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                             TypeType> (
 
-#line 247 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                                       type))
 {
 
 
-#line 249 "diagnostic.cog"
+#line 279 "diagnostic.cog"
           
 
-#line 249 "diagnostic.cog"
+#line 279 "diagnostic.cog"
           
 
-#line 249 "diagnostic.cog"
+#line 279 "diagnostic.cog"
    fprintf(
 
-#line 249 "diagnostic.cog"
+#line 279 "diagnostic.cog"
            stream, 
 
-#line 249 "diagnostic.cog"
+#line 279 "diagnostic.cog"
                    "typeof(");
 
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
             
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
             
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
    printType(
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
              stream, 
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
                              DEREF(
 
-#line 250 "diagnostic.cog"
+#line 280 "diagnostic.cog"
                      typeType).type);
 
 
-#line 251 "diagnostic.cog"
+#line 281 "diagnostic.cog"
           
 
-#line 251 "diagnostic.cog"
+#line 281 "diagnostic.cog"
           
 
-#line 251 "diagnostic.cog"
+#line 281 "diagnostic.cog"
    fprintf(
 
-#line 251 "diagnostic.cog"
+#line 281 "diagnostic.cog"
            stream, 
 
-#line 251 "diagnostic.cog"
+#line 281 "diagnostic.cog"
                    ")");
 }
 else
 {
 
 
-#line 253 "diagnostic.cog"
+#line 283 "diagnostic.cog"
        if(auto funcType = 
 
-#line 253 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                                      
 
-#line 253 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                          as<
 
-#line 253 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                             FuncType> (
 
-#line 253 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                                       type))
 {
 
 
-#line 255 "diagnostic.cog"
+#line 285 "diagnostic.cog"
           
 
-#line 255 "diagnostic.cog"
+#line 285 "diagnostic.cog"
           
 
-#line 255 "diagnostic.cog"
+#line 285 "diagnostic.cog"
    fprintf(
 
-#line 255 "diagnostic.cog"
+#line 285 "diagnostic.cog"
            stream, 
 
-#line 255 "diagnostic.cog"
+#line 285 "diagnostic.cog"
                    "FUNC_TYPE");
 }
 else
 {
 
 
-#line 257 "diagnostic.cog"
+#line 287 "diagnostic.cog"
        if(auto errorType = 
 
-#line 257 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                                        
 
-#line 257 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                           as<
 
-#line 257 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                              ErrorType> (
 
-#line 257 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                                         type))
 {
 
 
-#line 259 "diagnostic.cog"
+#line 289 "diagnostic.cog"
           
 
-#line 259 "diagnostic.cog"
+#line 289 "diagnostic.cog"
           
 
-#line 259 "diagnostic.cog"
+#line 289 "diagnostic.cog"
    fprintf(
 
-#line 259 "diagnostic.cog"
+#line 289 "diagnostic.cog"
            stream, 
 
-#line 259 "diagnostic.cog"
+#line 289 "diagnostic.cog"
                    "<error>");
 }
 else
 {
 
 
-#line 261 "diagnostic.cog"
+#line 291 "diagnostic.cog"
        if(auto overloadGroupType = 
 
-#line 261 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                                        
 
-#line 261 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                   as<
 
-#line 261 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                      OverloadGroupType> (
 
-#line 261 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                                         type))
 {
 
 
-#line 263 "diagnostic.cog"
+#line 293 "diagnostic.cog"
           
 
-#line 263 "diagnostic.cog"
+#line 293 "diagnostic.cog"
           
 
-#line 263 "diagnostic.cog"
+#line 293 "diagnostic.cog"
    fprintf(
 
-#line 263 "diagnostic.cog"
+#line 293 "diagnostic.cog"
            stream, 
 
-#line 263 "diagnostic.cog"
+#line 293 "diagnostic.cog"
                    "<overload group>");
 }
 else
 {
 
 
-#line 265 "diagnostic.cog"
+#line 295 "diagnostic.cog"
        if(
 
-#line 265 "diagnostic.cog"
+#line 295 "diagnostic.cog"
           
 
-#line 265 "diagnostic.cog"
+#line 295 "diagnostic.cog"
           !
 
-#line 265 "diagnostic.cog"
+#line 295 "diagnostic.cog"
            type)
 {
 
 
-#line 267 "diagnostic.cog"
+#line 297 "diagnostic.cog"
           
 
-#line 267 "diagnostic.cog"
+#line 297 "diagnostic.cog"
           
 
-#line 267 "diagnostic.cog"
+#line 297 "diagnostic.cog"
    fprintf(
 
-#line 267 "diagnostic.cog"
+#line 297 "diagnostic.cog"
            stream, 
 
-#line 267 "diagnostic.cog"
+#line 297 "diagnostic.cog"
                    "NULL_TYPE");
 }
 else
 {
 
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
           
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
           
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
    fprintf(
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
            stream, 
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                    "UNKNOWN_TYPE(%s)", 
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                                        DEREF(
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                            DEREF(
 
-#line 271 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                        type).directClass).name);
 }
 }
@@ -26770,377 +27043,377 @@ else
 }
 
 
-#line 275 "diagnostic.cog"
+#line 305 "diagnostic.cog"
  void printDiagnosticArg(
 
-#line 276 "diagnostic.cog"
+#line 306 "diagnostic.cog"
        ConstPtr<
 
-#line 276 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                 DiagnosticArg>  arg)
 {
 
 
-#line 278 "diagnostic.cog"
+#line 308 "diagnostic.cog"
   switch(
 
-#line 278 "diagnostic.cog"
+#line 308 "diagnostic.cog"
             DEREF(
 
-#line 278 "diagnostic.cog"
+#line 308 "diagnostic.cog"
          arg).flavor)
 {
 case 
 
-#line 280 "diagnostic.cog"
+#line 310 "diagnostic.cog"
        kFlavor_Int:
 {
 
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
           
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
           
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
    fprintf(
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
            stderr, 
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                    "%ld", 
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                              DEREF(
 
-#line 281 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                           arg).intVal);
 }
 {
 
 
-#line 282 "diagnostic.cog"
+#line 312 "diagnostic.cog"
    break;
 }
 case 
 
-#line 284 "diagnostic.cog"
+#line 314 "diagnostic.cog"
        kFlavor_TokenCode:
 {
 
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
           
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
           
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
    fprintf(
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
            stderr, 
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                    "TOKEN: %d", 
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                                    DEREF(
 
-#line 286 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                                 arg).tokenCodeVal);
 }
 {
 
 
-#line 287 "diagnostic.cog"
+#line 317 "diagnostic.cog"
    break;
 }
 case 
 
-#line 289 "diagnostic.cog"
+#line 319 "diagnostic.cog"
        kFlavor_Name:
 {
 {
 
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
     
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
     auto text = 
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                       
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                getText(
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                           DEREF(
 
-#line 291 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                        arg).nameVal);
 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
           
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
           
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
     fwrite(
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                DEREF(
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
            text).begin, 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                        1, 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                   
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                               DEREF(
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                           text).end 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                   - 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                        DEREF(
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                    text).begin, 
 
-#line 292 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                                stderr);
 }
 }
 {
 
 
-#line 294 "diagnostic.cog"
+#line 324 "diagnostic.cog"
    break;
 }
 case 
 
-#line 296 "diagnostic.cog"
+#line 326 "diagnostic.cog"
        kFlavor_StringSpan:
 {
 {
 
 
-#line 298 "diagnostic.cog"
+#line 328 "diagnostic.cog"
     
 
-#line 298 "diagnostic.cog"
+#line 328 "diagnostic.cog"
     auto text = 
 
-#line 298 "diagnostic.cog"
+#line 328 "diagnostic.cog"
                   DEREF(
 
-#line 298 "diagnostic.cog"
+#line 328 "diagnostic.cog"
                arg).stringSpanVal;
 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
           
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
           
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
     fwrite(
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                DEREF(
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
            text).begin, 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                        1, 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                   
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                               DEREF(
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                           text).end 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                   - 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                        DEREF(
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                    text).begin, 
 
-#line 299 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                                stderr);
 }
 }
 {
 
 
-#line 301 "diagnostic.cog"
+#line 331 "diagnostic.cog"
    break;
 }
 case 
 
-#line 303 "diagnostic.cog"
+#line 333 "diagnostic.cog"
        kFlavor_Type:
 {
 {
 
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
              
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
              
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
     printType(
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
               stderr, 
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
                          DEREF(
 
-#line 305 "diagnostic.cog"
+#line 335 "diagnostic.cog"
                       arg).typeVal);
 }
 }
 {
 
 
-#line 307 "diagnostic.cog"
+#line 337 "diagnostic.cog"
    break;
 }
 case 
 
-#line 309 "diagnostic.cog"
+#line 339 "diagnostic.cog"
        kFlavor_ArgTypeList:
 {
 {
 
 
-#line 311 "diagnostic.cog"
+#line 341 "diagnostic.cog"
     
 
-#line 311 "diagnostic.cog"
+#line 341 "diagnostic.cog"
     auto first = 
 
-#line 311 "diagnostic.cog"
+#line 341 "diagnostic.cog"
                 true;
 
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
     {
 
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
         
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
         auto aa = 
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                    DEREF(
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                     DEREF(
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                  arg).argTypeListVal).args;
 for(;
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                           aa;
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                               aa = 
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                                      DEREF(
 
-#line 312 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                                    aa).next)
 {
 {
 
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
      if(
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
         
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
         !
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
          first)
 {
 
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                        
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                        
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                 fprintf(
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                         stderr, 
 
-#line 314 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                                 ", ");
 }
 
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
               
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
               
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
      printType(
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                stderr, 
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                              DEREF(
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                          DEREF(
 
-#line 315 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                        aa).exp).type);
 
 
-#line 316 "diagnostic.cog"
+#line 346 "diagnostic.cog"
      first = 
 
-#line 316 "diagnostic.cog"
+#line 346 "diagnostic.cog"
              false;
 }
 }}
@@ -27149,386 +27422,386 @@ for(;
 {
 
 
-#line 319 "diagnostic.cog"
+#line 349 "diagnostic.cog"
    break;
 }
 case 
 
-#line 321 "diagnostic.cog"
+#line 351 "diagnostic.cog"
        kFlavor_DeclRef:
 {
 {
 
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                 
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                 
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
     printDeclRef(
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                  stderr, 
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                             DEREF(
 
-#line 323 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                          arg).declRefVal);
 }
 }
 {
 
 
-#line 325 "diagnostic.cog"
+#line 355 "diagnostic.cog"
    break;
 }
 default:
 {
 
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
           
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
           
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
    fprintf(
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
            stderr, 
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                    "UNIMPLEMENTD:%d", 
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                                          DEREF(
 
-#line 328 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                                       arg).flavor);
 }
 {
 
 
-#line 330 "diagnostic.cog"
+#line 360 "diagnostic.cog"
    break;
 }
 }
 }
 
 
-#line 334 "diagnostic.cog"
+#line 364 "diagnostic.cog"
  void diagnoseImpl(
 
-#line 335 "diagnostic.cog"
+#line 365 "diagnostic.cog"
         Ptr<
 
-#line 335 "diagnostic.cog"
+#line 365 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 336 "diagnostic.cog"
+#line 366 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 337 "diagnostic.cog"
+#line 367 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 338 "diagnostic.cog"
+#line 368 "diagnostic.cog"
             int argCount, 
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
         Ptr<
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
             Ptr<
 
-#line 339 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                 DiagnosticArg> >  args)
 {
 
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
   
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
   auto expandedLoc = 
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                              
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                     expandLoc(
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                                   DEREF(
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                               sink).session, 
 
-#line 343 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                                             loc);
 
 
-#line 345 "diagnostic.cog"
+#line 375 "diagnostic.cog"
   
 
-#line 345 "diagnostic.cog"
+#line 375 "diagnostic.cog"
   auto severity = 
 
-#line 345 "diagnostic.cog"
+#line 375 "diagnostic.cog"
                  kSeverity_Error;
 
 
-#line 347 "diagnostic.cog"
+#line 377 "diagnostic.cog"
          
 
-#line 347 "diagnostic.cog"
+#line 377 "diagnostic.cog"
          
 
-#line 347 "diagnostic.cog"
+#line 377 "diagnostic.cog"
   fprintf(
 
-#line 347 "diagnostic.cog"
+#line 377 "diagnostic.cog"
           stderr, 
 
-#line 347 "diagnostic.cog"
+#line 377 "diagnostic.cog"
                   "%s(%ld,%ld): %s: ", 
 
-#line 348 "diagnostic.cog"
+#line 378 "diagnostic.cog"
                     DEREF(
 
-#line 348 "diagnostic.cog"
+#line 378 "diagnostic.cog"
                DEREF(
 
-#line 348 "diagnostic.cog"
+#line 378 "diagnostic.cog"
     expandedLoc).file).begin, 
 
-#line 349 "diagnostic.cog"
+#line 379 "diagnostic.cog"
                DEREF(
 
-#line 349 "diagnostic.cog"
+#line 379 "diagnostic.cog"
     expandedLoc).line, 
 
-#line 350 "diagnostic.cog"
+#line 380 "diagnostic.cog"
                DEREF(
 
-#line 350 "diagnostic.cog"
+#line 380 "diagnostic.cog"
     expandedLoc).column, 
 
-#line 351 "diagnostic.cog"
+#line 381 "diagnostic.cog"
     "error");
 
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
          
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
          
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
   fprintf(
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
           stderr, 
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
                   "%d", 
 
-#line 355 "diagnostic.cog"
+#line 385 "diagnostic.cog"
                         id);
 
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
      {
 
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
          
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
          
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                   int ii = 
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                         0;
 for(;
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                               
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                            ii 
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                               < 
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                 argCount;
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                             
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                           ii
 
-#line 357 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                             ++)
 {
 {
 
 
-#line 359 "diagnostic.cog"
+#line 389 "diagnostic.cog"
              
 
-#line 359 "diagnostic.cog"
+#line 389 "diagnostic.cog"
              
 
-#line 359 "diagnostic.cog"
+#line 389 "diagnostic.cog"
       fprintf(
 
-#line 359 "diagnostic.cog"
+#line 389 "diagnostic.cog"
               stderr, 
 
-#line 359 "diagnostic.cog"
+#line 389 "diagnostic.cog"
                       "[");
 
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                         
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                         
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
       printDiagnosticArg(
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                              
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                          args[
 
-#line 360 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                               ii]);
 
 
-#line 361 "diagnostic.cog"
+#line 391 "diagnostic.cog"
              
 
-#line 361 "diagnostic.cog"
+#line 391 "diagnostic.cog"
              
 
-#line 361 "diagnostic.cog"
+#line 391 "diagnostic.cog"
       fprintf(
 
-#line 361 "diagnostic.cog"
+#line 391 "diagnostic.cog"
               stderr, 
 
-#line 361 "diagnostic.cog"
+#line 391 "diagnostic.cog"
                       "]");
 }
 }}
 
 
-#line 364 "diagnostic.cog"
+#line 394 "diagnostic.cog"
          
 
-#line 364 "diagnostic.cog"
+#line 394 "diagnostic.cog"
          
 
-#line 364 "diagnostic.cog"
+#line 394 "diagnostic.cog"
   fprintf(
 
-#line 364 "diagnostic.cog"
+#line 394 "diagnostic.cog"
           stderr, 
 
-#line 364 "diagnostic.cog"
+#line 394 "diagnostic.cog"
                   "\n");
 
 
-#line 366 "diagnostic.cog"
+#line 396 "diagnostic.cog"
      if(
 
-#line 366 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                  
 
-#line 366 "diagnostic.cog"
+#line 396 "diagnostic.cog"
         severity 
 
-#line 366 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                  >= 
 
-#line 366 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                     kSeverity_Error)
 {
 
 
-#line 368 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         
 
-#line 368 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         
 
-#line 368 "diagnostic.cog"
+#line 398 "diagnostic.cog"
              DEREF(
 
-#line 368 "diagnostic.cog"
+#line 398 "diagnostic.cog"
          sink).errorCount
 
-#line 368 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         ++;
 
 
-#line 369 "diagnostic.cog"
+#line 399 "diagnostic.cog"
          if(
 
-#line 369 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                      
 
-#line 369 "diagnostic.cog"
+#line 399 "diagnostic.cog"
             severity 
 
-#line 369 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                      >= 
 
-#line 369 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                         kSeverity_Fatal)
 {
 
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                    
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                    
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
           cogAssert(
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                     
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                     !
 
-#line 371 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                      "fatal");
 
 
-#line 372 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                  
 
-#line 372 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                  
 
-#line 372 "diagnostic.cog"
+#line 402 "diagnostic.cog"
              exit(
 
-#line 372 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                   1);
 }
 }

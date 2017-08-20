@@ -231,11 +231,41 @@ static const DiagnosticInfo kDiagnostics[] =
 };
 */
 
+func printVal(
+	stream: FILE*,
+	val: Val)
+{
+	if(let type = as<Type>(val))
+	{
+		printType(stream, type);
+	}
+	else
+	{
+		fprintf(stream, "<val>");
+	}
+}
+
 func printDeclRef(
 	stream: FILE*,
 	declRef: DeclRefVal)
 {
 	fprintf(stream, "%s", getText(declRef.getDecl().name).begin);
+
+	if(let spec = declRef.getSpecializations())
+	{
+		if(declRef.getDecl().parent == spec.genericDeclRef.getDecl())
+		{
+			fprintf(stream, "<");
+			let firstArg = spec.args.head;
+			for(var arg = firstArg; arg; arg = arg.next)
+			{
+				if(arg != firstArg) fprintf(stream, ",");
+
+				printVal(stream, arg.value);
+			}
+			fprintf(stream, ">");
+		}
+	}
 }
 
 func printType(
