@@ -266,6 +266,15 @@ func checkAggTypeDeclCommon(
 
 //
 
+func checkPrediateExpr(
+	context: CheckContext*,
+	expr: Exp)
+	-> Exp
+{
+	// TODO: add coercion step
+	return checkExp(context, expr);
+}
+
 func checkStmt(
 	context: CheckContext*,
 	stmt: Stmt)
@@ -289,18 +298,38 @@ func checkStmt(
     }
     else if(let ifStmt = as<IfStmt>(stmt))
     {
-        // TODO: coerce condition to boolean!
-        ifStmt.condition = checkExp(context, ifStmt.condition);
+        ifStmt.condition = checkPrediateExpr(context, ifStmt.condition);
         ifStmt.thenStmt = checkStmt(context, ifStmt.thenStmt);
         ifStmt.elseStmt = checkStmt(context, ifStmt.elseStmt);
         return ifStmt;
     }
+    else if(let ifLetStmt = as<IfLetStmt>(stmt))
+    {
+        ifLetStmt.init =     checkExp (context, ifLetStmt.init);
+        ifLetStmt.thenStmt = checkStmt(context, ifLetStmt.thenStmt);
+        ifLetStmt.elseStmt = checkStmt(context, ifLetStmt.elseStmt);
+        return ifLetStmt;
+    }
     else if(let whileStmt = as<WhileStmt>(stmt))
     {
-        // TODO: coerce condition to boolean!
-        whileStmt.condition = checkExp(context, whileStmt.condition);
+        whileStmt.condition = checkPrediateExpr(context, whileStmt.condition);
         whileStmt.body = checkStmt(context, whileStmt.body);
         return whileStmt;
+    }
+    else if(let forStmt = as<ForStmt>(stmt))
+    {
+        forStmt.init = checkStmt(context, forStmt.init);
+        forStmt.condition = checkPrediateExpr(context, forStmt.condition);
+        forStmt.iter = checkExp(context, forStmt.iter);
+        forStmt.body = checkStmt(context, forStmt.body);
+        return forStmt;
+    }
+    else if(let forEachStmt = as<ForEachStmt>(stmt))
+    {
+		// TODO: need to introduce a name binding in the scope here...
+        forEachStmt.exp = checkExp(context, forEachStmt.exp);
+        forEachStmt.body = checkStmt(context, forEachStmt.body);
+        return forEachStmt;
     }
     else if(let returnStmt = as<ReturnStmt>(stmt))
     {
@@ -312,6 +341,26 @@ func checkStmt(
     {
         // TODO: check that we are inside a breakable context
         return breakStmt;
+    }
+    else if(let continueStmt = as<ContinueStmt>(stmt))
+    {
+        // TODO: check that we are inside a breakable context
+        return continueStmt;
+    }
+    else if(let switchStmt = as<SwitchStmt>(stmt))
+    {
+        switchStmt.condition = checkExp(context, switchStmt.condition);
+		for(var c = switchStmt.cases; c; c = c.next)
+		{
+			for(var a = c.values; a; a = a.next)
+			{
+				a.exp = checkExp(context, a.exp);
+			}
+
+			c.body = checkStmt(context, c.body);
+		}
+
+        return switchStmt;
     }
 	else
 	{
@@ -349,6 +398,9 @@ func coerceToExp(
 	term: Syntax)
 	-> Exp
 {
+	if(!term)
+		return nullptr;
+
     if(let exp = as<Exp>(term))
     {
         return exp;
@@ -621,6 +673,7 @@ func checkTerm(
 
                     // try to match things up!
                     let specArg = createObject<SpecializationArg>();
+					specArg.param = param;
                     specArg.value = extractVal(arg.exp);
 
                     *specArgLink = specArg;
@@ -673,6 +726,13 @@ func checkTerm(
 
 		castExpr.type = castExpr.toType.type;
 		return castExpr;
+	}
+	else if(let parenExpr = as<ParenExp>(exp))
+	{
+		let base = checkTerm(context, parenExpr.base);
+		parenExpr.base = base;
+		parenExpr.type = base.type;
+		return parenExpr;
 	}
 	else
 	{
@@ -1453,6 +1513,8 @@ func addSubscriptOverloadCandidate(
 {
     // TODO: actually do stuff!
 
+	ensureDecl(context.checkContext, declRef.getDecl());
+
     var candidate: OverloadCandidate;
     candidate.declRef = declRef;
     candidate.resultType = getResultType(context.checkContext, declRef);
@@ -1464,6 +1526,8 @@ func addFuncOverloadCandidate(
     context: OverloadResolveContext*,
     declRef: DeclRefValImpl<FuncDeclBase>)
 {
+	ensureDecl(context.checkContext, declRef.getDecl());
+
     var candidate: OverloadCandidate;
     candidate.declRef = declRef;
     candidate.resultType = getResultType(context.checkContext, declRef);
@@ -1685,6 +1749,7 @@ struct GenericInferenceContext
 {
 	var checkContext: CheckContext*;
 	var args: GenericInferenceArg*;
+	var argCount: Int;
 }
 
 func doInferenceForVals(
@@ -1763,6 +1828,19 @@ func doInferenceForDeclRefs(
         paramDeclRef.specializations);    
 }
 
+func findGenericInferenceArg(
+	context: GenericInferenceContext*,
+	paramDeclRef: DeclRefValImpl<GenericParamDecl>)
+	-> GenericInferenceArg*
+{
+	for(var ii : Int = 0; ii < context.argCount; ++ii)
+	{
+		if(isSameDeclRef(context.args[ii].paramDeclRef, paramDeclRef))
+			return &context.args[ii];
+	}
+	return nullptr;
+}
+
 func doInferenceForTypes(
     context: GenericInferenceContext*,
     argType: Type,
@@ -1777,7 +1855,19 @@ func doInferenceForTypes(
     {
         if(let genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType.declRef))
         {
-            cogAssert(!"unimplemented");
+			// The type in parameter position is a generic parameter (we hope
+			// that it is a generic parameter of the declaration we hope to specialize).
+			// We should note this, so that the argument type will be used to
+			// replace the parameter type.
+
+
+			let genericInferenceArg = findGenericInferenceArg(context, genericParamDeclRef);
+			if(genericInferenceArg)
+			{
+				// TODO: this isn't quite right...
+				genericInferenceArg.val = argType;
+				return true;
+			}
         }
 
         // Is the argument type a reference to the same
@@ -1849,6 +1939,7 @@ func inferGenericArgsForApp(
     var inferenceContext : GenericInferenceContext;
     inferenceContext.checkContext = context;
     inferenceContext.args = &args[0];
+	inferenceContext.argCount = args.getCount();
 
     var aa = appExpr.args.begin();
     let ae = appExpr.args.end();
@@ -1899,6 +1990,8 @@ func addGenericOverloadCandidate(
     context: OverloadResolveContext*,
     genericDeclRef: DeclRefValImpl<GenericDecl>)
 {
+	ensureDecl(context.checkContext, genericDeclRef.getDecl());
+
     // Need to infer argument types and then apply
     // based on those.
     //
@@ -1944,6 +2037,54 @@ func addDeclRefOverloadCandidates(
 
 //
 
+func findSpecialization(
+	specializations:	Specializations,
+	decl:				Decl)
+	-> Val
+{
+	foreach(arg in specializations.args)
+	{
+		if(decl == arg.param)
+		{
+			return arg.value;
+		}
+	}
+
+	return nullptr;
+}
+
+func specializeDeclRef(
+	declRef: DeclRefVal,
+	specializations: Specializations)
+	-> DeclRefVal
+{
+	let oldDecl = declRef.getDecl();
+	let oldSpecializations = declRef.getSpecializations();
+
+	// Is the decl one we should specialize?
+	if(let genericTypeParamDecl = as<GenericParamDecl>(oldDecl))
+	{
+		// Is it one being specialized?
+		if(let newVal = findSpecialization(specializations, genericTypeParamDecl))
+		{
+			if(let typeDeclRef = as<DeclRefType>(newVal))
+				return typeDeclRef.declRef;
+		}
+
+		cogAssert(!"unimplemented");
+	}
+
+	if(!oldSpecializations)
+		return declRef;
+
+	// otherwise we need to specialize the specializations themselves
+
+
+	cogAssert(!"unimplemented");
+
+	return DeclRefVal();
+}
+
 func specializeType(
 	type: Type,
 	specializations: Specializations)
@@ -1951,6 +2092,19 @@ func specializeType(
 {
 	if(!specializations)
 		return type;
+
+	if(let declRefType = as<DeclRefType>(type))
+	{
+		// TODO: scavenge memory as needed
+		let specDeclRef = specializeDeclRef(declRefType.declRef, specializations);
+
+		let specType = createObject<DeclRefType>();
+		specType.declRef = CompactDeclRef(specDeclRef);
+		return specType;
+	}
+
+	if(let errorType = as<ErrorType>(type))
+		return errorType;
 
 	cogAssert(!"unimplemented");
 	return nullptr;

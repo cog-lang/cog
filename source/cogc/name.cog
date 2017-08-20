@@ -37,6 +37,8 @@ func getText(
 	name: Ptr<Name>)
 	-> TerminatedStringSpan
 {
+	if(!name)
+		return "";
 	return name.text;
 }
 

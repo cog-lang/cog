@@ -254,6 +254,8 @@ class Decl : Stmt
 class SpecializationArg : Object
 {
 	var next : SpecializationArg;
+
+	var param : Decl;
 	var value : Val;
 }
 

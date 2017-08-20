@@ -1,8 +1,8 @@
 // runtime.h
 #pragma once
 
+#include <assert.h>
 #include <stdint.h>
-
 #include <stdio.h>
 
 namespace cog
@@ -47,28 +47,28 @@ namespace cog
 	using ConstRef = T const&;
 
 	template<typename T>
-	T& DEREF(T& val) { return val; }
+	T& DEREF(T& val) { assert(&val); return val; }
 
 	template<typename T>
-	T& DEREF(T const& val) { return *(T*)&val; }
+	T& DEREF(T const& val) { assert(&val); return *(T*)&val; }
 
 	template<typename T>
-	T& DEREF(T* val) { return *val; }
+	T& DEREF(T* val) { assert(val); return *val; }
 
 	template<typename T>
-	T& DEREF(T const* val) { return *(T*)val; }
+	T& DEREF(T const* val) { assert(val); return *(T*)val; }
 
 	template<typename T>
-	T& UNCONST(T& val) { return val; }
+	T& UNCONST(T& val) { assert(&val);  return val; }
 
 	template<typename T>
-	T& UNCONST(T const& val) { return *(T*)&val; }
+	T& UNCONST(T const& val) { assert(&val); return *(T*)&val; }
 
 	template<typename T>
-	T* UNCONST(T* val) { return val; }
+	T* UNCONST(T* val) { assert(val); return val; }
 
 	template<typename T>
-	T* UNCONST(T const* val) { return (T*)val; }
+	T* UNCONST(T const* val) { assert(val); return (T*)val; }
 
 	void loadAndEval(char const* path);
 }

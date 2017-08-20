@@ -34,7 +34,7 @@ void* as(Object obj, Class* clazz)
 Object createObject(Class* directClass)
 {
 	size_t size = directClass->instanceSize;
-	Object obj = (Object) malloc(size);
+	Object obj = (Object) malloc(size*4);
 	memset(obj, 0, size);
 	obj->directClass = directClass;
 	return obj;
