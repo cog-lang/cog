@@ -47,17 +47,17 @@ struct DeclImpl;
 struct FilteredSyntaxList;
 
 
-#line 282 "syntax.cog"
+#line 284 "syntax.cog"
  using ContainerStmt = struct ContainerStmtImpl* ;
 struct ContainerStmtImpl;
 
 
-#line 297 "syntax.cog"
+#line 299 "syntax.cog"
  using ContainerDecl = struct ContainerDeclImpl* ;
 struct ContainerDeclImpl;
 
 
-#line 423 "syntax.cog"
+#line 425 "syntax.cog"
  using ModuleDecl = struct ModuleDeclImpl* ;
 struct ModuleDeclImpl;
 
@@ -110,7 +110,7 @@ struct SessionImpl;
 #line 110 "check.cog"
  
 
-#line 388 "syntax.cog"
+#line 390 "syntax.cog"
  using GenericDecl = struct GenericDeclImpl* ;
 struct GenericDeclImpl;
 
@@ -118,17 +118,17 @@ struct GenericDeclImpl;
 #line 152 "check.cog"
  
 
-#line 278 "syntax.cog"
+#line 280 "syntax.cog"
  using Val = struct ValImpl* ;
 struct ValImpl;
 
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl;
 
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl;
 
@@ -137,12 +137,12 @@ struct ExpImpl;
  struct TypeExp;
 
 
-#line 401 "syntax.cog"
+#line 403 "syntax.cog"
  using TypeVarDecl = struct TypeVarDeclImpl* ;
 struct TypeVarDeclImpl;
 
 
-#line 419 "syntax.cog"
+#line 421 "syntax.cog"
  using TypeAliasDecl = struct TypeAliasDeclImpl* ;
 struct TypeAliasDeclImpl;
 
@@ -150,7 +150,7 @@ struct TypeAliasDeclImpl;
 #line 167 "check.cog"
  
 
-#line 471 "syntax.cog"
+#line 473 "syntax.cog"
  using VarDeclBase = struct VarDeclBaseImpl* ;
 struct VarDeclBaseImpl;
 
@@ -158,12 +158,12 @@ struct VarDeclBaseImpl;
 #line 174 "check.cog"
  
 
-#line 427 "syntax.cog"
+#line 429 "syntax.cog"
  using PatternDecl = struct PatternDeclImpl* ;
 struct PatternDeclImpl;
 
 
-#line 444 "syntax.cog"
+#line 446 "syntax.cog"
  using FuncDeclBase = struct FuncDeclBaseImpl* ;
 struct FuncDeclBaseImpl;
 
@@ -171,12 +171,12 @@ struct FuncDeclBaseImpl;
 #line 215 "check.cog"
  
 
-#line 431 "syntax.cog"
+#line 433 "syntax.cog"
  using AggTypeDecl = struct AggTypeDeclImpl* ;
 struct AggTypeDeclImpl;
 
 
-#line 436 "syntax.cog"
+#line 438 "syntax.cog"
  using ClassDecl = struct ClassDeclImpl* ;
 struct ClassDeclImpl;
 
@@ -184,7 +184,7 @@ struct ClassDeclImpl;
 #line 237 "check.cog"
  
 
-#line 440 "syntax.cog"
+#line 442 "syntax.cog"
  using StructDecl = struct StructDeclImpl* ;
 struct StructDeclImpl;
 
@@ -198,122 +198,125 @@ struct StructDeclImpl;
 #line 269 "check.cog"
  
 
-#line 721 "syntax.cog"
+#line 278 "check.cog"
+ 
+
+#line 723 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl;
 
 
-#line 323 "check.cog"
+#line 372 "check.cog"
  
 
-#line 338 "check.cog"
+#line 387 "check.cog"
  
 
-#line 347 "check.cog"
+#line 396 "check.cog"
  
 
-#line 362 "check.cog"
+#line 414 "check.cog"
  
 
-#line 371 "check.cog"
+#line 423 "check.cog"
  
 
-#line 383 "check.cog"
+#line 435 "check.cog"
  
 
-#line 406 "check.cog"
+#line 458 "check.cog"
  
 
-#line 687 "check.cog"
+#line 747 "check.cog"
  
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl;
 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl;
 
 
-#line 703 "check.cog"
+#line 763 "check.cog"
  
 
-#line 565 "syntax.cog"
+#line 567 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl;
 
 
-#line 605 "syntax.cog"
+#line 607 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl;
 
 
-#line 1210 "check.cog"
+#line 1270 "check.cog"
  enum OverloadResolveMode : int;
 
 
-#line 1193 "check.cog"
+#line 1253 "check.cog"
  enum OverloadCandidateState : int;
 
 
-#line 1203 "check.cog"
+#line 1263 "check.cog"
  struct OverloadCandidate;
 
 
-#line 1216 "check.cog"
+#line 1276 "check.cog"
  struct OverloadResolveContext;
 
 
-#line 761 "check.cog"
+#line 821 "check.cog"
  
 
-#line 801 "check.cog"
+#line 861 "check.cog"
  
 
-#line 812 "check.cog"
+#line 872 "check.cog"
  
 
-#line 822 "check.cog"
+#line 882 "check.cog"
  
 
-#line 739 "syntax.cog"
+#line 741 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl;
 
 
-#line 832 "check.cog"
- 
-
-#line 842 "check.cog"
- 
-
-#line 855 "check.cog"
- 
-
 #line 892 "check.cog"
  
 
-#line 905 "check.cog"
+#line 902 "check.cog"
  
 
 #line 915 "check.cog"
  
 
-#line 922 "check.cog"
+#line 952 "check.cog"
  
 
-#line 955 "check.cog"
+#line 965 "check.cog"
  
 
-#line 983 "check.cog"
+#line 975 "check.cog"
  
 
-#line 992 "check.cog"
+#line 982 "check.cog"
  
 
-#line 1002 "check.cog"
+#line 1015 "check.cog"
+ 
+
+#line 1043 "check.cog"
+ 
+
+#line 1052 "check.cog"
+ 
+
+#line 1062 "check.cog"
  
 
 #line 254 "syntax.cog"
@@ -321,150 +324,159 @@ struct TypeTypeImpl;
 struct SpecializationArgImpl;
 
 
-#line 260 "syntax.cog"
+#line 262 "syntax.cog"
  using Specializations = struct SpecializationsImpl* ;
 struct SpecializationsImpl;
 
 
-#line 1022 "check.cog"
+#line 1082 "check.cog"
  
 
-#line 1062 "check.cog"
+#line 1122 "check.cog"
  
 
-#line 1075 "check.cog"
- 
-
-#line 1100 "check.cog"
- 
-
-#line 1136 "check.cog"
+#line 1135 "check.cog"
  
 
 #line 1160 "check.cog"
  
 
-#line 1180 "check.cog"
+#line 1196 "check.cog"
  
 
-#line 1228 "check.cog"
+#line 1220 "check.cog"
  
 
-#line 1270 "check.cog"
+#line 1240 "check.cog"
  
 
-#line 1337 "check.cog"
+#line 1288 "check.cog"
  
 
-#line 1345 "check.cog"
+#line 1330 "check.cog"
  
 
-#line 1364 "check.cog"
+#line 1397 "check.cog"
  
 
-#line 1372 "check.cog"
+#line 1405 "check.cog"
  
 
-#line 1387 "check.cog"
+#line 1424 "check.cog"
  
 
-#line 1442 "check.cog"
+#line 1432 "check.cog"
  
 
-#line 463 "syntax.cog"
+#line 1447 "check.cog"
+ 
+
+#line 1502 "check.cog"
+ 
+
+#line 465 "syntax.cog"
  using SubscriptDecl = struct SubscriptDeclImpl* ;
 struct SubscriptDeclImpl;
 
 
-#line 1450 "check.cog"
+#line 1510 "check.cog"
  
 
-#line 1463 "check.cog"
+#line 1525 "check.cog"
  
 
-#line 467 "syntax.cog"
+#line 469 "syntax.cog"
  using InitializerDecl = struct InitializerDeclImpl* ;
 struct InitializerDeclImpl;
 
 
-#line 1474 "check.cog"
+#line 1538 "check.cog"
  
 
-#line 1485 "check.cog"
+#line 1549 "check.cog"
  
 
-#line 1510 "check.cog"
+#line 1574 "check.cog"
  
 
-#line 1534 "check.cog"
+#line 1598 "check.cog"
  
 
-#line 1543 "check.cog"
+#line 1607 "check.cog"
  
 
-#line 1640 "check.cog"
+#line 1704 "check.cog"
  
 
-#line 1647 "check.cog"
+#line 1711 "check.cog"
  
 
-#line 1655 "check.cog"
+#line 1719 "check.cog"
  
 
-#line 415 "syntax.cog"
+#line 417 "syntax.cog"
  using GenericParamDecl = struct GenericParamDeclImpl* ;
 struct GenericParamDeclImpl;
 
 
-#line 1678 "check.cog"
+#line 1742 "check.cog"
  struct GenericInferenceArg;
 
 
-#line 1684 "check.cog"
+#line 1748 "check.cog"
  struct GenericInferenceContext;
 
 
-#line 1690 "check.cog"
+#line 1755 "check.cog"
  
 
-#line 1708 "check.cog"
+#line 1773 "check.cog"
  
 
-#line 1745 "check.cog"
+#line 1810 "check.cog"
  
 
-#line 1766 "check.cog"
+#line 1831 "check.cog"
  
 
-#line 488 "syntax.cog"
+#line 1844 "check.cog"
+ 
+
+#line 490 "syntax.cog"
  using LetDecl = struct LetDeclImpl* ;
 struct LetDeclImpl;
 
 
-#line 492 "syntax.cog"
+#line 494 "syntax.cog"
  using ParamDecl = struct ParamDeclImpl* ;
 struct ParamDeclImpl;
 
 
-#line 1799 "check.cog"
+#line 1889 "check.cog"
  
 
-#line 1811 "check.cog"
+#line 1901 "check.cog"
  
 
-#line 1898 "check.cog"
+#line 1989 "check.cog"
  
 
-#line 1927 "check.cog"
+#line 2020 "check.cog"
  
 
-#line 1947 "check.cog"
+#line 2040 "check.cog"
  
 
-#line 1961 "check.cog"
+#line 2056 "check.cog"
  
 
-#line 1972 "check.cog"
+#line 2088 "check.cog"
+ 
+
+#line 2115 "check.cog"
+ 
+
+#line 2126 "check.cog"
  
 
 #line 3 "diagnostic.cog"
@@ -607,7 +619,7 @@ struct ParamDeclImpl;
 #line 729 "emit.cog"
  
 
-#line 459 "syntax.cog"
+#line 461 "syntax.cog"
  using FuncDecl = struct FuncDeclImpl* ;
 struct FuncDeclImpl;
 
@@ -795,7 +807,7 @@ struct SyntaxListBuilder;
 #line 36 "name.cog"
  
 
-#line 43 "name.cog"
+#line 45 "name.cog"
  
 
 #line 4 "parser.cog"
@@ -897,18 +909,18 @@ struct SyntaxListBuilder;
 #line 377 "parser.cog"
  
 
-#line 667 "syntax.cog"
+#line 669 "syntax.cog"
  struct LookupResultItem;
 
 
-#line 686 "syntax.cog"
+#line 688 "syntax.cog"
  struct LookupResult;
 
 
 #line 391 "parser.cog"
  
 
-#line 496 "syntax.cog"
+#line 498 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl;
 
@@ -916,7 +928,7 @@ struct SyntaxDeclImpl;
 #line 401 "parser.cog"
  
 
-#line 650 "syntax.cog"
+#line 652 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl;
 
@@ -945,10 +957,10 @@ struct NameExpImpl;
 #line 568 "parser.cog"
  
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
  typedef 
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -1221,217 +1233,217 @@ struct FilteredSyntaxListIterator;
 struct BuiltinAttrImpl;
 
 
-#line 267 "syntax.cog"
+#line 269 "syntax.cog"
  using SpecializedDecl = struct SpecializedDeclImpl* ;
 struct SpecializedDeclImpl;
 
 
-#line 304 "syntax.cog"
+#line 306 "syntax.cog"
  template<typename T >
 struct DeclRefListIterator;
 
 
-#line 345 "syntax.cog"
+#line 347 "syntax.cog"
  template<typename T >
 struct DeclRefList;
 
 
-#line 373 "syntax.cog"
+#line 375 "syntax.cog"
  
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
  
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
  
 
-#line 407 "syntax.cog"
+#line 409 "syntax.cog"
  using ImportDecl = struct ImportDeclImpl* ;
 struct ImportDeclImpl;
 
 
-#line 450 "syntax.cog"
+#line 452 "syntax.cog"
  
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
  
 
-#line 484 "syntax.cog"
+#line 486 "syntax.cog"
  using VarDecl = struct VarDeclImpl* ;
 struct VarDeclImpl;
 
 
-#line 504 "syntax.cog"
+#line 506 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl;
 
 
-#line 511 "syntax.cog"
+#line 513 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl;
 
 
-#line 516 "syntax.cog"
+#line 518 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl;
 
 
-#line 523 "syntax.cog"
+#line 525 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl;
 
 
-#line 529 "syntax.cog"
+#line 531 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl;
 
 
-#line 537 "syntax.cog"
+#line 539 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl;
 
 
-#line 542 "syntax.cog"
+#line 544 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl;
 
 
-#line 546 "syntax.cog"
+#line 548 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl;
 
 
-#line 550 "syntax.cog"
+#line 552 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl;
 
 
-#line 557 "syntax.cog"
+#line 559 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl;
 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl;
 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl;
 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl;
 
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl;
 
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl;
 
 
-#line 611 "syntax.cog"
+#line 613 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl;
 
 
-#line 615 "syntax.cog"
+#line 617 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl;
 
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl;
 
 
-#line 623 "syntax.cog"
+#line 625 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl;
 
 
-#line 627 "syntax.cog"
+#line 629 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl;
 
 
-#line 631 "syntax.cog"
+#line 633 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl;
 
 
-#line 635 "syntax.cog"
+#line 637 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl;
 
 
-#line 639 "syntax.cog"
+#line 641 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl;
 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl;
 
 
-#line 713 "syntax.cog"
+#line 715 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl;
 
 
-#line 733 "syntax.cog"
+#line 735 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl;
 
 
-#line 745 "syntax.cog"
+#line 747 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl;
 
 
-#line 751 "syntax.cog"
+#line 753 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl;
 
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl;
 
 
-#line 763 "syntax.cog"
+#line 765 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl;
 
 
-#line 766 "syntax.cog"
+#line 768 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl;
 
 
-#line 769 "syntax.cog"
+#line 771 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl;
 
 
-#line 776 "syntax.cog"
+#line 778 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl;
 
 
-#line 783 "syntax.cog"
+#line 785 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl;
 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl;
 
@@ -1776,47 +1788,47 @@ static StaticClass staticClass;
 };
 
 
-#line 282 "syntax.cog"
+#line 284 "syntax.cog"
  using ContainerStmt = struct ContainerStmtImpl* ;
 struct ContainerStmtImpl : 
 
-#line 282 "syntax.cog"
+#line 284 "syntax.cog"
                        DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 284 "syntax.cog"
+#line 286 "syntax.cog"
   
 
-#line 284 "syntax.cog"
+#line 286 "syntax.cog"
               SyntaxList<
 
-#line 284 "syntax.cog"
+#line 286 "syntax.cog"
                          Stmt>  stmts;
 
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
   
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
                      SyntaxList<
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
                                 Stmt>  getStmts();
 
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
   
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                      FilteredSyntaxList<
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                                         Decl, 
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                                               Stmt>  getDecls();
 };
 } namespace cog {
@@ -1824,27 +1836,27 @@ template<> struct ObjectClassImpl<cogc::ContainerStmt > { typedef cogc::Containe
 } namespace cogc {
 
 
-#line 297 "syntax.cog"
+#line 299 "syntax.cog"
  using ContainerDecl = struct ContainerDeclImpl* ;
 struct ContainerDeclImpl : 
 
-#line 297 "syntax.cog"
+#line 299 "syntax.cog"
                        ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
   
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                      Ref<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                          SyntaxList<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                     Decl> >  getDecls();
 };
 } namespace cog {
@@ -1852,11 +1864,11 @@ template<> struct ObjectClassImpl<cogc::ContainerDecl > { typedef cogc::Containe
 } namespace cogc {
 
 
-#line 423 "syntax.cog"
+#line 425 "syntax.cog"
  using ModuleDecl = struct ModuleDeclImpl* ;
 struct ModuleDeclImpl : 
 
-#line 423 "syntax.cog"
+#line 425 "syntax.cog"
                     ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2188,21 +2200,21 @@ static StaticClass staticClass;
          Decl decl);
 
 
-#line 388 "syntax.cog"
+#line 390 "syntax.cog"
  using GenericDecl = struct GenericDeclImpl* ;
 struct GenericDeclImpl : 
 
-#line 388 "syntax.cog"
+#line 390 "syntax.cog"
                      ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 390 "syntax.cog"
+#line 392 "syntax.cog"
   
 
-#line 390 "syntax.cog"
+#line 392 "syntax.cog"
               Decl inner;
 };
 } namespace cog {
@@ -2226,11 +2238,11 @@ template<> struct ObjectClassImpl<cogc::GenericDecl > { typedef cogc::GenericDec
         GenericDecl decl);
 
 
-#line 278 "syntax.cog"
+#line 280 "syntax.cog"
  using Val = struct ValImpl* ;
 struct ValImpl : 
 
-#line 278 "syntax.cog"
+#line 280 "syntax.cog"
              ObjectImpl
 {
 typedef cog::Class StaticClass;
@@ -2241,11 +2253,11 @@ template<> struct ObjectClassImpl<cogc::Val > { typedef cogc::ValImpl Impl; };
 } namespace cogc {
 
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl : 
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
               ValImpl
 {
 typedef cog::Class StaticClass;
@@ -2256,21 +2268,21 @@ template<> struct ObjectClassImpl<cogc::Type > { typedef cogc::TypeImpl Impl; };
 } namespace cogc {
 
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl : 
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
              StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 580 "syntax.cog"
+#line 582 "syntax.cog"
   
 
-#line 580 "syntax.cog"
+#line 582 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -2306,28 +2318,28 @@ static StaticClass staticClass;
 };
 
 
-#line 401 "syntax.cog"
+#line 403 "syntax.cog"
  using TypeVarDecl = struct TypeVarDeclImpl* ;
 struct TypeVarDeclImpl : 
 
-#line 401 "syntax.cog"
+#line 403 "syntax.cog"
                      DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 403 "syntax.cog"
+#line 405 "syntax.cog"
   
 
-#line 403 "syntax.cog"
+#line 405 "syntax.cog"
               TypeExp bound;
 
 
-#line 404 "syntax.cog"
+#line 406 "syntax.cog"
   
 
-#line 404 "syntax.cog"
+#line 406 "syntax.cog"
              TypeExp init;
 };
 } namespace cog {
@@ -2335,11 +2347,11 @@ template<> struct ObjectClassImpl<cogc::TypeVarDecl > { typedef cogc::TypeVarDec
 } namespace cogc {
 
 
-#line 419 "syntax.cog"
+#line 421 "syntax.cog"
  using TypeAliasDecl = struct TypeAliasDeclImpl* ;
 struct TypeAliasDeclImpl : 
 
-#line 419 "syntax.cog"
+#line 421 "syntax.cog"
                        TypeVarDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2366,28 +2378,28 @@ template<> struct ObjectClassImpl<cogc::TypeAliasDecl > { typedef cogc::TypeAlia
         TypeAliasDecl decl);
 
 
-#line 471 "syntax.cog"
+#line 473 "syntax.cog"
  using VarDeclBase = struct VarDeclBaseImpl* ;
 struct VarDeclBaseImpl : 
 
-#line 471 "syntax.cog"
+#line 473 "syntax.cog"
                      DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 473 "syntax.cog"
+#line 475 "syntax.cog"
   
 
-#line 473 "syntax.cog"
+#line 475 "syntax.cog"
              TypeExp type;
 
 
-#line 474 "syntax.cog"
+#line 476 "syntax.cog"
   
 
-#line 474 "syntax.cog"
+#line 476 "syntax.cog"
              Exp init;
 };
 } namespace cog {
@@ -2411,11 +2423,11 @@ template<> struct ObjectClassImpl<cogc::VarDeclBase > { typedef cogc::VarDeclBas
         VarDeclBase decl);
 
 
-#line 427 "syntax.cog"
+#line 429 "syntax.cog"
  using PatternDecl = struct PatternDeclImpl* ;
 struct PatternDeclImpl : 
 
-#line 427 "syntax.cog"
+#line 429 "syntax.cog"
                      ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2426,28 +2438,28 @@ template<> struct ObjectClassImpl<cogc::PatternDecl > { typedef cogc::PatternDec
 } namespace cogc {
 
 
-#line 444 "syntax.cog"
+#line 446 "syntax.cog"
  using FuncDeclBase = struct FuncDeclBaseImpl* ;
 struct FuncDeclBaseImpl : 
 
-#line 444 "syntax.cog"
+#line 446 "syntax.cog"
                       PatternDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 446 "syntax.cog"
+#line 448 "syntax.cog"
   
 
-#line 446 "syntax.cog"
+#line 448 "syntax.cog"
                    TypeExp resultType;
 
 
-#line 447 "syntax.cog"
+#line 449 "syntax.cog"
   
 
-#line 447 "syntax.cog"
+#line 449 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -2471,21 +2483,21 @@ template<> struct ObjectClassImpl<cogc::FuncDeclBase > { typedef cogc::FuncDeclB
         FuncDeclBase decl);
 
 
-#line 431 "syntax.cog"
+#line 433 "syntax.cog"
  using AggTypeDecl = struct AggTypeDeclImpl* ;
 struct AggTypeDeclImpl : 
 
-#line 431 "syntax.cog"
+#line 433 "syntax.cog"
                      PatternDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 433 "syntax.cog"
+#line 435 "syntax.cog"
   
 
-#line 433 "syntax.cog"
+#line 435 "syntax.cog"
              TypeExp base;
 };
 } namespace cog {
@@ -2493,11 +2505,11 @@ template<> struct ObjectClassImpl<cogc::AggTypeDecl > { typedef cogc::AggTypeDec
 } namespace cogc {
 
 
-#line 436 "syntax.cog"
+#line 438 "syntax.cog"
  using ClassDecl = struct ClassDeclImpl* ;
 struct ClassDeclImpl : 
 
-#line 436 "syntax.cog"
+#line 438 "syntax.cog"
                    AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2524,11 +2536,11 @@ template<> struct ObjectClassImpl<cogc::ClassDecl > { typedef cogc::ClassDeclImp
         ClassDecl decl);
 
 
-#line 440 "syntax.cog"
+#line 442 "syntax.cog"
  using StructDecl = struct StructDeclImpl* ;
 struct StructDeclImpl : 
 
-#line 440 "syntax.cog"
+#line 442 "syntax.cog"
                     AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2575,7 +2587,7 @@ template<> struct ObjectClassImpl<cogc::StructDecl > { typedef cogc::StructDeclI
  
 
 #line 272 "check.cog"
-     Stmt checkStmt(
+     Exp checkPrediateExpr(
 
 #line 270 "check.cog"
                        
@@ -2587,14 +2599,33 @@ template<> struct ObjectClassImpl<cogc::StructDecl > { typedef cogc::StructDeclI
                        * context, 
 
 #line 271 "check.cog"
+        Exp expr);
+
+
+#line 278 "check.cog"
+ 
+
+#line 281 "check.cog"
+     Stmt checkStmt(
+
+#line 279 "check.cog"
+                       
+
+#line 279 "check.cog"
+           CheckContext
+
+#line 279 "check.cog"
+                       * context, 
+
+#line 280 "check.cog"
         Stmt stmt);
 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl : 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
                    ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2605,167 +2636,167 @@ template<> struct ObjectClassImpl<cogc::BlockStmt > { typedef cogc::BlockStmtImp
 } namespace cogc {
 
 
-#line 323 "check.cog"
+#line 372 "check.cog"
  
 
-#line 326 "check.cog"
+#line 375 "check.cog"
      Stmt checkBlockStmt(
 
-#line 324 "check.cog"
+#line 373 "check.cog"
                        
 
-#line 324 "check.cog"
+#line 373 "check.cog"
            CheckContext
 
-#line 324 "check.cog"
+#line 373 "check.cog"
                        * context, 
 
-#line 325 "check.cog"
+#line 374 "check.cog"
         BlockStmt stmt);
 
 
-#line 338 "check.cog"
+#line 387 "check.cog"
  
 
-#line 341 "check.cog"
+#line 390 "check.cog"
      Exp checkExp(
 
-#line 339 "check.cog"
+#line 388 "check.cog"
                        
 
-#line 339 "check.cog"
+#line 388 "check.cog"
            CheckContext
 
-#line 339 "check.cog"
+#line 388 "check.cog"
                        * context, 
 
-#line 340 "check.cog"
+#line 389 "check.cog"
        Exp exp);
 
 
-#line 347 "check.cog"
+#line 396 "check.cog"
  
 
-#line 350 "check.cog"
+#line 399 "check.cog"
      Exp coerceToExp(
 
-#line 348 "check.cog"
+#line 397 "check.cog"
                        
 
-#line 348 "check.cog"
+#line 397 "check.cog"
            CheckContext
 
-#line 348 "check.cog"
+#line 397 "check.cog"
                        * context, 
 
-#line 349 "check.cog"
+#line 398 "check.cog"
         Syntax term);
 
 
-#line 362 "check.cog"
+#line 414 "check.cog"
  
 
-#line 365 "check.cog"
+#line 417 "check.cog"
      Type checkType(
 
-#line 363 "check.cog"
+#line 415 "check.cog"
                        
 
-#line 363 "check.cog"
+#line 415 "check.cog"
            CheckContext
 
-#line 363 "check.cog"
+#line 415 "check.cog"
                        * context, 
 
-#line 364 "check.cog"
+#line 416 "check.cog"
        Exp exp);
 
 
-#line 371 "check.cog"
+#line 423 "check.cog"
  void checkTypeExp(
 
-#line 372 "check.cog"
+#line 424 "check.cog"
                        
 
-#line 372 "check.cog"
+#line 424 "check.cog"
            CheckContext
 
-#line 372 "check.cog"
+#line 424 "check.cog"
                        * context, 
 
-#line 373 "check.cog"
+#line 425 "check.cog"
                   
 
-#line 373 "check.cog"
+#line 425 "check.cog"
            TypeExp
 
-#line 373 "check.cog"
+#line 425 "check.cog"
                   * typeExp);
 
 
-#line 383 "check.cog"
+#line 435 "check.cog"
  
 
-#line 386 "check.cog"
+#line 438 "check.cog"
      Type coerceToType(
 
-#line 384 "check.cog"
+#line 436 "check.cog"
                        
 
-#line 384 "check.cog"
+#line 436 "check.cog"
            CheckContext
 
-#line 384 "check.cog"
+#line 436 "check.cog"
                        * context, 
 
-#line 385 "check.cog"
+#line 437 "check.cog"
        Exp exp);
 
 
-#line 406 "check.cog"
+#line 458 "check.cog"
  
 
-#line 409 "check.cog"
+#line 461 "check.cog"
      Exp checkTerm(
 
-#line 407 "check.cog"
+#line 459 "check.cog"
                        
 
-#line 407 "check.cog"
+#line 459 "check.cog"
            CheckContext
 
-#line 407 "check.cog"
+#line 459 "check.cog"
                        * context, 
 
-#line 408 "check.cog"
+#line 460 "check.cog"
        Exp exp);
 
 
-#line 687 "check.cog"
+#line 747 "check.cog"
  
 
-#line 689 "check.cog"
+#line 749 "check.cog"
         Val extractVal(
 
-#line 688 "check.cog"
+#line 748 "check.cog"
        Exp exp);
 
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl : 
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
   
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -2773,31 +2804,31 @@ template<> struct ObjectClassImpl<cogc::DeclRefExp > { typedef cogc::DeclRefExpI
 } namespace cogc {
 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl : 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
                    DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 659 "syntax.cog"
+#line 661 "syntax.cog"
   
 
-#line 659 "syntax.cog"
+#line 661 "syntax.cog"
              Exp base;
 
 
-#line 660 "syntax.cog"
+#line 662 "syntax.cog"
   
 
-#line 660 "syntax.cog"
+#line 662 "syntax.cog"
                    Ptr<
 
-#line 660 "syntax.cog"
+#line 662 "syntax.cog"
                        Name>  memberName;
 };
 } namespace cog {
@@ -2805,47 +2836,47 @@ template<> struct ObjectClassImpl<cogc::MemberExp > { typedef cogc::MemberExpImp
 } namespace cogc {
 
 
-#line 703 "check.cog"
+#line 763 "check.cog"
  
 
-#line 706 "check.cog"
+#line 766 "check.cog"
         Exp checkMemberExp(
 
-#line 704 "check.cog"
+#line 764 "check.cog"
                        
 
-#line 704 "check.cog"
+#line 764 "check.cog"
            CheckContext
 
-#line 704 "check.cog"
+#line 764 "check.cog"
                        * context, 
 
-#line 705 "check.cog"
+#line 765 "check.cog"
        MemberExp exp);
 
 
-#line 565 "syntax.cog"
+#line 567 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl : 
 
-#line 565 "syntax.cog"
+#line 567 "syntax.cog"
              SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 567 "syntax.cog"
+#line 569 "syntax.cog"
   
 
-#line 567 "syntax.cog"
+#line 569 "syntax.cog"
             Exp exp;
 
 
-#line 568 "syntax.cog"
+#line 570 "syntax.cog"
   
 
-#line 568 "syntax.cog"
+#line 570 "syntax.cog"
              Arg next;
 };
 } namespace cog {
@@ -2853,31 +2884,31 @@ template<> struct ObjectClassImpl<cogc::Arg > { typedef cogc::ArgImpl Impl; };
 } namespace cogc {
 
 
-#line 605 "syntax.cog"
+#line 607 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl : 
 
-#line 605 "syntax.cog"
+#line 607 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 607 "syntax.cog"
+#line 609 "syntax.cog"
   
 
-#line 607 "syntax.cog"
+#line 609 "syntax.cog"
              Exp base;
 
 
-#line 608 "syntax.cog"
+#line 610 "syntax.cog"
   
 
-#line 608 "syntax.cog"
+#line 610 "syntax.cog"
              SyntaxList<
 
-#line 608 "syntax.cog"
+#line 610 "syntax.cog"
                         Arg>  args;
 };
 } namespace cog {
@@ -2885,7 +2916,7 @@ template<> struct ObjectClassImpl<cogc::AppExpBase > { typedef cogc::AppExpBaseI
 } namespace cogc {
 
 
-#line 1210 "check.cog"
+#line 1270 "check.cog"
  enum OverloadResolveMode : int
 {
 kOverloadResolveMode_justTrying,
@@ -2893,7 +2924,7 @@ kOverloadResolveMode_forReal,
 };
 
 
-#line 1193 "check.cog"
+#line 1253 "check.cog"
  enum OverloadCandidateState : int
 {
 kOverloadCandidateState_Unchecked,
@@ -2904,184 +2935,184 @@ kOverloadCandidateState_Applicable,
 };
 
 
-#line 1203 "check.cog"
+#line 1263 "check.cog"
  struct OverloadCandidate
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 1205 "check.cog"
+#line 1265 "check.cog"
   
 
-#line 1205 "check.cog"
+#line 1265 "check.cog"
                 OverloadCandidateState state;
 
 
-#line 1206 "check.cog"
+#line 1266 "check.cog"
   
 
-#line 1206 "check.cog"
+#line 1266 "check.cog"
                  DeclRefVal declRef;
 
 
-#line 1207 "check.cog"
+#line 1267 "check.cog"
   
 
-#line 1207 "check.cog"
+#line 1267 "check.cog"
                     Type resultType;
 };
 
 
-#line 1216 "check.cog"
+#line 1276 "check.cog"
  struct OverloadResolveContext
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 1218 "check.cog"
+#line 1278 "check.cog"
   
 
-#line 1218 "check.cog"
+#line 1278 "check.cog"
                                   
 
-#line 1218 "check.cog"
+#line 1278 "check.cog"
                       CheckContext
 
-#line 1218 "check.cog"
+#line 1278 "check.cog"
                                   * checkContext;
 
 
-#line 1219 "check.cog"
+#line 1279 "check.cog"
      
 
-#line 1219 "check.cog"
+#line 1279 "check.cog"
                      AppExpBase appExp;
 
 
-#line 1220 "check.cog"
+#line 1280 "check.cog"
      
 
-#line 1220 "check.cog"
+#line 1280 "check.cog"
                      Exp baseExp = 
 
-#line 1220 "check.cog"
+#line 1280 "check.cog"
                            nullptr;
 
 
-#line 1222 "check.cog"
+#line 1282 "check.cog"
      
 
-#line 1222 "check.cog"
+#line 1282 "check.cog"
                 OverloadResolveMode mode = 
 
-#line 1222 "check.cog"
+#line 1282 "check.cog"
                                       kOverloadResolveMode_justTrying;
 
 
-#line 1225 "check.cog"
+#line 1285 "check.cog"
      
 
-#line 1225 "check.cog"
+#line 1285 "check.cog"
                       Array<
 
-#line 1225 "check.cog"
+#line 1285 "check.cog"
                             OverloadCandidate>  candidates;
 };
 
 
-#line 761 "check.cog"
+#line 821 "check.cog"
  void addAppOverloadCandidates(
 
-#line 762 "check.cog"
+#line 822 "check.cog"
                                  
 
-#line 762 "check.cog"
+#line 822 "check.cog"
            OverloadResolveContext
 
-#line 762 "check.cog"
+#line 822 "check.cog"
                                  * context, 
 
-#line 763 "check.cog"
+#line 823 "check.cog"
            Exp baseExp);
 
 
-#line 801 "check.cog"
+#line 861 "check.cog"
  
 
-#line 804 "check.cog"
+#line 864 "check.cog"
         Type createFuncType(
 
-#line 802 "check.cog"
+#line 862 "check.cog"
                        
 
-#line 802 "check.cog"
+#line 862 "check.cog"
            CheckContext
 
-#line 802 "check.cog"
+#line 862 "check.cog"
                        * context, 
 
-#line 803 "check.cog"
+#line 863 "check.cog"
                DeclRefValImpl<
 
-#line 803 "check.cog"
+#line 863 "check.cog"
                               FuncDeclBase>  funcDeclRef);
 
 
-#line 812 "check.cog"
+#line 872 "check.cog"
  
 
-#line 815 "check.cog"
+#line 875 "check.cog"
      Type createDeclRefType(
 
-#line 813 "check.cog"
+#line 873 "check.cog"
                        
 
-#line 813 "check.cog"
+#line 873 "check.cog"
            CheckContext
 
-#line 813 "check.cog"
+#line 873 "check.cog"
                        * context, 
 
-#line 814 "check.cog"
+#line 874 "check.cog"
            DeclRefVal declRef);
 
 
-#line 822 "check.cog"
+#line 882 "check.cog"
  
 
-#line 825 "check.cog"
+#line 885 "check.cog"
      Type createDeclRefTypeType(
 
-#line 823 "check.cog"
+#line 883 "check.cog"
                        
 
-#line 823 "check.cog"
+#line 883 "check.cog"
            CheckContext
 
-#line 823 "check.cog"
+#line 883 "check.cog"
                        * context, 
 
-#line 824 "check.cog"
+#line 884 "check.cog"
            DeclRefVal declRef);
 
 
-#line 739 "syntax.cog"
+#line 741 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl : 
 
-#line 739 "syntax.cog"
+#line 741 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 741 "syntax.cog"
+#line 743 "syntax.cog"
   
 
-#line 741 "syntax.cog"
+#line 743 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -3089,71 +3120,11 @@ template<> struct ObjectClassImpl<cogc::TypeType > { typedef cogc::TypeTypeImpl 
 } namespace cogc {
 
 
-#line 832 "check.cog"
- 
-
-#line 835 "check.cog"
-     TypeType createTypeType(
-
-#line 833 "check.cog"
-                       
-
-#line 833 "check.cog"
-           CheckContext
-
-#line 833 "check.cog"
-                       * context, 
-
-#line 834 "check.cog"
-        Type type);
-
-
-#line 842 "check.cog"
- 
-
-#line 846 "check.cog"
-     Type specializeTypeForDeclRef(
-
-#line 843 "check.cog"
-                        
-
-#line 843 "check.cog"
-            CheckContext
-
-#line 843 "check.cog"
-                        * context, 
-
-#line 844 "check.cog"
-         Type type, 
-
-#line 845 "check.cog"
-           DeclRefVal declRef);
-
-
-#line 855 "check.cog"
- 
-
-#line 858 "check.cog"
-     Type getTypeForDeclRefImpl(
-
-#line 856 "check.cog"
-                       
-
-#line 856 "check.cog"
-           CheckContext
-
-#line 856 "check.cog"
-                       * context, 
-
-#line 857 "check.cog"
-           DeclRefVal declRef);
-
-
 #line 892 "check.cog"
  
 
 #line 895 "check.cog"
-     Type getTypeForDeclRef(
+     TypeType createTypeType(
 
 #line 893 "check.cog"
                        
@@ -3165,33 +3136,36 @@ template<> struct ObjectClassImpl<cogc::TypeType > { typedef cogc::TypeTypeImpl 
                        * context, 
 
 #line 894 "check.cog"
-           DeclRefVal declRef);
+        Type type);
 
 
-#line 905 "check.cog"
+#line 902 "check.cog"
  
 
-#line 908 "check.cog"
-     Type getTypeForDeclRef(
-
 #line 906 "check.cog"
-                       
+     Type specializeTypeForDeclRef(
 
-#line 906 "check.cog"
-           CheckContext
+#line 903 "check.cog"
+                        
 
-#line 906 "check.cog"
-                       * context, 
+#line 903 "check.cog"
+            CheckContext
 
-#line 907 "check.cog"
-           CompactDeclRef declRef);
+#line 903 "check.cog"
+                        * context, 
+
+#line 904 "check.cog"
+         Type type, 
+
+#line 905 "check.cog"
+           DeclRefVal declRef);
 
 
 #line 915 "check.cog"
  
 
-#line 917 "check.cog"
-     Type createErrorType(
+#line 918 "check.cog"
+     Type getTypeForDeclRefImpl(
 
 #line 916 "check.cog"
                        
@@ -3200,104 +3174,161 @@ template<> struct ObjectClassImpl<cogc::TypeType > { typedef cogc::TypeTypeImpl 
            CheckContext
 
 #line 916 "check.cog"
+                       * context, 
+
+#line 917 "check.cog"
+           DeclRefVal declRef);
+
+
+#line 952 "check.cog"
+ 
+
+#line 955 "check.cog"
+     Type getTypeForDeclRef(
+
+#line 953 "check.cog"
+                       
+
+#line 953 "check.cog"
+           CheckContext
+
+#line 953 "check.cog"
+                       * context, 
+
+#line 954 "check.cog"
+           DeclRefVal declRef);
+
+
+#line 965 "check.cog"
+ 
+
+#line 968 "check.cog"
+     Type getTypeForDeclRef(
+
+#line 966 "check.cog"
+                       
+
+#line 966 "check.cog"
+           CheckContext
+
+#line 966 "check.cog"
+                       * context, 
+
+#line 967 "check.cog"
+           CompactDeclRef declRef);
+
+
+#line 975 "check.cog"
+ 
+
+#line 977 "check.cog"
+     Type createErrorType(
+
+#line 976 "check.cog"
+                       
+
+#line 976 "check.cog"
+           CheckContext
+
+#line 976 "check.cog"
                        * context);
 
 
-#line 922 "check.cog"
- 
-
-#line 926 "check.cog"
-        Type getBuiltinType(
-
-#line 923 "check.cog"
-                       
-
-#line 923 "check.cog"
-           CheckContext
-
-#line 923 "check.cog"
-                       * context, 
-
-#line 924 "check.cog"
-       SourceLoc loc, 
-
-#line 925 "check.cog"
-        ConstPtr<
-
-#line 925 "check.cog"
-                 Char>  name);
-
-
-#line 955 "check.cog"
- 
-
-#line 958 "check.cog"
-     Type getResultType(
-
-#line 956 "check.cog"
-                       
-
-#line 956 "check.cog"
-           CheckContext
-
-#line 956 "check.cog"
-                       * context, 
-
-#line 957 "check.cog"
-        DeclRefValImpl<
-
-#line 957 "check.cog"
-                       PatternDecl>  decl);
-
-
-#line 983 "check.cog"
+#line 982 "check.cog"
  
 
 #line 986 "check.cog"
-        Exp createErrorExp(
+        Type getBuiltinType(
 
-#line 984 "check.cog"
+#line 983 "check.cog"
                        
 
-#line 984 "check.cog"
+#line 983 "check.cog"
            CheckContext
 
-#line 984 "check.cog"
+#line 983 "check.cog"
                        * context, 
 
+#line 984 "check.cog"
+       SourceLoc loc, 
+
 #line 985 "check.cog"
+        ConstPtr<
+
+#line 985 "check.cog"
+                 Char>  name);
+
+
+#line 1015 "check.cog"
+ 
+
+#line 1018 "check.cog"
+     Type getResultType(
+
+#line 1016 "check.cog"
+                       
+
+#line 1016 "check.cog"
+           CheckContext
+
+#line 1016 "check.cog"
+                       * context, 
+
+#line 1017 "check.cog"
+        DeclRefValImpl<
+
+#line 1017 "check.cog"
+                       PatternDecl>  decl);
+
+
+#line 1043 "check.cog"
+ 
+
+#line 1046 "check.cog"
+        Exp createErrorExp(
+
+#line 1044 "check.cog"
+                       
+
+#line 1044 "check.cog"
+           CheckContext
+
+#line 1044 "check.cog"
+                       * context, 
+
+#line 1045 "check.cog"
        Exp exp);
 
 
-#line 992 "check.cog"
+#line 1052 "check.cog"
  
 
-#line 995 "check.cog"
+#line 1055 "check.cog"
         Exp createErrorExp(
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
                        
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
            CheckContext
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
                        * context, 
 
-#line 994 "check.cog"
+#line 1054 "check.cog"
        SourceLoc loc);
 
 
-#line 1002 "check.cog"
+#line 1062 "check.cog"
  
 
-#line 1005 "check.cog"
+#line 1065 "check.cog"
         Bool isSameVal(
 
-#line 1003 "check.cog"
+#line 1063 "check.cog"
         Val left, 
 
-#line 1004 "check.cog"
+#line 1064 "check.cog"
          Val right);
 
 
@@ -3319,10 +3350,17 @@ static StaticClass staticClass;
              SpecializationArg next;
 
 
-#line 257 "syntax.cog"
+#line 258 "syntax.cog"
   
 
-#line 257 "syntax.cog"
+#line 258 "syntax.cog"
+              Decl param;
+
+
+#line 259 "syntax.cog"
+  
+
+#line 259 "syntax.cog"
               Val value;
 };
 } namespace cog {
@@ -3330,34 +3368,34 @@ template<> struct ObjectClassImpl<cogc::SpecializationArg > { typedef cogc::Spec
 } namespace cogc {
 
 
-#line 260 "syntax.cog"
+#line 262 "syntax.cog"
  using Specializations = struct SpecializationsImpl* ;
 struct SpecializationsImpl : 
 
-#line 260 "syntax.cog"
+#line 262 "syntax.cog"
                          ObjectImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 262 "syntax.cog"
+#line 264 "syntax.cog"
   
 
-#line 262 "syntax.cog"
+#line 264 "syntax.cog"
                        DeclRefValImpl<
 
-#line 262 "syntax.cog"
+#line 264 "syntax.cog"
                                       GenericDecl>  genericDeclRef;
 
 
-#line 263 "syntax.cog"
+#line 265 "syntax.cog"
   
 
-#line 263 "syntax.cog"
+#line 265 "syntax.cog"
              SyntaxList<
 
-#line 263 "syntax.cog"
+#line 265 "syntax.cog"
                         SpecializationArg>  args;
 };
 } namespace cog {
@@ -3365,121 +3403,56 @@ template<> struct ObjectClassImpl<cogc::Specializations > { typedef cogc::Specia
 } namespace cogc {
 
 
-#line 1022 "check.cog"
+#line 1082 "check.cog"
  
 
-#line 1025 "check.cog"
+#line 1085 "check.cog"
         Bool isSameSpecializations(
 
-#line 1023 "check.cog"
+#line 1083 "check.cog"
         Specializations left, 
 
-#line 1024 "check.cog"
+#line 1084 "check.cog"
             Specializations right);
 
 
-#line 1062 "check.cog"
+#line 1122 "check.cog"
  
 
-#line 1065 "check.cog"
+#line 1125 "check.cog"
         Bool isSameDeclRef(
 
-#line 1063 "check.cog"
+#line 1123 "check.cog"
         ConstRef<
 
-#line 1063 "check.cog"
+#line 1123 "check.cog"
                  DeclRefVal>  left, 
 
-#line 1064 "check.cog"
+#line 1124 "check.cog"
          ConstRef<
 
-#line 1064 "check.cog"
+#line 1124 "check.cog"
                   DeclRefVal>  right);
 
 
-#line 1075 "check.cog"
+#line 1135 "check.cog"
  
-
-#line 1078 "check.cog"
-        Bool isSameType(
-
-#line 1076 "check.cog"
-        Type left, 
-
-#line 1077 "check.cog"
-         Type right);
-
-
-#line 1100 "check.cog"
- 
-
-#line 1106 "check.cog"
-        Bool tryCoerceImpl(
-
-#line 1101 "check.cog"
-                        
-
-#line 1101 "check.cog"
-            CheckContext
-
-#line 1101 "check.cog"
-                        * context, 
-
-#line 1102 "check.cog"
-               Exp fromExp, 
-
-#line 1103 "check.cog"
-                Type fromType, 
-
-#line 1104 "check.cog"
-                 
-
-#line 1104 "check.cog"
-              Exp
-
-#line 1104 "check.cog"
-                 * toExp, 
-
-#line 1105 "check.cog"
-              Type toType);
-
-
-#line 1136 "check.cog"
- 
-
-#line 1141 "check.cog"
-        Bool tryCoerceImpl(
-
-#line 1137 "check.cog"
-                        
-
-#line 1137 "check.cog"
-            CheckContext
-
-#line 1137 "check.cog"
-                        * context, 
 
 #line 1138 "check.cog"
-               Exp fromExp, 
+        Bool isSameType(
 
-#line 1139 "check.cog"
-                 
+#line 1136 "check.cog"
+        Type left, 
 
-#line 1139 "check.cog"
-              Exp
-
-#line 1139 "check.cog"
-                 * toExp, 
-
-#line 1140 "check.cog"
-              Type toType);
+#line 1137 "check.cog"
+         Type right);
 
 
 #line 1160 "check.cog"
  
 
-#line 1164 "check.cog"
-        Exp coerce(
+#line 1166 "check.cog"
+        Bool tryCoerceImpl(
 
 #line 1161 "check.cog"
                         
@@ -3491,200 +3464,265 @@ template<> struct ObjectClassImpl<cogc::Specializations > { typedef cogc::Specia
                         * context, 
 
 #line 1162 "check.cog"
-            Exp exp, 
+               Exp fromExp, 
 
 #line 1163 "check.cog"
-             Type type);
+                Type fromType, 
+
+#line 1164 "check.cog"
+                 
+
+#line 1164 "check.cog"
+              Exp
+
+#line 1164 "check.cog"
+                 * toExp, 
+
+#line 1165 "check.cog"
+              Type toType);
 
 
-#line 1180 "check.cog"
+#line 1196 "check.cog"
  
 
-#line 1184 "check.cog"
-        Bool canCoerce(
+#line 1201 "check.cog"
+        Bool tryCoerceImpl(
 
-#line 1181 "check.cog"
+#line 1197 "check.cog"
                         
 
-#line 1181 "check.cog"
+#line 1197 "check.cog"
             CheckContext
 
-#line 1181 "check.cog"
+#line 1197 "check.cog"
                         * context, 
 
-#line 1182 "check.cog"
+#line 1198 "check.cog"
+               Exp fromExp, 
+
+#line 1199 "check.cog"
+                 
+
+#line 1199 "check.cog"
+              Exp
+
+#line 1199 "check.cog"
+                 * toExp, 
+
+#line 1200 "check.cog"
+              Type toType);
+
+
+#line 1220 "check.cog"
+ 
+
+#line 1224 "check.cog"
+        Exp coerce(
+
+#line 1221 "check.cog"
+                        
+
+#line 1221 "check.cog"
+            CheckContext
+
+#line 1221 "check.cog"
+                        * context, 
+
+#line 1222 "check.cog"
             Exp exp, 
 
-#line 1183 "check.cog"
+#line 1223 "check.cog"
              Type type);
 
 
-#line 1228 "check.cog"
+#line 1240 "check.cog"
  
 
-#line 1231 "check.cog"
+#line 1244 "check.cog"
+        Bool canCoerce(
+
+#line 1241 "check.cog"
+                        
+
+#line 1241 "check.cog"
+            CheckContext
+
+#line 1241 "check.cog"
+                        * context, 
+
+#line 1242 "check.cog"
+            Exp exp, 
+
+#line 1243 "check.cog"
+             Type type);
+
+
+#line 1288 "check.cog"
+ 
+
+#line 1291 "check.cog"
         Bool checkOverloadCandidateArity(
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
                                  
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
            OverloadResolveContext
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
                                  * context, 
 
-#line 1230 "check.cog"
+#line 1290 "check.cog"
                 Ref<
 
-#line 1230 "check.cog"
+#line 1290 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1270 "check.cog"
+#line 1330 "check.cog"
  
 
-#line 1273 "check.cog"
+#line 1333 "check.cog"
         Bool checkOverloadCandidateTypes(
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
                                  
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
            OverloadResolveContext
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
                                  * context, 
 
-#line 1272 "check.cog"
+#line 1332 "check.cog"
                 Ref<
 
-#line 1272 "check.cog"
+#line 1332 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1337 "check.cog"
+#line 1397 "check.cog"
  
 
-#line 1340 "check.cog"
+#line 1400 "check.cog"
         Bool checkOverloadCandidateDirections(
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
                                     
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
               OverloadResolveContext
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
                                     * context, 
 
-#line 1339 "check.cog"
+#line 1399 "check.cog"
                 Ref<
 
-#line 1339 "check.cog"
+#line 1399 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1345 "check.cog"
+#line 1405 "check.cog"
  void checkOverloadCandidateImpl(
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
                                     
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
               OverloadResolveContext
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
                                     * context, 
 
-#line 1347 "check.cog"
+#line 1407 "check.cog"
                 Ref<
 
-#line 1347 "check.cog"
+#line 1407 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1364 "check.cog"
+#line 1424 "check.cog"
  void checkOverloadCandidate(
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
                                     
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
               OverloadResolveContext
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
                                     * context, 
 
-#line 1366 "check.cog"
+#line 1426 "check.cog"
                 Ref<
 
-#line 1366 "check.cog"
+#line 1426 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1372 "check.cog"
+#line 1432 "check.cog"
  
 
-#line 1375 "check.cog"
+#line 1435 "check.cog"
         Int compareCandidates(
 
-#line 1373 "check.cog"
+#line 1433 "check.cog"
         Ref<
 
-#line 1373 "check.cog"
+#line 1433 "check.cog"
             OverloadCandidate>  left, 
 
-#line 1374 "check.cog"
+#line 1434 "check.cog"
          Ref<
 
-#line 1374 "check.cog"
+#line 1434 "check.cog"
              OverloadCandidate>  right);
 
 
-#line 1387 "check.cog"
+#line 1447 "check.cog"
  void addCheckedOverloadCandidate(
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
                                     
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
               OverloadResolveContext
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
                                     * context, 
 
-#line 1389 "check.cog"
+#line 1449 "check.cog"
                 Ref<
 
-#line 1389 "check.cog"
+#line 1449 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 1442 "check.cog"
+#line 1502 "check.cog"
  void addOverloadCandidate(
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
                                     
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
               OverloadResolveContext
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
                                     * context, 
 
-#line 1444 "check.cog"
+#line 1504 "check.cog"
                 Ref<
 
-#line 1444 "check.cog"
+#line 1504 "check.cog"
                     OverloadCandidate>  candidate);
 
 
-#line 463 "syntax.cog"
+#line 465 "syntax.cog"
  using SubscriptDecl = struct SubscriptDeclImpl* ;
 struct SubscriptDeclImpl : 
 
-#line 463 "syntax.cog"
+#line 465 "syntax.cog"
                        FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -3695,49 +3733,49 @@ template<> struct ObjectClassImpl<cogc::SubscriptDecl > { typedef cogc::Subscrip
 } namespace cogc {
 
 
-#line 1450 "check.cog"
+#line 1510 "check.cog"
  void addSubscriptOverloadCandidate(
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
                                     
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
               OverloadResolveContext
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
                                     * context, 
 
-#line 1452 "check.cog"
+#line 1512 "check.cog"
               DeclRefValImpl<
 
-#line 1452 "check.cog"
+#line 1512 "check.cog"
                              SubscriptDecl>  declRef);
 
 
-#line 1463 "check.cog"
+#line 1525 "check.cog"
  void addFuncOverloadCandidate(
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
                                     
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
               OverloadResolveContext
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
                                     * context, 
 
-#line 1465 "check.cog"
+#line 1527 "check.cog"
               DeclRefValImpl<
 
-#line 1465 "check.cog"
+#line 1527 "check.cog"
                              FuncDeclBase>  declRef);
 
 
-#line 467 "syntax.cog"
+#line 469 "syntax.cog"
  using InitializerDecl = struct InitializerDeclImpl* ;
 struct InitializerDeclImpl : 
 
-#line 467 "syntax.cog"
+#line 469 "syntax.cog"
                          FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -3748,169 +3786,169 @@ template<> struct ObjectClassImpl<cogc::InitializerDecl > { typedef cogc::Initia
 } namespace cogc {
 
 
-#line 1474 "check.cog"
+#line 1538 "check.cog"
  void addInitializerOverloadCandidate(
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                                      
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                OverloadResolveContext
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                                      * context, 
 
-#line 1476 "check.cog"
+#line 1540 "check.cog"
              Type type, 
 
-#line 1477 "check.cog"
+#line 1541 "check.cog"
                DeclRefValImpl<
 
-#line 1477 "check.cog"
+#line 1541 "check.cog"
                               InitializerDecl>  declRef);
 
 
-#line 1485 "check.cog"
+#line 1549 "check.cog"
  
 
-#line 1490 "check.cog"
+#line 1554 "check.cog"
         Exp createDeclRefExp(
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
                        
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
            CheckContext
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
                        * context, 
 
-#line 1487 "check.cog"
+#line 1551 "check.cog"
            CompactDeclRef declRef, 
 
-#line 1488 "check.cog"
+#line 1552 "check.cog"
        SourceLoc loc, 
 
-#line 1489 "check.cog"
+#line 1553 "check.cog"
            Exp baseExp);
 
 
-#line 1510 "check.cog"
+#line 1574 "check.cog"
  
 
-#line 1515 "check.cog"
+#line 1579 "check.cog"
         Exp createDeclRefExp(
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
                        
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
            CheckContext
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
                        * context, 
 
-#line 1512 "check.cog"
+#line 1576 "check.cog"
            DeclRefVal declRef, 
 
-#line 1513 "check.cog"
+#line 1577 "check.cog"
        SourceLoc loc, 
 
-#line 1514 "check.cog"
+#line 1578 "check.cog"
            Exp baseExp);
 
 
-#line 1534 "check.cog"
+#line 1598 "check.cog"
  
 
-#line 1538 "check.cog"
+#line 1602 "check.cog"
         Exp createDeclRefExp(
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
                        
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
            CheckContext
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
                        * context, 
 
-#line 1536 "check.cog"
+#line 1600 "check.cog"
            DeclRefVal declRef, 
 
-#line 1537 "check.cog"
+#line 1601 "check.cog"
        SourceLoc loc);
 
 
-#line 1543 "check.cog"
+#line 1607 "check.cog"
  
 
-#line 1545 "check.cog"
+#line 1609 "check.cog"
         Exp completeOverload(
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                                             
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                       OverloadResolveContext
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                                             * overloadContext);
 
 
-#line 1640 "check.cog"
+#line 1704 "check.cog"
  
 
-#line 1642 "check.cog"
+#line 1706 "check.cog"
         Bool isError(
 
-#line 1641 "check.cog"
+#line 1705 "check.cog"
         Type type);
 
 
-#line 1647 "check.cog"
+#line 1711 "check.cog"
  
 
-#line 1650 "check.cog"
+#line 1714 "check.cog"
         Bool isError(
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
                        
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
            CheckContext
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
                        * context, 
 
-#line 1649 "check.cog"
+#line 1713 "check.cog"
        Exp exp);
 
 
-#line 1655 "check.cog"
+#line 1719 "check.cog"
  void addTypeOverloadCandidates(
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
                                  
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
            OverloadResolveContext
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
                                  * context, 
 
-#line 1657 "check.cog"
+#line 1721 "check.cog"
            Exp typeExp, 
 
-#line 1658 "check.cog"
+#line 1722 "check.cog"
         Type type);
 
 
-#line 415 "syntax.cog"
+#line 417 "syntax.cog"
  using GenericParamDecl = struct GenericParamDeclImpl* ;
 struct GenericParamDeclImpl : 
 
-#line 415 "syntax.cog"
+#line 417 "syntax.cog"
                           TypeVarDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -3921,161 +3959,196 @@ template<> struct ObjectClassImpl<cogc::GenericParamDecl > { typedef cogc::Gener
 } namespace cogc {
 
 
-#line 1678 "check.cog"
+#line 1742 "check.cog"
  struct GenericInferenceArg
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 1680 "check.cog"
+#line 1744 "check.cog"
   
 
-#line 1680 "check.cog"
+#line 1744 "check.cog"
                     DeclRefValImpl<
 
-#line 1680 "check.cog"
+#line 1744 "check.cog"
                                    GenericParamDecl>  paramDeclRef;
 
 
-#line 1681 "check.cog"
+#line 1745 "check.cog"
   
 
-#line 1681 "check.cog"
+#line 1745 "check.cog"
            Val val = 
 
-#line 1681 "check.cog"
+#line 1745 "check.cog"
                  nullptr;
 };
 
 
-#line 1684 "check.cog"
+#line 1748 "check.cog"
  struct GenericInferenceContext
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 1686 "check.cog"
+#line 1750 "check.cog"
   
 
-#line 1686 "check.cog"
+#line 1750 "check.cog"
                                 
 
-#line 1686 "check.cog"
+#line 1750 "check.cog"
                     CheckContext
 
-#line 1686 "check.cog"
+#line 1750 "check.cog"
                                 * checkContext;
 
 
-#line 1687 "check.cog"
+#line 1751 "check.cog"
   
 
-#line 1687 "check.cog"
+#line 1751 "check.cog"
                                
 
-#line 1687 "check.cog"
+#line 1751 "check.cog"
             GenericInferenceArg
 
-#line 1687 "check.cog"
+#line 1751 "check.cog"
                                * args;
+
+
+#line 1752 "check.cog"
+  
+
+#line 1752 "check.cog"
+                Int argCount;
 };
 
 
-#line 1690 "check.cog"
+#line 1755 "check.cog"
  
 
-#line 1694 "check.cog"
+#line 1759 "check.cog"
         Bool doInferenceForVals(
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
                                   
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
            GenericInferenceContext
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
                                   * context, 
 
-#line 1692 "check.cog"
+#line 1757 "check.cog"
           Val argVal, 
 
-#line 1693 "check.cog"
+#line 1758 "check.cog"
             Val paramVal);
 
 
-#line 1708 "check.cog"
+#line 1773 "check.cog"
  
 
-#line 1712 "check.cog"
+#line 1777 "check.cog"
         Bool doInferenceForSpecializations(
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
                                   
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
            GenericInferenceContext
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
                                   * context, 
 
-#line 1710 "check.cog"
+#line 1775 "check.cog"
               Specializations argSpec, 
 
-#line 1711 "check.cog"
+#line 1776 "check.cog"
                 Specializations paramSpec);
 
 
-#line 1745 "check.cog"
+#line 1810 "check.cog"
  
 
-#line 1749 "check.cog"
+#line 1814 "check.cog"
         Bool doInferenceForDeclRefs(
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
                                     
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
              GenericInferenceContext
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
                                     * context, 
 
-#line 1747 "check.cog"
+#line 1812 "check.cog"
                   DeclRefVal argDeclRef, 
 
-#line 1748 "check.cog"
+#line 1813 "check.cog"
                     DeclRefVal paramDeclRef);
 
 
-#line 1766 "check.cog"
+#line 1831 "check.cog"
  
 
-#line 1770 "check.cog"
+#line 1834 "check.cog"
+                        
+
+#line 1834 "check.cog"
+     GenericInferenceArg
+
+#line 1834 "check.cog"
+                        * findGenericInferenceArg(
+
+#line 1832 "check.cog"
+                                  
+
+#line 1832 "check.cog"
+           GenericInferenceContext
+
+#line 1832 "check.cog"
+                                  * context, 
+
+#line 1833 "check.cog"
+                DeclRefValImpl<
+
+#line 1833 "check.cog"
+                               GenericParamDecl>  paramDeclRef);
+
+
+#line 1844 "check.cog"
+ 
+
+#line 1848 "check.cog"
         Bool doInferenceForTypes(
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
                                      
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
               GenericInferenceContext
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
                                      * context, 
 
-#line 1768 "check.cog"
+#line 1846 "check.cog"
               Type argType, 
 
-#line 1769 "check.cog"
+#line 1847 "check.cog"
                 Type paramType);
 
 
-#line 488 "syntax.cog"
+#line 490 "syntax.cog"
  using LetDecl = struct LetDeclImpl* ;
 struct LetDeclImpl : 
 
-#line 488 "syntax.cog"
+#line 490 "syntax.cog"
                  VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -4086,11 +4159,11 @@ template<> struct ObjectClassImpl<cogc::LetDecl > { typedef cogc::LetDeclImpl Im
 } namespace cogc {
 
 
-#line 492 "syntax.cog"
+#line 494 "syntax.cog"
  using ParamDecl = struct ParamDeclImpl* ;
 struct ParamDeclImpl : 
 
-#line 492 "syntax.cog"
+#line 494 "syntax.cog"
                    LetDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -4101,136 +4174,162 @@ template<> struct ObjectClassImpl<cogc::ParamDecl > { typedef cogc::ParamDeclImp
 } namespace cogc {
 
 
-#line 1799 "check.cog"
+#line 1889 "check.cog"
  
 
-#line 1803 "check.cog"
+#line 1893 "check.cog"
         Bool doInferenceForArgAndParam(
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
                                      
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
               GenericInferenceContext
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
                                      * context, 
 
-#line 1801 "check.cog"
+#line 1891 "check.cog"
               Exp argExpr, 
 
-#line 1802 "check.cog"
+#line 1892 "check.cog"
                    DeclRefValImpl<
 
-#line 1802 "check.cog"
+#line 1892 "check.cog"
                                   ParamDecl>  paramDeclRef);
 
 
-#line 1811 "check.cog"
+#line 1901 "check.cog"
  
 
-#line 1815 "check.cog"
+#line 1905 "check.cog"
         Specializations inferGenericArgsForApp(
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
                           
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
               CheckContext
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
                           * context, 
 
-#line 1813 "check.cog"
+#line 1903 "check.cog"
                      DeclRefValImpl<
 
-#line 1813 "check.cog"
+#line 1903 "check.cog"
                                     GenericDecl>  genericDeclRef, 
 
-#line 1814 "check.cog"
+#line 1904 "check.cog"
               AppExpBase appExpr);
 
 
-#line 1898 "check.cog"
+#line 1989 "check.cog"
  void addGenericOverloadCandidate(
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
                                     
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
               OverloadResolveContext
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
                                     * context, 
 
-#line 1900 "check.cog"
+#line 1991 "check.cog"
                      DeclRefValImpl<
 
-#line 1900 "check.cog"
+#line 1991 "check.cog"
                                     GenericDecl>  genericDeclRef);
 
 
-#line 1927 "check.cog"
+#line 2020 "check.cog"
  void addDeclRefOverloadCandidates(
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
                                     
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
               OverloadResolveContext
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
                                     * context, 
 
-#line 1929 "check.cog"
+#line 2022 "check.cog"
           DeclRefVal val);
 
 
-#line 1947 "check.cog"
+#line 2040 "check.cog"
  
 
-#line 1950 "check.cog"
-     Type specializeType(
+#line 2043 "check.cog"
+     Val findSpecialization(
 
-#line 1948 "check.cog"
-        Type type, 
+#line 2041 "check.cog"
+                   Specializations specializations, 
 
-#line 1949 "check.cog"
+#line 2042 "check.cog"
+           Decl decl);
+
+
+#line 2056 "check.cog"
+ 
+
+#line 2059 "check.cog"
+     DeclRefVal specializeDeclRef(
+
+#line 2057 "check.cog"
+           DeclRefVal declRef, 
+
+#line 2058 "check.cog"
                    Specializations specializations);
 
 
-#line 1961 "check.cog"
+#line 2088 "check.cog"
+ 
+
+#line 2091 "check.cog"
+     Type specializeType(
+
+#line 2089 "check.cog"
+        Type type, 
+
+#line 2090 "check.cog"
+                   Specializations specializations);
+
+
+#line 2115 "check.cog"
  void ensureDecl(
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
                        
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
            CheckContext
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
                        * context, 
 
-#line 1963 "check.cog"
+#line 2117 "check.cog"
         Decl decl, 
 
-#line 1964 "check.cog"
+#line 2118 "check.cog"
          DeclCheckState state);
 
 
-#line 1972 "check.cog"
+#line 2126 "check.cog"
  void ensureDecl(
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
                        
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
            CheckContext
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
                        * context, 
 
-#line 1974 "check.cog"
+#line 2128 "check.cog"
         Decl decl);
 
 
@@ -5272,11 +5371,11 @@ static StaticClass staticClass;
              ParamDecl paramDecl);
 
 
-#line 459 "syntax.cog"
+#line 461 "syntax.cog"
  using FuncDecl = struct FuncDeclImpl* ;
 struct FuncDeclImpl : 
 
-#line 459 "syntax.cog"
+#line 461 "syntax.cog"
                   FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -6421,22 +6520,22 @@ static StaticClass staticClass;
             Name>  name);
 
 
-#line 43 "name.cog"
+#line 45 "name.cog"
  
 
-#line 46 "name.cog"
+#line 48 "name.cog"
      Ptr<
 
-#line 46 "name.cog"
+#line 48 "name.cog"
          Name>  getName(
 
-#line 44 "name.cog"
+#line 46 "name.cog"
            Session session, 
 
-#line 45 "name.cog"
+#line 47 "name.cog"
         Ptr<
 
-#line 45 "name.cog"
+#line 47 "name.cog"
             Char>  text);
 
 
@@ -7089,94 +7188,94 @@ static StaticClass staticClass;
                TokenCode expected);
 
 
-#line 667 "syntax.cog"
+#line 669 "syntax.cog"
  struct LookupResultItem
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 670 "syntax.cog"
+#line 672 "syntax.cog"
   
 
-#line 670 "syntax.cog"
+#line 672 "syntax.cog"
              Decl decl;
 
 
-#line 672 "syntax.cog"
+#line 674 "syntax.cog"
   LookupResultItem();
 
 
-#line 680 "syntax.cog"
+#line 682 "syntax.cog"
   LookupResultItem(
 
-#line 680 "syntax.cog"
+#line 682 "syntax.cog"
              Decl decl);
 };
 
 
-#line 686 "syntax.cog"
+#line 688 "syntax.cog"
  struct LookupResult
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 688 "syntax.cog"
+#line 690 "syntax.cog"
   
 
-#line 688 "syntax.cog"
+#line 690 "syntax.cog"
               Array<
 
-#line 688 "syntax.cog"
+#line 690 "syntax.cog"
                     LookupResultItem>  items;
 
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
   
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                   Ptr<
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                       LookupResultItem>  begin();
 
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
   
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                 Ptr<
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                     LookupResultItem>  end();
 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
   
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                     Bool isEmpty();
 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
      
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                         Bool isUnique();
 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
      
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                             Bool isOverloaded();
 
 
-#line 698 "syntax.cog"
+#line 700 "syntax.cog"
      
 
-#line 698 "syntax.cog"
+#line 700 "syntax.cog"
                        Decl getDecl();
 };
 
@@ -7206,31 +7305,31 @@ static StaticClass staticClass;
                * name);
 
 
-#line 496 "syntax.cog"
+#line 498 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl : 
 
-#line 496 "syntax.cog"
+#line 498 "syntax.cog"
                     DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 498 "syntax.cog"
+#line 500 "syntax.cog"
   
 
-#line 498 "syntax.cog"
+#line 500 "syntax.cog"
                     Ptr<
 
-#line 498 "syntax.cog"
+#line 500 "syntax.cog"
                         Class>  syntaxClass;
 
 
-#line 499 "syntax.cog"
+#line 501 "syntax.cog"
   
 
-#line 499 "syntax.cog"
+#line 501 "syntax.cog"
                  SyntaxCallback callback;
 };
 } namespace cog {
@@ -7251,34 +7350,34 @@ template<> struct ObjectClassImpl<cogc::SyntaxDecl > { typedef cogc::SyntaxDeclI
                       LookupResult>  result);
 
 
-#line 650 "syntax.cog"
+#line 652 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl : 
 
-#line 650 "syntax.cog"
+#line 652 "syntax.cog"
                  DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
   
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
              Ptr<
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
                  Name>  name;
 
 
-#line 653 "syntax.cog"
+#line 655 "syntax.cog"
   
 
-#line 653 "syntax.cog"
+#line 655 "syntax.cog"
               Ptr<
 
-#line 653 "syntax.cog"
+#line 655 "syntax.cog"
                   Scope>  scope;
 };
 } namespace cog {
@@ -7429,10 +7528,10 @@ template<> struct ObjectClassImpl<cogc::NameExp > { typedef cogc::NameExpImpl Im
            Exp base);
 
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
  typedef 
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -8894,28 +8993,28 @@ template<> struct ObjectClassImpl<cogc::BuiltinAttr > { typedef cogc::BuiltinAtt
 } namespace cogc {
 
 
-#line 267 "syntax.cog"
+#line 269 "syntax.cog"
  using SpecializedDecl = struct SpecializedDeclImpl* ;
 struct SpecializedDeclImpl : 
 
-#line 267 "syntax.cog"
+#line 269 "syntax.cog"
                          ObjectImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 269 "syntax.cog"
+#line 271 "syntax.cog"
   
 
-#line 269 "syntax.cog"
+#line 271 "syntax.cog"
              Decl decl;
 
 
-#line 270 "syntax.cog"
+#line 272 "syntax.cog"
   
 
-#line 270 "syntax.cog"
+#line 272 "syntax.cog"
                        Specializations specializations;
 };
 } namespace cog {
@@ -8923,7 +9022,7 @@ template<> struct ObjectClassImpl<cogc::SpecializedDecl > { typedef cogc::Specia
 } namespace cogc {
 
 
-#line 304 "syntax.cog"
+#line 306 "syntax.cog"
  template<typename T >
 struct DeclRefListIterator
 {
@@ -8931,50 +9030,50 @@ typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 306 "syntax.cog"
+#line 308 "syntax.cog"
   
 
-#line 306 "syntax.cog"
+#line 308 "syntax.cog"
              Decl decl;
 
 
-#line 307 "syntax.cog"
+#line 309 "syntax.cog"
   
 
-#line 307 "syntax.cog"
+#line 309 "syntax.cog"
                         Specializations specializations;
 
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
   DeclRefListIterator(
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
              Decl decl, 
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
                                     Specializations specializations);
 
 
-#line 317 "syntax.cog"
+#line 319 "syntax.cog"
   void operator++();
 
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
   
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
               DeclRefValImpl<
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
                              T>  operator*();
 
 
-#line 332 "syntax.cog"
+#line 334 "syntax.cog"
   void adjust();
 };
 
 
-#line 345 "syntax.cog"
+#line 347 "syntax.cog"
  template<typename T >
 struct DeclRefList
 {
@@ -8982,135 +9081,135 @@ typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 347 "syntax.cog"
+#line 349 "syntax.cog"
   
 
-#line 347 "syntax.cog"
+#line 349 "syntax.cog"
              Decl decl;
 
 
-#line 348 "syntax.cog"
+#line 350 "syntax.cog"
   
 
-#line 348 "syntax.cog"
+#line 350 "syntax.cog"
                         Specializations specializations;
 
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
   
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
                   DeclRefListIterator<
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
                                       T>  begin();
 
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
   
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
                 DeclRefListIterator<
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
                                     T>  end();
 
 
-#line 360 "syntax.cog"
+#line 362 "syntax.cog"
   DeclRefList();
 
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
   DeclRefList(
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
              Decl decl, 
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
                                     Specializations specializations);
 };
 
 
-#line 373 "syntax.cog"
+#line 375 "syntax.cog"
  template<typename T >
 
 
-#line 373 "syntax.cog"
+#line 375 "syntax.cog"
       
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
                                     Bool operator!=(
 
-#line 374 "syntax.cog"
+#line 376 "syntax.cog"
         DeclRefListIterator<
 
-#line 374 "syntax.cog"
+#line 376 "syntax.cog"
                             T>  left, 
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
          DeclRefListIterator<
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
                              T>  right);
 
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
  
 
-#line 381 "syntax.cog"
+#line 383 "syntax.cog"
      DeclRefList<
 
-#line 381 "syntax.cog"
+#line 383 "syntax.cog"
                  Decl>  getDecls(
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
                           DeclRefValImpl<
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
                                          ContainerDecl>  container);
 
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
  
 
-#line 394 "syntax.cog"
+#line 396 "syntax.cog"
      DeclRefVal getInner(
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
                         DeclRefValImpl<
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
                                        GenericDecl>  declRef);
 
 
-#line 407 "syntax.cog"
+#line 409 "syntax.cog"
  using ImportDecl = struct ImportDeclImpl* ;
 struct ImportDeclImpl : 
 
-#line 407 "syntax.cog"
+#line 409 "syntax.cog"
                     DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 410 "syntax.cog"
+#line 412 "syntax.cog"
   
 
-#line 410 "syntax.cog"
+#line 412 "syntax.cog"
               Ptr<
 
-#line 410 "syntax.cog"
+#line 412 "syntax.cog"
                   Scope>  scope;
 
 
-#line 412 "syntax.cog"
+#line 414 "syntax.cog"
   
 
-#line 412 "syntax.cog"
+#line 414 "syntax.cog"
              Ptr<
 
-#line 412 "syntax.cog"
+#line 414 "syntax.cog"
                  Name>  name;
 };
 } namespace cog {
@@ -9118,37 +9217,37 @@ template<> struct ObjectClassImpl<cogc::ImportDecl > { typedef cogc::ImportDeclI
 } namespace cogc {
 
 
-#line 450 "syntax.cog"
+#line 452 "syntax.cog"
  
 
-#line 452 "syntax.cog"
+#line 454 "syntax.cog"
      Type getResultType(
 
-#line 451 "syntax.cog"
+#line 453 "syntax.cog"
            DeclRefValImpl<
 
-#line 451 "syntax.cog"
+#line 453 "syntax.cog"
                           FuncDeclBase>  declRef);
 
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
  
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                                                        Type getType(
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                        DeclRefValImpl<
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                                       VarDeclBase>  declRef);
 
 
-#line 484 "syntax.cog"
+#line 486 "syntax.cog"
  using VarDecl = struct VarDeclImpl* ;
 struct VarDeclImpl : 
 
-#line 484 "syntax.cog"
+#line 486 "syntax.cog"
                  VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -9159,28 +9258,28 @@ template<> struct ObjectClassImpl<cogc::VarDecl > { typedef cogc::VarDeclImpl Im
 } namespace cogc {
 
 
-#line 504 "syntax.cog"
+#line 506 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl : 
 
-#line 504 "syntax.cog"
+#line 506 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 506 "syntax.cog"
+#line 508 "syntax.cog"
   
 
-#line 506 "syntax.cog"
+#line 508 "syntax.cog"
                  Stmt thenStmt;
 
 
-#line 507 "syntax.cog"
+#line 509 "syntax.cog"
   
 
-#line 507 "syntax.cog"
+#line 509 "syntax.cog"
                  Stmt elseStmt;
 };
 } namespace cog {
@@ -9188,21 +9287,21 @@ template<> struct ObjectClassImpl<cogc::IfStmtBase > { typedef cogc::IfStmtBaseI
 } namespace cogc {
 
 
-#line 511 "syntax.cog"
+#line 513 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl : 
 
-#line 511 "syntax.cog"
+#line 513 "syntax.cog"
                 IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 513 "syntax.cog"
+#line 515 "syntax.cog"
   
 
-#line 513 "syntax.cog"
+#line 515 "syntax.cog"
                   Exp condition;
 };
 } namespace cog {
@@ -9210,34 +9309,34 @@ template<> struct ObjectClassImpl<cogc::IfStmt > { typedef cogc::IfStmtImpl Impl
 } namespace cogc {
 
 
-#line 516 "syntax.cog"
+#line 518 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl : 
 
-#line 516 "syntax.cog"
+#line 518 "syntax.cog"
                    IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 518 "syntax.cog"
+#line 520 "syntax.cog"
   
 
-#line 518 "syntax.cog"
+#line 520 "syntax.cog"
                  
 
-#line 518 "syntax.cog"
+#line 520 "syntax.cog"
              Name
 
-#line 518 "syntax.cog"
+#line 520 "syntax.cog"
                  * name;
 
 
-#line 519 "syntax.cog"
+#line 521 "syntax.cog"
   
 
-#line 519 "syntax.cog"
+#line 521 "syntax.cog"
              Exp init;
 };
 } namespace cog {
@@ -9245,28 +9344,28 @@ template<> struct ObjectClassImpl<cogc::IfLetStmt > { typedef cogc::IfLetStmtImp
 } namespace cogc {
 
 
-#line 523 "syntax.cog"
+#line 525 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl : 
 
-#line 523 "syntax.cog"
+#line 525 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 525 "syntax.cog"
+#line 527 "syntax.cog"
   
 
-#line 525 "syntax.cog"
+#line 527 "syntax.cog"
                   Exp condition;
 
 
-#line 526 "syntax.cog"
+#line 528 "syntax.cog"
   
 
-#line 526 "syntax.cog"
+#line 528 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -9274,42 +9373,42 @@ template<> struct ObjectClassImpl<cogc::WhileStmt > { typedef cogc::WhileStmtImp
 } namespace cogc {
 
 
-#line 529 "syntax.cog"
+#line 531 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl : 
 
-#line 529 "syntax.cog"
+#line 531 "syntax.cog"
                  StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 531 "syntax.cog"
+#line 533 "syntax.cog"
   
 
-#line 531 "syntax.cog"
+#line 533 "syntax.cog"
              Stmt init;
 
 
-#line 532 "syntax.cog"
+#line 534 "syntax.cog"
   
 
-#line 532 "syntax.cog"
+#line 534 "syntax.cog"
                   Exp condition;
 
 
-#line 533 "syntax.cog"
+#line 535 "syntax.cog"
   
 
-#line 533 "syntax.cog"
+#line 535 "syntax.cog"
              Exp iter;
 
 
-#line 534 "syntax.cog"
+#line 536 "syntax.cog"
   
 
-#line 534 "syntax.cog"
+#line 536 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -9317,21 +9416,21 @@ template<> struct ObjectClassImpl<cogc::ForStmt > { typedef cogc::ForStmtImpl Im
 } namespace cogc {
 
 
-#line 537 "syntax.cog"
+#line 539 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl : 
 
-#line 537 "syntax.cog"
+#line 539 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 539 "syntax.cog"
+#line 541 "syntax.cog"
   
 
-#line 539 "syntax.cog"
+#line 541 "syntax.cog"
               Exp value;
 };
 } namespace cog {
@@ -9339,11 +9438,11 @@ template<> struct ObjectClassImpl<cogc::ReturnStmt > { typedef cogc::ReturnStmtI
 } namespace cogc {
 
 
-#line 542 "syntax.cog"
+#line 544 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl : 
 
-#line 542 "syntax.cog"
+#line 544 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -9354,11 +9453,11 @@ template<> struct ObjectClassImpl<cogc::BreakStmt > { typedef cogc::BreakStmtImp
 } namespace cogc {
 
 
-#line 546 "syntax.cog"
+#line 548 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl : 
 
-#line 546 "syntax.cog"
+#line 548 "syntax.cog"
                       StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -9369,35 +9468,35 @@ template<> struct ObjectClassImpl<cogc::ContinueStmt > { typedef cogc::ContinueS
 } namespace cogc {
 
 
-#line 550 "syntax.cog"
+#line 552 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl : 
 
-#line 550 "syntax.cog"
+#line 552 "syntax.cog"
                     SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 552 "syntax.cog"
+#line 554 "syntax.cog"
   
 
-#line 552 "syntax.cog"
+#line 554 "syntax.cog"
                Arg values;
 
 
-#line 553 "syntax.cog"
+#line 555 "syntax.cog"
   
 
-#line 553 "syntax.cog"
+#line 555 "syntax.cog"
              Stmt body;
 
 
-#line 554 "syntax.cog"
+#line 556 "syntax.cog"
   
 
-#line 554 "syntax.cog"
+#line 556 "syntax.cog"
              SwitchCase next;
 };
 } namespace cog {
@@ -9405,28 +9504,28 @@ template<> struct ObjectClassImpl<cogc::SwitchCase > { typedef cogc::SwitchCaseI
 } namespace cogc {
 
 
-#line 557 "syntax.cog"
+#line 559 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl : 
 
-#line 557 "syntax.cog"
+#line 559 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 559 "syntax.cog"
+#line 561 "syntax.cog"
   
 
-#line 559 "syntax.cog"
+#line 561 "syntax.cog"
                   Exp condition;
 
 
-#line 560 "syntax.cog"
+#line 562 "syntax.cog"
   
 
-#line 560 "syntax.cog"
+#line 562 "syntax.cog"
               SwitchCase cases;
 };
 } namespace cog {
@@ -9434,11 +9533,11 @@ template<> struct ObjectClassImpl<cogc::SwitchStmt > { typedef cogc::SwitchStmtI
 } namespace cogc {
 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl : 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
                        ArgImpl
 {
 typedef cog::Class StaticClass;
@@ -9449,11 +9548,11 @@ template<> struct ObjectClassImpl<cogc::PositionalArg > { typedef cogc::Position
 } namespace cogc {
 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl : 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
                 ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9464,21 +9563,21 @@ template<> struct ObjectClassImpl<cogc::LitExp > { typedef cogc::LitExpImpl Impl
 } namespace cogc {
 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl : 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
                    LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 591 "syntax.cog"
+#line 593 "syntax.cog"
   
 
-#line 591 "syntax.cog"
+#line 593 "syntax.cog"
             IntLitVal val;
 };
 } namespace cog {
@@ -9486,21 +9585,21 @@ template<> struct ObjectClassImpl<cogc::IntLitExp > { typedef cogc::IntLitExpImp
 } namespace cogc {
 
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl : 
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
                       LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 596 "syntax.cog"
+#line 598 "syntax.cog"
   
 
-#line 596 "syntax.cog"
+#line 598 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -9508,21 +9607,21 @@ template<> struct ObjectClassImpl<cogc::StringLitExp > { typedef cogc::StringLit
 } namespace cogc {
 
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl : 
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
                          LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 601 "syntax.cog"
+#line 603 "syntax.cog"
   
 
-#line 601 "syntax.cog"
+#line 603 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -9530,11 +9629,11 @@ template<> struct ObjectClassImpl<cogc::CharacterLitExp > { typedef cogc::Charac
 } namespace cogc {
 
 
-#line 611 "syntax.cog"
+#line 613 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl : 
 
-#line 611 "syntax.cog"
+#line 613 "syntax.cog"
                        AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -9545,11 +9644,11 @@ template<> struct ObjectClassImpl<cogc::GenericAppExp > { typedef cogc::GenericA
 } namespace cogc {
 
 
-#line 615 "syntax.cog"
+#line 617 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl : 
 
-#line 615 "syntax.cog"
+#line 617 "syntax.cog"
                 AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -9560,11 +9659,11 @@ template<> struct ObjectClassImpl<cogc::AppExp > { typedef cogc::AppExpImpl Impl
 } namespace cogc {
 
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl : 
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
                   AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -9575,11 +9674,11 @@ template<> struct ObjectClassImpl<cogc::IndexExp > { typedef cogc::IndexExpImpl 
 } namespace cogc {
 
 
-#line 623 "syntax.cog"
+#line 625 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl : 
 
-#line 623 "syntax.cog"
+#line 625 "syntax.cog"
                         AppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9590,11 +9689,11 @@ template<> struct ObjectClassImpl<cogc::OperatorAppExp > { typedef cogc::Operato
 } namespace cogc {
 
 
-#line 627 "syntax.cog"
+#line 629 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl : 
 
-#line 627 "syntax.cog"
+#line 629 "syntax.cog"
                   OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9605,11 +9704,11 @@ template<> struct ObjectClassImpl<cogc::InfixExp > { typedef cogc::InfixExpImpl 
 } namespace cogc {
 
 
-#line 631 "syntax.cog"
+#line 633 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl : 
 
-#line 631 "syntax.cog"
+#line 633 "syntax.cog"
                    OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9620,11 +9719,11 @@ template<> struct ObjectClassImpl<cogc::PrefixExp > { typedef cogc::PrefixExpImp
 } namespace cogc {
 
 
-#line 635 "syntax.cog"
+#line 637 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl : 
 
-#line 635 "syntax.cog"
+#line 637 "syntax.cog"
                     OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9635,28 +9734,28 @@ template<> struct ObjectClassImpl<cogc::PostfixExp > { typedef cogc::PostfixExpI
 } namespace cogc {
 
 
-#line 639 "syntax.cog"
+#line 641 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl : 
 
-#line 639 "syntax.cog"
+#line 641 "syntax.cog"
                    ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
   
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
              Exp left;
 
 
-#line 642 "syntax.cog"
+#line 644 "syntax.cog"
   
 
-#line 642 "syntax.cog"
+#line 644 "syntax.cog"
               Exp right;
 };
 } namespace cog {
@@ -9664,11 +9763,11 @@ template<> struct ObjectClassImpl<cogc::AssignExp > { typedef cogc::AssignExpImp
 } namespace cogc {
 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl : 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -9679,28 +9778,28 @@ template<> struct ObjectClassImpl<cogc::ErrorExp > { typedef cogc::ErrorExpImpl 
 } namespace cogc {
 
 
-#line 713 "syntax.cog"
+#line 715 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl : 
 
-#line 713 "syntax.cog"
+#line 715 "syntax.cog"
                         ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
   
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
                      LookupResult lookupResult;
 
 
-#line 716 "syntax.cog"
+#line 718 "syntax.cog"
   
 
-#line 716 "syntax.cog"
+#line 718 "syntax.cog"
              Exp base;
 };
 } namespace cog {
@@ -9708,21 +9807,21 @@ template<> struct ObjectClassImpl<cogc::OverloadedExpr > { typedef cogc::Overloa
 } namespace cogc {
 
 
-#line 733 "syntax.cog"
+#line 735 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl : 
 
-#line 733 "syntax.cog"
+#line 735 "syntax.cog"
                      TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 735 "syntax.cog"
+#line 737 "syntax.cog"
   
 
-#line 735 "syntax.cog"
+#line 737 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -9730,11 +9829,11 @@ template<> struct ObjectClassImpl<cogc::DeclRefType > { typedef cogc::DeclRefTyp
 } namespace cogc {
 
 
-#line 745 "syntax.cog"
+#line 747 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl : 
 
-#line 745 "syntax.cog"
+#line 747 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -9745,11 +9844,11 @@ template<> struct ObjectClassImpl<cogc::FuncType > { typedef cogc::FuncTypeImpl 
 } namespace cogc {
 
 
-#line 751 "syntax.cog"
+#line 753 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl : 
 
-#line 751 "syntax.cog"
+#line 753 "syntax.cog"
                    TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -9760,11 +9859,11 @@ template<> struct ObjectClassImpl<cogc::ErrorType > { typedef cogc::ErrorTypeImp
 } namespace cogc {
 
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl : 
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
                            TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -9775,11 +9874,11 @@ template<> struct ObjectClassImpl<cogc::OverloadGroupType > { typedef cogc::Over
 } namespace cogc {
 
 
-#line 763 "syntax.cog"
+#line 765 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl : 
 
-#line 763 "syntax.cog"
+#line 765 "syntax.cog"
                   AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -9790,11 +9889,11 @@ template<> struct ObjectClassImpl<cogc::EnumDecl > { typedef cogc::EnumDeclImpl 
 } namespace cogc {
 
 
-#line 766 "syntax.cog"
+#line 768 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl : 
 
-#line 766 "syntax.cog"
+#line 768 "syntax.cog"
                      VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -9805,41 +9904,41 @@ template<> struct ObjectClassImpl<cogc::EnumTagDecl > { typedef cogc::EnumTagDec
 } namespace cogc {
 
 
-#line 769 "syntax.cog"
+#line 771 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl : 
 
-#line 769 "syntax.cog"
+#line 771 "syntax.cog"
                      StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
   
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
                  
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
              Name
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
                  * name;
 
 
-#line 772 "syntax.cog"
+#line 774 "syntax.cog"
   
 
-#line 772 "syntax.cog"
+#line 774 "syntax.cog"
            Exp exp;
 
 
-#line 773 "syntax.cog"
+#line 775 "syntax.cog"
   
 
-#line 773 "syntax.cog"
+#line 775 "syntax.cog"
             Stmt body;
 };
 } namespace cog {
@@ -9847,21 +9946,21 @@ template<> struct ObjectClassImpl<cogc::ForEachStmt > { typedef cogc::ForEachStm
 } namespace cogc {
 
 
-#line 776 "syntax.cog"
+#line 778 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl : 
 
-#line 776 "syntax.cog"
+#line 778 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 778 "syntax.cog"
+#line 780 "syntax.cog"
   
 
-#line 778 "syntax.cog"
+#line 780 "syntax.cog"
             Exp base;
 };
 } namespace cog {
@@ -9869,27 +9968,27 @@ template<> struct ObjectClassImpl<cogc::ParenExp > { typedef cogc::ParenExpImpl 
 } namespace cogc {
 
 
-#line 783 "syntax.cog"
+#line 785 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl : 
 
-#line 783 "syntax.cog"
+#line 785 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 785 "syntax.cog"
+#line 787 "syntax.cog"
   
 
-#line 785 "syntax.cog"
+#line 787 "syntax.cog"
                    
 
-#line 785 "syntax.cog"
+#line 787 "syntax.cog"
               Scope
 
-#line 785 "syntax.cog"
+#line 787 "syntax.cog"
                    * scope;
 };
 } namespace cog {
@@ -9897,28 +9996,28 @@ template<> struct ObjectClassImpl<cogc::ThisExpr > { typedef cogc::ThisExprImpl 
 } namespace cogc {
 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl : 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 790 "syntax.cog"
+#line 792 "syntax.cog"
   
 
-#line 790 "syntax.cog"
+#line 792 "syntax.cog"
                TypeExp toType;
 
 
-#line 791 "syntax.cog"
+#line 793 "syntax.cog"
   
 
-#line 791 "syntax.cog"
+#line 793 "syntax.cog"
             Exp arg;
 };
 } namespace cog {
@@ -10460,112 +10559,112 @@ for(;
 }
 
 
-#line 282 "syntax.cog"
+#line 284 "syntax.cog"
  
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
   
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
                      SyntaxList<
 
-#line 286 "syntax.cog"
+#line 288 "syntax.cog"
                                 Stmt>  ContainerStmtImpl::getStmts()
 {
 
 
-#line 288 "syntax.cog"
+#line 290 "syntax.cog"
    return 
 
-#line 288 "syntax.cog"
+#line 290 "syntax.cog"
           stmts;
 }
 
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
   
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                      FilteredSyntaxList<
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                                         Decl, 
 
-#line 291 "syntax.cog"
+#line 293 "syntax.cog"
                                               Stmt>  ContainerStmtImpl::getDecls()
 {
 
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
    return 
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
                                         
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
           FilteredSyntaxList<
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
                              Decl, 
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
                                    Stmt> (
 
-#line 293 "syntax.cog"
+#line 295 "syntax.cog"
                                          stmts);
 }
 
 
-#line 297 "syntax.cog"
+#line 299 "syntax.cog"
  
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
   
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                      Ref<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                          SyntaxList<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                     Decl> >  ContainerDeclImpl::getDecls()
 {
 
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                               return 
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                      
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                      *
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                       cast<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                            Ptr<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                                SyntaxList<
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                                           Decl> > >(
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                                                     
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                                                     &
 
-#line 301 "syntax.cog"
+#line 303 "syntax.cog"
                                                                                      stmts);
 }
 
 
-#line 423 "syntax.cog"
+#line 425 "syntax.cog"
  
 
 #line 4 "session.cog"
@@ -11459,7 +11558,7 @@ else
 }
 
 
-#line 388 "syntax.cog"
+#line 390 "syntax.cog"
  
 
 #line 152 "check.cog"
@@ -11525,22 +11624,22 @@ else
 }
 
 
-#line 278 "syntax.cog"
+#line 280 "syntax.cog"
  
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
  
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
  
 
 #line 3 "syntax.cog"
  
 
-#line 401 "syntax.cog"
+#line 403 "syntax.cog"
  
 
-#line 419 "syntax.cog"
+#line 421 "syntax.cog"
  
 
 #line 167 "check.cog"
@@ -11561,7 +11660,7 @@ else
 }
 
 
-#line 471 "syntax.cog"
+#line 473 "syntax.cog"
  
 
 #line 174 "check.cog"
@@ -11787,10 +11886,10 @@ else
 }
 
 
-#line 427 "syntax.cog"
+#line 429 "syntax.cog"
  
 
-#line 444 "syntax.cog"
+#line 446 "syntax.cog"
  
 
 #line 215 "check.cog"
@@ -11945,10 +12044,10 @@ else
 }
 
 
-#line 431 "syntax.cog"
+#line 433 "syntax.cog"
  
 
-#line 436 "syntax.cog"
+#line 438 "syntax.cog"
  
 
 #line 237 "check.cog"
@@ -11985,7 +12084,7 @@ else
 }
 
 
-#line 440 "syntax.cog"
+#line 442 "syntax.cog"
  
 
 #line 244 "check.cog"
@@ -12095,7 +12194,7 @@ else
  
 
 #line 272 "check.cog"
-     Stmt checkStmt(
+     Exp checkPrediateExpr(
 
 #line 270 "check.cog"
                        
@@ -12107,440 +12206,944 @@ else
                        * context, 
 
 #line 271 "check.cog"
+        Exp expr)
+{
+
+
+#line 275 "check.cog"
+  return 
+
+#line 275 "check.cog"
+                 
+
+#line 275 "check.cog"
+         checkExp(
+
+#line 275 "check.cog"
+                  context, 
+
+#line 275 "check.cog"
+                           expr);
+}
+
+
+#line 278 "check.cog"
+ 
+
+#line 281 "check.cog"
+     Stmt checkStmt(
+
+#line 279 "check.cog"
+                       
+
+#line 279 "check.cog"
+           CheckContext
+
+#line 279 "check.cog"
+                       * context, 
+
+#line 280 "check.cog"
         Stmt stmt)
 {
 
 
-#line 274 "check.cog"
+#line 283 "check.cog"
      if(
 
-#line 274 "check.cog"
+#line 283 "check.cog"
         
 
-#line 274 "check.cog"
+#line 283 "check.cog"
         !
 
-#line 274 "check.cog"
+#line 283 "check.cog"
          stmt)
 {
 
 
-#line 275 "check.cog"
+#line 284 "check.cog"
          return 
 
-#line 275 "check.cog"
+#line 284 "check.cog"
                 nullptr;
 }
 
 
-#line 277 "check.cog"
+#line 286 "check.cog"
   if(auto blockStmt = 
 
-#line 277 "check.cog"
+#line 286 "check.cog"
                                   
 
-#line 277 "check.cog"
+#line 286 "check.cog"
                      as<
 
-#line 277 "check.cog"
+#line 286 "check.cog"
                         BlockStmt> (
 
-#line 277 "check.cog"
+#line 286 "check.cog"
                                    stmt))
 {
 
 
-#line 279 "check.cog"
+#line 288 "check.cog"
    return 
 
-#line 279 "check.cog"
+#line 288 "check.cog"
                         
 
-#line 279 "check.cog"
+#line 288 "check.cog"
           checkBlockStmt(
 
-#line 279 "check.cog"
+#line 288 "check.cog"
                          context, 
 
-#line 279 "check.cog"
+#line 288 "check.cog"
                                   blockStmt);
 }
 else
 {
 
 
-#line 281 "check.cog"
+#line 290 "check.cog"
           if(auto decl = 
 
-#line 281 "check.cog"
+#line 290 "check.cog"
                                 
 
-#line 281 "check.cog"
+#line 290 "check.cog"
                         as<
 
-#line 281 "check.cog"
+#line 290 "check.cog"
                            Decl> (
 
-#line 281 "check.cog"
+#line 290 "check.cog"
                                  stmt))
 {
 
 
-#line 283 "check.cog"
+#line 292 "check.cog"
                   
 
-#line 283 "check.cog"
+#line 292 "check.cog"
                   
 
-#line 283 "check.cog"
+#line 292 "check.cog"
          checkDecl(
 
-#line 283 "check.cog"
+#line 292 "check.cog"
                    context, 
 
-#line 283 "check.cog"
+#line 292 "check.cog"
                             decl);
 
 
-#line 284 "check.cog"
+#line 293 "check.cog"
          return 
 
-#line 284 "check.cog"
+#line 293 "check.cog"
                 decl;
 }
 else
 {
 
 
-#line 286 "check.cog"
+#line 295 "check.cog"
           if(auto exp = 
 
-#line 286 "check.cog"
+#line 295 "check.cog"
                               
 
-#line 286 "check.cog"
+#line 295 "check.cog"
                        as<
 
-#line 286 "check.cog"
+#line 295 "check.cog"
                           Exp> (
 
-#line 286 "check.cog"
+#line 295 "check.cog"
                                stmt))
 {
 
 
-#line 288 "check.cog"
+#line 297 "check.cog"
          return 
 
-#line 288 "check.cog"
+#line 297 "check.cog"
                         
 
-#line 288 "check.cog"
+#line 297 "check.cog"
                 checkExp(
 
-#line 288 "check.cog"
+#line 297 "check.cog"
                          context, 
 
-#line 288 "check.cog"
+#line 297 "check.cog"
                                   exp);
 }
 else
 {
 
 
-#line 290 "check.cog"
+#line 299 "check.cog"
           if(auto ifStmt = 
 
-#line 290 "check.cog"
+#line 299 "check.cog"
                                     
 
-#line 290 "check.cog"
+#line 299 "check.cog"
                           as<
 
-#line 290 "check.cog"
+#line 299 "check.cog"
                              IfStmt> (
 
-#line 290 "check.cog"
+#line 299 "check.cog"
                                      stmt))
 {
 
 
-#line 293 "check.cog"
+#line 301 "check.cog"
                DEREF(
 
-#line 293 "check.cog"
+#line 301 "check.cog"
          ifStmt).condition = 
 
-#line 293 "check.cog"
-                                    
+#line 301 "check.cog"
+                                             
 
-#line 293 "check.cog"
-                            checkExp(
+#line 301 "check.cog"
+                            checkPrediateExpr(
 
-#line 293 "check.cog"
-                                     context, 
+#line 301 "check.cog"
+                                              context, 
 
-#line 293 "check.cog"
-                                                    DEREF(
+#line 301 "check.cog"
+                                                             DEREF(
 
-#line 293 "check.cog"
-                                              ifStmt).condition);
+#line 301 "check.cog"
+                                                       ifStmt).condition);
 
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                DEREF(
 
-#line 294 "check.cog"
+#line 302 "check.cog"
          ifStmt).thenStmt = 
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                                     
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                            checkStmt(
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                                      context, 
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                                                     DEREF(
 
-#line 294 "check.cog"
+#line 302 "check.cog"
                                               ifStmt).thenStmt);
 
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                DEREF(
 
-#line 295 "check.cog"
+#line 303 "check.cog"
          ifStmt).elseStmt = 
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                                     
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                            checkStmt(
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                                      context, 
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                                                     DEREF(
 
-#line 295 "check.cog"
+#line 303 "check.cog"
                                               ifStmt).elseStmt);
 
 
-#line 296 "check.cog"
+#line 304 "check.cog"
          return 
 
-#line 296 "check.cog"
+#line 304 "check.cog"
                 ifStmt;
 }
 else
 {
 
 
-#line 298 "check.cog"
-          if(auto whileStmt = 
+#line 306 "check.cog"
+          if(auto ifLetStmt = 
 
-#line 298 "check.cog"
+#line 306 "check.cog"
                                           
 
-#line 298 "check.cog"
+#line 306 "check.cog"
                              as<
 
-#line 298 "check.cog"
-                                WhileStmt> (
+#line 306 "check.cog"
+                                IfLetStmt> (
 
-#line 298 "check.cog"
+#line 306 "check.cog"
                                            stmt))
 {
 
 
-#line 301 "check.cog"
+#line 308 "check.cog"
                   DEREF(
 
-#line 301 "check.cog"
-         whileStmt).condition = 
+#line 308 "check.cog"
+         ifLetStmt).init = 
 
-#line 301 "check.cog"
+#line 308 "check.cog"
                                        
 
-#line 301 "check.cog"
-                               checkExp(
+#line 308 "check.cog"
+                              checkExp(
 
-#line 301 "check.cog"
+#line 308 "check.cog"
                                         context, 
 
-#line 301 "check.cog"
+#line 308 "check.cog"
                                                           DEREF(
 
-#line 301 "check.cog"
-                                                 whileStmt).condition);
+#line 308 "check.cog"
+                                                 ifLetStmt).init);
 
 
-#line 302 "check.cog"
+#line 309 "check.cog"
                   DEREF(
 
-#line 302 "check.cog"
+#line 309 "check.cog"
+         ifLetStmt).thenStmt = 
+
+#line 309 "check.cog"
+                                       
+
+#line 309 "check.cog"
+                              checkStmt(
+
+#line 309 "check.cog"
+                                        context, 
+
+#line 309 "check.cog"
+                                                          DEREF(
+
+#line 309 "check.cog"
+                                                 ifLetStmt).thenStmt);
+
+
+#line 310 "check.cog"
+                  DEREF(
+
+#line 310 "check.cog"
+         ifLetStmt).elseStmt = 
+
+#line 310 "check.cog"
+                                       
+
+#line 310 "check.cog"
+                              checkStmt(
+
+#line 310 "check.cog"
+                                        context, 
+
+#line 310 "check.cog"
+                                                          DEREF(
+
+#line 310 "check.cog"
+                                                 ifLetStmt).elseStmt);
+
+
+#line 311 "check.cog"
+         return 
+
+#line 311 "check.cog"
+                ifLetStmt;
+}
+else
+{
+
+
+#line 313 "check.cog"
+          if(auto whileStmt = 
+
+#line 313 "check.cog"
+                                          
+
+#line 313 "check.cog"
+                             as<
+
+#line 313 "check.cog"
+                                WhileStmt> (
+
+#line 313 "check.cog"
+                                           stmt))
+{
+
+
+#line 315 "check.cog"
+                  DEREF(
+
+#line 315 "check.cog"
+         whileStmt).condition = 
+
+#line 315 "check.cog"
+                                                
+
+#line 315 "check.cog"
+                               checkPrediateExpr(
+
+#line 315 "check.cog"
+                                                 context, 
+
+#line 315 "check.cog"
+                                                                   DEREF(
+
+#line 315 "check.cog"
+                                                          whileStmt).condition);
+
+
+#line 316 "check.cog"
+                  DEREF(
+
+#line 316 "check.cog"
          whileStmt).body = 
 
-#line 302 "check.cog"
+#line 316 "check.cog"
                                    
 
-#line 302 "check.cog"
+#line 316 "check.cog"
                           checkStmt(
 
-#line 302 "check.cog"
+#line 316 "check.cog"
                                     context, 
 
-#line 302 "check.cog"
+#line 316 "check.cog"
                                                       DEREF(
 
-#line 302 "check.cog"
+#line 316 "check.cog"
                                              whileStmt).body);
 
 
-#line 303 "check.cog"
+#line 317 "check.cog"
          return 
 
-#line 303 "check.cog"
+#line 317 "check.cog"
                 whileStmt;
 }
 else
 {
 
 
-#line 305 "check.cog"
+#line 319 "check.cog"
+          if(auto forStmt = 
+
+#line 319 "check.cog"
+                                      
+
+#line 319 "check.cog"
+                           as<
+
+#line 319 "check.cog"
+                              ForStmt> (
+
+#line 319 "check.cog"
+                                       stmt))
+{
+
+
+#line 321 "check.cog"
+                DEREF(
+
+#line 321 "check.cog"
+         forStmt).init = 
+
+#line 321 "check.cog"
+                                 
+
+#line 321 "check.cog"
+                        checkStmt(
+
+#line 321 "check.cog"
+                                  context, 
+
+#line 321 "check.cog"
+                                                  DEREF(
+
+#line 321 "check.cog"
+                                           forStmt).init);
+
+
+#line 322 "check.cog"
+                DEREF(
+
+#line 322 "check.cog"
+         forStmt).condition = 
+
+#line 322 "check.cog"
+                                              
+
+#line 322 "check.cog"
+                             checkPrediateExpr(
+
+#line 322 "check.cog"
+                                               context, 
+
+#line 322 "check.cog"
+                                                               DEREF(
+
+#line 322 "check.cog"
+                                                        forStmt).condition);
+
+
+#line 323 "check.cog"
+                DEREF(
+
+#line 323 "check.cog"
+         forStmt).iter = 
+
+#line 323 "check.cog"
+                                
+
+#line 323 "check.cog"
+                        checkExp(
+
+#line 323 "check.cog"
+                                 context, 
+
+#line 323 "check.cog"
+                                                 DEREF(
+
+#line 323 "check.cog"
+                                          forStmt).iter);
+
+
+#line 324 "check.cog"
+                DEREF(
+
+#line 324 "check.cog"
+         forStmt).body = 
+
+#line 324 "check.cog"
+                                 
+
+#line 324 "check.cog"
+                        checkStmt(
+
+#line 324 "check.cog"
+                                  context, 
+
+#line 324 "check.cog"
+                                                  DEREF(
+
+#line 324 "check.cog"
+                                           forStmt).body);
+
+
+#line 325 "check.cog"
+         return 
+
+#line 325 "check.cog"
+                forStmt;
+}
+else
+{
+
+
+#line 327 "check.cog"
+          if(auto forEachStmt = 
+
+#line 327 "check.cog"
+                                              
+
+#line 327 "check.cog"
+                               as<
+
+#line 327 "check.cog"
+                                  ForEachStmt> (
+
+#line 327 "check.cog"
+                                               stmt))
+{
+
+
+#line 330 "check.cog"
+                    DEREF(
+
+#line 330 "check.cog"
+         forEachStmt).exp = 
+
+#line 330 "check.cog"
+                                   
+
+#line 330 "check.cog"
+                           checkExp(
+
+#line 330 "check.cog"
+                                    context, 
+
+#line 330 "check.cog"
+                                                        DEREF(
+
+#line 330 "check.cog"
+                                             forEachStmt).exp);
+
+
+#line 331 "check.cog"
+                    DEREF(
+
+#line 331 "check.cog"
+         forEachStmt).body = 
+
+#line 331 "check.cog"
+                                     
+
+#line 331 "check.cog"
+                            checkStmt(
+
+#line 331 "check.cog"
+                                      context, 
+
+#line 331 "check.cog"
+                                                          DEREF(
+
+#line 331 "check.cog"
+                                               forEachStmt).body);
+
+
+#line 332 "check.cog"
+         return 
+
+#line 332 "check.cog"
+                forEachStmt;
+}
+else
+{
+
+
+#line 334 "check.cog"
           if(auto returnStmt = 
 
-#line 305 "check.cog"
+#line 334 "check.cog"
                                             
 
-#line 305 "check.cog"
+#line 334 "check.cog"
                               as<
 
-#line 305 "check.cog"
+#line 334 "check.cog"
                                  ReturnStmt> (
 
-#line 305 "check.cog"
+#line 334 "check.cog"
                                              stmt))
 {
 
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                    DEREF(
 
-#line 308 "check.cog"
+#line 337 "check.cog"
          returnStmt).value = 
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                                     
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                             checkExp(
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                                      context, 
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                                                         DEREF(
 
-#line 308 "check.cog"
+#line 337 "check.cog"
                                               returnStmt).value);
 
 
-#line 309 "check.cog"
+#line 338 "check.cog"
          return 
 
-#line 309 "check.cog"
+#line 338 "check.cog"
                 returnStmt;
 }
 else
 {
 
 
-#line 311 "check.cog"
+#line 340 "check.cog"
           if(auto breakStmt = 
 
-#line 311 "check.cog"
+#line 340 "check.cog"
                                           
 
-#line 311 "check.cog"
+#line 340 "check.cog"
                              as<
 
-#line 311 "check.cog"
+#line 340 "check.cog"
                                 BreakStmt> (
 
-#line 311 "check.cog"
+#line 340 "check.cog"
                                            stmt))
 {
 
 
-#line 314 "check.cog"
+#line 343 "check.cog"
          return 
 
-#line 314 "check.cog"
+#line 343 "check.cog"
                 breakStmt;
 }
 else
 {
 
 
-#line 318 "check.cog"
+#line 345 "check.cog"
+          if(auto continueStmt = 
+
+#line 345 "check.cog"
+                                                
+
+#line 345 "check.cog"
+                                as<
+
+#line 345 "check.cog"
+                                   ContinueStmt> (
+
+#line 345 "check.cog"
+                                                 stmt))
+{
+
+
+#line 348 "check.cog"
+         return 
+
+#line 348 "check.cog"
+                continueStmt;
+}
+else
+{
+
+
+#line 350 "check.cog"
+          if(auto switchStmt = 
+
+#line 350 "check.cog"
+                                            
+
+#line 350 "check.cog"
+                              as<
+
+#line 350 "check.cog"
+                                 SwitchStmt> (
+
+#line 350 "check.cog"
+                                             stmt))
+{
+
+
+#line 352 "check.cog"
+                   DEREF(
+
+#line 352 "check.cog"
+         switchStmt).condition = 
+
+#line 352 "check.cog"
+                                        
+
+#line 352 "check.cog"
+                                checkExp(
+
+#line 352 "check.cog"
+                                         context, 
+
+#line 352 "check.cog"
+                                                            DEREF(
+
+#line 352 "check.cog"
+                                                  switchStmt).condition);
+
+
+#line 353 "check.cog"
+   {
+
+
+#line 353 "check.cog"
+       
+
+#line 353 "check.cog"
+       auto c = 
+
+#line 353 "check.cog"
+                         DEREF(
+
+#line 353 "check.cog"
+               switchStmt).cases;
+for(;
+
+#line 353 "check.cog"
+                                 c;
+
+#line 353 "check.cog"
+                                    c = 
+
+#line 353 "check.cog"
+                                         DEREF(
+
+#line 353 "check.cog"
+                                        c).next)
+{
+{
+
+
+#line 355 "check.cog"
+    {
+
+
+#line 355 "check.cog"
+        
+
+#line 355 "check.cog"
+        auto a = 
+
+#line 355 "check.cog"
+                 DEREF(
+
+#line 355 "check.cog"
+                c).values;
+for(;
+
+#line 355 "check.cog"
+                          a;
+
+#line 355 "check.cog"
+                             a = 
+
+#line 355 "check.cog"
+                                  DEREF(
+
+#line 355 "check.cog"
+                                 a).next)
+{
+{
+
+
+#line 357 "check.cog"
+      DEREF(
+
+#line 357 "check.cog"
+     a).exp = 
+
+#line 357 "check.cog"
+                     
+
+#line 357 "check.cog"
+             checkExp(
+
+#line 357 "check.cog"
+                      context, 
+
+#line 357 "check.cog"
+                                DEREF(
+
+#line 357 "check.cog"
+                               a).exp);
+}
+}}
+
+
+#line 360 "check.cog"
+     DEREF(
+
+#line 360 "check.cog"
+    c).body = 
+
+#line 360 "check.cog"
+                      
+
+#line 360 "check.cog"
+             checkStmt(
+
+#line 360 "check.cog"
+                       context, 
+
+#line 360 "check.cog"
+                                 DEREF(
+
+#line 360 "check.cog"
+                                c).body);
+}
+}}
+
+
+#line 363 "check.cog"
+         return 
+
+#line 363 "check.cog"
+                switchStmt;
+}
+else
+{
+
+
+#line 367 "check.cog"
                  
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                  
 
-#line 318 "check.cog"
+#line 367 "check.cog"
          diagnose(
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                          
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                   getSink(
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                           context), 
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                         DEREF(
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                     stmt).loc, 
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                               kDiagnostic_unimplemented, 
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                                                                          DEREF(
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                                                              DEREF(
 
-#line 318 "check.cog"
+#line 367 "check.cog"
                                                                          stmt).directClass).name);
 
 
-#line 319 "check.cog"
+#line 368 "check.cog"
             
 
-#line 319 "check.cog"
+#line 368 "check.cog"
             
 
-#line 319 "check.cog"
+#line 368 "check.cog"
    cogAssert(
 
-#line 319 "check.cog"
+#line 368 "check.cog"
              
 
-#line 319 "check.cog"
+#line 368 "check.cog"
              !
 
-#line 319 "check.cog"
+#line 368 "check.cog"
               "unimplemented");
 }
 }
@@ -12550,793 +13153,820 @@ else
 }
 }
 }
+}
+}
+}
+}
+}
 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
  
 
-#line 323 "check.cog"
+#line 372 "check.cog"
  
 
-#line 326 "check.cog"
+#line 375 "check.cog"
      Stmt checkBlockStmt(
 
-#line 324 "check.cog"
+#line 373 "check.cog"
                        
 
-#line 324 "check.cog"
+#line 373 "check.cog"
            CheckContext
 
-#line 324 "check.cog"
+#line 373 "check.cog"
                        * context, 
 
-#line 325 "check.cog"
+#line 374 "check.cog"
         BlockStmt stmt)
 {
 
 
-#line 328 "check.cog"
+#line 377 "check.cog"
   for(auto stmt : 
 
-#line 328 "check.cog"
+#line 377 "check.cog"
                       DEREF(
 
-#line 328 "check.cog"
+#line 377 "check.cog"
                   stmt).stmts)
 {
 {
 
 
-#line 330 "check.cog"
+#line 379 "check.cog"
             
 
-#line 330 "check.cog"
+#line 379 "check.cog"
             
 
-#line 330 "check.cog"
+#line 379 "check.cog"
    checkStmt(
 
-#line 330 "check.cog"
+#line 379 "check.cog"
              context, 
 
-#line 330 "check.cog"
+#line 379 "check.cog"
                       stmt);
 }
 }
 
 
-#line 333 "check.cog"
+#line 382 "check.cog"
   return 
 
-#line 333 "check.cog"
+#line 382 "check.cog"
          stmt;
 }
 
 
-#line 338 "check.cog"
+#line 387 "check.cog"
  
 
-#line 341 "check.cog"
+#line 390 "check.cog"
      Exp checkExp(
 
-#line 339 "check.cog"
+#line 388 "check.cog"
                        
 
-#line 339 "check.cog"
+#line 388 "check.cog"
            CheckContext
 
-#line 339 "check.cog"
+#line 388 "check.cog"
                        * context, 
 
-#line 340 "check.cog"
+#line 389 "check.cog"
        Exp exp)
 {
 
 
-#line 344 "check.cog"
+#line 393 "check.cog"
   return 
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                     
 
-#line 344 "check.cog"
+#line 393 "check.cog"
          coerceToExp(
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                      context, 
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                                        
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                               checkTerm(
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                                         context, 
 
-#line 344 "check.cog"
+#line 393 "check.cog"
                                                  exp));
 }
 
 
-#line 347 "check.cog"
+#line 396 "check.cog"
  
 
-#line 350 "check.cog"
+#line 399 "check.cog"
      Exp coerceToExp(
 
-#line 348 "check.cog"
+#line 397 "check.cog"
                        
 
-#line 348 "check.cog"
+#line 397 "check.cog"
            CheckContext
 
-#line 348 "check.cog"
+#line 397 "check.cog"
                        * context, 
 
-#line 349 "check.cog"
+#line 398 "check.cog"
         Syntax term)
 {
 
 
-#line 352 "check.cog"
+#line 401 "check.cog"
+  if(
+
+#line 401 "check.cog"
+     
+
+#line 401 "check.cog"
+     !
+
+#line 401 "check.cog"
+      term)
+{
+
+
+#line 402 "check.cog"
+   return 
+
+#line 402 "check.cog"
+          nullptr;
+}
+
+
+#line 404 "check.cog"
      if(auto exp = 
 
-#line 352 "check.cog"
+#line 404 "check.cog"
                          
 
-#line 352 "check.cog"
+#line 404 "check.cog"
                   as<
 
-#line 352 "check.cog"
+#line 404 "check.cog"
                      Exp> (
 
-#line 352 "check.cog"
+#line 404 "check.cog"
                           term))
 {
 
 
-#line 354 "check.cog"
+#line 406 "check.cog"
          return 
 
-#line 354 "check.cog"
+#line 406 "check.cog"
                 exp;
 }
 
 
-#line 357 "check.cog"
+#line 409 "check.cog"
               
 
-#line 357 "check.cog"
+#line 409 "check.cog"
               
 
-#line 357 "check.cog"
+#line 409 "check.cog"
      cogAssert(
 
-#line 357 "check.cog"
+#line 409 "check.cog"
                
 
-#line 357 "check.cog"
+#line 409 "check.cog"
                !
 
-#line 357 "check.cog"
+#line 409 "check.cog"
                 "need an exp");
 }
 
 
-#line 362 "check.cog"
+#line 414 "check.cog"
  
 
-#line 365 "check.cog"
+#line 417 "check.cog"
      Type checkType(
 
-#line 363 "check.cog"
+#line 415 "check.cog"
                        
 
-#line 363 "check.cog"
+#line 415 "check.cog"
            CheckContext
 
-#line 363 "check.cog"
+#line 415 "check.cog"
                        * context, 
 
-#line 364 "check.cog"
+#line 416 "check.cog"
        Exp exp)
 {
 
 
-#line 368 "check.cog"
+#line 420 "check.cog"
   return 
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                      
 
-#line 368 "check.cog"
+#line 420 "check.cog"
          coerceToType(
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                       context, 
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                                         
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                                checkTerm(
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                                          context, 
 
-#line 368 "check.cog"
+#line 420 "check.cog"
                                                   exp));
 }
 
 
-#line 371 "check.cog"
+#line 423 "check.cog"
  void checkTypeExp(
 
-#line 372 "check.cog"
+#line 424 "check.cog"
                        
 
-#line 372 "check.cog"
+#line 424 "check.cog"
            CheckContext
 
-#line 372 "check.cog"
+#line 424 "check.cog"
                        * context, 
 
-#line 373 "check.cog"
+#line 425 "check.cog"
                   
 
-#line 373 "check.cog"
+#line 425 "check.cog"
            TypeExp
 
-#line 373 "check.cog"
+#line 425 "check.cog"
                   * typeExp)
 {
 
 
-#line 375 "check.cog"
+#line 427 "check.cog"
   
 
-#line 375 "check.cog"
+#line 427 "check.cog"
   auto exp = 
 
-#line 375 "check.cog"
+#line 427 "check.cog"
                    DEREF(
 
-#line 375 "check.cog"
+#line 427 "check.cog"
             typeExp).exp;
 
 
-#line 376 "check.cog"
+#line 428 "check.cog"
   if(
 
-#line 376 "check.cog"
+#line 428 "check.cog"
      
 
-#line 376 "check.cog"
+#line 428 "check.cog"
      !
 
-#line 376 "check.cog"
+#line 428 "check.cog"
       exp)
 {
 
 
-#line 377 "check.cog"
+#line 429 "check.cog"
    return;
 }
 
 
-#line 379 "check.cog"
+#line 431 "check.cog"
   
 
-#line 379 "check.cog"
+#line 431 "check.cog"
   auto type = 
 
-#line 379 "check.cog"
+#line 431 "check.cog"
                       
 
-#line 379 "check.cog"
+#line 431 "check.cog"
              checkType(
 
-#line 379 "check.cog"
+#line 431 "check.cog"
                        context, 
 
-#line 379 "check.cog"
+#line 431 "check.cog"
                                 exp);
 
 
-#line 380 "check.cog"
+#line 432 "check.cog"
          DEREF(
 
-#line 380 "check.cog"
+#line 432 "check.cog"
   typeExp).type = 
 
-#line 380 "check.cog"
+#line 432 "check.cog"
                  type;
 }
 
 
-#line 383 "check.cog"
+#line 435 "check.cog"
  
 
-#line 386 "check.cog"
+#line 438 "check.cog"
      Type coerceToType(
 
-#line 384 "check.cog"
+#line 436 "check.cog"
                        
 
-#line 384 "check.cog"
+#line 436 "check.cog"
            CheckContext
 
-#line 384 "check.cog"
+#line 436 "check.cog"
                        * context, 
 
-#line 385 "check.cog"
+#line 437 "check.cog"
        Exp exp)
 {
 
 
-#line 388 "check.cog"
+#line 440 "check.cog"
   
 
-#line 388 "check.cog"
+#line 440 "check.cog"
   auto expType = 
 
-#line 388 "check.cog"
+#line 440 "check.cog"
                    DEREF(
 
-#line 388 "check.cog"
+#line 440 "check.cog"
                 exp).type;
 
 
-#line 389 "check.cog"
+#line 441 "check.cog"
   if(auto typeType = 
 
-#line 389 "check.cog"
+#line 441 "check.cog"
                                 
 
-#line 389 "check.cog"
+#line 441 "check.cog"
                     as<
 
-#line 389 "check.cog"
+#line 441 "check.cog"
                        TypeType> (
 
-#line 389 "check.cog"
+#line 441 "check.cog"
                                  expType))
 {
 
 
-#line 391 "check.cog"
+#line 443 "check.cog"
    return 
 
-#line 391 "check.cog"
+#line 443 "check.cog"
                   DEREF(
 
-#line 391 "check.cog"
+#line 443 "check.cog"
           typeType).type;
 }
 else
 {
 
 
-#line 393 "check.cog"
+#line 445 "check.cog"
           if(auto errorType = 
 
-#line 393 "check.cog"
+#line 445 "check.cog"
                                           
 
-#line 393 "check.cog"
+#line 445 "check.cog"
                              as<
 
-#line 393 "check.cog"
+#line 445 "check.cog"
                                 ErrorType> (
 
-#line 393 "check.cog"
+#line 445 "check.cog"
                                            expType))
 {
 
 
-#line 395 "check.cog"
+#line 447 "check.cog"
          return 
 
-#line 395 "check.cog"
+#line 447 "check.cog"
                 errorType;
 }
 else
 {
 
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                  
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                  
 
-#line 399 "check.cog"
+#line 451 "check.cog"
          diagnose(
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                          
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                   getSink(
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                           context), 
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                        DEREF(
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                     exp).loc, 
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                              kDiagnostic_unimplemented, 
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                                                                            DEREF(
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                                                                DEREF(
 
-#line 399 "check.cog"
+#line 451 "check.cog"
                                                                         expType).directClass).name);
 
 
-#line 400 "check.cog"
+#line 452 "check.cog"
             
 
-#line 400 "check.cog"
+#line 452 "check.cog"
             
 
-#line 400 "check.cog"
+#line 452 "check.cog"
    cogAssert(
 
-#line 400 "check.cog"
+#line 452 "check.cog"
              
 
-#line 400 "check.cog"
+#line 452 "check.cog"
              !
 
-#line 400 "check.cog"
+#line 452 "check.cog"
               "unimplemented");
 }
 }
 }
 
 
-#line 406 "check.cog"
+#line 458 "check.cog"
  
 
-#line 409 "check.cog"
+#line 461 "check.cog"
      Exp checkTerm(
 
-#line 407 "check.cog"
+#line 459 "check.cog"
                        
 
-#line 407 "check.cog"
+#line 459 "check.cog"
            CheckContext
 
-#line 407 "check.cog"
+#line 459 "check.cog"
                        * context, 
 
-#line 408 "check.cog"
+#line 460 "check.cog"
        Exp exp)
 {
 
 
-#line 411 "check.cog"
+#line 463 "check.cog"
   if(
 
-#line 411 "check.cog"
+#line 463 "check.cog"
      
 
-#line 411 "check.cog"
+#line 463 "check.cog"
      !
 
-#line 411 "check.cog"
+#line 463 "check.cog"
       exp)
 {
 
 
-#line 411 "check.cog"
+#line 463 "check.cog"
            return 
 
-#line 411 "check.cog"
+#line 463 "check.cog"
                   nullptr;
 }
 
 
-#line 413 "check.cog"
+#line 465 "check.cog"
   if(auto nameExp = 
 
-#line 413 "check.cog"
+#line 465 "check.cog"
                               
 
-#line 413 "check.cog"
+#line 465 "check.cog"
                    as<
 
-#line 413 "check.cog"
+#line 465 "check.cog"
                       NameExp> (
 
-#line 413 "check.cog"
+#line 465 "check.cog"
                                exp))
 {
 
 
-#line 415 "check.cog"
+#line 467 "check.cog"
    
 
-#line 415 "check.cog"
+#line 467 "check.cog"
    auto scope = 
 
-#line 415 "check.cog"
+#line 467 "check.cog"
                       DEREF(
 
-#line 415 "check.cog"
+#line 467 "check.cog"
                nameExp).scope;
 
 
-#line 416 "check.cog"
+#line 468 "check.cog"
          
 
-#line 416 "check.cog"
+#line 468 "check.cog"
          auto result = 
 
-#line 416 "check.cog"
+#line 468 "check.cog"
                             
 
-#line 416 "check.cog"
+#line 468 "check.cog"
                       lookup(
 
-#line 416 "check.cog"
+#line 468 "check.cog"
                              scope, 
 
-#line 416 "check.cog"
+#line 468 "check.cog"
                                            DEREF(
 
-#line 416 "check.cog"
+#line 468 "check.cog"
                                     nameExp).name);
 
 
-#line 417 "check.cog"
+#line 469 "check.cog"
          if(
 
-#line 417 "check.cog"
+#line 469 "check.cog"
                           
 
-#line 417 "check.cog"
+#line 469 "check.cog"
                   DEREF(
 
-#line 417 "check.cog"
+#line 469 "check.cog"
             result).isEmpty())
 {
 
 
-#line 420 "check.cog"
+#line 472 "check.cog"
             
 
-#line 420 "check.cog"
+#line 472 "check.cog"
             
 
-#line 420 "check.cog"
+#line 472 "check.cog"
     diagnose(
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                     
 
-#line 420 "check.cog"
+#line 472 "check.cog"
              getSink(
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                      context), 
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                                       DEREF(
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                                nameExp).loc, 
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                                             kDiagnostic_undefinedIdentifier, 
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                                                                                     DEREF(
 
-#line 420 "check.cog"
+#line 472 "check.cog"
                                                                              nameExp).name);
 
 
-#line 421 "check.cog"
+#line 473 "check.cog"
              return 
 
-#line 421 "check.cog"
+#line 473 "check.cog"
                                   
 
-#line 421 "check.cog"
+#line 473 "check.cog"
                     createErrorExp(
 
-#line 421 "check.cog"
+#line 473 "check.cog"
                                    context, 
 
-#line 421 "check.cog"
+#line 473 "check.cog"
                                                    DEREF(
 
-#line 421 "check.cog"
+#line 473 "check.cog"
                                             nameExp).loc);
 }
 else
 {
 
 
-#line 423 "check.cog"
+#line 475 "check.cog"
               if(
 
-#line 423 "check.cog"
+#line 475 "check.cog"
                  
 
-#line 423 "check.cog"
+#line 475 "check.cog"
                  !
 
-#line 423 "check.cog"
+#line 475 "check.cog"
                                      
 
-#line 423 "check.cog"
+#line 475 "check.cog"
                         DEREF(
 
-#line 423 "check.cog"
+#line 475 "check.cog"
                   result).isOverloaded())
 {
 
 
-#line 426 "check.cog"
+#line 478 "check.cog"
              
 
-#line 426 "check.cog"
+#line 478 "check.cog"
              auto declRef = 
 
-#line 426 "check.cog"
+#line 478 "check.cog"
                                          
 
-#line 426 "check.cog"
+#line 478 "check.cog"
                            CompactDeclRef(
 
-#line 426 "check.cog"
+#line 478 "check.cog"
                                                         
 
-#line 426 "check.cog"
+#line 478 "check.cog"
                                                 DEREF(
 
-#line 426 "check.cog"
+#line 478 "check.cog"
                                           result).getDecl());
 
 
-#line 427 "check.cog"
+#line 479 "check.cog"
              
 
-#line 427 "check.cog"
+#line 479 "check.cog"
              auto declRefExp = 
 
-#line 427 "check.cog"
+#line 479 "check.cog"
                                                       
 
-#line 427 "check.cog"
+#line 479 "check.cog"
                               createObject<
 
-#line 427 "check.cog"
+#line 479 "check.cog"
                                            DeclRefExp> ();
 
 
-#line 428 "check.cog"
+#line 480 "check.cog"
                        DEREF(
 
-#line 428 "check.cog"
+#line 480 "check.cog"
              declRefExp).loc = 
 
-#line 428 "check.cog"
+#line 480 "check.cog"
                                  DEREF(
 
-#line 428 "check.cog"
+#line 480 "check.cog"
                               exp).loc;
 
 
-#line 429 "check.cog"
+#line 481 "check.cog"
                        DEREF(
 
-#line 429 "check.cog"
+#line 481 "check.cog"
              declRefExp).declRef = 
 
-#line 429 "check.cog"
+#line 481 "check.cog"
                                   declRef;
 
 
-#line 430 "check.cog"
+#line 482 "check.cog"
                        DEREF(
 
-#line 430 "check.cog"
+#line 482 "check.cog"
              declRefExp).type = 
 
-#line 430 "check.cog"
+#line 482 "check.cog"
                                                 
 
-#line 430 "check.cog"
+#line 482 "check.cog"
                                getTypeForDeclRef(
 
-#line 430 "check.cog"
+#line 482 "check.cog"
                                                  context, 
 
-#line 430 "check.cog"
+#line 482 "check.cog"
                                                           declRef);
 
 
-#line 431 "check.cog"
+#line 483 "check.cog"
              return 
 
-#line 431 "check.cog"
+#line 483 "check.cog"
                     declRefExp;
 }
 else
 {
 
 
-#line 435 "check.cog"
+#line 487 "check.cog"
              
 
-#line 435 "check.cog"
+#line 487 "check.cog"
              auto overloadedExpr = 
 
-#line 435 "check.cog"
+#line 487 "check.cog"
                                                               
 
-#line 435 "check.cog"
+#line 487 "check.cog"
                                   createObject<
 
-#line 435 "check.cog"
+#line 487 "check.cog"
                                                OverloadedExpr> ();
 
 
-#line 436 "check.cog"
+#line 488 "check.cog"
                            DEREF(
 
-#line 436 "check.cog"
+#line 488 "check.cog"
              overloadedExpr).loc = 
 
-#line 436 "check.cog"
+#line 488 "check.cog"
                                      DEREF(
 
-#line 436 "check.cog"
+#line 488 "check.cog"
                                   exp).loc;
 
 
-#line 437 "check.cog"
+#line 489 "check.cog"
                            DEREF(
 
-#line 437 "check.cog"
+#line 489 "check.cog"
              overloadedExpr).lookupResult = 
 
-#line 437 "check.cog"
+#line 489 "check.cog"
                                            result;
 
 
-#line 438 "check.cog"
+#line 490 "check.cog"
                            DEREF(
 
-#line 438 "check.cog"
+#line 490 "check.cog"
              overloadedExpr).type = 
 
-#line 438 "check.cog"
+#line 490 "check.cog"
                                                                    
 
-#line 438 "check.cog"
+#line 490 "check.cog"
                                     createObject<
 
-#line 438 "check.cog"
+#line 490 "check.cog"
                                                  OverloadGroupType> ();
 
 
-#line 439 "check.cog"
+#line 491 "check.cog"
              return 
 
-#line 439 "check.cog"
+#line 491 "check.cog"
                     overloadedExpr;
 }
 }
@@ -13345,618 +13975,618 @@ else
 {
 
 
-#line 442 "check.cog"
+#line 494 "check.cog"
           if(auto memberExp = 
 
-#line 442 "check.cog"
+#line 494 "check.cog"
                                           
 
-#line 442 "check.cog"
+#line 494 "check.cog"
                              as<
 
-#line 442 "check.cog"
+#line 494 "check.cog"
                                 MemberExp> (
 
-#line 442 "check.cog"
+#line 494 "check.cog"
                                            exp))
 {
 
 
-#line 444 "check.cog"
+#line 496 "check.cog"
          return 
 
-#line 444 "check.cog"
+#line 496 "check.cog"
                               
 
-#line 444 "check.cog"
+#line 496 "check.cog"
                 checkMemberExp(
 
-#line 444 "check.cog"
+#line 496 "check.cog"
                                context, 
 
-#line 444 "check.cog"
+#line 496 "check.cog"
                                         memberExp);
 }
 else
 {
 
 
-#line 447 "check.cog"
+#line 499 "check.cog"
           if(auto intLitExp = 
 
-#line 447 "check.cog"
+#line 499 "check.cog"
                                           
 
-#line 447 "check.cog"
+#line 499 "check.cog"
                              as<
 
-#line 447 "check.cog"
+#line 499 "check.cog"
                                 IntLitExp> (
 
-#line 447 "check.cog"
+#line 499 "check.cog"
                                            exp))
 {
 
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                   DEREF(
 
-#line 450 "check.cog"
+#line 502 "check.cog"
          intLitExp).type = 
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                                         
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                           getBuiltinType(
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                                          context, 
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                                                            DEREF(
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                                                   intLitExp).loc, 
 
-#line 450 "check.cog"
+#line 502 "check.cog"
                                                                  "Int");
 
 
-#line 451 "check.cog"
+#line 503 "check.cog"
          return 
 
-#line 451 "check.cog"
+#line 503 "check.cog"
                 intLitExp;
 }
 else
 {
 
 
-#line 453 "check.cog"
+#line 505 "check.cog"
           if(auto stringLitExp = 
 
-#line 453 "check.cog"
+#line 505 "check.cog"
                                                 
 
-#line 453 "check.cog"
+#line 505 "check.cog"
                                 as<
 
-#line 453 "check.cog"
+#line 505 "check.cog"
                                    StringLitExp> (
 
-#line 453 "check.cog"
+#line 505 "check.cog"
                                                  exp))
 {
 
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                      DEREF(
 
-#line 456 "check.cog"
+#line 508 "check.cog"
          stringLitExp).type = 
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                                            
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                              getBuiltinType(
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                                             context, 
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                                                                  DEREF(
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                                                      stringLitExp).loc, 
 
-#line 456 "check.cog"
+#line 508 "check.cog"
                                                                        "String");
 
 
-#line 457 "check.cog"
+#line 509 "check.cog"
          return 
 
-#line 457 "check.cog"
+#line 509 "check.cog"
                 stringLitExp;
 }
 else
 {
 
 
-#line 459 "check.cog"
+#line 511 "check.cog"
           if(auto charLitExp = 
 
-#line 459 "check.cog"
+#line 511 "check.cog"
                                                  
 
-#line 459 "check.cog"
+#line 511 "check.cog"
                               as<
 
-#line 459 "check.cog"
+#line 511 "check.cog"
                                  CharacterLitExp> (
 
-#line 459 "check.cog"
+#line 511 "check.cog"
                                                   exp))
 {
 
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                    DEREF(
 
-#line 462 "check.cog"
+#line 514 "check.cog"
          charLitExp).type = 
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                                          
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                            getBuiltinType(
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                                           context, 
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                                                              DEREF(
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                                                    charLitExp).loc, 
 
-#line 462 "check.cog"
+#line 514 "check.cog"
                                                                    "Char");
 
 
-#line 463 "check.cog"
+#line 515 "check.cog"
          return 
 
-#line 463 "check.cog"
+#line 515 "check.cog"
                 charLitExp;
 }
 else
 {
 
 
-#line 465 "check.cog"
+#line 517 "check.cog"
           if(auto assignExp = 
 
-#line 465 "check.cog"
+#line 517 "check.cog"
                                           
 
-#line 465 "check.cog"
+#line 517 "check.cog"
                              as<
 
-#line 465 "check.cog"
+#line 517 "check.cog"
                                 AssignExp> (
 
-#line 465 "check.cog"
+#line 517 "check.cog"
                                            exp))
 {
 
 
-#line 467 "check.cog"
+#line 519 "check.cog"
          
 
-#line 467 "check.cog"
+#line 519 "check.cog"
          auto left = 
 
-#line 467 "check.cog"
+#line 519 "check.cog"
                             
 
-#line 467 "check.cog"
+#line 519 "check.cog"
                     checkExp(
 
-#line 467 "check.cog"
+#line 519 "check.cog"
                              context, 
 
-#line 467 "check.cog"
+#line 519 "check.cog"
                                                DEREF(
 
-#line 467 "check.cog"
+#line 519 "check.cog"
                                       assignExp).left);
 
 
-#line 468 "check.cog"
+#line 520 "check.cog"
          
 
-#line 468 "check.cog"
+#line 520 "check.cog"
          auto right = 
 
-#line 468 "check.cog"
+#line 520 "check.cog"
                               
 
-#line 468 "check.cog"
+#line 520 "check.cog"
                      checkTerm(
 
-#line 468 "check.cog"
+#line 520 "check.cog"
                                context, 
 
-#line 468 "check.cog"
+#line 520 "check.cog"
                                                  DEREF(
 
-#line 468 "check.cog"
+#line 520 "check.cog"
                                         assignExp).right);
 
 
-#line 469 "check.cog"
+#line 521 "check.cog"
          right = 
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                        
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                  coerce(
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                         context, 
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                                  right, 
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                                             DEREF(
 
-#line 469 "check.cog"
+#line 521 "check.cog"
                                         left).type);
 
 
-#line 471 "check.cog"
+#line 523 "check.cog"
                   DEREF(
 
-#line 471 "check.cog"
+#line 523 "check.cog"
          assignExp).left = 
 
-#line 471 "check.cog"
+#line 523 "check.cog"
                           left;
 
 
-#line 472 "check.cog"
+#line 524 "check.cog"
                   DEREF(
 
-#line 472 "check.cog"
+#line 524 "check.cog"
          assignExp).right = 
 
-#line 472 "check.cog"
+#line 524 "check.cog"
                            right;
 
 
-#line 473 "check.cog"
+#line 525 "check.cog"
                   DEREF(
 
-#line 473 "check.cog"
+#line 525 "check.cog"
          assignExp).type = 
 
-#line 473 "check.cog"
+#line 525 "check.cog"
                               DEREF(
 
-#line 473 "check.cog"
+#line 525 "check.cog"
                           left).type;
 
 
-#line 474 "check.cog"
+#line 526 "check.cog"
          return 
 
-#line 474 "check.cog"
+#line 526 "check.cog"
                 assignExp;
 }
 else
 {
 
 
-#line 476 "check.cog"
+#line 528 "check.cog"
           if(auto indexExp = 
 
-#line 476 "check.cog"
+#line 528 "check.cog"
                                         
 
-#line 476 "check.cog"
+#line 528 "check.cog"
                             as<
 
-#line 476 "check.cog"
+#line 528 "check.cog"
                                IndexExp> (
 
-#line 476 "check.cog"
+#line 528 "check.cog"
                                          exp))
 {
 
 
-#line 478 "check.cog"
+#line 530 "check.cog"
          
 
-#line 478 "check.cog"
+#line 530 "check.cog"
          auto base = 
 
-#line 478 "check.cog"
+#line 530 "check.cog"
                              
 
-#line 478 "check.cog"
+#line 530 "check.cog"
                     checkTerm(
 
-#line 478 "check.cog"
+#line 530 "check.cog"
                               context, 
 
-#line 478 "check.cog"
+#line 530 "check.cog"
                                                DEREF(
 
-#line 478 "check.cog"
+#line 530 "check.cog"
                                        indexExp).base);
 
 
-#line 479 "check.cog"
+#line 531 "check.cog"
                  DEREF(
 
-#line 479 "check.cog"
+#line 531 "check.cog"
          indexExp).base = 
 
-#line 479 "check.cog"
+#line 531 "check.cog"
                          base;
 
 
-#line 480 "check.cog"
+#line 532 "check.cog"
          for(auto arg : 
 
-#line 480 "check.cog"
+#line 532 "check.cog"
                                 DEREF(
 
-#line 480 "check.cog"
+#line 532 "check.cog"
                         indexExp).args)
 {
 {
 
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                 DEREF(
 
-#line 482 "check.cog"
+#line 534 "check.cog"
              arg).exp = 
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                                 
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                        checkTerm(
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                                  context, 
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                                              DEREF(
 
-#line 482 "check.cog"
+#line 534 "check.cog"
                                           arg).exp);
 }
 }
 
 
-#line 487 "check.cog"
+#line 539 "check.cog"
          if(
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                         
 
-#line 487 "check.cog"
+#line 539 "check.cog"
             as<
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                ErrorExp> (
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                          base) 
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                || 
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                                
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                   as<
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                      ErrorType> (
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                                     DEREF(
 
-#line 487 "check.cog"
+#line 539 "check.cog"
                                                 base).type))
 {
 
 
-#line 489 "check.cog"
+#line 541 "check.cog"
              return 
 
-#line 489 "check.cog"
+#line 541 "check.cog"
                                   
 
-#line 489 "check.cog"
+#line 541 "check.cog"
                     createErrorExp(
 
-#line 489 "check.cog"
+#line 541 "check.cog"
                                    context, 
 
-#line 489 "check.cog"
+#line 541 "check.cog"
                                                     DEREF(
 
-#line 489 "check.cog"
+#line 541 "check.cog"
                                             indexExp).loc);
 }
 
 
-#line 492 "check.cog"
+#line 544 "check.cog"
          
 
-#line 492 "check.cog"
+#line 544 "check.cog"
          
 
-#line 492 "check.cog"
+#line 544 "check.cog"
                                OverloadResolveContext overloadContext;
 
 
-#line 493 "check.cog"
+#line 545 "check.cog"
                         DEREF(
 
-#line 493 "check.cog"
+#line 545 "check.cog"
          overloadContext).checkContext = 
 
-#line 493 "check.cog"
+#line 545 "check.cog"
                                         context;
 
 
-#line 494 "check.cog"
+#line 546 "check.cog"
                         DEREF(
 
-#line 494 "check.cog"
+#line 546 "check.cog"
          overloadContext).appExp = 
 
-#line 494 "check.cog"
+#line 546 "check.cog"
                                   indexExp;
 
 
-#line 495 "check.cog"
+#line 547 "check.cog"
                         DEREF(
 
-#line 495 "check.cog"
+#line 547 "check.cog"
          overloadContext).baseExp = 
 
-#line 495 "check.cog"
+#line 547 "check.cog"
                                    base;
 
 
-#line 497 "check.cog"
+#line 549 "check.cog"
          
 
-#line 497 "check.cog"
+#line 549 "check.cog"
          auto baseType = 
 
-#line 497 "check.cog"
+#line 549 "check.cog"
                             DEREF(
 
-#line 497 "check.cog"
+#line 549 "check.cog"
                         base).type;
 
 
-#line 498 "check.cog"
+#line 550 "check.cog"
          if(auto baseDeclRefType = 
 
-#line 498 "check.cog"
+#line 550 "check.cog"
                                                  
 
-#line 498 "check.cog"
+#line 550 "check.cog"
                                   as<
 
-#line 498 "check.cog"
+#line 550 "check.cog"
                                      DeclRefType> (
 
-#line 498 "check.cog"
+#line 550 "check.cog"
                                                   baseType))
 {
 
 
-#line 500 "check.cog"
+#line 552 "check.cog"
              
 
-#line 500 "check.cog"
+#line 552 "check.cog"
              auto baseDeclRef = 
 
-#line 500 "check.cog"
+#line 552 "check.cog"
                                               DEREF(
 
-#line 500 "check.cog"
+#line 552 "check.cog"
                                baseDeclRefType).declRef;
 
 
-#line 501 "check.cog"
+#line 553 "check.cog"
              if(auto aggTypeDeclRef = 
 
-#line 501 "check.cog"
+#line 553 "check.cog"
                                                     
 
-#line 501 "check.cog"
+#line 553 "check.cog"
                                      as<
 
-#line 501 "check.cog"
+#line 553 "check.cog"
                                         AggTypeDecl> (
 
-#line 501 "check.cog"
+#line 553 "check.cog"
                                                      baseDeclRef))
 {
 
 
-#line 505 "check.cog"
+#line 557 "check.cog"
                  for(auto memberDeclRef : 
 
-#line 505 "check.cog"
+#line 557 "check.cog"
                                                   
 
-#line 505 "check.cog"
+#line 557 "check.cog"
                                           getDecls(
 
-#line 505 "check.cog"
+#line 557 "check.cog"
                                                    aggTypeDeclRef))
 {
 {
 
 
-#line 507 "check.cog"
+#line 559 "check.cog"
                      if(auto memberSubscriptDeclRef = 
 
-#line 507 "check.cog"
+#line 559 "check.cog"
                                                                       
 
-#line 507 "check.cog"
+#line 559 "check.cog"
                                                      as<
 
-#line 507 "check.cog"
+#line 559 "check.cog"
                                                         SubscriptDecl> (
 
-#line 507 "check.cog"
+#line 559 "check.cog"
                                                                        memberDeclRef))
 {
 
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                       
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                       
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                          addSubscriptOverloadCandidate(
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                        
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                        &
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                         overloadContext, 
 
-#line 509 "check.cog"
+#line 561 "check.cog"
                                                                          memberSubscriptDeclRef);
 }
 }
@@ -13965,1311 +14595,1393 @@ else
 }
 
 
-#line 516 "check.cog"
+#line 568 "check.cog"
          return 
 
-#line 516 "check.cog"
+#line 568 "check.cog"
                                 
 
-#line 516 "check.cog"
+#line 568 "check.cog"
                 completeOverload(
 
-#line 516 "check.cog"
+#line 568 "check.cog"
                                  
 
-#line 516 "check.cog"
+#line 568 "check.cog"
                                  &
 
-#line 516 "check.cog"
+#line 568 "check.cog"
                                   overloadContext);
 }
 else
 {
 
 
-#line 518 "check.cog"
+#line 570 "check.cog"
           if(auto appExp = 
 
-#line 518 "check.cog"
+#line 570 "check.cog"
                                     
 
-#line 518 "check.cog"
+#line 570 "check.cog"
                           as<
 
-#line 518 "check.cog"
+#line 570 "check.cog"
                              AppExp> (
 
-#line 518 "check.cog"
+#line 570 "check.cog"
                                      exp))
 {
 
 
-#line 520 "check.cog"
+#line 572 "check.cog"
          
 
-#line 520 "check.cog"
+#line 572 "check.cog"
          auto base = 
 
-#line 520 "check.cog"
+#line 572 "check.cog"
                              
 
-#line 520 "check.cog"
+#line 572 "check.cog"
                     checkTerm(
 
-#line 520 "check.cog"
+#line 572 "check.cog"
                               context, 
 
-#line 520 "check.cog"
+#line 572 "check.cog"
                                              DEREF(
 
-#line 520 "check.cog"
+#line 572 "check.cog"
                                        appExp).base);
 
 
-#line 521 "check.cog"
+#line 573 "check.cog"
                DEREF(
 
-#line 521 "check.cog"
+#line 573 "check.cog"
          appExp).base = 
 
-#line 521 "check.cog"
+#line 573 "check.cog"
                        base;
 
 
-#line 522 "check.cog"
+#line 574 "check.cog"
          for(auto arg : 
 
-#line 522 "check.cog"
+#line 574 "check.cog"
                               DEREF(
 
-#line 522 "check.cog"
+#line 574 "check.cog"
                         appExp).args)
 {
 {
 
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                 DEREF(
 
-#line 524 "check.cog"
+#line 576 "check.cog"
              arg).exp = 
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                                 
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                        checkTerm(
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                                  context, 
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                                              DEREF(
 
-#line 524 "check.cog"
+#line 576 "check.cog"
                                           arg).exp);
 }
 }
 
 
-#line 529 "check.cog"
+#line 581 "check.cog"
          if(
 
-#line 529 "check.cog"
+#line 581 "check.cog"
                    
 
-#line 529 "check.cog"
+#line 581 "check.cog"
             isError(
 
-#line 529 "check.cog"
+#line 581 "check.cog"
                     context, 
 
-#line 529 "check.cog"
+#line 581 "check.cog"
                              base))
 {
 
 
-#line 531 "check.cog"
+#line 583 "check.cog"
              return 
 
-#line 531 "check.cog"
+#line 583 "check.cog"
                                   
 
-#line 531 "check.cog"
+#line 583 "check.cog"
                     createErrorExp(
 
-#line 531 "check.cog"
+#line 583 "check.cog"
                                    context, 
 
-#line 531 "check.cog"
+#line 583 "check.cog"
                                             appExp);
 }
 
 
-#line 534 "check.cog"
+#line 586 "check.cog"
          
 
-#line 534 "check.cog"
+#line 586 "check.cog"
          
 
-#line 534 "check.cog"
+#line 586 "check.cog"
                                OverloadResolveContext overloadContext;
 
 
-#line 535 "check.cog"
+#line 587 "check.cog"
                         DEREF(
 
-#line 535 "check.cog"
+#line 587 "check.cog"
          overloadContext).checkContext = 
 
-#line 535 "check.cog"
+#line 587 "check.cog"
                                         context;
 
 
-#line 536 "check.cog"
+#line 588 "check.cog"
                         DEREF(
 
-#line 536 "check.cog"
+#line 588 "check.cog"
          overloadContext).appExp = 
 
-#line 536 "check.cog"
+#line 588 "check.cog"
                                   appExp;
 
 
-#line 537 "check.cog"
+#line 589 "check.cog"
                         DEREF(
 
-#line 537 "check.cog"
+#line 589 "check.cog"
          overloadContext).baseExp = 
 
-#line 537 "check.cog"
+#line 589 "check.cog"
                                    nullptr;
 
 
-#line 540 "check.cog"
+#line 592 "check.cog"
          if(auto baseMemberRef = 
 
-#line 540 "check.cog"
+#line 592 "check.cog"
                                              
 
-#line 540 "check.cog"
+#line 592 "check.cog"
                                 as<
 
-#line 540 "check.cog"
+#line 592 "check.cog"
                                    MemberExp> (
 
-#line 540 "check.cog"
+#line 592 "check.cog"
                                               base))
 {
 
 
-#line 542 "check.cog"
+#line 594 "check.cog"
                             DEREF(
 
-#line 542 "check.cog"
+#line 594 "check.cog"
              overloadContext).baseExp = 
 
-#line 542 "check.cog"
+#line 594 "check.cog"
                                                     DEREF(
 
-#line 542 "check.cog"
+#line 594 "check.cog"
                                        baseMemberRef).base;
 }
 
 
-#line 545 "check.cog"
+#line 597 "check.cog"
                                  
 
-#line 545 "check.cog"
+#line 597 "check.cog"
                                  
 
-#line 545 "check.cog"
+#line 597 "check.cog"
          addAppOverloadCandidates(
 
-#line 546 "check.cog"
+#line 598 "check.cog"
              
 
-#line 546 "check.cog"
+#line 598 "check.cog"
              &
 
-#line 546 "check.cog"
+#line 598 "check.cog"
               overloadContext, 
 
-#line 547 "check.cog"
+#line 599 "check.cog"
              base);
 
 
-#line 549 "check.cog"
+#line 601 "check.cog"
          return 
 
-#line 549 "check.cog"
+#line 601 "check.cog"
                                 
 
-#line 549 "check.cog"
+#line 601 "check.cog"
                 completeOverload(
 
-#line 549 "check.cog"
+#line 601 "check.cog"
                                  
 
-#line 549 "check.cog"
+#line 601 "check.cog"
                                  &
 
-#line 549 "check.cog"
+#line 601 "check.cog"
                                   overloadContext);
 }
 else
 {
 
 
-#line 551 "check.cog"
+#line 603 "check.cog"
        if(auto appExp = 
 
-#line 551 "check.cog"
+#line 603 "check.cog"
                                      
 
-#line 551 "check.cog"
+#line 603 "check.cog"
                        as<
 
-#line 551 "check.cog"
+#line 603 "check.cog"
                           AppExpBase> (
 
-#line 551 "check.cog"
+#line 603 "check.cog"
                                       exp))
 {
 
 
-#line 553 "check.cog"
+#line 605 "check.cog"
    
 
-#line 553 "check.cog"
+#line 605 "check.cog"
    auto base = 
 
-#line 553 "check.cog"
+#line 605 "check.cog"
                        
 
-#line 553 "check.cog"
+#line 605 "check.cog"
               checkTerm(
 
-#line 553 "check.cog"
+#line 605 "check.cog"
                         context, 
 
-#line 553 "check.cog"
+#line 605 "check.cog"
                                        DEREF(
 
-#line 553 "check.cog"
+#line 605 "check.cog"
                                  appExp).base);
 
 
-#line 554 "check.cog"
+#line 606 "check.cog"
                DEREF(
 
-#line 554 "check.cog"
+#line 606 "check.cog"
          appExp).base = 
 
-#line 554 "check.cog"
+#line 606 "check.cog"
                        base;
 
 
-#line 555 "check.cog"
+#line 607 "check.cog"
    for(auto arg : 
 
-#line 555 "check.cog"
+#line 607 "check.cog"
                         DEREF(
 
-#line 555 "check.cog"
+#line 607 "check.cog"
                   appExp).args)
 {
 {
 
 
-#line 557 "check.cog"
+#line 609 "check.cog"
        DEREF(
 
-#line 557 "check.cog"
+#line 609 "check.cog"
     arg).exp = 
 
-#line 557 "check.cog"
+#line 609 "check.cog"
                        
 
-#line 557 "check.cog"
+#line 609 "check.cog"
               checkTerm(
 
-#line 557 "check.cog"
+#line 609 "check.cog"
                         context, 
 
-#line 557 "check.cog"
+#line 609 "check.cog"
                                     DEREF(
 
-#line 557 "check.cog"
+#line 609 "check.cog"
                                  arg).exp);
 }
 }
 
 
-#line 562 "check.cog"
+#line 614 "check.cog"
          if(
 
-#line 562 "check.cog"
+#line 614 "check.cog"
                         
 
-#line 562 "check.cog"
+#line 614 "check.cog"
             as<
 
-#line 562 "check.cog"
+#line 614 "check.cog"
                ErrorExp> (
 
-#line 562 "check.cog"
+#line 614 "check.cog"
                          base))
 {
 
 
-#line 564 "check.cog"
+#line 616 "check.cog"
              return 
 
-#line 564 "check.cog"
+#line 616 "check.cog"
                                   
 
-#line 564 "check.cog"
+#line 616 "check.cog"
                     createErrorExp(
 
-#line 564 "check.cog"
+#line 616 "check.cog"
                                    context, 
 
-#line 564 "check.cog"
+#line 616 "check.cog"
                                                   DEREF(
 
-#line 564 "check.cog"
+#line 616 "check.cog"
                                             appExp).loc);
 }
 
 
-#line 570 "check.cog"
+#line 622 "check.cog"
    if(auto baseDeclRefExp = 
 
-#line 570 "check.cog"
+#line 622 "check.cog"
                                          
 
-#line 570 "check.cog"
+#line 622 "check.cog"
                            as<
 
-#line 570 "check.cog"
+#line 622 "check.cog"
                               DeclRefExp> (
 
-#line 570 "check.cog"
+#line 622 "check.cog"
                                           base))
 {
 
 
-#line 574 "check.cog"
+#line 626 "check.cog"
              
 
-#line 574 "check.cog"
+#line 626 "check.cog"
              auto baseDeclRef = 
 
-#line 574 "check.cog"
+#line 626 "check.cog"
                                              DEREF(
 
-#line 574 "check.cog"
+#line 626 "check.cog"
                                baseDeclRefExp).declRef;
 
 
-#line 575 "check.cog"
+#line 627 "check.cog"
              if(auto patternDeclRef = 
 
-#line 575 "check.cog"
+#line 627 "check.cog"
                                                     
 
-#line 575 "check.cog"
+#line 627 "check.cog"
                                      as<
 
-#line 575 "check.cog"
+#line 627 "check.cog"
                                         PatternDecl> (
 
-#line 575 "check.cog"
+#line 627 "check.cog"
                                                      baseDeclRef))
 {
 
 
-#line 577 "check.cog"
+#line 629 "check.cog"
      
 
-#line 577 "check.cog"
+#line 629 "check.cog"
      
 
-#line 577 "check.cog"
+#line 629 "check.cog"
                    Arg argIter = 
 
-#line 577 "check.cog"
+#line 629 "check.cog"
                                     DEREF(
 
-#line 577 "check.cog"
+#line 629 "check.cog"
                                DEREF(
 
-#line 577 "check.cog"
+#line 629 "check.cog"
                          appExp).args).head;
 
 
-#line 579 "check.cog"
+#line 631 "check.cog"
      for(auto declRef : 
 
-#line 579 "check.cog"
+#line 631 "check.cog"
                                 
 
-#line 579 "check.cog"
+#line 631 "check.cog"
                         getDecls(
 
-#line 579 "check.cog"
+#line 631 "check.cog"
                                  patternDeclRef))
 {
 {
 
 
-#line 581 "check.cog"
+#line 633 "check.cog"
       
 
-#line 581 "check.cog"
+#line 633 "check.cog"
       auto paramRef = 
 
-#line 581 "check.cog"
+#line 633 "check.cog"
                                   
 
-#line 581 "check.cog"
+#line 633 "check.cog"
                      as<
 
-#line 581 "check.cog"
+#line 633 "check.cog"
                         ParamDecl> (
 
-#line 581 "check.cog"
+#line 633 "check.cog"
                                    declRef);
 
 
-#line 582 "check.cog"
+#line 634 "check.cog"
       if(
 
-#line 582 "check.cog"
+#line 634 "check.cog"
          
 
-#line 582 "check.cog"
+#line 634 "check.cog"
          !
 
-#line 582 "check.cog"
+#line 634 "check.cog"
           paramRef)
 {
 
 
-#line 582 "check.cog"
+#line 634 "check.cog"
                     continue;
 }
 
 
-#line 584 "check.cog"
+#line 636 "check.cog"
       
 
-#line 584 "check.cog"
+#line 636 "check.cog"
       
 
-#line 584 "check.cog"
+#line 636 "check.cog"
                 Arg arg = 
 
-#line 584 "check.cog"
+#line 636 "check.cog"
                       argIter;
 
 
-#line 585 "check.cog"
+#line 637 "check.cog"
       argIter = 
 
-#line 585 "check.cog"
+#line 637 "check.cog"
                        DEREF(
 
-#line 585 "check.cog"
+#line 637 "check.cog"
                 argIter).next;
 }
 }
 
 
-#line 591 "check.cog"
+#line 643 "check.cog"
            DEREF(
 
-#line 591 "check.cog"
+#line 643 "check.cog"
      appExp).type = 
 
-#line 591 "check.cog"
+#line 643 "check.cog"
                                 
 
-#line 591 "check.cog"
+#line 643 "check.cog"
                    getResultType(
 
-#line 591 "check.cog"
+#line 643 "check.cog"
                                  context, 
 
-#line 591 "check.cog"
+#line 643 "check.cog"
                                           patternDeclRef);
 
 
-#line 592 "check.cog"
+#line 644 "check.cog"
      return 
 
-#line 592 "check.cog"
+#line 644 "check.cog"
             appExp;
 }
 else
 {
 
 
-#line 594 "check.cog"
+#line 646 "check.cog"
          if(auto genericDeclRef = 
 
-#line 594 "check.cog"
+#line 646 "check.cog"
                                                 
 
-#line 594 "check.cog"
+#line 646 "check.cog"
                                  as<
 
-#line 594 "check.cog"
+#line 646 "check.cog"
                                     GenericDecl> (
 
-#line 594 "check.cog"
+#line 646 "check.cog"
                                                  baseDeclRef))
 {
 
 
-#line 596 "check.cog"
+#line 648 "check.cog"
      
 
-#line 596 "check.cog"
+#line 648 "check.cog"
      auto argIter = 
 
-#line 596 "check.cog"
+#line 648 "check.cog"
                               DEREF(
 
-#line 596 "check.cog"
+#line 648 "check.cog"
                          DEREF(
 
-#line 596 "check.cog"
+#line 648 "check.cog"
                    appExp).args).head;
 
 
-#line 598 "check.cog"
+#line 650 "check.cog"
      for(auto decl : 
 
-#line 598 "check.cog"
+#line 650 "check.cog"
                              
 
-#line 598 "check.cog"
+#line 650 "check.cog"
                      getDecls(
 
-#line 598 "check.cog"
+#line 650 "check.cog"
                               genericDeclRef))
 {
 {
 
 
-#line 600 "check.cog"
+#line 652 "check.cog"
       
 
-#line 600 "check.cog"
+#line 652 "check.cog"
       auto param = 
 
-#line 600 "check.cog"
+#line 652 "check.cog"
                                       
 
-#line 600 "check.cog"
+#line 652 "check.cog"
                   as<
 
-#line 600 "check.cog"
+#line 652 "check.cog"
                      GenericParamDecl> (
 
-#line 600 "check.cog"
+#line 652 "check.cog"
                                        decl);
 
 
-#line 601 "check.cog"
+#line 653 "check.cog"
       if(
 
-#line 601 "check.cog"
+#line 653 "check.cog"
          
 
-#line 601 "check.cog"
+#line 653 "check.cog"
          !
 
-#line 601 "check.cog"
+#line 653 "check.cog"
           param)
 {
 
 
-#line 601 "check.cog"
+#line 653 "check.cog"
                  continue;
 }
 
 
-#line 603 "check.cog"
+#line 655 "check.cog"
       
 
-#line 603 "check.cog"
+#line 655 "check.cog"
       auto arg = 
 
-#line 603 "check.cog"
+#line 655 "check.cog"
                 argIter;
 
 
-#line 604 "check.cog"
+#line 656 "check.cog"
       argIter = 
 
-#line 604 "check.cog"
+#line 656 "check.cog"
                        DEREF(
 
-#line 604 "check.cog"
+#line 656 "check.cog"
                 argIter).next;
 }
 }
 
 
-#line 609 "check.cog"
+#line 661 "check.cog"
                  
 
-#line 609 "check.cog"
+#line 661 "check.cog"
                  auto specializations = 
 
-#line 609 "check.cog"
+#line 661 "check.cog"
                                                                     
 
-#line 609 "check.cog"
+#line 661 "check.cog"
                                        createObject<
 
-#line 609 "check.cog"
+#line 661 "check.cog"
                                                     Specializations> ();
 
 
-#line 610 "check.cog"
+#line 662 "check.cog"
                                 DEREF(
 
-#line 610 "check.cog"
+#line 662 "check.cog"
                  specializations).genericDeclRef = 
 
-#line 610 "check.cog"
+#line 662 "check.cog"
                                                   genericDeclRef;
 
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                  
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                  auto specArgLink = 
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                                    
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                                    &
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                                                         DEREF(
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                                                    DEREF(
 
-#line 612 "check.cog"
+#line 664 "check.cog"
                                     specializations).args).head;
 
 
-#line 613 "check.cog"
+#line 665 "check.cog"
                  argIter = 
 
-#line 613 "check.cog"
+#line 665 "check.cog"
                                       DEREF(
 
-#line 613 "check.cog"
+#line 665 "check.cog"
                                  DEREF(
 
-#line 613 "check.cog"
+#line 665 "check.cog"
                            appExp).args).head;
 
 
-#line 614 "check.cog"
+#line 666 "check.cog"
                  for(auto decl : 
 
-#line 614 "check.cog"
+#line 666 "check.cog"
                                          
 
-#line 614 "check.cog"
+#line 666 "check.cog"
                                  getDecls(
 
-#line 614 "check.cog"
+#line 666 "check.cog"
                                           genericDeclRef))
 {
 {
 
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                      
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                      auto param = 
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                                                      
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                                  as<
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                                     GenericParamDecl> (
 
-#line 616 "check.cog"
+#line 668 "check.cog"
                                                       decl);
 
 
-#line 617 "check.cog"
+#line 669 "check.cog"
                      if(
 
-#line 617 "check.cog"
+#line 669 "check.cog"
                         
 
-#line 617 "check.cog"
+#line 669 "check.cog"
                         !
 
-#line 617 "check.cog"
+#line 669 "check.cog"
                          param)
 {
 
 
-#line 617 "check.cog"
+#line 669 "check.cog"
                                 continue;
 }
 
 
-#line 619 "check.cog"
+#line 671 "check.cog"
                      
 
-#line 619 "check.cog"
+#line 671 "check.cog"
                      auto arg = 
 
-#line 619 "check.cog"
+#line 671 "check.cog"
                                argIter;
 
 
-#line 620 "check.cog"
+#line 672 "check.cog"
                      argIter = 
 
-#line 620 "check.cog"
+#line 672 "check.cog"
                                       DEREF(
 
-#line 620 "check.cog"
+#line 672 "check.cog"
                                argIter).next;
 
 
-#line 623 "check.cog"
+#line 675 "check.cog"
                      
 
-#line 623 "check.cog"
+#line 675 "check.cog"
                      auto specArg = 
 
-#line 623 "check.cog"
+#line 675 "check.cog"
                                                                   
 
-#line 623 "check.cog"
+#line 675 "check.cog"
                                    createObject<
 
-#line 623 "check.cog"
+#line 675 "check.cog"
                                                 SpecializationArg> ();
 
 
-#line 624 "check.cog"
+#line 676 "check.cog"
+             DEREF(
+
+#line 676 "check.cog"
+      specArg).param = 
+
+#line 676 "check.cog"
+                      param;
+
+
+#line 677 "check.cog"
                             DEREF(
 
-#line 624 "check.cog"
+#line 677 "check.cog"
                      specArg).value = 
 
-#line 624 "check.cog"
+#line 677 "check.cog"
                                                
 
-#line 624 "check.cog"
+#line 677 "check.cog"
                                      extractVal(
 
-#line 624 "check.cog"
+#line 677 "check.cog"
                                                    DEREF(
 
-#line 624 "check.cog"
+#line 677 "check.cog"
                                                 arg).exp);
 
 
-#line 626 "check.cog"
+#line 679 "check.cog"
                      
 
-#line 626 "check.cog"
+#line 679 "check.cog"
                      *
 
-#line 626 "check.cog"
+#line 679 "check.cog"
                       specArgLink = 
 
-#line 626 "check.cog"
+#line 679 "check.cog"
                                     specArg;
 
 
-#line 627 "check.cog"
+#line 680 "check.cog"
                      specArgLink = 
 
-#line 627 "check.cog"
+#line 680 "check.cog"
                                    
 
-#line 627 "check.cog"
+#line 680 "check.cog"
                                    &
 
-#line 627 "check.cog"
+#line 680 "check.cog"
                                            DEREF(
 
-#line 627 "check.cog"
+#line 680 "check.cog"
                                     specArg).next;
 }
 }
 
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                  
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                  auto innerDeclRef = 
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                               
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                     DeclRefVal(
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                                                        DEREF(
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                                                      
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                                              DEREF(
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                                genericDeclRef).getDecl()).inner, 
 
-#line 630 "check.cog"
+#line 683 "check.cog"
                                                                                specializations);
 
 
-#line 632 "check.cog"
+#line 685 "check.cog"
                  return 
 
-#line 632 "check.cog"
+#line 685 "check.cog"
                                         
 
-#line 632 "check.cog"
+#line 685 "check.cog"
                         createDeclRefExp(
 
-#line 633 "check.cog"
+#line 686 "check.cog"
                      context, 
 
-#line 634 "check.cog"
+#line 687 "check.cog"
                      innerDeclRef, 
 
-#line 635 "check.cog"
+#line 688 "check.cog"
                            DEREF(
 
-#line 635 "check.cog"
+#line 688 "check.cog"
                      appExp).loc);
 }
 }
 }
 
 
-#line 639 "check.cog"
+#line 692 "check.cog"
            
 
-#line 639 "check.cog"
+#line 692 "check.cog"
            
 
-#line 639 "check.cog"
+#line 692 "check.cog"
    diagnose(
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                    
 
-#line 639 "check.cog"
+#line 692 "check.cog"
             getSink(
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                     context), 
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                                  DEREF(
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                               exp).loc, 
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                                        kDiagnostic_unimplemented, 
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                                                                                  DEREF(
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                                                                      DEREF(
 
-#line 639 "check.cog"
+#line 692 "check.cog"
                                                                   exp).directClass).name);
 
 
-#line 640 "check.cog"
+#line 693 "check.cog"
             
 
-#line 640 "check.cog"
+#line 693 "check.cog"
             
 
-#line 640 "check.cog"
+#line 693 "check.cog"
    cogAssert(
 
-#line 640 "check.cog"
+#line 693 "check.cog"
              
 
-#line 640 "check.cog"
+#line 693 "check.cog"
              !
 
-#line 640 "check.cog"
+#line 693 "check.cog"
               "unimplemented");
 
 
-#line 641 "check.cog"
+#line 694 "check.cog"
    return 
 
-#line 641 "check.cog"
+#line 694 "check.cog"
           0;
 }
 else
 {
 
 
-#line 643 "check.cog"
+#line 696 "check.cog"
        if(auto thisExpr = 
 
-#line 643 "check.cog"
+#line 696 "check.cog"
                                      
 
-#line 643 "check.cog"
+#line 696 "check.cog"
                          as<
 
-#line 643 "check.cog"
+#line 696 "check.cog"
                             ThisExpr> (
 
-#line 643 "check.cog"
+#line 696 "check.cog"
                                       exp))
 {
 
 
-#line 645 "check.cog"
+#line 698 "check.cog"
    
 
-#line 645 "check.cog"
+#line 698 "check.cog"
    auto scope = 
 
-#line 645 "check.cog"
+#line 698 "check.cog"
                        DEREF(
 
-#line 645 "check.cog"
+#line 698 "check.cog"
                thisExpr).scope;
 
 
-#line 646 "check.cog"
+#line 699 "check.cog"
    while(
 
-#line 646 "check.cog"
+#line 699 "check.cog"
          scope)
 {
 {
 
 
-#line 648 "check.cog"
+#line 701 "check.cog"
     
 
-#line 648 "check.cog"
+#line 701 "check.cog"
     auto containerDecl = 
 
-#line 648 "check.cog"
+#line 701 "check.cog"
                                         DEREF(
 
-#line 648 "check.cog"
+#line 701 "check.cog"
                              DEREF(
 
-#line 648 "check.cog"
+#line 701 "check.cog"
                         scope).directLink).container;
 
 
-#line 649 "check.cog"
+#line 702 "check.cog"
     
 
-#line 649 "check.cog"
+#line 702 "check.cog"
     auto aggTypeDecl = 
 
-#line 649 "check.cog"
+#line 702 "check.cog"
                                      
 
-#line 649 "check.cog"
+#line 702 "check.cog"
                       as<
 
-#line 649 "check.cog"
+#line 702 "check.cog"
                          AggTypeDecl> (
 
-#line 649 "check.cog"
+#line 702 "check.cog"
                                       containerDecl);
 
 
-#line 650 "check.cog"
+#line 703 "check.cog"
     if(
 
-#line 650 "check.cog"
+#line 703 "check.cog"
        aggTypeDecl)
 {
 
 
-#line 652 "check.cog"
+#line 705 "check.cog"
              DEREF(
 
-#line 652 "check.cog"
+#line 705 "check.cog"
      thisExpr).type = 
 
-#line 652 "check.cog"
+#line 705 "check.cog"
                                       
 
-#line 652 "check.cog"
+#line 705 "check.cog"
                      createDeclRefType(
 
-#line 653 "check.cog"
+#line 706 "check.cog"
       context, 
 
-#line 654 "check.cog"
+#line 707 "check.cog"
                 
 
-#line 654 "check.cog"
+#line 707 "check.cog"
       DeclRefVal(
 
-#line 654 "check.cog"
+#line 707 "check.cog"
                  aggTypeDecl));
 
 
-#line 655 "check.cog"
+#line 708 "check.cog"
      return 
 
-#line 655 "check.cog"
+#line 708 "check.cog"
             thisExpr;
 }
 
 
-#line 658 "check.cog"
+#line 711 "check.cog"
     scope = 
 
-#line 658 "check.cog"
+#line 711 "check.cog"
                  DEREF(
 
-#line 658 "check.cog"
+#line 711 "check.cog"
             scope).parent;
 }
 }
 
 
-#line 663 "check.cog"
+#line 716 "check.cog"
            
 
-#line 663 "check.cog"
+#line 716 "check.cog"
            
 
-#line 663 "check.cog"
+#line 716 "check.cog"
    diagnose(
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                    
 
-#line 663 "check.cog"
+#line 716 "check.cog"
             getSink(
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                     context), 
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                                  DEREF(
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                               exp).loc, 
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                                        kDiagnostic_unimplemented, 
 
-#line 663 "check.cog"
+#line 716 "check.cog"
                                                                   "this expression type");
 
 
-#line 665 "check.cog"
+#line 718 "check.cog"
    return 
 
-#line 665 "check.cog"
+#line 718 "check.cog"
                         
 
-#line 665 "check.cog"
+#line 718 "check.cog"
           createErrorExp(
 
-#line 665 "check.cog"
+#line 718 "check.cog"
                          context, 
 
-#line 665 "check.cog"
+#line 718 "check.cog"
                                   exp);
 }
 else
 {
 
 
-#line 667 "check.cog"
+#line 720 "check.cog"
        if(auto castExpr = 
 
-#line 667 "check.cog"
+#line 720 "check.cog"
                                      
 
-#line 667 "check.cog"
+#line 720 "check.cog"
                          as<
 
-#line 667 "check.cog"
+#line 720 "check.cog"
                             CastExpr> (
 
-#line 667 "check.cog"
+#line 720 "check.cog"
                                       exp))
 {
 
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                
 
-#line 669 "check.cog"
+#line 722 "check.cog"
    checkTypeExp(
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                 context, 
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                          
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                          &
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                                   DEREF(
 
-#line 669 "check.cog"
+#line 722 "check.cog"
                           castExpr).toType);
 
 
-#line 670 "check.cog"
+#line 723 "check.cog"
            DEREF(
 
-#line 670 "check.cog"
+#line 723 "check.cog"
    castExpr).arg = 
 
-#line 670 "check.cog"
+#line 723 "check.cog"
                            
 
-#line 670 "check.cog"
+#line 723 "check.cog"
                   checkTerm(
 
-#line 670 "check.cog"
+#line 723 "check.cog"
                             context, 
 
-#line 670 "check.cog"
+#line 723 "check.cog"
                                              DEREF(
 
-#line 670 "check.cog"
+#line 723 "check.cog"
                                      castExpr).arg);
 
 
-#line 674 "check.cog"
+#line 727 "check.cog"
            DEREF(
 
-#line 674 "check.cog"
+#line 727 "check.cog"
    castExpr).type = 
 
-#line 674 "check.cog"
+#line 727 "check.cog"
                                   DEREF(
 
-#line 674 "check.cog"
+#line 727 "check.cog"
                            DEREF(
 
-#line 674 "check.cog"
+#line 727 "check.cog"
                    castExpr).toType).type;
 
 
-#line 675 "check.cog"
+#line 728 "check.cog"
    return 
 
-#line 675 "check.cog"
+#line 728 "check.cog"
           castExpr;
 }
 else
 {
 
 
-#line 679 "check.cog"
+#line 730 "check.cog"
+       if(auto parenExpr = 
+
+#line 730 "check.cog"
+                                      
+
+#line 730 "check.cog"
+                          as<
+
+#line 730 "check.cog"
+                             ParenExp> (
+
+#line 730 "check.cog"
+                                       exp))
+{
+
+
+#line 732 "check.cog"
+   
+
+#line 732 "check.cog"
+   auto base = 
+
+#line 732 "check.cog"
+                       
+
+#line 732 "check.cog"
+              checkTerm(
+
+#line 732 "check.cog"
+                        context, 
+
+#line 732 "check.cog"
+                                          DEREF(
+
+#line 732 "check.cog"
+                                 parenExpr).base);
+
+
+#line 733 "check.cog"
+            DEREF(
+
+#line 733 "check.cog"
+   parenExpr).base = 
+
+#line 733 "check.cog"
+                    base;
+
+
+#line 734 "check.cog"
+            DEREF(
+
+#line 734 "check.cog"
+   parenExpr).type = 
+
+#line 734 "check.cog"
+                        DEREF(
+
+#line 734 "check.cog"
+                    base).type;
+
+
+#line 735 "check.cog"
+   return 
+
+#line 735 "check.cog"
+          parenExpr;
+}
+else
+{
+
+
+#line 739 "check.cog"
            
 
-#line 679 "check.cog"
+#line 739 "check.cog"
            
 
-#line 679 "check.cog"
+#line 739 "check.cog"
    diagnose(
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                    
 
-#line 679 "check.cog"
+#line 739 "check.cog"
             getSink(
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                     context), 
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                                  DEREF(
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                               exp).loc, 
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                                        kDiagnostic_unimplemented, 
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                                                                                  DEREF(
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                                                                      DEREF(
 
-#line 679 "check.cog"
+#line 739 "check.cog"
                                                                   exp).directClass).name);
 
 
-#line 680 "check.cog"
+#line 740 "check.cog"
             
 
-#line 680 "check.cog"
+#line 740 "check.cog"
             
 
-#line 680 "check.cog"
+#line 740 "check.cog"
    cogAssert(
 
-#line 680 "check.cog"
+#line 740 "check.cog"
              
 
-#line 680 "check.cog"
+#line 740 "check.cog"
              !
 
-#line 680 "check.cog"
+#line 740 "check.cog"
               "unimplemented");
 
 
-#line 681 "check.cog"
+#line 741 "check.cog"
    return 
 
-#line 681 "check.cog"
+#line 741 "check.cog"
           0;
 }
 }
@@ -15283,391 +15995,392 @@ else
 }
 }
 }
+}
 
 
-#line 687 "check.cog"
+#line 747 "check.cog"
  
 
-#line 689 "check.cog"
+#line 749 "check.cog"
         Val extractVal(
 
-#line 688 "check.cog"
+#line 748 "check.cog"
        Exp exp)
 {
 
 
-#line 691 "check.cog"
+#line 751 "check.cog"
      if(auto typeType = 
 
-#line 691 "check.cog"
+#line 751 "check.cog"
                                    
 
-#line 691 "check.cog"
+#line 751 "check.cog"
                        as<
 
-#line 691 "check.cog"
+#line 751 "check.cog"
                           TypeType> (
 
-#line 691 "check.cog"
+#line 751 "check.cog"
                                        DEREF(
 
-#line 691 "check.cog"
+#line 751 "check.cog"
                                     exp).type))
 {
 
 
-#line 693 "check.cog"
+#line 753 "check.cog"
          return 
 
-#line 693 "check.cog"
+#line 753 "check.cog"
                         DEREF(
 
-#line 693 "check.cog"
+#line 753 "check.cog"
                 typeType).type;
 }
 else
 {
 
 
-#line 697 "check.cog"
+#line 757 "check.cog"
                   
 
-#line 697 "check.cog"
+#line 757 "check.cog"
                   
 
-#line 697 "check.cog"
+#line 757 "check.cog"
          cogAssert(
 
-#line 697 "check.cog"
+#line 757 "check.cog"
                    
 
-#line 697 "check.cog"
+#line 757 "check.cog"
                    !
 
-#line 697 "check.cog"
+#line 757 "check.cog"
                     "unimplemented");
 }
 }
 
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
  
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  
 
-#line 703 "check.cog"
+#line 763 "check.cog"
  
 
-#line 706 "check.cog"
+#line 766 "check.cog"
         Exp checkMemberExp(
 
-#line 704 "check.cog"
+#line 764 "check.cog"
                        
 
-#line 704 "check.cog"
+#line 764 "check.cog"
            CheckContext
 
-#line 704 "check.cog"
+#line 764 "check.cog"
                        * context, 
 
-#line 705 "check.cog"
+#line 765 "check.cog"
        MemberExp exp)
 {
 
 
-#line 708 "check.cog"
+#line 768 "check.cog"
      
 
-#line 708 "check.cog"
+#line 768 "check.cog"
      auto base = 
 
-#line 708 "check.cog"
+#line 768 "check.cog"
                    DEREF(
 
-#line 708 "check.cog"
+#line 768 "check.cog"
                 exp).base;
 
 
-#line 709 "check.cog"
+#line 769 "check.cog"
      base = 
 
-#line 709 "check.cog"
+#line 769 "check.cog"
                      
 
-#line 709 "check.cog"
+#line 769 "check.cog"
             checkTerm(
 
-#line 709 "check.cog"
+#line 769 "check.cog"
                       context, 
 
-#line 709 "check.cog"
+#line 769 "check.cog"
                                base);
 
 
-#line 711 "check.cog"
+#line 771 "check.cog"
      
 
-#line 711 "check.cog"
+#line 771 "check.cog"
      auto memberName = 
 
-#line 711 "check.cog"
+#line 771 "check.cog"
                          DEREF(
 
-#line 711 "check.cog"
+#line 771 "check.cog"
                       exp).memberName;
 
 
-#line 715 "check.cog"
+#line 775 "check.cog"
      if(
 
-#line 715 "check.cog"
+#line 775 "check.cog"
                
 
-#line 715 "check.cog"
+#line 775 "check.cog"
         isError(
 
-#line 715 "check.cog"
+#line 775 "check.cog"
                 context, 
 
-#line 715 "check.cog"
+#line 775 "check.cog"
                          base))
 {
 
 
-#line 717 "check.cog"
+#line 777 "check.cog"
          return 
 
-#line 717 "check.cog"
+#line 777 "check.cog"
                               
 
-#line 717 "check.cog"
+#line 777 "check.cog"
                 createErrorExp(
 
-#line 717 "check.cog"
+#line 777 "check.cog"
                                context, 
 
-#line 717 "check.cog"
+#line 777 "check.cog"
                                         exp);
 }
 
 
-#line 720 "check.cog"
+#line 780 "check.cog"
      
 
-#line 720 "check.cog"
+#line 780 "check.cog"
      auto baseType = 
 
-#line 720 "check.cog"
+#line 780 "check.cog"
                         DEREF(
 
-#line 720 "check.cog"
+#line 780 "check.cog"
                     base).type;
 
 
-#line 721 "check.cog"
+#line 781 "check.cog"
      if(auto baseDeclRefType = 
 
-#line 721 "check.cog"
+#line 781 "check.cog"
                                              
 
-#line 721 "check.cog"
+#line 781 "check.cog"
                               as<
 
-#line 721 "check.cog"
+#line 781 "check.cog"
                                  DeclRefType> (
 
-#line 721 "check.cog"
+#line 781 "check.cog"
                                               baseType))
 {
 
 
-#line 723 "check.cog"
+#line 783 "check.cog"
          
 
-#line 723 "check.cog"
+#line 783 "check.cog"
          auto baseDeclRef = 
 
-#line 723 "check.cog"
+#line 783 "check.cog"
                                           DEREF(
 
-#line 723 "check.cog"
+#line 783 "check.cog"
                            baseDeclRefType).declRef;
 
 
-#line 724 "check.cog"
+#line 784 "check.cog"
          if(auto aggTypeDeclRef = 
 
-#line 724 "check.cog"
+#line 784 "check.cog"
                                                 
 
-#line 724 "check.cog"
+#line 784 "check.cog"
                                  as<
 
-#line 724 "check.cog"
+#line 784 "check.cog"
                                     AggTypeDecl> (
 
-#line 724 "check.cog"
+#line 784 "check.cog"
                                                  baseDeclRef))
 {
 
 
-#line 730 "check.cog"
+#line 790 "check.cog"
              
 
-#line 730 "check.cog"
+#line 790 "check.cog"
              auto lookupResult = 
 
-#line 730 "check.cog"
+#line 790 "check.cog"
                                             
 
-#line 730 "check.cog"
+#line 790 "check.cog"
                                 lookupDirect(
 
-#line 731 "check.cog"
+#line 791 "check.cog"
                  aggTypeDeclRef, 
 
-#line 732 "check.cog"
+#line 792 "check.cog"
                  memberName);
 
 
-#line 734 "check.cog"
+#line 794 "check.cog"
              if(
 
-#line 734 "check.cog"
+#line 794 "check.cog"
                                      
 
-#line 734 "check.cog"
+#line 794 "check.cog"
                             DEREF(
 
-#line 734 "check.cog"
+#line 794 "check.cog"
                 lookupResult).isUnique())
 {
 
 
-#line 736 "check.cog"
+#line 796 "check.cog"
                  return 
 
-#line 736 "check.cog"
+#line 796 "check.cog"
                                         
 
-#line 736 "check.cog"
+#line 796 "check.cog"
                         createDeclRefExp(
 
-#line 737 "check.cog"
+#line 797 "check.cog"
                      context, 
 
-#line 738 "check.cog"
+#line 798 "check.cog"
                                    
 
-#line 738 "check.cog"
+#line 798 "check.cog"
                      CompactDeclRef(
 
-#line 738 "check.cog"
+#line 798 "check.cog"
                                                         
 
-#line 738 "check.cog"
+#line 798 "check.cog"
                                                 DEREF(
 
-#line 738 "check.cog"
+#line 798 "check.cog"
                                     lookupResult).getDecl()), 
 
-#line 739 "check.cog"
+#line 799 "check.cog"
                         DEREF(
 
-#line 739 "check.cog"
+#line 799 "check.cog"
                      exp).loc, 
 
-#line 740 "check.cog"
+#line 800 "check.cog"
                      base);
 }
 else
 {
 
 
-#line 742 "check.cog"
+#line 802 "check.cog"
                   if(
 
-#line 742 "check.cog"
+#line 802 "check.cog"
                                               
 
-#line 742 "check.cog"
+#line 802 "check.cog"
                                  DEREF(
 
-#line 742 "check.cog"
+#line 802 "check.cog"
                      lookupResult).isOverloaded())
 {
 
 
-#line 744 "check.cog"
+#line 804 "check.cog"
                  
 
-#line 744 "check.cog"
+#line 804 "check.cog"
                  auto overloadedExpr = 
 
-#line 744 "check.cog"
+#line 804 "check.cog"
                                                                   
 
-#line 744 "check.cog"
+#line 804 "check.cog"
                                       createObject<
 
-#line 744 "check.cog"
+#line 804 "check.cog"
                                                    OverloadedExpr> ();
 
 
-#line 745 "check.cog"
+#line 805 "check.cog"
                                DEREF(
 
-#line 745 "check.cog"
+#line 805 "check.cog"
                  overloadedExpr).loc = 
 
-#line 745 "check.cog"
+#line 805 "check.cog"
                                          DEREF(
 
-#line 745 "check.cog"
+#line 805 "check.cog"
                                       exp).loc;
 
 
-#line 746 "check.cog"
+#line 806 "check.cog"
                                DEREF(
 
-#line 746 "check.cog"
+#line 806 "check.cog"
                  overloadedExpr).lookupResult = 
 
-#line 746 "check.cog"
+#line 806 "check.cog"
                                                lookupResult;
 
 
-#line 747 "check.cog"
+#line 807 "check.cog"
                                DEREF(
 
-#line 747 "check.cog"
+#line 807 "check.cog"
                  overloadedExpr).type = 
 
-#line 747 "check.cog"
+#line 807 "check.cog"
                                                                        
 
-#line 747 "check.cog"
+#line 807 "check.cog"
                                         createObject<
 
-#line 747 "check.cog"
+#line 807 "check.cog"
                                                      OverloadGroupType> ();
 
 
-#line 748 "check.cog"
+#line 808 "check.cog"
                                DEREF(
 
-#line 748 "check.cog"
+#line 808 "check.cog"
                  overloadedExpr).base = 
 
-#line 748 "check.cog"
+#line 808 "check.cog"
                                        base;
 
 
-#line 749 "check.cog"
+#line 809 "check.cog"
                  return 
 
-#line 749 "check.cog"
+#line 809 "check.cog"
                         overloadedExpr;
 }
 }
@@ -15675,296 +16388,296 @@ else
 }
 
 
-#line 755 "check.cog"
+#line 815 "check.cog"
              
 
-#line 755 "check.cog"
+#line 815 "check.cog"
              
 
-#line 755 "check.cog"
+#line 815 "check.cog"
      diagnose(
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                      
 
-#line 755 "check.cog"
+#line 815 "check.cog"
               getSink(
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                       context), 
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                                    DEREF(
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                                 exp).loc, 
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                                          kDiagnostic_noMemberOfNameInType, 
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                                                                            memberName, 
 
-#line 755 "check.cog"
+#line 815 "check.cog"
                                                                                        baseType);
 
 
-#line 756 "check.cog"
+#line 816 "check.cog"
      return 
 
-#line 756 "check.cog"
+#line 816 "check.cog"
                           
 
-#line 756 "check.cog"
+#line 816 "check.cog"
             createErrorExp(
 
-#line 756 "check.cog"
+#line 816 "check.cog"
                            context, 
 
-#line 756 "check.cog"
+#line 816 "check.cog"
                                     exp);
 }
 
 
-#line 565 "syntax.cog"
+#line 567 "syntax.cog"
  
 
-#line 605 "syntax.cog"
+#line 607 "syntax.cog"
  
 
-#line 1210 "check.cog"
+#line 1270 "check.cog"
  
 
-#line 1193 "check.cog"
+#line 1253 "check.cog"
  
 
-#line 1203 "check.cog"
+#line 1263 "check.cog"
  
 
-#line 1216 "check.cog"
+#line 1276 "check.cog"
  
 
-#line 761 "check.cog"
+#line 821 "check.cog"
  void addAppOverloadCandidates(
 
-#line 762 "check.cog"
+#line 822 "check.cog"
                                  
 
-#line 762 "check.cog"
+#line 822 "check.cog"
            OverloadResolveContext
 
-#line 762 "check.cog"
+#line 822 "check.cog"
                                  * context, 
 
-#line 763 "check.cog"
+#line 823 "check.cog"
            Exp baseExp)
 {
 
 
-#line 766 "check.cog"
+#line 826 "check.cog"
      if(auto typeType = 
 
-#line 766 "check.cog"
+#line 826 "check.cog"
                                    
 
-#line 766 "check.cog"
+#line 826 "check.cog"
                        as<
 
-#line 766 "check.cog"
+#line 826 "check.cog"
                           TypeType> (
 
-#line 766 "check.cog"
+#line 826 "check.cog"
                                            DEREF(
 
-#line 766 "check.cog"
+#line 826 "check.cog"
                                     baseExp).type))
 {
 
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                   
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                   
 
-#line 770 "check.cog"
+#line 830 "check.cog"
          addTypeOverloadCandidates(
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                    context, 
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                             baseExp, 
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                                              DEREF(
 
-#line 770 "check.cog"
+#line 830 "check.cog"
                                                      typeType).type);
 }
 else
 {
 
 
-#line 772 "check.cog"
+#line 832 "check.cog"
           if(auto declRefExp = 
 
-#line 772 "check.cog"
+#line 832 "check.cog"
                                             
 
-#line 772 "check.cog"
+#line 832 "check.cog"
                               as<
 
-#line 772 "check.cog"
+#line 832 "check.cog"
                                  DeclRefExp> (
 
-#line 772 "check.cog"
+#line 832 "check.cog"
                                              baseExp))
 {
 
 
-#line 776 "check.cog"
+#line 836 "check.cog"
                                      
 
-#line 776 "check.cog"
+#line 836 "check.cog"
                                      
 
-#line 776 "check.cog"
+#line 836 "check.cog"
          addDeclRefOverloadCandidates(
 
-#line 776 "check.cog"
+#line 836 "check.cog"
                                       context, 
 
-#line 776 "check.cog"
+#line 836 "check.cog"
                                                          DEREF(
 
-#line 776 "check.cog"
+#line 836 "check.cog"
                                                declRefExp).declRef);
 }
 else
 {
 
 
-#line 778 "check.cog"
+#line 838 "check.cog"
           if(auto overloadedExpr = 
 
-#line 778 "check.cog"
+#line 838 "check.cog"
                                                     
 
-#line 778 "check.cog"
+#line 838 "check.cog"
                                   as<
 
-#line 778 "check.cog"
+#line 838 "check.cog"
                                      OverloadedExpr> (
 
-#line 778 "check.cog"
+#line 838 "check.cog"
                                                      baseExp))
 {
 
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                   
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                   
 
-#line 780 "check.cog"
+#line 840 "check.cog"
          cogAssert(
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                    
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                    !
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                            DEREF(
 
-#line 780 "check.cog"
+#line 840 "check.cog"
                     context).baseExp);
 
 
-#line 781 "check.cog"
+#line 841 "check.cog"
                 DEREF(
 
-#line 781 "check.cog"
+#line 841 "check.cog"
          context).baseExp = 
 
-#line 781 "check.cog"
+#line 841 "check.cog"
                                          DEREF(
 
-#line 781 "check.cog"
+#line 841 "check.cog"
                            overloadedExpr).base;
 
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                   
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                   
 
-#line 784 "check.cog"
+#line 844 "check.cog"
          cogAssert(
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                                                 
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                                              
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                                     DEREF(
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                               DEREF(
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                  DEREF(
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                    overloadedExpr).lookupResult).items).getCount() 
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                                                 != 
 
-#line 784 "check.cog"
+#line 844 "check.cog"
                                                                    0);
 
 
-#line 785 "check.cog"
+#line 845 "check.cog"
          for(auto item : 
 
-#line 785 "check.cog"
+#line 845 "check.cog"
                                        DEREF(
 
-#line 785 "check.cog"
+#line 845 "check.cog"
                          overloadedExpr).lookupResult)
 {
 {
 
 
-#line 788 "check.cog"
+#line 848 "check.cog"
                                          
 
-#line 788 "check.cog"
+#line 848 "check.cog"
                                          
 
-#line 788 "check.cog"
+#line 848 "check.cog"
              addDeclRefOverloadCandidates(
 
-#line 789 "check.cog"
+#line 849 "check.cog"
                  context, 
 
-#line 790 "check.cog"
+#line 850 "check.cog"
                            
 
-#line 790 "check.cog"
+#line 850 "check.cog"
                  DeclRefVal(
 
-#line 790 "check.cog"
+#line 850 "check.cog"
                                 DEREF(
 
-#line 790 "check.cog"
+#line 850 "check.cog"
                             item).decl));
 }
 }
@@ -15977,557 +16690,187 @@ else
 }
 
 
-#line 801 "check.cog"
+#line 861 "check.cog"
  
 
-#line 804 "check.cog"
+#line 864 "check.cog"
         Type createFuncType(
 
-#line 802 "check.cog"
+#line 862 "check.cog"
                        
 
-#line 802 "check.cog"
+#line 862 "check.cog"
            CheckContext
 
-#line 802 "check.cog"
+#line 862 "check.cog"
                        * context, 
 
-#line 803 "check.cog"
+#line 863 "check.cog"
                DeclRefValImpl<
 
-#line 803 "check.cog"
+#line 863 "check.cog"
                               FuncDeclBase>  funcDeclRef)
 {
 
 
-#line 806 "check.cog"
+#line 866 "check.cog"
      
 
-#line 806 "check.cog"
+#line 866 "check.cog"
      auto funcType = 
 
-#line 806 "check.cog"
+#line 866 "check.cog"
                                           
 
-#line 806 "check.cog"
+#line 866 "check.cog"
                     createObject<
 
-#line 806 "check.cog"
+#line 866 "check.cog"
                                  FuncType> ();
 
 
-#line 807 "check.cog"
+#line 867 "check.cog"
      return 
 
-#line 807 "check.cog"
+#line 867 "check.cog"
             funcType;
 }
 
 
-#line 812 "check.cog"
+#line 872 "check.cog"
  
 
-#line 815 "check.cog"
+#line 875 "check.cog"
      Type createDeclRefType(
 
-#line 813 "check.cog"
+#line 873 "check.cog"
                        
 
-#line 813 "check.cog"
+#line 873 "check.cog"
            CheckContext
 
-#line 813 "check.cog"
+#line 873 "check.cog"
                        * context, 
 
-#line 814 "check.cog"
+#line 874 "check.cog"
            DeclRefVal declRef)
 {
 
 
-#line 817 "check.cog"
+#line 877 "check.cog"
   
 
-#line 817 "check.cog"
+#line 877 "check.cog"
   auto type = 
 
-#line 817 "check.cog"
+#line 877 "check.cog"
                                       
 
-#line 817 "check.cog"
+#line 877 "check.cog"
              createObject<
 
-#line 817 "check.cog"
+#line 877 "check.cog"
                           DeclRefType> ();
 
 
-#line 818 "check.cog"
+#line 878 "check.cog"
       DEREF(
 
-#line 818 "check.cog"
+#line 878 "check.cog"
   type).declRef = 
 
-#line 818 "check.cog"
+#line 878 "check.cog"
                                
 
-#line 818 "check.cog"
+#line 878 "check.cog"
                  CompactDeclRef(
 
-#line 818 "check.cog"
+#line 878 "check.cog"
                                 declRef);
 
 
-#line 819 "check.cog"
+#line 879 "check.cog"
   return 
 
-#line 819 "check.cog"
+#line 879 "check.cog"
          type;
 }
 
 
-#line 822 "check.cog"
+#line 882 "check.cog"
  
 
-#line 825 "check.cog"
+#line 885 "check.cog"
      Type createDeclRefTypeType(
 
-#line 823 "check.cog"
+#line 883 "check.cog"
                        
 
-#line 823 "check.cog"
+#line 883 "check.cog"
            CheckContext
 
-#line 823 "check.cog"
+#line 883 "check.cog"
                        * context, 
 
-#line 824 "check.cog"
+#line 884 "check.cog"
            DeclRefVal declRef)
 {
 
 
-#line 827 "check.cog"
+#line 887 "check.cog"
   
 
-#line 827 "check.cog"
+#line 887 "check.cog"
   auto type = 
 
-#line 827 "check.cog"
+#line 887 "check.cog"
                               
 
-#line 827 "check.cog"
+#line 887 "check.cog"
              createDeclRefType(
 
-#line 827 "check.cog"
+#line 887 "check.cog"
                                context, 
 
-#line 827 "check.cog"
+#line 887 "check.cog"
                                         declRef);
 
 
-#line 828 "check.cog"
+#line 888 "check.cog"
   
 
-#line 828 "check.cog"
+#line 888 "check.cog"
   auto typeType = 
 
-#line 828 "check.cog"
+#line 888 "check.cog"
                                
 
-#line 828 "check.cog"
+#line 888 "check.cog"
                  createTypeType(
 
-#line 828 "check.cog"
+#line 888 "check.cog"
                                 context, 
 
-#line 828 "check.cog"
+#line 888 "check.cog"
                                          type);
 
 
-#line 829 "check.cog"
+#line 889 "check.cog"
   return 
 
-#line 829 "check.cog"
+#line 889 "check.cog"
          typeType;
 }
 
 
-#line 739 "syntax.cog"
+#line 741 "syntax.cog"
  
-
-#line 832 "check.cog"
- 
-
-#line 835 "check.cog"
-     TypeType createTypeType(
-
-#line 833 "check.cog"
-                       
-
-#line 833 "check.cog"
-           CheckContext
-
-#line 833 "check.cog"
-                       * context, 
-
-#line 834 "check.cog"
-        Type type)
-{
-
-
-#line 837 "check.cog"
-  
-
-#line 837 "check.cog"
-  auto typeType = 
-
-#line 837 "check.cog"
-                                       
-
-#line 837 "check.cog"
-                 createObject<
-
-#line 837 "check.cog"
-                              TypeType> ();
-
-
-#line 838 "check.cog"
-          DEREF(
-
-#line 838 "check.cog"
-  typeType).type = 
-
-#line 838 "check.cog"
-                  type;
-
-
-#line 839 "check.cog"
-  return 
-
-#line 839 "check.cog"
-         typeType;
-}
-
-
-#line 842 "check.cog"
- 
-
-#line 846 "check.cog"
-     Type specializeTypeForDeclRef(
-
-#line 843 "check.cog"
-                        
-
-#line 843 "check.cog"
-            CheckContext
-
-#line 843 "check.cog"
-                        * context, 
-
-#line 844 "check.cog"
-         Type type, 
-
-#line 845 "check.cog"
-           DeclRefVal declRef)
-{
-
-
-#line 848 "check.cog"
-  return 
-
-#line 848 "check.cog"
-                       
-
-#line 848 "check.cog"
-         specializeType(
-
-#line 849 "check.cog"
-   type, 
-
-#line 850 "check.cog"
-          DEREF(
-
-#line 850 "check.cog"
-   declRef).specializations);
-}
-
-
-#line 855 "check.cog"
- 
-
-#line 858 "check.cog"
-     Type getTypeForDeclRefImpl(
-
-#line 856 "check.cog"
-                       
-
-#line 856 "check.cog"
-           CheckContext
-
-#line 856 "check.cog"
-                       * context, 
-
-#line 857 "check.cog"
-           DeclRefVal declRef)
-{
-
-
-#line 860 "check.cog"
-     
-
-#line 860 "check.cog"
-     auto decl = 
-
-#line 860 "check.cog"
-                               
-
-#line 860 "check.cog"
-                       DEREF(
-
-#line 860 "check.cog"
-                declRef).getDecl();
-
-
-#line 862 "check.cog"
-               
-
-#line 862 "check.cog"
-               
-
-#line 862 "check.cog"
-     ensureDecl(
-
-#line 862 "check.cog"
-                context, 
-
-#line 862 "check.cog"
-                         decl);
-
-
-#line 864 "check.cog"
-     if(auto varDecl = 
-
-#line 864 "check.cog"
-                                     
-
-#line 864 "check.cog"
-                      as<
-
-#line 864 "check.cog"
-                         VarDeclBase> (
-
-#line 864 "check.cog"
-                                      decl))
-{
-
-
-#line 867 "check.cog"
-   return 
-
-#line 867 "check.cog"
-                                  
-
-#line 867 "check.cog"
-          specializeTypeForDeclRef(
-
-#line 867 "check.cog"
-                                   context, 
-
-#line 867 "check.cog"
-                                                        DEREF(
-
-#line 867 "check.cog"
-                                                   DEREF(
-
-#line 867 "check.cog"
-                                            varDecl).type).type, 
-
-#line 867 "check.cog"
-                                                               declRef);
-}
-else
-{
-
-
-#line 869 "check.cog"
-       if(auto aggTypeDecl = 
-
-#line 869 "check.cog"
-                                           
-
-#line 869 "check.cog"
-                            as<
-
-#line 869 "check.cog"
-                               AggTypeDecl> (
-
-#line 869 "check.cog"
-                                            decl))
-{
-
-
-#line 871 "check.cog"
-         return 
-
-#line 871 "check.cog"
-                                     
-
-#line 871 "check.cog"
-                createDeclRefTypeType(
-
-#line 871 "check.cog"
-                                      context, 
-
-#line 871 "check.cog"
-                                               declRef);
-}
-else
-{
-
-
-#line 873 "check.cog"
-          if(auto typeVarDecl = 
-
-#line 873 "check.cog"
-                                              
-
-#line 873 "check.cog"
-                               as<
-
-#line 873 "check.cog"
-                                  TypeVarDecl> (
-
-#line 873 "check.cog"
-                                               decl))
-{
-
-
-#line 875 "check.cog"
-         return 
-
-#line 875 "check.cog"
-                                     
-
-#line 875 "check.cog"
-                createDeclRefTypeType(
-
-#line 875 "check.cog"
-                                      context, 
-
-#line 875 "check.cog"
-                                               declRef);
-}
-else
-{
-
-
-#line 877 "check.cog"
-          if(auto genericDecl = 
-
-#line 877 "check.cog"
-                                              
-
-#line 877 "check.cog"
-                               as<
-
-#line 877 "check.cog"
-                                  GenericDecl> (
-
-#line 877 "check.cog"
-                                               decl))
-{
-
-
-#line 879 "check.cog"
-         return 
-
-#line 879 "check.cog"
-                                     
-
-#line 879 "check.cog"
-                createDeclRefTypeType(
-
-#line 879 "check.cog"
-                                      context, 
-
-#line 879 "check.cog"
-                                               declRef);
-}
-else
-{
-
-
-#line 881 "check.cog"
-          if(auto funcDeclRef = 
-
-#line 881 "check.cog"
-                                               
-
-#line 881 "check.cog"
-                               as<
-
-#line 881 "check.cog"
-                                  FuncDeclBase> (
-
-#line 881 "check.cog"
-                                                declRef))
-{
-
-
-#line 883 "check.cog"
-         return 
-
-#line 883 "check.cog"
-                              
-
-#line 883 "check.cog"
-                createFuncType(
-
-#line 883 "check.cog"
-                               context, 
-
-#line 883 "check.cog"
-                                        funcDeclRef);
-}
-else
-{
-
-
-#line 887 "check.cog"
-            
-
-#line 887 "check.cog"
-            
-
-#line 887 "check.cog"
-   cogAssert(
-
-#line 887 "check.cog"
-             
-
-#line 887 "check.cog"
-             !
-
-#line 887 "check.cog"
-              "unimplemented");
-
-
-#line 888 "check.cog"
-         return 
-
-#line 888 "check.cog"
-                0;
-}
-}
-}
-}
-}
-}
-
 
 #line 892 "check.cog"
  
 
 #line 895 "check.cog"
-     Type getTypeForDeclRef(
+     TypeType createTypeType(
 
 #line 893 "check.cog"
                        
@@ -16539,85 +16882,92 @@ else
                        * context, 
 
 #line 894 "check.cog"
-           DeclRefVal declRef)
+        Type type)
 {
 
 
 #line 897 "check.cog"
-     
+  
 
 #line 897 "check.cog"
-     auto result = 
+  auto typeType = 
 
 #line 897 "check.cog"
                                        
 
 #line 897 "check.cog"
-                  getTypeForDeclRefImpl(
+                 createObject<
 
 #line 897 "check.cog"
-                                        context, 
-
-#line 897 "check.cog"
-                                                 declRef);
+                              TypeType> ();
 
 
-#line 902 "check.cog"
-     return 
+#line 898 "check.cog"
+          DEREF(
 
-#line 902 "check.cog"
-            result;
+#line 898 "check.cog"
+  typeType).type = 
+
+#line 898 "check.cog"
+                  type;
+
+
+#line 899 "check.cog"
+  return 
+
+#line 899 "check.cog"
+         typeType;
 }
 
 
-#line 905 "check.cog"
+#line 902 "check.cog"
  
 
-#line 908 "check.cog"
-     Type getTypeForDeclRef(
-
 #line 906 "check.cog"
-                       
+     Type specializeTypeForDeclRef(
 
-#line 906 "check.cog"
-           CheckContext
+#line 903 "check.cog"
+                        
 
-#line 906 "check.cog"
-                       * context, 
+#line 903 "check.cog"
+            CheckContext
 
-#line 907 "check.cog"
-           CompactDeclRef declRef)
+#line 903 "check.cog"
+                        * context, 
+
+#line 904 "check.cog"
+         Type type, 
+
+#line 905 "check.cog"
+           DeclRefVal declRef)
 {
 
 
-#line 910 "check.cog"
+#line 908 "check.cog"
   return 
 
-#line 910 "check.cog"
-                          
+#line 908 "check.cog"
+                       
+
+#line 908 "check.cog"
+         specializeType(
+
+#line 909 "check.cog"
+   type, 
 
 #line 910 "check.cog"
-         getTypeForDeclRef(
+          DEREF(
 
-#line 911 "check.cog"
-   context, 
-
-#line 912 "check.cog"
-             
-
-#line 912 "check.cog"
-   DeclRefVal(
-
-#line 912 "check.cog"
-              declRef));
+#line 910 "check.cog"
+   declRef).specializations);
 }
 
 
 #line 915 "check.cog"
  
 
-#line 917 "check.cog"
-     Type createErrorType(
+#line 918 "check.cog"
+     Type getTypeForDeclRefImpl(
 
 #line 916 "check.cog"
                        
@@ -16626,484 +16976,847 @@ else
            CheckContext
 
 #line 916 "check.cog"
+                       * context, 
+
+#line 917 "check.cog"
+           DeclRefVal declRef)
+{
+
+
+#line 920 "check.cog"
+     
+
+#line 920 "check.cog"
+     auto decl = 
+
+#line 920 "check.cog"
+                               
+
+#line 920 "check.cog"
+                       DEREF(
+
+#line 920 "check.cog"
+                declRef).getDecl();
+
+
+#line 922 "check.cog"
+               
+
+#line 922 "check.cog"
+               
+
+#line 922 "check.cog"
+     ensureDecl(
+
+#line 922 "check.cog"
+                context, 
+
+#line 922 "check.cog"
+                         decl);
+
+
+#line 924 "check.cog"
+     if(auto varDecl = 
+
+#line 924 "check.cog"
+                                     
+
+#line 924 "check.cog"
+                      as<
+
+#line 924 "check.cog"
+                         VarDeclBase> (
+
+#line 924 "check.cog"
+                                      decl))
+{
+
+
+#line 927 "check.cog"
+   return 
+
+#line 927 "check.cog"
+                                  
+
+#line 927 "check.cog"
+          specializeTypeForDeclRef(
+
+#line 927 "check.cog"
+                                   context, 
+
+#line 927 "check.cog"
+                                                        DEREF(
+
+#line 927 "check.cog"
+                                                   DEREF(
+
+#line 927 "check.cog"
+                                            varDecl).type).type, 
+
+#line 927 "check.cog"
+                                                               declRef);
+}
+else
+{
+
+
+#line 929 "check.cog"
+       if(auto aggTypeDecl = 
+
+#line 929 "check.cog"
+                                           
+
+#line 929 "check.cog"
+                            as<
+
+#line 929 "check.cog"
+                               AggTypeDecl> (
+
+#line 929 "check.cog"
+                                            decl))
+{
+
+
+#line 931 "check.cog"
+         return 
+
+#line 931 "check.cog"
+                                     
+
+#line 931 "check.cog"
+                createDeclRefTypeType(
+
+#line 931 "check.cog"
+                                      context, 
+
+#line 931 "check.cog"
+                                               declRef);
+}
+else
+{
+
+
+#line 933 "check.cog"
+          if(auto typeVarDecl = 
+
+#line 933 "check.cog"
+                                              
+
+#line 933 "check.cog"
+                               as<
+
+#line 933 "check.cog"
+                                  TypeVarDecl> (
+
+#line 933 "check.cog"
+                                               decl))
+{
+
+
+#line 935 "check.cog"
+         return 
+
+#line 935 "check.cog"
+                                     
+
+#line 935 "check.cog"
+                createDeclRefTypeType(
+
+#line 935 "check.cog"
+                                      context, 
+
+#line 935 "check.cog"
+                                               declRef);
+}
+else
+{
+
+
+#line 937 "check.cog"
+          if(auto genericDecl = 
+
+#line 937 "check.cog"
+                                              
+
+#line 937 "check.cog"
+                               as<
+
+#line 937 "check.cog"
+                                  GenericDecl> (
+
+#line 937 "check.cog"
+                                               decl))
+{
+
+
+#line 939 "check.cog"
+         return 
+
+#line 939 "check.cog"
+                                     
+
+#line 939 "check.cog"
+                createDeclRefTypeType(
+
+#line 939 "check.cog"
+                                      context, 
+
+#line 939 "check.cog"
+                                               declRef);
+}
+else
+{
+
+
+#line 941 "check.cog"
+          if(auto funcDeclRef = 
+
+#line 941 "check.cog"
+                                               
+
+#line 941 "check.cog"
+                               as<
+
+#line 941 "check.cog"
+                                  FuncDeclBase> (
+
+#line 941 "check.cog"
+                                                declRef))
+{
+
+
+#line 943 "check.cog"
+         return 
+
+#line 943 "check.cog"
+                              
+
+#line 943 "check.cog"
+                createFuncType(
+
+#line 943 "check.cog"
+                               context, 
+
+#line 943 "check.cog"
+                                        funcDeclRef);
+}
+else
+{
+
+
+#line 947 "check.cog"
+            
+
+#line 947 "check.cog"
+            
+
+#line 947 "check.cog"
+   cogAssert(
+
+#line 947 "check.cog"
+             
+
+#line 947 "check.cog"
+             !
+
+#line 947 "check.cog"
+              "unimplemented");
+
+
+#line 948 "check.cog"
+         return 
+
+#line 948 "check.cog"
+                0;
+}
+}
+}
+}
+}
+}
+
+
+#line 952 "check.cog"
+ 
+
+#line 955 "check.cog"
+     Type getTypeForDeclRef(
+
+#line 953 "check.cog"
+                       
+
+#line 953 "check.cog"
+           CheckContext
+
+#line 953 "check.cog"
+                       * context, 
+
+#line 954 "check.cog"
+           DeclRefVal declRef)
+{
+
+
+#line 957 "check.cog"
+     
+
+#line 957 "check.cog"
+     auto result = 
+
+#line 957 "check.cog"
+                                       
+
+#line 957 "check.cog"
+                  getTypeForDeclRefImpl(
+
+#line 957 "check.cog"
+                                        context, 
+
+#line 957 "check.cog"
+                                                 declRef);
+
+
+#line 962 "check.cog"
+     return 
+
+#line 962 "check.cog"
+            result;
+}
+
+
+#line 965 "check.cog"
+ 
+
+#line 968 "check.cog"
+     Type getTypeForDeclRef(
+
+#line 966 "check.cog"
+                       
+
+#line 966 "check.cog"
+           CheckContext
+
+#line 966 "check.cog"
+                       * context, 
+
+#line 967 "check.cog"
+           CompactDeclRef declRef)
+{
+
+
+#line 970 "check.cog"
+  return 
+
+#line 970 "check.cog"
+                          
+
+#line 970 "check.cog"
+         getTypeForDeclRef(
+
+#line 971 "check.cog"
+   context, 
+
+#line 972 "check.cog"
+             
+
+#line 972 "check.cog"
+   DeclRefVal(
+
+#line 972 "check.cog"
+              declRef));
+}
+
+
+#line 975 "check.cog"
+ 
+
+#line 977 "check.cog"
+     Type createErrorType(
+
+#line 976 "check.cog"
+                       
+
+#line 976 "check.cog"
+           CheckContext
+
+#line 976 "check.cog"
                        * context)
 {
 
 
-#line 919 "check.cog"
+#line 979 "check.cog"
      return 
 
-#line 919 "check.cog"
+#line 979 "check.cog"
                                    
 
-#line 919 "check.cog"
+#line 979 "check.cog"
             createObject<
 
-#line 919 "check.cog"
+#line 979 "check.cog"
                          ErrorType> ();
 }
 
 
-#line 922 "check.cog"
+#line 982 "check.cog"
  
 
-#line 926 "check.cog"
+#line 986 "check.cog"
         Type getBuiltinType(
 
-#line 923 "check.cog"
+#line 983 "check.cog"
                        
 
-#line 923 "check.cog"
+#line 983 "check.cog"
            CheckContext
 
-#line 923 "check.cog"
+#line 983 "check.cog"
                        * context, 
 
-#line 924 "check.cog"
+#line 984 "check.cog"
        SourceLoc loc, 
 
-#line 925 "check.cog"
+#line 985 "check.cog"
         ConstPtr<
 
-#line 925 "check.cog"
+#line 985 "check.cog"
                  Char>  name)
 {
 
 
-#line 928 "check.cog"
+#line 988 "check.cog"
      
 
-#line 928 "check.cog"
+#line 988 "check.cog"
      auto cogModuleName = 
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                                 
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                          getName(
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                                                DEREF(
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                                         DEREF(
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                                  context).shared).session, 
 
-#line 928 "check.cog"
+#line 988 "check.cog"
                                                          "cog");
 
 
-#line 929 "check.cog"
+#line 989 "check.cog"
      
 
-#line 929 "check.cog"
+#line 989 "check.cog"
      
 
-#line 929 "check.cog"
+#line 989 "check.cog"
                      ModuleDecl cogModule = 
 
-#line 929 "check.cog"
+#line 989 "check.cog"
                                   nullptr;
 
 
-#line 930 "check.cog"
+#line 990 "check.cog"
      if(
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                                                
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                                          DEREF(
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                               DEREF(
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                       DEREF(
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                DEREF(
 
-#line 930 "check.cog"
+#line 990 "check.cog"
         context).shared).session).moduleDecl).name 
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                                                == 
 
-#line 930 "check.cog"
+#line 990 "check.cog"
                                                   cogModuleName)
 {
 
 
-#line 932 "check.cog"
+#line 992 "check.cog"
          cogModule = 
 
-#line 932 "check.cog"
+#line 992 "check.cog"
                                            DEREF(
 
-#line 932 "check.cog"
+#line 992 "check.cog"
                                    DEREF(
 
-#line 932 "check.cog"
+#line 992 "check.cog"
                             DEREF(
 
-#line 932 "check.cog"
+#line 992 "check.cog"
                      context).shared).session).moduleDecl;
 }
 else
 {
 
 
-#line 936 "check.cog"
+#line 996 "check.cog"
          cogModule = 
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                        
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                      findOrImportModule(
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                                       DEREF(
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                                DEREF(
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                         context).shared).session, 
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                                                 loc, 
 
-#line 936 "check.cog"
+#line 996 "check.cog"
                                                                      cogModuleName);
 }
 
 
-#line 939 "check.cog"
+#line 999 "check.cog"
      
 
-#line 939 "check.cog"
+#line 999 "check.cog"
      auto nameSpan = 
 
-#line 939 "check.cog"
+#line 999 "check.cog"
                                         
 
-#line 939 "check.cog"
+#line 999 "check.cog"
                     TerminatedStringSpan(
 
-#line 939 "check.cog"
+#line 999 "check.cog"
                                          name);
 
 
-#line 940 "check.cog"
+#line 1000 "check.cog"
      for(auto decl : 
 
-#line 940 "check.cog"
+#line 1000 "check.cog"
                                        
 
-#line 940 "check.cog"
+#line 1000 "check.cog"
                               DEREF(
 
-#line 940 "check.cog"
+#line 1000 "check.cog"
                      cogModule).getDecls())
 {
 {
 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
          if(
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                       
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                 DEREF(
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
             decl).name 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                       && 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                             
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                          getText(
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                      DEREF(
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                  decl).name) 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                             == 
 
-#line 942 "check.cog"
+#line 1002 "check.cog"
                                                nameSpan)
 {
 
 
-#line 944 "check.cog"
+#line 1004 "check.cog"
              
 
-#line 944 "check.cog"
+#line 1004 "check.cog"
              auto type = 
 
-#line 944 "check.cog"
+#line 1004 "check.cog"
                                                  
 
-#line 944 "check.cog"
+#line 1004 "check.cog"
                         createObject<
 
-#line 944 "check.cog"
+#line 1004 "check.cog"
                                      DeclRefType> ();
 
 
-#line 945 "check.cog"
+#line 1005 "check.cog"
                  DEREF(
 
-#line 945 "check.cog"
+#line 1005 "check.cog"
              type).declRef = 
 
-#line 945 "check.cog"
+#line 1005 "check.cog"
                                           
 
-#line 945 "check.cog"
+#line 1005 "check.cog"
                             CompactDeclRef(
 
-#line 945 "check.cog"
+#line 1005 "check.cog"
                                            decl);
 
 
-#line 947 "check.cog"
+#line 1007 "check.cog"
              return 
 
-#line 947 "check.cog"
+#line 1007 "check.cog"
                     type;
 }
 }
 }
 
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
              
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
              
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
      diagnose(
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
                      
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
               getSink(
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
                       context), 
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
                                 loc, 
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
                                      kDiagnostic_failedToFindBuiltinType, 
 
-#line 951 "check.cog"
+#line 1011 "check.cog"
                                                                           name);
 
 
-#line 952 "check.cog"
+#line 1012 "check.cog"
      return 
 
-#line 952 "check.cog"
+#line 1012 "check.cog"
                            
 
-#line 952 "check.cog"
+#line 1012 "check.cog"
             createErrorType(
 
-#line 952 "check.cog"
+#line 1012 "check.cog"
                             context);
 }
 
 
-#line 955 "check.cog"
+#line 1015 "check.cog"
  
 
-#line 958 "check.cog"
+#line 1018 "check.cog"
      Type getResultType(
 
-#line 956 "check.cog"
+#line 1016 "check.cog"
                        
 
-#line 956 "check.cog"
+#line 1016 "check.cog"
            CheckContext
 
-#line 956 "check.cog"
+#line 1016 "check.cog"
                        * context, 
 
-#line 957 "check.cog"
+#line 1017 "check.cog"
         DeclRefValImpl<
 
-#line 957 "check.cog"
+#line 1017 "check.cog"
                        PatternDecl>  decl)
 {
 
 
-#line 962 "check.cog"
+#line 1022 "check.cog"
   if(auto funcDeclRef = 
 
-#line 962 "check.cog"
+#line 1022 "check.cog"
                                    
 
-#line 962 "check.cog"
+#line 1022 "check.cog"
                        as<
 
-#line 962 "check.cog"
+#line 1022 "check.cog"
                           FuncDecl> (
 
-#line 962 "check.cog"
+#line 1022 "check.cog"
                                     decl))
 {
 
 
-#line 964 "check.cog"
+#line 1024 "check.cog"
    return 
 
-#line 964 "check.cog"
+#line 1024 "check.cog"
                        
 
-#line 964 "check.cog"
+#line 1024 "check.cog"
           getResultType(
 
-#line 964 "check.cog"
+#line 1024 "check.cog"
                         funcDeclRef);
 }
 else
 {
 
 
-#line 966 "check.cog"
+#line 1026 "check.cog"
           if(auto subscriptDeclRef = 
 
-#line 966 "check.cog"
+#line 1026 "check.cog"
                                                      
 
-#line 966 "check.cog"
+#line 1026 "check.cog"
                                     as<
 
-#line 966 "check.cog"
+#line 1026 "check.cog"
                                        SubscriptDecl> (
 
-#line 966 "check.cog"
+#line 1026 "check.cog"
                                                       decl))
 {
 
 
-#line 968 "check.cog"
+#line 1028 "check.cog"
          return 
 
-#line 968 "check.cog"
+#line 1028 "check.cog"
                              
 
-#line 968 "check.cog"
+#line 1028 "check.cog"
                 getResultType(
 
-#line 968 "check.cog"
+#line 1028 "check.cog"
                               subscriptDeclRef);
 }
 else
 {
 
 
-#line 970 "check.cog"
+#line 1030 "check.cog"
           if(auto typeDeclRef = 
 
-#line 970 "check.cog"
+#line 1030 "check.cog"
                                               
 
-#line 970 "check.cog"
+#line 1030 "check.cog"
                                as<
 
-#line 970 "check.cog"
+#line 1030 "check.cog"
                                   AggTypeDecl> (
 
-#line 970 "check.cog"
+#line 1030 "check.cog"
                                                decl))
 {
 
 
-#line 972 "check.cog"
+#line 1032 "check.cog"
          return 
 
-#line 972 "check.cog"
+#line 1032 "check.cog"
                                  
 
-#line 972 "check.cog"
+#line 1032 "check.cog"
                 createDeclRefType(
 
-#line 972 "check.cog"
+#line 1032 "check.cog"
                                   context, 
 
-#line 973 "check.cog"
+#line 1033 "check.cog"
                            
 
-#line 973 "check.cog"
+#line 1033 "check.cog"
              CompactDeclRef(
 
-#line 973 "check.cog"
+#line 1033 "check.cog"
                             typeDeclRef));
 }
 else
 {
 
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                  
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                  
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
          diagnose(
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                          
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                   getSink(
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                           context), 
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                                              DEREF(
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                                         DEREF(
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                                     decl).decl).loc, 
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                                                    kDiagnostic_unimplemented, 
 
-#line 978 "check.cog"
+#line 1038 "check.cog"
                                                                               "result type");
 
 
-#line 979 "check.cog"
+#line 1039 "check.cog"
    return 
 
-#line 979 "check.cog"
+#line 1039 "check.cog"
           0;
 }
 }
@@ -17111,476 +17824,110 @@ else
 }
 
 
-#line 983 "check.cog"
+#line 1043 "check.cog"
  
 
-#line 986 "check.cog"
+#line 1046 "check.cog"
         Exp createErrorExp(
 
-#line 984 "check.cog"
+#line 1044 "check.cog"
                        
 
-#line 984 "check.cog"
+#line 1044 "check.cog"
            CheckContext
 
-#line 984 "check.cog"
+#line 1044 "check.cog"
                        * context, 
 
-#line 985 "check.cog"
+#line 1045 "check.cog"
        Exp exp)
 {
 
 
-#line 988 "check.cog"
+#line 1048 "check.cog"
         DEREF(
 
-#line 988 "check.cog"
+#line 1048 "check.cog"
      exp).type = 
 
-#line 988 "check.cog"
+#line 1048 "check.cog"
                                
 
-#line 988 "check.cog"
+#line 1048 "check.cog"
                 createErrorType(
 
-#line 988 "check.cog"
+#line 1048 "check.cog"
                                 context);
 
 
-#line 989 "check.cog"
+#line 1049 "check.cog"
      return 
 
-#line 989 "check.cog"
+#line 1049 "check.cog"
             exp;
 }
 
 
-#line 992 "check.cog"
+#line 1052 "check.cog"
  
 
-#line 995 "check.cog"
+#line 1055 "check.cog"
         Exp createErrorExp(
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
                        
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
            CheckContext
 
-#line 993 "check.cog"
+#line 1053 "check.cog"
                        * context, 
 
-#line 994 "check.cog"
+#line 1054 "check.cog"
        SourceLoc loc)
 {
 
 
-#line 997 "check.cog"
+#line 1057 "check.cog"
      
 
-#line 997 "check.cog"
+#line 1057 "check.cog"
      auto exp = 
 
-#line 997 "check.cog"
+#line 1057 "check.cog"
                                      
 
-#line 997 "check.cog"
+#line 1057 "check.cog"
                createObject<
 
-#line 997 "check.cog"
+#line 1057 "check.cog"
                             ErrorExp> ();
 
 
-#line 998 "check.cog"
+#line 1058 "check.cog"
         DEREF(
 
-#line 998 "check.cog"
+#line 1058 "check.cog"
      exp).loc = 
 
-#line 998 "check.cog"
+#line 1058 "check.cog"
                loc;
 
 
-#line 999 "check.cog"
+#line 1059 "check.cog"
      return 
 
-#line 999 "check.cog"
+#line 1059 "check.cog"
                           
 
-#line 999 "check.cog"
+#line 1059 "check.cog"
             createErrorExp(
 
-#line 999 "check.cog"
+#line 1059 "check.cog"
                            context, 
 
-#line 999 "check.cog"
+#line 1059 "check.cog"
                                     exp);
-}
-
-
-#line 1002 "check.cog"
- 
-
-#line 1005 "check.cog"
-        Bool isSameVal(
-
-#line 1003 "check.cog"
-        Val left, 
-
-#line 1004 "check.cog"
-         Val right)
-{
-
-
-#line 1007 "check.cog"
-     if(auto leftType = 
-
-#line 1007 "check.cog"
-                               
-
-#line 1007 "check.cog"
-                       as<
-
-#line 1007 "check.cog"
-                          Type> (
-
-#line 1007 "check.cog"
-                                left))
-{
-
-
-#line 1009 "check.cog"
-         if(auto rightType = 
-
-#line 1009 "check.cog"
-                                    
-
-#line 1009 "check.cog"
-                            as<
-
-#line 1009 "check.cog"
-                               Type> (
-
-#line 1009 "check.cog"
-                                     right))
-{
-
-
-#line 1011 "check.cog"
-             return 
-
-#line 1011 "check.cog"
-                              
-
-#line 1011 "check.cog"
-                    isSameType(
-
-#line 1011 "check.cog"
-                               leftType, 
-
-#line 1011 "check.cog"
-                                         rightType);
-}
-}
-
-
-#line 1018 "check.cog"
-              
-
-#line 1018 "check.cog"
-              
-
-#line 1018 "check.cog"
-     cogAssert(
-
-#line 1018 "check.cog"
-               
-
-#line 1018 "check.cog"
-               !
-
-#line 1018 "check.cog"
-                "unimplemented");
-
-
-#line 1019 "check.cog"
-     return 
-
-#line 1019 "check.cog"
-            false;
-}
-
-
-#line 254 "syntax.cog"
- 
-
-#line 260 "syntax.cog"
- 
-
-#line 1022 "check.cog"
- 
-
-#line 1025 "check.cog"
-        Bool isSameSpecializations(
-
-#line 1023 "check.cog"
-        Specializations left, 
-
-#line 1024 "check.cog"
-            Specializations right)
-{
-
-
-#line 1028 "check.cog"
-     if(
-
-#line 1028 "check.cog"
-              
-
-#line 1028 "check.cog"
-        
-
-#line 1028 "check.cog"
-        !
-
-#line 1028 "check.cog"
-         left 
-
-#line 1028 "check.cog"
-              || 
-
-#line 1028 "check.cog"
-                 
-
-#line 1028 "check.cog"
-                 !
-
-#line 1028 "check.cog"
-                  right)
-{
-
-
-#line 1029 "check.cog"
-         return 
-
-#line 1029 "check.cog"
-                     
-
-#line 1029 "check.cog"
-                left 
-
-#line 1029 "check.cog"
-                     == 
-
-#line 1029 "check.cog"
-                        right;
-}
-
-
-#line 1031 "check.cog"
-     if(
-
-#line 1031 "check.cog"
-        
-
-#line 1031 "check.cog"
-        !
-
-#line 1031 "check.cog"
-                      
-
-#line 1031 "check.cog"
-         isSameDeclRef(
-
-#line 1032 "check.cog"
-             DEREF(
-
-#line 1032 "check.cog"
-         left).genericDeclRef, 
-
-#line 1033 "check.cog"
-              DEREF(
-
-#line 1033 "check.cog"
-         right).genericDeclRef))
-{
-
-
-#line 1035 "check.cog"
-         return 
-
-#line 1035 "check.cog"
-                false;
-}
-
-
-#line 1038 "check.cog"
-     
-
-#line 1038 "check.cog"
-     auto leftCursor = 
-
-#line 1038 "check.cog"
-                                     
-
-#line 1038 "check.cog"
-                               DEREF(
-
-#line 1038 "check.cog"
-                          DEREF(
-
-#line 1038 "check.cog"
-                      left).args).begin();
-
-
-#line 1039 "check.cog"
-     
-
-#line 1039 "check.cog"
-     auto rightCursor = 
-
-#line 1039 "check.cog"
-                                       
-
-#line 1039 "check.cog"
-                                 DEREF(
-
-#line 1039 "check.cog"
-                            DEREF(
-
-#line 1039 "check.cog"
-                       right).args).begin();
-
-
-#line 1041 "check.cog"
-     while(
-
-#line 1041 "check.cog"
-                      
-
-#line 1041 "check.cog"
-           leftCursor 
-
-#line 1041 "check.cog"
-                      != 
-
-#line 1041 "check.cog"
-                                      
-
-#line 1041 "check.cog"
-                                  DEREF(
-
-#line 1041 "check.cog"
-                             DEREF(
-
-#line 1041 "check.cog"
-                         left).args).end())
-{
-{
-
-
-#line 1043 "check.cog"
-         
-
-#line 1043 "check.cog"
-         auto leftArg = 
-
-#line 1043 "check.cog"
-                       
-
-#line 1043 "check.cog"
-                       *
-
-#line 1043 "check.cog"
-                        leftCursor;
-
-
-#line 1044 "check.cog"
-         
-
-#line 1044 "check.cog"
-         auto rightArg = 
-
-#line 1044 "check.cog"
-                        
-
-#line 1044 "check.cog"
-                        *
-
-#line 1044 "check.cog"
-                         rightCursor;
-
-
-#line 1046 "check.cog"
-         if(
-
-#line 1046 "check.cog"
-            
-
-#line 1046 "check.cog"
-            !
-
-#line 1046 "check.cog"
-                      
-
-#line 1046 "check.cog"
-             isSameVal(
-
-#line 1047 "check.cog"
-                    DEREF(
-
-#line 1047 "check.cog"
-             leftArg).value, 
-
-#line 1048 "check.cog"
-                     DEREF(
-
-#line 1048 "check.cog"
-             rightArg).value))
-{
-
-
-#line 1050 "check.cog"
-             return 
-
-#line 1050 "check.cog"
-                    false;
-}
-
-
-#line 1054 "check.cog"
-         
-
-#line 1054 "check.cog"
-         
-
-#line 1054 "check.cog"
-         ++
-
-#line 1054 "check.cog"
-           leftCursor;
-
-
-#line 1055 "check.cog"
-         
-
-#line 1055 "check.cog"
-         
-
-#line 1055 "check.cog"
-         ++
-
-#line 1055 "check.cog"
-           rightCursor;
-}
-}
-
-
-#line 1058 "check.cog"
-     return 
-
-#line 1058 "check.cog"
-            true;
 }
 
 
@@ -17588,451 +17935,567 @@ else
  
 
 #line 1065 "check.cog"
+        Bool isSameVal(
+
+#line 1063 "check.cog"
+        Val left, 
+
+#line 1064 "check.cog"
+         Val right)
+{
+
+
+#line 1067 "check.cog"
+     if(auto leftType = 
+
+#line 1067 "check.cog"
+                               
+
+#line 1067 "check.cog"
+                       as<
+
+#line 1067 "check.cog"
+                          Type> (
+
+#line 1067 "check.cog"
+                                left))
+{
+
+
+#line 1069 "check.cog"
+         if(auto rightType = 
+
+#line 1069 "check.cog"
+                                    
+
+#line 1069 "check.cog"
+                            as<
+
+#line 1069 "check.cog"
+                               Type> (
+
+#line 1069 "check.cog"
+                                     right))
+{
+
+
+#line 1071 "check.cog"
+             return 
+
+#line 1071 "check.cog"
+                              
+
+#line 1071 "check.cog"
+                    isSameType(
+
+#line 1071 "check.cog"
+                               leftType, 
+
+#line 1071 "check.cog"
+                                         rightType);
+}
+}
+
+
+#line 1078 "check.cog"
+              
+
+#line 1078 "check.cog"
+              
+
+#line 1078 "check.cog"
+     cogAssert(
+
+#line 1078 "check.cog"
+               
+
+#line 1078 "check.cog"
+               !
+
+#line 1078 "check.cog"
+                "unimplemented");
+
+
+#line 1079 "check.cog"
+     return 
+
+#line 1079 "check.cog"
+            false;
+}
+
+
+#line 254 "syntax.cog"
+ 
+
+#line 262 "syntax.cog"
+ 
+
+#line 1082 "check.cog"
+ 
+
+#line 1085 "check.cog"
+        Bool isSameSpecializations(
+
+#line 1083 "check.cog"
+        Specializations left, 
+
+#line 1084 "check.cog"
+            Specializations right)
+{
+
+
+#line 1088 "check.cog"
+     if(
+
+#line 1088 "check.cog"
+              
+
+#line 1088 "check.cog"
+        
+
+#line 1088 "check.cog"
+        !
+
+#line 1088 "check.cog"
+         left 
+
+#line 1088 "check.cog"
+              || 
+
+#line 1088 "check.cog"
+                 
+
+#line 1088 "check.cog"
+                 !
+
+#line 1088 "check.cog"
+                  right)
+{
+
+
+#line 1089 "check.cog"
+         return 
+
+#line 1089 "check.cog"
+                     
+
+#line 1089 "check.cog"
+                left 
+
+#line 1089 "check.cog"
+                     == 
+
+#line 1089 "check.cog"
+                        right;
+}
+
+
+#line 1091 "check.cog"
+     if(
+
+#line 1091 "check.cog"
+        
+
+#line 1091 "check.cog"
+        !
+
+#line 1091 "check.cog"
+                      
+
+#line 1091 "check.cog"
+         isSameDeclRef(
+
+#line 1092 "check.cog"
+             DEREF(
+
+#line 1092 "check.cog"
+         left).genericDeclRef, 
+
+#line 1093 "check.cog"
+              DEREF(
+
+#line 1093 "check.cog"
+         right).genericDeclRef))
+{
+
+
+#line 1095 "check.cog"
+         return 
+
+#line 1095 "check.cog"
+                false;
+}
+
+
+#line 1098 "check.cog"
+     
+
+#line 1098 "check.cog"
+     auto leftCursor = 
+
+#line 1098 "check.cog"
+                                     
+
+#line 1098 "check.cog"
+                               DEREF(
+
+#line 1098 "check.cog"
+                          DEREF(
+
+#line 1098 "check.cog"
+                      left).args).begin();
+
+
+#line 1099 "check.cog"
+     
+
+#line 1099 "check.cog"
+     auto rightCursor = 
+
+#line 1099 "check.cog"
+                                       
+
+#line 1099 "check.cog"
+                                 DEREF(
+
+#line 1099 "check.cog"
+                            DEREF(
+
+#line 1099 "check.cog"
+                       right).args).begin();
+
+
+#line 1101 "check.cog"
+     while(
+
+#line 1101 "check.cog"
+                      
+
+#line 1101 "check.cog"
+           leftCursor 
+
+#line 1101 "check.cog"
+                      != 
+
+#line 1101 "check.cog"
+                                      
+
+#line 1101 "check.cog"
+                                  DEREF(
+
+#line 1101 "check.cog"
+                             DEREF(
+
+#line 1101 "check.cog"
+                         left).args).end())
+{
+{
+
+
+#line 1103 "check.cog"
+         
+
+#line 1103 "check.cog"
+         auto leftArg = 
+
+#line 1103 "check.cog"
+                       
+
+#line 1103 "check.cog"
+                       *
+
+#line 1103 "check.cog"
+                        leftCursor;
+
+
+#line 1104 "check.cog"
+         
+
+#line 1104 "check.cog"
+         auto rightArg = 
+
+#line 1104 "check.cog"
+                        
+
+#line 1104 "check.cog"
+                        *
+
+#line 1104 "check.cog"
+                         rightCursor;
+
+
+#line 1106 "check.cog"
+         if(
+
+#line 1106 "check.cog"
+            
+
+#line 1106 "check.cog"
+            !
+
+#line 1106 "check.cog"
+                      
+
+#line 1106 "check.cog"
+             isSameVal(
+
+#line 1107 "check.cog"
+                    DEREF(
+
+#line 1107 "check.cog"
+             leftArg).value, 
+
+#line 1108 "check.cog"
+                     DEREF(
+
+#line 1108 "check.cog"
+             rightArg).value))
+{
+
+
+#line 1110 "check.cog"
+             return 
+
+#line 1110 "check.cog"
+                    false;
+}
+
+
+#line 1114 "check.cog"
+         
+
+#line 1114 "check.cog"
+         
+
+#line 1114 "check.cog"
+         ++
+
+#line 1114 "check.cog"
+           leftCursor;
+
+
+#line 1115 "check.cog"
+         
+
+#line 1115 "check.cog"
+         
+
+#line 1115 "check.cog"
+         ++
+
+#line 1115 "check.cog"
+           rightCursor;
+}
+}
+
+
+#line 1118 "check.cog"
+     return 
+
+#line 1118 "check.cog"
+            true;
+}
+
+
+#line 1122 "check.cog"
+ 
+
+#line 1125 "check.cog"
         Bool isSameDeclRef(
 
-#line 1063 "check.cog"
+#line 1123 "check.cog"
         ConstRef<
 
-#line 1063 "check.cog"
+#line 1123 "check.cog"
                  DeclRefVal>  left, 
 
-#line 1064 "check.cog"
+#line 1124 "check.cog"
          ConstRef<
 
-#line 1064 "check.cog"
+#line 1124 "check.cog"
                   DeclRefVal>  right)
 {
 
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
      if(
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
                   
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
             DEREF(
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
         left).decl 
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
                   != 
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
                           DEREF(
 
-#line 1067 "check.cog"
+#line 1127 "check.cog"
                      right).decl)
 {
 
 
-#line 1068 "check.cog"
+#line 1128 "check.cog"
          return 
 
-#line 1068 "check.cog"
+#line 1128 "check.cog"
                 false;
 }
 
 
-#line 1070 "check.cog"
+#line 1130 "check.cog"
      return 
 
-#line 1070 "check.cog"
+#line 1130 "check.cog"
                                  
 
-#line 1070 "check.cog"
+#line 1130 "check.cog"
             isSameSpecializations(
 
-#line 1071 "check.cog"
+#line 1131 "check.cog"
              DEREF(
 
-#line 1071 "check.cog"
+#line 1131 "check.cog"
          left).specializations, 
 
-#line 1072 "check.cog"
+#line 1132 "check.cog"
               DEREF(
 
-#line 1072 "check.cog"
+#line 1132 "check.cog"
          right).specializations);
 }
 
 
-#line 1075 "check.cog"
+#line 1135 "check.cog"
  
 
-#line 1078 "check.cog"
+#line 1138 "check.cog"
         Bool isSameType(
 
-#line 1076 "check.cog"
+#line 1136 "check.cog"
         Type left, 
 
-#line 1077 "check.cog"
+#line 1137 "check.cog"
          Type right)
 {
 
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
      if(
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
                          
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
             DEREF(
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
         left).directClass 
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
                          != 
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
                                  DEREF(
 
-#line 1080 "check.cog"
+#line 1140 "check.cog"
                             right).directClass)
 {
 
 
-#line 1081 "check.cog"
+#line 1141 "check.cog"
          return 
 
-#line 1081 "check.cog"
+#line 1141 "check.cog"
                 false;
 }
 
 
-#line 1083 "check.cog"
+#line 1143 "check.cog"
      if(auto leftDeclRefType = 
 
-#line 1083 "check.cog"
+#line 1143 "check.cog"
                                              
 
-#line 1083 "check.cog"
+#line 1143 "check.cog"
                               as<
 
-#line 1083 "check.cog"
+#line 1143 "check.cog"
                                  DeclRefType> (
 
-#line 1083 "check.cog"
+#line 1143 "check.cog"
                                               left))
 {
 
 
-#line 1085 "check.cog"
+#line 1145 "check.cog"
          if(auto rightDeclRefType = 
 
-#line 1085 "check.cog"
+#line 1145 "check.cog"
                                                   
 
-#line 1085 "check.cog"
+#line 1145 "check.cog"
                                    as<
 
-#line 1085 "check.cog"
+#line 1145 "check.cog"
                                       DeclRefType> (
 
-#line 1085 "check.cog"
+#line 1145 "check.cog"
                                                    right))
 {
 
 
-#line 1088 "check.cog"
+#line 1148 "check.cog"
              if(
 
-#line 1088 "check.cog"
+#line 1148 "check.cog"
                              
 
-#line 1088 "check.cog"
+#line 1148 "check.cog"
                 isSameDeclRef(
 
-#line 1089 "check.cog"
+#line 1149 "check.cog"
                                 DEREF(
 
-#line 1089 "check.cog"
+#line 1149 "check.cog"
                  leftDeclRefType).declRef, 
 
-#line 1090 "check.cog"
+#line 1150 "check.cog"
                                  DEREF(
 
-#line 1090 "check.cog"
+#line 1150 "check.cog"
                  rightDeclRefType).declRef))
 {
 
 
-#line 1092 "check.cog"
+#line 1152 "check.cog"
                  return 
 
-#line 1092 "check.cog"
+#line 1152 "check.cog"
                         true;
 }
 }
 }
 
 
-#line 1097 "check.cog"
+#line 1157 "check.cog"
      return 
 
-#line 1097 "check.cog"
+#line 1157 "check.cog"
             false;
-}
-
-
-#line 1100 "check.cog"
- 
-
-#line 1106 "check.cog"
-        Bool tryCoerceImpl(
-
-#line 1101 "check.cog"
-                        
-
-#line 1101 "check.cog"
-            CheckContext
-
-#line 1101 "check.cog"
-                        * context, 
-
-#line 1102 "check.cog"
-               Exp fromExp, 
-
-#line 1103 "check.cog"
-                Type fromType, 
-
-#line 1104 "check.cog"
-                 
-
-#line 1104 "check.cog"
-              Exp
-
-#line 1104 "check.cog"
-                 * toExp, 
-
-#line 1105 "check.cog"
-              Type toType)
-{
-
-
-#line 1108 "check.cog"
-     if(
-
-#line 1108 "check.cog"
-                  
-
-#line 1108 "check.cog"
-        isSameType(
-
-#line 1108 "check.cog"
-                   fromType, 
-
-#line 1108 "check.cog"
-                             toType))
-{
-
-
-#line 1110 "check.cog"
-         if(
-
-#line 1110 "check.cog"
-            toExp)
-{
-
-
-#line 1112 "check.cog"
-             
-
-#line 1112 "check.cog"
-             *
-
-#line 1112 "check.cog"
-              toExp = 
-
-#line 1112 "check.cog"
-                      fromExp;
-}
-
-
-#line 1115 "check.cog"
-         return 
-
-#line 1115 "check.cog"
-                true;
-}
-
-
-#line 1118 "check.cog"
-     if(
-
-#line 1118 "check.cog"
-                          
-
-#line 1118 "check.cog"
-               
-
-#line 1118 "check.cog"
-        isError(
-
-#line 1118 "check.cog"
-                fromType) 
-
-#line 1118 "check.cog"
-                          || 
-
-#line 1118 "check.cog"
-                                    
-
-#line 1118 "check.cog"
-                             isError(
-
-#line 1118 "check.cog"
-                                     toType))
-{
-
-
-#line 1120 "check.cog"
-         if(
-
-#line 1120 "check.cog"
-            toExp)
-{
-
-
-#line 1122 "check.cog"
-             
-
-#line 1122 "check.cog"
-             *
-
-#line 1122 "check.cog"
-              toExp = 
-
-#line 1122 "check.cog"
-                      fromExp;
-}
-
-
-#line 1124 "check.cog"
-         return 
-
-#line 1124 "check.cog"
-                true;
-}
-
-
-#line 1133 "check.cog"
-     return 
-
-#line 1133 "check.cog"
-            false;
-}
-
-
-#line 1136 "check.cog"
- 
-
-#line 1141 "check.cog"
-        Bool tryCoerceImpl(
-
-#line 1137 "check.cog"
-                        
-
-#line 1137 "check.cog"
-            CheckContext
-
-#line 1137 "check.cog"
-                        * context, 
-
-#line 1138 "check.cog"
-               Exp fromExp, 
-
-#line 1139 "check.cog"
-                 
-
-#line 1139 "check.cog"
-              Exp
-
-#line 1139 "check.cog"
-                 * toExp, 
-
-#line 1140 "check.cog"
-              Type toType)
-{
-
-
-#line 1143 "check.cog"
-     if(auto fromOverloadedExpr = 
-
-#line 1143 "check.cog"
-                                                   
-
-#line 1143 "check.cog"
-                                 as<
-
-#line 1143 "check.cog"
-                                    OverloadedExpr> (
-
-#line 1143 "check.cog"
-                                                    fromExp))
-{
-
-
-#line 1147 "check.cog"
-                  
-
-#line 1147 "check.cog"
-                  
-
-#line 1147 "check.cog"
-         cogAssert(
-
-#line 1147 "check.cog"
-                   
-
-#line 1147 "check.cog"
-                   !
-
-#line 1147 "check.cog"
-                    "unimplemented");
-}
-else
-{
-
-
-#line 1151 "check.cog"
-         return 
-
-#line 1151 "check.cog"
-                             
-
-#line 1151 "check.cog"
-                tryCoerceImpl(
-
-#line 1152 "check.cog"
-             context, 
-
-#line 1153 "check.cog"
-             fromExp, 
-
-#line 1154 "check.cog"
-                    DEREF(
-
-#line 1154 "check.cog"
-             fromExp).type, 
-
-#line 1155 "check.cog"
-             toExp, 
-
-#line 1156 "check.cog"
-             toType);
-}
 }
 
 
 #line 1160 "check.cog"
  
 
-#line 1164 "check.cog"
-        Exp coerce(
+#line 1166 "check.cog"
+        Bool tryCoerceImpl(
 
 #line 1161 "check.cog"
                         
@@ -18044,336 +18507,586 @@ else
                         * context, 
 
 #line 1162 "check.cog"
-            Exp exp, 
+               Exp fromExp, 
 
 #line 1163 "check.cog"
+                Type fromType, 
+
+#line 1164 "check.cog"
+                 
+
+#line 1164 "check.cog"
+              Exp
+
+#line 1164 "check.cog"
+                 * toExp, 
+
+#line 1165 "check.cog"
+              Type toType)
+{
+
+
+#line 1168 "check.cog"
+     if(
+
+#line 1168 "check.cog"
+                  
+
+#line 1168 "check.cog"
+        isSameType(
+
+#line 1168 "check.cog"
+                   fromType, 
+
+#line 1168 "check.cog"
+                             toType))
+{
+
+
+#line 1170 "check.cog"
+         if(
+
+#line 1170 "check.cog"
+            toExp)
+{
+
+
+#line 1172 "check.cog"
+             
+
+#line 1172 "check.cog"
+             *
+
+#line 1172 "check.cog"
+              toExp = 
+
+#line 1172 "check.cog"
+                      fromExp;
+}
+
+
+#line 1175 "check.cog"
+         return 
+
+#line 1175 "check.cog"
+                true;
+}
+
+
+#line 1178 "check.cog"
+     if(
+
+#line 1178 "check.cog"
+                          
+
+#line 1178 "check.cog"
+               
+
+#line 1178 "check.cog"
+        isError(
+
+#line 1178 "check.cog"
+                fromType) 
+
+#line 1178 "check.cog"
+                          || 
+
+#line 1178 "check.cog"
+                                    
+
+#line 1178 "check.cog"
+                             isError(
+
+#line 1178 "check.cog"
+                                     toType))
+{
+
+
+#line 1180 "check.cog"
+         if(
+
+#line 1180 "check.cog"
+            toExp)
+{
+
+
+#line 1182 "check.cog"
+             
+
+#line 1182 "check.cog"
+             *
+
+#line 1182 "check.cog"
+              toExp = 
+
+#line 1182 "check.cog"
+                      fromExp;
+}
+
+
+#line 1184 "check.cog"
+         return 
+
+#line 1184 "check.cog"
+                true;
+}
+
+
+#line 1193 "check.cog"
+     return 
+
+#line 1193 "check.cog"
+            false;
+}
+
+
+#line 1196 "check.cog"
+ 
+
+#line 1201 "check.cog"
+        Bool tryCoerceImpl(
+
+#line 1197 "check.cog"
+                        
+
+#line 1197 "check.cog"
+            CheckContext
+
+#line 1197 "check.cog"
+                        * context, 
+
+#line 1198 "check.cog"
+               Exp fromExp, 
+
+#line 1199 "check.cog"
+                 
+
+#line 1199 "check.cog"
+              Exp
+
+#line 1199 "check.cog"
+                 * toExp, 
+
+#line 1200 "check.cog"
+              Type toType)
+{
+
+
+#line 1203 "check.cog"
+     if(auto fromOverloadedExpr = 
+
+#line 1203 "check.cog"
+                                                   
+
+#line 1203 "check.cog"
+                                 as<
+
+#line 1203 "check.cog"
+                                    OverloadedExpr> (
+
+#line 1203 "check.cog"
+                                                    fromExp))
+{
+
+
+#line 1207 "check.cog"
+                  
+
+#line 1207 "check.cog"
+                  
+
+#line 1207 "check.cog"
+         cogAssert(
+
+#line 1207 "check.cog"
+                   
+
+#line 1207 "check.cog"
+                   !
+
+#line 1207 "check.cog"
+                    "unimplemented");
+}
+else
+{
+
+
+#line 1211 "check.cog"
+         return 
+
+#line 1211 "check.cog"
+                             
+
+#line 1211 "check.cog"
+                tryCoerceImpl(
+
+#line 1212 "check.cog"
+             context, 
+
+#line 1213 "check.cog"
+             fromExp, 
+
+#line 1214 "check.cog"
+                    DEREF(
+
+#line 1214 "check.cog"
+             fromExp).type, 
+
+#line 1215 "check.cog"
+             toExp, 
+
+#line 1216 "check.cog"
+             toType);
+}
+}
+
+
+#line 1220 "check.cog"
+ 
+
+#line 1224 "check.cog"
+        Exp coerce(
+
+#line 1221 "check.cog"
+                        
+
+#line 1221 "check.cog"
+            CheckContext
+
+#line 1221 "check.cog"
+                        * context, 
+
+#line 1222 "check.cog"
+            Exp exp, 
+
+#line 1223 "check.cog"
              Type type)
 {
 
 
-#line 1166 "check.cog"
+#line 1226 "check.cog"
      
 
-#line 1166 "check.cog"
+#line 1226 "check.cog"
      
 
-#line 1166 "check.cog"
+#line 1226 "check.cog"
                   Exp result = 
 
-#line 1166 "check.cog"
+#line 1226 "check.cog"
                         nullptr;
 
 
-#line 1167 "check.cog"
+#line 1227 "check.cog"
      if(
 
-#line 1167 "check.cog"
+#line 1227 "check.cog"
                      
 
-#line 1167 "check.cog"
+#line 1227 "check.cog"
         tryCoerceImpl(
 
-#line 1168 "check.cog"
+#line 1228 "check.cog"
          context, 
 
-#line 1169 "check.cog"
+#line 1229 "check.cog"
          exp, 
 
-#line 1170 "check.cog"
+#line 1230 "check.cog"
          
 
-#line 1170 "check.cog"
+#line 1230 "check.cog"
          &
 
-#line 1170 "check.cog"
+#line 1230 "check.cog"
           result, 
 
-#line 1171 "check.cog"
+#line 1231 "check.cog"
          type))
 {
 
 
-#line 1173 "check.cog"
+#line 1233 "check.cog"
          return 
 
-#line 1173 "check.cog"
+#line 1233 "check.cog"
                 result;
 }
 
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
              
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
              
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
      diagnose(
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                      
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
               getSink(
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                       context), 
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                    DEREF(
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                 exp).loc, 
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                          kDiagnostic_cannotConvertType, 
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                                                         type, 
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                                                                  DEREF(
 
-#line 1176 "check.cog"
+#line 1236 "check.cog"
                                                                               exp).type);
 
 
-#line 1177 "check.cog"
+#line 1237 "check.cog"
      return 
 
-#line 1177 "check.cog"
+#line 1237 "check.cog"
                           
 
-#line 1177 "check.cog"
+#line 1237 "check.cog"
             createErrorExp(
 
-#line 1177 "check.cog"
+#line 1237 "check.cog"
                            context, 
 
-#line 1177 "check.cog"
+#line 1237 "check.cog"
                                     exp);
 }
 
 
-#line 1180 "check.cog"
+#line 1240 "check.cog"
  
 
-#line 1184 "check.cog"
+#line 1244 "check.cog"
         Bool canCoerce(
 
-#line 1181 "check.cog"
+#line 1241 "check.cog"
                         
 
-#line 1181 "check.cog"
+#line 1241 "check.cog"
             CheckContext
 
-#line 1181 "check.cog"
+#line 1241 "check.cog"
                         * context, 
 
-#line 1182 "check.cog"
+#line 1242 "check.cog"
             Exp exp, 
 
-#line 1183 "check.cog"
+#line 1243 "check.cog"
              Type type)
 {
 
 
-#line 1186 "check.cog"
+#line 1246 "check.cog"
      return 
 
-#line 1186 "check.cog"
+#line 1246 "check.cog"
                          
 
-#line 1186 "check.cog"
+#line 1246 "check.cog"
             tryCoerceImpl(
 
-#line 1187 "check.cog"
+#line 1247 "check.cog"
          context, 
 
-#line 1188 "check.cog"
+#line 1248 "check.cog"
          exp, 
 
-#line 1189 "check.cog"
+#line 1249 "check.cog"
          nullptr, 
 
-#line 1190 "check.cog"
+#line 1250 "check.cog"
          type);
 }
 
 
-#line 1228 "check.cog"
+#line 1288 "check.cog"
  
 
-#line 1231 "check.cog"
+#line 1291 "check.cog"
         Bool checkOverloadCandidateArity(
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
                                  
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
            OverloadResolveContext
 
-#line 1229 "check.cog"
+#line 1289 "check.cog"
                                  * context, 
 
-#line 1230 "check.cog"
+#line 1290 "check.cog"
                 Ref<
 
-#line 1230 "check.cog"
+#line 1290 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
      
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
      auto args = 
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
                 
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
                 &
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
                                DEREF(
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
                         DEREF(
 
-#line 1233 "check.cog"
+#line 1293 "check.cog"
                  context).appExp).args;
 
 
-#line 1234 "check.cog"
+#line 1294 "check.cog"
      
 
-#line 1234 "check.cog"
+#line 1294 "check.cog"
      auto argCursor = 
 
-#line 1234 "check.cog"
+#line 1294 "check.cog"
                                
 
-#line 1234 "check.cog"
+#line 1294 "check.cog"
                          DEREF(
 
-#line 1234 "check.cog"
+#line 1294 "check.cog"
                      args).begin();
 
 
-#line 1235 "check.cog"
+#line 1295 "check.cog"
      
 
-#line 1235 "check.cog"
+#line 1295 "check.cog"
      auto argEnd = 
 
-#line 1235 "check.cog"
+#line 1295 "check.cog"
                           
 
-#line 1235 "check.cog"
+#line 1295 "check.cog"
                       DEREF(
 
-#line 1235 "check.cog"
+#line 1295 "check.cog"
                   args).end();
 
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
      if(auto funcDeclRef = 
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
                                           
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
                           as<
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
                              FuncDeclBase> (
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
                                                     DEREF(
 
-#line 1237 "check.cog"
+#line 1297 "check.cog"
                                            candidate).declRef))
 {
 
 
-#line 1239 "check.cog"
+#line 1299 "check.cog"
          for(auto dd : 
 
-#line 1239 "check.cog"
+#line 1299 "check.cog"
                                
 
-#line 1239 "check.cog"
+#line 1299 "check.cog"
                        getDecls(
 
-#line 1239 "check.cog"
+#line 1299 "check.cog"
                                 funcDeclRef))
 {
 {
 
 
-#line 1241 "check.cog"
+#line 1301 "check.cog"
              if(auto paramDeclRef = 
 
-#line 1241 "check.cog"
+#line 1301 "check.cog"
                                                 
 
-#line 1241 "check.cog"
+#line 1301 "check.cog"
                                    as<
 
-#line 1241 "check.cog"
+#line 1301 "check.cog"
                                       ParamDecl> (
 
-#line 1241 "check.cog"
+#line 1301 "check.cog"
                                                  dd))
 {
 
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                  if(
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                     
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                     !
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                      (
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                                 
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                       argCursor 
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                                 != 
 
-#line 1243 "check.cog"
+#line 1303 "check.cog"
                                    argEnd))
 {
 
 
-#line 1246 "check.cog"
+#line 1306 "check.cog"
                      return 
 
-#line 1246 "check.cog"
+#line 1306 "check.cog"
                             false;
 }
 
 
-#line 1249 "check.cog"
+#line 1309 "check.cog"
                  
 
-#line 1249 "check.cog"
+#line 1309 "check.cog"
                  
 
-#line 1249 "check.cog"
+#line 1309 "check.cog"
                  ++
 
-#line 1249 "check.cog"
+#line 1309 "check.cog"
                    argCursor;
 }
 else
@@ -18383,336 +19096,336 @@ else
 }
 
 
-#line 1255 "check.cog"
+#line 1315 "check.cog"
          if(
 
-#line 1255 "check.cog"
+#line 1315 "check.cog"
                       
 
-#line 1255 "check.cog"
+#line 1315 "check.cog"
             argCursor 
 
-#line 1255 "check.cog"
+#line 1315 "check.cog"
                       != 
 
-#line 1255 "check.cog"
+#line 1315 "check.cog"
                          argEnd)
 {
 
 
-#line 1258 "check.cog"
+#line 1318 "check.cog"
              return 
 
-#line 1258 "check.cog"
+#line 1318 "check.cog"
                     false;
 }
 
 
-#line 1261 "check.cog"
+#line 1321 "check.cog"
          return 
 
-#line 1261 "check.cog"
+#line 1321 "check.cog"
                 true;
 }
 else
 {
 
 
-#line 1266 "check.cog"
+#line 1326 "check.cog"
          return 
 
-#line 1266 "check.cog"
+#line 1326 "check.cog"
                 false;
 }
 }
 
 
-#line 1270 "check.cog"
+#line 1330 "check.cog"
  
 
-#line 1273 "check.cog"
+#line 1333 "check.cog"
         Bool checkOverloadCandidateTypes(
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
                                  
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
            OverloadResolveContext
 
-#line 1271 "check.cog"
+#line 1331 "check.cog"
                                  * context, 
 
-#line 1272 "check.cog"
+#line 1332 "check.cog"
                 Ref<
 
-#line 1272 "check.cog"
+#line 1332 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
      
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
      auto args = 
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
                 
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
                 &
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
                                DEREF(
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
                         DEREF(
 
-#line 1275 "check.cog"
+#line 1335 "check.cog"
                  context).appExp).args;
 
 
-#line 1276 "check.cog"
+#line 1336 "check.cog"
      
 
-#line 1276 "check.cog"
+#line 1336 "check.cog"
      auto argCursor = 
 
-#line 1276 "check.cog"
+#line 1336 "check.cog"
                                
 
-#line 1276 "check.cog"
+#line 1336 "check.cog"
                          DEREF(
 
-#line 1276 "check.cog"
+#line 1336 "check.cog"
                      args).begin();
 
 
-#line 1277 "check.cog"
+#line 1337 "check.cog"
      
 
-#line 1277 "check.cog"
+#line 1337 "check.cog"
      auto argEnd = 
 
-#line 1277 "check.cog"
+#line 1337 "check.cog"
                           
 
-#line 1277 "check.cog"
+#line 1337 "check.cog"
                       DEREF(
 
-#line 1277 "check.cog"
+#line 1337 "check.cog"
                   args).end();
 
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
      if(auto funcDeclRef = 
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
                                           
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
                           as<
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
                              FuncDeclBase> (
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
                                                     DEREF(
 
-#line 1279 "check.cog"
+#line 1339 "check.cog"
                                            candidate).declRef))
 {
 
 
-#line 1281 "check.cog"
+#line 1341 "check.cog"
          for(auto dd : 
 
-#line 1281 "check.cog"
+#line 1341 "check.cog"
                                
 
-#line 1281 "check.cog"
+#line 1341 "check.cog"
                        getDecls(
 
-#line 1281 "check.cog"
+#line 1341 "check.cog"
                                 funcDeclRef))
 {
 {
 
 
-#line 1283 "check.cog"
+#line 1343 "check.cog"
              if(auto paramDeclRef = 
 
-#line 1283 "check.cog"
+#line 1343 "check.cog"
                                                 
 
-#line 1283 "check.cog"
+#line 1343 "check.cog"
                                    as<
 
-#line 1283 "check.cog"
+#line 1343 "check.cog"
                                       ParamDecl> (
 
-#line 1283 "check.cog"
+#line 1343 "check.cog"
                                                  dd))
 {
 
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                  if(
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                     
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                     !
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                      (
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                                 
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                       argCursor 
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                                 != 
 
-#line 1285 "check.cog"
+#line 1345 "check.cog"
                                    argEnd))
 {
 
 
-#line 1287 "check.cog"
+#line 1347 "check.cog"
                               
 
-#line 1287 "check.cog"
+#line 1347 "check.cog"
                               
 
-#line 1287 "check.cog"
+#line 1347 "check.cog"
                      cogAssert(
 
-#line 1287 "check.cog"
+#line 1347 "check.cog"
                                false);
 
 
-#line 1289 "check.cog"
+#line 1349 "check.cog"
                      return 
 
-#line 1289 "check.cog"
+#line 1349 "check.cog"
                             false;
 }
 
 
-#line 1292 "check.cog"
+#line 1352 "check.cog"
                  
 
-#line 1292 "check.cog"
+#line 1352 "check.cog"
                  auto arg = 
 
-#line 1292 "check.cog"
+#line 1352 "check.cog"
                            
 
-#line 1292 "check.cog"
+#line 1352 "check.cog"
                            *
 
-#line 1292 "check.cog"
+#line 1352 "check.cog"
                             argCursor;
 
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                  
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                  auto argExpr = 
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                                
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                                &
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                                    DEREF(
 
-#line 1293 "check.cog"
+#line 1353 "check.cog"
                                 arg).exp;
 
 
-#line 1295 "check.cog"
+#line 1355 "check.cog"
                  
 
-#line 1295 "check.cog"
+#line 1355 "check.cog"
                  auto paramType = 
 
-#line 1295 "check.cog"
+#line 1355 "check.cog"
                                         
 
-#line 1295 "check.cog"
+#line 1355 "check.cog"
                                  getType(
 
-#line 1295 "check.cog"
+#line 1355 "check.cog"
                                          paramDeclRef);
 
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                  if(
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                                  
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                            DEREF(
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                     context).mode 
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                                  == 
 
-#line 1297 "check.cog"
+#line 1357 "check.cog"
                                     kOverloadResolveMode_justTrying)
 {
 
 
-#line 1299 "check.cog"
+#line 1359 "check.cog"
                      if(
 
-#line 1299 "check.cog"
+#line 1359 "check.cog"
                         
 
-#line 1299 "check.cog"
+#line 1359 "check.cog"
                         !
 
-#line 1299 "check.cog"
+#line 1359 "check.cog"
                                   
 
-#line 1299 "check.cog"
+#line 1359 "check.cog"
                          canCoerce(
 
-#line 1300 "check.cog"
+#line 1360 "check.cog"
                                 DEREF(
 
-#line 1300 "check.cog"
+#line 1360 "check.cog"
                          context).checkContext, 
 
-#line 1301 "check.cog"
+#line 1361 "check.cog"
                          
 
-#line 1301 "check.cog"
+#line 1361 "check.cog"
                          *
 
-#line 1301 "check.cog"
+#line 1361 "check.cog"
                           argExpr, 
 
-#line 1302 "check.cog"
+#line 1362 "check.cog"
                          paramType))
 {
 
 
-#line 1304 "check.cog"
+#line 1364 "check.cog"
                          return 
 
-#line 1304 "check.cog"
+#line 1364 "check.cog"
                                 false;
 }
 }
@@ -18720,51 +19433,51 @@ else
 {
 
 
-#line 1309 "check.cog"
+#line 1369 "check.cog"
                      
 
-#line 1309 "check.cog"
+#line 1369 "check.cog"
                      *
 
-#line 1309 "check.cog"
+#line 1369 "check.cog"
                       argExpr = 
 
-#line 1309 "check.cog"
+#line 1369 "check.cog"
                                       
 
-#line 1309 "check.cog"
+#line 1369 "check.cog"
                                 coerce(
 
-#line 1310 "check.cog"
+#line 1370 "check.cog"
                                 DEREF(
 
-#line 1310 "check.cog"
+#line 1370 "check.cog"
                          context).checkContext, 
 
-#line 1311 "check.cog"
+#line 1371 "check.cog"
                          
 
-#line 1311 "check.cog"
+#line 1371 "check.cog"
                          *
 
-#line 1311 "check.cog"
+#line 1371 "check.cog"
                           argExpr, 
 
-#line 1312 "check.cog"
+#line 1372 "check.cog"
                          paramType);
 }
 
 
-#line 1315 "check.cog"
+#line 1375 "check.cog"
                  
 
-#line 1315 "check.cog"
+#line 1375 "check.cog"
                  
 
-#line 1315 "check.cog"
+#line 1375 "check.cog"
                  ++
 
-#line 1315 "check.cog"
+#line 1375 "check.cog"
                    argCursor;
 }
 else
@@ -18774,566 +19487,566 @@ else
 }
 
 
-#line 1321 "check.cog"
+#line 1381 "check.cog"
          if(
 
-#line 1321 "check.cog"
+#line 1381 "check.cog"
                       
 
-#line 1321 "check.cog"
+#line 1381 "check.cog"
             argCursor 
 
-#line 1321 "check.cog"
+#line 1381 "check.cog"
                       != 
 
-#line 1321 "check.cog"
+#line 1381 "check.cog"
                          argEnd)
 {
 
 
-#line 1323 "check.cog"
+#line 1383 "check.cog"
                       
 
-#line 1323 "check.cog"
+#line 1383 "check.cog"
                       
 
-#line 1323 "check.cog"
+#line 1383 "check.cog"
              cogAssert(
 
-#line 1323 "check.cog"
+#line 1383 "check.cog"
                        false);
 
 
-#line 1325 "check.cog"
+#line 1385 "check.cog"
              return 
 
-#line 1325 "check.cog"
+#line 1385 "check.cog"
                     false;
 }
 
 
-#line 1328 "check.cog"
+#line 1388 "check.cog"
          return 
 
-#line 1328 "check.cog"
+#line 1388 "check.cog"
                 true;
 }
 else
 {
 
 
-#line 1333 "check.cog"
+#line 1393 "check.cog"
          return 
 
-#line 1333 "check.cog"
+#line 1393 "check.cog"
                 false;
 }
 }
 
 
-#line 1337 "check.cog"
+#line 1397 "check.cog"
  
 
-#line 1340 "check.cog"
+#line 1400 "check.cog"
         Bool checkOverloadCandidateDirections(
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
                                     
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
               OverloadResolveContext
 
-#line 1338 "check.cog"
+#line 1398 "check.cog"
                                     * context, 
 
-#line 1339 "check.cog"
+#line 1399 "check.cog"
                 Ref<
 
-#line 1339 "check.cog"
+#line 1399 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1342 "check.cog"
+#line 1402 "check.cog"
      return 
 
-#line 1342 "check.cog"
+#line 1402 "check.cog"
             true;
 }
 
 
-#line 1345 "check.cog"
+#line 1405 "check.cog"
  void checkOverloadCandidateImpl(
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
                                     
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
               OverloadResolveContext
 
-#line 1346 "check.cog"
+#line 1406 "check.cog"
                                     * context, 
 
-#line 1347 "check.cog"
+#line 1407 "check.cog"
                 Ref<
 
-#line 1347 "check.cog"
+#line 1407 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1350 "check.cog"
+#line 1410 "check.cog"
               DEREF(
 
-#line 1350 "check.cog"
+#line 1410 "check.cog"
      candidate).state = 
 
-#line 1350 "check.cog"
+#line 1410 "check.cog"
                        kOverloadCandidateState_Unchecked;
 
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
      if(
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
         
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
         !
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
                                     
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
          checkOverloadCandidateArity(
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
                                      context, 
 
-#line 1351 "check.cog"
+#line 1411 "check.cog"
                                               candidate))
 {
 
 
-#line 1352 "check.cog"
+#line 1412 "check.cog"
          return;
 }
 
 
-#line 1353 "check.cog"
+#line 1413 "check.cog"
               DEREF(
 
-#line 1353 "check.cog"
+#line 1413 "check.cog"
      candidate).state = 
 
-#line 1353 "check.cog"
+#line 1413 "check.cog"
                        kOverloadCandidateState_CheckedArity;
 
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
      if(
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
         
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
         !
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
                                     
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
          checkOverloadCandidateTypes(
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
                                      context, 
 
-#line 1354 "check.cog"
+#line 1414 "check.cog"
                                               candidate))
 {
 
 
-#line 1355 "check.cog"
+#line 1415 "check.cog"
          return;
 }
 
 
-#line 1356 "check.cog"
+#line 1416 "check.cog"
               DEREF(
 
-#line 1356 "check.cog"
+#line 1416 "check.cog"
      candidate).state = 
 
-#line 1356 "check.cog"
+#line 1416 "check.cog"
                        kOverloadCandidateState_CheckedTypes;
 
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
      if(
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
         
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
         !
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
                                          
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
          checkOverloadCandidateDirections(
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
                                           context, 
 
-#line 1357 "check.cog"
+#line 1417 "check.cog"
                                                    candidate))
 {
 
 
-#line 1358 "check.cog"
+#line 1418 "check.cog"
          return;
 }
 
 
-#line 1359 "check.cog"
+#line 1419 "check.cog"
               DEREF(
 
-#line 1359 "check.cog"
+#line 1419 "check.cog"
      candidate).state = 
 
-#line 1359 "check.cog"
+#line 1419 "check.cog"
                        kOverloadCandidateState_Applicable;
 }
 
 
-#line 1364 "check.cog"
+#line 1424 "check.cog"
  void checkOverloadCandidate(
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
                                     
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
               OverloadResolveContext
 
-#line 1365 "check.cog"
+#line 1425 "check.cog"
                                     * context, 
 
-#line 1366 "check.cog"
+#line 1426 "check.cog"
                 Ref<
 
-#line 1366 "check.cog"
+#line 1426 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1368 "check.cog"
+#line 1428 "check.cog"
                                
 
-#line 1368 "check.cog"
+#line 1428 "check.cog"
                                
 
-#line 1368 "check.cog"
+#line 1428 "check.cog"
      checkOverloadCandidateImpl(
 
-#line 1368 "check.cog"
+#line 1428 "check.cog"
                                 context, 
 
-#line 1368 "check.cog"
+#line 1428 "check.cog"
                                          candidate);
 }
 
 
-#line 1372 "check.cog"
+#line 1432 "check.cog"
  
 
-#line 1375 "check.cog"
+#line 1435 "check.cog"
         Int compareCandidates(
 
-#line 1373 "check.cog"
+#line 1433 "check.cog"
         Ref<
 
-#line 1373 "check.cog"
+#line 1433 "check.cog"
             OverloadCandidate>  left, 
 
-#line 1374 "check.cog"
+#line 1434 "check.cog"
          Ref<
 
-#line 1374 "check.cog"
+#line 1434 "check.cog"
              OverloadCandidate>  right)
 {
 
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
      if(
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
                    
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
             DEREF(
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
         left).state 
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
                    != 
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
                            DEREF(
 
-#line 1378 "check.cog"
+#line 1438 "check.cog"
                       right).state)
 {
 
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
          return 
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                  
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                    
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                 int(
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                          DEREF(
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                     right).state) 
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                  - 
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                       
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                    int(
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                            DEREF(
 
-#line 1379 "check.cog"
+#line 1439 "check.cog"
                                        left).state);
 }
 
 
-#line 1384 "check.cog"
+#line 1444 "check.cog"
      return 
 
-#line 1384 "check.cog"
+#line 1444 "check.cog"
             0;
 }
 
 
-#line 1387 "check.cog"
+#line 1447 "check.cog"
  void addCheckedOverloadCandidate(
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
                                     
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
               OverloadResolveContext
 
-#line 1388 "check.cog"
+#line 1448 "check.cog"
                                     * context, 
 
-#line 1389 "check.cog"
+#line 1449 "check.cog"
                 Ref<
 
-#line 1389 "check.cog"
+#line 1449 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1396 "check.cog"
+#line 1456 "check.cog"
      
 
-#line 1396 "check.cog"
+#line 1456 "check.cog"
      
 
-#line 1396 "check.cog"
+#line 1456 "check.cog"
                      Bool anyBetter = 
 
-#line 1396 "check.cog"
+#line 1456 "check.cog"
                             false;
 
 
-#line 1397 "check.cog"
+#line 1457 "check.cog"
      
 
-#line 1397 "check.cog"
+#line 1457 "check.cog"
      
 
-#line 1397 "check.cog"
+#line 1457 "check.cog"
                     Bool anyWorse = 
 
-#line 1397 "check.cog"
+#line 1457 "check.cog"
                            false;
 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
      {
 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
          
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
          
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                   UInt ii = 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                          0;
 for(;
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                             ii 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                < 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                                             
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                                    DEREF(
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                         DEREF(
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                  context).candidates).getCount();
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                                                 
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                                                 ++
 
-#line 1401 "check.cog"
+#line 1461 "check.cog"
                                                                   ii)
 {
 {
 
 
-#line 1403 "check.cog"
+#line 1463 "check.cog"
          
 
-#line 1403 "check.cog"
+#line 1463 "check.cog"
          auto compareResult = 
 
-#line 1403 "check.cog"
+#line 1463 "check.cog"
                                               
 
-#line 1403 "check.cog"
+#line 1463 "check.cog"
                              compareCandidates(
 
-#line 1404 "check.cog"
+#line 1464 "check.cog"
              candidate, 
 
-#line 1405 "check.cog"
+#line 1465 "check.cog"
                                
 
-#line 1405 "check.cog"
+#line 1465 "check.cog"
                     DEREF(
 
-#line 1405 "check.cog"
+#line 1465 "check.cog"
              context).candidates[
 
-#line 1405 "check.cog"
+#line 1465 "check.cog"
                                 ii]);
 
 
-#line 1409 "check.cog"
+#line 1469 "check.cog"
          if(
 
-#line 1409 "check.cog"
+#line 1469 "check.cog"
                           
 
-#line 1409 "check.cog"
+#line 1469 "check.cog"
             compareResult 
 
-#line 1409 "check.cog"
+#line 1469 "check.cog"
                           < 
 
-#line 1409 "check.cog"
+#line 1469 "check.cog"
                             0)
 {
 
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
                                             
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
                                             
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
                                DEREF(
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
                     DEREF(
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
              context).candidates).fastRemoveAt(
 
-#line 1413 "check.cog"
+#line 1473 "check.cog"
                                              ii);
 
 
-#line 1415 "check.cog"
+#line 1475 "check.cog"
              anyBetter = 
 
-#line 1415 "check.cog"
+#line 1475 "check.cog"
                          true;
 
 
-#line 1418 "check.cog"
+#line 1478 "check.cog"
              
 
-#line 1418 "check.cog"
+#line 1478 "check.cog"
              
 
-#line 1418 "check.cog"
+#line 1478 "check.cog"
              --
 
-#line 1418 "check.cog"
+#line 1478 "check.cog"
                ii;
 }
 else
 {
 
 
-#line 1420 "check.cog"
+#line 1480 "check.cog"
               if(
 
-#line 1420 "check.cog"
+#line 1480 "check.cog"
                                
 
-#line 1420 "check.cog"
+#line 1480 "check.cog"
                  compareResult 
 
-#line 1420 "check.cog"
+#line 1480 "check.cog"
                                > 
 
-#line 1420 "check.cog"
+#line 1480 "check.cog"
                                  0)
 {
 
 
-#line 1424 "check.cog"
+#line 1484 "check.cog"
              anyWorse = 
 
-#line 1424 "check.cog"
+#line 1484 "check.cog"
                         true;
 }
 }
@@ -19341,1069 +20054,1119 @@ else
 }}
 
 
-#line 1428 "check.cog"
+#line 1488 "check.cog"
      if(
 
-#line 1428 "check.cog"
+#line 1488 "check.cog"
         anyWorse)
 {
 
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
                   
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
                   
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
          cogAssert(
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
                    
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
                    !
 
-#line 1430 "check.cog"
+#line 1490 "check.cog"
                     anyBetter);
 
 
-#line 1435 "check.cog"
+#line 1495 "check.cog"
          return;
 }
 
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
                               
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
                               
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
                        DEREF(
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
             DEREF(
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
      context).candidates).append(
 
-#line 1439 "check.cog"
+#line 1499 "check.cog"
                                candidate);
 }
 
 
-#line 1442 "check.cog"
+#line 1502 "check.cog"
  void addOverloadCandidate(
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
                                     
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
               OverloadResolveContext
 
-#line 1443 "check.cog"
+#line 1503 "check.cog"
                                     * context, 
 
-#line 1444 "check.cog"
+#line 1504 "check.cog"
                 Ref<
 
-#line 1444 "check.cog"
+#line 1504 "check.cog"
                     OverloadCandidate>  candidate)
 {
 
 
-#line 1446 "check.cog"
+#line 1506 "check.cog"
                            
 
-#line 1446 "check.cog"
+#line 1506 "check.cog"
                            
 
-#line 1446 "check.cog"
+#line 1506 "check.cog"
      checkOverloadCandidate(
 
-#line 1446 "check.cog"
+#line 1506 "check.cog"
                             context, 
 
-#line 1446 "check.cog"
+#line 1506 "check.cog"
                                      candidate);
 
 
-#line 1447 "check.cog"
+#line 1507 "check.cog"
                                 
 
-#line 1447 "check.cog"
+#line 1507 "check.cog"
                                 
 
-#line 1447 "check.cog"
+#line 1507 "check.cog"
      addCheckedOverloadCandidate(
 
-#line 1447 "check.cog"
+#line 1507 "check.cog"
                                  context, 
 
-#line 1447 "check.cog"
+#line 1507 "check.cog"
                                           candidate);
 }
 
 
-#line 463 "syntax.cog"
+#line 465 "syntax.cog"
  
 
-#line 1450 "check.cog"
+#line 1510 "check.cog"
  void addSubscriptOverloadCandidate(
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
                                     
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
               OverloadResolveContext
 
-#line 1451 "check.cog"
+#line 1511 "check.cog"
                                     * context, 
 
-#line 1452 "check.cog"
+#line 1512 "check.cog"
               DeclRefValImpl<
 
-#line 1452 "check.cog"
+#line 1512 "check.cog"
                              SubscriptDecl>  declRef)
 {
 
 
-#line 1456 "check.cog"
+#line 1516 "check.cog"
+            
+
+#line 1516 "check.cog"
+            
+
+#line 1516 "check.cog"
+  ensureDecl(
+
+#line 1516 "check.cog"
+                    DEREF(
+
+#line 1516 "check.cog"
+             context).checkContext, 
+
+#line 1516 "check.cog"
+                                                  
+
+#line 1516 "check.cog"
+                                          DEREF(
+
+#line 1516 "check.cog"
+                                   declRef).getDecl());
+
+
+#line 1518 "check.cog"
      
 
-#line 1456 "check.cog"
+#line 1518 "check.cog"
      
 
-#line 1456 "check.cog"
+#line 1518 "check.cog"
                     OverloadCandidate candidate;
 
 
-#line 1457 "check.cog"
+#line 1519 "check.cog"
               DEREF(
 
-#line 1457 "check.cog"
+#line 1519 "check.cog"
      candidate).declRef = 
 
-#line 1457 "check.cog"
+#line 1519 "check.cog"
                          declRef;
 
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
               DEREF(
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
      candidate).resultType = 
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
                                          
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
                             getResultType(
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
                                                  DEREF(
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
                                           context).checkContext, 
 
-#line 1458 "check.cog"
+#line 1520 "check.cog"
                                                                 declRef);
 
 
-#line 1460 "check.cog"
+#line 1522 "check.cog"
                          
 
-#line 1460 "check.cog"
+#line 1522 "check.cog"
                          
 
-#line 1460 "check.cog"
+#line 1522 "check.cog"
      addOverloadCandidate(
 
-#line 1460 "check.cog"
+#line 1522 "check.cog"
                           context, 
 
-#line 1460 "check.cog"
+#line 1522 "check.cog"
                                    candidate);
 }
 
 
-#line 1463 "check.cog"
+#line 1525 "check.cog"
  void addFuncOverloadCandidate(
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
                                     
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
               OverloadResolveContext
 
-#line 1464 "check.cog"
+#line 1526 "check.cog"
                                     * context, 
 
-#line 1465 "check.cog"
+#line 1527 "check.cog"
               DeclRefValImpl<
 
-#line 1465 "check.cog"
+#line 1527 "check.cog"
                              FuncDeclBase>  declRef)
 {
 
 
-#line 1467 "check.cog"
+#line 1529 "check.cog"
+            
+
+#line 1529 "check.cog"
+            
+
+#line 1529 "check.cog"
+  ensureDecl(
+
+#line 1529 "check.cog"
+                    DEREF(
+
+#line 1529 "check.cog"
+             context).checkContext, 
+
+#line 1529 "check.cog"
+                                                  
+
+#line 1529 "check.cog"
+                                          DEREF(
+
+#line 1529 "check.cog"
+                                   declRef).getDecl());
+
+
+#line 1531 "check.cog"
      
 
-#line 1467 "check.cog"
+#line 1531 "check.cog"
      
 
-#line 1467 "check.cog"
+#line 1531 "check.cog"
                     OverloadCandidate candidate;
 
 
-#line 1468 "check.cog"
+#line 1532 "check.cog"
               DEREF(
 
-#line 1468 "check.cog"
+#line 1532 "check.cog"
      candidate).declRef = 
 
-#line 1468 "check.cog"
+#line 1532 "check.cog"
                          declRef;
 
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
               DEREF(
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
      candidate).resultType = 
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
                                          
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
                             getResultType(
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
                                                  DEREF(
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
                                           context).checkContext, 
 
-#line 1469 "check.cog"
+#line 1533 "check.cog"
                                                                 declRef);
 
 
-#line 1471 "check.cog"
+#line 1535 "check.cog"
                          
 
-#line 1471 "check.cog"
+#line 1535 "check.cog"
                          
 
-#line 1471 "check.cog"
+#line 1535 "check.cog"
      addOverloadCandidate(
 
-#line 1471 "check.cog"
+#line 1535 "check.cog"
                           context, 
 
-#line 1471 "check.cog"
+#line 1535 "check.cog"
                                    candidate);
 }
 
 
-#line 467 "syntax.cog"
+#line 469 "syntax.cog"
  
 
-#line 1474 "check.cog"
+#line 1538 "check.cog"
  void addInitializerOverloadCandidate(
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                                      
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                OverloadResolveContext
 
-#line 1475 "check.cog"
+#line 1539 "check.cog"
                                      * context, 
 
-#line 1476 "check.cog"
+#line 1540 "check.cog"
              Type type, 
 
-#line 1477 "check.cog"
+#line 1541 "check.cog"
                DeclRefValImpl<
 
-#line 1477 "check.cog"
+#line 1541 "check.cog"
                               InitializerDecl>  declRef)
 {
 
 
-#line 1479 "check.cog"
+#line 1543 "check.cog"
      
 
-#line 1479 "check.cog"
+#line 1543 "check.cog"
      
 
-#line 1479 "check.cog"
+#line 1543 "check.cog"
                     OverloadCandidate candidate;
 
 
-#line 1480 "check.cog"
+#line 1544 "check.cog"
               DEREF(
 
-#line 1480 "check.cog"
+#line 1544 "check.cog"
      candidate).declRef = 
 
-#line 1480 "check.cog"
+#line 1544 "check.cog"
                          declRef;
 
 
-#line 1481 "check.cog"
+#line 1545 "check.cog"
               DEREF(
 
-#line 1481 "check.cog"
+#line 1545 "check.cog"
      candidate).resultType = 
 
-#line 1481 "check.cog"
+#line 1545 "check.cog"
                             type;
 
 
-#line 1482 "check.cog"
+#line 1546 "check.cog"
                          
 
-#line 1482 "check.cog"
+#line 1546 "check.cog"
                          
 
-#line 1482 "check.cog"
+#line 1546 "check.cog"
      addOverloadCandidate(
 
-#line 1482 "check.cog"
+#line 1546 "check.cog"
                           context, 
 
-#line 1482 "check.cog"
+#line 1546 "check.cog"
                                    candidate);
 }
 
 
-#line 1485 "check.cog"
+#line 1549 "check.cog"
  
 
-#line 1490 "check.cog"
+#line 1554 "check.cog"
         Exp createDeclRefExp(
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
                        
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
            CheckContext
 
-#line 1486 "check.cog"
+#line 1550 "check.cog"
                        * context, 
 
-#line 1487 "check.cog"
+#line 1551 "check.cog"
            CompactDeclRef declRef, 
 
-#line 1488 "check.cog"
+#line 1552 "check.cog"
        SourceLoc loc, 
 
-#line 1489 "check.cog"
+#line 1553 "check.cog"
            Exp baseExp)
 {
 
 
-#line 1492 "check.cog"
+#line 1556 "check.cog"
      
 
-#line 1492 "check.cog"
+#line 1556 "check.cog"
      
 
-#line 1492 "check.cog"
+#line 1556 "check.cog"
                      DeclRefExp declRefExp = 
 
-#line 1492 "check.cog"
+#line 1556 "check.cog"
                                   nullptr;
 
 
-#line 1493 "check.cog"
+#line 1557 "check.cog"
      if(
 
-#line 1493 "check.cog"
+#line 1557 "check.cog"
         baseExp)
 {
 
 
-#line 1495 "check.cog"
+#line 1559 "check.cog"
          
 
-#line 1495 "check.cog"
+#line 1559 "check.cog"
          auto memberRefExp = 
 
-#line 1495 "check.cog"
+#line 1559 "check.cog"
                                                    
 
-#line 1495 "check.cog"
+#line 1559 "check.cog"
                             createObject<
 
-#line 1495 "check.cog"
+#line 1559 "check.cog"
                                          MemberExp> ();
 
 
-#line 1496 "check.cog"
+#line 1560 "check.cog"
                      DEREF(
 
-#line 1496 "check.cog"
+#line 1560 "check.cog"
          memberRefExp).base = 
 
-#line 1496 "check.cog"
+#line 1560 "check.cog"
                              baseExp;
 
 
-#line 1497 "check.cog"
+#line 1561 "check.cog"
          declRefExp = 
 
-#line 1497 "check.cog"
+#line 1561 "check.cog"
                       memberRefExp;
 }
 else
 {
 
 
-#line 1501 "check.cog"
+#line 1565 "check.cog"
          declRefExp = 
 
-#line 1501 "check.cog"
+#line 1565 "check.cog"
                                               
 
-#line 1501 "check.cog"
+#line 1565 "check.cog"
                       createObject<
 
-#line 1501 "check.cog"
+#line 1565 "check.cog"
                                    DeclRefExp> ();
 }
 
 
-#line 1504 "check.cog"
+#line 1568 "check.cog"
                DEREF(
 
-#line 1504 "check.cog"
+#line 1568 "check.cog"
      declRefExp).loc = 
 
-#line 1504 "check.cog"
+#line 1568 "check.cog"
                       loc;
 
 
-#line 1505 "check.cog"
+#line 1569 "check.cog"
                DEREF(
 
-#line 1505 "check.cog"
+#line 1569 "check.cog"
      declRefExp).declRef = 
 
-#line 1505 "check.cog"
+#line 1569 "check.cog"
                           declRef;
 
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
                DEREF(
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
      declRefExp).type = 
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
                                         
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
                        getTypeForDeclRef(
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
                                          context, 
 
-#line 1506 "check.cog"
+#line 1570 "check.cog"
                                                   declRef);
 
 
-#line 1507 "check.cog"
+#line 1571 "check.cog"
      return 
 
-#line 1507 "check.cog"
+#line 1571 "check.cog"
             declRefExp;
 }
 
 
-#line 1510 "check.cog"
+#line 1574 "check.cog"
  
 
-#line 1515 "check.cog"
+#line 1579 "check.cog"
         Exp createDeclRefExp(
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
                        
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
            CheckContext
 
-#line 1511 "check.cog"
+#line 1575 "check.cog"
                        * context, 
 
-#line 1512 "check.cog"
+#line 1576 "check.cog"
            DeclRefVal declRef, 
 
-#line 1513 "check.cog"
+#line 1577 "check.cog"
        SourceLoc loc, 
 
-#line 1514 "check.cog"
+#line 1578 "check.cog"
            Exp baseExp)
 {
 
 
-#line 1518 "check.cog"
+#line 1582 "check.cog"
      
 
-#line 1518 "check.cog"
+#line 1582 "check.cog"
      auto decl = 
 
-#line 1518 "check.cog"
+#line 1582 "check.cog"
                                
 
-#line 1518 "check.cog"
+#line 1582 "check.cog"
                        DEREF(
 
-#line 1518 "check.cog"
+#line 1582 "check.cog"
                 declRef).getDecl();
 
 
-#line 1519 "check.cog"
+#line 1583 "check.cog"
      if(auto specializations = 
 
-#line 1519 "check.cog"
+#line 1583 "check.cog"
                                                         
 
-#line 1519 "check.cog"
+#line 1583 "check.cog"
                                      DEREF(
 
-#line 1519 "check.cog"
+#line 1583 "check.cog"
                               declRef).getSpecializations())
 {
 
 
-#line 1521 "check.cog"
+#line 1585 "check.cog"
          
 
-#line 1521 "check.cog"
+#line 1585 "check.cog"
          auto specializedDecl = 
 
-#line 1521 "check.cog"
+#line 1585 "check.cog"
                                                             
 
-#line 1521 "check.cog"
+#line 1585 "check.cog"
                                createObject<
 
-#line 1521 "check.cog"
+#line 1585 "check.cog"
                                             SpecializedDecl> ();
 
 
-#line 1522 "check.cog"
+#line 1586 "check.cog"
                         DEREF(
 
-#line 1522 "check.cog"
+#line 1586 "check.cog"
          specializedDecl).decl = 
 
-#line 1522 "check.cog"
+#line 1586 "check.cog"
                                 decl;
 
 
-#line 1523 "check.cog"
+#line 1587 "check.cog"
                         DEREF(
 
-#line 1523 "check.cog"
+#line 1587 "check.cog"
          specializedDecl).specializations = 
 
-#line 1523 "check.cog"
+#line 1587 "check.cog"
                                            specializations;
 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
          return 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                 createDeclRefExp(
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                  context, 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                                         
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                           CompactDeclRef(
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                                          specializedDecl), 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                                                            loc, 
 
-#line 1525 "check.cog"
+#line 1589 "check.cog"
                                                                                 baseExp);
 }
 else
 {
 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
          return 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                 createDeclRefExp(
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                  context, 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                                         
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                           CompactDeclRef(
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                                          decl), 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                                                 loc, 
 
-#line 1529 "check.cog"
+#line 1593 "check.cog"
                                                                      baseExp);
 }
 }
 
 
-#line 1534 "check.cog"
+#line 1598 "check.cog"
  
 
-#line 1538 "check.cog"
+#line 1602 "check.cog"
         Exp createDeclRefExp(
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
                        
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
            CheckContext
 
-#line 1535 "check.cog"
+#line 1599 "check.cog"
                        * context, 
 
-#line 1536 "check.cog"
+#line 1600 "check.cog"
            DeclRefVal declRef, 
 
-#line 1537 "check.cog"
+#line 1601 "check.cog"
        SourceLoc loc)
 {
 
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
   return 
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
                          
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
          createDeclRefExp(
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
                           context, 
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
                                    declRef, 
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
                                             loc, 
 
-#line 1540 "check.cog"
+#line 1604 "check.cog"
                                                  nullptr);
 }
 
 
-#line 1543 "check.cog"
+#line 1607 "check.cog"
  
 
-#line 1545 "check.cog"
+#line 1609 "check.cog"
         Exp completeOverload(
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                                             
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                       OverloadResolveContext
 
-#line 1544 "check.cog"
+#line 1608 "check.cog"
                                             * overloadContext)
 {
 
 
-#line 1547 "check.cog"
+#line 1611 "check.cog"
      
 
-#line 1547 "check.cog"
+#line 1611 "check.cog"
      auto context = 
 
-#line 1547 "check.cog"
+#line 1611 "check.cog"
                                   DEREF(
 
-#line 1547 "check.cog"
+#line 1611 "check.cog"
                    overloadContext).checkContext;
 
 
-#line 1548 "check.cog"
+#line 1612 "check.cog"
      
 
-#line 1548 "check.cog"
+#line 1612 "check.cog"
      auto appExp = 
 
-#line 1548 "check.cog"
+#line 1612 "check.cog"
                                  DEREF(
 
-#line 1548 "check.cog"
+#line 1612 "check.cog"
                   overloadContext).appExp;
 
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
      
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
      auto count = 
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
                                                     
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
                                            DEREF(
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
                                 DEREF(
 
-#line 1550 "check.cog"
+#line 1614 "check.cog"
                  overloadContext).candidates).getCount();
 
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
      
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
      
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
                         
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
                     Name
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
                         * baseName = 
 
-#line 1552 "check.cog"
+#line 1616 "check.cog"
                             nullptr;
 
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
      if(auto declRefExp = 
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
                                        
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
                          as<
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
                             DeclRefExp> (
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
                                               DEREF(
 
-#line 1553 "check.cog"
+#line 1617 "check.cog"
                                         appExp).base))
 {
 
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
          baseName = 
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
                                                 DEREF(
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
                                               
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
                                       DEREF(
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
                               DEREF(
 
-#line 1555 "check.cog"
+#line 1619 "check.cog"
                     declRefExp).declRef).getDecl()).name;
 }
 else
 {
 
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
           if(auto nameExp = 
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
                                       
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
                            as<
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
                               NameExp> (
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
                                              DEREF(
 
-#line 1557 "check.cog"
+#line 1621 "check.cog"
                                        appExp).base))
 {
 
 
-#line 1559 "check.cog"
+#line 1623 "check.cog"
          baseName = 
 
-#line 1559 "check.cog"
+#line 1623 "check.cog"
                            DEREF(
 
-#line 1559 "check.cog"
+#line 1623 "check.cog"
                     nameExp).name;
 }
 else
 {
 
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
           if(auto overloadedExpr = 
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
                                                     
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
                                   as<
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
                                      OverloadedExpr> (
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
                                                            DEREF(
 
-#line 1561 "check.cog"
+#line 1625 "check.cog"
                                                      appExp).base))
 {
 
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
          baseName = 
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                                              DEREF(
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                                         DEREF(
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                                      
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                                DEREF(
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                   DEREF(
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                     overloadedExpr).lookupResult).items[
 
-#line 1563 "check.cog"
+#line 1627 "check.cog"
                                                       0]).decl).name;
 }
 }
 }
 
 
-#line 1566 "check.cog"
+#line 1630 "check.cog"
      if(
 
-#line 1566 "check.cog"
+#line 1630 "check.cog"
               
 
-#line 1566 "check.cog"
+#line 1630 "check.cog"
         count 
 
-#line 1566 "check.cog"
+#line 1630 "check.cog"
               == 
 
-#line 1566 "check.cog"
+#line 1630 "check.cog"
                  1)
 {
 
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
          
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
          auto candidate = 
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                          
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                          &
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                                                     
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                                          DEREF(
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                           overloadContext).candidates[
 
-#line 1570 "check.cog"
+#line 1634 "check.cog"
                                                      0];
 
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
          if(
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
                             
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
                      DEREF(
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
             candidate).state 
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
                             == 
 
-#line 1571 "check.cog"
+#line 1635 "check.cog"
                                kOverloadCandidateState_Applicable)
 {
 
 
-#line 1574 "check.cog"
+#line 1638 "check.cog"
              
 
-#line 1574 "check.cog"
+#line 1638 "check.cog"
              auto baseExp = 
 
-#line 1574 "check.cog"
+#line 1638 "check.cog"
                                            
 
-#line 1574 "check.cog"
+#line 1638 "check.cog"
                            createDeclRefExp(
 
-#line 1575 "check.cog"
+#line 1639 "check.cog"
                  context, 
 
-#line 1576 "check.cog"
+#line 1640 "check.cog"
                           DEREF(
 
-#line 1576 "check.cog"
+#line 1640 "check.cog"
                  candidate).declRef, 
 
-#line 1577 "check.cog"
+#line 1641 "check.cog"
                        DEREF(
 
-#line 1577 "check.cog"
+#line 1641 "check.cog"
                  appExp).loc, 
 
-#line 1578 "check.cog"
+#line 1642 "check.cog"
                                 DEREF(
 
-#line 1578 "check.cog"
+#line 1642 "check.cog"
                  overloadContext).baseExp);
 
 
-#line 1580 "check.cog"
+#line 1644 "check.cog"
                    DEREF(
 
-#line 1580 "check.cog"
+#line 1644 "check.cog"
              appExp).base = 
 
-#line 1580 "check.cog"
+#line 1644 "check.cog"
                            baseExp;
 
 
-#line 1581 "check.cog"
+#line 1645 "check.cog"
                    DEREF(
 
-#line 1581 "check.cog"
+#line 1645 "check.cog"
              appExp).type = 
 
-#line 1581 "check.cog"
+#line 1645 "check.cog"
                                     DEREF(
 
-#line 1581 "check.cog"
+#line 1645 "check.cog"
                            candidate).resultType;
 
 
-#line 1582 "check.cog"
+#line 1646 "check.cog"
              return 
 
-#line 1582 "check.cog"
+#line 1646 "check.cog"
                     appExp;
 }
 else
 {
 
 
-#line 1588 "check.cog"
+#line 1652 "check.cog"
                             DEREF(
 
-#line 1588 "check.cog"
+#line 1652 "check.cog"
              overloadContext).mode = 
 
-#line 1588 "check.cog"
+#line 1652 "check.cog"
                                     kOverloadResolveMode_forReal;
 
 
-#line 1589 "check.cog"
+#line 1653 "check.cog"
                                    
 
-#line 1589 "check.cog"
+#line 1653 "check.cog"
                                    
 
-#line 1589 "check.cog"
+#line 1653 "check.cog"
              checkOverloadCandidate(
 
-#line 1590 "check.cog"
+#line 1654 "check.cog"
                  overloadContext, 
 
-#line 1591 "check.cog"
+#line 1655 "check.cog"
                  
 
-#line 1591 "check.cog"
+#line 1655 "check.cog"
                  *
 
-#line 1591 "check.cog"
+#line 1655 "check.cog"
                   candidate);
 
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
              return 
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
                                   
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
                     createErrorExp(
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
                                    context, 
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
                                                   DEREF(
 
-#line 1592 "check.cog"
+#line 1656 "check.cog"
                                             appExp).loc);
 }
 }
@@ -20411,427 +21174,427 @@ else
 {
 
 
-#line 1595 "check.cog"
+#line 1659 "check.cog"
           if(
 
-#line 1595 "check.cog"
+#line 1659 "check.cog"
                    
 
-#line 1595 "check.cog"
+#line 1659 "check.cog"
              count 
 
-#line 1595 "check.cog"
+#line 1659 "check.cog"
                    == 
 
-#line 1595 "check.cog"
+#line 1659 "check.cog"
                       0)
 {
 
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                  
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                  
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
          diagnose(
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                          
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                   getSink(
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                           context), 
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                                           DEREF(
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                                     appExp).loc, 
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                                                 kDiagnostic_noOverloadCandidatesFound, 
 
-#line 1598 "check.cog"
+#line 1662 "check.cog"
                                                                                        baseName);
 
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
          if(auto overloadedExpr = 
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
                                                    
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
                                  as<
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
                                     OverloadedExpr> (
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
                                                           DEREF(
 
-#line 1600 "check.cog"
+#line 1664 "check.cog"
                                                     appExp).base))
 {
 
 
-#line 1602 "check.cog"
+#line 1666 "check.cog"
              for(auto item : 
 
-#line 1602 "check.cog"
+#line 1666 "check.cog"
                                             DEREF(
 
-#line 1602 "check.cog"
+#line 1666 "check.cog"
                               overloadedExpr).lookupResult)
 {
 {
 
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                          
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                          
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                  diagnose(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                  
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                           getSink(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                   context), 
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                      DEREF(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                 DEREF(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                             item).decl).loc, 
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                            kDiagnostic_candidate, 
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                                                             
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                                                   DeclRefVal(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                                                                  DEREF(
 
-#line 1604 "check.cog"
+#line 1668 "check.cog"
                                                                                              item).decl));
 }
 }
 }
 
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
          return 
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
                               
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
                 createErrorExp(
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
                                context, 
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
                                               DEREF(
 
-#line 1608 "check.cog"
+#line 1672 "check.cog"
                                         appExp).loc);
 }
 else
 {
 
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
          if(
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                                 
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                          DEREF(
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                       
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                            DEREF(
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
             overloadContext).candidates[
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                        0]).state 
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                                 == 
 
-#line 1613 "check.cog"
+#line 1677 "check.cog"
                                                    kOverloadCandidateState_Applicable)
 {
 
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                      
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                      
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
              diagnose(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                              
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                       getSink(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                               context), 
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                               DEREF(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                         appExp).loc, 
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                     kDiagnostic_ambiguousCallToOverload, 
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                          baseName, 
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                                               
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                                    ArgTypeList(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                                                           DEREF(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                                                      DEREF(
 
-#line 1616 "check.cog"
+#line 1680 "check.cog"
                                                                                                                appExp).args).head));
 
 
-#line 1618 "check.cog"
+#line 1682 "check.cog"
              for(auto cc : 
 
-#line 1618 "check.cog"
+#line 1682 "check.cog"
                                            DEREF(
 
-#line 1618 "check.cog"
+#line 1682 "check.cog"
                             overloadContext).candidates)
 {
 {
 
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                          
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                          
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                  diagnose(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                  
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                           getSink(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                   context), 
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                                 DEREF(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                               
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                       DEREF(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                               DEREF(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                             cc).declRef).getDecl()).loc, 
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                                       kDiagnostic_candidate, 
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                                                                DEREF(
 
-#line 1620 "check.cog"
+#line 1684 "check.cog"
                                                                                              cc).declRef);
 }
 }
 
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
              return 
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
                                   
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
                     createErrorExp(
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
                                    context, 
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
                                                   DEREF(
 
-#line 1623 "check.cog"
+#line 1687 "check.cog"
                                             appExp).loc);
 }
 else
 {
 
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                      
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                      
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
              diagnose(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                              
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                       getSink(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                               context), 
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                               DEREF(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                         appExp).loc, 
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                     kDiagnostic_noApplicableOverloadForCall, 
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                              baseName, 
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                                                   
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                                        ArgTypeList(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                                                               DEREF(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                                                          DEREF(
 
-#line 1628 "check.cog"
+#line 1692 "check.cog"
                                                                                                                    appExp).args).head));
 
 
-#line 1630 "check.cog"
+#line 1694 "check.cog"
              for(auto cc : 
 
-#line 1630 "check.cog"
+#line 1694 "check.cog"
                                           DEREF(
 
-#line 1630 "check.cog"
+#line 1694 "check.cog"
                            overloadContext).candidates)
 {
 {
 
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                          
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                          
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                  diagnose(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                  
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                           getSink(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                   context), 
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                                 DEREF(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                               
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                       DEREF(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                               DEREF(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                             cc).declRef).getDecl()).loc, 
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                                       kDiagnostic_candidate, 
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                                                                DEREF(
 
-#line 1632 "check.cog"
+#line 1696 "check.cog"
                                                                                              cc).declRef);
 }
 }
 
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
              return 
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
                                   
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
                     createErrorExp(
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
                                    context, 
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
                                                   DEREF(
 
-#line 1635 "check.cog"
+#line 1699 "check.cog"
                                             appExp).loc);
 }
 }
@@ -20839,203 +21602,203 @@ else
 }
 
 
-#line 1640 "check.cog"
+#line 1704 "check.cog"
  
 
-#line 1642 "check.cog"
+#line 1706 "check.cog"
         Bool isError(
 
-#line 1641 "check.cog"
+#line 1705 "check.cog"
         Type type)
 {
 
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
      return 
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                                 
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                          
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
             as<
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                ErrorType> (
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                           type) 
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                                 != 
 
-#line 1644 "check.cog"
+#line 1708 "check.cog"
                                    nullptr;
 }
 
 
-#line 1647 "check.cog"
+#line 1711 "check.cog"
  
 
-#line 1650 "check.cog"
+#line 1714 "check.cog"
         Bool isError(
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
                        
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
            CheckContext
 
-#line 1648 "check.cog"
+#line 1712 "check.cog"
                        * context, 
 
-#line 1649 "check.cog"
+#line 1713 "check.cog"
        Exp exp)
 {
 
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
      return 
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                               
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                         
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
             as<
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                ErrorExp> (
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                          exp) 
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                               || 
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                                         
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                                  isError(
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                                             DEREF(
 
-#line 1652 "check.cog"
+#line 1716 "check.cog"
                                          exp).type);
 }
 
 
-#line 1655 "check.cog"
+#line 1719 "check.cog"
  void addTypeOverloadCandidates(
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
                                  
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
            OverloadResolveContext
 
-#line 1656 "check.cog"
+#line 1720 "check.cog"
                                  * context, 
 
-#line 1657 "check.cog"
+#line 1721 "check.cog"
            Exp typeExp, 
 
-#line 1658 "check.cog"
+#line 1722 "check.cog"
         Type type)
 {
 
 
-#line 1660 "check.cog"
+#line 1724 "check.cog"
      if(auto declRefType = 
 
-#line 1660 "check.cog"
+#line 1724 "check.cog"
                                          
 
-#line 1660 "check.cog"
+#line 1724 "check.cog"
                           as<
 
-#line 1660 "check.cog"
+#line 1724 "check.cog"
                              DeclRefType> (
 
-#line 1660 "check.cog"
+#line 1724 "check.cog"
                                           type))
 {
 
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
          if(auto aggTypeDeclRef = 
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
                                                 
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
                                  as<
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
                                     AggTypeDecl> (
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
                                                             DEREF(
 
-#line 1662 "check.cog"
+#line 1726 "check.cog"
                                                  declRefType).declRef))
 {
 
 
-#line 1666 "check.cog"
+#line 1730 "check.cog"
              for(auto memberDeclRef : 
 
-#line 1666 "check.cog"
+#line 1730 "check.cog"
                                                
 
-#line 1666 "check.cog"
+#line 1730 "check.cog"
                                        getDecls(
 
-#line 1666 "check.cog"
+#line 1730 "check.cog"
                                                 aggTypeDeclRef))
 {
 {
 
 
-#line 1668 "check.cog"
+#line 1732 "check.cog"
                  if(auto initializerDeclRef = 
 
-#line 1668 "check.cog"
+#line 1732 "check.cog"
                                                                 
 
-#line 1668 "check.cog"
+#line 1732 "check.cog"
                                              as<
 
-#line 1668 "check.cog"
+#line 1732 "check.cog"
                                                 InitializerDecl> (
 
-#line 1668 "check.cog"
+#line 1732 "check.cog"
                                                                  memberDeclRef))
 {
 
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                                                     
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                                                     
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                      addInitializerOverloadCandidate(
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                                                      context, 
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                                                               type, 
 
-#line 1670 "check.cog"
+#line 1734 "check.cog"
                                                                     initializerDeclRef);
 }
 }
@@ -21045,786 +21808,947 @@ else
 }
 
 
-#line 415 "syntax.cog"
+#line 417 "syntax.cog"
  
 
-#line 1678 "check.cog"
+#line 1742 "check.cog"
  
 
-#line 1684 "check.cog"
+#line 1748 "check.cog"
  
 
-#line 1690 "check.cog"
+#line 1755 "check.cog"
  
 
-#line 1694 "check.cog"
+#line 1759 "check.cog"
         Bool doInferenceForVals(
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
                                   
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
            GenericInferenceContext
 
-#line 1691 "check.cog"
+#line 1756 "check.cog"
                                   * context, 
 
-#line 1692 "check.cog"
+#line 1757 "check.cog"
           Val argVal, 
 
-#line 1693 "check.cog"
+#line 1758 "check.cog"
             Val paramVal)
 {
 
 
-#line 1696 "check.cog"
+#line 1761 "check.cog"
      if(auto argType = 
 
-#line 1696 "check.cog"
+#line 1761 "check.cog"
                               
 
-#line 1696 "check.cog"
+#line 1761 "check.cog"
                       as<
 
-#line 1696 "check.cog"
+#line 1761 "check.cog"
                          Type> (
 
-#line 1696 "check.cog"
+#line 1761 "check.cog"
                                argVal))
 {
 
 
-#line 1698 "check.cog"
+#line 1763 "check.cog"
          if(auto paramType = 
 
-#line 1698 "check.cog"
+#line 1763 "check.cog"
                                     
 
-#line 1698 "check.cog"
+#line 1763 "check.cog"
                             as<
 
-#line 1698 "check.cog"
+#line 1763 "check.cog"
                                Type> (
 
-#line 1698 "check.cog"
+#line 1763 "check.cog"
                                      paramVal))
 {
 
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
              return 
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
                                        
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
                     doInferenceForTypes(
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
                                         context, 
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
                                                  argType, 
 
-#line 1700 "check.cog"
+#line 1765 "check.cog"
                                                           paramType);
 }
 }
 
 
-#line 1705 "check.cog"
+#line 1770 "check.cog"
      return 
 
-#line 1705 "check.cog"
+#line 1770 "check.cog"
             false;
 }
 
 
-#line 1708 "check.cog"
+#line 1773 "check.cog"
  
 
-#line 1712 "check.cog"
+#line 1777 "check.cog"
         Bool doInferenceForSpecializations(
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
                                   
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
            GenericInferenceContext
 
-#line 1709 "check.cog"
+#line 1774 "check.cog"
                                   * context, 
 
-#line 1710 "check.cog"
+#line 1775 "check.cog"
               Specializations argSpec, 
 
-#line 1711 "check.cog"
+#line 1776 "check.cog"
                 Specializations paramSpec)
 {
 
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
      if(
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
                  
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
         
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
         !
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
          argSpec 
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
                  || 
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
                     
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
                     !
 
-#line 1715 "check.cog"
+#line 1780 "check.cog"
                      paramSpec)
 {
 
 
-#line 1717 "check.cog"
+#line 1782 "check.cog"
       return 
 
-#line 1717 "check.cog"
+#line 1782 "check.cog"
                      
 
-#line 1717 "check.cog"
+#line 1782 "check.cog"
              argSpec 
 
-#line 1717 "check.cog"
+#line 1782 "check.cog"
                      == 
 
-#line 1717 "check.cog"
+#line 1782 "check.cog"
                         paramSpec;
 }
 
 
-#line 1721 "check.cog"
+#line 1786 "check.cog"
      if(
 
-#line 1721 "check.cog"
+#line 1786 "check.cog"
         
 
-#line 1721 "check.cog"
+#line 1786 "check.cog"
         !
 
-#line 1721 "check.cog"
+#line 1786 "check.cog"
                                
 
-#line 1721 "check.cog"
+#line 1786 "check.cog"
          doInferenceForDeclRefs(
 
-#line 1722 "check.cog"
+#line 1787 "check.cog"
          context, 
 
-#line 1723 "check.cog"
+#line 1788 "check.cog"
                 DEREF(
 
-#line 1723 "check.cog"
+#line 1788 "check.cog"
          argSpec).genericDeclRef, 
 
-#line 1724 "check.cog"
+#line 1789 "check.cog"
                   DEREF(
 
-#line 1724 "check.cog"
+#line 1789 "check.cog"
          paramSpec).genericDeclRef))
 {
 
 
-#line 1726 "check.cog"
+#line 1791 "check.cog"
          return 
 
-#line 1726 "check.cog"
+#line 1791 "check.cog"
                 false;
 }
 
 
-#line 1731 "check.cog"
+#line 1796 "check.cog"
      
 
-#line 1731 "check.cog"
+#line 1796 "check.cog"
      auto aa = 
 
-#line 1731 "check.cog"
+#line 1796 "check.cog"
                           DEREF(
 
-#line 1731 "check.cog"
+#line 1796 "check.cog"
                      DEREF(
 
-#line 1731 "check.cog"
+#line 1796 "check.cog"
               argSpec).args).head;
 
 
-#line 1732 "check.cog"
+#line 1797 "check.cog"
      
 
-#line 1732 "check.cog"
+#line 1797 "check.cog"
      auto pp = 
 
-#line 1732 "check.cog"
+#line 1797 "check.cog"
                             DEREF(
 
-#line 1732 "check.cog"
+#line 1797 "check.cog"
                        DEREF(
 
-#line 1732 "check.cog"
+#line 1797 "check.cog"
               paramSpec).args).head;
 
 
-#line 1733 "check.cog"
+#line 1798 "check.cog"
      while(
 
-#line 1733 "check.cog"
+#line 1798 "check.cog"
            aa)
 {
 {
 
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
          if(
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
             
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
             !
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
              doInferenceForVals(
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                 context, 
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                            DEREF(
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                          aa).value, 
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                                      DEREF(
 
-#line 1735 "check.cog"
+#line 1800 "check.cog"
                                                    pp).value))
 {
 
 
-#line 1736 "check.cog"
+#line 1801 "check.cog"
              return 
 
-#line 1736 "check.cog"
+#line 1801 "check.cog"
                     false;
 }
 
 
-#line 1738 "check.cog"
+#line 1803 "check.cog"
          aa = 
 
-#line 1738 "check.cog"
+#line 1803 "check.cog"
                 DEREF(
 
-#line 1738 "check.cog"
+#line 1803 "check.cog"
               aa).next;
 
 
-#line 1739 "check.cog"
+#line 1804 "check.cog"
          pp = 
 
-#line 1739 "check.cog"
+#line 1804 "check.cog"
                 DEREF(
 
-#line 1739 "check.cog"
+#line 1804 "check.cog"
               pp).next;
 }
 }
 
 
-#line 1742 "check.cog"
+#line 1807 "check.cog"
      return 
 
-#line 1742 "check.cog"
+#line 1807 "check.cog"
             true;
 }
 
 
-#line 1745 "check.cog"
+#line 1810 "check.cog"
  
 
-#line 1749 "check.cog"
+#line 1814 "check.cog"
         Bool doInferenceForDeclRefs(
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
                                     
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
              GenericInferenceContext
 
-#line 1746 "check.cog"
+#line 1811 "check.cog"
                                     * context, 
 
-#line 1747 "check.cog"
+#line 1812 "check.cog"
                   DeclRefVal argDeclRef, 
 
-#line 1748 "check.cog"
+#line 1813 "check.cog"
                     DeclRefVal paramDeclRef)
 {
 
 
-#line 1752 "check.cog"
+#line 1817 "check.cog"
      if(
 
-#line 1753 "check.cog"
+#line 1818 "check.cog"
          
 
-#line 1752 "check.cog"
+#line 1817 "check.cog"
                             
 
-#line 1752 "check.cog"
+#line 1817 "check.cog"
                     DEREF(
 
-#line 1752 "check.cog"
+#line 1817 "check.cog"
         paramDeclRef).getDecl() 
 
-#line 1753 "check.cog"
+#line 1818 "check.cog"
          != 
 
-#line 1753 "check.cog"
+#line 1818 "check.cog"
                               
 
-#line 1753 "check.cog"
+#line 1818 "check.cog"
                       DEREF(
 
-#line 1753 "check.cog"
+#line 1818 "check.cog"
             argDeclRef).getDecl())
 {
 
 
-#line 1755 "check.cog"
+#line 1820 "check.cog"
          return 
 
-#line 1755 "check.cog"
+#line 1820 "check.cog"
                 false;
 }
 
 
-#line 1760 "check.cog"
+#line 1825 "check.cog"
      return 
 
-#line 1760 "check.cog"
+#line 1825 "check.cog"
                                          
 
-#line 1760 "check.cog"
+#line 1825 "check.cog"
             doInferenceForSpecializations(
 
-#line 1761 "check.cog"
+#line 1826 "check.cog"
          context, 
 
-#line 1762 "check.cog"
+#line 1827 "check.cog"
                    DEREF(
 
-#line 1762 "check.cog"
+#line 1827 "check.cog"
          argDeclRef).specializations, 
 
-#line 1763 "check.cog"
+#line 1828 "check.cog"
                      DEREF(
 
-#line 1763 "check.cog"
+#line 1828 "check.cog"
          paramDeclRef).specializations);
 }
 
 
-#line 1766 "check.cog"
+#line 1831 "check.cog"
  
 
-#line 1770 "check.cog"
+#line 1834 "check.cog"
+                        
+
+#line 1834 "check.cog"
+     GenericInferenceArg
+
+#line 1834 "check.cog"
+                        * findGenericInferenceArg(
+
+#line 1832 "check.cog"
+                                  
+
+#line 1832 "check.cog"
+           GenericInferenceContext
+
+#line 1832 "check.cog"
+                                  * context, 
+
+#line 1833 "check.cog"
+                DeclRefValImpl<
+
+#line 1833 "check.cog"
+                               GenericParamDecl>  paramDeclRef)
+{
+
+
+#line 1836 "check.cog"
+  {
+
+
+#line 1836 "check.cog"
+      
+
+#line 1836 "check.cog"
+      
+
+#line 1836 "check.cog"
+               Int ii = 
+
+#line 1836 "check.cog"
+                     0;
+for(;
+
+#line 1836 "check.cog"
+                           
+
+#line 1836 "check.cog"
+                        ii 
+
+#line 1836 "check.cog"
+                           < 
+
+#line 1836 "check.cog"
+                                    DEREF(
+
+#line 1836 "check.cog"
+                             context).argCount;
+
+#line 1836 "check.cog"
+                                               
+
+#line 1836 "check.cog"
+                                               ++
+
+#line 1836 "check.cog"
+                                                 ii)
+{
+{
+
+
+#line 1838 "check.cog"
+   if(
+
+#line 1838 "check.cog"
+                   
+
+#line 1838 "check.cog"
+      isSameDeclRef(
+
+#line 1838 "check.cog"
+                                    DEREF(
+
+#line 1838 "check.cog"
+                                
+
+#line 1838 "check.cog"
+                           DEREF(
+
+#line 1838 "check.cog"
+                    context).args[
+
+#line 1838 "check.cog"
+                                 ii]).paramDeclRef, 
+
+#line 1838 "check.cog"
+                                                   paramDeclRef))
+{
+
+
+#line 1839 "check.cog"
+    return 
+
+#line 1839 "check.cog"
+           
+
+#line 1839 "check.cog"
+           &
+
+#line 1839 "check.cog"
+                        
+
+#line 1839 "check.cog"
+                   DEREF(
+
+#line 1839 "check.cog"
+            context).args[
+
+#line 1839 "check.cog"
+                         ii];
+}
+}
+}}
+
+
+#line 1841 "check.cog"
+  return 
+
+#line 1841 "check.cog"
+         nullptr;
+}
+
+
+#line 1844 "check.cog"
+ 
+
+#line 1848 "check.cog"
         Bool doInferenceForTypes(
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
                                      
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
               GenericInferenceContext
 
-#line 1767 "check.cog"
+#line 1845 "check.cog"
                                      * context, 
 
-#line 1768 "check.cog"
+#line 1846 "check.cog"
               Type argType, 
 
-#line 1769 "check.cog"
+#line 1847 "check.cog"
                 Type paramType)
 {
 
 
-#line 1773 "check.cog"
+#line 1851 "check.cog"
      if(
 
-#line 1773 "check.cog"
+#line 1851 "check.cog"
                   
 
-#line 1773 "check.cog"
+#line 1851 "check.cog"
         isSameType(
 
-#line 1773 "check.cog"
+#line 1851 "check.cog"
                    argType, 
 
-#line 1773 "check.cog"
+#line 1851 "check.cog"
                             paramType))
 {
 
 
-#line 1774 "check.cog"
+#line 1852 "check.cog"
          return 
 
-#line 1774 "check.cog"
+#line 1852 "check.cog"
                 true;
 }
 
 
-#line 1776 "check.cog"
+#line 1854 "check.cog"
      if(auto paramDeclRefType = 
 
-#line 1776 "check.cog"
+#line 1854 "check.cog"
                                               
 
-#line 1776 "check.cog"
+#line 1854 "check.cog"
                                as<
 
-#line 1776 "check.cog"
+#line 1854 "check.cog"
                                   DeclRefType> (
 
-#line 1776 "check.cog"
+#line 1854 "check.cog"
                                                paramType))
 {
 
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
          if(auto genericParamDeclRef = 
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
                                                           
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
                                       as<
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
                                          GenericParamDecl> (
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
                                                                            DEREF(
 
-#line 1778 "check.cog"
+#line 1856 "check.cog"
                                                            paramDeclRefType).declRef))
 {
 
 
-#line 1780 "check.cog"
-                      
+#line 1864 "check.cog"
+    
 
-#line 1780 "check.cog"
-                      
+#line 1864 "check.cog"
+    auto genericInferenceArg = 
 
-#line 1780 "check.cog"
-             cogAssert(
+#line 1864 "check.cog"
+                                                     
 
-#line 1780 "check.cog"
-                       
+#line 1864 "check.cog"
+                              findGenericInferenceArg(
 
-#line 1780 "check.cog"
-                       !
+#line 1864 "check.cog"
+                                                      context, 
 
-#line 1780 "check.cog"
-                        "unimplemented");
+#line 1864 "check.cog"
+                                                               genericParamDeclRef);
+
+
+#line 1865 "check.cog"
+    if(
+
+#line 1865 "check.cog"
+       genericInferenceArg)
+{
+
+
+#line 1868 "check.cog"
+                        DEREF(
+
+#line 1868 "check.cog"
+     genericInferenceArg).val = 
+
+#line 1868 "check.cog"
+                               argType;
+
+
+#line 1869 "check.cog"
+     return 
+
+#line 1869 "check.cog"
+            true;
+}
 }
 
 
-#line 1785 "check.cog"
+#line 1875 "check.cog"
          if(auto argDeclRefType = 
 
-#line 1785 "check.cog"
+#line 1875 "check.cog"
                                                 
 
-#line 1785 "check.cog"
+#line 1875 "check.cog"
                                  as<
 
-#line 1785 "check.cog"
+#line 1875 "check.cog"
                                     DeclRefType> (
 
-#line 1785 "check.cog"
+#line 1875 "check.cog"
                                                  argType))
 {
 
 
-#line 1787 "check.cog"
+#line 1877 "check.cog"
              return 
 
-#line 1787 "check.cog"
+#line 1877 "check.cog"
                                           
 
-#line 1787 "check.cog"
+#line 1877 "check.cog"
                     doInferenceForDeclRefs(
 
-#line 1788 "check.cog"
+#line 1878 "check.cog"
                  context, 
 
-#line 1789 "check.cog"
+#line 1879 "check.cog"
                                DEREF(
 
-#line 1789 "check.cog"
+#line 1879 "check.cog"
                  argDeclRefType).declRef, 
 
-#line 1790 "check.cog"
+#line 1880 "check.cog"
                                  DEREF(
 
-#line 1790 "check.cog"
+#line 1880 "check.cog"
                  paramDeclRefType).declRef);
 }
 }
 
 
-#line 1795 "check.cog"
+#line 1885 "check.cog"
      return 
 
-#line 1795 "check.cog"
+#line 1885 "check.cog"
             false;
 }
 
 
-#line 488 "syntax.cog"
+#line 490 "syntax.cog"
  
 
-#line 492 "syntax.cog"
+#line 494 "syntax.cog"
  
 
-#line 1799 "check.cog"
+#line 1889 "check.cog"
  
 
-#line 1803 "check.cog"
+#line 1893 "check.cog"
         Bool doInferenceForArgAndParam(
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
                                      
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
               GenericInferenceContext
 
-#line 1800 "check.cog"
+#line 1890 "check.cog"
                                      * context, 
 
-#line 1801 "check.cog"
+#line 1891 "check.cog"
               Exp argExpr, 
 
-#line 1802 "check.cog"
+#line 1892 "check.cog"
                    DeclRefValImpl<
 
-#line 1802 "check.cog"
+#line 1892 "check.cog"
                                   ParamDecl>  paramDeclRef)
 {
 
 
-#line 1805 "check.cog"
+#line 1895 "check.cog"
      return 
 
-#line 1805 "check.cog"
+#line 1895 "check.cog"
                                
 
-#line 1805 "check.cog"
+#line 1895 "check.cog"
             doInferenceForTypes(
 
-#line 1806 "check.cog"
+#line 1896 "check.cog"
          context, 
 
-#line 1807 "check.cog"
+#line 1897 "check.cog"
                 DEREF(
 
-#line 1807 "check.cog"
+#line 1897 "check.cog"
          argExpr).type, 
 
-#line 1808 "check.cog"
+#line 1898 "check.cog"
                 
 
-#line 1808 "check.cog"
+#line 1898 "check.cog"
          getType(
 
-#line 1808 "check.cog"
+#line 1898 "check.cog"
                  paramDeclRef));
 }
 
 
-#line 1811 "check.cog"
+#line 1901 "check.cog"
  
 
-#line 1815 "check.cog"
+#line 1905 "check.cog"
         Specializations inferGenericArgsForApp(
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
                           
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
               CheckContext
 
-#line 1812 "check.cog"
+#line 1902 "check.cog"
                           * context, 
 
-#line 1813 "check.cog"
+#line 1903 "check.cog"
                      DeclRefValImpl<
 
-#line 1813 "check.cog"
+#line 1903 "check.cog"
                                     GenericDecl>  genericDeclRef, 
 
-#line 1814 "check.cog"
+#line 1904 "check.cog"
               AppExpBase appExpr)
 {
 
 
-#line 1824 "check.cog"
+#line 1914 "check.cog"
      
 
-#line 1824 "check.cog"
+#line 1914 "check.cog"
      auto innerDeclRef = 
 
-#line 1824 "check.cog"
+#line 1914 "check.cog"
                                 
 
-#line 1824 "check.cog"
+#line 1914 "check.cog"
                         getInner(
 
-#line 1824 "check.cog"
+#line 1914 "check.cog"
                                  genericDeclRef);
 
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
      
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
      auto innerFuncDeclRef = 
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
                                             
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
                             as<
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
                                FuncDeclBase> (
 
-#line 1825 "check.cog"
+#line 1915 "check.cog"
                                              innerDeclRef);
 
 
-#line 1826 "check.cog"
+#line 1916 "check.cog"
      if(
 
-#line 1826 "check.cog"
+#line 1916 "check.cog"
         
 
-#line 1826 "check.cog"
+#line 1916 "check.cog"
         !
 
-#line 1826 "check.cog"
+#line 1916 "check.cog"
          innerFuncDeclRef)
 {
 
 
-#line 1829 "check.cog"
+#line 1919 "check.cog"
          return 
 
-#line 1829 "check.cog"
+#line 1919 "check.cog"
                 nullptr;
 }
 
 
-#line 1833 "check.cog"
+#line 1923 "check.cog"
      
 
-#line 1833 "check.cog"
+#line 1923 "check.cog"
      
 
-#line 1833 "check.cog"
+#line 1923 "check.cog"
                Array<
 
-#line 1833 "check.cog"
+#line 1923 "check.cog"
                      GenericInferenceArg>  args;
 
 
-#line 1834 "check.cog"
+#line 1924 "check.cog"
      for(auto member : 
 
-#line 1834 "check.cog"
+#line 1924 "check.cog"
                                 
 
-#line 1834 "check.cog"
+#line 1924 "check.cog"
                         getDecls(
 
-#line 1834 "check.cog"
+#line 1924 "check.cog"
                                  genericDeclRef))
 {
 {
 
 
-#line 1836 "check.cog"
+#line 1926 "check.cog"
          if(auto genericParamDeclRef = 
 
-#line 1836 "check.cog"
+#line 1926 "check.cog"
                                                           
 
-#line 1836 "check.cog"
+#line 1926 "check.cog"
                                       as<
 
-#line 1836 "check.cog"
+#line 1926 "check.cog"
                                          GenericParamDecl> (
 
-#line 1836 "check.cog"
+#line 1926 "check.cog"
                                                            member))
 {
 
 
-#line 1838 "check.cog"
+#line 1928 "check.cog"
              
 
-#line 1838 "check.cog"
+#line 1928 "check.cog"
              
 
-#line 1838 "check.cog"
+#line 1928 "check.cog"
                       GenericInferenceArg arg;
 
 
-#line 1839 "check.cog"
+#line 1929 "check.cog"
                 DEREF(
 
-#line 1839 "check.cog"
+#line 1929 "check.cog"
              arg).paramDeclRef = 
 
-#line 1839 "check.cog"
+#line 1929 "check.cog"
                                 genericParamDeclRef;
 
 
-#line 1841 "check.cog"
+#line 1931 "check.cog"
                         
 
-#line 1841 "check.cog"
+#line 1931 "check.cog"
                         
 
-#line 1841 "check.cog"
+#line 1931 "check.cog"
                  DEREF(
 
-#line 1841 "check.cog"
+#line 1931 "check.cog"
              args).append(
 
-#line 1841 "check.cog"
+#line 1931 "check.cog"
                          arg);
 }
 else
@@ -21834,499 +22758,540 @@ else
 }
 
 
-#line 1849 "check.cog"
+#line 1939 "check.cog"
      
 
-#line 1849 "check.cog"
+#line 1939 "check.cog"
      
 
-#line 1849 "check.cog"
+#line 1939 "check.cog"
                             GenericInferenceContext inferenceContext;
 
 
-#line 1850 "check.cog"
+#line 1940 "check.cog"
                      DEREF(
 
-#line 1850 "check.cog"
+#line 1940 "check.cog"
      inferenceContext).checkContext = 
 
-#line 1850 "check.cog"
+#line 1940 "check.cog"
                                      context;
 
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                      DEREF(
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
      inferenceContext).args = 
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                              
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                              &
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                                   
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                               args[
 
-#line 1851 "check.cog"
+#line 1941 "check.cog"
                                    0];
 
 
-#line 1853 "check.cog"
+#line 1942 "check.cog"
+                  DEREF(
+
+#line 1942 "check.cog"
+  inferenceContext).argCount = 
+
+#line 1942 "check.cog"
+                                           
+
+#line 1942 "check.cog"
+                                  DEREF(
+
+#line 1942 "check.cog"
+                              args).getCount();
+
+
+#line 1944 "check.cog"
      
 
-#line 1853 "check.cog"
+#line 1944 "check.cog"
      auto aa = 
 
-#line 1853 "check.cog"
+#line 1944 "check.cog"
                                 
 
-#line 1853 "check.cog"
+#line 1944 "check.cog"
                           DEREF(
 
-#line 1853 "check.cog"
+#line 1944 "check.cog"
                      DEREF(
 
-#line 1853 "check.cog"
+#line 1944 "check.cog"
               appExpr).args).begin();
 
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
      
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
      auto ae = 
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
                               
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
                           DEREF(
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
                      DEREF(
 
-#line 1854 "check.cog"
+#line 1945 "check.cog"
               appExpr).args).end();
 
 
-#line 1855 "check.cog"
+#line 1946 "check.cog"
      for(auto member : 
 
-#line 1855 "check.cog"
+#line 1946 "check.cog"
                                
 
-#line 1855 "check.cog"
+#line 1946 "check.cog"
                        getDecls(
 
-#line 1855 "check.cog"
+#line 1946 "check.cog"
                                 innerFuncDeclRef))
 {
 {
 
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
          
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
          auto paramDeclRef = 
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
                                          
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
                             as<
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
                                ParamDecl> (
 
-#line 1857 "check.cog"
+#line 1948 "check.cog"
                                           member);
 
 
-#line 1858 "check.cog"
+#line 1949 "check.cog"
          if(
 
-#line 1858 "check.cog"
+#line 1949 "check.cog"
             
 
-#line 1858 "check.cog"
+#line 1949 "check.cog"
             !
 
-#line 1858 "check.cog"
+#line 1949 "check.cog"
              paramDeclRef)
 {
 
 
-#line 1859 "check.cog"
+#line 1950 "check.cog"
              continue;
 }
 
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
          if(
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
             
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
             !
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
              (
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
                  
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
               aa 
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
                  != 
 
-#line 1861 "check.cog"
+#line 1952 "check.cog"
                     ae))
 {
 
 
-#line 1864 "check.cog"
+#line 1955 "check.cog"
              return 
 
-#line 1864 "check.cog"
+#line 1955 "check.cog"
                     nullptr;
 }
 
 
-#line 1867 "check.cog"
+#line 1958 "check.cog"
          
 
-#line 1867 "check.cog"
+#line 1958 "check.cog"
          auto arg = 
 
-#line 1867 "check.cog"
+#line 1958 "check.cog"
                    
 
-#line 1867 "check.cog"
+#line 1958 "check.cog"
                    *
 
-#line 1867 "check.cog"
+#line 1958 "check.cog"
                     aa;
 
 
-#line 1868 "check.cog"
+#line 1959 "check.cog"
          
 
-#line 1868 "check.cog"
+#line 1959 "check.cog"
          
 
-#line 1868 "check.cog"
+#line 1959 "check.cog"
          ++
 
-#line 1868 "check.cog"
+#line 1959 "check.cog"
            aa;
 
 
-#line 1872 "check.cog"
+#line 1963 "check.cog"
          if(
 
-#line 1872 "check.cog"
+#line 1963 "check.cog"
             
 
-#line 1872 "check.cog"
+#line 1963 "check.cog"
             !
 
-#line 1872 "check.cog"
+#line 1963 "check.cog"
                                       
 
-#line 1872 "check.cog"
+#line 1963 "check.cog"
              doInferenceForArgAndParam(
 
-#line 1873 "check.cog"
+#line 1964 "check.cog"
              
 
-#line 1873 "check.cog"
+#line 1964 "check.cog"
              &
 
-#line 1873 "check.cog"
+#line 1964 "check.cog"
               inferenceContext, 
 
-#line 1874 "check.cog"
+#line 1965 "check.cog"
                 DEREF(
 
-#line 1874 "check.cog"
+#line 1965 "check.cog"
              arg).exp, 
 
-#line 1875 "check.cog"
+#line 1966 "check.cog"
              paramDeclRef))
 {
 
 
-#line 1877 "check.cog"
+#line 1968 "check.cog"
              return 
 
-#line 1877 "check.cog"
+#line 1968 "check.cog"
                     nullptr;
 }
 }
 }
 
 
-#line 1880 "check.cog"
+#line 1971 "check.cog"
      if(
 
-#line 1880 "check.cog"
+#line 1971 "check.cog"
            
 
-#line 1880 "check.cog"
+#line 1971 "check.cog"
         aa 
 
-#line 1880 "check.cog"
+#line 1971 "check.cog"
            != 
 
-#line 1880 "check.cog"
+#line 1971 "check.cog"
               ae)
 {
 
 
-#line 1883 "check.cog"
+#line 1974 "check.cog"
          return 
 
-#line 1883 "check.cog"
+#line 1974 "check.cog"
                 nullptr;
 }
 
 
-#line 1888 "check.cog"
+#line 1979 "check.cog"
      for(auto arg : 
 
-#line 1888 "check.cog"
+#line 1979 "check.cog"
                     args)
 {
 {
 
 
-#line 1890 "check.cog"
+#line 1981 "check.cog"
          if(
 
-#line 1890 "check.cog"
+#line 1981 "check.cog"
             
 
-#line 1890 "check.cog"
+#line 1981 "check.cog"
             !
 
-#line 1890 "check.cog"
+#line 1981 "check.cog"
                 DEREF(
 
-#line 1890 "check.cog"
+#line 1981 "check.cog"
              arg).val)
 {
 
 
-#line 1891 "check.cog"
+#line 1982 "check.cog"
              return 
 
-#line 1891 "check.cog"
+#line 1982 "check.cog"
                     nullptr;
 }
 }
 }
 
 
-#line 1895 "check.cog"
+#line 1986 "check.cog"
      return 
 
-#line 1895 "check.cog"
+#line 1986 "check.cog"
             nullptr;
 }
 
 
-#line 1898 "check.cog"
+#line 1989 "check.cog"
  void addGenericOverloadCandidate(
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
                                     
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
               OverloadResolveContext
 
-#line 1899 "check.cog"
+#line 1990 "check.cog"
                                     * context, 
 
-#line 1900 "check.cog"
+#line 1991 "check.cog"
                      DeclRefValImpl<
 
-#line 1900 "check.cog"
+#line 1991 "check.cog"
                                     GenericDecl>  genericDeclRef)
 {
 
 
-#line 1910 "check.cog"
+#line 1993 "check.cog"
+            
+
+#line 1993 "check.cog"
+            
+
+#line 1993 "check.cog"
+  ensureDecl(
+
+#line 1993 "check.cog"
+                    DEREF(
+
+#line 1993 "check.cog"
+             context).checkContext, 
+
+#line 1993 "check.cog"
+                                                         
+
+#line 1993 "check.cog"
+                                                 DEREF(
+
+#line 1993 "check.cog"
+                                   genericDeclRef).getDecl());
+
+
+#line 2003 "check.cog"
      
 
-#line 1910 "check.cog"
+#line 2003 "check.cog"
      auto innerDeclRef = 
 
-#line 1910 "check.cog"
+#line 2003 "check.cog"
                                 
 
-#line 1910 "check.cog"
+#line 2003 "check.cog"
                         getInner(
 
-#line 1910 "check.cog"
+#line 2003 "check.cog"
                                  genericDeclRef);
 
 
-#line 1911 "check.cog"
+#line 2004 "check.cog"
      
 
-#line 1911 "check.cog"
+#line 2004 "check.cog"
      auto specializations = 
 
-#line 1911 "check.cog"
+#line 2004 "check.cog"
                                                  
 
-#line 1911 "check.cog"
+#line 2004 "check.cog"
                            inferGenericArgsForApp(
 
-#line 1912 "check.cog"
+#line 2005 "check.cog"
                 DEREF(
 
-#line 1912 "check.cog"
+#line 2005 "check.cog"
          context).checkContext, 
 
-#line 1913 "check.cog"
+#line 2006 "check.cog"
          genericDeclRef, 
 
-#line 1914 "check.cog"
+#line 2007 "check.cog"
                 DEREF(
 
-#line 1914 "check.cog"
+#line 2007 "check.cog"
          context).appExp);
 
 
-#line 1915 "check.cog"
+#line 2008 "check.cog"
      if(
 
-#line 1915 "check.cog"
+#line 2008 "check.cog"
         specializations)
 {
 
 
-#line 1917 "check.cog"
+#line 2010 "check.cog"
                      DEREF(
 
-#line 1917 "check.cog"
+#line 2010 "check.cog"
          innerDeclRef).specializations = 
 
-#line 1917 "check.cog"
+#line 2010 "check.cog"
                                         specializations;
 }
 
 
-#line 1924 "check.cog"
+#line 2017 "check.cog"
                                  
 
-#line 1924 "check.cog"
+#line 2017 "check.cog"
                                  
 
-#line 1924 "check.cog"
+#line 2017 "check.cog"
      addDeclRefOverloadCandidates(
 
-#line 1924 "check.cog"
+#line 2017 "check.cog"
                                   context, 
 
-#line 1924 "check.cog"
+#line 2017 "check.cog"
                                            innerDeclRef);
 }
 
 
-#line 1927 "check.cog"
+#line 2020 "check.cog"
  void addDeclRefOverloadCandidates(
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
                                     
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
               OverloadResolveContext
 
-#line 1928 "check.cog"
+#line 2021 "check.cog"
                                     * context, 
 
-#line 1929 "check.cog"
+#line 2022 "check.cog"
           DeclRefVal val)
 {
 
 
-#line 1931 "check.cog"
+#line 2024 "check.cog"
      if(auto funcDeclRef = 
 
-#line 1931 "check.cog"
+#line 2024 "check.cog"
                                           
 
-#line 1931 "check.cog"
+#line 2024 "check.cog"
                           as<
 
-#line 1931 "check.cog"
+#line 2024 "check.cog"
                              FuncDeclBase> (
 
-#line 1931 "check.cog"
+#line 2024 "check.cog"
                                            val))
 {
 
 
-#line 1933 "check.cog"
+#line 2026 "check.cog"
                                  
 
-#line 1933 "check.cog"
+#line 2026 "check.cog"
                                  
 
-#line 1933 "check.cog"
+#line 2026 "check.cog"
          addFuncOverloadCandidate(
 
-#line 1933 "check.cog"
+#line 2026 "check.cog"
                                   context, 
 
-#line 1933 "check.cog"
+#line 2026 "check.cog"
                                            funcDeclRef);
 }
 else
 {
 
 
-#line 1935 "check.cog"
+#line 2028 "check.cog"
           if(auto genericDeclRef = 
 
-#line 1935 "check.cog"
+#line 2028 "check.cog"
                                                  
 
-#line 1935 "check.cog"
+#line 2028 "check.cog"
                                   as<
 
-#line 1935 "check.cog"
+#line 2028 "check.cog"
                                      GenericDecl> (
 
-#line 1935 "check.cog"
+#line 2028 "check.cog"
                                                   val))
 {
 
 
-#line 1937 "check.cog"
+#line 2030 "check.cog"
                                     
 
-#line 1937 "check.cog"
+#line 2030 "check.cog"
                                     
 
-#line 1937 "check.cog"
+#line 2030 "check.cog"
          addGenericOverloadCandidate(
 
-#line 1937 "check.cog"
+#line 2030 "check.cog"
                                      context, 
 
-#line 1937 "check.cog"
+#line 2030 "check.cog"
                                               genericDeclRef);
 }
 else
@@ -22336,164 +23301,516 @@ else
 }
 
 
-#line 1947 "check.cog"
+#line 2040 "check.cog"
  
 
-#line 1950 "check.cog"
-     Type specializeType(
+#line 2043 "check.cog"
+     Val findSpecialization(
 
-#line 1948 "check.cog"
-        Type type, 
+#line 2041 "check.cog"
+                   Specializations specializations, 
 
-#line 1949 "check.cog"
-                   Specializations specializations)
+#line 2042 "check.cog"
+           Decl decl)
 {
 
 
-#line 1952 "check.cog"
-  if(
+#line 2045 "check.cog"
+  for(auto arg : 
 
-#line 1952 "check.cog"
-     
+#line 2045 "check.cog"
+                                DEREF(
 
-#line 1952 "check.cog"
-     !
-
-#line 1952 "check.cog"
-      specializations)
+#line 2045 "check.cog"
+                 specializations).args)
+{
 {
 
 
-#line 1953 "check.cog"
-   return 
+#line 2047 "check.cog"
+   if(
 
-#line 1953 "check.cog"
-          type;
+#line 2047 "check.cog"
+           
+
+#line 2047 "check.cog"
+      decl 
+
+#line 2047 "check.cog"
+           == 
+
+#line 2047 "check.cog"
+                 DEREF(
+
+#line 2047 "check.cog"
+              arg).param)
+{
+
+
+#line 2049 "check.cog"
+    return 
+
+#line 2049 "check.cog"
+              DEREF(
+
+#line 2049 "check.cog"
+           arg).value;
+}
+}
 }
 
 
-#line 1955 "check.cog"
-           
-
-#line 1955 "check.cog"
-           
-
-#line 1955 "check.cog"
-  cogAssert(
-
-#line 1955 "check.cog"
-            
-
-#line 1955 "check.cog"
-            !
-
-#line 1955 "check.cog"
-             "unimplemented");
-
-
-#line 1956 "check.cog"
+#line 2053 "check.cog"
   return 
 
-#line 1956 "check.cog"
+#line 2053 "check.cog"
          nullptr;
 }
 
 
-#line 1961 "check.cog"
+#line 2056 "check.cog"
+ 
+
+#line 2059 "check.cog"
+     DeclRefVal specializeDeclRef(
+
+#line 2057 "check.cog"
+           DeclRefVal declRef, 
+
+#line 2058 "check.cog"
+                   Specializations specializations)
+{
+
+
+#line 2061 "check.cog"
+  
+
+#line 2061 "check.cog"
+  auto oldDecl = 
+
+#line 2061 "check.cog"
+                               
+
+#line 2061 "check.cog"
+                       DEREF(
+
+#line 2061 "check.cog"
+                declRef).getDecl();
+
+
+#line 2062 "check.cog"
+  
+
+#line 2062 "check.cog"
+  auto oldSpecializations = 
+
+#line 2062 "check.cog"
+                                                     
+
+#line 2062 "check.cog"
+                                  DEREF(
+
+#line 2062 "check.cog"
+                           declRef).getSpecializations();
+
+
+#line 2065 "check.cog"
+  if(auto genericTypeParamDecl = 
+
+#line 2065 "check.cog"
+                                                    
+
+#line 2065 "check.cog"
+                                as<
+
+#line 2065 "check.cog"
+                                   GenericParamDecl> (
+
+#line 2065 "check.cog"
+                                                     oldDecl))
+{
+
+
+#line 2068 "check.cog"
+   if(auto newVal = 
+
+#line 2068 "check.cog"
+                                     
+
+#line 2068 "check.cog"
+                   findSpecialization(
+
+#line 2068 "check.cog"
+                                      specializations, 
+
+#line 2068 "check.cog"
+                                                       genericTypeParamDecl))
+{
+
+
+#line 2070 "check.cog"
+    if(auto typeDeclRef = 
+
+#line 2070 "check.cog"
+                                        
+
+#line 2070 "check.cog"
+                         as<
+
+#line 2070 "check.cog"
+                            DeclRefType> (
+
+#line 2070 "check.cog"
+                                         newVal))
+{
+
+
+#line 2071 "check.cog"
+     return 
+
+#line 2071 "check.cog"
+                       DEREF(
+
+#line 2071 "check.cog"
+            typeDeclRef).declRef;
+}
+}
+
+
+#line 2074 "check.cog"
+            
+
+#line 2074 "check.cog"
+            
+
+#line 2074 "check.cog"
+   cogAssert(
+
+#line 2074 "check.cog"
+             
+
+#line 2074 "check.cog"
+             !
+
+#line 2074 "check.cog"
+              "unimplemented");
+}
+
+
+#line 2077 "check.cog"
+  if(
+
+#line 2077 "check.cog"
+     
+
+#line 2077 "check.cog"
+     !
+
+#line 2077 "check.cog"
+      oldSpecializations)
+{
+
+
+#line 2078 "check.cog"
+   return 
+
+#line 2078 "check.cog"
+          declRef;
+}
+
+
+#line 2083 "check.cog"
+           
+
+#line 2083 "check.cog"
+           
+
+#line 2083 "check.cog"
+  cogAssert(
+
+#line 2083 "check.cog"
+            
+
+#line 2083 "check.cog"
+            !
+
+#line 2083 "check.cog"
+             "unimplemented");
+
+
+#line 2085 "check.cog"
+  return 
+
+#line 2085 "check.cog"
+                   
+
+#line 2085 "check.cog"
+         DeclRefVal();
+}
+
+
+#line 2088 "check.cog"
+ 
+
+#line 2091 "check.cog"
+     Type specializeType(
+
+#line 2089 "check.cog"
+        Type type, 
+
+#line 2090 "check.cog"
+                   Specializations specializations)
+{
+
+
+#line 2093 "check.cog"
+  if(
+
+#line 2093 "check.cog"
+     
+
+#line 2093 "check.cog"
+     !
+
+#line 2093 "check.cog"
+      specializations)
+{
+
+
+#line 2094 "check.cog"
+   return 
+
+#line 2094 "check.cog"
+          type;
+}
+
+
+#line 2096 "check.cog"
+  if(auto declRefType = 
+
+#line 2096 "check.cog"
+                                      
+
+#line 2096 "check.cog"
+                       as<
+
+#line 2096 "check.cog"
+                          DeclRefType> (
+
+#line 2096 "check.cog"
+                                       type))
+{
+
+
+#line 2099 "check.cog"
+   
+
+#line 2099 "check.cog"
+   auto specDeclRef = 
+
+#line 2099 "check.cog"
+                                      
+
+#line 2099 "check.cog"
+                     specializeDeclRef(
+
+#line 2099 "check.cog"
+                                                  DEREF(
+
+#line 2099 "check.cog"
+                                       declRefType).declRef, 
+
+#line 2099 "check.cog"
+                                                            specializations);
+
+
+#line 2101 "check.cog"
+   
+
+#line 2101 "check.cog"
+   auto specType = 
+
+#line 2101 "check.cog"
+                                           
+
+#line 2101 "check.cog"
+                  createObject<
+
+#line 2101 "check.cog"
+                               DeclRefType> ();
+
+
+#line 2102 "check.cog"
+           DEREF(
+
+#line 2102 "check.cog"
+   specType).declRef = 
+
+#line 2102 "check.cog"
+                                    
+
+#line 2102 "check.cog"
+                      CompactDeclRef(
+
+#line 2102 "check.cog"
+                                     specDeclRef);
+
+
+#line 2103 "check.cog"
+   return 
+
+#line 2103 "check.cog"
+          specType;
+}
+
+
+#line 2106 "check.cog"
+  if(auto errorType = 
+
+#line 2106 "check.cog"
+                                  
+
+#line 2106 "check.cog"
+                     as<
+
+#line 2106 "check.cog"
+                        ErrorType> (
+
+#line 2106 "check.cog"
+                                   type))
+{
+
+
+#line 2107 "check.cog"
+   return 
+
+#line 2107 "check.cog"
+          errorType;
+}
+
+
+#line 2109 "check.cog"
+           
+
+#line 2109 "check.cog"
+           
+
+#line 2109 "check.cog"
+  cogAssert(
+
+#line 2109 "check.cog"
+            
+
+#line 2109 "check.cog"
+            !
+
+#line 2109 "check.cog"
+             "unimplemented");
+
+
+#line 2110 "check.cog"
+  return 
+
+#line 2110 "check.cog"
+         nullptr;
+}
+
+
+#line 2115 "check.cog"
  void ensureDecl(
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
                        
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
            CheckContext
 
-#line 1962 "check.cog"
+#line 2116 "check.cog"
                        * context, 
 
-#line 1963 "check.cog"
+#line 2117 "check.cog"
         Decl decl, 
 
-#line 1964 "check.cog"
+#line 2118 "check.cog"
          DeclCheckState state)
 {
 
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
   if(
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
                      
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
          DEREF(
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
      decl).checkState 
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
                      >= 
 
-#line 1966 "check.cog"
+#line 2120 "check.cog"
                         state)
 {
 
 
-#line 1967 "check.cog"
+#line 2121 "check.cog"
    return;
 }
 
 
-#line 1969 "check.cog"
+#line 2123 "check.cog"
            
 
-#line 1969 "check.cog"
+#line 2123 "check.cog"
            
 
-#line 1969 "check.cog"
+#line 2123 "check.cog"
   checkDecl(
 
-#line 1969 "check.cog"
+#line 2123 "check.cog"
             context, 
 
-#line 1969 "check.cog"
+#line 2123 "check.cog"
                      decl);
 }
 
 
-#line 1972 "check.cog"
+#line 2126 "check.cog"
  void ensureDecl(
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
                        
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
            CheckContext
 
-#line 1973 "check.cog"
+#line 2127 "check.cog"
                        * context, 
 
-#line 1974 "check.cog"
+#line 2128 "check.cog"
         Decl decl)
 {
 
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
             
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
             
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
   ensureDecl(
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
              context, 
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
                       decl, 
 
-#line 1976 "check.cog"
+#line 2130 "check.cog"
                             kDeclCheckState_CheckedHead);
 }
 
@@ -31254,7 +32571,7 @@ else
 }
 
 
-#line 459 "syntax.cog"
+#line 461 "syntax.cog"
  
 
 #line 736 "emit.cog"
@@ -42403,55 +43720,77 @@ for(;
 
 
 #line 40 "name.cog"
+  if(
+
+#line 40 "name.cog"
+     
+
+#line 40 "name.cog"
+     !
+
+#line 40 "name.cog"
+      name)
+{
+
+
+#line 41 "name.cog"
+   return 
+
+#line 41 "name.cog"
+          "";
+}
+
+
+#line 42 "name.cog"
   return 
 
-#line 40 "name.cog"
+#line 42 "name.cog"
              DEREF(
 
-#line 40 "name.cog"
+#line 42 "name.cog"
          name).text;
 }
 
 
-#line 43 "name.cog"
+#line 45 "name.cog"
  
 
-#line 46 "name.cog"
+#line 48 "name.cog"
      Ptr<
 
-#line 46 "name.cog"
+#line 48 "name.cog"
          Name>  getName(
 
-#line 44 "name.cog"
+#line 46 "name.cog"
            Session session, 
 
-#line 45 "name.cog"
+#line 47 "name.cog"
         Ptr<
 
-#line 45 "name.cog"
+#line 47 "name.cog"
             Char>  text)
 {
 
 
-#line 48 "name.cog"
+#line 50 "name.cog"
   return 
 
-#line 48 "name.cog"
+#line 50 "name.cog"
                 
 
-#line 48 "name.cog"
+#line 50 "name.cog"
          getName(
 
-#line 48 "name.cog"
+#line 50 "name.cog"
                  session, 
 
-#line 48 "name.cog"
+#line 50 "name.cog"
                                               
 
-#line 48 "name.cog"
+#line 50 "name.cog"
                           TerminatedStringSpan(
 
-#line 48 "name.cog"
+#line 50 "name.cog"
                                                text));
 }
 
@@ -44678,227 +46017,227 @@ else
 }
 
 
-#line 667 "syntax.cog"
+#line 669 "syntax.cog"
  
 
-#line 672 "syntax.cog"
+#line 674 "syntax.cog"
   LookupResultItem::LookupResultItem()
 {
 
 
-#line 674 "syntax.cog"
+#line 676 "syntax.cog"
        DEREF(
 
-#line 674 "syntax.cog"
+#line 676 "syntax.cog"
    this).decl = 
 
-#line 674 "syntax.cog"
+#line 676 "syntax.cog"
                nullptr;
 }
 
 
-#line 680 "syntax.cog"
+#line 682 "syntax.cog"
   LookupResultItem::LookupResultItem(
 
-#line 680 "syntax.cog"
+#line 682 "syntax.cog"
              Decl decl)
 {
 
 
-#line 682 "syntax.cog"
+#line 684 "syntax.cog"
        DEREF(
 
-#line 682 "syntax.cog"
+#line 684 "syntax.cog"
    this).decl = 
 
-#line 682 "syntax.cog"
+#line 684 "syntax.cog"
                decl;
 }
 
 
-#line 686 "syntax.cog"
+#line 688 "syntax.cog"
  
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
   
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                   Ptr<
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                       LookupResultItem>  LookupResult::begin()
 {
 
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                                           return 
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                                                             
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                                                       DEREF(
 
-#line 690 "syntax.cog"
+#line 692 "syntax.cog"
                                                  items).begin();
 }
 
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
   
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                 Ptr<
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                     LookupResultItem>  LookupResult::end()
 {
 
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                                         return 
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                                                         
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                                                     DEREF(
 
-#line 691 "syntax.cog"
+#line 693 "syntax.cog"
                                                items).end();
 }
 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
   
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                     Bool LookupResult::isEmpty()
 {
 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                            return 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                                    
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                                 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                        DEREF(
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                   items).getCount() 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                                    == 
 
-#line 694 "syntax.cog"
+#line 696 "syntax.cog"
                                                       0;
 }
 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
      
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                         Bool LookupResult::isUnique()
 {
 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                return 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                                        
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                                     
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                            DEREF(
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                       items).getCount() 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                                        == 
 
-#line 695 "syntax.cog"
+#line 697 "syntax.cog"
                                                           1;
 }
 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
      
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                             Bool LookupResult::isOverloaded()
 {
 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                    return 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                                            
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                                         
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                                DEREF(
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                           items).getCount() 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                                            > 
 
-#line 696 "syntax.cog"
+#line 698 "syntax.cog"
                                                              1;
 }
 
 
-#line 698 "syntax.cog"
+#line 700 "syntax.cog"
      
 
-#line 698 "syntax.cog"
+#line 700 "syntax.cog"
                        Decl LookupResult::getDecl()
 {
 
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
                   
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
                   
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
          cogAssert(
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
                            
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
                    isUnique());
 
 
-#line 701 "syntax.cog"
+#line 703 "syntax.cog"
          return 
 
-#line 701 "syntax.cog"
+#line 703 "syntax.cog"
                         DEREF(
 
-#line 701 "syntax.cog"
+#line 703 "syntax.cog"
                      
 
-#line 701 "syntax.cog"
+#line 703 "syntax.cog"
                 items[
 
-#line 701 "syntax.cog"
+#line 703 "syntax.cog"
                       0]).decl;
 }
 
@@ -44949,7 +46288,7 @@ else
 }
 
 
-#line 496 "syntax.cog"
+#line 498 "syntax.cog"
  
 
 #line 401 "parser.cog"
@@ -45019,7 +46358,7 @@ else
 }
 
 
-#line 650 "syntax.cog"
+#line 652 "syntax.cog"
  
 
 #line 418 "parser.cog"
@@ -46000,10 +47339,10 @@ default:
 }
 
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
  typedef 
 
-#line 587 "syntax.cog"
+#line 589 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -59751,675 +61090,675 @@ default:
 #line 205 "syntax.cog"
  
 
-#line 267 "syntax.cog"
+#line 269 "syntax.cog"
  
 
-#line 304 "syntax.cog"
+#line 306 "syntax.cog"
  
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
   template<typename T > DeclRefListIterator<T > ::DeclRefListIterator(
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
              Decl decl, 
 
-#line 309 "syntax.cog"
+#line 311 "syntax.cog"
                                     Specializations specializations)
 {
 
 
-#line 311 "syntax.cog"
+#line 313 "syntax.cog"
        DEREF(
 
-#line 311 "syntax.cog"
+#line 313 "syntax.cog"
    this).decl = 
 
-#line 311 "syntax.cog"
+#line 313 "syntax.cog"
                decl;
 
 
-#line 312 "syntax.cog"
+#line 314 "syntax.cog"
        DEREF(
 
-#line 312 "syntax.cog"
+#line 314 "syntax.cog"
    this).specializations = 
 
-#line 312 "syntax.cog"
+#line 314 "syntax.cog"
                           specializations;
 
 
-#line 314 "syntax.cog"
+#line 316 "syntax.cog"
          
 
-#line 314 "syntax.cog"
+#line 316 "syntax.cog"
          
 
-#line 314 "syntax.cog"
+#line 316 "syntax.cog"
    adjust();
 }
 
 
-#line 317 "syntax.cog"
+#line 319 "syntax.cog"
   template<typename T > void DeclRefListIterator<T > ::operator++()
 {
 
 
-#line 319 "syntax.cog"
+#line 321 "syntax.cog"
    if(
 
-#line 319 "syntax.cog"
+#line 321 "syntax.cog"
       
 
-#line 319 "syntax.cog"
+#line 321 "syntax.cog"
       !
 
-#line 319 "syntax.cog"
+#line 321 "syntax.cog"
        decl)
 {
 
 
-#line 320 "syntax.cog"
+#line 322 "syntax.cog"
     return;
 }
 
 
-#line 321 "syntax.cog"
+#line 323 "syntax.cog"
    decl = 
 
-#line 321 "syntax.cog"
+#line 323 "syntax.cog"
           cast<
 
-#line 321 "syntax.cog"
+#line 323 "syntax.cog"
                Decl>(
 
-#line 321 "syntax.cog"
+#line 323 "syntax.cog"
                          DEREF(
 
-#line 321 "syntax.cog"
+#line 323 "syntax.cog"
                      decl).next);
 
 
-#line 322 "syntax.cog"
+#line 324 "syntax.cog"
          
 
-#line 322 "syntax.cog"
+#line 324 "syntax.cog"
          
 
-#line 322 "syntax.cog"
+#line 324 "syntax.cog"
    adjust();
 }
 
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
   template<typename T > 
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
               DeclRefValImpl<
 
-#line 325 "syntax.cog"
+#line 327 "syntax.cog"
                              T>  DeclRefListIterator<T > ::operator*()
 {
 
 
-#line 327 "syntax.cog"
+#line 329 "syntax.cog"
    return 
 
-#line 327 "syntax.cog"
+#line 329 "syntax.cog"
                            
 
-#line 327 "syntax.cog"
+#line 329 "syntax.cog"
           DeclRefValImpl<
 
-#line 327 "syntax.cog"
+#line 329 "syntax.cog"
                          T> (
 
-#line 328 "syntax.cog"
+#line 330 "syntax.cog"
     cast<
 
-#line 328 "syntax.cog"
+#line 330 "syntax.cog"
          T>(
 
-#line 328 "syntax.cog"
+#line 330 "syntax.cog"
             decl), 
 
-#line 329 "syntax.cog"
+#line 331 "syntax.cog"
     specializations);
 }
 
 
-#line 332 "syntax.cog"
+#line 334 "syntax.cog"
   template<typename T > void DeclRefListIterator<T > ::adjust()
 {
 
 
-#line 334 "syntax.cog"
+#line 336 "syntax.cog"
    while(
 
-#line 334 "syntax.cog"
+#line 336 "syntax.cog"
          decl)
 {
 {
 
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
     
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
     auto declAsT = 
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
                        
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
                   as<
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
                      T> (
 
-#line 336 "syntax.cog"
+#line 338 "syntax.cog"
                         decl);
 
 
-#line 337 "syntax.cog"
+#line 339 "syntax.cog"
     if(
 
-#line 337 "syntax.cog"
+#line 339 "syntax.cog"
        declAsT)
 {
 
 
-#line 338 "syntax.cog"
+#line 340 "syntax.cog"
      return;
 }
 
 
-#line 340 "syntax.cog"
+#line 342 "syntax.cog"
     decl = 
 
-#line 340 "syntax.cog"
+#line 342 "syntax.cog"
            cast<
 
-#line 340 "syntax.cog"
+#line 342 "syntax.cog"
                 Decl>(
 
-#line 340 "syntax.cog"
+#line 342 "syntax.cog"
                           DEREF(
 
-#line 340 "syntax.cog"
+#line 342 "syntax.cog"
                       decl).next);
 }
 }
 }
 
 
-#line 345 "syntax.cog"
+#line 347 "syntax.cog"
  
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
   template<typename T > 
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
                   DeclRefListIterator<
 
-#line 350 "syntax.cog"
+#line 352 "syntax.cog"
                                       T>  DeclRefList<T > ::begin()
 {
 
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
    return 
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
                                 
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
           DeclRefListIterator<
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
                               T> (
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
                                  decl, 
 
-#line 352 "syntax.cog"
+#line 354 "syntax.cog"
                                        specializations);
 }
 
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
   template<typename T > 
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
                 DeclRefListIterator<
 
-#line 355 "syntax.cog"
+#line 357 "syntax.cog"
                                     T>  DeclRefList<T > ::end()
 {
 
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
    return 
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
                                 
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
           DeclRefListIterator<
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
                               T> (
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
                                  nullptr, 
 
-#line 357 "syntax.cog"
+#line 359 "syntax.cog"
                                           nullptr);
 }
 
 
-#line 360 "syntax.cog"
+#line 362 "syntax.cog"
   template<typename T > DeclRefList<T > ::DeclRefList()
 {
 
 
-#line 362 "syntax.cog"
+#line 364 "syntax.cog"
        DEREF(
 
-#line 362 "syntax.cog"
+#line 364 "syntax.cog"
    this).decl = 
 
-#line 362 "syntax.cog"
+#line 364 "syntax.cog"
                nullptr;
 
 
-#line 363 "syntax.cog"
+#line 365 "syntax.cog"
        DEREF(
 
-#line 363 "syntax.cog"
+#line 365 "syntax.cog"
    this).specializations = 
 
-#line 363 "syntax.cog"
+#line 365 "syntax.cog"
                           nullptr;
 }
 
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
   template<typename T > DeclRefList<T > ::DeclRefList(
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
              Decl decl, 
 
-#line 366 "syntax.cog"
+#line 368 "syntax.cog"
                                     Specializations specializations)
 {
 
 
-#line 368 "syntax.cog"
+#line 370 "syntax.cog"
        DEREF(
 
-#line 368 "syntax.cog"
+#line 370 "syntax.cog"
    this).decl = 
 
-#line 368 "syntax.cog"
+#line 370 "syntax.cog"
                decl;
 
 
-#line 369 "syntax.cog"
+#line 371 "syntax.cog"
        DEREF(
 
-#line 369 "syntax.cog"
+#line 371 "syntax.cog"
    this).specializations = 
 
-#line 369 "syntax.cog"
+#line 371 "syntax.cog"
                           specializations;
 }
 
 
-#line 373 "syntax.cog"
+#line 375 "syntax.cog"
  
 
-#line 373 "syntax.cog"
+#line 375 "syntax.cog"
       template<typename T > 
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
                                     Bool operator!=(
 
-#line 374 "syntax.cog"
+#line 376 "syntax.cog"
         DeclRefListIterator<
 
-#line 374 "syntax.cog"
+#line 376 "syntax.cog"
                             T>  left, 
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
          DeclRefListIterator<
 
-#line 375 "syntax.cog"
+#line 377 "syntax.cog"
                              T>  right)
 {
 
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
   return 
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
                    
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
              DEREF(
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
          left).decl 
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
                    != 
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
                            DEREF(
 
-#line 377 "syntax.cog"
+#line 379 "syntax.cog"
                       right).decl;
 }
 
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
  
 
-#line 381 "syntax.cog"
+#line 383 "syntax.cog"
      DeclRefList<
 
-#line 381 "syntax.cog"
+#line 383 "syntax.cog"
                  Decl>  getDecls(
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
                           DeclRefValImpl<
 
-#line 380 "syntax.cog"
+#line 382 "syntax.cog"
                                          ContainerDecl>  container)
 {
 
 
-#line 383 "syntax.cog"
+#line 385 "syntax.cog"
   return 
 
-#line 383 "syntax.cog"
+#line 385 "syntax.cog"
                           
 
-#line 383 "syntax.cog"
+#line 385 "syntax.cog"
          DeclRefList<
 
-#line 383 "syntax.cog"
+#line 385 "syntax.cog"
                      Decl> (
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
                                  DEREF(
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
                                
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
                       DEREF(
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
                     
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
             DEREF(
 
-#line 384 "syntax.cog"
+#line 386 "syntax.cog"
    container).getDecl()).getDecls()).head, 
 
-#line 385 "syntax.cog"
+#line 387 "syntax.cog"
             DEREF(
 
-#line 385 "syntax.cog"
+#line 387 "syntax.cog"
    container).specializations);
 }
 
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
  
 
-#line 394 "syntax.cog"
+#line 396 "syntax.cog"
      DeclRefVal getInner(
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
                         DeclRefValImpl<
 
-#line 393 "syntax.cog"
+#line 395 "syntax.cog"
                                        GenericDecl>  declRef)
 {
 
 
-#line 396 "syntax.cog"
+#line 398 "syntax.cog"
   return 
 
-#line 396 "syntax.cog"
+#line 398 "syntax.cog"
                    
 
-#line 396 "syntax.cog"
+#line 398 "syntax.cog"
          DeclRefVal(
 
-#line 397 "syntax.cog"
+#line 399 "syntax.cog"
                     DEREF(
 
-#line 397 "syntax.cog"
+#line 399 "syntax.cog"
                   
 
-#line 397 "syntax.cog"
+#line 399 "syntax.cog"
           DEREF(
 
-#line 397 "syntax.cog"
+#line 399 "syntax.cog"
    declRef).getDecl()).inner, 
 
-#line 398 "syntax.cog"
+#line 400 "syntax.cog"
           DEREF(
 
-#line 398 "syntax.cog"
+#line 400 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 407 "syntax.cog"
- 
-
-#line 450 "syntax.cog"
+#line 409 "syntax.cog"
  
 
 #line 452 "syntax.cog"
+ 
+
+#line 454 "syntax.cog"
      Type getResultType(
 
-#line 451 "syntax.cog"
+#line 453 "syntax.cog"
            DeclRefValImpl<
 
-#line 451 "syntax.cog"
+#line 453 "syntax.cog"
                           FuncDeclBase>  declRef)
 {
 
 
-#line 454 "syntax.cog"
+#line 456 "syntax.cog"
   return 
 
-#line 454 "syntax.cog"
+#line 456 "syntax.cog"
                        
 
-#line 454 "syntax.cog"
+#line 456 "syntax.cog"
          specializeType(
 
-#line 455 "syntax.cog"
+#line 457 "syntax.cog"
                                DEREF(
 
-#line 455 "syntax.cog"
+#line 457 "syntax.cog"
                     DEREF(
 
-#line 455 "syntax.cog"
+#line 457 "syntax.cog"
                   
 
-#line 455 "syntax.cog"
+#line 457 "syntax.cog"
           DEREF(
 
-#line 455 "syntax.cog"
+#line 457 "syntax.cog"
    declRef).getDecl()).resultType).type, 
 
-#line 456 "syntax.cog"
+#line 458 "syntax.cog"
           DEREF(
 
-#line 456 "syntax.cog"
+#line 458 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
  
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                                                        Type getType(
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                        DeclRefValImpl<
 
-#line 477 "syntax.cog"
+#line 479 "syntax.cog"
                                       VarDeclBase>  declRef)
 {
 
 
-#line 479 "syntax.cog"
+#line 481 "syntax.cog"
   return 
 
-#line 479 "syntax.cog"
+#line 481 "syntax.cog"
                        
 
-#line 479 "syntax.cog"
+#line 481 "syntax.cog"
          specializeType(
 
-#line 480 "syntax.cog"
+#line 482 "syntax.cog"
                          DEREF(
 
-#line 480 "syntax.cog"
+#line 482 "syntax.cog"
                     DEREF(
 
-#line 480 "syntax.cog"
+#line 482 "syntax.cog"
                   
 
-#line 480 "syntax.cog"
+#line 482 "syntax.cog"
           DEREF(
 
-#line 480 "syntax.cog"
+#line 482 "syntax.cog"
    declRef).getDecl()).type).type, 
 
-#line 481 "syntax.cog"
+#line 483 "syntax.cog"
           DEREF(
 
-#line 481 "syntax.cog"
+#line 483 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 484 "syntax.cog"
+#line 486 "syntax.cog"
  
 
-#line 504 "syntax.cog"
+#line 506 "syntax.cog"
  
 
-#line 511 "syntax.cog"
+#line 513 "syntax.cog"
  
 
-#line 516 "syntax.cog"
+#line 518 "syntax.cog"
  
 
-#line 523 "syntax.cog"
+#line 525 "syntax.cog"
  
 
-#line 529 "syntax.cog"
+#line 531 "syntax.cog"
  
 
-#line 537 "syntax.cog"
+#line 539 "syntax.cog"
  
 
-#line 542 "syntax.cog"
+#line 544 "syntax.cog"
  
 
-#line 546 "syntax.cog"
+#line 548 "syntax.cog"
  
 
-#line 550 "syntax.cog"
+#line 552 "syntax.cog"
  
 
-#line 557 "syntax.cog"
+#line 559 "syntax.cog"
  
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
  
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
  
 
-#line 611 "syntax.cog"
+#line 613 "syntax.cog"
  
 
-#line 615 "syntax.cog"
+#line 617 "syntax.cog"
  
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
  
 
-#line 623 "syntax.cog"
+#line 625 "syntax.cog"
  
 
-#line 627 "syntax.cog"
+#line 629 "syntax.cog"
  
 
-#line 631 "syntax.cog"
+#line 633 "syntax.cog"
  
 
-#line 635 "syntax.cog"
+#line 637 "syntax.cog"
  
 
-#line 639 "syntax.cog"
+#line 641 "syntax.cog"
  
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  
 
-#line 713 "syntax.cog"
+#line 715 "syntax.cog"
  
 
-#line 733 "syntax.cog"
+#line 735 "syntax.cog"
  
 
-#line 745 "syntax.cog"
+#line 747 "syntax.cog"
  
 
-#line 751 "syntax.cog"
+#line 753 "syntax.cog"
  
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
  
 
-#line 763 "syntax.cog"
+#line 765 "syntax.cog"
  
 
-#line 766 "syntax.cog"
+#line 768 "syntax.cog"
  
 
-#line 769 "syntax.cog"
+#line 771 "syntax.cog"
  
 
-#line 776 "syntax.cog"
+#line 778 "syntax.cog"
  
 
-#line 783 "syntax.cog"
+#line 785 "syntax.cog"
  
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  
 
 #line 5 "token.cog"
