@@ -2304,8 +2304,22 @@ func inferGenericArgsForApp(
             return nullptr;
     }
 
+	// Seems like we are good, so construct the specializations
+	let spec = createObject<Specializations>();
+	spec.genericDeclRef = genericDeclRef;
 
-    return nullptr;
+	var argLink = &spec.args.head;
+	foreach(arg in args)
+	{
+		let specArg = createObject<SpecializationArg>();
+		specArg.param = arg.paramDeclRef.getDecl();
+		specArg.value = arg.val;
+
+		*argLink = specArg;
+		argLink = &specArg.next;
+	}
+
+	return spec;
 }
 
 func addGenericOverloadCandidate(
@@ -2359,6 +2373,20 @@ func addDeclRefOverloadCandidates(
 
 //
 
+func specializeVal(
+	val: Val,
+	specializations: Specializations)
+	-> Val
+{
+	if(let type = as<Type>(val))
+	{
+		return specializeType(type, specializations);
+	}
+
+	cogAssert(!"unimplemented");
+	return nullptr;
+}
+
 func findSpecialization(
 	specializations:	Specializations,
 	decl:				Decl)
@@ -2401,10 +2429,25 @@ func specializeDeclRef(
 
 	// otherwise we need to specialize the specializations themselves
 
+	let newSpec = createObject<Specializations>();
+	newSpec.genericDeclRef = as<GenericDecl>(specializeDeclRef(
+		oldSpecializations.genericDeclRef,
+		specializations));
 
-	cogAssert(!"unimplemented");
+	var argLink = &newSpec.args.head;
+	foreach(arg in oldSpecializations.args)
+	{
+		// TODO: need to substitute params too?
 
-	return DeclRefVal();
+		let newSpecArg = createObject<SpecializationArg>();
+		newSpecArg.param = arg.param;
+		newSpecArg.value = specializeVal(arg.value, specializations);
+
+		*argLink = newSpecArg;
+		argLink = &newSpecArg.next;
+	}
+
+	return DeclRefVal(oldDecl, newSpec);
 }
 
 func specializeType(
