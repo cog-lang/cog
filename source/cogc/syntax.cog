@@ -41,7 +41,7 @@ struct SyntaxListIterator<T : Syntax>
 	}
 }
 
-func !=(
+func != <T>(
 	left: SyntaxListIterator<T>,
 	right: SyntaxListIterator<T>)
 	-> Bool
