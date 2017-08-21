@@ -28,16 +28,16 @@ struct SyntaxList;
 struct AttrImpl;
 
 
-#line 214 "syntax.cog"
+#line 219 "syntax.cog"
  using Stmt = struct StmtImpl* ;
 struct StmtImpl;
 
 
-#line 238 "syntax.cog"
+#line 243 "syntax.cog"
  enum DeclCheckState : int;
 
 
-#line 246 "syntax.cog"
+#line 251 "syntax.cog"
  using Decl = struct DeclImpl* ;
 struct DeclImpl;
 
@@ -47,17 +47,17 @@ struct DeclImpl;
 struct FilteredSyntaxList;
 
 
-#line 288 "syntax.cog"
+#line 293 "syntax.cog"
  using ContainerStmt = struct ContainerStmtImpl* ;
 struct ContainerStmtImpl;
 
 
-#line 303 "syntax.cog"
+#line 308 "syntax.cog"
  using ContainerDecl = struct ContainerDeclImpl* ;
 struct ContainerDeclImpl;
 
 
-#line 429 "syntax.cog"
+#line 434 "syntax.cog"
  using ModuleDecl = struct ModuleDeclImpl* ;
 struct ModuleDeclImpl;
 
@@ -110,7 +110,7 @@ struct SessionImpl;
 #line 110 "check.cog"
  
 
-#line 394 "syntax.cog"
+#line 399 "syntax.cog"
  using GenericDecl = struct GenericDeclImpl* ;
 struct GenericDeclImpl;
 
@@ -118,17 +118,17 @@ struct GenericDeclImpl;
 #line 152 "check.cog"
  
 
-#line 284 "syntax.cog"
+#line 289 "syntax.cog"
  using Val = struct ValImpl* ;
 struct ValImpl;
 
 
-#line 734 "syntax.cog"
+#line 739 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl;
 
 
-#line 584 "syntax.cog"
+#line 589 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl;
 
@@ -137,12 +137,12 @@ struct ExpImpl;
  struct TypeExp;
 
 
-#line 407 "syntax.cog"
+#line 412 "syntax.cog"
  using TypeVarDecl = struct TypeVarDeclImpl* ;
 struct TypeVarDeclImpl;
 
 
-#line 425 "syntax.cog"
+#line 430 "syntax.cog"
  using TypeAliasDecl = struct TypeAliasDeclImpl* ;
 struct TypeAliasDeclImpl;
 
@@ -150,7 +150,7 @@ struct TypeAliasDeclImpl;
 #line 167 "check.cog"
  
 
-#line 477 "syntax.cog"
+#line 482 "syntax.cog"
  using VarDeclBase = struct VarDeclBaseImpl* ;
 struct VarDeclBaseImpl;
 
@@ -158,12 +158,12 @@ struct VarDeclBaseImpl;
 #line 174 "check.cog"
  
 
-#line 433 "syntax.cog"
+#line 438 "syntax.cog"
  using PatternDecl = struct PatternDeclImpl* ;
 struct PatternDeclImpl;
 
 
-#line 450 "syntax.cog"
+#line 455 "syntax.cog"
  using FuncDeclBase = struct FuncDeclBaseImpl* ;
 struct FuncDeclBaseImpl;
 
@@ -171,12 +171,12 @@ struct FuncDeclBaseImpl;
 #line 215 "check.cog"
  
 
-#line 437 "syntax.cog"
+#line 442 "syntax.cog"
  using AggTypeDecl = struct AggTypeDeclImpl* ;
 struct AggTypeDeclImpl;
 
 
-#line 442 "syntax.cog"
+#line 447 "syntax.cog"
  using ClassDecl = struct ClassDeclImpl* ;
 struct ClassDeclImpl;
 
@@ -184,7 +184,7 @@ struct ClassDeclImpl;
 #line 237 "check.cog"
  
 
-#line 446 "syntax.cog"
+#line 451 "syntax.cog"
  using StructDecl = struct StructDeclImpl* ;
 struct StructDeclImpl;
 
@@ -201,7 +201,7 @@ struct StructDeclImpl;
 #line 278 "check.cog"
  
 
-#line 727 "syntax.cog"
+#line 732 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl;
 
@@ -242,12 +242,12 @@ struct BlockStmtImpl;
 #line 857 "check.cog"
  
 
-#line 651 "syntax.cog"
+#line 656 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl;
 
 
-#line 663 "syntax.cog"
+#line 668 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl;
 
@@ -255,12 +255,12 @@ struct MemberExpImpl;
 #line 873 "check.cog"
  
 
-#line 571 "syntax.cog"
+#line 576 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl;
 
 
-#line 611 "syntax.cog"
+#line 616 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl;
 
@@ -302,7 +302,7 @@ struct AppExpBaseImpl;
 #line 1050 "check.cog"
  
 
-#line 745 "syntax.cog"
+#line 750 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl;
 
@@ -340,12 +340,12 @@ struct TypeTypeImpl;
 #line 1230 "check.cog"
  
 
-#line 258 "syntax.cog"
+#line 263 "syntax.cog"
  using SpecializationArg = struct SpecializationArgImpl* ;
 struct SpecializationArgImpl;
 
 
-#line 266 "syntax.cog"
+#line 271 "syntax.cog"
  using Specializations = struct SpecializationsImpl* ;
 struct SpecializationsImpl;
 
@@ -401,7 +401,7 @@ struct SpecializationsImpl;
 #line 1768 "check.cog"
  
 
-#line 469 "syntax.cog"
+#line 474 "syntax.cog"
  using SubscriptDecl = struct SubscriptDeclImpl* ;
 struct SubscriptDeclImpl;
 
@@ -412,7 +412,7 @@ struct SubscriptDeclImpl;
 #line 1791 "check.cog"
  
 
-#line 473 "syntax.cog"
+#line 478 "syntax.cog"
  using InitializerDecl = struct InitializerDeclImpl* ;
 struct InitializerDeclImpl;
 
@@ -447,7 +447,7 @@ struct InitializerDeclImpl;
 #line 2056 "check.cog"
  
 
-#line 421 "syntax.cog"
+#line 426 "syntax.cog"
  using GenericParamDecl = struct GenericParamDeclImpl* ;
 struct GenericParamDeclImpl;
 
@@ -475,12 +475,12 @@ struct GenericParamDeclImpl;
 #line 2181 "check.cog"
  
 
-#line 494 "syntax.cog"
+#line 499 "syntax.cog"
  using LetDecl = struct LetDeclImpl* ;
 struct LetDeclImpl;
 
 
-#line 498 "syntax.cog"
+#line 503 "syntax.cog"
  using ParamDecl = struct ParamDeclImpl* ;
 struct ParamDeclImpl;
 
@@ -664,7 +664,7 @@ struct ParamDeclImpl;
 #line 733 "emit.cog"
  
 
-#line 465 "syntax.cog"
+#line 470 "syntax.cog"
  using FuncDecl = struct FuncDeclImpl* ;
 struct FuncDeclImpl;
 
@@ -720,7 +720,7 @@ struct SyntaxListBuilder;
 #line 1216 "emit.cog"
  
 
-#line 1295 "emit.cog"
+#line 1308 "emit.cog"
  
 
 #line 3 "eval.cog"
@@ -959,18 +959,18 @@ struct SyntaxListBuilder;
 #line 381 "parser.cog"
  
 
-#line 673 "syntax.cog"
+#line 678 "syntax.cog"
  struct LookupResultItem;
 
 
-#line 692 "syntax.cog"
+#line 697 "syntax.cog"
  struct LookupResult;
 
 
 #line 395 "parser.cog"
  
 
-#line 502 "syntax.cog"
+#line 507 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl;
 
@@ -978,7 +978,7 @@ struct SyntaxDeclImpl;
 #line 405 "parser.cog"
  
 
-#line 656 "syntax.cog"
+#line 661 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl;
 
@@ -1007,10 +1007,10 @@ struct NameExpImpl;
 #line 572 "parser.cog"
  
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
  typedef 
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -1167,37 +1167,40 @@ struct NameExpImpl;
 #line 1860 "parser.cog"
  
 
-#line 1867 "parser.cog"
+#line 1873 "parser.cog"
  
 
-#line 1916 "parser.cog"
+#line 1880 "parser.cog"
  
 
-#line 1953 "parser.cog"
+#line 1929 "parser.cog"
  
 
-#line 1984 "parser.cog"
+#line 1966 "parser.cog"
  
 
-#line 2016 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 2023 "parser.cog"
+#line 2029 "parser.cog"
  
 
-#line 2038 "parser.cog"
+#line 2036 "parser.cog"
  
 
-#line 2044 "parser.cog"
+#line 2051 "parser.cog"
  
 
-#line 2058 "parser.cog"
+#line 2057 "parser.cog"
  
 
-#line 2067 "parser.cog"
+#line 2071 "parser.cog"
  
 
-#line 2149 "parser.cog"
+#line 2080 "parser.cog"
+ 
+
+#line 2163 "parser.cog"
  
 
 #line 3 "scope.cog"
@@ -1295,222 +1298,227 @@ struct FilteredSyntaxListIterator;
 struct BuiltinAttrImpl;
 
 
-#line 273 "syntax.cog"
+#line 214 "syntax.cog"
+ using DeclRefClassAttr = struct DeclRefClassAttrImpl* ;
+struct DeclRefClassAttrImpl;
+
+
+#line 278 "syntax.cog"
  using SpecializedDecl = struct SpecializedDeclImpl* ;
 struct SpecializedDeclImpl;
 
 
-#line 310 "syntax.cog"
+#line 315 "syntax.cog"
  template<typename T >
 struct DeclRefListIterator;
 
 
-#line 351 "syntax.cog"
+#line 356 "syntax.cog"
  template<typename T >
 struct DeclRefList;
 
 
-#line 379 "syntax.cog"
+#line 384 "syntax.cog"
  
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
  
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
  
 
-#line 413 "syntax.cog"
+#line 418 "syntax.cog"
  using ImportDecl = struct ImportDeclImpl* ;
 struct ImportDeclImpl;
 
 
-#line 456 "syntax.cog"
+#line 461 "syntax.cog"
  
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
  
 
-#line 490 "syntax.cog"
+#line 495 "syntax.cog"
  using VarDecl = struct VarDeclImpl* ;
 struct VarDeclImpl;
 
 
-#line 510 "syntax.cog"
+#line 515 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl;
 
 
-#line 517 "syntax.cog"
+#line 522 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl;
 
 
-#line 522 "syntax.cog"
+#line 527 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl;
 
 
-#line 529 "syntax.cog"
+#line 534 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl;
 
 
-#line 535 "syntax.cog"
+#line 540 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl;
 
 
-#line 543 "syntax.cog"
+#line 548 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl;
 
 
-#line 548 "syntax.cog"
+#line 553 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl;
 
 
-#line 552 "syntax.cog"
+#line 557 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl;
 
 
-#line 556 "syntax.cog"
+#line 561 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl;
 
 
-#line 563 "syntax.cog"
+#line 568 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl;
 
 
-#line 577 "syntax.cog"
+#line 582 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl;
 
 
-#line 589 "syntax.cog"
+#line 594 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl;
 
 
-#line 595 "syntax.cog"
+#line 600 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl;
 
 
-#line 600 "syntax.cog"
+#line 605 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl;
 
 
-#line 605 "syntax.cog"
+#line 610 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl;
 
 
-#line 617 "syntax.cog"
+#line 622 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl;
 
 
-#line 621 "syntax.cog"
+#line 626 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl;
 
 
-#line 625 "syntax.cog"
+#line 630 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl;
 
 
-#line 629 "syntax.cog"
+#line 634 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl;
 
 
-#line 633 "syntax.cog"
+#line 638 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl;
 
 
-#line 637 "syntax.cog"
+#line 642 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl;
 
 
-#line 641 "syntax.cog"
+#line 646 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl;
 
 
-#line 645 "syntax.cog"
+#line 650 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl;
 
 
-#line 669 "syntax.cog"
+#line 674 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl;
 
 
-#line 719 "syntax.cog"
+#line 724 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl;
 
 
-#line 739 "syntax.cog"
+#line 744 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl;
 
 
-#line 751 "syntax.cog"
+#line 756 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl;
 
 
-#line 757 "syntax.cog"
+#line 762 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl;
 
 
-#line 762 "syntax.cog"
+#line 767 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl;
 
 
-#line 769 "syntax.cog"
+#line 774 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl;
 
 
-#line 772 "syntax.cog"
+#line 777 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl;
 
 
-#line 775 "syntax.cog"
+#line 780 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl;
 
 
-#line 782 "syntax.cog"
+#line 787 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl;
 
 
-#line 789 "syntax.cog"
+#line 794 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl;
 
 
-#line 794 "syntax.cog"
+#line 799 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl;
 
 
-#line 800 "syntax.cog"
+#line 805 "syntax.cog"
  using NullLitExpr = struct NullLitExprImpl* ;
 struct NullLitExprImpl;
 
@@ -1677,61 +1685,61 @@ template<> struct ObjectClassImpl<cogc::Attr > { typedef cogc::AttrImpl Impl; };
 } namespace cogc {
 
 
-#line 214 "syntax.cog"
+#line 219 "syntax.cog"
  using Stmt = struct StmtImpl* ;
 struct StmtImpl : 
 
-#line 214 "syntax.cog"
+#line 219 "syntax.cog"
               SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 216 "syntax.cog"
+#line 221 "syntax.cog"
   
 
-#line 216 "syntax.cog"
+#line 221 "syntax.cog"
                         
 
-#line 216 "syntax.cog"
+#line 221 "syntax.cog"
               SyntaxList<
 
-#line 216 "syntax.cog"
+#line 221 "syntax.cog"
                          Attr>  attrs;
 
 
-#line 218 "syntax.cog"
+#line 223 "syntax.cog"
   
 
-#line 218 "syntax.cog"
+#line 223 "syntax.cog"
              Stmt next;
 
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
   
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                               Attr findAttrImpl(
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                   
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                Ptr<
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                    Class>  attrClass);
 
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
   template<typename T >
 
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
        
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
                         T findAttr();
 };
 } namespace cog {
@@ -1739,12 +1747,12 @@ template<> struct ObjectClassImpl<cogc::Stmt > { typedef cogc::StmtImpl Impl; };
 } namespace cogc {
 
 
-#line 238 "syntax.cog"
+#line 243 "syntax.cog"
  enum DeclCheckState : int
 {
 kDeclCheckState_Unchecked = 
 
-#line 240 "syntax.cog"
+#line 245 "syntax.cog"
                               0,
 kDeclCheckState_CheckingHead,
 kDeclCheckState_CheckedHead,
@@ -1752,51 +1760,51 @@ kDeclCheckState_Checked,
 };
 
 
-#line 246 "syntax.cog"
+#line 251 "syntax.cog"
  using Decl = struct DeclImpl* ;
 struct DeclImpl : 
 
-#line 246 "syntax.cog"
+#line 251 "syntax.cog"
               StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 248 "syntax.cog"
+#line 253 "syntax.cog"
   
 
-#line 248 "syntax.cog"
+#line 253 "syntax.cog"
                 
 
-#line 248 "syntax.cog"
+#line 253 "syntax.cog"
              Ptr<
 
-#line 248 "syntax.cog"
+#line 253 "syntax.cog"
                  Name>  name;
 
 
-#line 249 "syntax.cog"
+#line 254 "syntax.cog"
   
 
-#line 249 "syntax.cog"
+#line 254 "syntax.cog"
                ContainerStmt parent;
 
 
-#line 250 "syntax.cog"
+#line 255 "syntax.cog"
   
 
-#line 250 "syntax.cog"
+#line 255 "syntax.cog"
                    DeclCheckState checkState = 
 
-#line 250 "syntax.cog"
+#line 255 "syntax.cog"
                                     kDeclCheckState_Unchecked;
 
 
-#line 252 "syntax.cog"
+#line 257 "syntax.cog"
   
 
-#line 252 "syntax.cog"
+#line 257 "syntax.cog"
                       ContainerStmt getParent();
 };
 } namespace cog {
@@ -1882,56 +1890,56 @@ static StaticClass staticClass;
 };
 
 
-#line 288 "syntax.cog"
+#line 293 "syntax.cog"
  using ContainerStmt = struct ContainerStmtImpl* ;
 struct ContainerStmtImpl : 
 
-#line 288 "syntax.cog"
+#line 293 "syntax.cog"
                        DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 290 "syntax.cog"
+#line 295 "syntax.cog"
   
 
-#line 290 "syntax.cog"
+#line 295 "syntax.cog"
                         
 
-#line 290 "syntax.cog"
+#line 295 "syntax.cog"
               SyntaxList<
 
-#line 290 "syntax.cog"
+#line 295 "syntax.cog"
                          Stmt>  stmts;
 
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
   
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                                
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                      SyntaxList<
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                                 Stmt>  getStmts();
 
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
   
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                        
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                      FilteredSyntaxList<
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                         Decl, 
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                               Stmt>  getDecls();
 };
 } namespace cog {
@@ -1939,33 +1947,33 @@ template<> struct ObjectClassImpl<cogc::ContainerStmt > { typedef cogc::Containe
 } namespace cogc {
 
 
-#line 303 "syntax.cog"
+#line 308 "syntax.cog"
  using ContainerDecl = struct ContainerDeclImpl* ;
 struct ContainerDeclImpl : 
 
-#line 303 "syntax.cog"
+#line 308 "syntax.cog"
                        ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
   
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                         
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                      Ref<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                    
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                          SyntaxList<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                     Decl> >  getDecls();
 };
 } namespace cog {
@@ -1973,11 +1981,11 @@ template<> struct ObjectClassImpl<cogc::ContainerDecl > { typedef cogc::Containe
 } namespace cogc {
 
 
-#line 429 "syntax.cog"
+#line 434 "syntax.cog"
  using ModuleDecl = struct ModuleDeclImpl* ;
 struct ModuleDeclImpl : 
 
-#line 429 "syntax.cog"
+#line 434 "syntax.cog"
                     ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2330,21 +2338,21 @@ static StaticClass staticClass;
          Decl decl);
 
 
-#line 394 "syntax.cog"
+#line 399 "syntax.cog"
  using GenericDecl = struct GenericDeclImpl* ;
 struct GenericDeclImpl : 
 
-#line 394 "syntax.cog"
+#line 399 "syntax.cog"
                      ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 396 "syntax.cog"
+#line 401 "syntax.cog"
   
 
-#line 396 "syntax.cog"
+#line 401 "syntax.cog"
               Decl inner;
 };
 } namespace cog {
@@ -2368,11 +2376,11 @@ template<> struct ObjectClassImpl<cogc::GenericDecl > { typedef cogc::GenericDec
         GenericDecl decl);
 
 
-#line 284 "syntax.cog"
+#line 289 "syntax.cog"
  using Val = struct ValImpl* ;
 struct ValImpl : 
 
-#line 284 "syntax.cog"
+#line 289 "syntax.cog"
              ObjectImpl
 {
 typedef cog::Class StaticClass;
@@ -2383,11 +2391,11 @@ template<> struct ObjectClassImpl<cogc::Val > { typedef cogc::ValImpl Impl; };
 } namespace cogc {
 
 
-#line 734 "syntax.cog"
+#line 739 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl : 
 
-#line 734 "syntax.cog"
+#line 739 "syntax.cog"
               ValImpl
 {
 typedef cog::Class StaticClass;
@@ -2398,21 +2406,21 @@ template<> struct ObjectClassImpl<cogc::Type > { typedef cogc::TypeImpl Impl; };
 } namespace cogc {
 
 
-#line 584 "syntax.cog"
+#line 589 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl : 
 
-#line 584 "syntax.cog"
+#line 589 "syntax.cog"
              StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 586 "syntax.cog"
+#line 591 "syntax.cog"
   
 
-#line 586 "syntax.cog"
+#line 591 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -2448,28 +2456,28 @@ static StaticClass staticClass;
 };
 
 
-#line 407 "syntax.cog"
+#line 412 "syntax.cog"
  using TypeVarDecl = struct TypeVarDeclImpl* ;
 struct TypeVarDeclImpl : 
 
-#line 407 "syntax.cog"
+#line 412 "syntax.cog"
                      DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 409 "syntax.cog"
+#line 414 "syntax.cog"
   
 
-#line 409 "syntax.cog"
+#line 414 "syntax.cog"
               TypeExp bound;
 
 
-#line 410 "syntax.cog"
+#line 415 "syntax.cog"
   
 
-#line 410 "syntax.cog"
+#line 415 "syntax.cog"
              TypeExp init;
 };
 } namespace cog {
@@ -2477,11 +2485,11 @@ template<> struct ObjectClassImpl<cogc::TypeVarDecl > { typedef cogc::TypeVarDec
 } namespace cogc {
 
 
-#line 425 "syntax.cog"
+#line 430 "syntax.cog"
  using TypeAliasDecl = struct TypeAliasDeclImpl* ;
 struct TypeAliasDeclImpl : 
 
-#line 425 "syntax.cog"
+#line 430 "syntax.cog"
                        TypeVarDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2508,28 +2516,28 @@ template<> struct ObjectClassImpl<cogc::TypeAliasDecl > { typedef cogc::TypeAlia
         TypeAliasDecl decl);
 
 
-#line 477 "syntax.cog"
+#line 482 "syntax.cog"
  using VarDeclBase = struct VarDeclBaseImpl* ;
 struct VarDeclBaseImpl : 
 
-#line 477 "syntax.cog"
+#line 482 "syntax.cog"
                      DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 479 "syntax.cog"
+#line 484 "syntax.cog"
   
 
-#line 479 "syntax.cog"
+#line 484 "syntax.cog"
              TypeExp type;
 
 
-#line 480 "syntax.cog"
+#line 485 "syntax.cog"
   
 
-#line 480 "syntax.cog"
+#line 485 "syntax.cog"
              Exp init;
 };
 } namespace cog {
@@ -2553,11 +2561,11 @@ template<> struct ObjectClassImpl<cogc::VarDeclBase > { typedef cogc::VarDeclBas
         VarDeclBase decl);
 
 
-#line 433 "syntax.cog"
+#line 438 "syntax.cog"
  using PatternDecl = struct PatternDeclImpl* ;
 struct PatternDeclImpl : 
 
-#line 433 "syntax.cog"
+#line 438 "syntax.cog"
                      ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2568,28 +2576,28 @@ template<> struct ObjectClassImpl<cogc::PatternDecl > { typedef cogc::PatternDec
 } namespace cogc {
 
 
-#line 450 "syntax.cog"
+#line 455 "syntax.cog"
  using FuncDeclBase = struct FuncDeclBaseImpl* ;
 struct FuncDeclBaseImpl : 
 
-#line 450 "syntax.cog"
+#line 455 "syntax.cog"
                       PatternDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 452 "syntax.cog"
+#line 457 "syntax.cog"
   
 
-#line 452 "syntax.cog"
+#line 457 "syntax.cog"
                    TypeExp resultType;
 
 
-#line 453 "syntax.cog"
+#line 458 "syntax.cog"
   
 
-#line 453 "syntax.cog"
+#line 458 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -2613,21 +2621,21 @@ template<> struct ObjectClassImpl<cogc::FuncDeclBase > { typedef cogc::FuncDeclB
         FuncDeclBase decl);
 
 
-#line 437 "syntax.cog"
+#line 442 "syntax.cog"
  using AggTypeDecl = struct AggTypeDeclImpl* ;
 struct AggTypeDeclImpl : 
 
-#line 437 "syntax.cog"
+#line 442 "syntax.cog"
                      PatternDeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 439 "syntax.cog"
+#line 444 "syntax.cog"
   
 
-#line 439 "syntax.cog"
+#line 444 "syntax.cog"
              TypeExp base;
 };
 } namespace cog {
@@ -2635,11 +2643,11 @@ template<> struct ObjectClassImpl<cogc::AggTypeDecl > { typedef cogc::AggTypeDec
 } namespace cogc {
 
 
-#line 442 "syntax.cog"
+#line 447 "syntax.cog"
  using ClassDecl = struct ClassDeclImpl* ;
 struct ClassDeclImpl : 
 
-#line 442 "syntax.cog"
+#line 447 "syntax.cog"
                    AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2666,11 +2674,11 @@ template<> struct ObjectClassImpl<cogc::ClassDecl > { typedef cogc::ClassDeclImp
         ClassDecl decl);
 
 
-#line 446 "syntax.cog"
+#line 451 "syntax.cog"
  using StructDecl = struct StructDeclImpl* ;
 struct StructDeclImpl : 
 
-#line 446 "syntax.cog"
+#line 451 "syntax.cog"
                     AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2751,11 +2759,11 @@ template<> struct ObjectClassImpl<cogc::StructDecl > { typedef cogc::StructDeclI
         Stmt stmt);
 
 
-#line 727 "syntax.cog"
+#line 732 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl : 
 
-#line 727 "syntax.cog"
+#line 732 "syntax.cog"
                    ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -2988,21 +2996,21 @@ template<> struct ObjectClassImpl<cogc::BlockStmt > { typedef cogc::BlockStmtImp
        Exp exp);
 
 
-#line 651 "syntax.cog"
+#line 656 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl : 
 
-#line 651 "syntax.cog"
+#line 656 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 653 "syntax.cog"
+#line 658 "syntax.cog"
   
 
-#line 653 "syntax.cog"
+#line 658 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -3010,34 +3018,34 @@ template<> struct ObjectClassImpl<cogc::DeclRefExp > { typedef cogc::DeclRefExpI
 } namespace cogc {
 
 
-#line 663 "syntax.cog"
+#line 668 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl : 
 
-#line 663 "syntax.cog"
+#line 668 "syntax.cog"
                    DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 665 "syntax.cog"
+#line 670 "syntax.cog"
   
 
-#line 665 "syntax.cog"
+#line 670 "syntax.cog"
              Exp base;
 
 
-#line 666 "syntax.cog"
+#line 671 "syntax.cog"
   
 
-#line 666 "syntax.cog"
+#line 671 "syntax.cog"
                       
 
-#line 666 "syntax.cog"
+#line 671 "syntax.cog"
                    Ptr<
 
-#line 666 "syntax.cog"
+#line 671 "syntax.cog"
                        Name>  memberName;
 };
 } namespace cog {
@@ -3064,28 +3072,28 @@ template<> struct ObjectClassImpl<cogc::MemberExp > { typedef cogc::MemberExpImp
        MemberExp exp);
 
 
-#line 571 "syntax.cog"
+#line 576 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl : 
 
-#line 571 "syntax.cog"
+#line 576 "syntax.cog"
              SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 573 "syntax.cog"
+#line 578 "syntax.cog"
   
 
-#line 573 "syntax.cog"
+#line 578 "syntax.cog"
             Exp exp;
 
 
-#line 574 "syntax.cog"
+#line 579 "syntax.cog"
   
 
-#line 574 "syntax.cog"
+#line 579 "syntax.cog"
              Arg next;
 };
 } namespace cog {
@@ -3093,34 +3101,34 @@ template<> struct ObjectClassImpl<cogc::Arg > { typedef cogc::ArgImpl Impl; };
 } namespace cogc {
 
 
-#line 611 "syntax.cog"
+#line 616 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl : 
 
-#line 611 "syntax.cog"
+#line 616 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 613 "syntax.cog"
+#line 618 "syntax.cog"
   
 
-#line 613 "syntax.cog"
+#line 618 "syntax.cog"
              Exp base;
 
 
-#line 614 "syntax.cog"
+#line 619 "syntax.cog"
   
 
-#line 614 "syntax.cog"
+#line 619 "syntax.cog"
                        
 
-#line 614 "syntax.cog"
+#line 619 "syntax.cog"
              SyntaxList<
 
-#line 614 "syntax.cog"
+#line 619 "syntax.cog"
                         Arg>  args;
 };
 } namespace cog {
@@ -3370,21 +3378,21 @@ static StaticClass staticClass;
            DeclRefVal declRef);
 
 
-#line 745 "syntax.cog"
+#line 750 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl : 
 
-#line 745 "syntax.cog"
+#line 750 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 747 "syntax.cog"
+#line 752 "syntax.cog"
   
 
-#line 747 "syntax.cog"
+#line 752 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -3610,35 +3618,35 @@ template<> struct ObjectClassImpl<cogc::TypeType > { typedef cogc::TypeTypeImpl 
          Val right);
 
 
-#line 258 "syntax.cog"
+#line 263 "syntax.cog"
  using SpecializationArg = struct SpecializationArgImpl* ;
 struct SpecializationArgImpl : 
 
-#line 258 "syntax.cog"
+#line 263 "syntax.cog"
                            ObjectImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 260 "syntax.cog"
+#line 265 "syntax.cog"
   
 
-#line 260 "syntax.cog"
+#line 265 "syntax.cog"
              SpecializationArg next;
 
 
-#line 262 "syntax.cog"
+#line 267 "syntax.cog"
   
 
-#line 262 "syntax.cog"
+#line 267 "syntax.cog"
               Decl param;
 
 
-#line 263 "syntax.cog"
+#line 268 "syntax.cog"
   
 
-#line 263 "syntax.cog"
+#line 268 "syntax.cog"
               Val value;
 };
 } namespace cog {
@@ -3646,40 +3654,40 @@ template<> struct ObjectClassImpl<cogc::SpecializationArg > { typedef cogc::Spec
 } namespace cogc {
 
 
-#line 266 "syntax.cog"
+#line 271 "syntax.cog"
  using Specializations = struct SpecializationsImpl* ;
 struct SpecializationsImpl : 
 
-#line 266 "syntax.cog"
+#line 271 "syntax.cog"
                          ObjectImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 268 "syntax.cog"
+#line 273 "syntax.cog"
   
 
-#line 268 "syntax.cog"
+#line 273 "syntax.cog"
                                      
 
-#line 268 "syntax.cog"
+#line 273 "syntax.cog"
                        DeclRefValImpl<
 
-#line 268 "syntax.cog"
+#line 273 "syntax.cog"
                                       GenericDecl>  genericDeclRef;
 
 
-#line 269 "syntax.cog"
+#line 274 "syntax.cog"
   
 
-#line 269 "syntax.cog"
+#line 274 "syntax.cog"
                        
 
-#line 269 "syntax.cog"
+#line 274 "syntax.cog"
              SyntaxList<
 
-#line 269 "syntax.cog"
+#line 274 "syntax.cog"
                         SpecializationArg>  args;
 };
 } namespace cog {
@@ -4061,11 +4069,11 @@ template<> struct ObjectClassImpl<cogc::Specializations > { typedef cogc::Specia
                     OverloadCandidate>  candidate);
 
 
-#line 469 "syntax.cog"
+#line 474 "syntax.cog"
  using SubscriptDecl = struct SubscriptDeclImpl* ;
 struct SubscriptDeclImpl : 
 
-#line 469 "syntax.cog"
+#line 474 "syntax.cog"
                        FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -4120,11 +4128,11 @@ template<> struct ObjectClassImpl<cogc::SubscriptDecl > { typedef cogc::Subscrip
                              FuncDeclBase>  declRef);
 
 
-#line 473 "syntax.cog"
+#line 478 "syntax.cog"
  using InitializerDecl = struct InitializerDeclImpl* ;
 struct InitializerDeclImpl : 
 
-#line 473 "syntax.cog"
+#line 478 "syntax.cog"
                          FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -4340,11 +4348,11 @@ template<> struct ObjectClassImpl<cogc::InitializerDecl > { typedef cogc::Initia
         Type type);
 
 
-#line 421 "syntax.cog"
+#line 426 "syntax.cog"
  using GenericParamDecl = struct GenericParamDeclImpl* ;
 struct GenericParamDeclImpl : 
 
-#line 421 "syntax.cog"
+#line 426 "syntax.cog"
                           TypeVarDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -4546,11 +4554,11 @@ static StaticClass staticClass;
                 Type paramType);
 
 
-#line 494 "syntax.cog"
+#line 499 "syntax.cog"
  using LetDecl = struct LetDeclImpl* ;
 struct LetDeclImpl : 
 
-#line 494 "syntax.cog"
+#line 499 "syntax.cog"
                  VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -4561,11 +4569,11 @@ template<> struct ObjectClassImpl<cogc::LetDecl > { typedef cogc::LetDeclImpl Im
 } namespace cogc {
 
 
-#line 498 "syntax.cog"
+#line 503 "syntax.cog"
  using ParamDecl = struct ParamDeclImpl* ;
 struct ParamDeclImpl : 
 
-#line 498 "syntax.cog"
+#line 503 "syntax.cog"
                    LetDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -5882,11 +5890,11 @@ static StaticClass staticClass;
              ParamDecl paramDecl);
 
 
-#line 465 "syntax.cog"
+#line 470 "syntax.cog"
  using FuncDecl = struct FuncDeclImpl* ;
 struct FuncDeclImpl : 
 
-#line 465 "syntax.cog"
+#line 470 "syntax.cog"
                   FuncDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -6260,10 +6268,10 @@ static StaticClass staticClass;
                Char>  extra);
 
 
-#line 1295 "emit.cog"
+#line 1308 "emit.cog"
  void emitModule(
 
-#line 1296 "emit.cog"
+#line 1309 "emit.cog"
            Session session);
 
 
@@ -7829,103 +7837,103 @@ static StaticClass staticClass;
                TokenCode expected);
 
 
-#line 673 "syntax.cog"
+#line 678 "syntax.cog"
  struct LookupResultItem
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 676 "syntax.cog"
+#line 681 "syntax.cog"
   
 
-#line 676 "syntax.cog"
+#line 681 "syntax.cog"
              Decl decl;
 
 
-#line 678 "syntax.cog"
+#line 683 "syntax.cog"
   LookupResultItem();
 
 
-#line 686 "syntax.cog"
+#line 691 "syntax.cog"
   LookupResultItem(
 
-#line 686 "syntax.cog"
+#line 691 "syntax.cog"
              Decl decl);
 };
 
 
-#line 692 "syntax.cog"
+#line 697 "syntax.cog"
  struct LookupResult
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 694 "syntax.cog"
+#line 699 "syntax.cog"
   
 
-#line 694 "syntax.cog"
+#line 699 "syntax.cog"
                    
 
-#line 694 "syntax.cog"
+#line 699 "syntax.cog"
               Array<
 
-#line 694 "syntax.cog"
+#line 699 "syntax.cog"
                     LookupResultItem>  items;
 
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
   
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                      
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                   Ptr<
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                       LookupResultItem>  begin();
 
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
   
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                    
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                 Ptr<
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                     LookupResultItem>  end();
 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
   
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                     Bool isEmpty();
 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
      
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                         Bool isUnique();
 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
      
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                             Bool isOverloaded();
 
 
-#line 704 "syntax.cog"
+#line 709 "syntax.cog"
      
 
-#line 704 "syntax.cog"
+#line 709 "syntax.cog"
                        Decl getDecl();
 };
 
@@ -7955,34 +7963,34 @@ static StaticClass staticClass;
                * name);
 
 
-#line 502 "syntax.cog"
+#line 507 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl : 
 
-#line 502 "syntax.cog"
+#line 507 "syntax.cog"
                     DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 504 "syntax.cog"
+#line 509 "syntax.cog"
   
 
-#line 504 "syntax.cog"
+#line 509 "syntax.cog"
                        
 
-#line 504 "syntax.cog"
+#line 509 "syntax.cog"
                     Ptr<
 
-#line 504 "syntax.cog"
+#line 509 "syntax.cog"
                         Class>  syntaxClass;
 
 
-#line 505 "syntax.cog"
+#line 510 "syntax.cog"
   
 
-#line 505 "syntax.cog"
+#line 510 "syntax.cog"
                  SyntaxCallback callback;
 };
 } namespace cog {
@@ -8006,40 +8014,40 @@ template<> struct ObjectClassImpl<cogc::SyntaxDecl > { typedef cogc::SyntaxDeclI
                       LookupResult>  result);
 
 
-#line 656 "syntax.cog"
+#line 661 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl : 
 
-#line 656 "syntax.cog"
+#line 661 "syntax.cog"
                  DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 658 "syntax.cog"
+#line 663 "syntax.cog"
   
 
-#line 658 "syntax.cog"
+#line 663 "syntax.cog"
                 
 
-#line 658 "syntax.cog"
+#line 663 "syntax.cog"
              Ptr<
 
-#line 658 "syntax.cog"
+#line 663 "syntax.cog"
                  Name>  name;
 
 
-#line 659 "syntax.cog"
+#line 664 "syntax.cog"
   
 
-#line 659 "syntax.cog"
+#line 664 "syntax.cog"
                  
 
-#line 659 "syntax.cog"
+#line 664 "syntax.cog"
               Ptr<
 
-#line 659 "syntax.cog"
+#line 664 "syntax.cog"
                   Scope>  scope;
 };
 } namespace cog {
@@ -8199,10 +8207,10 @@ template<> struct ObjectClassImpl<cogc::NameExp > { typedef cogc::NameExpImpl Im
            Exp base);
 
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
  typedef 
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -9097,219 +9105,235 @@ template<> struct ObjectClassImpl<cogc::NameExp > { typedef cogc::NameExpImpl Im
  
 
 #line 1860 "parser.cog"
+                                                Syntax parseDeclRefClassAttr(
+
+#line 1860 "parser.cog"
+                                          
+
+#line 1860 "parser.cog"
+                                    Parser
+
+#line 1860 "parser.cog"
+                                          * parser);
+
+
+#line 1873 "parser.cog"
+ 
+
+#line 1873 "parser.cog"
                                      ParamDecl parseParam(
 
-#line 1860 "parser.cog"
+#line 1873 "parser.cog"
                                
 
-#line 1860 "parser.cog"
+#line 1873 "parser.cog"
                          Parser
 
-#line 1860 "parser.cog"
+#line 1873 "parser.cog"
                                * parser);
 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
  void parseParams(
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                           Parser
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                 * parser, 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                          ContainerDecl decl);
 
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
  
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                         Syntax parseFuncDecl(
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                   
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                             Parser
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                   * parser);
 
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
  
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                              Syntax parseSubscriptDecl(
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                        
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                  Parser
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                        * parser);
 
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                                Syntax parseInitializerDecl(
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                          
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                    Parser
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                          * parser);
 
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
  
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                         Syntax parseThisExpr(
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                   
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                             Parser
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                   * parser);
 
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
  
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                         Syntax parseCastExpr(
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                   
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                             Parser
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                   * parser);
 
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
  
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                         Syntax parseNullExpr(
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                   
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                             Parser
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                   * parser);
 
 
-#line 2044 "parser.cog"
+#line 2057 "parser.cog"
  
-
-#line 2049 "parser.cog"
-        SyntaxDecl createSyntaxDecl(
-
-#line 2045 "parser.cog"
-              Session session, 
-
-#line 2046 "parser.cog"
-                   
-
-#line 2046 "parser.cog"
-           ConstPtr<
-
-#line 2046 "parser.cog"
-                    Char>  name, 
-
-#line 2047 "parser.cog"
-               SyntaxCallback callback, 
-
-#line 2048 "parser.cog"
-                       
-
-#line 2048 "parser.cog"
-                  Class
-
-#line 2048 "parser.cog"
-                       * syntaxClass);
-
-
-#line 2058 "parser.cog"
- template<typename T >
-
-
-#line 2058 "parser.cog"
-      
 
 #line 2062 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2059 "parser.cog"
+#line 2058 "parser.cog"
               Session session, 
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
                    
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
            ConstPtr<
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
                     Char>  name, 
 
+#line 2060 "parser.cog"
+               SyntaxCallback callback, 
+
 #line 2061 "parser.cog"
+                       
+
+#line 2061 "parser.cog"
+                  Class
+
+#line 2061 "parser.cog"
+                       * syntaxClass);
+
+
+#line 2071 "parser.cog"
+ template<typename T >
+
+
+#line 2071 "parser.cog"
+      
+
+#line 2075 "parser.cog"
+        SyntaxDecl createSyntaxDecl(
+
+#line 2072 "parser.cog"
+              Session session, 
+
+#line 2073 "parser.cog"
+                   
+
+#line 2073 "parser.cog"
+           ConstPtr<
+
+#line 2073 "parser.cog"
+                    Char>  name, 
+
+#line 2074 "parser.cog"
                SyntaxCallback callback);
 
 
-#line 2067 "parser.cog"
+#line 2080 "parser.cog"
  void parseFileIntoModule(
 
-#line 2068 "parser.cog"
+#line 2081 "parser.cog"
               Session session, 
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
                      
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
            SourceFile
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
                      * file, 
 
-#line 2070 "parser.cog"
+#line 2083 "parser.cog"
                  ModuleDecl moduleDecl);
 
 
-#line 2149 "parser.cog"
+#line 2163 "parser.cog"
  void parseFile(
 
-#line 2150 "parser.cog"
+#line 2164 "parser.cog"
               Session session, 
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
                      
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
            SourceFile
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
                      * file);
 
 
@@ -9774,28 +9798,56 @@ template<> struct ObjectClassImpl<cogc::BuiltinAttr > { typedef cogc::BuiltinAtt
 } namespace cogc {
 
 
-#line 273 "syntax.cog"
+#line 214 "syntax.cog"
+ using DeclRefClassAttr = struct DeclRefClassAttrImpl* ;
+struct DeclRefClassAttrImpl : 
+
+#line 214 "syntax.cog"
+                          AttrImpl
+{
+typedef cog::Class StaticClass;
+static StaticClass staticClass;
+
+
+#line 216 "syntax.cog"
+  
+
+#line 216 "syntax.cog"
+                       
+
+#line 216 "syntax.cog"
+                    Ptr<
+
+#line 216 "syntax.cog"
+                        Class>  syntaxClass;
+};
+} namespace cog {
+template<> struct ObjectClassImpl<cogc::DeclRefClassAttr > { typedef cogc::DeclRefClassAttrImpl Impl; };
+} namespace cogc {
+
+
+#line 278 "syntax.cog"
  using SpecializedDecl = struct SpecializedDeclImpl* ;
 struct SpecializedDeclImpl : 
 
-#line 273 "syntax.cog"
+#line 278 "syntax.cog"
                          ObjectImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 275 "syntax.cog"
+#line 280 "syntax.cog"
   
 
-#line 275 "syntax.cog"
+#line 280 "syntax.cog"
              Decl decl;
 
 
-#line 276 "syntax.cog"
+#line 281 "syntax.cog"
   
 
-#line 276 "syntax.cog"
+#line 281 "syntax.cog"
                        Specializations specializations;
 };
 } namespace cog {
@@ -9803,7 +9855,7 @@ template<> struct ObjectClassImpl<cogc::SpecializedDecl > { typedef cogc::Specia
 } namespace cogc {
 
 
-#line 310 "syntax.cog"
+#line 315 "syntax.cog"
  template<typename T >
 struct DeclRefListIterator
 {
@@ -9811,53 +9863,53 @@ typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 312 "syntax.cog"
+#line 317 "syntax.cog"
   
 
-#line 312 "syntax.cog"
+#line 317 "syntax.cog"
              Decl decl;
 
 
-#line 313 "syntax.cog"
+#line 318 "syntax.cog"
   
 
-#line 313 "syntax.cog"
+#line 318 "syntax.cog"
                         Specializations specializations;
 
 
-#line 315 "syntax.cog"
+#line 320 "syntax.cog"
   DeclRefListIterator(
 
-#line 315 "syntax.cog"
+#line 320 "syntax.cog"
              Decl decl, 
 
-#line 315 "syntax.cog"
+#line 320 "syntax.cog"
                                     Specializations specializations);
 
 
-#line 323 "syntax.cog"
+#line 328 "syntax.cog"
   void operator++();
 
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
   
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
                             
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
               DeclRefValImpl<
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
                              T>  operator*();
 
 
-#line 338 "syntax.cog"
+#line 343 "syntax.cog"
   void adjust();
 };
 
 
-#line 351 "syntax.cog"
+#line 356 "syntax.cog"
  template<typename T >
 struct DeclRefList
 {
@@ -9865,162 +9917,162 @@ typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 353 "syntax.cog"
+#line 358 "syntax.cog"
   
 
-#line 353 "syntax.cog"
+#line 358 "syntax.cog"
              Decl decl;
 
 
-#line 354 "syntax.cog"
+#line 359 "syntax.cog"
   
 
-#line 354 "syntax.cog"
+#line 359 "syntax.cog"
                         Specializations specializations;
 
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
   
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                                      
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                   DeclRefListIterator<
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                                       T>  begin();
 
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
   
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                                    
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                 DeclRefListIterator<
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                                     T>  end();
 
 
-#line 366 "syntax.cog"
+#line 371 "syntax.cog"
   DeclRefList();
 
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
   DeclRefList(
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
              Decl decl, 
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
                                     Specializations specializations);
 };
 
 
-#line 379 "syntax.cog"
+#line 384 "syntax.cog"
  template<typename T >
 
 
-#line 379 "syntax.cog"
+#line 384 "syntax.cog"
       
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                                     Bool operator!=(
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
                            
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
         DeclRefListIterator<
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
                             T>  left, 
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                             
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
          DeclRefListIterator<
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                              T>  right);
 
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
  
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
                 
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
      DeclRefList<
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
                  Decl>  getDecls(
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                                         
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                           DeclRefValImpl<
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                                          ContainerDecl>  container);
 
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
  
 
-#line 400 "syntax.cog"
+#line 405 "syntax.cog"
      DeclRefVal getInner(
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                                       
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                         DeclRefValImpl<
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                                        GenericDecl>  declRef);
 
 
-#line 413 "syntax.cog"
+#line 418 "syntax.cog"
  using ImportDecl = struct ImportDeclImpl* ;
 struct ImportDeclImpl : 
 
-#line 413 "syntax.cog"
+#line 418 "syntax.cog"
                     DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 416 "syntax.cog"
+#line 421 "syntax.cog"
   
 
-#line 416 "syntax.cog"
+#line 421 "syntax.cog"
                  
 
-#line 416 "syntax.cog"
+#line 421 "syntax.cog"
               Ptr<
 
-#line 416 "syntax.cog"
+#line 421 "syntax.cog"
                   Scope>  scope;
 
 
-#line 418 "syntax.cog"
+#line 423 "syntax.cog"
   
 
-#line 418 "syntax.cog"
+#line 423 "syntax.cog"
                 
 
-#line 418 "syntax.cog"
+#line 423 "syntax.cog"
              Ptr<
 
-#line 418 "syntax.cog"
+#line 423 "syntax.cog"
                  Name>  name;
 };
 } namespace cog {
@@ -10028,43 +10080,43 @@ template<> struct ObjectClassImpl<cogc::ImportDecl > { typedef cogc::ImportDeclI
 } namespace cogc {
 
 
-#line 456 "syntax.cog"
+#line 461 "syntax.cog"
  
 
-#line 458 "syntax.cog"
+#line 463 "syntax.cog"
      Type getResultType(
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
                          
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
            DeclRefValImpl<
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
                           FuncDeclBase>  declRef);
 
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
  
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                                        Type getType(
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                      
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                        DeclRefValImpl<
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                       VarDeclBase>  declRef);
 
 
-#line 490 "syntax.cog"
+#line 495 "syntax.cog"
  using VarDecl = struct VarDeclImpl* ;
 struct VarDeclImpl : 
 
-#line 490 "syntax.cog"
+#line 495 "syntax.cog"
                  VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10075,28 +10127,28 @@ template<> struct ObjectClassImpl<cogc::VarDecl > { typedef cogc::VarDeclImpl Im
 } namespace cogc {
 
 
-#line 510 "syntax.cog"
+#line 515 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl : 
 
-#line 510 "syntax.cog"
+#line 515 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 512 "syntax.cog"
+#line 517 "syntax.cog"
   
 
-#line 512 "syntax.cog"
+#line 517 "syntax.cog"
                  Stmt thenStmt;
 
 
-#line 513 "syntax.cog"
+#line 518 "syntax.cog"
   
 
-#line 513 "syntax.cog"
+#line 518 "syntax.cog"
                  Stmt elseStmt;
 };
 } namespace cog {
@@ -10104,21 +10156,21 @@ template<> struct ObjectClassImpl<cogc::IfStmtBase > { typedef cogc::IfStmtBaseI
 } namespace cogc {
 
 
-#line 517 "syntax.cog"
+#line 522 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl : 
 
-#line 517 "syntax.cog"
+#line 522 "syntax.cog"
                 IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 519 "syntax.cog"
+#line 524 "syntax.cog"
   
 
-#line 519 "syntax.cog"
+#line 524 "syntax.cog"
                   Exp condition;
 };
 } namespace cog {
@@ -10126,34 +10178,34 @@ template<> struct ObjectClassImpl<cogc::IfStmt > { typedef cogc::IfStmtImpl Impl
 } namespace cogc {
 
 
-#line 522 "syntax.cog"
+#line 527 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl : 
 
-#line 522 "syntax.cog"
+#line 527 "syntax.cog"
                    IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 524 "syntax.cog"
+#line 529 "syntax.cog"
   
 
-#line 524 "syntax.cog"
+#line 529 "syntax.cog"
                  
 
-#line 524 "syntax.cog"
+#line 529 "syntax.cog"
              Name
 
-#line 524 "syntax.cog"
+#line 529 "syntax.cog"
                  * name;
 
 
-#line 525 "syntax.cog"
+#line 530 "syntax.cog"
   
 
-#line 525 "syntax.cog"
+#line 530 "syntax.cog"
              Exp init;
 };
 } namespace cog {
@@ -10161,28 +10213,28 @@ template<> struct ObjectClassImpl<cogc::IfLetStmt > { typedef cogc::IfLetStmtImp
 } namespace cogc {
 
 
-#line 529 "syntax.cog"
+#line 534 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl : 
 
-#line 529 "syntax.cog"
+#line 534 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 531 "syntax.cog"
+#line 536 "syntax.cog"
   
 
-#line 531 "syntax.cog"
+#line 536 "syntax.cog"
                   Exp condition;
 
 
-#line 532 "syntax.cog"
+#line 537 "syntax.cog"
   
 
-#line 532 "syntax.cog"
+#line 537 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -10190,42 +10242,42 @@ template<> struct ObjectClassImpl<cogc::WhileStmt > { typedef cogc::WhileStmtImp
 } namespace cogc {
 
 
-#line 535 "syntax.cog"
+#line 540 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl : 
 
-#line 535 "syntax.cog"
+#line 540 "syntax.cog"
                  ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 537 "syntax.cog"
+#line 542 "syntax.cog"
   
 
-#line 537 "syntax.cog"
+#line 542 "syntax.cog"
              Stmt init;
 
 
-#line 538 "syntax.cog"
+#line 543 "syntax.cog"
   
 
-#line 538 "syntax.cog"
+#line 543 "syntax.cog"
                   Exp condition;
 
 
-#line 539 "syntax.cog"
+#line 544 "syntax.cog"
   
 
-#line 539 "syntax.cog"
+#line 544 "syntax.cog"
              Exp iter;
 
 
-#line 540 "syntax.cog"
+#line 545 "syntax.cog"
   
 
-#line 540 "syntax.cog"
+#line 545 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -10233,21 +10285,21 @@ template<> struct ObjectClassImpl<cogc::ForStmt > { typedef cogc::ForStmtImpl Im
 } namespace cogc {
 
 
-#line 543 "syntax.cog"
+#line 548 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl : 
 
-#line 543 "syntax.cog"
+#line 548 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 545 "syntax.cog"
+#line 550 "syntax.cog"
   
 
-#line 545 "syntax.cog"
+#line 550 "syntax.cog"
               Exp value;
 };
 } namespace cog {
@@ -10255,11 +10307,11 @@ template<> struct ObjectClassImpl<cogc::ReturnStmt > { typedef cogc::ReturnStmtI
 } namespace cogc {
 
 
-#line 548 "syntax.cog"
+#line 553 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl : 
 
-#line 548 "syntax.cog"
+#line 553 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -10270,11 +10322,11 @@ template<> struct ObjectClassImpl<cogc::BreakStmt > { typedef cogc::BreakStmtImp
 } namespace cogc {
 
 
-#line 552 "syntax.cog"
+#line 557 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl : 
 
-#line 552 "syntax.cog"
+#line 557 "syntax.cog"
                       StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -10285,35 +10337,35 @@ template<> struct ObjectClassImpl<cogc::ContinueStmt > { typedef cogc::ContinueS
 } namespace cogc {
 
 
-#line 556 "syntax.cog"
+#line 561 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl : 
 
-#line 556 "syntax.cog"
+#line 561 "syntax.cog"
                     SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 558 "syntax.cog"
+#line 563 "syntax.cog"
   
 
-#line 558 "syntax.cog"
+#line 563 "syntax.cog"
                Arg values;
 
 
-#line 559 "syntax.cog"
+#line 564 "syntax.cog"
   
 
-#line 559 "syntax.cog"
+#line 564 "syntax.cog"
              Stmt body;
 
 
-#line 560 "syntax.cog"
+#line 565 "syntax.cog"
   
 
-#line 560 "syntax.cog"
+#line 565 "syntax.cog"
              SwitchCase next;
 };
 } namespace cog {
@@ -10321,28 +10373,28 @@ template<> struct ObjectClassImpl<cogc::SwitchCase > { typedef cogc::SwitchCaseI
 } namespace cogc {
 
 
-#line 563 "syntax.cog"
+#line 568 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl : 
 
-#line 563 "syntax.cog"
+#line 568 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 565 "syntax.cog"
+#line 570 "syntax.cog"
   
 
-#line 565 "syntax.cog"
+#line 570 "syntax.cog"
                   Exp condition;
 
 
-#line 566 "syntax.cog"
+#line 571 "syntax.cog"
   
 
-#line 566 "syntax.cog"
+#line 571 "syntax.cog"
               SwitchCase cases;
 };
 } namespace cog {
@@ -10350,11 +10402,11 @@ template<> struct ObjectClassImpl<cogc::SwitchStmt > { typedef cogc::SwitchStmtI
 } namespace cogc {
 
 
-#line 577 "syntax.cog"
+#line 582 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl : 
 
-#line 577 "syntax.cog"
+#line 582 "syntax.cog"
                        ArgImpl
 {
 typedef cog::Class StaticClass;
@@ -10365,11 +10417,11 @@ template<> struct ObjectClassImpl<cogc::PositionalArg > { typedef cogc::Position
 } namespace cogc {
 
 
-#line 589 "syntax.cog"
+#line 594 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl : 
 
-#line 589 "syntax.cog"
+#line 594 "syntax.cog"
                 ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10380,21 +10432,21 @@ template<> struct ObjectClassImpl<cogc::LitExp > { typedef cogc::LitExpImpl Impl
 } namespace cogc {
 
 
-#line 595 "syntax.cog"
+#line 600 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl : 
 
-#line 595 "syntax.cog"
+#line 600 "syntax.cog"
                    LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 597 "syntax.cog"
+#line 602 "syntax.cog"
   
 
-#line 597 "syntax.cog"
+#line 602 "syntax.cog"
             IntLitVal val;
 };
 } namespace cog {
@@ -10402,21 +10454,21 @@ template<> struct ObjectClassImpl<cogc::IntLitExp > { typedef cogc::IntLitExpImp
 } namespace cogc {
 
 
-#line 600 "syntax.cog"
+#line 605 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl : 
 
-#line 600 "syntax.cog"
+#line 605 "syntax.cog"
                       LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 602 "syntax.cog"
+#line 607 "syntax.cog"
   
 
-#line 602 "syntax.cog"
+#line 607 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -10424,21 +10476,21 @@ template<> struct ObjectClassImpl<cogc::StringLitExp > { typedef cogc::StringLit
 } namespace cogc {
 
 
-#line 605 "syntax.cog"
+#line 610 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl : 
 
-#line 605 "syntax.cog"
+#line 610 "syntax.cog"
                          LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 607 "syntax.cog"
+#line 612 "syntax.cog"
   
 
-#line 607 "syntax.cog"
+#line 612 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -10446,11 +10498,11 @@ template<> struct ObjectClassImpl<cogc::CharacterLitExp > { typedef cogc::Charac
 } namespace cogc {
 
 
-#line 617 "syntax.cog"
+#line 622 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl : 
 
-#line 617 "syntax.cog"
+#line 622 "syntax.cog"
                        AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10461,11 +10513,11 @@ template<> struct ObjectClassImpl<cogc::GenericAppExp > { typedef cogc::GenericA
 } namespace cogc {
 
 
-#line 621 "syntax.cog"
+#line 626 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl : 
 
-#line 621 "syntax.cog"
+#line 626 "syntax.cog"
                 AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10476,11 +10528,11 @@ template<> struct ObjectClassImpl<cogc::AppExp > { typedef cogc::AppExpImpl Impl
 } namespace cogc {
 
 
-#line 625 "syntax.cog"
+#line 630 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl : 
 
-#line 625 "syntax.cog"
+#line 630 "syntax.cog"
                   AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10491,11 +10543,11 @@ template<> struct ObjectClassImpl<cogc::IndexExp > { typedef cogc::IndexExpImpl 
 } namespace cogc {
 
 
-#line 629 "syntax.cog"
+#line 634 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl : 
 
-#line 629 "syntax.cog"
+#line 634 "syntax.cog"
                         AppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10506,11 +10558,11 @@ template<> struct ObjectClassImpl<cogc::OperatorAppExp > { typedef cogc::Operato
 } namespace cogc {
 
 
-#line 633 "syntax.cog"
+#line 638 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl : 
 
-#line 633 "syntax.cog"
+#line 638 "syntax.cog"
                   OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10521,11 +10573,11 @@ template<> struct ObjectClassImpl<cogc::InfixExp > { typedef cogc::InfixExpImpl 
 } namespace cogc {
 
 
-#line 637 "syntax.cog"
+#line 642 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl : 
 
-#line 637 "syntax.cog"
+#line 642 "syntax.cog"
                    OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10536,11 +10588,11 @@ template<> struct ObjectClassImpl<cogc::PrefixExp > { typedef cogc::PrefixExpImp
 } namespace cogc {
 
 
-#line 641 "syntax.cog"
+#line 646 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl : 
 
-#line 641 "syntax.cog"
+#line 646 "syntax.cog"
                     OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10551,28 +10603,28 @@ template<> struct ObjectClassImpl<cogc::PostfixExp > { typedef cogc::PostfixExpI
 } namespace cogc {
 
 
-#line 645 "syntax.cog"
+#line 650 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl : 
 
-#line 645 "syntax.cog"
+#line 650 "syntax.cog"
                    ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 647 "syntax.cog"
+#line 652 "syntax.cog"
   
 
-#line 647 "syntax.cog"
+#line 652 "syntax.cog"
              Exp left;
 
 
-#line 648 "syntax.cog"
+#line 653 "syntax.cog"
   
 
-#line 648 "syntax.cog"
+#line 653 "syntax.cog"
               Exp right;
 };
 } namespace cog {
@@ -10580,11 +10632,11 @@ template<> struct ObjectClassImpl<cogc::AssignExp > { typedef cogc::AssignExpImp
 } namespace cogc {
 
 
-#line 669 "syntax.cog"
+#line 674 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl : 
 
-#line 669 "syntax.cog"
+#line 674 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10595,28 +10647,28 @@ template<> struct ObjectClassImpl<cogc::ErrorExp > { typedef cogc::ErrorExpImpl 
 } namespace cogc {
 
 
-#line 719 "syntax.cog"
+#line 724 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl : 
 
-#line 719 "syntax.cog"
+#line 724 "syntax.cog"
                         ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 721 "syntax.cog"
+#line 726 "syntax.cog"
   
 
-#line 721 "syntax.cog"
+#line 726 "syntax.cog"
                      LookupResult lookupResult;
 
 
-#line 722 "syntax.cog"
+#line 727 "syntax.cog"
   
 
-#line 722 "syntax.cog"
+#line 727 "syntax.cog"
              Exp base;
 };
 } namespace cog {
@@ -10624,21 +10676,21 @@ template<> struct ObjectClassImpl<cogc::OverloadedExpr > { typedef cogc::Overloa
 } namespace cogc {
 
 
-#line 739 "syntax.cog"
+#line 744 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl : 
 
-#line 739 "syntax.cog"
+#line 744 "syntax.cog"
                      TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 741 "syntax.cog"
+#line 746 "syntax.cog"
   
 
-#line 741 "syntax.cog"
+#line 746 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -10646,11 +10698,11 @@ template<> struct ObjectClassImpl<cogc::DeclRefType > { typedef cogc::DeclRefTyp
 } namespace cogc {
 
 
-#line 751 "syntax.cog"
+#line 756 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl : 
 
-#line 751 "syntax.cog"
+#line 756 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -10661,11 +10713,11 @@ template<> struct ObjectClassImpl<cogc::FuncType > { typedef cogc::FuncTypeImpl 
 } namespace cogc {
 
 
-#line 757 "syntax.cog"
+#line 762 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl : 
 
-#line 757 "syntax.cog"
+#line 762 "syntax.cog"
                    TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -10676,11 +10728,11 @@ template<> struct ObjectClassImpl<cogc::ErrorType > { typedef cogc::ErrorTypeImp
 } namespace cogc {
 
 
-#line 762 "syntax.cog"
+#line 767 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl : 
 
-#line 762 "syntax.cog"
+#line 767 "syntax.cog"
                            TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -10691,11 +10743,11 @@ template<> struct ObjectClassImpl<cogc::OverloadGroupType > { typedef cogc::Over
 } namespace cogc {
 
 
-#line 769 "syntax.cog"
+#line 774 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl : 
 
-#line 769 "syntax.cog"
+#line 774 "syntax.cog"
                   AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -10706,11 +10758,11 @@ template<> struct ObjectClassImpl<cogc::EnumDecl > { typedef cogc::EnumDeclImpl 
 } namespace cogc {
 
 
-#line 772 "syntax.cog"
+#line 777 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl : 
 
-#line 772 "syntax.cog"
+#line 777 "syntax.cog"
                      VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10721,41 +10773,41 @@ template<> struct ObjectClassImpl<cogc::EnumTagDecl > { typedef cogc::EnumTagDec
 } namespace cogc {
 
 
-#line 775 "syntax.cog"
+#line 780 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl : 
 
-#line 775 "syntax.cog"
+#line 780 "syntax.cog"
                      StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 777 "syntax.cog"
+#line 782 "syntax.cog"
   
 
-#line 777 "syntax.cog"
+#line 782 "syntax.cog"
                  
 
-#line 777 "syntax.cog"
+#line 782 "syntax.cog"
              Name
 
-#line 777 "syntax.cog"
+#line 782 "syntax.cog"
                  * name;
 
 
-#line 778 "syntax.cog"
+#line 783 "syntax.cog"
   
 
-#line 778 "syntax.cog"
+#line 783 "syntax.cog"
            Exp exp;
 
 
-#line 779 "syntax.cog"
+#line 784 "syntax.cog"
   
 
-#line 779 "syntax.cog"
+#line 784 "syntax.cog"
             Stmt body;
 };
 } namespace cog {
@@ -10763,21 +10815,21 @@ template<> struct ObjectClassImpl<cogc::ForEachStmt > { typedef cogc::ForEachStm
 } namespace cogc {
 
 
-#line 782 "syntax.cog"
+#line 787 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl : 
 
-#line 782 "syntax.cog"
+#line 787 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 784 "syntax.cog"
+#line 789 "syntax.cog"
   
 
-#line 784 "syntax.cog"
+#line 789 "syntax.cog"
             Exp base;
 };
 } namespace cog {
@@ -10785,27 +10837,27 @@ template<> struct ObjectClassImpl<cogc::ParenExp > { typedef cogc::ParenExpImpl 
 } namespace cogc {
 
 
-#line 789 "syntax.cog"
+#line 794 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl : 
 
-#line 789 "syntax.cog"
+#line 794 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 791 "syntax.cog"
+#line 796 "syntax.cog"
   
 
-#line 791 "syntax.cog"
+#line 796 "syntax.cog"
                    
 
-#line 791 "syntax.cog"
+#line 796 "syntax.cog"
               Scope
 
-#line 791 "syntax.cog"
+#line 796 "syntax.cog"
                    * scope;
 };
 } namespace cog {
@@ -10813,28 +10865,28 @@ template<> struct ObjectClassImpl<cogc::ThisExpr > { typedef cogc::ThisExprImpl 
 } namespace cogc {
 
 
-#line 794 "syntax.cog"
+#line 799 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl : 
 
-#line 794 "syntax.cog"
+#line 799 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 796 "syntax.cog"
+#line 801 "syntax.cog"
   
 
-#line 796 "syntax.cog"
+#line 801 "syntax.cog"
                TypeExp toType;
 
 
-#line 797 "syntax.cog"
+#line 802 "syntax.cog"
   
 
-#line 797 "syntax.cog"
+#line 802 "syntax.cog"
             Exp arg;
 };
 } namespace cog {
@@ -10842,11 +10894,11 @@ template<> struct ObjectClassImpl<cogc::CastExpr > { typedef cogc::CastExprImpl 
 } namespace cogc {
 
 
-#line 800 "syntax.cog"
+#line 805 "syntax.cog"
  using NullLitExpr = struct NullLitExprImpl* ;
 struct NullLitExprImpl : 
 
-#line 800 "syntax.cog"
+#line 805 "syntax.cog"
                      ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11148,144 +11200,144 @@ for(;
 #line 204 "syntax.cog"
  
 
-#line 214 "syntax.cog"
+#line 219 "syntax.cog"
  
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
   
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                               Attr StmtImpl::findAttrImpl(
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                   
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                Ptr<
 
-#line 220 "syntax.cog"
+#line 225 "syntax.cog"
                                    Class>  attrClass)
 {
 
 
-#line 222 "syntax.cog"
+#line 227 "syntax.cog"
    for(auto a : 
 
-#line 222 "syntax.cog"
+#line 227 "syntax.cog"
                 attrs)
 {
 {
 
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
     
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
     auto match = 
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
                   
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
                 as(
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
                    a, 
 
-#line 225 "syntax.cog"
+#line 230 "syntax.cog"
                       attrClass);
 
 
-#line 226 "syntax.cog"
+#line 231 "syntax.cog"
     if(
 
-#line 226 "syntax.cog"
+#line 231 "syntax.cog"
        match)
 {
 
 
-#line 227 "syntax.cog"
+#line 232 "syntax.cog"
      return 
 
-#line 227 "syntax.cog"
+#line 232 "syntax.cog"
             cast<
 
-#line 227 "syntax.cog"
+#line 232 "syntax.cog"
                  Attr>(
 
-#line 227 "syntax.cog"
+#line 232 "syntax.cog"
                        match);
 }
 }
 }
 
 
-#line 229 "syntax.cog"
+#line 234 "syntax.cog"
    return 
 
-#line 229 "syntax.cog"
+#line 234 "syntax.cog"
           nullptr;
 }
 
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
   
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
        template<typename T > 
 
-#line 232 "syntax.cog"
+#line 237 "syntax.cog"
                         T StmtImpl::findAttr()
 {
 
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
    return 
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
           cast<
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                T>(
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                               
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                   findAttrImpl(
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                                           
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                                        
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                                getClass<
 
-#line 234 "syntax.cog"
+#line 239 "syntax.cog"
                                         T> ()));
 }
 
 
-#line 238 "syntax.cog"
+#line 243 "syntax.cog"
  
 
-#line 246 "syntax.cog"
+#line 251 "syntax.cog"
  
 
-#line 252 "syntax.cog"
+#line 257 "syntax.cog"
   
 
-#line 252 "syntax.cog"
+#line 257 "syntax.cog"
                       ContainerStmt DeclImpl::getParent()
 {
 
 
-#line 254 "syntax.cog"
+#line 259 "syntax.cog"
    return 
 
-#line 254 "syntax.cog"
+#line 259 "syntax.cog"
           parent;
 }
 
@@ -11442,133 +11494,133 @@ for(;
 }
 
 
-#line 288 "syntax.cog"
+#line 293 "syntax.cog"
  
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
   
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                                
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                      SyntaxList<
 
-#line 292 "syntax.cog"
+#line 297 "syntax.cog"
                                 Stmt>  ContainerStmtImpl::getStmts()
 {
 
 
-#line 294 "syntax.cog"
+#line 299 "syntax.cog"
    return 
 
-#line 294 "syntax.cog"
+#line 299 "syntax.cog"
           stmts;
 }
 
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
   
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                        
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                      FilteredSyntaxList<
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                         Decl, 
 
-#line 297 "syntax.cog"
+#line 302 "syntax.cog"
                                               Stmt>  ContainerStmtImpl::getDecls()
 {
 
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
    return 
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
                                         
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
                             
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
           FilteredSyntaxList<
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
                              Decl, 
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
                                    Stmt> (
 
-#line 299 "syntax.cog"
+#line 304 "syntax.cog"
                                          stmts);
 }
 
 
-#line 303 "syntax.cog"
+#line 308 "syntax.cog"
  
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
   
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                         
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                      Ref<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                    
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                          SyntaxList<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                     Decl> >  ContainerDeclImpl::getDecls()
 {
 
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                               return 
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                      
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                      *
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                       cast<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                               
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                            Ptr<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                          
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                SyntaxList<
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                           Decl> > >(
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                                     
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                                     &
 
-#line 307 "syntax.cog"
+#line 312 "syntax.cog"
                                                                                      stmts);
 }
 
 
-#line 429 "syntax.cog"
+#line 434 "syntax.cog"
  
 
 #line 5 "session.cog"
@@ -12492,7 +12544,7 @@ else
 }
 
 
-#line 394 "syntax.cog"
+#line 399 "syntax.cog"
  
 
 #line 152 "check.cog"
@@ -12558,22 +12610,22 @@ else
 }
 
 
-#line 284 "syntax.cog"
+#line 289 "syntax.cog"
  
 
-#line 734 "syntax.cog"
+#line 739 "syntax.cog"
  
 
-#line 584 "syntax.cog"
+#line 589 "syntax.cog"
  
 
 #line 5 "syntax.cog"
  
 
-#line 407 "syntax.cog"
+#line 412 "syntax.cog"
  
 
-#line 425 "syntax.cog"
+#line 430 "syntax.cog"
  
 
 #line 167 "check.cog"
@@ -12594,7 +12646,7 @@ else
 }
 
 
-#line 477 "syntax.cog"
+#line 482 "syntax.cog"
  
 
 #line 174 "check.cog"
@@ -12820,10 +12872,10 @@ else
 }
 
 
-#line 433 "syntax.cog"
+#line 438 "syntax.cog"
  
 
-#line 450 "syntax.cog"
+#line 455 "syntax.cog"
  
 
 #line 215 "check.cog"
@@ -12978,10 +13030,10 @@ else
 }
 
 
-#line 437 "syntax.cog"
+#line 442 "syntax.cog"
  
 
-#line 442 "syntax.cog"
+#line 447 "syntax.cog"
  
 
 #line 237 "check.cog"
@@ -13018,7 +13070,7 @@ else
 }
 
 
-#line 446 "syntax.cog"
+#line 451 "syntax.cog"
  
 
 #line 244 "check.cog"
@@ -14130,7 +14182,7 @@ else
 }
 
 
-#line 727 "syntax.cog"
+#line 732 "syntax.cog"
  
 
 #line 372 "check.cog"
@@ -17108,10 +17160,10 @@ else
 }
 
 
-#line 651 "syntax.cog"
+#line 656 "syntax.cog"
  
 
-#line 663 "syntax.cog"
+#line 668 "syntax.cog"
  
 
 #line 873 "check.cog"
@@ -17496,10 +17548,10 @@ else
 }
 
 
-#line 571 "syntax.cog"
+#line 576 "syntax.cog"
  
 
-#line 611 "syntax.cog"
+#line 616 "syntax.cog"
  
 
 #line 1438 "check.cog"
@@ -18284,7 +18336,7 @@ else
 }
 
 
-#line 745 "syntax.cog"
+#line 750 "syntax.cog"
  
 
 #line 1060 "check.cog"
@@ -19493,10 +19545,10 @@ else
 }
 
 
-#line 258 "syntax.cog"
+#line 263 "syntax.cog"
  
 
-#line 266 "syntax.cog"
+#line 271 "syntax.cog"
  
 
 #line 1250 "check.cog"
@@ -22327,7 +22379,7 @@ else
 }
 
 
-#line 469 "syntax.cog"
+#line 474 "syntax.cog"
  
 
 #line 1776 "check.cog"
@@ -22544,7 +22596,7 @@ else
 }
 
 
-#line 473 "syntax.cog"
+#line 478 "syntax.cog"
  
 
 #line 1804 "check.cog"
@@ -24608,7 +24660,7 @@ else
 }
 
 
-#line 421 "syntax.cog"
+#line 426 "syntax.cog"
  
 
 #line 2079 "check.cog"
@@ -25345,10 +25397,10 @@ for(;
 }
 
 
-#line 494 "syntax.cog"
+#line 499 "syntax.cog"
  
 
-#line 498 "syntax.cog"
+#line 503 "syntax.cog"
  
 
 #line 2226 "check.cog"
@@ -36326,7 +36378,7 @@ else
 }
 
 
-#line 465 "syntax.cog"
+#line 470 "syntax.cog"
  
 
 #line 740 "emit.cog"
@@ -40993,288 +41045,459 @@ else
 }
 
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
       
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
       
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
   emit(
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
        
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
        &
 
-#line 1284 "emit.cog"
+#line 1285 "emit.cog"
         context, 
 
-#line 1284 "emit.cog"
-                 "}\n");
+#line 1285 "emit.cog"
+                 "void init() {\n");
 
 
 #line 1286 "emit.cog"
-  if(
+  for(auto dd : 
 
 #line 1286 "emit.cog"
-     extra)
+                                   
+
+#line 1286 "emit.cog"
+                          DEREF(
+
+#line 1286 "emit.cog"
+                moduleDecl).getDecls())
+{
 {
 
 
 #line 1288 "emit.cog"
+   
+
+#line 1288 "emit.cog"
+   auto classDecl = 
+
+#line 1288 "emit.cog"
+                                
+
+#line 1288 "emit.cog"
+                     
+
+#line 1288 "emit.cog"
+                   as<
+
+#line 1288 "emit.cog"
+                      ClassDecl> (
+
+#line 1288 "emit.cog"
+                                 dd);
+
+
+#line 1289 "emit.cog"
+   if(
+
+#line 1289 "emit.cog"
        
 
-#line 1288 "emit.cog"
-       
+#line 1289 "emit.cog"
+       !
 
-#line 1288 "emit.cog"
-   emit(
+#line 1289 "emit.cog"
+        classDecl)
+{
 
-#line 1288 "emit.cog"
-        
 
-#line 1288 "emit.cog"
-        &
-
-#line 1288 "emit.cog"
-         context, 
-
-#line 1288 "emit.cog"
-                                      
-
-#line 1288 "emit.cog"
-                  TerminatedStringSpan(
-
-#line 1288 "emit.cog"
-                                       extra));
+#line 1289 "emit.cog"
+                   continue;
 }
 
 
 #line 1291 "emit.cog"
-        
+       
+
+#line 1291 "emit.cog"
+       
+
+#line 1291 "emit.cog"
+   emit(
 
 #line 1291 "emit.cog"
         
 
 #line 1291 "emit.cog"
-  fclose(
+        &
 
 #line 1291 "emit.cog"
-         stream);
+         context, 
+
+#line 1291 "emit.cog"
+                  "registerClass(getClass<");
+
+
+#line 1292 "emit.cog"
+               
+
+#line 1292 "emit.cog"
+               
+
+#line 1292 "emit.cog"
+   emitDeclName(
+
+#line 1292 "emit.cog"
+                
+
+#line 1292 "emit.cog"
+                &
+
+#line 1292 "emit.cog"
+                 context, 
+
+#line 1292 "emit.cog"
+                          classDecl, 
+
+#line 1292 "emit.cog"
+                                     kDeclEmitMode_Full);
+
+
+#line 1293 "emit.cog"
+       
+
+#line 1293 "emit.cog"
+       
+
+#line 1293 "emit.cog"
+   emit(
+
+#line 1293 "emit.cog"
+        
+
+#line 1293 "emit.cog"
+        &
+
+#line 1293 "emit.cog"
+         context, 
+
+#line 1293 "emit.cog"
+                  ">());\n");
+}
 }
 
 
 #line 1295 "emit.cog"
- void emitModule(
+      
 
-#line 1296 "emit.cog"
-           Session session)
-{
+#line 1295 "emit.cog"
+      
+
+#line 1295 "emit.cog"
+  emit(
+
+#line 1295 "emit.cog"
+       
+
+#line 1295 "emit.cog"
+       &
+
+#line 1295 "emit.cog"
+        context, 
+
+#line 1295 "emit.cog"
+                 "}\n");
 
 
-#line 1298 "emit.cog"
-     if(
+#line 1297 "emit.cog"
+      
 
-#line 1298 "emit.cog"
-        
+#line 1297 "emit.cog"
+      
 
-#line 1298 "emit.cog"
-        !
+#line 1297 "emit.cog"
+  emit(
 
-#line 1298 "emit.cog"
-                DEREF(
+#line 1297 "emit.cog"
+       
 
-#line 1298 "emit.cog"
-         session).sourceFiles)
-{
+#line 1297 "emit.cog"
+       &
+
+#line 1297 "emit.cog"
+        context, 
+
+#line 1297 "emit.cog"
+                 "}\n");
 
 
 #line 1299 "emit.cog"
-         return;
-}
+  if(
 
-
-#line 1300 "emit.cog"
-     if(
-
-#line 1300 "emit.cog"
-        
-
-#line 1300 "emit.cog"
-        !
-
-#line 1300 "emit.cog"
-                DEREF(
-
-#line 1300 "emit.cog"
-         session).moduleDecl)
+#line 1299 "emit.cog"
+     extra)
 {
 
 
 #line 1301 "emit.cog"
-         return;
+       
+
+#line 1301 "emit.cog"
+       
+
+#line 1301 "emit.cog"
+   emit(
+
+#line 1301 "emit.cog"
+        
+
+#line 1301 "emit.cog"
+        &
+
+#line 1301 "emit.cog"
+         context, 
+
+#line 1301 "emit.cog"
+                                      
+
+#line 1301 "emit.cog"
+                  TerminatedStringSpan(
+
+#line 1301 "emit.cog"
+                                       extra));
 }
 
 
 #line 1304 "emit.cog"
+        
+
+#line 1304 "emit.cog"
+        
+
+#line 1304 "emit.cog"
+  fclose(
+
+#line 1304 "emit.cog"
+         stream);
+}
+
+
+#line 1308 "emit.cog"
+ void emitModule(
+
+#line 1309 "emit.cog"
+           Session session)
+{
+
+
+#line 1311 "emit.cog"
+     if(
+
+#line 1311 "emit.cog"
+        
+
+#line 1311 "emit.cog"
+        !
+
+#line 1311 "emit.cog"
+                DEREF(
+
+#line 1311 "emit.cog"
+         session).sourceFiles)
+{
+
+
+#line 1312 "emit.cog"
+         return;
+}
+
+
+#line 1313 "emit.cog"
+     if(
+
+#line 1313 "emit.cog"
+        
+
+#line 1313 "emit.cog"
+        !
+
+#line 1313 "emit.cog"
+                DEREF(
+
+#line 1313 "emit.cog"
+         session).moduleDecl)
+{
+
+
+#line 1314 "emit.cog"
+         return;
+}
+
+
+#line 1317 "emit.cog"
   
 
-#line 1304 "emit.cog"
+#line 1317 "emit.cog"
   auto moduleDecl = 
 
-#line 1304 "emit.cog"
+#line 1317 "emit.cog"
                           DEREF(
 
-#line 1304 "emit.cog"
+#line 1317 "emit.cog"
                    session).moduleDecl;
 
 
-#line 1305 "emit.cog"
+#line 1318 "emit.cog"
   
 
-#line 1305 "emit.cog"
+#line 1318 "emit.cog"
   auto moduleName = 
 
-#line 1305 "emit.cog"
+#line 1318 "emit.cog"
                              DEREF(
 
-#line 1305 "emit.cog"
+#line 1318 "emit.cog"
                    moduleDecl).name;
 
 
-#line 1306 "emit.cog"
+#line 1319 "emit.cog"
               
 
-#line 1306 "emit.cog"
+#line 1319 "emit.cog"
               
 
-#line 1306 "emit.cog"
+#line 1319 "emit.cog"
      cogAssert(
 
-#line 1306 "emit.cog"
+#line 1319 "emit.cog"
                moduleName);
 
 
-#line 1308 "emit.cog"
+#line 1321 "emit.cog"
      
 
-#line 1308 "emit.cog"
+#line 1321 "emit.cog"
      auto modulePath = 
 
-#line 1308 "emit.cog"
+#line 1321 "emit.cog"
                              DEREF(
 
-#line 1308 "emit.cog"
+#line 1321 "emit.cog"
                       session).modulePath2;
 
 
-#line 1309 "emit.cog"
+#line 1322 "emit.cog"
               
 
-#line 1309 "emit.cog"
+#line 1322 "emit.cog"
               
 
-#line 1309 "emit.cog"
+#line 1322 "emit.cog"
      cogAssert(
 
-#line 1309 "emit.cog"
+#line 1322 "emit.cog"
                modulePath);
 
 
-#line 1311 "emit.cog"
+#line 1324 "emit.cog"
   
 
-#line 1311 "emit.cog"
+#line 1324 "emit.cog"
   auto moduleNameText = 
 
-#line 1311 "emit.cog"
+#line 1324 "emit.cog"
                               
 
-#line 1311 "emit.cog"
+#line 1324 "emit.cog"
                        getText(
 
-#line 1311 "emit.cog"
+#line 1324 "emit.cog"
                                moduleName);
 
 
-#line 1312 "emit.cog"
+#line 1325 "emit.cog"
      
 
-#line 1312 "emit.cog"
+#line 1325 "emit.cog"
      auto modulePathText = 
 
-#line 1312 "emit.cog"
+#line 1325 "emit.cog"
                                  
 
-#line 1312 "emit.cog"
+#line 1325 "emit.cog"
                           getText(
 
-#line 1312 "emit.cog"
+#line 1325 "emit.cog"
                                   modulePath);
 
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
   
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
   
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
                              
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
                FixedSizeArray<
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
                               1024, 
 
-#line 1317 "emit.cog"
+#line 1330 "emit.cog"
                                     Char>  buffer;
 
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
          
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
          
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
   sprintf(
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
           buffer, 
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
                   "%s.cog.cpp", 
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
                                               DEREF(
 
-#line 1318 "emit.cog"
+#line 1331 "emit.cog"
                                 modulePathText).begin);
 
 
-#line 1320 "emit.cog"
+#line 1333 "emit.cog"
                  
 
-#line 1320 "emit.cog"
+#line 1333 "emit.cog"
                  
 
-#line 1320 "emit.cog"
+#line 1333 "emit.cog"
   emitModuleInner(
 
-#line 1321 "emit.cog"
+#line 1334 "emit.cog"
    session, 
 
-#line 1322 "emit.cog"
+#line 1335 "emit.cog"
    moduleNameText, 
 
-#line 1323 "emit.cog"
+#line 1336 "emit.cog"
    buffer, 
 
-#line 1324 "emit.cog"
+#line 1337 "emit.cog"
    nullptr);
 }
 
@@ -50013,233 +50236,233 @@ else
 }
 
 
-#line 673 "syntax.cog"
+#line 678 "syntax.cog"
  
 
-#line 678 "syntax.cog"
+#line 683 "syntax.cog"
   LookupResultItem::LookupResultItem()
 {
 
 
-#line 680 "syntax.cog"
+#line 685 "syntax.cog"
        DEREF(
 
-#line 680 "syntax.cog"
+#line 685 "syntax.cog"
    this).decl = 
 
-#line 680 "syntax.cog"
+#line 685 "syntax.cog"
                nullptr;
 }
 
 
-#line 686 "syntax.cog"
+#line 691 "syntax.cog"
   LookupResultItem::LookupResultItem(
 
-#line 686 "syntax.cog"
+#line 691 "syntax.cog"
              Decl decl)
 {
 
 
-#line 688 "syntax.cog"
+#line 693 "syntax.cog"
        DEREF(
 
-#line 688 "syntax.cog"
+#line 693 "syntax.cog"
    this).decl = 
 
-#line 688 "syntax.cog"
+#line 693 "syntax.cog"
                decl;
 }
 
 
-#line 692 "syntax.cog"
+#line 697 "syntax.cog"
  
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
   
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                      
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                   Ptr<
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                       LookupResultItem>  LookupResult::begin()
 {
 
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                                           return 
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                                                             
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                                                       DEREF(
 
-#line 696 "syntax.cog"
+#line 701 "syntax.cog"
                                                  items).begin();
 }
 
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
   
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                    
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                 Ptr<
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                     LookupResultItem>  LookupResult::end()
 {
 
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                                         return 
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                                                         
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                                                     DEREF(
 
-#line 697 "syntax.cog"
+#line 702 "syntax.cog"
                                                items).end();
 }
 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
   
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                     Bool LookupResult::isEmpty()
 {
 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                            return 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                                    
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                                 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                        DEREF(
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                   items).getCount() 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                                    == 
 
-#line 700 "syntax.cog"
+#line 705 "syntax.cog"
                                                       0;
 }
 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
      
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                         Bool LookupResult::isUnique()
 {
 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                return 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                                        
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                                     
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                            DEREF(
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                       items).getCount() 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                                        == 
 
-#line 701 "syntax.cog"
+#line 706 "syntax.cog"
                                                           1;
 }
 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
      
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                             Bool LookupResult::isOverloaded()
 {
 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                    return 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                                            
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                                         
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                                DEREF(
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                           items).getCount() 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                                            > 
 
-#line 702 "syntax.cog"
+#line 707 "syntax.cog"
                                                              1;
 }
 
 
-#line 704 "syntax.cog"
+#line 709 "syntax.cog"
      
 
-#line 704 "syntax.cog"
+#line 709 "syntax.cog"
                        Decl LookupResult::getDecl()
 {
 
 
-#line 706 "syntax.cog"
+#line 711 "syntax.cog"
                   
 
-#line 706 "syntax.cog"
+#line 711 "syntax.cog"
                   
 
-#line 706 "syntax.cog"
+#line 711 "syntax.cog"
          cogAssert(
 
-#line 706 "syntax.cog"
+#line 711 "syntax.cog"
                            
 
-#line 706 "syntax.cog"
+#line 711 "syntax.cog"
                    isUnique());
 
 
-#line 707 "syntax.cog"
+#line 712 "syntax.cog"
          return 
 
-#line 707 "syntax.cog"
+#line 712 "syntax.cog"
                         DEREF(
 
-#line 707 "syntax.cog"
+#line 712 "syntax.cog"
                      
 
-#line 707 "syntax.cog"
+#line 712 "syntax.cog"
                 items[
 
-#line 707 "syntax.cog"
+#line 712 "syntax.cog"
                       0]).decl;
 }
 
@@ -50290,7 +50513,7 @@ else
 }
 
 
-#line 502 "syntax.cog"
+#line 507 "syntax.cog"
  
 
 #line 405 "parser.cog"
@@ -50366,7 +50589,7 @@ else
 }
 
 
-#line 656 "syntax.cog"
+#line 661 "syntax.cog"
  
 
 #line 422 "parser.cog"
@@ -51400,10 +51623,10 @@ default:
 }
 
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
  typedef 
 
-#line 593 "syntax.cog"
+#line 598 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -60678,16 +60901,16 @@ else
  
 
 #line 1860 "parser.cog"
-                                     ParamDecl parseParam(
+                                                Syntax parseDeclRefClassAttr(
 
 #line 1860 "parser.cog"
-                               
+                                          
 
 #line 1860 "parser.cog"
-                         Parser
+                                    Parser
 
 #line 1860 "parser.cog"
-                               * parser)
+                                          * parser)
 {
 
 
@@ -60695,10 +60918,10 @@ else
      
 
 #line 1862 "parser.cog"
-     auto decl = 
+     auto attr = 
 
 #line 1862 "parser.cog"
-                                       
+                                              
 
 #line 1862 "parser.cog"
                             
@@ -60707,2763 +60930,2920 @@ else
                 createObject<
 
 #line 1862 "parser.cog"
+                             DeclRefClassAttr> ();
+
+
+#line 1863 "parser.cog"
+           
+
+#line 1863 "parser.cog"
+           
+
+#line 1863 "parser.cog"
+     expect(
+
+#line 1863 "parser.cog"
+            parser, 
+
+#line 1863 "parser.cog"
+                    kTokenCode_LParen);
+
+
+#line 1865 "parser.cog"
+  
+
+#line 1865 "parser.cog"
+  auto name = 
+
+#line 1865 "parser.cog"
+                             
+
+#line 1865 "parser.cog"
+             expectIdentifier(
+
+#line 1865 "parser.cog"
+                              parser);
+
+
+#line 1867 "parser.cog"
+      DEREF(
+
+#line 1867 "parser.cog"
+  attr).syntaxClass = 
+
+#line 1867 "parser.cog"
+                                    
+
+#line 1867 "parser.cog"
+                     findClassByName(
+
+#line 1867 "parser.cog"
+                                                  DEREF(
+
+#line 1867 "parser.cog"
+                                            
+
+#line 1867 "parser.cog"
+                                     getText(
+
+#line 1867 "parser.cog"
+                                             name)).begin);
+
+
+#line 1869 "parser.cog"
+           
+
+#line 1869 "parser.cog"
+           
+
+#line 1869 "parser.cog"
+     expect(
+
+#line 1869 "parser.cog"
+            parser, 
+
+#line 1869 "parser.cog"
+                    kTokenCode_RParen);
+
+
+#line 1870 "parser.cog"
+     return 
+
+#line 1870 "parser.cog"
+            attr;
+}
+
+
+#line 1873 "parser.cog"
+ 
+
+#line 1873 "parser.cog"
+                                     ParamDecl parseParam(
+
+#line 1873 "parser.cog"
+                               
+
+#line 1873 "parser.cog"
+                         Parser
+
+#line 1873 "parser.cog"
+                               * parser)
+{
+
+
+#line 1875 "parser.cog"
+     
+
+#line 1875 "parser.cog"
+     auto decl = 
+
+#line 1875 "parser.cog"
+                                       
+
+#line 1875 "parser.cog"
+                            
+
+#line 1875 "parser.cog"
+                createObject<
+
+#line 1875 "parser.cog"
                              ParamDecl> ();
 
 
-#line 1863 "parser.cog"
+#line 1876 "parser.cog"
                        
 
-#line 1863 "parser.cog"
+#line 1876 "parser.cog"
                        
 
-#line 1863 "parser.cog"
+#line 1876 "parser.cog"
      parseVarDeclCommon(
 
-#line 1863 "parser.cog"
+#line 1876 "parser.cog"
                         parser, 
 
-#line 1863 "parser.cog"
+#line 1876 "parser.cog"
                                 decl);
 
 
-#line 1864 "parser.cog"
+#line 1877 "parser.cog"
      return 
 
-#line 1864 "parser.cog"
+#line 1877 "parser.cog"
             decl;
 }
 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
  void parseParams(
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                           Parser
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                 * parser, 
 
-#line 1867 "parser.cog"
+#line 1880 "parser.cog"
                                          ContainerDecl decl)
 {
 
 
-#line 1869 "parser.cog"
+#line 1882 "parser.cog"
      
 
-#line 1869 "parser.cog"
+#line 1882 "parser.cog"
      
 
-#line 1869 "parser.cog"
+#line 1882 "parser.cog"
                                   
 
-#line 1869 "parser.cog"
+#line 1882 "parser.cog"
                  SyntaxListBuilder<
 
-#line 1869 "parser.cog"
+#line 1882 "parser.cog"
                                    Decl>  params;
 
 
-#line 1871 "parser.cog"
+#line 1884 "parser.cog"
      switch(
 
-#line 1871 "parser.cog"
+#line 1884 "parser.cog"
                          
 
-#line 1871 "parser.cog"
+#line 1884 "parser.cog"
             peekTokenCode(
 
-#line 1871 "parser.cog"
+#line 1884 "parser.cog"
                           parser))
 {
 case 
 
-#line 1873 "parser.cog"
+#line 1886 "parser.cog"
           kTokenCode_RCurly:
 case 
 
-#line 1874 "parser.cog"
+#line 1887 "parser.cog"
           kTokenCode_RParen:
 case 
 
-#line 1875 "parser.cog"
+#line 1888 "parser.cog"
           kTokenCode_EndOfFile:
 {
 
 
-#line 1876 "parser.cog"
+#line 1889 "parser.cog"
          return;
 }
 default:
 {
 
 
-#line 1879 "parser.cog"
+#line 1892 "parser.cog"
          break;
 }
 }
 
 
-#line 1883 "parser.cog"
+#line 1896 "parser.cog"
      {
 for(;;)
 {
 {
 
 
-#line 1885 "parser.cog"
+#line 1898 "parser.cog"
          
 
-#line 1885 "parser.cog"
+#line 1898 "parser.cog"
          auto param = 
 
-#line 1885 "parser.cog"
+#line 1898 "parser.cog"
                                
 
-#line 1885 "parser.cog"
+#line 1898 "parser.cog"
                      parseParam(
 
-#line 1885 "parser.cog"
+#line 1898 "parser.cog"
                                 parser);
 
 
-#line 1886 "parser.cog"
+#line 1899 "parser.cog"
          if(
 
-#line 1886 "parser.cog"
+#line 1899 "parser.cog"
             param)
 {
 
 
-#line 1888 "parser.cog"
+#line 1901 "parser.cog"
                        
 
-#line 1888 "parser.cog"
+#line 1901 "parser.cog"
                        
 
-#line 1888 "parser.cog"
+#line 1901 "parser.cog"
                    DEREF(
 
-#line 1888 "parser.cog"
+#line 1901 "parser.cog"
              params).add(
 
-#line 1888 "parser.cog"
+#line 1901 "parser.cog"
                         param);
 }
 
 
-#line 1891 "parser.cog"
+#line 1904 "parser.cog"
                    
 
-#line 1891 "parser.cog"
+#line 1904 "parser.cog"
                    
 
-#line 1891 "parser.cog"
+#line 1904 "parser.cog"
          tryRecover(
 
-#line 1891 "parser.cog"
+#line 1904 "parser.cog"
                     parser);
 
 
-#line 1893 "parser.cog"
+#line 1906 "parser.cog"
          switch(
 
-#line 1893 "parser.cog"
+#line 1906 "parser.cog"
                              
 
-#line 1893 "parser.cog"
+#line 1906 "parser.cog"
                 peekTokenCode(
 
-#line 1893 "parser.cog"
+#line 1906 "parser.cog"
                               parser))
 {
 case 
 
-#line 1895 "parser.cog"
+#line 1908 "parser.cog"
               kTokenCode_RCurly:
 case 
 
-#line 1896 "parser.cog"
+#line 1909 "parser.cog"
               kTokenCode_RParen:
 case 
 
-#line 1897 "parser.cog"
+#line 1910 "parser.cog"
               kTokenCode_EndOfFile:
 {
 {
 
 
-#line 1899 "parser.cog"
+#line 1912 "parser.cog"
                               
 
-#line 1899 "parser.cog"
+#line 1912 "parser.cog"
                      DEREF(
 
-#line 1899 "parser.cog"
+#line 1912 "parser.cog"
                  decl).getDecls() = 
 
-#line 1899 "parser.cog"
+#line 1912 "parser.cog"
                                    params;
 }
 }
 {
 
 
-#line 1901 "parser.cog"
+#line 1914 "parser.cog"
              return;
 }
 default:
 {
 
 
-#line 1904 "parser.cog"
+#line 1917 "parser.cog"
              break;
 }
 }
 
 
-#line 1907 "parser.cog"
+#line 1920 "parser.cog"
                
 
-#line 1907 "parser.cog"
+#line 1920 "parser.cog"
                
 
-#line 1907 "parser.cog"
+#line 1920 "parser.cog"
          expect(
 
-#line 1907 "parser.cog"
+#line 1920 "parser.cog"
                 parser, 
 
-#line 1907 "parser.cog"
+#line 1920 "parser.cog"
                         kTokenCode_Comma);
 }
 }}
 
 
-#line 1911 "parser.cog"
+#line 1924 "parser.cog"
                   
 
-#line 1911 "parser.cog"
+#line 1924 "parser.cog"
          DEREF(
 
-#line 1911 "parser.cog"
+#line 1924 "parser.cog"
      decl).getDecls() = 
 
-#line 1911 "parser.cog"
+#line 1924 "parser.cog"
                        params;
 }
 
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
  
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                         Syntax parseFuncDecl(
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                   
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                             Parser
 
-#line 1916 "parser.cog"
+#line 1929 "parser.cog"
                                   * parser)
 {
 
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
      
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
      auto decl = 
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
                                       
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
                             
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
                 createObject<
 
-#line 1918 "parser.cog"
+#line 1931 "parser.cog"
                              FuncDecl> ();
 
 
-#line 1919 "parser.cog"
+#line 1932 "parser.cog"
          DEREF(
 
-#line 1919 "parser.cog"
+#line 1932 "parser.cog"
      decl).loc = 
 
-#line 1919 "parser.cog"
+#line 1932 "parser.cog"
                        
 
-#line 1919 "parser.cog"
+#line 1932 "parser.cog"
                 peekLoc(
 
-#line 1919 "parser.cog"
+#line 1932 "parser.cog"
                         parser);
 
 
-#line 1921 "parser.cog"
+#line 1934 "parser.cog"
          DEREF(
 
-#line 1921 "parser.cog"
+#line 1934 "parser.cog"
      decl).name = 
 
-#line 1921 "parser.cog"
+#line 1934 "parser.cog"
                                            
 
-#line 1921 "parser.cog"
+#line 1934 "parser.cog"
                  expectOperatorOrIdentifier(
 
-#line 1921 "parser.cog"
+#line 1934 "parser.cog"
                                             parser);
 
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
      
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
      auto result = 
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
                                          
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
                   maybeParseGenericParams(
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
                                           parser, 
 
-#line 1924 "parser.cog"
+#line 1937 "parser.cog"
                                                   decl);
 
 
-#line 1926 "parser.cog"
+#line 1939 "parser.cog"
               
 
-#line 1926 "parser.cog"
+#line 1939 "parser.cog"
               
 
-#line 1926 "parser.cog"
+#line 1939 "parser.cog"
      pushScope(
 
-#line 1926 "parser.cog"
+#line 1939 "parser.cog"
                parser, 
 
-#line 1926 "parser.cog"
+#line 1939 "parser.cog"
                        decl);
 
 
-#line 1928 "parser.cog"
+#line 1941 "parser.cog"
      if(
 
-#line 1928 "parser.cog"
+#line 1941 "parser.cog"
               
 
-#line 1928 "parser.cog"
+#line 1941 "parser.cog"
         expect(
 
-#line 1928 "parser.cog"
+#line 1941 "parser.cog"
                parser, 
 
-#line 1928 "parser.cog"
+#line 1941 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1930 "parser.cog"
+#line 1943 "parser.cog"
                     
 
-#line 1930 "parser.cog"
+#line 1943 "parser.cog"
                     
 
-#line 1930 "parser.cog"
+#line 1943 "parser.cog"
          parseParams(
 
-#line 1930 "parser.cog"
+#line 1943 "parser.cog"
                      parser, 
 
-#line 1930 "parser.cog"
+#line 1943 "parser.cog"
                              decl);
 }
 
 
-#line 1932 "parser.cog"
+#line 1945 "parser.cog"
            
 
-#line 1932 "parser.cog"
+#line 1945 "parser.cog"
            
 
-#line 1932 "parser.cog"
+#line 1945 "parser.cog"
      expect(
 
-#line 1932 "parser.cog"
+#line 1945 "parser.cog"
             parser, 
 
-#line 1932 "parser.cog"
+#line 1945 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1934 "parser.cog"
+#line 1947 "parser.cog"
      if(
 
-#line 1934 "parser.cog"
+#line 1947 "parser.cog"
                  
 
-#line 1934 "parser.cog"
+#line 1947 "parser.cog"
         advanceIf(
 
-#line 1934 "parser.cog"
+#line 1947 "parser.cog"
                   parser, 
 
-#line 1934 "parser.cog"
+#line 1947 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1936 "parser.cog"
+#line 1949 "parser.cog"
              DEREF(
 
-#line 1936 "parser.cog"
+#line 1949 "parser.cog"
          decl).resultType = 
 
-#line 1936 "parser.cog"
+#line 1949 "parser.cog"
                                     
 
-#line 1936 "parser.cog"
+#line 1949 "parser.cog"
                            parseType(
 
-#line 1936 "parser.cog"
+#line 1949 "parser.cog"
                                      parser);
 }
 
 
-#line 1939 "parser.cog"
+#line 1952 "parser.cog"
      if(
 
-#line 1939 "parser.cog"
+#line 1952 "parser.cog"
                      
 
-#line 1939 "parser.cog"
+#line 1952 "parser.cog"
         peekTokenCode(
 
-#line 1939 "parser.cog"
+#line 1952 "parser.cog"
                       parser, 
 
-#line 1939 "parser.cog"
+#line 1952 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 1941 "parser.cog"
+#line 1954 "parser.cog"
              DEREF(
 
-#line 1941 "parser.cog"
+#line 1954 "parser.cog"
          decl).body = 
 
-#line 1941 "parser.cog"
+#line 1954 "parser.cog"
                                   
 
-#line 1941 "parser.cog"
+#line 1954 "parser.cog"
                      parseStmtBody(
 
-#line 1941 "parser.cog"
+#line 1954 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 1945 "parser.cog"
+#line 1958 "parser.cog"
                
 
-#line 1945 "parser.cog"
+#line 1958 "parser.cog"
                
 
-#line 1945 "parser.cog"
+#line 1958 "parser.cog"
          expect(
 
-#line 1945 "parser.cog"
+#line 1958 "parser.cog"
                 parser, 
 
-#line 1945 "parser.cog"
+#line 1958 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 1948 "parser.cog"
+#line 1961 "parser.cog"
              
 
-#line 1948 "parser.cog"
+#line 1961 "parser.cog"
              
 
-#line 1948 "parser.cog"
+#line 1961 "parser.cog"
      popScope(
 
-#line 1948 "parser.cog"
+#line 1961 "parser.cog"
               parser);
 
 
-#line 1950 "parser.cog"
+#line 1963 "parser.cog"
      return 
 
-#line 1950 "parser.cog"
+#line 1963 "parser.cog"
             result;
 }
 
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
  
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                              Syntax parseSubscriptDecl(
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                        
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                  Parser
 
-#line 1953 "parser.cog"
+#line 1966 "parser.cog"
                                        * parser)
 {
 
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
      
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
      auto decl = 
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
                                            
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
                             
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
                 createObject<
 
-#line 1955 "parser.cog"
+#line 1968 "parser.cog"
                              SubscriptDecl> ();
 
 
-#line 1957 "parser.cog"
+#line 1970 "parser.cog"
               
 
-#line 1957 "parser.cog"
+#line 1970 "parser.cog"
               
 
-#line 1957 "parser.cog"
+#line 1970 "parser.cog"
      pushScope(
 
-#line 1957 "parser.cog"
+#line 1970 "parser.cog"
                parser, 
 
-#line 1957 "parser.cog"
+#line 1970 "parser.cog"
                        decl);
 
 
-#line 1959 "parser.cog"
+#line 1972 "parser.cog"
      if(
 
-#line 1959 "parser.cog"
+#line 1972 "parser.cog"
               
 
-#line 1959 "parser.cog"
+#line 1972 "parser.cog"
         expect(
 
-#line 1959 "parser.cog"
+#line 1972 "parser.cog"
                parser, 
 
-#line 1959 "parser.cog"
+#line 1972 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1961 "parser.cog"
+#line 1974 "parser.cog"
                     
 
-#line 1961 "parser.cog"
+#line 1974 "parser.cog"
                     
 
-#line 1961 "parser.cog"
+#line 1974 "parser.cog"
          parseParams(
 
-#line 1961 "parser.cog"
+#line 1974 "parser.cog"
                      parser, 
 
-#line 1961 "parser.cog"
+#line 1974 "parser.cog"
                              decl);
 }
 
 
-#line 1963 "parser.cog"
+#line 1976 "parser.cog"
            
 
-#line 1963 "parser.cog"
+#line 1976 "parser.cog"
            
 
-#line 1963 "parser.cog"
+#line 1976 "parser.cog"
      expect(
 
-#line 1963 "parser.cog"
+#line 1976 "parser.cog"
             parser, 
 
-#line 1963 "parser.cog"
+#line 1976 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1965 "parser.cog"
+#line 1978 "parser.cog"
      if(
 
-#line 1965 "parser.cog"
+#line 1978 "parser.cog"
                  
 
-#line 1965 "parser.cog"
+#line 1978 "parser.cog"
         advanceIf(
 
-#line 1965 "parser.cog"
+#line 1978 "parser.cog"
                   parser, 
 
-#line 1965 "parser.cog"
+#line 1978 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1967 "parser.cog"
+#line 1980 "parser.cog"
              DEREF(
 
-#line 1967 "parser.cog"
+#line 1980 "parser.cog"
          decl).resultType = 
 
-#line 1967 "parser.cog"
+#line 1980 "parser.cog"
                                     
 
-#line 1967 "parser.cog"
+#line 1980 "parser.cog"
                            parseType(
 
-#line 1967 "parser.cog"
+#line 1980 "parser.cog"
                                      parser);
 }
 
 
-#line 1970 "parser.cog"
+#line 1983 "parser.cog"
      if(
 
-#line 1970 "parser.cog"
+#line 1983 "parser.cog"
                      
 
-#line 1970 "parser.cog"
+#line 1983 "parser.cog"
         peekTokenCode(
 
-#line 1970 "parser.cog"
+#line 1983 "parser.cog"
                       parser, 
 
-#line 1970 "parser.cog"
+#line 1983 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 1972 "parser.cog"
+#line 1985 "parser.cog"
              DEREF(
 
-#line 1972 "parser.cog"
+#line 1985 "parser.cog"
          decl).body = 
 
-#line 1972 "parser.cog"
+#line 1985 "parser.cog"
                                   
 
-#line 1972 "parser.cog"
+#line 1985 "parser.cog"
                      parseStmtBody(
 
-#line 1972 "parser.cog"
+#line 1985 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 1976 "parser.cog"
+#line 1989 "parser.cog"
                
 
-#line 1976 "parser.cog"
+#line 1989 "parser.cog"
                
 
-#line 1976 "parser.cog"
+#line 1989 "parser.cog"
          expect(
 
-#line 1976 "parser.cog"
+#line 1989 "parser.cog"
                 parser, 
 
-#line 1976 "parser.cog"
+#line 1989 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 1979 "parser.cog"
+#line 1992 "parser.cog"
              
 
-#line 1979 "parser.cog"
+#line 1992 "parser.cog"
              
 
-#line 1979 "parser.cog"
+#line 1992 "parser.cog"
      popScope(
 
-#line 1979 "parser.cog"
+#line 1992 "parser.cog"
               parser);
 
 
-#line 1981 "parser.cog"
+#line 1994 "parser.cog"
      return 
 
-#line 1981 "parser.cog"
+#line 1994 "parser.cog"
             decl;
 }
 
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                                Syntax parseInitializerDecl(
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                          
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                    Parser
 
-#line 1984 "parser.cog"
+#line 1997 "parser.cog"
                                          * parser)
 {
 
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
      
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
      auto decl = 
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
                                              
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
                             
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
                 createObject<
 
-#line 1986 "parser.cog"
+#line 1999 "parser.cog"
                              InitializerDecl> ();
 
 
-#line 1988 "parser.cog"
+#line 2001 "parser.cog"
               
 
-#line 1988 "parser.cog"
+#line 2001 "parser.cog"
               
 
-#line 1988 "parser.cog"
+#line 2001 "parser.cog"
      pushScope(
 
-#line 1988 "parser.cog"
+#line 2001 "parser.cog"
                parser, 
 
-#line 1988 "parser.cog"
+#line 2001 "parser.cog"
                        decl);
 
 
-#line 1990 "parser.cog"
+#line 2003 "parser.cog"
      if(
 
-#line 1990 "parser.cog"
+#line 2003 "parser.cog"
               
 
-#line 1990 "parser.cog"
+#line 2003 "parser.cog"
         expect(
 
-#line 1990 "parser.cog"
+#line 2003 "parser.cog"
                parser, 
 
-#line 1990 "parser.cog"
+#line 2003 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1992 "parser.cog"
+#line 2005 "parser.cog"
                     
 
-#line 1992 "parser.cog"
+#line 2005 "parser.cog"
                     
 
-#line 1992 "parser.cog"
+#line 2005 "parser.cog"
          parseParams(
 
-#line 1992 "parser.cog"
+#line 2005 "parser.cog"
                      parser, 
 
-#line 1992 "parser.cog"
+#line 2005 "parser.cog"
                              decl);
 }
 
 
-#line 1994 "parser.cog"
+#line 2007 "parser.cog"
            
 
-#line 1994 "parser.cog"
+#line 2007 "parser.cog"
            
 
-#line 1994 "parser.cog"
+#line 2007 "parser.cog"
      expect(
 
-#line 1994 "parser.cog"
+#line 2007 "parser.cog"
             parser, 
 
-#line 1994 "parser.cog"
+#line 2007 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1997 "parser.cog"
+#line 2010 "parser.cog"
      if(
 
-#line 1997 "parser.cog"
+#line 2010 "parser.cog"
                  
 
-#line 1997 "parser.cog"
+#line 2010 "parser.cog"
         advanceIf(
 
-#line 1997 "parser.cog"
+#line 2010 "parser.cog"
                   parser, 
 
-#line 1997 "parser.cog"
+#line 2010 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1999 "parser.cog"
+#line 2012 "parser.cog"
              DEREF(
 
-#line 1999 "parser.cog"
+#line 2012 "parser.cog"
          decl).resultType = 
 
-#line 1999 "parser.cog"
+#line 2012 "parser.cog"
                                     
 
-#line 1999 "parser.cog"
+#line 2012 "parser.cog"
                            parseType(
 
-#line 1999 "parser.cog"
+#line 2012 "parser.cog"
                                      parser);
 }
 
 
-#line 2002 "parser.cog"
+#line 2015 "parser.cog"
      if(
 
-#line 2002 "parser.cog"
+#line 2015 "parser.cog"
                      
 
-#line 2002 "parser.cog"
+#line 2015 "parser.cog"
         peekTokenCode(
 
-#line 2002 "parser.cog"
+#line 2015 "parser.cog"
                       parser, 
 
-#line 2002 "parser.cog"
+#line 2015 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 2004 "parser.cog"
+#line 2017 "parser.cog"
              DEREF(
 
-#line 2004 "parser.cog"
+#line 2017 "parser.cog"
          decl).body = 
 
-#line 2004 "parser.cog"
+#line 2017 "parser.cog"
                                   
 
-#line 2004 "parser.cog"
+#line 2017 "parser.cog"
                      parseStmtBody(
 
-#line 2004 "parser.cog"
+#line 2017 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 2008 "parser.cog"
+#line 2021 "parser.cog"
                
 
-#line 2008 "parser.cog"
+#line 2021 "parser.cog"
                
 
-#line 2008 "parser.cog"
+#line 2021 "parser.cog"
          expect(
 
-#line 2008 "parser.cog"
+#line 2021 "parser.cog"
                 parser, 
 
-#line 2008 "parser.cog"
+#line 2021 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 2011 "parser.cog"
+#line 2024 "parser.cog"
              
 
-#line 2011 "parser.cog"
+#line 2024 "parser.cog"
              
 
-#line 2011 "parser.cog"
+#line 2024 "parser.cog"
      popScope(
 
-#line 2011 "parser.cog"
+#line 2024 "parser.cog"
               parser);
 
 
-#line 2013 "parser.cog"
+#line 2026 "parser.cog"
      return 
 
-#line 2013 "parser.cog"
+#line 2026 "parser.cog"
             decl;
 }
 
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
  
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                         Syntax parseThisExpr(
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                   
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                             Parser
 
-#line 2016 "parser.cog"
+#line 2029 "parser.cog"
                                   * parser)
 {
 
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
      
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
      auto expr = 
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
                                       
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
                             
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
                 createObject<
 
-#line 2018 "parser.cog"
+#line 2031 "parser.cog"
                              ThisExpr> ();
 
 
-#line 2019 "parser.cog"
+#line 2032 "parser.cog"
          DEREF(
 
-#line 2019 "parser.cog"
+#line 2032 "parser.cog"
      expr).scope = 
 
-#line 2019 "parser.cog"
+#line 2032 "parser.cog"
                         DEREF(
 
-#line 2019 "parser.cog"
+#line 2032 "parser.cog"
                   parser).scope;
 
 
-#line 2020 "parser.cog"
+#line 2033 "parser.cog"
      return 
 
-#line 2020 "parser.cog"
+#line 2033 "parser.cog"
             expr;
 }
 
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
  
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                         Syntax parseCastExpr(
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                   
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                             Parser
 
-#line 2023 "parser.cog"
+#line 2036 "parser.cog"
                                   * parser)
 {
 
 
-#line 2025 "parser.cog"
+#line 2038 "parser.cog"
                         
 
-#line 2025 "parser.cog"
+#line 2038 "parser.cog"
                         
 
-#line 2025 "parser.cog"
+#line 2038 "parser.cog"
      tryParseGenericOpen(
 
-#line 2025 "parser.cog"
+#line 2038 "parser.cog"
                          parser);
 
 
-#line 2026 "parser.cog"
+#line 2039 "parser.cog"
      
 
-#line 2026 "parser.cog"
+#line 2039 "parser.cog"
      auto args = 
 
-#line 2026 "parser.cog"
+#line 2039 "parser.cog"
                                 
 
-#line 2026 "parser.cog"
+#line 2039 "parser.cog"
                 parseGenericArgs(
 
-#line 2026 "parser.cog"
+#line 2039 "parser.cog"
                                  parser);
 
 
-#line 2027 "parser.cog"
+#line 2040 "parser.cog"
                        
 
-#line 2027 "parser.cog"
+#line 2040 "parser.cog"
                        
 
-#line 2027 "parser.cog"
+#line 2040 "parser.cog"
      expectGenericClose(
 
-#line 2027 "parser.cog"
+#line 2040 "parser.cog"
                         parser);
 
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
      
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
      auto expr = 
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
                                       
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
                             
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
                 createObject<
 
-#line 2029 "parser.cog"
+#line 2042 "parser.cog"
                              CastExpr> ();
 
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
                 DEREF(
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
          DEREF(
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
      expr).toType).exp = 
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
                                 DEREF(
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
                            DEREF(
 
-#line 2030 "parser.cog"
+#line 2043 "parser.cog"
                        args).head).exp;
 
 
-#line 2031 "parser.cog"
+#line 2044 "parser.cog"
            
 
-#line 2031 "parser.cog"
+#line 2044 "parser.cog"
            
 
-#line 2031 "parser.cog"
+#line 2044 "parser.cog"
      expect(
 
-#line 2031 "parser.cog"
+#line 2044 "parser.cog"
             parser, 
 
-#line 2031 "parser.cog"
+#line 2044 "parser.cog"
                     kTokenCode_LParen);
 
 
-#line 2032 "parser.cog"
+#line 2045 "parser.cog"
          DEREF(
 
-#line 2032 "parser.cog"
+#line 2045 "parser.cog"
      expr).arg = 
 
-#line 2032 "parser.cog"
+#line 2045 "parser.cog"
                         
 
-#line 2032 "parser.cog"
+#line 2045 "parser.cog"
                 parseExp(
 
-#line 2032 "parser.cog"
+#line 2045 "parser.cog"
                          parser);
 
 
-#line 2033 "parser.cog"
+#line 2046 "parser.cog"
            
 
-#line 2033 "parser.cog"
+#line 2046 "parser.cog"
            
 
-#line 2033 "parser.cog"
+#line 2046 "parser.cog"
      expect(
 
-#line 2033 "parser.cog"
+#line 2046 "parser.cog"
             parser, 
 
-#line 2033 "parser.cog"
+#line 2046 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 2035 "parser.cog"
+#line 2048 "parser.cog"
      return 
 
-#line 2035 "parser.cog"
+#line 2048 "parser.cog"
             expr;
 }
 
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
  
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                         Syntax parseNullExpr(
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                   
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                             Parser
 
-#line 2038 "parser.cog"
+#line 2051 "parser.cog"
                                   * parser)
 {
 
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
      
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
      auto expr = 
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
                                          
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
                             
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
                 createObject<
 
-#line 2040 "parser.cog"
+#line 2053 "parser.cog"
                              NullLitExpr> ();
 
 
-#line 2041 "parser.cog"
+#line 2054 "parser.cog"
      return 
 
-#line 2041 "parser.cog"
+#line 2054 "parser.cog"
             expr;
 }
 
 
-#line 2044 "parser.cog"
+#line 2057 "parser.cog"
  
-
-#line 2049 "parser.cog"
-        SyntaxDecl createSyntaxDecl(
-
-#line 2045 "parser.cog"
-              Session session, 
-
-#line 2046 "parser.cog"
-                   
-
-#line 2046 "parser.cog"
-           ConstPtr<
-
-#line 2046 "parser.cog"
-                    Char>  name, 
-
-#line 2047 "parser.cog"
-               SyntaxCallback callback, 
-
-#line 2048 "parser.cog"
-                       
-
-#line 2048 "parser.cog"
-                  Class
-
-#line 2048 "parser.cog"
-                       * syntaxClass)
-{
-
-
-#line 2051 "parser.cog"
-     
-
-#line 2051 "parser.cog"
-     auto syntaxDecl = 
-
-#line 2051 "parser.cog"
-                                              
-
-#line 2051 "parser.cog"
-                                  
-
-#line 2051 "parser.cog"
-                      createObject<
-
-#line 2051 "parser.cog"
-                                   SyntaxDecl> ();
-
-
-#line 2052 "parser.cog"
-               DEREF(
-
-#line 2052 "parser.cog"
-     syntaxDecl).name = 
-
-#line 2052 "parser.cog"
-                              
-
-#line 2052 "parser.cog"
-                       getName(
-
-#line 2052 "parser.cog"
-                               session, 
-
-#line 2052 "parser.cog"
-                                               
-
-#line 2052 "parser.cog"
-                                        UNCONST(
-
-#line 2052 "parser.cog"
-                                                name));
-
-
-#line 2053 "parser.cog"
-               DEREF(
-
-#line 2053 "parser.cog"
-     syntaxDecl).syntaxClass = 
-
-#line 2053 "parser.cog"
-                              syntaxClass;
-
-
-#line 2054 "parser.cog"
-               DEREF(
-
-#line 2054 "parser.cog"
-     syntaxDecl).callback = 
-
-#line 2054 "parser.cog"
-                           callback;
-
-
-#line 2055 "parser.cog"
-     return 
-
-#line 2055 "parser.cog"
-            syntaxDecl;
-}
-
-
-#line 2058 "parser.cog"
- 
-
-#line 2058 "parser.cog"
-      template<typename T > 
 
 #line 2062 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2059 "parser.cog"
+#line 2058 "parser.cog"
               Session session, 
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
                    
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
            ConstPtr<
 
-#line 2060 "parser.cog"
+#line 2059 "parser.cog"
                     Char>  name, 
 
+#line 2060 "parser.cog"
+               SyntaxCallback callback, 
+
 #line 2061 "parser.cog"
+                       
+
+#line 2061 "parser.cog"
+                  Class
+
+#line 2061 "parser.cog"
+                       * syntaxClass)
+{
+
+
+#line 2064 "parser.cog"
+     
+
+#line 2064 "parser.cog"
+     auto syntaxDecl = 
+
+#line 2064 "parser.cog"
+                                              
+
+#line 2064 "parser.cog"
+                                  
+
+#line 2064 "parser.cog"
+                      createObject<
+
+#line 2064 "parser.cog"
+                                   SyntaxDecl> ();
+
+
+#line 2065 "parser.cog"
+               DEREF(
+
+#line 2065 "parser.cog"
+     syntaxDecl).name = 
+
+#line 2065 "parser.cog"
+                              
+
+#line 2065 "parser.cog"
+                       getName(
+
+#line 2065 "parser.cog"
+                               session, 
+
+#line 2065 "parser.cog"
+                                               
+
+#line 2065 "parser.cog"
+                                        UNCONST(
+
+#line 2065 "parser.cog"
+                                                name));
+
+
+#line 2066 "parser.cog"
+               DEREF(
+
+#line 2066 "parser.cog"
+     syntaxDecl).syntaxClass = 
+
+#line 2066 "parser.cog"
+                              syntaxClass;
+
+
+#line 2067 "parser.cog"
+               DEREF(
+
+#line 2067 "parser.cog"
+     syntaxDecl).callback = 
+
+#line 2067 "parser.cog"
+                           callback;
+
+
+#line 2068 "parser.cog"
+     return 
+
+#line 2068 "parser.cog"
+            syntaxDecl;
+}
+
+
+#line 2071 "parser.cog"
+ 
+
+#line 2071 "parser.cog"
+      template<typename T > 
+
+#line 2075 "parser.cog"
+        SyntaxDecl createSyntaxDecl(
+
+#line 2072 "parser.cog"
+              Session session, 
+
+#line 2073 "parser.cog"
+                   
+
+#line 2073 "parser.cog"
+           ConstPtr<
+
+#line 2073 "parser.cog"
+                    Char>  name, 
+
+#line 2074 "parser.cog"
                SyntaxCallback callback)
 {
 
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
      return 
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                             
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
             createSyntaxDecl(
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                              session, 
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                       name, 
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                             callback, 
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                                                  
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                                               
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                                       getClass<
 
-#line 2064 "parser.cog"
+#line 2077 "parser.cog"
                                                                T> ());
 }
 
 
-#line 2067 "parser.cog"
+#line 2080 "parser.cog"
  void parseFileIntoModule(
 
-#line 2068 "parser.cog"
+#line 2081 "parser.cog"
               Session session, 
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
                      
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
            SourceFile
 
-#line 2069 "parser.cog"
+#line 2082 "parser.cog"
                      * file, 
 
-#line 2070 "parser.cog"
+#line 2083 "parser.cog"
                  ModuleDecl moduleDecl)
 {
 
 
-#line 2072 "parser.cog"
+#line 2085 "parser.cog"
      
 
-#line 2072 "parser.cog"
+#line 2085 "parser.cog"
      
 
-#line 2072 "parser.cog"
+#line 2085 "parser.cog"
                  Parser parser;
 
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                      
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                      
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
      initializeParser(
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                       
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                       &
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                        parser, 
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                                session, 
 
-#line 2073 "parser.cog"
+#line 2086 "parser.cog"
                                         file);
 
 
-#line 2076 "parser.cog"
+#line 2089 "parser.cog"
      
 
-#line 2076 "parser.cog"
+#line 2089 "parser.cog"
      
 
-#line 2076 "parser.cog"
+#line 2089 "parser.cog"
                                           
 
-#line 2076 "parser.cog"
+#line 2089 "parser.cog"
                          SyntaxListBuilder<
 
-#line 2076 "parser.cog"
+#line 2089 "parser.cog"
                                            Decl>  moduleDeclList;
 
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
                    DEREF(
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
      moduleDeclList).head = 
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
                                                 DEREF(
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
                                               
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
                                      DEREF(
 
-#line 2077 "parser.cog"
+#line 2090 "parser.cog"
                            moduleDecl).getDecls()).head;
 
 
-#line 2081 "parser.cog"
+#line 2094 "parser.cog"
      if(
 
-#line 2081 "parser.cog"
+#line 2094 "parser.cog"
                       DEREF(
 
-#line 2081 "parser.cog"
+#line 2094 "parser.cog"
         moduleDeclList).head)
 {
 
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                        DEREF(
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
          moduleDeclList).link = 
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                cast<
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                        
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                     Ptr<
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                         Decl> >(
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                                        DEREF(
 
-#line 2083 "parser.cog"
+#line 2096 "parser.cog"
                                                 session).moduleDeclLink);
 }
 else
 {
 
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
                        DEREF(
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
          moduleDeclList).link = 
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
                                
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
                                &
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
                                               DEREF(
 
-#line 2087 "parser.cog"
+#line 2100 "parser.cog"
                                 moduleDeclList).head;
 }
 
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
      
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
      auto globals = 
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
                                               
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
                                
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
                    createObject<
 
-#line 2094 "parser.cog"
+#line 2107 "parser.cog"
                                 ContainerDecl> ();
 
 
-#line 2095 "parser.cog"
+#line 2108 "parser.cog"
      
 
-#line 2095 "parser.cog"
+#line 2108 "parser.cog"
      
 
-#line 2095 "parser.cog"
+#line 2108 "parser.cog"
                                        
 
-#line 2095 "parser.cog"
+#line 2108 "parser.cog"
                       SyntaxListBuilder<
 
-#line 2095 "parser.cog"
+#line 2108 "parser.cog"
                                         Decl>  globalDecls;
 
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                     
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                     
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                 DEREF(
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
      globalDecls).add(
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                            
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                      
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                      createSyntaxDecl<
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                       Decl> (
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                             session, 
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                                      "import", 
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                                                
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                                                &
 
-#line 2098 "parser.cog"
+#line 2111 "parser.cog"
                                                                 parseImportDecl));
 
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                     
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                     
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                 DEREF(
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
      globalDecls).add(
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                            
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                      
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                      createSyntaxDecl<
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                       Decl> (
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                             session, 
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                                      "class", 
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                                               
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                                               &
 
-#line 2099 "parser.cog"
+#line 2112 "parser.cog"
                                                                parseClassDecl));
 
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                     
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                     
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                 DEREF(
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
      globalDecls).add(
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                            
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                      
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                      createSyntaxDecl<
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                       Decl> (
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                             session, 
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                                      "struct", 
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                                                
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                                                &
 
-#line 2100 "parser.cog"
+#line 2113 "parser.cog"
                                                                 parseStructDecl));
 
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                     
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                     
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                 DEREF(
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
      globalDecls).add(
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                            
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                      
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                      createSyntaxDecl<
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                       Decl> (
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                             session, 
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                                      "enum", 
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                                              
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                                              &
 
-#line 2101 "parser.cog"
+#line 2114 "parser.cog"
                                                               parseEnumDecl));
 
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                     
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                     
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                 DEREF(
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
      globalDecls).add(
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                            
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                      
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                      createSyntaxDecl<
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                       Decl> (
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                             session, 
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                                      "var", 
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                                             
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                                             &
 
-#line 2102 "parser.cog"
+#line 2115 "parser.cog"
                                                              parseVarDecl));
 
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                     
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                     
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                 DEREF(
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
      globalDecls).add(
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                            
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                      
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                      createSyntaxDecl<
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                       Decl> (
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                             session, 
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                                      "let", 
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                                             
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                                             &
 
-#line 2103 "parser.cog"
+#line 2116 "parser.cog"
                                                              parseLetDecl));
 
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                     
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                     
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                 DEREF(
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
      globalDecls).add(
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                            
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                      
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                      createSyntaxDecl<
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                       Decl> (
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                             session, 
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                                      "func", 
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                                              
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                                              &
 
-#line 2104 "parser.cog"
+#line 2117 "parser.cog"
                                                               parseFuncDecl));
 
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                     
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                     
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                 DEREF(
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
      globalDecls).add(
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                            
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                      
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                      createSyntaxDecl<
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                       Decl> (
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                             session, 
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                                      "subscript", 
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                                                   
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                                                   &
 
-#line 2105 "parser.cog"
+#line 2118 "parser.cog"
                                                                    parseSubscriptDecl));
 
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                     
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                     
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                 DEREF(
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
      globalDecls).add(
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                            
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                      
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                      createSyntaxDecl<
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                       Decl> (
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                             session, 
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                                      "init", 
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                                              
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                                              &
 
-#line 2106 "parser.cog"
+#line 2119 "parser.cog"
                                                               parseInitializerDecl));
 
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                     
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                     
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                 DEREF(
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
      globalDecls).add(
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                            
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                      
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                      createSyntaxDecl<
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                       Decl> (
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                             session, 
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                                      "typealias", 
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                                                   
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                                                   &
 
-#line 2107 "parser.cog"
+#line 2120 "parser.cog"
                                                                    parseTypeAliasDecl));
 
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                     
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                     
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                 DEREF(
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
      globalDecls).add(
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                            
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                      
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                      createSyntaxDecl<
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                       Stmt> (
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                             session, 
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                                      "if", 
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                                            
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                                            &
 
-#line 2108 "parser.cog"
+#line 2121 "parser.cog"
                                                             parseIfStmt));
 
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                     
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                     
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                 DEREF(
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
      globalDecls).add(
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                            
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                      
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                      createSyntaxDecl<
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                       Stmt> (
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                             session, 
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                                      "while", 
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                                               
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                                               &
 
-#line 2109 "parser.cog"
+#line 2122 "parser.cog"
                                                                parseWhileStmt));
 
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                     
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                     
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                 DEREF(
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
      globalDecls).add(
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                            
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                      
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                      createSyntaxDecl<
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                       Stmt> (
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                             session, 
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                                      "for", 
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                                             
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                                             &
 
-#line 2110 "parser.cog"
+#line 2123 "parser.cog"
                                                              parseForStmt));
 
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                     
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                     
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                 DEREF(
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
      globalDecls).add(
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                            
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                      
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                      createSyntaxDecl<
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                       Stmt> (
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                             session, 
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                                      "foreach", 
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                                                 
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                                                 &
 
-#line 2111 "parser.cog"
+#line 2124 "parser.cog"
                                                                  parseForEachStmt));
 
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                     
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                     
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                 DEREF(
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
      globalDecls).add(
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                            
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                      
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                      createSyntaxDecl<
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                       Stmt> (
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                             session, 
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                                      "return", 
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                                                
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                                                &
 
-#line 2112 "parser.cog"
+#line 2125 "parser.cog"
                                                                 parseReturnStmt));
 
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                     
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                     
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                 DEREF(
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
      globalDecls).add(
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                            
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                      
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                      createSyntaxDecl<
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                       Stmt> (
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                             session, 
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                                      "break", 
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                                               
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                                               &
 
-#line 2113 "parser.cog"
+#line 2126 "parser.cog"
                                                                parseBreakStmt));
 
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                     
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                     
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                 DEREF(
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
      globalDecls).add(
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                            
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                      
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                      createSyntaxDecl<
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                       Stmt> (
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                             session, 
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                                      "continue", 
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                                                  
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                                                  &
 
-#line 2114 "parser.cog"
+#line 2127 "parser.cog"
                                                                   parseContinueStmt));
 
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                     
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                     
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                 DEREF(
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
      globalDecls).add(
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                            
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                      
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                      createSyntaxDecl<
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                       Stmt> (
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                             session, 
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                                      "switch", 
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                                                
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                                                &
 
-#line 2115 "parser.cog"
+#line 2128 "parser.cog"
                                                                 parseSwitchStmt));
 
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                     
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                     
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                 DEREF(
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
      globalDecls).add(
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                            
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                      
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                      createSyntaxDecl<
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                       Attr> (
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                             session, 
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                                      "@__builtin", 
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                                                    
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                                                    &
 
-#line 2116 "parser.cog"
+#line 2129 "parser.cog"
                                                                     parseBuiltinAttr));
 
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
                     
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
                     
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
                 DEREF(
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
      globalDecls).add(
 
-#line 2118 "parser.cog"
-                                          
+#line 2130 "parser.cog"
+                                           
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
                                      
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
                      createSyntaxDecl<
 
-#line 2118 "parser.cog"
+#line 2130 "parser.cog"
+                                      Attr> (
+
+#line 2130 "parser.cog"
+                                            session, 
+
+#line 2130 "parser.cog"
+                                                     "@__declRefClass", 
+
+#line 2130 "parser.cog"
+                                                                        
+
+#line 2130 "parser.cog"
+                                                                        &
+
+#line 2130 "parser.cog"
+                                                                         parseDeclRefClassAttr));
+
+
+#line 2132 "parser.cog"
+                    
+
+#line 2132 "parser.cog"
+                    
+
+#line 2132 "parser.cog"
+                DEREF(
+
+#line 2132 "parser.cog"
+     globalDecls).add(
+
+#line 2132 "parser.cog"
+                                          
+
+#line 2132 "parser.cog"
+                                     
+
+#line 2132 "parser.cog"
+                     createSyntaxDecl<
+
+#line 2132 "parser.cog"
                                       Exp> (
 
-#line 2118 "parser.cog"
+#line 2132 "parser.cog"
                                            session, 
 
-#line 2118 "parser.cog"
+#line 2132 "parser.cog"
                                                     "this", 
 
-#line 2118 "parser.cog"
+#line 2132 "parser.cog"
                                                             
 
-#line 2118 "parser.cog"
+#line 2132 "parser.cog"
                                                             &
 
-#line 2118 "parser.cog"
+#line 2132 "parser.cog"
                                                              parseThisExpr));
 
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                     
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                     
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                 DEREF(
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
      globalDecls).add(
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                           
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                      
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                      createSyntaxDecl<
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                       Exp> (
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                            session, 
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                                     "cast", 
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                                             
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                                             &
 
-#line 2119 "parser.cog"
+#line 2133 "parser.cog"
                                                              parseCastExpr));
 
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                     
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                     
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                 DEREF(
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
      globalDecls).add(
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                           
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                      
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                      createSyntaxDecl<
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                       Exp> (
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                            session, 
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                                     "null", 
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                                             
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                                             &
 
-#line 2120 "parser.cog"
+#line 2134 "parser.cog"
                                                              parseNullExpr));
 
 
-#line 2122 "parser.cog"
+#line 2136 "parser.cog"
                      
 
-#line 2122 "parser.cog"
+#line 2136 "parser.cog"
             DEREF(
 
-#line 2122 "parser.cog"
+#line 2136 "parser.cog"
      globals).getDecls() = 
 
-#line 2122 "parser.cog"
+#line 2136 "parser.cog"
                           globalDecls;
 
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
      
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
      auto globalScope = 
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
                                    
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
                             
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
                        alloc<
 
-#line 2124 "parser.cog"
+#line 2138 "parser.cog"
                              Scope> ();
 
 
-#line 2125 "parser.cog"
+#line 2139 "parser.cog"
                 DEREF(
 
-#line 2125 "parser.cog"
+#line 2139 "parser.cog"
      globalScope).parent = 
 
-#line 2125 "parser.cog"
+#line 2139 "parser.cog"
                           0;
 
 
-#line 2126 "parser.cog"
+#line 2140 "parser.cog"
                            DEREF(
 
-#line 2126 "parser.cog"
+#line 2140 "parser.cog"
                 DEREF(
 
-#line 2126 "parser.cog"
+#line 2140 "parser.cog"
      globalScope).directLink).container = 
 
-#line 2126 "parser.cog"
+#line 2140 "parser.cog"
                                         globals;
 
 
-#line 2128 "parser.cog"
+#line 2142 "parser.cog"
            DEREF(
 
-#line 2128 "parser.cog"
+#line 2142 "parser.cog"
      parser).scope = 
 
-#line 2128 "parser.cog"
+#line 2142 "parser.cog"
                     globalScope;
 
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
               
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
               
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
      pushScope(
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
                
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
                &
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
                 parser, 
 
-#line 2134 "parser.cog"
+#line 2148 "parser.cog"
                         moduleDecl);
 
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
      
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
      auto fileDecls = 
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
                                      
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
                      parseDeclsInBody(
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
                                       
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
                                       &
 
-#line 2135 "parser.cog"
+#line 2149 "parser.cog"
                                        parser);
 
 
-#line 2136 "parser.cog"
+#line 2150 "parser.cog"
      for(auto dd : 
 
-#line 2136 "parser.cog"
+#line 2150 "parser.cog"
                    fileDecls)
 {
 
 
-#line 2137 "parser.cog"
+#line 2151 "parser.cog"
            DEREF(
 
-#line 2137 "parser.cog"
+#line 2151 "parser.cog"
          dd).parent = 
 
-#line 2137 "parser.cog"
+#line 2151 "parser.cog"
                      moduleDecl;
 }
 
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
              
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
              
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
      popScope(
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
               
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
               &
 
-#line 2138 "parser.cog"
+#line 2152 "parser.cog"
                parser);
 
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
            
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
            
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
      expect(
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
             
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
             &
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
              parser, 
 
-#line 2140 "parser.cog"
+#line 2154 "parser.cog"
                      kTokenCode_EndOfFile);
 
 
-#line 2142 "parser.cog"
+#line 2156 "parser.cog"
                           
 
-#line 2142 "parser.cog"
+#line 2156 "parser.cog"
                           
 
-#line 2142 "parser.cog"
+#line 2156 "parser.cog"
                    DEREF(
 
-#line 2142 "parser.cog"
+#line 2156 "parser.cog"
      moduleDeclList).append(
 
-#line 2142 "parser.cog"
+#line 2156 "parser.cog"
                            fileDecls);
 
 
-#line 2144 "parser.cog"
+#line 2158 "parser.cog"
                         
 
-#line 2144 "parser.cog"
+#line 2158 "parser.cog"
                DEREF(
 
-#line 2144 "parser.cog"
+#line 2158 "parser.cog"
      moduleDecl).getDecls() = 
 
-#line 2144 "parser.cog"
+#line 2158 "parser.cog"
                              moduleDeclList;
 
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
                    
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
                    
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
      finalizeParser(
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
                     
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
                     &
 
-#line 2146 "parser.cog"
+#line 2160 "parser.cog"
                      parser);
 }
 
 
-#line 2149 "parser.cog"
+#line 2163 "parser.cog"
  void parseFile(
 
-#line 2150 "parser.cog"
+#line 2164 "parser.cog"
               Session session, 
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
                      
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
            SourceFile
 
-#line 2151 "parser.cog"
+#line 2165 "parser.cog"
                      * file)
 {
 
 
-#line 2156 "parser.cog"
+#line 2170 "parser.cog"
      
 
-#line 2156 "parser.cog"
+#line 2170 "parser.cog"
      auto moduleDecl = 
 
-#line 2156 "parser.cog"
+#line 2170 "parser.cog"
                              DEREF(
 
-#line 2156 "parser.cog"
+#line 2170 "parser.cog"
                       session).moduleDecl;
 
 
-#line 2157 "parser.cog"
+#line 2171 "parser.cog"
      if(
 
-#line 2157 "parser.cog"
+#line 2171 "parser.cog"
         
 
-#line 2157 "parser.cog"
+#line 2171 "parser.cog"
         !
 
-#line 2157 "parser.cog"
+#line 2171 "parser.cog"
          moduleDecl)
 {
 
 
-#line 2159 "parser.cog"
+#line 2173 "parser.cog"
          moduleDecl = 
 
-#line 2159 "parser.cog"
+#line 2173 "parser.cog"
                                               
 
-#line 2159 "parser.cog"
+#line 2173 "parser.cog"
                                   
 
-#line 2159 "parser.cog"
+#line 2173 "parser.cog"
                       createObject<
 
-#line 2159 "parser.cog"
+#line 2173 "parser.cog"
                                    ModuleDecl> ();
 
 
-#line 2160 "parser.cog"
+#line 2174 "parser.cog"
                    DEREF(
 
-#line 2160 "parser.cog"
+#line 2174 "parser.cog"
          moduleDecl).name = 
 
-#line 2160 "parser.cog"
+#line 2174 "parser.cog"
                                         
 
-#line 2160 "parser.cog"
+#line 2174 "parser.cog"
                            getModuleName(
 
-#line 2160 "parser.cog"
+#line 2174 "parser.cog"
                                          session);
 
 
-#line 2161 "parser.cog"
+#line 2175 "parser.cog"
                 DEREF(
 
-#line 2161 "parser.cog"
+#line 2175 "parser.cog"
          session).moduleDecl = 
 
-#line 2161 "parser.cog"
+#line 2175 "parser.cog"
                               moduleDecl;
 
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                 DEREF(
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
          session).moduleDeclLink = 
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                   
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                   &
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                                         DEREF(
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                                       
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                              DEREF(
 
-#line 2162 "parser.cog"
+#line 2176 "parser.cog"
                                    moduleDecl).getDecls()).head;
 }
 
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
                         
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
                         
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
      parseFileIntoModule(
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
                          session, 
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
                                   file, 
 
-#line 2165 "parser.cog"
+#line 2179 "parser.cog"
                                         moduleDecl);
 }
 
@@ -65789,654 +66169,654 @@ default:
 #line 209 "syntax.cog"
  
 
-#line 273 "syntax.cog"
+#line 214 "syntax.cog"
  
 
-#line 310 "syntax.cog"
+#line 278 "syntax.cog"
  
 
 #line 315 "syntax.cog"
+ 
+
+#line 320 "syntax.cog"
   template<typename T > DeclRefListIterator<T > ::DeclRefListIterator(
 
-#line 315 "syntax.cog"
+#line 320 "syntax.cog"
              Decl decl, 
 
-#line 315 "syntax.cog"
+#line 320 "syntax.cog"
                                     Specializations specializations)
 {
 
 
-#line 317 "syntax.cog"
+#line 322 "syntax.cog"
        DEREF(
 
-#line 317 "syntax.cog"
+#line 322 "syntax.cog"
    this).decl = 
 
-#line 317 "syntax.cog"
+#line 322 "syntax.cog"
                decl;
 
 
-#line 318 "syntax.cog"
+#line 323 "syntax.cog"
        DEREF(
 
-#line 318 "syntax.cog"
+#line 323 "syntax.cog"
    this).specializations = 
 
-#line 318 "syntax.cog"
+#line 323 "syntax.cog"
                           specializations;
 
 
-#line 320 "syntax.cog"
+#line 325 "syntax.cog"
          
 
-#line 320 "syntax.cog"
+#line 325 "syntax.cog"
          
 
-#line 320 "syntax.cog"
+#line 325 "syntax.cog"
    adjust();
 }
 
 
-#line 323 "syntax.cog"
+#line 328 "syntax.cog"
   template<typename T > void DeclRefListIterator<T > ::operator++()
 {
 
 
-#line 325 "syntax.cog"
+#line 330 "syntax.cog"
    if(
 
-#line 325 "syntax.cog"
+#line 330 "syntax.cog"
       
 
-#line 325 "syntax.cog"
+#line 330 "syntax.cog"
       !
 
-#line 325 "syntax.cog"
+#line 330 "syntax.cog"
        decl)
 {
 
 
-#line 326 "syntax.cog"
+#line 331 "syntax.cog"
     return;
 }
 
 
-#line 327 "syntax.cog"
+#line 332 "syntax.cog"
    decl = 
 
-#line 327 "syntax.cog"
+#line 332 "syntax.cog"
           cast<
 
-#line 327 "syntax.cog"
+#line 332 "syntax.cog"
                Decl>(
 
-#line 327 "syntax.cog"
+#line 332 "syntax.cog"
                          DEREF(
 
-#line 327 "syntax.cog"
+#line 332 "syntax.cog"
                      decl).next);
 
 
-#line 328 "syntax.cog"
+#line 333 "syntax.cog"
          
 
-#line 328 "syntax.cog"
+#line 333 "syntax.cog"
          
 
-#line 328 "syntax.cog"
+#line 333 "syntax.cog"
    adjust();
 }
 
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
   template<typename T > 
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
                             
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
               DeclRefValImpl<
 
-#line 331 "syntax.cog"
+#line 336 "syntax.cog"
                              T>  DeclRefListIterator<T > ::operator*()
 {
 
 
-#line 333 "syntax.cog"
+#line 338 "syntax.cog"
    return 
 
-#line 333 "syntax.cog"
+#line 338 "syntax.cog"
                            
 
-#line 333 "syntax.cog"
+#line 338 "syntax.cog"
                         
 
-#line 333 "syntax.cog"
+#line 338 "syntax.cog"
           DeclRefValImpl<
 
-#line 333 "syntax.cog"
+#line 338 "syntax.cog"
                          T> (
 
-#line 334 "syntax.cog"
+#line 339 "syntax.cog"
     cast<
 
-#line 334 "syntax.cog"
+#line 339 "syntax.cog"
          T>(
 
-#line 334 "syntax.cog"
+#line 339 "syntax.cog"
             decl), 
 
-#line 335 "syntax.cog"
+#line 340 "syntax.cog"
     specializations);
 }
 
 
-#line 338 "syntax.cog"
+#line 343 "syntax.cog"
   template<typename T > void DeclRefListIterator<T > ::adjust()
 {
 
 
-#line 340 "syntax.cog"
+#line 345 "syntax.cog"
    while(
 
-#line 340 "syntax.cog"
+#line 345 "syntax.cog"
          decl)
 {
 {
 
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
     
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
     auto declAsT = 
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
                        
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
                     
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
                   as<
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
                      T> (
 
-#line 342 "syntax.cog"
+#line 347 "syntax.cog"
                         decl);
 
 
-#line 343 "syntax.cog"
+#line 348 "syntax.cog"
     if(
 
-#line 343 "syntax.cog"
+#line 348 "syntax.cog"
        declAsT)
 {
 
 
-#line 344 "syntax.cog"
+#line 349 "syntax.cog"
      return;
 }
 
 
-#line 346 "syntax.cog"
+#line 351 "syntax.cog"
     decl = 
 
-#line 346 "syntax.cog"
+#line 351 "syntax.cog"
            cast<
 
-#line 346 "syntax.cog"
+#line 351 "syntax.cog"
                 Decl>(
 
-#line 346 "syntax.cog"
+#line 351 "syntax.cog"
                           DEREF(
 
-#line 346 "syntax.cog"
+#line 351 "syntax.cog"
                       decl).next);
 }
 }
 }
 
 
-#line 351 "syntax.cog"
+#line 356 "syntax.cog"
  
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
   template<typename T > 
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                                      
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                   DeclRefListIterator<
 
-#line 356 "syntax.cog"
+#line 361 "syntax.cog"
                                       T>  DeclRefList<T > ::begin()
 {
 
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
    return 
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
                                 
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
                              
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
           DeclRefListIterator<
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
                               T> (
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
                                  decl, 
 
-#line 358 "syntax.cog"
+#line 363 "syntax.cog"
                                        specializations);
 }
 
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
   template<typename T > 
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                                    
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                 DeclRefListIterator<
 
-#line 361 "syntax.cog"
+#line 366 "syntax.cog"
                                     T>  DeclRefList<T > ::end()
 {
 
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
    return 
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
                                 
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
                              
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
           DeclRefListIterator<
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
                               T> (
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
                                  nullptr, 
 
-#line 363 "syntax.cog"
+#line 368 "syntax.cog"
                                        nullptr);
 }
 
 
-#line 366 "syntax.cog"
+#line 371 "syntax.cog"
   template<typename T > DeclRefList<T > ::DeclRefList()
 {
 
 
-#line 368 "syntax.cog"
+#line 373 "syntax.cog"
        DEREF(
 
-#line 368 "syntax.cog"
+#line 373 "syntax.cog"
    this).decl = 
 
-#line 368 "syntax.cog"
+#line 373 "syntax.cog"
                nullptr;
 
 
-#line 369 "syntax.cog"
+#line 374 "syntax.cog"
        DEREF(
 
-#line 369 "syntax.cog"
+#line 374 "syntax.cog"
    this).specializations = 
 
-#line 369 "syntax.cog"
+#line 374 "syntax.cog"
                           nullptr;
 }
 
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
   template<typename T > DeclRefList<T > ::DeclRefList(
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
              Decl decl, 
 
-#line 372 "syntax.cog"
+#line 377 "syntax.cog"
                                     Specializations specializations)
 {
 
 
-#line 374 "syntax.cog"
+#line 379 "syntax.cog"
        DEREF(
 
-#line 374 "syntax.cog"
+#line 379 "syntax.cog"
    this).decl = 
 
-#line 374 "syntax.cog"
+#line 379 "syntax.cog"
                decl;
 
 
-#line 375 "syntax.cog"
+#line 380 "syntax.cog"
        DEREF(
 
-#line 375 "syntax.cog"
+#line 380 "syntax.cog"
    this).specializations = 
 
-#line 375 "syntax.cog"
+#line 380 "syntax.cog"
                           specializations;
 }
 
 
-#line 379 "syntax.cog"
+#line 384 "syntax.cog"
  
 
-#line 379 "syntax.cog"
+#line 384 "syntax.cog"
       template<typename T > 
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                                     Bool operator!=(
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
                            
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
         DeclRefListIterator<
 
-#line 380 "syntax.cog"
+#line 385 "syntax.cog"
                             T>  left, 
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                             
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
          DeclRefListIterator<
 
-#line 381 "syntax.cog"
+#line 386 "syntax.cog"
                              T>  right)
 {
 
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
   return 
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
                    
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
              DEREF(
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
          left).decl 
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
                    != 
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
                            DEREF(
 
-#line 383 "syntax.cog"
+#line 388 "syntax.cog"
                       right).decl;
 }
 
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
  
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
                 
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
      DeclRefList<
 
-#line 387 "syntax.cog"
+#line 392 "syntax.cog"
                  Decl>  getDecls(
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                                         
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                           DeclRefValImpl<
 
-#line 386 "syntax.cog"
+#line 391 "syntax.cog"
                                          ContainerDecl>  container)
 {
 
 
-#line 389 "syntax.cog"
+#line 394 "syntax.cog"
   return 
 
-#line 389 "syntax.cog"
+#line 394 "syntax.cog"
                           
 
-#line 389 "syntax.cog"
+#line 394 "syntax.cog"
                     
 
-#line 389 "syntax.cog"
+#line 394 "syntax.cog"
          DeclRefList<
 
-#line 389 "syntax.cog"
+#line 394 "syntax.cog"
                      Decl> (
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
                                  DEREF(
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
                                
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
                       DEREF(
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
                     
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
             DEREF(
 
-#line 390 "syntax.cog"
+#line 395 "syntax.cog"
    container).getDecl()).getDecls()).head, 
 
-#line 391 "syntax.cog"
+#line 396 "syntax.cog"
             DEREF(
 
-#line 391 "syntax.cog"
+#line 396 "syntax.cog"
    container).specializations);
 }
 
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
  
 
-#line 400 "syntax.cog"
+#line 405 "syntax.cog"
      DeclRefVal getInner(
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                                       
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                         DeclRefValImpl<
 
-#line 399 "syntax.cog"
+#line 404 "syntax.cog"
                                        GenericDecl>  declRef)
 {
 
 
-#line 402 "syntax.cog"
+#line 407 "syntax.cog"
   return 
 
-#line 402 "syntax.cog"
+#line 407 "syntax.cog"
                    
 
-#line 402 "syntax.cog"
+#line 407 "syntax.cog"
          DeclRefVal(
 
-#line 403 "syntax.cog"
+#line 408 "syntax.cog"
                     DEREF(
 
-#line 403 "syntax.cog"
+#line 408 "syntax.cog"
                   
 
-#line 403 "syntax.cog"
+#line 408 "syntax.cog"
           DEREF(
 
-#line 403 "syntax.cog"
+#line 408 "syntax.cog"
    declRef).getDecl()).inner, 
 
-#line 404 "syntax.cog"
+#line 409 "syntax.cog"
           DEREF(
 
-#line 404 "syntax.cog"
+#line 409 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 413 "syntax.cog"
+#line 418 "syntax.cog"
  
 
-#line 456 "syntax.cog"
+#line 461 "syntax.cog"
  
 
-#line 458 "syntax.cog"
+#line 463 "syntax.cog"
      Type getResultType(
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
                          
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
            DeclRefValImpl<
 
-#line 457 "syntax.cog"
+#line 462 "syntax.cog"
                           FuncDeclBase>  declRef)
 {
 
 
-#line 460 "syntax.cog"
+#line 465 "syntax.cog"
   return 
 
-#line 460 "syntax.cog"
+#line 465 "syntax.cog"
                        
 
-#line 460 "syntax.cog"
+#line 465 "syntax.cog"
          specializeType(
 
-#line 461 "syntax.cog"
+#line 466 "syntax.cog"
                                DEREF(
 
-#line 461 "syntax.cog"
+#line 466 "syntax.cog"
                     DEREF(
 
-#line 461 "syntax.cog"
+#line 466 "syntax.cog"
                   
 
-#line 461 "syntax.cog"
+#line 466 "syntax.cog"
           DEREF(
 
-#line 461 "syntax.cog"
+#line 466 "syntax.cog"
    declRef).getDecl()).resultType).type, 
 
-#line 462 "syntax.cog"
+#line 467 "syntax.cog"
           DEREF(
 
-#line 462 "syntax.cog"
+#line 467 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
  
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                                        Type getType(
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                      
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                        DeclRefValImpl<
 
-#line 483 "syntax.cog"
+#line 488 "syntax.cog"
                                       VarDeclBase>  declRef)
 {
 
 
-#line 485 "syntax.cog"
+#line 490 "syntax.cog"
   return 
 
-#line 485 "syntax.cog"
+#line 490 "syntax.cog"
                        
 
-#line 485 "syntax.cog"
+#line 490 "syntax.cog"
          specializeType(
 
-#line 486 "syntax.cog"
+#line 491 "syntax.cog"
                          DEREF(
 
-#line 486 "syntax.cog"
+#line 491 "syntax.cog"
                     DEREF(
 
-#line 486 "syntax.cog"
+#line 491 "syntax.cog"
                   
 
-#line 486 "syntax.cog"
+#line 491 "syntax.cog"
           DEREF(
 
-#line 486 "syntax.cog"
+#line 491 "syntax.cog"
    declRef).getDecl()).type).type, 
 
-#line 487 "syntax.cog"
+#line 492 "syntax.cog"
           DEREF(
 
-#line 487 "syntax.cog"
+#line 492 "syntax.cog"
    declRef).specializations);
 }
 
 
-#line 490 "syntax.cog"
+#line 495 "syntax.cog"
  
 
-#line 510 "syntax.cog"
- 
-
-#line 517 "syntax.cog"
+#line 515 "syntax.cog"
  
 
 #line 522 "syntax.cog"
  
 
-#line 529 "syntax.cog"
+#line 527 "syntax.cog"
  
 
-#line 535 "syntax.cog"
+#line 534 "syntax.cog"
  
 
-#line 543 "syntax.cog"
+#line 540 "syntax.cog"
  
 
 #line 548 "syntax.cog"
  
 
-#line 552 "syntax.cog"
+#line 553 "syntax.cog"
  
 
-#line 556 "syntax.cog"
+#line 557 "syntax.cog"
  
 
-#line 563 "syntax.cog"
+#line 561 "syntax.cog"
  
 
-#line 577 "syntax.cog"
+#line 568 "syntax.cog"
  
 
-#line 589 "syntax.cog"
+#line 582 "syntax.cog"
  
 
-#line 595 "syntax.cog"
+#line 594 "syntax.cog"
  
 
 #line 600 "syntax.cog"
@@ -66445,67 +66825,70 @@ default:
 #line 605 "syntax.cog"
  
 
-#line 617 "syntax.cog"
+#line 610 "syntax.cog"
  
 
-#line 621 "syntax.cog"
+#line 622 "syntax.cog"
  
 
-#line 625 "syntax.cog"
+#line 626 "syntax.cog"
  
 
-#line 629 "syntax.cog"
+#line 630 "syntax.cog"
  
 
-#line 633 "syntax.cog"
+#line 634 "syntax.cog"
  
 
-#line 637 "syntax.cog"
+#line 638 "syntax.cog"
  
 
-#line 641 "syntax.cog"
+#line 642 "syntax.cog"
  
 
-#line 645 "syntax.cog"
+#line 646 "syntax.cog"
  
 
-#line 669 "syntax.cog"
+#line 650 "syntax.cog"
  
 
-#line 719 "syntax.cog"
+#line 674 "syntax.cog"
  
 
-#line 739 "syntax.cog"
+#line 724 "syntax.cog"
  
 
-#line 751 "syntax.cog"
+#line 744 "syntax.cog"
  
 
-#line 757 "syntax.cog"
+#line 756 "syntax.cog"
  
 
 #line 762 "syntax.cog"
  
 
-#line 769 "syntax.cog"
+#line 767 "syntax.cog"
  
 
-#line 772 "syntax.cog"
+#line 774 "syntax.cog"
  
 
-#line 775 "syntax.cog"
+#line 777 "syntax.cog"
  
 
-#line 782 "syntax.cog"
+#line 780 "syntax.cog"
  
 
-#line 789 "syntax.cog"
+#line 787 "syntax.cog"
  
 
 #line 794 "syntax.cog"
  
 
-#line 800 "syntax.cog"
+#line 799 "syntax.cog"
+ 
+
+#line 805 "syntax.cog"
  
 
 #line 3 "token.cog"
@@ -66549,6 +66932,7 @@ COG_DEFINE_CLASS(FuncDecl, FuncDeclBase)
 COG_DEFINE_CLASS(SyntaxDecl, Decl)
 COG_DEFINE_CLASS(NameExp, DeclRefExp)
 COG_DEFINE_CLASS(BuiltinAttr, Attr)
+COG_DEFINE_CLASS(DeclRefClassAttr, Attr)
 COG_DEFINE_CLASS(SpecializedDecl, Object)
 COG_DEFINE_CLASS(ImportDecl, Decl)
 COG_DEFINE_CLASS(VarDecl, VarDeclBase)
@@ -66588,4 +66972,83 @@ COG_DEFINE_CLASS(ParenExp, Exp)
 COG_DEFINE_CLASS(ThisExpr, Exp)
 COG_DEFINE_CLASS(CastExpr, Exp)
 COG_DEFINE_CLASS(NullLitExpr, Exp)
+void init() {
+registerClass(getClass<Syntax>());
+registerClass(getClass<Attr>());
+registerClass(getClass<Stmt>());
+registerClass(getClass<Decl>());
+registerClass(getClass<ContainerStmt>());
+registerClass(getClass<ContainerDecl>());
+registerClass(getClass<ModuleDecl>());
+registerClass(getClass<Session>());
+registerClass(getClass<GenericDecl>());
+registerClass(getClass<Val>());
+registerClass(getClass<Type>());
+registerClass(getClass<Exp>());
+registerClass(getClass<TypeVarDecl>());
+registerClass(getClass<TypeAliasDecl>());
+registerClass(getClass<VarDeclBase>());
+registerClass(getClass<PatternDecl>());
+registerClass(getClass<FuncDeclBase>());
+registerClass(getClass<AggTypeDecl>());
+registerClass(getClass<ClassDecl>());
+registerClass(getClass<StructDecl>());
+registerClass(getClass<BlockStmt>());
+registerClass(getClass<DeclRefExp>());
+registerClass(getClass<MemberExp>());
+registerClass(getClass<Arg>());
+registerClass(getClass<AppExpBase>());
+registerClass(getClass<TypeType>());
+registerClass(getClass<SpecializationArg>());
+registerClass(getClass<Specializations>());
+registerClass(getClass<SubscriptDecl>());
+registerClass(getClass<InitializerDecl>());
+registerClass(getClass<GenericParamDecl>());
+registerClass(getClass<LetDecl>());
+registerClass(getClass<ParamDecl>());
+registerClass(getClass<FuncDecl>());
+registerClass(getClass<SyntaxDecl>());
+registerClass(getClass<NameExp>());
+registerClass(getClass<BuiltinAttr>());
+registerClass(getClass<DeclRefClassAttr>());
+registerClass(getClass<SpecializedDecl>());
+registerClass(getClass<ImportDecl>());
+registerClass(getClass<VarDecl>());
+registerClass(getClass<IfStmtBase>());
+registerClass(getClass<IfStmt>());
+registerClass(getClass<IfLetStmt>());
+registerClass(getClass<WhileStmt>());
+registerClass(getClass<ForStmt>());
+registerClass(getClass<ReturnStmt>());
+registerClass(getClass<BreakStmt>());
+registerClass(getClass<ContinueStmt>());
+registerClass(getClass<SwitchCase>());
+registerClass(getClass<SwitchStmt>());
+registerClass(getClass<PositionalArg>());
+registerClass(getClass<LitExp>());
+registerClass(getClass<IntLitExp>());
+registerClass(getClass<StringLitExp>());
+registerClass(getClass<CharacterLitExp>());
+registerClass(getClass<GenericAppExp>());
+registerClass(getClass<AppExp>());
+registerClass(getClass<IndexExp>());
+registerClass(getClass<OperatorAppExp>());
+registerClass(getClass<InfixExp>());
+registerClass(getClass<PrefixExp>());
+registerClass(getClass<PostfixExp>());
+registerClass(getClass<AssignExp>());
+registerClass(getClass<ErrorExp>());
+registerClass(getClass<OverloadedExpr>());
+registerClass(getClass<DeclRefType>());
+registerClass(getClass<FuncType>());
+registerClass(getClass<ErrorType>());
+registerClass(getClass<OverloadGroupType>());
+registerClass(getClass<EnumDecl>());
+registerClass(getClass<EnumTagDecl>());
+registerClass(getClass<ForEachStmt>());
+registerClass(getClass<ParenExp>());
+registerClass(getClass<ThisExpr>());
+registerClass(getClass<CastExpr>());
+registerClass(getClass<NullLitExpr>());
+}
 }
