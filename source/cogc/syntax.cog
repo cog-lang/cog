@@ -530,7 +530,7 @@ class WhileStmt : Stmt
 	var body : Stmt;
 }
 
-class ForStmt : Stmt
+class ForStmt : ContainerStmt
 {
 	var init : Stmt;
 	var condition : Exp;

@@ -1677,6 +1677,7 @@ func parseForStmt(parser: Parser*) -> Syntax
     default:
         // HACK: accept *any* statement, even if it doesn't make sense
         stmt.init = parseStmt(parser);
+		stmt.stmts.head = stmt.init;
         break;
     }
 

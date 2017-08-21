@@ -17,8 +17,6 @@ enum DiagnosticID
 	kDiagnostic_##id,
 #include "thdiagnosticdefs.h"
 */
-
-
 	kDiagnostic_unimplemented,
 	kDiagnostic_unexpectedCharacter,
 	kDiagnostic_unexpectedToken,
