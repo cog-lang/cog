@@ -5,7 +5,7 @@ namespace cogc {
 #line 3 "check.cog"
  
 
-#line 40 "diagnostic.cog"
+#line 38 "diagnostic.cog"
  struct DiagnosticSink;
 
 
@@ -526,11 +526,11 @@ struct ParamDeclImpl;
  enum DiagnosticID : int;
 
 
-#line 46 "diagnostic.cog"
+#line 44 "diagnostic.cog"
  struct ArgTypeList;
 
 
-#line 61 "diagnostic.cog"
+#line 59 "diagnostic.cog"
  enum DiagnosticArgFlavor : int;
 
 
@@ -542,32 +542,32 @@ struct ParamDeclImpl;
  struct StringSpan;
 
 
-#line 72 "diagnostic.cog"
+#line 70 "diagnostic.cog"
  struct DiagnosticArg;
 
 
-#line 137 "diagnostic.cog"
+#line 135 "diagnostic.cog"
  
 
-#line 145 "diagnostic.cog"
+#line 143 "diagnostic.cog"
  
 
-#line 156 "diagnostic.cog"
+#line 154 "diagnostic.cog"
  
 
-#line 234 "diagnostic.cog"
+#line 232 "diagnostic.cog"
  
 
-#line 248 "diagnostic.cog"
+#line 246 "diagnostic.cog"
  
 
-#line 271 "diagnostic.cog"
+#line 269 "diagnostic.cog"
  
 
-#line 307 "diagnostic.cog"
+#line 305 "diagnostic.cog"
  
 
-#line 366 "diagnostic.cog"
+#line 364 "diagnostic.cog"
  
 
 #line 3 "emit.cog"
@@ -1146,55 +1146,55 @@ struct NameExpImpl;
 #line 1665 "parser.cog"
  
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
  
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
  
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
  
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
  
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
  
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
  
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
  
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
  
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
  
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
  
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
  
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
  
 
-#line 2018 "parser.cog"
+#line 2019 "parser.cog"
  
 
-#line 2032 "parser.cog"
+#line 2033 "parser.cog"
  
 
-#line 2041 "parser.cog"
+#line 2042 "parser.cog"
  
 
-#line 2122 "parser.cog"
+#line 2123 "parser.cog"
  
 
 #line 3 "scope.cog"
@@ -1514,24 +1514,24 @@ struct CastExprImpl;
 #line 3 "check.cog"
  
 
-#line 40 "diagnostic.cog"
+#line 38 "diagnostic.cog"
  struct DiagnosticSink
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 42 "diagnostic.cog"
+#line 40 "diagnostic.cog"
   
 
-#line 42 "diagnostic.cog"
+#line 40 "diagnostic.cog"
                 Session session;
 
 
-#line 43 "diagnostic.cog"
+#line 41 "diagnostic.cog"
   
 
-#line 43 "diagnostic.cog"
+#line 41 "diagnostic.cog"
                    Int errorCount;
 };
 
@@ -4781,33 +4781,33 @@ kDiagnostic_tooManyArgs,
 };
 
 
-#line 46 "diagnostic.cog"
+#line 44 "diagnostic.cog"
  struct ArgTypeList
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 48 "diagnostic.cog"
+#line 46 "diagnostic.cog"
   
 
-#line 48 "diagnostic.cog"
+#line 46 "diagnostic.cog"
              Arg args;
 
 
-#line 50 "diagnostic.cog"
+#line 48 "diagnostic.cog"
   ArgTypeList();
 
 
-#line 55 "diagnostic.cog"
+#line 53 "diagnostic.cog"
   ArgTypeList(
 
-#line 55 "diagnostic.cog"
+#line 53 "diagnostic.cog"
              Arg args);
 };
 
 
-#line 61 "diagnostic.cog"
+#line 59 "diagnostic.cog"
  enum DiagnosticArgFlavor : int
 {
 kFlavor_Int,
@@ -4971,311 +4971,311 @@ static StaticClass staticClass;
 };
 
 
-#line 72 "diagnostic.cog"
+#line 70 "diagnostic.cog"
  struct DiagnosticArg
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 74 "diagnostic.cog"
+#line 72 "diagnostic.cog"
   DiagnosticArg(
 
-#line 74 "diagnostic.cog"
+#line 72 "diagnostic.cog"
             Int val);
 
 
-#line 80 "diagnostic.cog"
+#line 78 "diagnostic.cog"
   DiagnosticArg(
 
-#line 80 "diagnostic.cog"
+#line 78 "diagnostic.cog"
             TokenCode val);
 
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
   DiagnosticArg(
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
                
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
             Ptr<
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
                 Name>  val);
 
 
-#line 92 "diagnostic.cog"
+#line 90 "diagnostic.cog"
   DiagnosticArg(
 
-#line 92 "diagnostic.cog"
+#line 90 "diagnostic.cog"
             StringSpan val);
 
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
   DiagnosticArg(
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
                     
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
             ConstPtr<
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
                      Char>  val);
 
 
-#line 106 "diagnostic.cog"
+#line 104 "diagnostic.cog"
   DiagnosticArg(
 
-#line 106 "diagnostic.cog"
+#line 104 "diagnostic.cog"
             Type val);
 
 
-#line 112 "diagnostic.cog"
+#line 110 "diagnostic.cog"
   DiagnosticArg(
 
-#line 112 "diagnostic.cog"
+#line 110 "diagnostic.cog"
             DeclRefVal val);
 
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
   DiagnosticArg(
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
                     
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
             ConstRef<
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
                      ArgTypeList>  val);
 
 
-#line 124 "diagnostic.cog"
+#line 122 "diagnostic.cog"
   
 
-#line 124 "diagnostic.cog"
+#line 122 "diagnostic.cog"
               DiagnosticArgFlavor flavor;
 
 
-#line 126 "diagnostic.cog"
+#line 124 "diagnostic.cog"
    
 
-#line 126 "diagnostic.cog"
+#line 124 "diagnostic.cog"
                Int intVal;
 
 
-#line 127 "diagnostic.cog"
+#line 125 "diagnostic.cog"
    
 
-#line 127 "diagnostic.cog"
+#line 125 "diagnostic.cog"
                      TokenCode tokenCodeVal;
 
 
-#line 128 "diagnostic.cog"
+#line 126 "diagnostic.cog"
    
 
-#line 128 "diagnostic.cog"
+#line 126 "diagnostic.cog"
                     
 
-#line 128 "diagnostic.cog"
+#line 126 "diagnostic.cog"
                  Ptr<
 
-#line 128 "diagnostic.cog"
+#line 126 "diagnostic.cog"
                      Name>  nameVal;
 
 
-#line 129 "diagnostic.cog"
+#line 127 "diagnostic.cog"
    
 
-#line 129 "diagnostic.cog"
+#line 127 "diagnostic.cog"
                        StringSpan stringSpanVal;
 
 
-#line 130 "diagnostic.cog"
+#line 128 "diagnostic.cog"
    
 
-#line 130 "diagnostic.cog"
+#line 128 "diagnostic.cog"
                  Type typeVal;
 
 
-#line 132 "diagnostic.cog"
+#line 130 "diagnostic.cog"
    
 
-#line 132 "diagnostic.cog"
+#line 130 "diagnostic.cog"
                     DeclRefVal declRefVal;
 
 
-#line 133 "diagnostic.cog"
+#line 131 "diagnostic.cog"
    
 
-#line 133 "diagnostic.cog"
+#line 131 "diagnostic.cog"
                         ArgTypeList argTypeListVal;
 };
 
 
-#line 137 "diagnostic.cog"
+#line 135 "diagnostic.cog"
  void diagnose(
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
            
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
         Ptr<
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 139 "diagnostic.cog"
+#line 137 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 140 "diagnostic.cog"
+#line 138 "diagnostic.cog"
       DiagnosticID id);
 
 
-#line 145 "diagnostic.cog"
+#line 143 "diagnostic.cog"
  void diagnose(
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
            
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
         Ptr<
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 147 "diagnostic.cog"
+#line 145 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 148 "diagnostic.cog"
+#line 146 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 149 "diagnostic.cog"
+#line 147 "diagnostic.cog"
         DiagnosticArg arg0);
 
 
-#line 156 "diagnostic.cog"
+#line 154 "diagnostic.cog"
  void diagnose(
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
            
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
         Ptr<
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 158 "diagnostic.cog"
+#line 156 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 159 "diagnostic.cog"
+#line 157 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 160 "diagnostic.cog"
+#line 158 "diagnostic.cog"
         DiagnosticArg arg0, 
 
-#line 161 "diagnostic.cog"
+#line 159 "diagnostic.cog"
         DiagnosticArg arg1);
 
 
-#line 234 "diagnostic.cog"
+#line 232 "diagnostic.cog"
  void printVal(
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
               
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
           FILE
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
               * stream, 
 
-#line 236 "diagnostic.cog"
+#line 234 "diagnostic.cog"
        Val val);
 
 
-#line 248 "diagnostic.cog"
+#line 246 "diagnostic.cog"
  void printDeclRef(
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
               
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
           FILE
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
               * stream, 
 
-#line 250 "diagnostic.cog"
+#line 248 "diagnostic.cog"
            DeclRefVal declRef);
 
 
-#line 271 "diagnostic.cog"
+#line 269 "diagnostic.cog"
  void printType(
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
           FILE
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               * stream, 
 
-#line 273 "diagnostic.cog"
+#line 271 "diagnostic.cog"
         Type type);
 
 
-#line 307 "diagnostic.cog"
+#line 305 "diagnostic.cog"
  void printDiagnosticArg(
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
        ConstPtr<
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                 DiagnosticArg>  arg);
 
 
-#line 366 "diagnostic.cog"
+#line 364 "diagnostic.cog"
  void diagnoseImpl(
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
            
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
         Ptr<
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 368 "diagnostic.cog"
+#line 366 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 369 "diagnostic.cog"
+#line 367 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 370 "diagnostic.cog"
+#line 368 "diagnostic.cog"
             int argCount, 
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
            
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
         Ptr<
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
             Ptr<
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                 DiagnosticArg> >  args);
 
 
@@ -8979,303 +8979,303 @@ template<> struct ObjectClassImpl<cogc::NameExp > { typedef cogc::NameExpImpl Im
                                  * parser);
 
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
  
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                            Syntax parseForEachStmt(
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                      
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                Parser
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                      * parser);
 
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
  
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                           Syntax parseSwitchStmt(
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                     
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                               Parser
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                     * parser);
 
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
  
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                           Syntax parseReturnStmt(
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                     
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                               Parser
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                     * parser);
 
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
  
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                          Syntax parseBreakStmt(
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                    
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                              Parser
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                    * parser);
 
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
  
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                             Syntax parseContinueStmt(
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                       
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                 Parser
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                       * parser);
 
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
  
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                            Syntax parseBuiltinAttr(
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                      
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                Parser
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                      * parser);
 
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
  
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                      ParamDecl parseParam(
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                          Parser
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                * parser);
 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
  void parseParams(
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                           Parser
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                 * parser, 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                          ContainerDecl decl);
 
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
  
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                         Syntax parseFuncDecl(
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                   
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                             Parser
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                   * parser);
 
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
  
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                              Syntax parseSubscriptDecl(
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                        
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                  Parser
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                        * parser);
 
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
  
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                                Syntax parseInitializerDecl(
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                          
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                    Parser
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                          * parser);
 
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                         Syntax parseThisExpr(
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                   
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                             Parser
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                   * parser);
 
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
  
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                         Syntax parseCastExpr(
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                   
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                             Parser
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                   * parser);
 
 
-#line 2018 "parser.cog"
+#line 2019 "parser.cog"
  
 
-#line 2023 "parser.cog"
+#line 2024 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2019 "parser.cog"
+#line 2020 "parser.cog"
               Session session, 
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
                    
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
            ConstPtr<
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
                     Char>  name, 
 
-#line 2021 "parser.cog"
+#line 2022 "parser.cog"
                SyntaxCallback callback, 
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                        
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                   Class
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                        * syntaxClass);
 
 
-#line 2032 "parser.cog"
+#line 2033 "parser.cog"
  template<typename T >
 
 
-#line 2032 "parser.cog"
+#line 2033 "parser.cog"
       
 
-#line 2036 "parser.cog"
+#line 2037 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2033 "parser.cog"
+#line 2034 "parser.cog"
               Session session, 
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
                    
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
            ConstPtr<
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
                     Char>  name, 
 
-#line 2035 "parser.cog"
+#line 2036 "parser.cog"
                SyntaxCallback callback);
 
 
-#line 2041 "parser.cog"
+#line 2042 "parser.cog"
  void parseFileIntoModule(
 
-#line 2042 "parser.cog"
+#line 2043 "parser.cog"
               Session session, 
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
                      
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
            SourceFile
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
                      * file, 
 
-#line 2044 "parser.cog"
+#line 2045 "parser.cog"
                  ModuleDecl moduleDecl);
 
 
-#line 2122 "parser.cog"
+#line 2123 "parser.cog"
  void parseFile(
 
-#line 2123 "parser.cog"
+#line 2124 "parser.cog"
               Session session, 
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
                      
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
            SourceFile
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
                      * file);
 
 
@@ -10148,7 +10148,7 @@ template<> struct ObjectClassImpl<cogc::WhileStmt > { typedef cogc::WhileStmtImp
 struct ForStmtImpl : 
 
 #line 533 "syntax.cog"
-                 StmtImpl
+                 ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
@@ -10833,7 +10833,7 @@ kTokenFlag_AfterSpace =
 #line 3 "check.cog"
  
 
-#line 40 "diagnostic.cog"
+#line 38 "diagnostic.cog"
  
 
 #line 5 "source.cog"
@@ -26897,45 +26897,45 @@ else
 #line 13 "diagnostic.cog"
  
 
-#line 46 "diagnostic.cog"
+#line 44 "diagnostic.cog"
  
 
-#line 50 "diagnostic.cog"
+#line 48 "diagnostic.cog"
   ArgTypeList::ArgTypeList()
 {
 
 
-#line 52 "diagnostic.cog"
+#line 50 "diagnostic.cog"
        DEREF(
 
-#line 52 "diagnostic.cog"
+#line 50 "diagnostic.cog"
    this).args = 
 
-#line 52 "diagnostic.cog"
+#line 50 "diagnostic.cog"
                nullptr;
 }
 
 
-#line 55 "diagnostic.cog"
+#line 53 "diagnostic.cog"
   ArgTypeList::ArgTypeList(
 
-#line 55 "diagnostic.cog"
+#line 53 "diagnostic.cog"
              Arg args)
 {
 
 
-#line 57 "diagnostic.cog"
+#line 55 "diagnostic.cog"
        DEREF(
 
-#line 57 "diagnostic.cog"
+#line 55 "diagnostic.cog"
    this).args = 
 
-#line 57 "diagnostic.cog"
+#line 55 "diagnostic.cog"
                args;
 }
 
 
-#line 61 "diagnostic.cog"
+#line 59 "diagnostic.cog"
  
 
 #line 14 "token.cog"
@@ -27383,1136 +27383,1136 @@ else
 }
 
 
-#line 72 "diagnostic.cog"
+#line 70 "diagnostic.cog"
  
 
-#line 74 "diagnostic.cog"
+#line 72 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 74 "diagnostic.cog"
+#line 72 "diagnostic.cog"
             Int val)
 {
 
 
-#line 76 "diagnostic.cog"
+#line 74 "diagnostic.cog"
        DEREF(
 
-#line 76 "diagnostic.cog"
+#line 74 "diagnostic.cog"
    this).flavor = 
 
-#line 76 "diagnostic.cog"
+#line 74 "diagnostic.cog"
                  kFlavor_Int;
 
 
-#line 77 "diagnostic.cog"
+#line 75 "diagnostic.cog"
        DEREF(
 
-#line 77 "diagnostic.cog"
+#line 75 "diagnostic.cog"
    this).intVal = 
 
-#line 77 "diagnostic.cog"
+#line 75 "diagnostic.cog"
                  val;
 }
 
 
-#line 80 "diagnostic.cog"
+#line 78 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 80 "diagnostic.cog"
+#line 78 "diagnostic.cog"
             TokenCode val)
 {
 
 
-#line 82 "diagnostic.cog"
+#line 80 "diagnostic.cog"
        DEREF(
 
-#line 82 "diagnostic.cog"
+#line 80 "diagnostic.cog"
    this).flavor = 
 
-#line 82 "diagnostic.cog"
+#line 80 "diagnostic.cog"
                  kFlavor_TokenCode;
 
 
-#line 83 "diagnostic.cog"
+#line 81 "diagnostic.cog"
        DEREF(
 
-#line 83 "diagnostic.cog"
+#line 81 "diagnostic.cog"
    this).tokenCodeVal = 
 
-#line 83 "diagnostic.cog"
+#line 81 "diagnostic.cog"
                        val;
 }
 
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
                
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
             Ptr<
 
-#line 86 "diagnostic.cog"
+#line 84 "diagnostic.cog"
                 Name>  val)
 {
 
 
-#line 88 "diagnostic.cog"
+#line 86 "diagnostic.cog"
        DEREF(
 
-#line 88 "diagnostic.cog"
+#line 86 "diagnostic.cog"
    this).flavor = 
 
-#line 88 "diagnostic.cog"
+#line 86 "diagnostic.cog"
                  kFlavor_Name;
 
 
-#line 89 "diagnostic.cog"
+#line 87 "diagnostic.cog"
        DEREF(
 
-#line 89 "diagnostic.cog"
+#line 87 "diagnostic.cog"
    this).nameVal = 
 
-#line 89 "diagnostic.cog"
+#line 87 "diagnostic.cog"
                   val;
 }
 
 
-#line 92 "diagnostic.cog"
+#line 90 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 92 "diagnostic.cog"
+#line 90 "diagnostic.cog"
             StringSpan val)
 {
 
 
-#line 94 "diagnostic.cog"
+#line 92 "diagnostic.cog"
        DEREF(
 
-#line 94 "diagnostic.cog"
+#line 92 "diagnostic.cog"
    this).flavor = 
 
-#line 94 "diagnostic.cog"
+#line 92 "diagnostic.cog"
                  kFlavor_StringSpan;
 
 
-#line 95 "diagnostic.cog"
+#line 93 "diagnostic.cog"
        DEREF(
 
-#line 95 "diagnostic.cog"
+#line 93 "diagnostic.cog"
    this).stringSpanVal = 
 
-#line 95 "diagnostic.cog"
+#line 93 "diagnostic.cog"
                         val;
 }
 
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
                     
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
             ConstPtr<
 
-#line 100 "diagnostic.cog"
+#line 98 "diagnostic.cog"
                      Char>  val)
 {
 
 
-#line 102 "diagnostic.cog"
+#line 100 "diagnostic.cog"
        DEREF(
 
-#line 102 "diagnostic.cog"
+#line 100 "diagnostic.cog"
    this).flavor = 
 
-#line 102 "diagnostic.cog"
+#line 100 "diagnostic.cog"
                  kFlavor_StringSpan;
 
 
-#line 103 "diagnostic.cog"
+#line 101 "diagnostic.cog"
        DEREF(
 
-#line 103 "diagnostic.cog"
+#line 101 "diagnostic.cog"
    this).stringSpanVal = 
 
-#line 103 "diagnostic.cog"
+#line 101 "diagnostic.cog"
                                             
 
-#line 103 "diagnostic.cog"
+#line 101 "diagnostic.cog"
                         TerminatedStringSpan(
 
-#line 103 "diagnostic.cog"
+#line 101 "diagnostic.cog"
                                              val);
 }
 
 
-#line 106 "diagnostic.cog"
+#line 104 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 106 "diagnostic.cog"
+#line 104 "diagnostic.cog"
             Type val)
 {
 
 
-#line 108 "diagnostic.cog"
+#line 106 "diagnostic.cog"
        DEREF(
 
-#line 108 "diagnostic.cog"
+#line 106 "diagnostic.cog"
    this).flavor = 
 
-#line 108 "diagnostic.cog"
+#line 106 "diagnostic.cog"
                  kFlavor_Type;
 
 
-#line 109 "diagnostic.cog"
+#line 107 "diagnostic.cog"
        DEREF(
 
-#line 109 "diagnostic.cog"
+#line 107 "diagnostic.cog"
    this).typeVal = 
 
-#line 109 "diagnostic.cog"
+#line 107 "diagnostic.cog"
                   val;
 }
 
 
-#line 112 "diagnostic.cog"
+#line 110 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 112 "diagnostic.cog"
+#line 110 "diagnostic.cog"
             DeclRefVal val)
 {
 
 
-#line 114 "diagnostic.cog"
+#line 112 "diagnostic.cog"
        DEREF(
 
-#line 114 "diagnostic.cog"
+#line 112 "diagnostic.cog"
    this).flavor = 
 
-#line 114 "diagnostic.cog"
+#line 112 "diagnostic.cog"
                  kFlavor_DeclRef;
 
 
-#line 115 "diagnostic.cog"
+#line 113 "diagnostic.cog"
        DEREF(
 
-#line 115 "diagnostic.cog"
+#line 113 "diagnostic.cog"
    this).declRefVal = 
 
-#line 115 "diagnostic.cog"
+#line 113 "diagnostic.cog"
                      val;
 }
 
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
   DiagnosticArg::DiagnosticArg(
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
                     
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
             ConstRef<
 
-#line 118 "diagnostic.cog"
+#line 116 "diagnostic.cog"
                      ArgTypeList>  val)
 {
 
 
-#line 120 "diagnostic.cog"
+#line 118 "diagnostic.cog"
        DEREF(
 
-#line 120 "diagnostic.cog"
+#line 118 "diagnostic.cog"
    this).flavor = 
 
-#line 120 "diagnostic.cog"
+#line 118 "diagnostic.cog"
                  kFlavor_ArgTypeList;
 
 
-#line 121 "diagnostic.cog"
+#line 119 "diagnostic.cog"
        DEREF(
 
-#line 121 "diagnostic.cog"
+#line 119 "diagnostic.cog"
    this).argTypeListVal = 
 
-#line 121 "diagnostic.cog"
+#line 119 "diagnostic.cog"
                          val;
 }
 
 
-#line 137 "diagnostic.cog"
+#line 135 "diagnostic.cog"
  void diagnose(
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
            
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
         Ptr<
 
-#line 138 "diagnostic.cog"
+#line 136 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 139 "diagnostic.cog"
+#line 137 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 140 "diagnostic.cog"
+#line 138 "diagnostic.cog"
       DiagnosticID id)
 {
 
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
               
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
               
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
   diagnoseImpl(
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
                sink, 
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
                      loc, 
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
                           id, 
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
                               0, 
 
-#line 142 "diagnostic.cog"
+#line 140 "diagnostic.cog"
                                  0);
 }
 
 
-#line 145 "diagnostic.cog"
+#line 143 "diagnostic.cog"
  void diagnose(
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
            
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
         Ptr<
 
-#line 146 "diagnostic.cog"
+#line 144 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 147 "diagnostic.cog"
+#line 145 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 148 "diagnostic.cog"
+#line 146 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 149 "diagnostic.cog"
+#line 147 "diagnostic.cog"
         DiagnosticArg arg0)
 {
 
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
   
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
   
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
                            
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
              FixedSizeArray<
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
                             1, 
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
                                   
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
                                Ptr<
 
-#line 151 "diagnostic.cog"
+#line 149 "diagnostic.cog"
                                    DiagnosticArg> >  args;
 
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
       
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
   args[
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
        0] = 
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
             
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
             &
 
-#line 152 "diagnostic.cog"
+#line 150 "diagnostic.cog"
              arg0;
 
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
               
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
               
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
   diagnoseImpl(
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
                sink, 
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
                      loc, 
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
                           id, 
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
                               1, 
 
-#line 153 "diagnostic.cog"
+#line 151 "diagnostic.cog"
                                  args);
 }
 
 
-#line 156 "diagnostic.cog"
+#line 154 "diagnostic.cog"
  void diagnose(
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
            
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
         Ptr<
 
-#line 157 "diagnostic.cog"
+#line 155 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 158 "diagnostic.cog"
+#line 156 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 159 "diagnostic.cog"
+#line 157 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 160 "diagnostic.cog"
+#line 158 "diagnostic.cog"
         DiagnosticArg arg0, 
 
-#line 161 "diagnostic.cog"
+#line 159 "diagnostic.cog"
         DiagnosticArg arg1)
 {
 
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
   
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
   
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
                            
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
              FixedSizeArray<
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
                             2, 
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
                                   
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
                                Ptr<
 
-#line 163 "diagnostic.cog"
+#line 161 "diagnostic.cog"
                                    DiagnosticArg> >  args;
 
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
       
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
   args[
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
        0] = 
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
             
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
             &
 
-#line 164 "diagnostic.cog"
+#line 162 "diagnostic.cog"
              arg0;
 
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
       
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
   args[
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
        1] = 
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
             
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
             &
 
-#line 165 "diagnostic.cog"
+#line 163 "diagnostic.cog"
              arg1;
 
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
               
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
               
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
   diagnoseImpl(
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
                sink, 
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
                      loc, 
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
                           id, 
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
                               2, 
 
-#line 166 "diagnostic.cog"
+#line 164 "diagnostic.cog"
                                  args);
 }
 
 
-#line 234 "diagnostic.cog"
+#line 232 "diagnostic.cog"
  void printVal(
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
               
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
           FILE
 
-#line 235 "diagnostic.cog"
+#line 233 "diagnostic.cog"
               * stream, 
 
-#line 236 "diagnostic.cog"
+#line 234 "diagnostic.cog"
        Val val)
 {
 
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
   if(auto type = 
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
                         
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
                   
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
                 as<
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
                    Type> (
 
-#line 238 "diagnostic.cog"
+#line 236 "diagnostic.cog"
                          val))
 {
 
 
-#line 240 "diagnostic.cog"
+#line 238 "diagnostic.cog"
             
 
-#line 240 "diagnostic.cog"
+#line 238 "diagnostic.cog"
             
 
-#line 240 "diagnostic.cog"
+#line 238 "diagnostic.cog"
    printType(
 
-#line 240 "diagnostic.cog"
+#line 238 "diagnostic.cog"
              stream, 
 
-#line 240 "diagnostic.cog"
+#line 238 "diagnostic.cog"
                      type);
 }
 else
 {
 
 
-#line 244 "diagnostic.cog"
+#line 242 "diagnostic.cog"
           
 
-#line 244 "diagnostic.cog"
+#line 242 "diagnostic.cog"
           
 
-#line 244 "diagnostic.cog"
+#line 242 "diagnostic.cog"
    fprintf(
 
-#line 244 "diagnostic.cog"
+#line 242 "diagnostic.cog"
            stream, 
 
-#line 244 "diagnostic.cog"
+#line 242 "diagnostic.cog"
                    "<val>");
 }
 }
 
 
-#line 248 "diagnostic.cog"
+#line 246 "diagnostic.cog"
  void printDeclRef(
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
               
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
           FILE
 
-#line 249 "diagnostic.cog"
+#line 247 "diagnostic.cog"
               * stream, 
 
-#line 250 "diagnostic.cog"
+#line 248 "diagnostic.cog"
            DeclRefVal declRef)
 {
 
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
          
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
          
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
   fprintf(
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
           stream, 
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                   "%s", 
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                        DEREF(
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                         getText(
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                  DEREF(
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                                
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                        DEREF(
 
-#line 252 "diagnostic.cog"
+#line 250 "diagnostic.cog"
                                 declRef).getDecl()).name)).begin);
 
 
-#line 254 "diagnostic.cog"
+#line 252 "diagnostic.cog"
   if(auto spec = 
 
-#line 254 "diagnostic.cog"
+#line 252 "diagnostic.cog"
                                           
 
-#line 254 "diagnostic.cog"
+#line 252 "diagnostic.cog"
                        DEREF(
 
-#line 254 "diagnostic.cog"
+#line 252 "diagnostic.cog"
                 declRef).getSpecializations())
 {
 
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
    if(
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                        DEREF(
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                      
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
              DEREF(
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
       declRef).getDecl()).parent 
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                == 
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                                              
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                                      DEREF(
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                       DEREF(
 
-#line 256 "diagnostic.cog"
+#line 254 "diagnostic.cog"
                                   spec).genericDeclRef).getDecl())
 {
 
 
-#line 258 "diagnostic.cog"
+#line 256 "diagnostic.cog"
            
 
-#line 258 "diagnostic.cog"
+#line 256 "diagnostic.cog"
            
 
-#line 258 "diagnostic.cog"
+#line 256 "diagnostic.cog"
     fprintf(
 
-#line 258 "diagnostic.cog"
+#line 256 "diagnostic.cog"
             stream, 
 
-#line 258 "diagnostic.cog"
+#line 256 "diagnostic.cog"
                     "<");
 
 
-#line 259 "diagnostic.cog"
+#line 257 "diagnostic.cog"
     
 
-#line 259 "diagnostic.cog"
+#line 257 "diagnostic.cog"
     auto firstArg = 
 
-#line 259 "diagnostic.cog"
+#line 257 "diagnostic.cog"
                             DEREF(
 
-#line 259 "diagnostic.cog"
+#line 257 "diagnostic.cog"
                        DEREF(
 
-#line 259 "diagnostic.cog"
+#line 257 "diagnostic.cog"
                    spec).args).head;
 
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
     {
 
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
         
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
         auto arg = 
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
                   firstArg;
 for(;
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
                             arg;
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
                                  arg = 
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
                                           DEREF(
 
-#line 260 "diagnostic.cog"
+#line 258 "diagnostic.cog"
                                        arg).next)
 {
 {
 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
      if(
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
             
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
         arg 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
             != 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                firstArg)
 {
 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                                 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                                 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                          fprintf(
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                                  stream, 
 
-#line 262 "diagnostic.cog"
+#line 260 "diagnostic.cog"
                                          ",");
 }
 
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
              
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
              
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
      printVal(
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
               stream, 
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
                          DEREF(
 
-#line 264 "diagnostic.cog"
+#line 262 "diagnostic.cog"
                       arg).value);
 }
 }}
 
 
-#line 266 "diagnostic.cog"
+#line 264 "diagnostic.cog"
            
 
-#line 266 "diagnostic.cog"
+#line 264 "diagnostic.cog"
            
 
-#line 266 "diagnostic.cog"
+#line 264 "diagnostic.cog"
     fprintf(
 
-#line 266 "diagnostic.cog"
+#line 264 "diagnostic.cog"
             stream, 
 
-#line 266 "diagnostic.cog"
+#line 264 "diagnostic.cog"
                     ">");
 }
 }
 }
 
 
-#line 271 "diagnostic.cog"
+#line 269 "diagnostic.cog"
  void printType(
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
           FILE
 
-#line 272 "diagnostic.cog"
+#line 270 "diagnostic.cog"
               * stream, 
 
-#line 273 "diagnostic.cog"
+#line 271 "diagnostic.cog"
         Type type)
 {
 
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
   if(auto declRefType = 
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                                       
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                          
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                        as<
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                           DeclRefType> (
 
-#line 275 "diagnostic.cog"
+#line 273 "diagnostic.cog"
                                        type))
 {
 
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
    printDeclRef(
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                 stream, 
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                                    DEREF(
 
-#line 277 "diagnostic.cog"
+#line 275 "diagnostic.cog"
                         declRefType).declRef);
 }
 else
 {
 
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
        if(auto typeType = 
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                                      
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                            
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                          as<
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                             TypeType> (
 
-#line 279 "diagnostic.cog"
+#line 277 "diagnostic.cog"
                                       type))
 {
 
 
-#line 281 "diagnostic.cog"
+#line 279 "diagnostic.cog"
           
 
-#line 281 "diagnostic.cog"
+#line 279 "diagnostic.cog"
           
 
-#line 281 "diagnostic.cog"
+#line 279 "diagnostic.cog"
    fprintf(
 
-#line 281 "diagnostic.cog"
+#line 279 "diagnostic.cog"
            stream, 
 
-#line 281 "diagnostic.cog"
+#line 279 "diagnostic.cog"
                    "typeof(");
 
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
             
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
             
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
    printType(
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
              stream, 
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
                              DEREF(
 
-#line 282 "diagnostic.cog"
+#line 280 "diagnostic.cog"
                      typeType).type);
 
 
-#line 283 "diagnostic.cog"
+#line 281 "diagnostic.cog"
           
 
-#line 283 "diagnostic.cog"
+#line 281 "diagnostic.cog"
           
 
-#line 283 "diagnostic.cog"
+#line 281 "diagnostic.cog"
    fprintf(
 
-#line 283 "diagnostic.cog"
+#line 281 "diagnostic.cog"
            stream, 
 
-#line 283 "diagnostic.cog"
+#line 281 "diagnostic.cog"
                    ")");
 }
 else
 {
 
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
        if(auto funcType = 
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                                      
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                            
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                          as<
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                             FuncType> (
 
-#line 285 "diagnostic.cog"
+#line 283 "diagnostic.cog"
                                       type))
 {
 
 
-#line 287 "diagnostic.cog"
+#line 285 "diagnostic.cog"
           
 
-#line 287 "diagnostic.cog"
+#line 285 "diagnostic.cog"
           
 
-#line 287 "diagnostic.cog"
+#line 285 "diagnostic.cog"
    fprintf(
 
-#line 287 "diagnostic.cog"
+#line 285 "diagnostic.cog"
            stream, 
 
-#line 287 "diagnostic.cog"
+#line 285 "diagnostic.cog"
                    "FUNC_TYPE");
 }
 else
 {
 
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
        if(auto errorType = 
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                                        
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                             
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                           as<
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                              ErrorType> (
 
-#line 289 "diagnostic.cog"
+#line 287 "diagnostic.cog"
                                         type))
 {
 
 
-#line 291 "diagnostic.cog"
+#line 289 "diagnostic.cog"
           
 
-#line 291 "diagnostic.cog"
+#line 289 "diagnostic.cog"
           
 
-#line 291 "diagnostic.cog"
+#line 289 "diagnostic.cog"
    fprintf(
 
-#line 291 "diagnostic.cog"
+#line 289 "diagnostic.cog"
            stream, 
 
-#line 291 "diagnostic.cog"
+#line 289 "diagnostic.cog"
                    "<error>");
 }
 else
 {
 
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
        if(auto overloadGroupType = 
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                                        
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                     
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                   as<
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                      OverloadGroupType> (
 
-#line 293 "diagnostic.cog"
+#line 291 "diagnostic.cog"
                                                         type))
 {
 
 
-#line 295 "diagnostic.cog"
+#line 293 "diagnostic.cog"
           
 
-#line 295 "diagnostic.cog"
+#line 293 "diagnostic.cog"
           
 
-#line 295 "diagnostic.cog"
+#line 293 "diagnostic.cog"
    fprintf(
 
-#line 295 "diagnostic.cog"
+#line 293 "diagnostic.cog"
            stream, 
 
-#line 295 "diagnostic.cog"
+#line 293 "diagnostic.cog"
                    "<overload group>");
 }
 else
 {
 
 
-#line 297 "diagnostic.cog"
+#line 295 "diagnostic.cog"
        if(
 
-#line 297 "diagnostic.cog"
+#line 295 "diagnostic.cog"
           
 
-#line 297 "diagnostic.cog"
+#line 295 "diagnostic.cog"
           !
 
-#line 297 "diagnostic.cog"
+#line 295 "diagnostic.cog"
            type)
 {
 
 
-#line 299 "diagnostic.cog"
+#line 297 "diagnostic.cog"
           
 
-#line 299 "diagnostic.cog"
+#line 297 "diagnostic.cog"
           
 
-#line 299 "diagnostic.cog"
+#line 297 "diagnostic.cog"
    fprintf(
 
-#line 299 "diagnostic.cog"
+#line 297 "diagnostic.cog"
            stream, 
 
-#line 299 "diagnostic.cog"
+#line 297 "diagnostic.cog"
                    "NULL_TYPE");
 }
 else
 {
 
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
           
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
           
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
    fprintf(
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
            stream, 
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                    "UNKNOWN_TYPE(%s)", 
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                                        DEREF(
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                            DEREF(
 
-#line 303 "diagnostic.cog"
+#line 301 "diagnostic.cog"
                                        type).directClass).name);
 }
 }
@@ -28523,380 +28523,380 @@ else
 }
 
 
-#line 307 "diagnostic.cog"
+#line 305 "diagnostic.cog"
  void printDiagnosticArg(
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
        ConstPtr<
 
-#line 308 "diagnostic.cog"
+#line 306 "diagnostic.cog"
                 DiagnosticArg>  arg)
 {
 
 
-#line 310 "diagnostic.cog"
+#line 308 "diagnostic.cog"
   switch(
 
-#line 310 "diagnostic.cog"
+#line 308 "diagnostic.cog"
             DEREF(
 
-#line 310 "diagnostic.cog"
+#line 308 "diagnostic.cog"
          arg).flavor)
 {
 case 
 
-#line 312 "diagnostic.cog"
+#line 310 "diagnostic.cog"
        kFlavor_Int:
 {
 
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
           
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
           
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
    fprintf(
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
            stderr, 
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                    "%ld", 
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                              DEREF(
 
-#line 313 "diagnostic.cog"
+#line 311 "diagnostic.cog"
                           arg).intVal);
 }
 {
 
 
-#line 314 "diagnostic.cog"
+#line 312 "diagnostic.cog"
    break;
 }
 case 
 
-#line 316 "diagnostic.cog"
+#line 314 "diagnostic.cog"
        kFlavor_TokenCode:
 {
 
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
           
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
           
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
    fprintf(
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
            stderr, 
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                    "TOKEN: %d", 
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                                    DEREF(
 
-#line 318 "diagnostic.cog"
+#line 316 "diagnostic.cog"
                                 arg).tokenCodeVal);
 }
 {
 
 
-#line 319 "diagnostic.cog"
+#line 317 "diagnostic.cog"
    break;
 }
 case 
 
-#line 321 "diagnostic.cog"
+#line 319 "diagnostic.cog"
        kFlavor_Name:
 {
 {
 
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
     
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
     auto text = 
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                       
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                getText(
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                           DEREF(
 
-#line 323 "diagnostic.cog"
+#line 321 "diagnostic.cog"
                        arg).nameVal);
 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
           
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
           
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
     fwrite(
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                DEREF(
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
            text).begin, 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                        1, 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                   
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                               DEREF(
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                           text).end 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                   - 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                        DEREF(
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                    text).begin, 
 
-#line 324 "diagnostic.cog"
+#line 322 "diagnostic.cog"
                                                stderr);
 }
 }
 {
 
 
-#line 326 "diagnostic.cog"
+#line 324 "diagnostic.cog"
    break;
 }
 case 
 
-#line 328 "diagnostic.cog"
+#line 326 "diagnostic.cog"
        kFlavor_StringSpan:
 {
 {
 
 
-#line 330 "diagnostic.cog"
+#line 328 "diagnostic.cog"
     
 
-#line 330 "diagnostic.cog"
+#line 328 "diagnostic.cog"
     auto text = 
 
-#line 330 "diagnostic.cog"
+#line 328 "diagnostic.cog"
                   DEREF(
 
-#line 330 "diagnostic.cog"
+#line 328 "diagnostic.cog"
                arg).stringSpanVal;
 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
           
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
           
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
     fwrite(
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                DEREF(
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
            text).begin, 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                        1, 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                   
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                               DEREF(
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                           text).end 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                   - 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                        DEREF(
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                    text).begin, 
 
-#line 331 "diagnostic.cog"
+#line 329 "diagnostic.cog"
                                                stderr);
 }
 }
 {
 
 
-#line 333 "diagnostic.cog"
+#line 331 "diagnostic.cog"
    break;
 }
 case 
 
-#line 335 "diagnostic.cog"
+#line 333 "diagnostic.cog"
        kFlavor_Type:
 {
 {
 
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
              
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
              
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
     printType(
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
               stderr, 
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
                          DEREF(
 
-#line 337 "diagnostic.cog"
+#line 335 "diagnostic.cog"
                       arg).typeVal);
 }
 }
 {
 
 
-#line 339 "diagnostic.cog"
+#line 337 "diagnostic.cog"
    break;
 }
 case 
 
-#line 341 "diagnostic.cog"
+#line 339 "diagnostic.cog"
        kFlavor_ArgTypeList:
 {
 {
 
 
-#line 343 "diagnostic.cog"
+#line 341 "diagnostic.cog"
     
 
-#line 343 "diagnostic.cog"
+#line 341 "diagnostic.cog"
     auto first = 
 
-#line 343 "diagnostic.cog"
+#line 341 "diagnostic.cog"
                 true;
 
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
     {
 
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
         
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
         auto aa = 
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                    DEREF(
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                     DEREF(
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                  arg).argTypeListVal).args;
 for(;
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                           aa;
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                               aa = 
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                                      DEREF(
 
-#line 344 "diagnostic.cog"
+#line 342 "diagnostic.cog"
                                                    aa).next)
 {
 {
 
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
      if(
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
         
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
         !
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
          first)
 {
 
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                        
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                        
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                 fprintf(
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                         stderr, 
 
-#line 346 "diagnostic.cog"
+#line 344 "diagnostic.cog"
                                 ", ");
 }
 
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
               
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
               
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
      printType(
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                stderr, 
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                              DEREF(
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                          DEREF(
 
-#line 347 "diagnostic.cog"
+#line 345 "diagnostic.cog"
                        aa).exp).type);
 
 
-#line 348 "diagnostic.cog"
+#line 346 "diagnostic.cog"
      first = 
 
-#line 348 "diagnostic.cog"
+#line 346 "diagnostic.cog"
              false;
 }
 }}
@@ -28905,395 +28905,395 @@ for(;
 {
 
 
-#line 351 "diagnostic.cog"
+#line 349 "diagnostic.cog"
    break;
 }
 case 
 
-#line 353 "diagnostic.cog"
+#line 351 "diagnostic.cog"
        kFlavor_DeclRef:
 {
 {
 
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                 
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                 
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
     printDeclRef(
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                  stderr, 
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                             DEREF(
 
-#line 355 "diagnostic.cog"
+#line 353 "diagnostic.cog"
                          arg).declRefVal);
 }
 }
 {
 
 
-#line 357 "diagnostic.cog"
+#line 355 "diagnostic.cog"
    break;
 }
 default:
 {
 
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
           
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
           
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
    fprintf(
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
            stderr, 
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                    "UNIMPLEMENTD:%d", 
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                                          DEREF(
 
-#line 360 "diagnostic.cog"
+#line 358 "diagnostic.cog"
                                       arg).flavor);
 }
 {
 
 
-#line 362 "diagnostic.cog"
+#line 360 "diagnostic.cog"
    break;
 }
 }
 }
 
 
-#line 366 "diagnostic.cog"
+#line 364 "diagnostic.cog"
  void diagnoseImpl(
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
            
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
         Ptr<
 
-#line 367 "diagnostic.cog"
+#line 365 "diagnostic.cog"
             DiagnosticSink>  sink, 
 
-#line 368 "diagnostic.cog"
+#line 366 "diagnostic.cog"
        SourceLoc loc, 
 
-#line 369 "diagnostic.cog"
+#line 367 "diagnostic.cog"
       DiagnosticID id, 
 
-#line 370 "diagnostic.cog"
+#line 368 "diagnostic.cog"
             int argCount, 
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
            
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
         Ptr<
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
             Ptr<
 
-#line 371 "diagnostic.cog"
+#line 369 "diagnostic.cog"
                 DiagnosticArg> >  args)
 {
 
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
   
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
   auto expandedLoc = 
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                              
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                     expandLoc(
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                                   DEREF(
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                               sink).session, 
 
-#line 375 "diagnostic.cog"
+#line 373 "diagnostic.cog"
                                             loc);
 
 
-#line 377 "diagnostic.cog"
+#line 375 "diagnostic.cog"
   
 
-#line 377 "diagnostic.cog"
+#line 375 "diagnostic.cog"
   auto severity = 
 
-#line 377 "diagnostic.cog"
+#line 375 "diagnostic.cog"
                  kSeverity_Error;
 
 
-#line 379 "diagnostic.cog"
+#line 377 "diagnostic.cog"
          
 
-#line 379 "diagnostic.cog"
+#line 377 "diagnostic.cog"
          
 
-#line 379 "diagnostic.cog"
+#line 377 "diagnostic.cog"
   fprintf(
 
-#line 379 "diagnostic.cog"
+#line 377 "diagnostic.cog"
           stderr, 
 
-#line 379 "diagnostic.cog"
+#line 377 "diagnostic.cog"
                   "%s(%ld,%ld): %s: ", 
 
-#line 380 "diagnostic.cog"
+#line 378 "diagnostic.cog"
                     DEREF(
 
-#line 380 "diagnostic.cog"
+#line 378 "diagnostic.cog"
                DEREF(
 
-#line 380 "diagnostic.cog"
+#line 378 "diagnostic.cog"
     expandedLoc).file).begin, 
 
-#line 381 "diagnostic.cog"
+#line 379 "diagnostic.cog"
                DEREF(
 
-#line 381 "diagnostic.cog"
+#line 379 "diagnostic.cog"
     expandedLoc).line, 
 
-#line 382 "diagnostic.cog"
+#line 380 "diagnostic.cog"
                DEREF(
 
-#line 382 "diagnostic.cog"
+#line 380 "diagnostic.cog"
     expandedLoc).column, 
 
-#line 383 "diagnostic.cog"
+#line 381 "diagnostic.cog"
     "error");
 
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
          
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
          
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
   fprintf(
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
           stderr, 
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
                   "%d", 
 
-#line 387 "diagnostic.cog"
+#line 385 "diagnostic.cog"
                         id);
 
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
      {
 
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
          
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
          
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                   int ii = 
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                         0;
 for(;
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                               
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                            ii 
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                               < 
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                 argCount;
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                             
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                           ii
 
-#line 389 "diagnostic.cog"
+#line 387 "diagnostic.cog"
                                             ++)
 {
 {
 
 
-#line 391 "diagnostic.cog"
+#line 389 "diagnostic.cog"
              
 
-#line 391 "diagnostic.cog"
+#line 389 "diagnostic.cog"
              
 
-#line 391 "diagnostic.cog"
+#line 389 "diagnostic.cog"
       fprintf(
 
-#line 391 "diagnostic.cog"
+#line 389 "diagnostic.cog"
               stderr, 
 
-#line 391 "diagnostic.cog"
+#line 389 "diagnostic.cog"
                       "[");
 
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                         
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                         
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
       printDiagnosticArg(
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                              
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                          args[
 
-#line 392 "diagnostic.cog"
+#line 390 "diagnostic.cog"
                               ii]);
 
 
-#line 393 "diagnostic.cog"
+#line 391 "diagnostic.cog"
              
 
-#line 393 "diagnostic.cog"
+#line 391 "diagnostic.cog"
              
 
-#line 393 "diagnostic.cog"
+#line 391 "diagnostic.cog"
       fprintf(
 
-#line 393 "diagnostic.cog"
+#line 391 "diagnostic.cog"
               stderr, 
 
-#line 393 "diagnostic.cog"
+#line 391 "diagnostic.cog"
                       "]");
 }
 }}
 
 
-#line 396 "diagnostic.cog"
+#line 394 "diagnostic.cog"
          
 
-#line 396 "diagnostic.cog"
+#line 394 "diagnostic.cog"
          
 
-#line 396 "diagnostic.cog"
+#line 394 "diagnostic.cog"
   fprintf(
 
-#line 396 "diagnostic.cog"
+#line 394 "diagnostic.cog"
           stderr, 
 
-#line 396 "diagnostic.cog"
+#line 394 "diagnostic.cog"
                   "\n");
 
 
-#line 398 "diagnostic.cog"
+#line 396 "diagnostic.cog"
      if(
 
-#line 398 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                  
 
-#line 398 "diagnostic.cog"
+#line 396 "diagnostic.cog"
         severity 
 
-#line 398 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                  >= 
 
-#line 398 "diagnostic.cog"
+#line 396 "diagnostic.cog"
                     kSeverity_Error)
 {
 
 
-#line 400 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         
 
-#line 400 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         
 
-#line 400 "diagnostic.cog"
+#line 398 "diagnostic.cog"
              DEREF(
 
-#line 400 "diagnostic.cog"
+#line 398 "diagnostic.cog"
          sink).errorCount
 
-#line 400 "diagnostic.cog"
+#line 398 "diagnostic.cog"
                         ++;
 
 
-#line 401 "diagnostic.cog"
+#line 399 "diagnostic.cog"
          if(
 
-#line 401 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                      
 
-#line 401 "diagnostic.cog"
+#line 399 "diagnostic.cog"
             severity 
 
-#line 401 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                      >= 
 
-#line 401 "diagnostic.cog"
+#line 399 "diagnostic.cog"
                         kSeverity_Fatal)
 {
 
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                    
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                    
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
           cogAssert(
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                     
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                     !
 
-#line 403 "diagnostic.cog"
+#line 401 "diagnostic.cog"
                      "fatal");
 
 
-#line 404 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                  
 
-#line 404 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                  
 
-#line 404 "diagnostic.cog"
+#line 402 "diagnostic.cog"
              exit(
 
-#line 404 "diagnostic.cog"
+#line 402 "diagnostic.cog"
                   1);
 }
 }
@@ -33557,991 +33557,949 @@ else
 
 
 #line 463 "emit.cog"
-       if(auto decl = 
-
-#line 463 "emit.cog"
-                             
-
-#line 463 "emit.cog"
-                       
-
-#line 463 "emit.cog"
-                     as<
-
-#line 463 "emit.cog"
-                        Decl> (
-
-#line 463 "emit.cog"
-                              stmt))
-{
-
-
-#line 465 "emit.cog"
-           
-
-#line 465 "emit.cog"
-           
-
-#line 465 "emit.cog"
-   emitDecl(
-
-#line 465 "emit.cog"
-            context, 
-
-#line 465 "emit.cog"
-                     decl, 
-
-#line 465 "emit.cog"
-                           kDeclEmitMode_Full);
-}
-else
-{
-
-
-#line 467 "emit.cog"
           if(auto exp = 
 
-#line 467 "emit.cog"
+#line 463 "emit.cog"
                               
 
-#line 467 "emit.cog"
+#line 463 "emit.cog"
                          
 
-#line 467 "emit.cog"
+#line 463 "emit.cog"
                        as<
 
-#line 467 "emit.cog"
+#line 463 "emit.cog"
                           Exp> (
 
-#line 467 "emit.cog"
+#line 463 "emit.cog"
                                stmt))
 {
 
 
-#line 469 "emit.cog"
+#line 465 "emit.cog"
                 
 
-#line 469 "emit.cog"
+#line 465 "emit.cog"
                 
 
-#line 469 "emit.cog"
+#line 465 "emit.cog"
          emitExp(
 
-#line 469 "emit.cog"
+#line 465 "emit.cog"
                  context, 
 
-#line 469 "emit.cog"
+#line 465 "emit.cog"
                           exp);
 
 
-#line 470 "emit.cog"
+#line 466 "emit.cog"
              
 
-#line 470 "emit.cog"
+#line 466 "emit.cog"
              
 
-#line 470 "emit.cog"
+#line 466 "emit.cog"
          emit(
 
-#line 470 "emit.cog"
+#line 466 "emit.cog"
               context, 
 
-#line 470 "emit.cog"
+#line 466 "emit.cog"
                        ";\n");
 }
 else
 {
 
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
           if(auto whileStmt = 
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
                                           
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
                                
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
                              as<
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
                                 WhileStmt> (
 
-#line 472 "emit.cog"
+#line 468 "emit.cog"
                                            stmt))
 {
 
 
-#line 474 "emit.cog"
+#line 470 "emit.cog"
              
 
-#line 474 "emit.cog"
+#line 470 "emit.cog"
              
 
-#line 474 "emit.cog"
+#line 470 "emit.cog"
          emit(
 
-#line 474 "emit.cog"
+#line 470 "emit.cog"
               context, 
 
-#line 474 "emit.cog"
+#line 470 "emit.cog"
                        "while(");
 
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
                 
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
                 
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
          emitExp(
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
                  context, 
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
                                    DEREF(
 
-#line 475 "emit.cog"
+#line 471 "emit.cog"
                           whileStmt).condition);
 
 
-#line 476 "emit.cog"
+#line 472 "emit.cog"
              
 
-#line 476 "emit.cog"
+#line 472 "emit.cog"
              
 
-#line 476 "emit.cog"
+#line 472 "emit.cog"
          emit(
 
-#line 476 "emit.cog"
+#line 472 "emit.cog"
               context, 
 
-#line 476 "emit.cog"
+#line 472 "emit.cog"
                        ")\n{\n");
 
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
                  
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
                  
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
          emitStmt(
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
                   context, 
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
                                     DEREF(
 
-#line 477 "emit.cog"
+#line 473 "emit.cog"
                            whileStmt).body);
 
 
-#line 478 "emit.cog"
+#line 474 "emit.cog"
              
 
-#line 478 "emit.cog"
+#line 474 "emit.cog"
              
 
-#line 478 "emit.cog"
+#line 474 "emit.cog"
          emit(
 
-#line 478 "emit.cog"
+#line 474 "emit.cog"
               context, 
 
-#line 478 "emit.cog"
+#line 474 "emit.cog"
                        "}\n");
 }
 else
 {
 
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
        if(auto forEachStmt = 
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
                                             
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
                                
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
                              as<
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
                                 ForEachStmt> (
 
-#line 480 "emit.cog"
+#line 476 "emit.cog"
                                              stmt))
 {
 
 
-#line 482 "emit.cog"
+#line 478 "emit.cog"
        
 
-#line 482 "emit.cog"
+#line 478 "emit.cog"
        
 
-#line 482 "emit.cog"
+#line 478 "emit.cog"
    emit(
 
-#line 482 "emit.cog"
+#line 478 "emit.cog"
         context, 
 
-#line 482 "emit.cog"
+#line 478 "emit.cog"
                  "for(auto ");
 
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
        
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
        
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
    emit(
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
         context, 
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
                             DEREF(
 
-#line 483 "emit.cog"
+#line 479 "emit.cog"
                  forEachStmt).name);
 
 
-#line 484 "emit.cog"
+#line 480 "emit.cog"
        
 
-#line 484 "emit.cog"
+#line 480 "emit.cog"
        
 
-#line 484 "emit.cog"
+#line 480 "emit.cog"
    emit(
 
-#line 484 "emit.cog"
+#line 480 "emit.cog"
         context, 
 
-#line 484 "emit.cog"
+#line 480 "emit.cog"
                  " : ");
 
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
           
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
           
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
    emitExp(
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
            context, 
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
                                DEREF(
 
-#line 485 "emit.cog"
+#line 481 "emit.cog"
                     forEachStmt).exp);
 
 
-#line 486 "emit.cog"
+#line 482 "emit.cog"
        
 
-#line 486 "emit.cog"
+#line 482 "emit.cog"
        
 
-#line 486 "emit.cog"
+#line 482 "emit.cog"
    emit(
 
-#line 486 "emit.cog"
+#line 482 "emit.cog"
         context, 
 
-#line 486 "emit.cog"
+#line 482 "emit.cog"
                  ")\n{\n");
 
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
            
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
            
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
    emitStmt(
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
             context, 
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
                                 DEREF(
 
-#line 487 "emit.cog"
+#line 483 "emit.cog"
                      forEachStmt).body);
 
 
-#line 488 "emit.cog"
+#line 484 "emit.cog"
        
 
-#line 488 "emit.cog"
+#line 484 "emit.cog"
        
 
-#line 488 "emit.cog"
+#line 484 "emit.cog"
    emit(
 
-#line 488 "emit.cog"
+#line 484 "emit.cog"
         context, 
 
-#line 488 "emit.cog"
+#line 484 "emit.cog"
                  "}\n");
 }
 else
 {
 
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
        if(auto forStmt = 
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
                                     
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
                            
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
                          as<
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
                             ForStmt> (
 
-#line 490 "emit.cog"
+#line 486 "emit.cog"
                                      stmt))
 {
 
 
-#line 492 "emit.cog"
+#line 488 "emit.cog"
        
 
-#line 492 "emit.cog"
+#line 488 "emit.cog"
        
 
-#line 492 "emit.cog"
+#line 488 "emit.cog"
    emit(
 
-#line 492 "emit.cog"
+#line 488 "emit.cog"
         context, 
 
-#line 492 "emit.cog"
+#line 488 "emit.cog"
                  "{\n");
 
 
-#line 493 "emit.cog"
+#line 489 "emit.cog"
    if(
 
-#line 493 "emit.cog"
+#line 489 "emit.cog"
               DEREF(
 
-#line 493 "emit.cog"
+#line 489 "emit.cog"
        forStmt).init)
 {
 
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
             
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
             
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
     emitStmt(
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
              context, 
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
                              DEREF(
 
-#line 495 "emit.cog"
+#line 491 "emit.cog"
                       forStmt).init);
 }
 
 
-#line 497 "emit.cog"
+#line 493 "emit.cog"
        
 
-#line 497 "emit.cog"
+#line 493 "emit.cog"
        
 
-#line 497 "emit.cog"
+#line 493 "emit.cog"
    emit(
 
-#line 497 "emit.cog"
+#line 493 "emit.cog"
         context, 
 
-#line 497 "emit.cog"
+#line 493 "emit.cog"
                  "for(;");
 
 
-#line 498 "emit.cog"
+#line 494 "emit.cog"
    if(
 
-#line 498 "emit.cog"
+#line 494 "emit.cog"
               DEREF(
 
-#line 498 "emit.cog"
+#line 494 "emit.cog"
        forStmt).condition)
 {
 
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
            
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
            
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
     emitExp(
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
             context, 
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
                             DEREF(
 
-#line 500 "emit.cog"
+#line 496 "emit.cog"
                      forStmt).condition);
 }
 
 
-#line 502 "emit.cog"
+#line 498 "emit.cog"
        
 
-#line 502 "emit.cog"
+#line 498 "emit.cog"
        
 
-#line 502 "emit.cog"
+#line 498 "emit.cog"
    emit(
 
-#line 502 "emit.cog"
+#line 498 "emit.cog"
         context, 
 
-#line 502 "emit.cog"
+#line 498 "emit.cog"
                  ";");
 
 
-#line 503 "emit.cog"
+#line 499 "emit.cog"
    if(
 
-#line 503 "emit.cog"
+#line 499 "emit.cog"
               DEREF(
 
-#line 503 "emit.cog"
+#line 499 "emit.cog"
        forStmt).iter)
 {
 
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
            
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
            
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
     emitExp(
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
             context, 
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
                             DEREF(
 
-#line 505 "emit.cog"
+#line 501 "emit.cog"
                      forStmt).iter);
 }
 
 
-#line 507 "emit.cog"
+#line 503 "emit.cog"
        
 
-#line 507 "emit.cog"
+#line 503 "emit.cog"
        
 
-#line 507 "emit.cog"
+#line 503 "emit.cog"
    emit(
 
-#line 507 "emit.cog"
+#line 503 "emit.cog"
         context, 
 
-#line 507 "emit.cog"
+#line 503 "emit.cog"
                  ")\n{\n");
 
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
            
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
            
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
    emitStmt(
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
             context, 
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
                             DEREF(
 
-#line 508 "emit.cog"
+#line 504 "emit.cog"
                      forStmt).body);
 
 
-#line 509 "emit.cog"
+#line 505 "emit.cog"
        
 
-#line 509 "emit.cog"
+#line 505 "emit.cog"
        
 
-#line 509 "emit.cog"
+#line 505 "emit.cog"
    emit(
 
-#line 509 "emit.cog"
+#line 505 "emit.cog"
         context, 
 
-#line 509 "emit.cog"
+#line 505 "emit.cog"
                  "}}\n");
 }
 else
 {
 
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
        if(auto switchStmt = 
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
                                           
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
                               
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
                             as<
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
                                SwitchStmt> (
 
-#line 511 "emit.cog"
+#line 507 "emit.cog"
                                            stmt))
 {
 
 
-#line 513 "emit.cog"
+#line 509 "emit.cog"
        
 
-#line 513 "emit.cog"
+#line 509 "emit.cog"
        
 
-#line 513 "emit.cog"
+#line 509 "emit.cog"
    emit(
 
-#line 513 "emit.cog"
+#line 509 "emit.cog"
         context, 
 
-#line 513 "emit.cog"
+#line 509 "emit.cog"
                  "switch(");
 
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
           
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
           
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
    emitExp(
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
            context, 
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
                               DEREF(
 
-#line 514 "emit.cog"
+#line 510 "emit.cog"
                     switchStmt).condition);
 
 
-#line 515 "emit.cog"
+#line 511 "emit.cog"
        
 
-#line 515 "emit.cog"
+#line 511 "emit.cog"
        
 
-#line 515 "emit.cog"
+#line 511 "emit.cog"
    emit(
 
-#line 515 "emit.cog"
+#line 511 "emit.cog"
         context, 
 
-#line 515 "emit.cog"
+#line 511 "emit.cog"
                  ")\n{\n");
 
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
    {
 
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
        
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
        auto cc = 
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                           DEREF(
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                 switchStmt).cases;
 for(;
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                                   cc;
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                                       cc = 
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                                              DEREF(
 
-#line 516 "emit.cog"
+#line 512 "emit.cog"
                                            cc).next)
 {
 {
 
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
     {
 
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
          
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
          auto aa = 
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                     DEREF(
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                   cc).values;
 for(;
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                              aa;
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                                  aa = 
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                                         DEREF(
 
-#line 518 "emit.cog"
+#line 514 "emit.cog"
                                       aa).next)
 {
 {
 
 
-#line 520 "emit.cog"
+#line 516 "emit.cog"
      if(
 
-#line 520 "emit.cog"
+#line 516 "emit.cog"
            DEREF(
 
-#line 520 "emit.cog"
+#line 516 "emit.cog"
          aa).exp)
 {
 
 
-#line 522 "emit.cog"
+#line 518 "emit.cog"
           
 
-#line 522 "emit.cog"
+#line 518 "emit.cog"
           
 
-#line 522 "emit.cog"
+#line 518 "emit.cog"
       emit(
 
-#line 522 "emit.cog"
+#line 518 "emit.cog"
            context, 
 
-#line 522 "emit.cog"
+#line 518 "emit.cog"
                     "case ");
 
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
              
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
              
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
       emitExp(
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
               context, 
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
                          DEREF(
 
-#line 523 "emit.cog"
+#line 519 "emit.cog"
                        aa).exp);
 }
 else
 {
 
 
-#line 527 "emit.cog"
+#line 523 "emit.cog"
           
 
-#line 527 "emit.cog"
+#line 523 "emit.cog"
           
 
-#line 527 "emit.cog"
+#line 523 "emit.cog"
       emit(
 
-#line 527 "emit.cog"
+#line 523 "emit.cog"
            context, 
 
-#line 527 "emit.cog"
+#line 523 "emit.cog"
                     "default");
 }
 
 
-#line 529 "emit.cog"
+#line 525 "emit.cog"
          
 
-#line 529 "emit.cog"
+#line 525 "emit.cog"
          
 
-#line 529 "emit.cog"
+#line 525 "emit.cog"
      emit(
 
-#line 529 "emit.cog"
+#line 525 "emit.cog"
           context, 
 
-#line 529 "emit.cog"
+#line 525 "emit.cog"
                    ":\n");
 }
 }}
 
 
-#line 531 "emit.cog"
+#line 527 "emit.cog"
         
 
-#line 531 "emit.cog"
+#line 527 "emit.cog"
         
 
-#line 531 "emit.cog"
+#line 527 "emit.cog"
     emit(
 
-#line 531 "emit.cog"
+#line 527 "emit.cog"
          context, 
 
-#line 531 "emit.cog"
+#line 527 "emit.cog"
                   "{\n");
 
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
             
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
             
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
     emitStmt(
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
              context, 
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
                         DEREF(
 
-#line 532 "emit.cog"
+#line 528 "emit.cog"
                       cc).body);
 
 
-#line 533 "emit.cog"
+#line 529 "emit.cog"
         
 
-#line 533 "emit.cog"
+#line 529 "emit.cog"
         
 
-#line 533 "emit.cog"
+#line 529 "emit.cog"
     emit(
 
-#line 533 "emit.cog"
+#line 529 "emit.cog"
          context, 
 
-#line 533 "emit.cog"
+#line 529 "emit.cog"
                   "}\n");
 }
 }}
 
 
-#line 535 "emit.cog"
+#line 531 "emit.cog"
        
 
-#line 535 "emit.cog"
+#line 531 "emit.cog"
        
 
-#line 535 "emit.cog"
+#line 531 "emit.cog"
    emit(
 
-#line 535 "emit.cog"
+#line 531 "emit.cog"
         context, 
 
-#line 535 "emit.cog"
+#line 531 "emit.cog"
                  "}\n");
 }
 else
 {
 
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
        if(auto ifStmt = 
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
                                  
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
                          
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
                        as<
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
                           IfStmt> (
 
-#line 537 "emit.cog"
+#line 533 "emit.cog"
                                   stmt))
 {
 
 
-#line 539 "emit.cog"
+#line 535 "emit.cog"
              
 
-#line 539 "emit.cog"
+#line 535 "emit.cog"
              
 
-#line 539 "emit.cog"
+#line 535 "emit.cog"
          emit(
 
-#line 539 "emit.cog"
+#line 535 "emit.cog"
               context, 
 
-#line 539 "emit.cog"
+#line 535 "emit.cog"
                        "if(");
 
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
                 
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
                 
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
          emitExp(
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
                  context, 
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
                                 DEREF(
 
-#line 540 "emit.cog"
+#line 536 "emit.cog"
                           ifStmt).condition);
 
 
-#line 541 "emit.cog"
+#line 537 "emit.cog"
              
 
-#line 541 "emit.cog"
+#line 537 "emit.cog"
              
 
-#line 541 "emit.cog"
+#line 537 "emit.cog"
          emit(
 
-#line 541 "emit.cog"
+#line 537 "emit.cog"
               context, 
 
-#line 541 "emit.cog"
+#line 537 "emit.cog"
                        ")\n");
 
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
                       
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
                       
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
          emitBlockStmt(
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
                        context, 
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
                                       DEREF(
 
-#line 542 "emit.cog"
+#line 538 "emit.cog"
                                 ifStmt).thenStmt);
 
 
-#line 543 "emit.cog"
+#line 539 "emit.cog"
          if(auto elseStmt = 
 
-#line 543 "emit.cog"
+#line 539 "emit.cog"
                                  DEREF(
 
-#line 543 "emit.cog"
+#line 539 "emit.cog"
                            ifStmt).elseStmt)
 {
 
 
-#line 545 "emit.cog"
+#line 541 "emit.cog"
                  
 
-#line 545 "emit.cog"
+#line 541 "emit.cog"
                  
 
-#line 545 "emit.cog"
+#line 541 "emit.cog"
              emit(
 
-#line 545 "emit.cog"
+#line 541 "emit.cog"
                   context, 
 
-#line 545 "emit.cog"
+#line 541 "emit.cog"
                            "else\n");
 
 
-#line 546 "emit.cog"
+#line 542 "emit.cog"
                           
 
-#line 546 "emit.cog"
+#line 542 "emit.cog"
                           
 
-#line 546 "emit.cog"
+#line 542 "emit.cog"
              emitBlockStmt(
 
-#line 546 "emit.cog"
+#line 542 "emit.cog"
                            context, 
 
-#line 546 "emit.cog"
+#line 542 "emit.cog"
                                     elseStmt);
 }
 }
@@ -34549,171 +34507,171 @@ else
 {
 
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
        if(auto ifLetStmt = 
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
                                        
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
                             
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
                           as<
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
                              IfLetStmt> (
 
-#line 549 "emit.cog"
+#line 545 "emit.cog"
                                         stmt))
 {
 
 
-#line 551 "emit.cog"
+#line 547 "emit.cog"
              
 
-#line 551 "emit.cog"
+#line 547 "emit.cog"
              
 
-#line 551 "emit.cog"
+#line 547 "emit.cog"
          emit(
 
-#line 551 "emit.cog"
+#line 547 "emit.cog"
               context, 
 
-#line 551 "emit.cog"
+#line 547 "emit.cog"
                        "if(auto ");
 
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
              
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
              
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
          emit(
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
               context, 
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
                                 DEREF(
 
-#line 552 "emit.cog"
+#line 548 "emit.cog"
                        ifLetStmt).name);
 
 
-#line 553 "emit.cog"
+#line 549 "emit.cog"
              
 
-#line 553 "emit.cog"
+#line 549 "emit.cog"
              
 
-#line 553 "emit.cog"
+#line 549 "emit.cog"
          emit(
 
-#line 553 "emit.cog"
+#line 549 "emit.cog"
               context, 
 
-#line 553 "emit.cog"
+#line 549 "emit.cog"
                        " = ");
 
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
                 
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
                 
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
          emitExp(
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
                  context, 
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
                                    DEREF(
 
-#line 554 "emit.cog"
+#line 550 "emit.cog"
                           ifLetStmt).init);
 
 
-#line 555 "emit.cog"
+#line 551 "emit.cog"
              
 
-#line 555 "emit.cog"
+#line 551 "emit.cog"
              
 
-#line 555 "emit.cog"
+#line 551 "emit.cog"
          emit(
 
-#line 555 "emit.cog"
+#line 551 "emit.cog"
               context, 
 
-#line 555 "emit.cog"
+#line 551 "emit.cog"
                        ")\n");
 
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
                       
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
                       
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
          emitBlockStmt(
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
                        context, 
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
                                          DEREF(
 
-#line 556 "emit.cog"
+#line 552 "emit.cog"
                                 ifLetStmt).thenStmt);
 
 
-#line 557 "emit.cog"
+#line 553 "emit.cog"
          if(auto elseStmt = 
 
-#line 557 "emit.cog"
+#line 553 "emit.cog"
                                     DEREF(
 
-#line 557 "emit.cog"
+#line 553 "emit.cog"
                            ifLetStmt).elseStmt)
 {
 
 
-#line 559 "emit.cog"
+#line 555 "emit.cog"
                  
 
-#line 559 "emit.cog"
+#line 555 "emit.cog"
                  
 
-#line 559 "emit.cog"
+#line 555 "emit.cog"
              emit(
 
-#line 559 "emit.cog"
+#line 555 "emit.cog"
                   context, 
 
-#line 559 "emit.cog"
+#line 555 "emit.cog"
                            "else\n");
 
 
-#line 560 "emit.cog"
+#line 556 "emit.cog"
                           
 
-#line 560 "emit.cog"
+#line 556 "emit.cog"
                           
 
-#line 560 "emit.cog"
+#line 556 "emit.cog"
              emitBlockStmt(
 
-#line 560 "emit.cog"
+#line 556 "emit.cog"
                            context, 
 
-#line 560 "emit.cog"
+#line 556 "emit.cog"
                                     elseStmt);
 }
 }
@@ -34721,178 +34679,220 @@ else
 {
 
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
           if(auto returnStmt = 
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
                                             
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
                                 
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
                               as<
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
                                  ReturnStmt> (
 
-#line 563 "emit.cog"
+#line 559 "emit.cog"
                                              stmt))
 {
 
 
-#line 565 "emit.cog"
+#line 561 "emit.cog"
              
 
-#line 565 "emit.cog"
+#line 561 "emit.cog"
              
 
-#line 565 "emit.cog"
+#line 561 "emit.cog"
          emit(
 
-#line 565 "emit.cog"
+#line 561 "emit.cog"
               context, 
 
-#line 565 "emit.cog"
+#line 561 "emit.cog"
                        "return");
 
 
-#line 566 "emit.cog"
+#line 562 "emit.cog"
          if(auto value = 
 
-#line 566 "emit.cog"
+#line 562 "emit.cog"
                                   DEREF(
 
-#line 566 "emit.cog"
+#line 562 "emit.cog"
                         returnStmt).value)
 {
 
 
-#line 568 "emit.cog"
+#line 564 "emit.cog"
                  
 
-#line 568 "emit.cog"
+#line 564 "emit.cog"
                  
 
-#line 568 "emit.cog"
+#line 564 "emit.cog"
              emit(
 
-#line 568 "emit.cog"
+#line 564 "emit.cog"
                   context, 
 
-#line 568 "emit.cog"
+#line 564 "emit.cog"
                            " ");
 
 
-#line 569 "emit.cog"
+#line 565 "emit.cog"
                     
 
-#line 569 "emit.cog"
+#line 565 "emit.cog"
                     
 
-#line 569 "emit.cog"
+#line 565 "emit.cog"
              emitExp(
 
-#line 569 "emit.cog"
+#line 565 "emit.cog"
                      context, 
 
-#line 569 "emit.cog"
+#line 565 "emit.cog"
                               value);
 }
 
 
-#line 571 "emit.cog"
+#line 567 "emit.cog"
              
 
-#line 571 "emit.cog"
+#line 567 "emit.cog"
              
 
-#line 571 "emit.cog"
+#line 567 "emit.cog"
          emit(
 
-#line 571 "emit.cog"
+#line 567 "emit.cog"
               context, 
 
-#line 571 "emit.cog"
+#line 567 "emit.cog"
                        ";\n");
 }
 else
 {
 
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
           if(auto breakStmt = 
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
                                           
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
                                
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
                              as<
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
                                 BreakStmt> (
 
-#line 573 "emit.cog"
+#line 569 "emit.cog"
                                            stmt))
 {
 
 
-#line 575 "emit.cog"
+#line 571 "emit.cog"
              
 
-#line 575 "emit.cog"
+#line 571 "emit.cog"
              
 
-#line 575 "emit.cog"
+#line 571 "emit.cog"
          emit(
 
-#line 575 "emit.cog"
+#line 571 "emit.cog"
               context, 
 
-#line 575 "emit.cog"
+#line 571 "emit.cog"
                        "break;\n");
 }
 else
 {
 
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
           if(auto continueStmt = 
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
                                                 
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
                                   
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
                                 as<
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
                                    ContinueStmt> (
 
-#line 577 "emit.cog"
+#line 573 "emit.cog"
                                                  stmt))
 {
 
 
-#line 579 "emit.cog"
+#line 575 "emit.cog"
              
 
-#line 579 "emit.cog"
+#line 575 "emit.cog"
              
 
-#line 579 "emit.cog"
+#line 575 "emit.cog"
          emit(
 
-#line 579 "emit.cog"
+#line 575 "emit.cog"
               context, 
 
-#line 579 "emit.cog"
+#line 575 "emit.cog"
                        "continue;\n");
+}
+else
+{
+
+
+#line 577 "emit.cog"
+       if(auto decl = 
+
+#line 577 "emit.cog"
+                             
+
+#line 577 "emit.cog"
+                       
+
+#line 577 "emit.cog"
+                     as<
+
+#line 577 "emit.cog"
+                        Decl> (
+
+#line 577 "emit.cog"
+                              stmt))
+{
+
+
+#line 579 "emit.cog"
+           
+
+#line 579 "emit.cog"
+           
+
+#line 579 "emit.cog"
+   emitDecl(
+
+#line 579 "emit.cog"
+            context, 
+
+#line 579 "emit.cog"
+                     decl, 
+
+#line 579 "emit.cog"
+                           kDeclEmitMode_Full);
 }
 else
 {
@@ -59126,3898 +59126,3916 @@ default:
 
 
 #line 1680 "parser.cog"
+             DEREF(
+
+#line 1680 "parser.cog"
+       DEREF(
+
+#line 1680 "parser.cog"
+   stmt).stmts).head = 
+
+#line 1680 "parser.cog"
+                         DEREF(
+
+#line 1680 "parser.cog"
+                     stmt).init;
+}
+{
+
+
+#line 1681 "parser.cog"
          break;
 }
 }
 
 
-#line 1684 "parser.cog"
+#line 1685 "parser.cog"
      switch(
 
-#line 1684 "parser.cog"
+#line 1685 "parser.cog"
                           
 
-#line 1684 "parser.cog"
+#line 1685 "parser.cog"
              peekTokenCode(
 
-#line 1684 "parser.cog"
+#line 1685 "parser.cog"
                            parser))
 {
 case 
 
-#line 1686 "parser.cog"
+#line 1687 "parser.cog"
           kTokenCode_Semi:
 {
 
 
-#line 1687 "parser.cog"
+#line 1688 "parser.cog"
                      
 
-#line 1687 "parser.cog"
+#line 1688 "parser.cog"
                      
 
-#line 1687 "parser.cog"
+#line 1688 "parser.cog"
          advanceToken(
 
-#line 1687 "parser.cog"
+#line 1688 "parser.cog"
                       parser);
 }
 {
 
 
-#line 1688 "parser.cog"
+#line 1689 "parser.cog"
          break;
 }
 default:
 {
 
 
-#line 1693 "parser.cog"
+#line 1694 "parser.cog"
              DEREF(
 
-#line 1693 "parser.cog"
+#line 1694 "parser.cog"
          stmt).condition = 
 
-#line 1693 "parser.cog"
+#line 1694 "parser.cog"
                                   
 
-#line 1693 "parser.cog"
+#line 1694 "parser.cog"
                           parseExp(
 
-#line 1693 "parser.cog"
+#line 1694 "parser.cog"
                                    parser);
 }
 {
 
 
-#line 1694 "parser.cog"
+#line 1695 "parser.cog"
                
 
-#line 1694 "parser.cog"
+#line 1695 "parser.cog"
                
 
-#line 1694 "parser.cog"
+#line 1695 "parser.cog"
          expect(
 
-#line 1694 "parser.cog"
+#line 1695 "parser.cog"
                 parser, 
 
-#line 1694 "parser.cog"
+#line 1695 "parser.cog"
                         kTokenCode_Semi);
 }
 {
 
 
-#line 1695 "parser.cog"
+#line 1696 "parser.cog"
          break;
 }
 }
 
 
-#line 1699 "parser.cog"
+#line 1700 "parser.cog"
      switch(
 
-#line 1699 "parser.cog"
+#line 1700 "parser.cog"
                           
 
-#line 1699 "parser.cog"
+#line 1700 "parser.cog"
              peekTokenCode(
 
-#line 1699 "parser.cog"
+#line 1700 "parser.cog"
                            parser))
 {
 case 
 
-#line 1701 "parser.cog"
+#line 1702 "parser.cog"
           kTokenCode_RParen:
 {
 
 
-#line 1702 "parser.cog"
+#line 1703 "parser.cog"
          break;
 }
 default:
 {
 
 
-#line 1705 "parser.cog"
+#line 1706 "parser.cog"
              DEREF(
 
-#line 1705 "parser.cog"
+#line 1706 "parser.cog"
          stmt).iter = 
 
-#line 1705 "parser.cog"
+#line 1706 "parser.cog"
                              
 
-#line 1705 "parser.cog"
+#line 1706 "parser.cog"
                      parseExp(
 
-#line 1705 "parser.cog"
+#line 1706 "parser.cog"
                               parser);
 }
 {
 
 
-#line 1706 "parser.cog"
+#line 1707 "parser.cog"
          break;
 }
 }
 
 
-#line 1709 "parser.cog"
+#line 1710 "parser.cog"
            
 
-#line 1709 "parser.cog"
+#line 1710 "parser.cog"
            
 
-#line 1709 "parser.cog"
+#line 1710 "parser.cog"
      expect(
 
-#line 1709 "parser.cog"
+#line 1710 "parser.cog"
             parser, 
 
-#line 1709 "parser.cog"
+#line 1710 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1710 "parser.cog"
+#line 1711 "parser.cog"
          DEREF(
 
-#line 1710 "parser.cog"
+#line 1711 "parser.cog"
      stmt).body = 
 
-#line 1710 "parser.cog"
+#line 1711 "parser.cog"
                           
 
-#line 1710 "parser.cog"
+#line 1711 "parser.cog"
                  parseStmt(
 
-#line 1710 "parser.cog"
+#line 1711 "parser.cog"
                            parser);
 
 
-#line 1711 "parser.cog"
+#line 1712 "parser.cog"
      return 
 
-#line 1711 "parser.cog"
+#line 1712 "parser.cog"
             stmt;
 }
 
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
  
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                            Syntax parseForEachStmt(
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                      
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                Parser
 
-#line 1714 "parser.cog"
+#line 1715 "parser.cog"
                                      * parser)
 {
 
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
      
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
      auto stmt = 
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
                                          
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
                             
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
                 createObject<
 
-#line 1716 "parser.cog"
+#line 1717 "parser.cog"
                              ForEachStmt> ();
 
 
-#line 1717 "parser.cog"
+#line 1718 "parser.cog"
            
 
-#line 1717 "parser.cog"
+#line 1718 "parser.cog"
            
 
-#line 1717 "parser.cog"
+#line 1718 "parser.cog"
      expect(
 
-#line 1717 "parser.cog"
+#line 1718 "parser.cog"
             parser, 
 
-#line 1717 "parser.cog"
+#line 1718 "parser.cog"
                     kTokenCode_LParen);
 
 
-#line 1719 "parser.cog"
+#line 1720 "parser.cog"
          DEREF(
 
-#line 1719 "parser.cog"
+#line 1720 "parser.cog"
      stmt).name = 
 
-#line 1719 "parser.cog"
+#line 1720 "parser.cog"
                                  
 
-#line 1719 "parser.cog"
+#line 1720 "parser.cog"
                  expectIdentifier(
 
-#line 1719 "parser.cog"
+#line 1720 "parser.cog"
                                   parser);
 
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
      if(
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
          
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
          !
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
                    
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
           advanceIf(
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
                     parser, 
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
                                                 
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
                             TerminatedStringSpan(
 
-#line 1721 "parser.cog"
+#line 1722 "parser.cog"
                                                  "in")))
 {
 
 
-#line 1723 "parser.cog"
+#line 1724 "parser.cog"
                
 
-#line 1723 "parser.cog"
+#line 1724 "parser.cog"
                
 
-#line 1723 "parser.cog"
+#line 1724 "parser.cog"
          expect(
 
-#line 1723 "parser.cog"
+#line 1724 "parser.cog"
                 parser, 
 
-#line 1723 "parser.cog"
+#line 1724 "parser.cog"
                         kTokenCode_Colon);
 }
 
 
-#line 1726 "parser.cog"
+#line 1727 "parser.cog"
          DEREF(
 
-#line 1726 "parser.cog"
+#line 1727 "parser.cog"
      stmt).exp = 
 
-#line 1726 "parser.cog"
+#line 1727 "parser.cog"
                         
 
-#line 1726 "parser.cog"
+#line 1727 "parser.cog"
                 parseExp(
 
-#line 1726 "parser.cog"
+#line 1727 "parser.cog"
                          parser);
 
 
-#line 1728 "parser.cog"
+#line 1729 "parser.cog"
            
 
-#line 1728 "parser.cog"
+#line 1729 "parser.cog"
            
 
-#line 1728 "parser.cog"
+#line 1729 "parser.cog"
      expect(
 
-#line 1728 "parser.cog"
+#line 1729 "parser.cog"
             parser, 
 
-#line 1728 "parser.cog"
+#line 1729 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1729 "parser.cog"
+#line 1730 "parser.cog"
          DEREF(
 
-#line 1729 "parser.cog"
+#line 1730 "parser.cog"
      stmt).body = 
 
-#line 1729 "parser.cog"
+#line 1730 "parser.cog"
                           
 
-#line 1729 "parser.cog"
+#line 1730 "parser.cog"
                  parseStmt(
 
-#line 1729 "parser.cog"
+#line 1730 "parser.cog"
                            parser);
 
 
-#line 1730 "parser.cog"
+#line 1731 "parser.cog"
      return 
 
-#line 1730 "parser.cog"
+#line 1731 "parser.cog"
             stmt;
 }
 
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
  
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                           Syntax parseSwitchStmt(
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                     
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                               Parser
 
-#line 1733 "parser.cog"
+#line 1734 "parser.cog"
                                     * parser)
 {
 
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
      
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
      auto stmt = 
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
                                         
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
                             
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
                 createObject<
 
-#line 1735 "parser.cog"
+#line 1736 "parser.cog"
                              SwitchStmt> ();
 
 
-#line 1736 "parser.cog"
+#line 1737 "parser.cog"
            
 
-#line 1736 "parser.cog"
+#line 1737 "parser.cog"
            
 
-#line 1736 "parser.cog"
+#line 1737 "parser.cog"
      expect(
 
-#line 1736 "parser.cog"
+#line 1737 "parser.cog"
             parser, 
 
-#line 1736 "parser.cog"
+#line 1737 "parser.cog"
                     kTokenCode_LParen);
 
 
-#line 1737 "parser.cog"
+#line 1738 "parser.cog"
          DEREF(
 
-#line 1737 "parser.cog"
+#line 1738 "parser.cog"
      stmt).condition = 
 
-#line 1737 "parser.cog"
+#line 1738 "parser.cog"
                               
 
-#line 1737 "parser.cog"
+#line 1738 "parser.cog"
                       parseExp(
 
-#line 1737 "parser.cog"
+#line 1738 "parser.cog"
                                parser);
 
 
-#line 1738 "parser.cog"
+#line 1739 "parser.cog"
            
 
-#line 1738 "parser.cog"
+#line 1739 "parser.cog"
            
 
-#line 1738 "parser.cog"
+#line 1739 "parser.cog"
      expect(
 
-#line 1738 "parser.cog"
+#line 1739 "parser.cog"
             parser, 
 
-#line 1738 "parser.cog"
+#line 1739 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1740 "parser.cog"
+#line 1741 "parser.cog"
            
 
-#line 1740 "parser.cog"
+#line 1741 "parser.cog"
            
 
-#line 1740 "parser.cog"
+#line 1741 "parser.cog"
      expect(
 
-#line 1740 "parser.cog"
+#line 1741 "parser.cog"
             parser, 
 
-#line 1740 "parser.cog"
+#line 1741 "parser.cog"
                     kTokenCode_LCurly);
 
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
      
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
      auto caseLink = 
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
                     
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
                     &
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
                          DEREF(
 
-#line 1742 "parser.cog"
+#line 1743 "parser.cog"
                      stmt).cases;
 
 
-#line 1744 "parser.cog"
+#line 1745 "parser.cog"
      {
 for(;;)
 {
 {
 
 
-#line 1746 "parser.cog"
+#line 1747 "parser.cog"
          switch(
 
-#line 1746 "parser.cog"
+#line 1747 "parser.cog"
                               
 
-#line 1746 "parser.cog"
+#line 1747 "parser.cog"
                  peekTokenCode(
 
-#line 1746 "parser.cog"
+#line 1747 "parser.cog"
                                parser))
 {
 case 
 
-#line 1748 "parser.cog"
+#line 1749 "parser.cog"
               kTokenCode_RCurly:
 case 
 
-#line 1749 "parser.cog"
+#line 1750 "parser.cog"
               kTokenCode_RParen:
 case 
 
-#line 1750 "parser.cog"
+#line 1751 "parser.cog"
               kTokenCode_EndOfFile:
 {
 
 
-#line 1751 "parser.cog"
+#line 1752 "parser.cog"
                    
 
-#line 1751 "parser.cog"
+#line 1752 "parser.cog"
                    
 
-#line 1751 "parser.cog"
+#line 1752 "parser.cog"
              expect(
 
-#line 1751 "parser.cog"
+#line 1752 "parser.cog"
                     parser, 
 
-#line 1751 "parser.cog"
+#line 1752 "parser.cog"
                             kTokenCode_RCurly);
 }
 {
 
 
-#line 1752 "parser.cog"
+#line 1753 "parser.cog"
              return 
 
-#line 1752 "parser.cog"
+#line 1753 "parser.cog"
                     stmt;
 }
 default:
 {
 
 
-#line 1755 "parser.cog"
+#line 1756 "parser.cog"
              break;
 }
 }
 
 
-#line 1758 "parser.cog"
+#line 1759 "parser.cog"
          
 
-#line 1758 "parser.cog"
+#line 1759 "parser.cog"
          auto caseStart = 
 
-#line 1758 "parser.cog"
+#line 1759 "parser.cog"
                                 
 
-#line 1758 "parser.cog"
+#line 1759 "parser.cog"
                          peekLoc(
 
-#line 1758 "parser.cog"
+#line 1759 "parser.cog"
                                  parser);
 
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
          
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
          auto c = 
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
                                          
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
                              
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
                  createObject<
 
-#line 1759 "parser.cog"
+#line 1760 "parser.cog"
                               SwitchCase> ();
 
 
-#line 1760 "parser.cog"
+#line 1761 "parser.cog"
           DEREF(
 
-#line 1760 "parser.cog"
+#line 1761 "parser.cog"
          c).loc = 
 
-#line 1760 "parser.cog"
+#line 1761 "parser.cog"
                  caseStart;
 
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
          
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
          auto valueLink = 
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
                          
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
                          &
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
                            DEREF(
 
-#line 1762 "parser.cog"
+#line 1763 "parser.cog"
                           c).values;
 
 
-#line 1765 "parser.cog"
+#line 1766 "parser.cog"
          {
 for(;;)
 {
 {
 
 
-#line 1767 "parser.cog"
+#line 1768 "parser.cog"
              
 
-#line 1767 "parser.cog"
+#line 1768 "parser.cog"
              
 
-#line 1767 "parser.cog"
+#line 1768 "parser.cog"
                        Arg arg = 
 
-#line 1767 "parser.cog"
+#line 1768 "parser.cog"
                              nullptr;
 
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
              if(
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                           
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                  advanceIf(
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                            parser, 
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                                                        
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                                    TerminatedStringSpan(
 
-#line 1768 "parser.cog"
+#line 1769 "parser.cog"
                                                         "case")))
 {
 
 
-#line 1770 "parser.cog"
+#line 1771 "parser.cog"
                  arg = 
 
-#line 1770 "parser.cog"
+#line 1771 "parser.cog"
                                         
 
-#line 1770 "parser.cog"
+#line 1771 "parser.cog"
                                    
 
-#line 1770 "parser.cog"
+#line 1771 "parser.cog"
                        createObject<
 
-#line 1770 "parser.cog"
+#line 1771 "parser.cog"
                                     Arg> ();
 
 
-#line 1771 "parser.cog"
+#line 1772 "parser.cog"
                     DEREF(
 
-#line 1771 "parser.cog"
+#line 1772 "parser.cog"
                  arg).exp = 
 
-#line 1771 "parser.cog"
+#line 1772 "parser.cog"
                                    
 
-#line 1771 "parser.cog"
+#line 1772 "parser.cog"
                            parseExp(
 
-#line 1771 "parser.cog"
+#line 1772 "parser.cog"
                                     parser);
 
 
-#line 1772 "parser.cog"
+#line 1773 "parser.cog"
                        
 
-#line 1772 "parser.cog"
+#line 1773 "parser.cog"
                        
 
-#line 1772 "parser.cog"
+#line 1773 "parser.cog"
                  expect(
 
-#line 1772 "parser.cog"
+#line 1773 "parser.cog"
                         parser, 
 
-#line 1772 "parser.cog"
+#line 1773 "parser.cog"
                                 kTokenCode_Colon);
 }
 else
 {
 
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                   if(
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                                
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                       advanceIf(
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                                 parser, 
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                                                             
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                                         TerminatedStringSpan(
 
-#line 1774 "parser.cog"
+#line 1775 "parser.cog"
                                                              "default")))
 {
 
 
-#line 1776 "parser.cog"
+#line 1777 "parser.cog"
                  arg = 
 
-#line 1776 "parser.cog"
+#line 1777 "parser.cog"
                                         
 
-#line 1776 "parser.cog"
+#line 1777 "parser.cog"
                                    
 
-#line 1776 "parser.cog"
+#line 1777 "parser.cog"
                        createObject<
 
-#line 1776 "parser.cog"
+#line 1777 "parser.cog"
                                     Arg> ();
 
 
-#line 1777 "parser.cog"
+#line 1778 "parser.cog"
                     DEREF(
 
-#line 1777 "parser.cog"
+#line 1778 "parser.cog"
                  arg).exp = 
 
-#line 1777 "parser.cog"
+#line 1778 "parser.cog"
                            nullptr;
 
 
-#line 1778 "parser.cog"
+#line 1779 "parser.cog"
                        
 
-#line 1778 "parser.cog"
+#line 1779 "parser.cog"
                        
 
-#line 1778 "parser.cog"
+#line 1779 "parser.cog"
                  expect(
 
-#line 1778 "parser.cog"
+#line 1779 "parser.cog"
                         parser, 
 
-#line 1778 "parser.cog"
+#line 1779 "parser.cog"
                                 kTokenCode_Colon);
 }
 else
 {
 
 
-#line 1783 "parser.cog"
+#line 1784 "parser.cog"
                  break;
 }
 }
 
 
-#line 1786 "parser.cog"
+#line 1787 "parser.cog"
              
 
-#line 1786 "parser.cog"
+#line 1787 "parser.cog"
              *
 
-#line 1786 "parser.cog"
+#line 1787 "parser.cog"
               valueLink = 
 
-#line 1786 "parser.cog"
+#line 1787 "parser.cog"
                           arg;
 
 
-#line 1787 "parser.cog"
+#line 1788 "parser.cog"
              valueLink = 
 
-#line 1787 "parser.cog"
+#line 1788 "parser.cog"
                          
 
-#line 1787 "parser.cog"
+#line 1788 "parser.cog"
                          &
 
-#line 1787 "parser.cog"
+#line 1788 "parser.cog"
                              DEREF(
 
-#line 1787 "parser.cog"
+#line 1788 "parser.cog"
                           arg).next;
 }
 }}
 
 
-#line 1790 "parser.cog"
+#line 1791 "parser.cog"
          if(
 
-#line 1790 "parser.cog"
+#line 1791 "parser.cog"
              
 
-#line 1790 "parser.cog"
+#line 1791 "parser.cog"
              !*
 
-#line 1790 "parser.cog"
+#line 1791 "parser.cog"
                valueLink)
 {
 }
 
 
-#line 1797 "parser.cog"
+#line 1798 "parser.cog"
           DEREF(
 
-#line 1797 "parser.cog"
+#line 1798 "parser.cog"
          c).body = 
 
-#line 1797 "parser.cog"
+#line 1798 "parser.cog"
                            
 
-#line 1797 "parser.cog"
+#line 1798 "parser.cog"
                   parseStmt(
 
-#line 1797 "parser.cog"
+#line 1798 "parser.cog"
                             parser);
 
 
-#line 1799 "parser.cog"
+#line 1800 "parser.cog"
          
 
-#line 1799 "parser.cog"
+#line 1800 "parser.cog"
          *
 
-#line 1799 "parser.cog"
+#line 1800 "parser.cog"
           caseLink = 
 
-#line 1799 "parser.cog"
+#line 1800 "parser.cog"
                      c;
 
 
-#line 1800 "parser.cog"
+#line 1801 "parser.cog"
          caseLink = 
 
-#line 1800 "parser.cog"
+#line 1801 "parser.cog"
                     
 
-#line 1800 "parser.cog"
+#line 1801 "parser.cog"
                     &
 
-#line 1800 "parser.cog"
+#line 1801 "parser.cog"
                       DEREF(
 
-#line 1800 "parser.cog"
+#line 1801 "parser.cog"
                      c).next;
 
 
-#line 1802 "parser.cog"
+#line 1803 "parser.cog"
                    
 
-#line 1802 "parser.cog"
+#line 1803 "parser.cog"
                    
 
-#line 1802 "parser.cog"
+#line 1803 "parser.cog"
          tryRecover(
 
-#line 1802 "parser.cog"
+#line 1803 "parser.cog"
                     parser);
 }
 }}
 }
 
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
  
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                           Syntax parseReturnStmt(
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                     
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                               Parser
 
-#line 1806 "parser.cog"
+#line 1807 "parser.cog"
                                     * parser)
 {
 
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
      
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
      auto stmt = 
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
                                         
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
                             
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
                 createObject<
 
-#line 1808 "parser.cog"
+#line 1809 "parser.cog"
                              ReturnStmt> ();
 
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
      if(
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
                               
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
                      
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
         peekTokenCode(
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
                       parser) 
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
                               != 
 
-#line 1809 "parser.cog"
+#line 1810 "parser.cog"
                                  kTokenCode_Semi)
 {
 
 
-#line 1811 "parser.cog"
+#line 1812 "parser.cog"
              DEREF(
 
-#line 1811 "parser.cog"
+#line 1812 "parser.cog"
          stmt).value = 
 
-#line 1811 "parser.cog"
+#line 1812 "parser.cog"
                               
 
-#line 1811 "parser.cog"
+#line 1812 "parser.cog"
                       parseExp(
 
-#line 1811 "parser.cog"
+#line 1812 "parser.cog"
                                parser);
 }
 
 
-#line 1813 "parser.cog"
+#line 1814 "parser.cog"
            
 
-#line 1813 "parser.cog"
+#line 1814 "parser.cog"
            
 
-#line 1813 "parser.cog"
+#line 1814 "parser.cog"
      expect(
 
-#line 1813 "parser.cog"
+#line 1814 "parser.cog"
             parser, 
 
-#line 1813 "parser.cog"
+#line 1814 "parser.cog"
                     kTokenCode_Semi);
 
 
-#line 1814 "parser.cog"
+#line 1815 "parser.cog"
      return 
 
-#line 1814 "parser.cog"
+#line 1815 "parser.cog"
             stmt;
 }
 
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
  
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                          Syntax parseBreakStmt(
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                    
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                              Parser
 
-#line 1817 "parser.cog"
+#line 1818 "parser.cog"
                                    * parser)
 {
 
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
      
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
      auto stmt = 
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
                                        
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
                             
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
                 createObject<
 
-#line 1819 "parser.cog"
+#line 1820 "parser.cog"
                              BreakStmt> ();
 
 
-#line 1820 "parser.cog"
+#line 1821 "parser.cog"
            
 
-#line 1820 "parser.cog"
+#line 1821 "parser.cog"
            
 
-#line 1820 "parser.cog"
+#line 1821 "parser.cog"
      expect(
 
-#line 1820 "parser.cog"
+#line 1821 "parser.cog"
             parser, 
 
-#line 1820 "parser.cog"
+#line 1821 "parser.cog"
                     kTokenCode_Semi);
 
 
-#line 1821 "parser.cog"
+#line 1822 "parser.cog"
      return 
 
-#line 1821 "parser.cog"
+#line 1822 "parser.cog"
             stmt;
 }
 
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
  
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                             Syntax parseContinueStmt(
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                       
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                 Parser
 
-#line 1824 "parser.cog"
+#line 1825 "parser.cog"
                                       * parser)
 {
 
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
      
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
      auto stmt = 
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
                                           
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
                             
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
                 createObject<
 
-#line 1826 "parser.cog"
+#line 1827 "parser.cog"
                              ContinueStmt> ();
 
 
-#line 1827 "parser.cog"
+#line 1828 "parser.cog"
            
 
-#line 1827 "parser.cog"
+#line 1828 "parser.cog"
            
 
-#line 1827 "parser.cog"
+#line 1828 "parser.cog"
      expect(
 
-#line 1827 "parser.cog"
+#line 1828 "parser.cog"
             parser, 
 
-#line 1827 "parser.cog"
+#line 1828 "parser.cog"
                     kTokenCode_Semi);
 
 
-#line 1828 "parser.cog"
+#line 1829 "parser.cog"
      return 
 
-#line 1828 "parser.cog"
+#line 1829 "parser.cog"
             stmt;
 }
 
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
  
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                            Syntax parseBuiltinAttr(
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                      
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                Parser
 
-#line 1831 "parser.cog"
+#line 1832 "parser.cog"
                                      * parser)
 {
 
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
      
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
      auto attr = 
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
                                          
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
                             
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
                 createObject<
 
-#line 1833 "parser.cog"
+#line 1834 "parser.cog"
                              BuiltinAttr> ();
 
 
-#line 1834 "parser.cog"
+#line 1835 "parser.cog"
            
 
-#line 1834 "parser.cog"
+#line 1835 "parser.cog"
            
 
-#line 1834 "parser.cog"
+#line 1835 "parser.cog"
      expect(
 
-#line 1834 "parser.cog"
+#line 1835 "parser.cog"
             parser, 
 
-#line 1834 "parser.cog"
+#line 1835 "parser.cog"
                     kTokenCode_LParen);
 
 
-#line 1835 "parser.cog"
+#line 1836 "parser.cog"
          DEREF(
 
-#line 1835 "parser.cog"
+#line 1836 "parser.cog"
      attr).name = 
 
-#line 1835 "parser.cog"
+#line 1836 "parser.cog"
                                  
 
-#line 1835 "parser.cog"
+#line 1836 "parser.cog"
                  expectIdentifier(
 
-#line 1835 "parser.cog"
+#line 1836 "parser.cog"
                                   parser);
 
 
-#line 1836 "parser.cog"
+#line 1837 "parser.cog"
            
 
-#line 1836 "parser.cog"
+#line 1837 "parser.cog"
            
 
-#line 1836 "parser.cog"
+#line 1837 "parser.cog"
      expect(
 
-#line 1836 "parser.cog"
+#line 1837 "parser.cog"
             parser, 
 
-#line 1836 "parser.cog"
+#line 1837 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1837 "parser.cog"
+#line 1838 "parser.cog"
      return 
 
-#line 1837 "parser.cog"
+#line 1838 "parser.cog"
             attr;
 }
 
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
  
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                      ParamDecl parseParam(
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                          Parser
 
-#line 1840 "parser.cog"
+#line 1841 "parser.cog"
                                * parser)
 {
 
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
      
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
      auto decl = 
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
                                        
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
                             
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
                 createObject<
 
-#line 1842 "parser.cog"
+#line 1843 "parser.cog"
                              ParamDecl> ();
 
 
-#line 1843 "parser.cog"
+#line 1844 "parser.cog"
                        
 
-#line 1843 "parser.cog"
+#line 1844 "parser.cog"
                        
 
-#line 1843 "parser.cog"
+#line 1844 "parser.cog"
      parseVarDeclCommon(
 
-#line 1843 "parser.cog"
+#line 1844 "parser.cog"
                         parser, 
 
-#line 1843 "parser.cog"
+#line 1844 "parser.cog"
                                 decl);
 
 
-#line 1844 "parser.cog"
+#line 1845 "parser.cog"
      return 
 
-#line 1844 "parser.cog"
+#line 1845 "parser.cog"
             decl;
 }
 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
  void parseParams(
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                           Parser
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                 * parser, 
 
-#line 1847 "parser.cog"
+#line 1848 "parser.cog"
                                          ContainerDecl decl)
 {
 
 
-#line 1849 "parser.cog"
+#line 1850 "parser.cog"
      
 
-#line 1849 "parser.cog"
+#line 1850 "parser.cog"
      
 
-#line 1849 "parser.cog"
+#line 1850 "parser.cog"
                                   
 
-#line 1849 "parser.cog"
+#line 1850 "parser.cog"
                  SyntaxListBuilder<
 
-#line 1849 "parser.cog"
+#line 1850 "parser.cog"
                                    Decl>  params;
 
 
-#line 1851 "parser.cog"
+#line 1852 "parser.cog"
      switch(
 
-#line 1851 "parser.cog"
+#line 1852 "parser.cog"
                          
 
-#line 1851 "parser.cog"
+#line 1852 "parser.cog"
             peekTokenCode(
 
-#line 1851 "parser.cog"
+#line 1852 "parser.cog"
                           parser))
 {
 case 
 
-#line 1853 "parser.cog"
+#line 1854 "parser.cog"
           kTokenCode_RCurly:
 case 
 
-#line 1854 "parser.cog"
+#line 1855 "parser.cog"
           kTokenCode_RParen:
 case 
 
-#line 1855 "parser.cog"
+#line 1856 "parser.cog"
           kTokenCode_EndOfFile:
 {
 
 
-#line 1856 "parser.cog"
+#line 1857 "parser.cog"
          return;
 }
 default:
 {
 
 
-#line 1859 "parser.cog"
+#line 1860 "parser.cog"
          break;
 }
 }
 
 
-#line 1863 "parser.cog"
+#line 1864 "parser.cog"
      {
 for(;;)
 {
 {
 
 
-#line 1865 "parser.cog"
+#line 1866 "parser.cog"
          
 
-#line 1865 "parser.cog"
+#line 1866 "parser.cog"
          auto param = 
 
-#line 1865 "parser.cog"
+#line 1866 "parser.cog"
                                
 
-#line 1865 "parser.cog"
+#line 1866 "parser.cog"
                      parseParam(
 
-#line 1865 "parser.cog"
+#line 1866 "parser.cog"
                                 parser);
 
 
-#line 1866 "parser.cog"
+#line 1867 "parser.cog"
          if(
 
-#line 1866 "parser.cog"
+#line 1867 "parser.cog"
             param)
 {
 
 
-#line 1868 "parser.cog"
+#line 1869 "parser.cog"
                        
 
-#line 1868 "parser.cog"
+#line 1869 "parser.cog"
                        
 
-#line 1868 "parser.cog"
+#line 1869 "parser.cog"
                    DEREF(
 
-#line 1868 "parser.cog"
+#line 1869 "parser.cog"
              params).add(
 
-#line 1868 "parser.cog"
+#line 1869 "parser.cog"
                         param);
 }
 
 
-#line 1871 "parser.cog"
+#line 1872 "parser.cog"
                    
 
-#line 1871 "parser.cog"
+#line 1872 "parser.cog"
                    
 
-#line 1871 "parser.cog"
+#line 1872 "parser.cog"
          tryRecover(
 
-#line 1871 "parser.cog"
+#line 1872 "parser.cog"
                     parser);
 
 
-#line 1873 "parser.cog"
+#line 1874 "parser.cog"
          switch(
 
-#line 1873 "parser.cog"
+#line 1874 "parser.cog"
                              
 
-#line 1873 "parser.cog"
+#line 1874 "parser.cog"
                 peekTokenCode(
 
-#line 1873 "parser.cog"
+#line 1874 "parser.cog"
                               parser))
 {
 case 
 
-#line 1875 "parser.cog"
+#line 1876 "parser.cog"
               kTokenCode_RCurly:
 case 
 
-#line 1876 "parser.cog"
+#line 1877 "parser.cog"
               kTokenCode_RParen:
 case 
 
-#line 1877 "parser.cog"
+#line 1878 "parser.cog"
               kTokenCode_EndOfFile:
 {
 {
 
 
-#line 1879 "parser.cog"
+#line 1880 "parser.cog"
                               
 
-#line 1879 "parser.cog"
+#line 1880 "parser.cog"
                      DEREF(
 
-#line 1879 "parser.cog"
+#line 1880 "parser.cog"
                  decl).getDecls() = 
 
-#line 1879 "parser.cog"
+#line 1880 "parser.cog"
                                    params;
 }
 }
 {
 
 
-#line 1881 "parser.cog"
+#line 1882 "parser.cog"
              return;
 }
 default:
 {
 
 
-#line 1884 "parser.cog"
+#line 1885 "parser.cog"
              break;
 }
 }
 
 
-#line 1887 "parser.cog"
+#line 1888 "parser.cog"
                
 
-#line 1887 "parser.cog"
+#line 1888 "parser.cog"
                
 
-#line 1887 "parser.cog"
+#line 1888 "parser.cog"
          expect(
 
-#line 1887 "parser.cog"
+#line 1888 "parser.cog"
                 parser, 
 
-#line 1887 "parser.cog"
+#line 1888 "parser.cog"
                         kTokenCode_Comma);
 }
 }}
 
 
-#line 1891 "parser.cog"
+#line 1892 "parser.cog"
                   
 
-#line 1891 "parser.cog"
+#line 1892 "parser.cog"
          DEREF(
 
-#line 1891 "parser.cog"
+#line 1892 "parser.cog"
      decl).getDecls() = 
 
-#line 1891 "parser.cog"
+#line 1892 "parser.cog"
                        params;
 }
 
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
  
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                         Syntax parseFuncDecl(
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                   
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                             Parser
 
-#line 1896 "parser.cog"
+#line 1897 "parser.cog"
                                   * parser)
 {
 
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
      
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
      auto decl = 
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
                                       
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
                             
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
                 createObject<
 
-#line 1898 "parser.cog"
+#line 1899 "parser.cog"
                              FuncDecl> ();
 
 
-#line 1899 "parser.cog"
+#line 1900 "parser.cog"
          DEREF(
 
-#line 1899 "parser.cog"
+#line 1900 "parser.cog"
      decl).loc = 
 
-#line 1899 "parser.cog"
+#line 1900 "parser.cog"
                        
 
-#line 1899 "parser.cog"
+#line 1900 "parser.cog"
                 peekLoc(
 
-#line 1899 "parser.cog"
+#line 1900 "parser.cog"
                         parser);
 
 
-#line 1901 "parser.cog"
+#line 1902 "parser.cog"
          DEREF(
 
-#line 1901 "parser.cog"
+#line 1902 "parser.cog"
      decl).name = 
 
-#line 1901 "parser.cog"
+#line 1902 "parser.cog"
                                            
 
-#line 1901 "parser.cog"
+#line 1902 "parser.cog"
                  expectOperatorOrIdentifier(
 
-#line 1901 "parser.cog"
+#line 1902 "parser.cog"
                                             parser);
 
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
      
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
      auto result = 
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
                                          
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
                   maybeParseGenericParams(
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
                                           parser, 
 
-#line 1904 "parser.cog"
+#line 1905 "parser.cog"
                                                   decl);
 
 
-#line 1906 "parser.cog"
+#line 1907 "parser.cog"
               
 
-#line 1906 "parser.cog"
+#line 1907 "parser.cog"
               
 
-#line 1906 "parser.cog"
+#line 1907 "parser.cog"
      pushScope(
 
-#line 1906 "parser.cog"
+#line 1907 "parser.cog"
                parser, 
 
-#line 1906 "parser.cog"
+#line 1907 "parser.cog"
                        decl);
 
 
-#line 1908 "parser.cog"
+#line 1909 "parser.cog"
      if(
 
-#line 1908 "parser.cog"
+#line 1909 "parser.cog"
               
 
-#line 1908 "parser.cog"
+#line 1909 "parser.cog"
         expect(
 
-#line 1908 "parser.cog"
+#line 1909 "parser.cog"
                parser, 
 
-#line 1908 "parser.cog"
+#line 1909 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1910 "parser.cog"
+#line 1911 "parser.cog"
                     
 
-#line 1910 "parser.cog"
+#line 1911 "parser.cog"
                     
 
-#line 1910 "parser.cog"
+#line 1911 "parser.cog"
          parseParams(
 
-#line 1910 "parser.cog"
+#line 1911 "parser.cog"
                      parser, 
 
-#line 1910 "parser.cog"
+#line 1911 "parser.cog"
                              decl);
 }
 
 
-#line 1912 "parser.cog"
+#line 1913 "parser.cog"
            
 
-#line 1912 "parser.cog"
+#line 1913 "parser.cog"
            
 
-#line 1912 "parser.cog"
+#line 1913 "parser.cog"
      expect(
 
-#line 1912 "parser.cog"
+#line 1913 "parser.cog"
             parser, 
 
-#line 1912 "parser.cog"
+#line 1913 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1914 "parser.cog"
+#line 1915 "parser.cog"
      if(
 
-#line 1914 "parser.cog"
+#line 1915 "parser.cog"
                  
 
-#line 1914 "parser.cog"
+#line 1915 "parser.cog"
         advanceIf(
 
-#line 1914 "parser.cog"
+#line 1915 "parser.cog"
                   parser, 
 
-#line 1914 "parser.cog"
+#line 1915 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1916 "parser.cog"
+#line 1917 "parser.cog"
              DEREF(
 
-#line 1916 "parser.cog"
+#line 1917 "parser.cog"
          decl).resultType = 
 
-#line 1916 "parser.cog"
+#line 1917 "parser.cog"
                                     
 
-#line 1916 "parser.cog"
+#line 1917 "parser.cog"
                            parseType(
 
-#line 1916 "parser.cog"
+#line 1917 "parser.cog"
                                      parser);
 }
 
 
-#line 1919 "parser.cog"
+#line 1920 "parser.cog"
      if(
 
-#line 1919 "parser.cog"
+#line 1920 "parser.cog"
                      
 
-#line 1919 "parser.cog"
+#line 1920 "parser.cog"
         peekTokenCode(
 
-#line 1919 "parser.cog"
+#line 1920 "parser.cog"
                       parser, 
 
-#line 1919 "parser.cog"
+#line 1920 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 1921 "parser.cog"
+#line 1922 "parser.cog"
              DEREF(
 
-#line 1921 "parser.cog"
+#line 1922 "parser.cog"
          decl).body = 
 
-#line 1921 "parser.cog"
+#line 1922 "parser.cog"
                                   
 
-#line 1921 "parser.cog"
+#line 1922 "parser.cog"
                      parseStmtBody(
 
-#line 1921 "parser.cog"
+#line 1922 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 1925 "parser.cog"
+#line 1926 "parser.cog"
                
 
-#line 1925 "parser.cog"
+#line 1926 "parser.cog"
                
 
-#line 1925 "parser.cog"
+#line 1926 "parser.cog"
          expect(
 
-#line 1925 "parser.cog"
+#line 1926 "parser.cog"
                 parser, 
 
-#line 1925 "parser.cog"
+#line 1926 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 1928 "parser.cog"
+#line 1929 "parser.cog"
              
 
-#line 1928 "parser.cog"
+#line 1929 "parser.cog"
              
 
-#line 1928 "parser.cog"
+#line 1929 "parser.cog"
      popScope(
 
-#line 1928 "parser.cog"
+#line 1929 "parser.cog"
               parser);
 
 
-#line 1930 "parser.cog"
+#line 1931 "parser.cog"
      return 
 
-#line 1930 "parser.cog"
+#line 1931 "parser.cog"
             result;
 }
 
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
  
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                              Syntax parseSubscriptDecl(
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                        
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                  Parser
 
-#line 1933 "parser.cog"
+#line 1934 "parser.cog"
                                        * parser)
 {
 
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
      
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
      auto decl = 
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
                                            
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
                             
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
                 createObject<
 
-#line 1935 "parser.cog"
+#line 1936 "parser.cog"
                              SubscriptDecl> ();
 
 
-#line 1937 "parser.cog"
+#line 1938 "parser.cog"
               
 
-#line 1937 "parser.cog"
+#line 1938 "parser.cog"
               
 
-#line 1937 "parser.cog"
+#line 1938 "parser.cog"
      pushScope(
 
-#line 1937 "parser.cog"
+#line 1938 "parser.cog"
                parser, 
 
-#line 1937 "parser.cog"
+#line 1938 "parser.cog"
                        decl);
 
 
-#line 1939 "parser.cog"
+#line 1940 "parser.cog"
      if(
 
-#line 1939 "parser.cog"
+#line 1940 "parser.cog"
               
 
-#line 1939 "parser.cog"
+#line 1940 "parser.cog"
         expect(
 
-#line 1939 "parser.cog"
+#line 1940 "parser.cog"
                parser, 
 
-#line 1939 "parser.cog"
+#line 1940 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1941 "parser.cog"
+#line 1942 "parser.cog"
                     
 
-#line 1941 "parser.cog"
+#line 1942 "parser.cog"
                     
 
-#line 1941 "parser.cog"
+#line 1942 "parser.cog"
          parseParams(
 
-#line 1941 "parser.cog"
+#line 1942 "parser.cog"
                      parser, 
 
-#line 1941 "parser.cog"
+#line 1942 "parser.cog"
                              decl);
 }
 
 
-#line 1943 "parser.cog"
+#line 1944 "parser.cog"
            
 
-#line 1943 "parser.cog"
+#line 1944 "parser.cog"
            
 
-#line 1943 "parser.cog"
+#line 1944 "parser.cog"
      expect(
 
-#line 1943 "parser.cog"
+#line 1944 "parser.cog"
             parser, 
 
-#line 1943 "parser.cog"
+#line 1944 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1945 "parser.cog"
+#line 1946 "parser.cog"
      if(
 
-#line 1945 "parser.cog"
+#line 1946 "parser.cog"
                  
 
-#line 1945 "parser.cog"
+#line 1946 "parser.cog"
         advanceIf(
 
-#line 1945 "parser.cog"
+#line 1946 "parser.cog"
                   parser, 
 
-#line 1945 "parser.cog"
+#line 1946 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1947 "parser.cog"
+#line 1948 "parser.cog"
              DEREF(
 
-#line 1947 "parser.cog"
+#line 1948 "parser.cog"
          decl).resultType = 
 
-#line 1947 "parser.cog"
+#line 1948 "parser.cog"
                                     
 
-#line 1947 "parser.cog"
+#line 1948 "parser.cog"
                            parseType(
 
-#line 1947 "parser.cog"
+#line 1948 "parser.cog"
                                      parser);
 }
 
 
-#line 1950 "parser.cog"
+#line 1951 "parser.cog"
      if(
 
-#line 1950 "parser.cog"
+#line 1951 "parser.cog"
                      
 
-#line 1950 "parser.cog"
+#line 1951 "parser.cog"
         peekTokenCode(
 
-#line 1950 "parser.cog"
+#line 1951 "parser.cog"
                       parser, 
 
-#line 1950 "parser.cog"
+#line 1951 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 1952 "parser.cog"
+#line 1953 "parser.cog"
              DEREF(
 
-#line 1952 "parser.cog"
+#line 1953 "parser.cog"
          decl).body = 
 
-#line 1952 "parser.cog"
+#line 1953 "parser.cog"
                                   
 
-#line 1952 "parser.cog"
+#line 1953 "parser.cog"
                      parseStmtBody(
 
-#line 1952 "parser.cog"
+#line 1953 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 1956 "parser.cog"
+#line 1957 "parser.cog"
                
 
-#line 1956 "parser.cog"
+#line 1957 "parser.cog"
                
 
-#line 1956 "parser.cog"
+#line 1957 "parser.cog"
          expect(
 
-#line 1956 "parser.cog"
+#line 1957 "parser.cog"
                 parser, 
 
-#line 1956 "parser.cog"
+#line 1957 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 1959 "parser.cog"
+#line 1960 "parser.cog"
              
 
-#line 1959 "parser.cog"
+#line 1960 "parser.cog"
              
 
-#line 1959 "parser.cog"
+#line 1960 "parser.cog"
      popScope(
 
-#line 1959 "parser.cog"
+#line 1960 "parser.cog"
               parser);
 
 
-#line 1961 "parser.cog"
+#line 1962 "parser.cog"
      return 
 
-#line 1961 "parser.cog"
+#line 1962 "parser.cog"
             decl;
 }
 
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
  
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                                Syntax parseInitializerDecl(
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                          
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                    Parser
 
-#line 1964 "parser.cog"
+#line 1965 "parser.cog"
                                          * parser)
 {
 
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
      
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
      auto decl = 
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
                                              
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
                             
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
                 createObject<
 
-#line 1966 "parser.cog"
+#line 1967 "parser.cog"
                              InitializerDecl> ();
 
 
-#line 1968 "parser.cog"
+#line 1969 "parser.cog"
               
 
-#line 1968 "parser.cog"
+#line 1969 "parser.cog"
               
 
-#line 1968 "parser.cog"
+#line 1969 "parser.cog"
      pushScope(
 
-#line 1968 "parser.cog"
+#line 1969 "parser.cog"
                parser, 
 
-#line 1968 "parser.cog"
+#line 1969 "parser.cog"
                        decl);
 
 
-#line 1970 "parser.cog"
+#line 1971 "parser.cog"
      if(
 
-#line 1970 "parser.cog"
+#line 1971 "parser.cog"
               
 
-#line 1970 "parser.cog"
+#line 1971 "parser.cog"
         expect(
 
-#line 1970 "parser.cog"
+#line 1971 "parser.cog"
                parser, 
 
-#line 1970 "parser.cog"
+#line 1971 "parser.cog"
                        kTokenCode_LParen))
 {
 
 
-#line 1972 "parser.cog"
+#line 1973 "parser.cog"
                     
 
-#line 1972 "parser.cog"
+#line 1973 "parser.cog"
                     
 
-#line 1972 "parser.cog"
+#line 1973 "parser.cog"
          parseParams(
 
-#line 1972 "parser.cog"
+#line 1973 "parser.cog"
                      parser, 
 
-#line 1972 "parser.cog"
+#line 1973 "parser.cog"
                              decl);
 }
 
 
-#line 1974 "parser.cog"
+#line 1975 "parser.cog"
            
 
-#line 1974 "parser.cog"
+#line 1975 "parser.cog"
            
 
-#line 1974 "parser.cog"
+#line 1975 "parser.cog"
      expect(
 
-#line 1974 "parser.cog"
+#line 1975 "parser.cog"
             parser, 
 
-#line 1974 "parser.cog"
+#line 1975 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 1977 "parser.cog"
+#line 1978 "parser.cog"
      if(
 
-#line 1977 "parser.cog"
+#line 1978 "parser.cog"
                  
 
-#line 1977 "parser.cog"
+#line 1978 "parser.cog"
         advanceIf(
 
-#line 1977 "parser.cog"
+#line 1978 "parser.cog"
                   parser, 
 
-#line 1977 "parser.cog"
+#line 1978 "parser.cog"
                           kTokenCode_Arrow))
 {
 
 
-#line 1979 "parser.cog"
+#line 1980 "parser.cog"
              DEREF(
 
-#line 1979 "parser.cog"
+#line 1980 "parser.cog"
          decl).resultType = 
 
-#line 1979 "parser.cog"
+#line 1980 "parser.cog"
                                     
 
-#line 1979 "parser.cog"
+#line 1980 "parser.cog"
                            parseType(
 
-#line 1979 "parser.cog"
+#line 1980 "parser.cog"
                                      parser);
 }
 
 
-#line 1982 "parser.cog"
+#line 1983 "parser.cog"
      if(
 
-#line 1982 "parser.cog"
+#line 1983 "parser.cog"
                      
 
-#line 1982 "parser.cog"
+#line 1983 "parser.cog"
         peekTokenCode(
 
-#line 1982 "parser.cog"
+#line 1983 "parser.cog"
                       parser, 
 
-#line 1982 "parser.cog"
+#line 1983 "parser.cog"
                               kTokenCode_LCurly))
 {
 
 
-#line 1984 "parser.cog"
+#line 1985 "parser.cog"
              DEREF(
 
-#line 1984 "parser.cog"
+#line 1985 "parser.cog"
          decl).body = 
 
-#line 1984 "parser.cog"
+#line 1985 "parser.cog"
                                   
 
-#line 1984 "parser.cog"
+#line 1985 "parser.cog"
                      parseStmtBody(
 
-#line 1984 "parser.cog"
+#line 1985 "parser.cog"
                                    parser);
 }
 else
 {
 
 
-#line 1988 "parser.cog"
+#line 1989 "parser.cog"
                
 
-#line 1988 "parser.cog"
+#line 1989 "parser.cog"
                
 
-#line 1988 "parser.cog"
+#line 1989 "parser.cog"
          expect(
 
-#line 1988 "parser.cog"
+#line 1989 "parser.cog"
                 parser, 
 
-#line 1988 "parser.cog"
+#line 1989 "parser.cog"
                         kTokenCode_Semi);
 }
 
 
-#line 1991 "parser.cog"
+#line 1992 "parser.cog"
              
 
-#line 1991 "parser.cog"
+#line 1992 "parser.cog"
              
 
-#line 1991 "parser.cog"
+#line 1992 "parser.cog"
      popScope(
 
-#line 1991 "parser.cog"
+#line 1992 "parser.cog"
               parser);
 
 
-#line 1993 "parser.cog"
+#line 1994 "parser.cog"
      return 
 
-#line 1993 "parser.cog"
+#line 1994 "parser.cog"
             decl;
 }
 
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
  
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                         Syntax parseThisExpr(
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                   
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                             Parser
 
-#line 1996 "parser.cog"
+#line 1997 "parser.cog"
                                   * parser)
 {
 
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
      
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
      auto expr = 
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
                                       
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
                             
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
                 createObject<
 
-#line 1998 "parser.cog"
+#line 1999 "parser.cog"
                              ThisExpr> ();
 
 
-#line 1999 "parser.cog"
+#line 2000 "parser.cog"
          DEREF(
 
-#line 1999 "parser.cog"
+#line 2000 "parser.cog"
      expr).scope = 
 
-#line 1999 "parser.cog"
+#line 2000 "parser.cog"
                         DEREF(
 
-#line 1999 "parser.cog"
+#line 2000 "parser.cog"
                   parser).scope;
 
 
-#line 2000 "parser.cog"
+#line 2001 "parser.cog"
      return 
 
-#line 2000 "parser.cog"
+#line 2001 "parser.cog"
             expr;
 }
 
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
  
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                         Syntax parseCastExpr(
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                   
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                             Parser
 
-#line 2003 "parser.cog"
+#line 2004 "parser.cog"
                                   * parser)
 {
 
 
-#line 2005 "parser.cog"
+#line 2006 "parser.cog"
                         
 
-#line 2005 "parser.cog"
+#line 2006 "parser.cog"
                         
 
-#line 2005 "parser.cog"
+#line 2006 "parser.cog"
      tryParseGenericOpen(
 
-#line 2005 "parser.cog"
+#line 2006 "parser.cog"
                          parser);
 
 
-#line 2006 "parser.cog"
+#line 2007 "parser.cog"
      
 
-#line 2006 "parser.cog"
+#line 2007 "parser.cog"
      auto args = 
 
-#line 2006 "parser.cog"
+#line 2007 "parser.cog"
                                 
 
-#line 2006 "parser.cog"
+#line 2007 "parser.cog"
                 parseGenericArgs(
 
-#line 2006 "parser.cog"
+#line 2007 "parser.cog"
                                  parser);
 
 
-#line 2007 "parser.cog"
+#line 2008 "parser.cog"
                        
 
-#line 2007 "parser.cog"
+#line 2008 "parser.cog"
                        
 
-#line 2007 "parser.cog"
+#line 2008 "parser.cog"
      expectGenericClose(
 
-#line 2007 "parser.cog"
+#line 2008 "parser.cog"
                         parser);
 
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
      
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
      auto expr = 
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
                                       
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
                             
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
                 createObject<
 
-#line 2009 "parser.cog"
+#line 2010 "parser.cog"
                              CastExpr> ();
 
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
                 DEREF(
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
          DEREF(
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
      expr).toType).exp = 
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
                                 DEREF(
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
                            DEREF(
 
-#line 2010 "parser.cog"
+#line 2011 "parser.cog"
                        args).head).exp;
 
 
-#line 2011 "parser.cog"
+#line 2012 "parser.cog"
            
 
-#line 2011 "parser.cog"
+#line 2012 "parser.cog"
            
 
-#line 2011 "parser.cog"
+#line 2012 "parser.cog"
      expect(
 
-#line 2011 "parser.cog"
+#line 2012 "parser.cog"
             parser, 
 
-#line 2011 "parser.cog"
+#line 2012 "parser.cog"
                     kTokenCode_LParen);
 
 
-#line 2012 "parser.cog"
+#line 2013 "parser.cog"
          DEREF(
 
-#line 2012 "parser.cog"
+#line 2013 "parser.cog"
      expr).arg = 
 
-#line 2012 "parser.cog"
+#line 2013 "parser.cog"
                         
 
-#line 2012 "parser.cog"
+#line 2013 "parser.cog"
                 parseExp(
 
-#line 2012 "parser.cog"
+#line 2013 "parser.cog"
                          parser);
 
 
-#line 2013 "parser.cog"
+#line 2014 "parser.cog"
            
 
-#line 2013 "parser.cog"
+#line 2014 "parser.cog"
            
 
-#line 2013 "parser.cog"
+#line 2014 "parser.cog"
      expect(
 
-#line 2013 "parser.cog"
+#line 2014 "parser.cog"
             parser, 
 
-#line 2013 "parser.cog"
+#line 2014 "parser.cog"
                     kTokenCode_RParen);
 
 
-#line 2015 "parser.cog"
+#line 2016 "parser.cog"
      return 
 
-#line 2015 "parser.cog"
+#line 2016 "parser.cog"
             expr;
 }
 
 
-#line 2018 "parser.cog"
+#line 2019 "parser.cog"
  
 
-#line 2023 "parser.cog"
+#line 2024 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2019 "parser.cog"
+#line 2020 "parser.cog"
               Session session, 
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
                    
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
            ConstPtr<
 
-#line 2020 "parser.cog"
+#line 2021 "parser.cog"
                     Char>  name, 
 
-#line 2021 "parser.cog"
+#line 2022 "parser.cog"
                SyntaxCallback callback, 
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                        
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                   Class
 
-#line 2022 "parser.cog"
+#line 2023 "parser.cog"
                        * syntaxClass)
 {
 
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
      
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
      auto syntaxDecl = 
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
                                               
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
                                   
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
                       createObject<
 
-#line 2025 "parser.cog"
+#line 2026 "parser.cog"
                                    SyntaxDecl> ();
 
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                DEREF(
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
      syntaxDecl).name = 
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                               
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                        getName(
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                                session, 
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                                                
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                                         UNCONST(
 
-#line 2026 "parser.cog"
+#line 2027 "parser.cog"
                                                 name));
 
 
-#line 2027 "parser.cog"
+#line 2028 "parser.cog"
                DEREF(
 
-#line 2027 "parser.cog"
+#line 2028 "parser.cog"
      syntaxDecl).syntaxClass = 
 
-#line 2027 "parser.cog"
+#line 2028 "parser.cog"
                               syntaxClass;
 
 
-#line 2028 "parser.cog"
+#line 2029 "parser.cog"
                DEREF(
 
-#line 2028 "parser.cog"
+#line 2029 "parser.cog"
      syntaxDecl).callback = 
 
-#line 2028 "parser.cog"
+#line 2029 "parser.cog"
                            callback;
 
 
-#line 2029 "parser.cog"
+#line 2030 "parser.cog"
      return 
 
-#line 2029 "parser.cog"
+#line 2030 "parser.cog"
             syntaxDecl;
 }
 
 
-#line 2032 "parser.cog"
+#line 2033 "parser.cog"
  
 
-#line 2032 "parser.cog"
+#line 2033 "parser.cog"
       template<typename T > 
 
-#line 2036 "parser.cog"
+#line 2037 "parser.cog"
         SyntaxDecl createSyntaxDecl(
 
-#line 2033 "parser.cog"
+#line 2034 "parser.cog"
               Session session, 
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
                    
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
            ConstPtr<
 
-#line 2034 "parser.cog"
+#line 2035 "parser.cog"
                     Char>  name, 
 
-#line 2035 "parser.cog"
+#line 2036 "parser.cog"
                SyntaxCallback callback)
 {
 
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
      return 
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                             
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
             createSyntaxDecl(
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                              session, 
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                       name, 
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                             callback, 
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                                                  
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                                               
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                                       getClass<
 
-#line 2038 "parser.cog"
+#line 2039 "parser.cog"
                                                                T> ());
 }
 
 
-#line 2041 "parser.cog"
+#line 2042 "parser.cog"
  void parseFileIntoModule(
 
-#line 2042 "parser.cog"
+#line 2043 "parser.cog"
               Session session, 
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
                      
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
            SourceFile
 
-#line 2043 "parser.cog"
+#line 2044 "parser.cog"
                      * file, 
 
-#line 2044 "parser.cog"
+#line 2045 "parser.cog"
                  ModuleDecl moduleDecl)
 {
 
 
-#line 2046 "parser.cog"
+#line 2047 "parser.cog"
      
 
-#line 2046 "parser.cog"
+#line 2047 "parser.cog"
      
 
-#line 2046 "parser.cog"
+#line 2047 "parser.cog"
                  Parser parser;
 
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                      
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                      
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
      initializeParser(
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                       
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                       &
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                        parser, 
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                                session, 
 
-#line 2047 "parser.cog"
+#line 2048 "parser.cog"
                                         file);
 
 
-#line 2050 "parser.cog"
+#line 2051 "parser.cog"
      
 
-#line 2050 "parser.cog"
+#line 2051 "parser.cog"
      
 
-#line 2050 "parser.cog"
+#line 2051 "parser.cog"
                                           
 
-#line 2050 "parser.cog"
+#line 2051 "parser.cog"
                          SyntaxListBuilder<
 
-#line 2050 "parser.cog"
+#line 2051 "parser.cog"
                                            Decl>  moduleDeclList;
 
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
                    DEREF(
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
      moduleDeclList).head = 
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
                                                 DEREF(
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
                                               
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
                                      DEREF(
 
-#line 2051 "parser.cog"
+#line 2052 "parser.cog"
                            moduleDecl).getDecls()).head;
 
 
-#line 2055 "parser.cog"
+#line 2056 "parser.cog"
      if(
 
-#line 2055 "parser.cog"
+#line 2056 "parser.cog"
                       DEREF(
 
-#line 2055 "parser.cog"
+#line 2056 "parser.cog"
         moduleDeclList).head)
 {
 
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                        DEREF(
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
          moduleDeclList).link = 
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                cast<
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                        
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                     Ptr<
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                         Decl> >(
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                                        DEREF(
 
-#line 2057 "parser.cog"
+#line 2058 "parser.cog"
                                                 session).moduleDeclLink);
 }
 else
 {
 
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
                        DEREF(
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
          moduleDeclList).link = 
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
                                
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
                                &
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
                                               DEREF(
 
-#line 2061 "parser.cog"
+#line 2062 "parser.cog"
                                 moduleDeclList).head;
 }
 
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
      
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
      auto globals = 
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
                                               
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
                                
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
                    createObject<
 
-#line 2068 "parser.cog"
+#line 2069 "parser.cog"
                                 ContainerDecl> ();
 
 
-#line 2069 "parser.cog"
+#line 2070 "parser.cog"
      
 
-#line 2069 "parser.cog"
+#line 2070 "parser.cog"
      
 
-#line 2069 "parser.cog"
+#line 2070 "parser.cog"
                                        
 
-#line 2069 "parser.cog"
+#line 2070 "parser.cog"
                       SyntaxListBuilder<
 
-#line 2069 "parser.cog"
+#line 2070 "parser.cog"
                                         Decl>  globalDecls;
 
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                     
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                     
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                 DEREF(
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
      globalDecls).add(
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                            
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                      
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                      createSyntaxDecl<
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                       Decl> (
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                             session, 
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                                      "import", 
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                                                
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                                                &
 
-#line 2072 "parser.cog"
+#line 2073 "parser.cog"
                                                                 parseImportDecl));
 
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                     
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                     
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                 DEREF(
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
      globalDecls).add(
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                            
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                      
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                      createSyntaxDecl<
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                       Decl> (
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                             session, 
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                                      "class", 
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                                               
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                                               &
 
-#line 2073 "parser.cog"
+#line 2074 "parser.cog"
                                                                parseClassDecl));
 
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                     
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                     
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                 DEREF(
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
      globalDecls).add(
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                            
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                      
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                      createSyntaxDecl<
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                       Decl> (
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                             session, 
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                                      "struct", 
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                                                
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                                                &
 
-#line 2074 "parser.cog"
+#line 2075 "parser.cog"
                                                                 parseStructDecl));
 
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                     
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                     
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                 DEREF(
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
      globalDecls).add(
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                            
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                      
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                      createSyntaxDecl<
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                       Decl> (
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                             session, 
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                                      "enum", 
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                                              
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                                              &
 
-#line 2075 "parser.cog"
+#line 2076 "parser.cog"
                                                               parseEnumDecl));
 
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                     
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                     
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                 DEREF(
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
      globalDecls).add(
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                            
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                      
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                      createSyntaxDecl<
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                       Decl> (
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                             session, 
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                                      "var", 
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                                             
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                                             &
 
-#line 2076 "parser.cog"
+#line 2077 "parser.cog"
                                                              parseVarDecl));
 
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                     
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                     
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                 DEREF(
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
      globalDecls).add(
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                            
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                      
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                      createSyntaxDecl<
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                       Decl> (
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                             session, 
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                                      "let", 
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                                             
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                                             &
 
-#line 2077 "parser.cog"
+#line 2078 "parser.cog"
                                                              parseLetDecl));
 
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                     
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                     
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                 DEREF(
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
      globalDecls).add(
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                            
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                      
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                      createSyntaxDecl<
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                       Decl> (
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                             session, 
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                                      "func", 
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                                              
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                                              &
 
-#line 2078 "parser.cog"
+#line 2079 "parser.cog"
                                                               parseFuncDecl));
 
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                     
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                     
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                 DEREF(
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
      globalDecls).add(
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                            
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                      
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                      createSyntaxDecl<
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                       Decl> (
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                             session, 
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                                      "subscript", 
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                                                   
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                                                   &
 
-#line 2079 "parser.cog"
+#line 2080 "parser.cog"
                                                                    parseSubscriptDecl));
 
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                     
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                     
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                 DEREF(
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
      globalDecls).add(
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                            
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                      
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                      createSyntaxDecl<
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                       Decl> (
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                             session, 
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                                      "init", 
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                                              
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                                              &
 
-#line 2080 "parser.cog"
+#line 2081 "parser.cog"
                                                               parseInitializerDecl));
 
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                     
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                     
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                 DEREF(
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
      globalDecls).add(
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                            
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                      
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                      createSyntaxDecl<
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                       Decl> (
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                             session, 
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                                      "typealias", 
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                                                   
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                                                   &
 
-#line 2081 "parser.cog"
+#line 2082 "parser.cog"
                                                                    parseTypeAliasDecl));
 
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                     
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                     
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                 DEREF(
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
      globalDecls).add(
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                            
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                      
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                      createSyntaxDecl<
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                       Stmt> (
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                             session, 
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                                      "if", 
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                                            
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                                            &
 
-#line 2082 "parser.cog"
+#line 2083 "parser.cog"
                                                             parseIfStmt));
 
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                     
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                     
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                 DEREF(
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
      globalDecls).add(
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                            
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                      
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                      createSyntaxDecl<
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                       Stmt> (
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                             session, 
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                                      "while", 
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                                               
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                                               &
 
-#line 2083 "parser.cog"
+#line 2084 "parser.cog"
                                                                parseWhileStmt));
 
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                     
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                     
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                 DEREF(
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
      globalDecls).add(
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                            
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                      
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                      createSyntaxDecl<
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                       Stmt> (
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                             session, 
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                                      "for", 
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                                             
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                                             &
 
-#line 2084 "parser.cog"
+#line 2085 "parser.cog"
                                                              parseForStmt));
 
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                     
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                     
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                 DEREF(
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
      globalDecls).add(
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                            
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                      
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                      createSyntaxDecl<
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                       Stmt> (
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                             session, 
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                                      "foreach", 
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                                                 
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                                                 &
 
-#line 2085 "parser.cog"
+#line 2086 "parser.cog"
                                                                  parseForEachStmt));
 
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                     
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                     
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                 DEREF(
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
      globalDecls).add(
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                            
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                      
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                      createSyntaxDecl<
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                       Stmt> (
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                             session, 
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                                      "return", 
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                                                
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                                                &
 
-#line 2086 "parser.cog"
+#line 2087 "parser.cog"
                                                                 parseReturnStmt));
 
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                     
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                     
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                 DEREF(
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
      globalDecls).add(
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                            
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                      
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                      createSyntaxDecl<
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                       Stmt> (
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                             session, 
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                                      "break", 
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                                               
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                                               &
 
-#line 2087 "parser.cog"
+#line 2088 "parser.cog"
                                                                parseBreakStmt));
 
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                     
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                     
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                 DEREF(
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
      globalDecls).add(
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                            
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                      
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                      createSyntaxDecl<
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                       Stmt> (
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                             session, 
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                                      "continue", 
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                                                  
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                                                  &
 
-#line 2088 "parser.cog"
+#line 2089 "parser.cog"
                                                                   parseContinueStmt));
 
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                     
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                     
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                 DEREF(
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
      globalDecls).add(
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                            
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                      
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                      createSyntaxDecl<
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                       Stmt> (
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                             session, 
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                                      "switch", 
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                                                
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                                                &
 
-#line 2089 "parser.cog"
+#line 2090 "parser.cog"
                                                                 parseSwitchStmt));
 
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                     
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                     
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                 DEREF(
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
      globalDecls).add(
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                            
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                      
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                      createSyntaxDecl<
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                       Attr> (
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                             session, 
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                                      "@__builtin", 
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                                                    
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                                                    &
 
-#line 2090 "parser.cog"
+#line 2091 "parser.cog"
                                                                     parseBuiltinAttr));
 
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                     
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                     
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                 DEREF(
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
      globalDecls).add(
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                           
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                      
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                      createSyntaxDecl<
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                       Exp> (
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                            session, 
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                                     "this", 
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                                             
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                                             &
 
-#line 2092 "parser.cog"
+#line 2093 "parser.cog"
                                                              parseThisExpr));
 
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                     
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                     
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                 DEREF(
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
      globalDecls).add(
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                           
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                      
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                      createSyntaxDecl<
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                       Exp> (
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                            session, 
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                                     "cast", 
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                                             
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                                             &
 
-#line 2093 "parser.cog"
+#line 2094 "parser.cog"
                                                              parseCastExpr));
 
 
-#line 2095 "parser.cog"
+#line 2096 "parser.cog"
                      
 
-#line 2095 "parser.cog"
+#line 2096 "parser.cog"
             DEREF(
 
-#line 2095 "parser.cog"
+#line 2096 "parser.cog"
      globals).getDecls() = 
 
-#line 2095 "parser.cog"
+#line 2096 "parser.cog"
                           globalDecls;
 
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
      
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
      auto globalScope = 
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
                                    
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
                             
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
                        alloc<
 
-#line 2097 "parser.cog"
+#line 2098 "parser.cog"
                              Scope> ();
 
 
-#line 2098 "parser.cog"
+#line 2099 "parser.cog"
                 DEREF(
 
-#line 2098 "parser.cog"
+#line 2099 "parser.cog"
      globalScope).parent = 
 
-#line 2098 "parser.cog"
+#line 2099 "parser.cog"
                           0;
 
 
-#line 2099 "parser.cog"
+#line 2100 "parser.cog"
                            DEREF(
 
-#line 2099 "parser.cog"
+#line 2100 "parser.cog"
                 DEREF(
 
-#line 2099 "parser.cog"
+#line 2100 "parser.cog"
      globalScope).directLink).container = 
 
-#line 2099 "parser.cog"
+#line 2100 "parser.cog"
                                         globals;
 
 
-#line 2101 "parser.cog"
+#line 2102 "parser.cog"
            DEREF(
 
-#line 2101 "parser.cog"
+#line 2102 "parser.cog"
      parser).scope = 
 
-#line 2101 "parser.cog"
+#line 2102 "parser.cog"
                     globalScope;
 
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
               
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
               
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
      pushScope(
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
                
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
                &
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
                 parser, 
 
-#line 2107 "parser.cog"
+#line 2108 "parser.cog"
                         moduleDecl);
 
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
      
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
      auto fileDecls = 
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
                                      
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
                      parseDeclsInBody(
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
                                       
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
                                       &
 
-#line 2108 "parser.cog"
+#line 2109 "parser.cog"
                                        parser);
 
 
-#line 2109 "parser.cog"
+#line 2110 "parser.cog"
      for(auto dd : 
 
-#line 2109 "parser.cog"
+#line 2110 "parser.cog"
                    fileDecls)
 {
 
 
-#line 2110 "parser.cog"
+#line 2111 "parser.cog"
            DEREF(
 
-#line 2110 "parser.cog"
+#line 2111 "parser.cog"
          dd).parent = 
 
-#line 2110 "parser.cog"
+#line 2111 "parser.cog"
                      moduleDecl;
 }
 
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
              
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
              
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
      popScope(
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
               
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
               &
 
-#line 2111 "parser.cog"
+#line 2112 "parser.cog"
                parser);
 
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
            
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
            
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
      expect(
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
             
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
             &
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
              parser, 
 
-#line 2113 "parser.cog"
+#line 2114 "parser.cog"
                      kTokenCode_EndOfFile);
 
 
-#line 2115 "parser.cog"
+#line 2116 "parser.cog"
                           
 
-#line 2115 "parser.cog"
+#line 2116 "parser.cog"
                           
 
-#line 2115 "parser.cog"
+#line 2116 "parser.cog"
                    DEREF(
 
-#line 2115 "parser.cog"
+#line 2116 "parser.cog"
      moduleDeclList).append(
 
-#line 2115 "parser.cog"
+#line 2116 "parser.cog"
                            fileDecls);
 
 
-#line 2117 "parser.cog"
+#line 2118 "parser.cog"
                         
 
-#line 2117 "parser.cog"
+#line 2118 "parser.cog"
                DEREF(
 
-#line 2117 "parser.cog"
+#line 2118 "parser.cog"
      moduleDecl).getDecls() = 
 
-#line 2117 "parser.cog"
+#line 2118 "parser.cog"
                              moduleDeclList;
 
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
                    
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
                    
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
      finalizeParser(
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
                     
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
                     &
 
-#line 2119 "parser.cog"
+#line 2120 "parser.cog"
                      parser);
 }
 
 
-#line 2122 "parser.cog"
+#line 2123 "parser.cog"
  void parseFile(
 
-#line 2123 "parser.cog"
+#line 2124 "parser.cog"
               Session session, 
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
                      
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
            SourceFile
 
-#line 2124 "parser.cog"
+#line 2125 "parser.cog"
                      * file)
 {
 
 
-#line 2129 "parser.cog"
+#line 2130 "parser.cog"
      
 
-#line 2129 "parser.cog"
+#line 2130 "parser.cog"
      auto moduleDecl = 
 
-#line 2129 "parser.cog"
+#line 2130 "parser.cog"
                              DEREF(
 
-#line 2129 "parser.cog"
+#line 2130 "parser.cog"
                       session).moduleDecl;
 
 
-#line 2130 "parser.cog"
+#line 2131 "parser.cog"
      if(
 
-#line 2130 "parser.cog"
+#line 2131 "parser.cog"
         
 
-#line 2130 "parser.cog"
+#line 2131 "parser.cog"
         !
 
-#line 2130 "parser.cog"
+#line 2131 "parser.cog"
          moduleDecl)
 {
 
 
-#line 2132 "parser.cog"
+#line 2133 "parser.cog"
          moduleDecl = 
 
-#line 2132 "parser.cog"
+#line 2133 "parser.cog"
                                               
 
-#line 2132 "parser.cog"
+#line 2133 "parser.cog"
                                   
 
-#line 2132 "parser.cog"
+#line 2133 "parser.cog"
                       createObject<
 
-#line 2132 "parser.cog"
+#line 2133 "parser.cog"
                                    ModuleDecl> ();
 
 
-#line 2133 "parser.cog"
+#line 2134 "parser.cog"
                    DEREF(
 
-#line 2133 "parser.cog"
+#line 2134 "parser.cog"
          moduleDecl).name = 
 
-#line 2133 "parser.cog"
+#line 2134 "parser.cog"
                                         
 
-#line 2133 "parser.cog"
+#line 2134 "parser.cog"
                            getModuleName(
 
-#line 2133 "parser.cog"
+#line 2134 "parser.cog"
                                          session);
 
 
-#line 2134 "parser.cog"
+#line 2135 "parser.cog"
                 DEREF(
 
-#line 2134 "parser.cog"
+#line 2135 "parser.cog"
          session).moduleDecl = 
 
-#line 2134 "parser.cog"
+#line 2135 "parser.cog"
                               moduleDecl;
 
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                 DEREF(
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
          session).moduleDeclLink = 
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                   
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                   &
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                                         DEREF(
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                                       
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                              DEREF(
 
-#line 2135 "parser.cog"
+#line 2136 "parser.cog"
                                    moduleDecl).getDecls()).head;
 }
 
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
                         
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
                         
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
      parseFileIntoModule(
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
                          session, 
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
                                   file, 
 
-#line 2138 "parser.cog"
+#line 2139 "parser.cog"
                                         moduleDecl);
 }
 
@@ -66092,7 +66110,7 @@ COG_DEFINE_CLASS(IfStmtBase, Stmt)
 COG_DEFINE_CLASS(IfStmt, IfStmtBase)
 COG_DEFINE_CLASS(IfLetStmt, IfStmtBase)
 COG_DEFINE_CLASS(WhileStmt, Stmt)
-COG_DEFINE_CLASS(ForStmt, Stmt)
+COG_DEFINE_CLASS(ForStmt, ContainerStmt)
 COG_DEFINE_CLASS(ReturnStmt, Stmt)
 COG_DEFINE_CLASS(BreakStmt, Stmt)
 COG_DEFINE_CLASS(ContinueStmt, Stmt)
