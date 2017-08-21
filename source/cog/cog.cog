@@ -2,7 +2,9 @@
 
 // This file provides the Cog "standard library"
 
+@__declRefType(VoidType)
 struct Void {}
+
 struct Null {}
 
 struct Bool {}
