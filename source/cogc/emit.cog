@@ -460,10 +460,6 @@ func emitStmt(
 	{
 		emitBlockStmt(context, blockStmt);
 	}
-	else if(let decl = as<Decl>(stmt))
-	{
-		emitDecl(context, decl, kDeclEmitMode_Full);
-	}
     else if(let exp = as<Exp>(stmt))
     {
         emitExp(context, exp);
@@ -578,6 +574,10 @@ func emitStmt(
     {
         emit(context, "continue;\n");
     }
+	else if(let decl = as<Decl>(stmt))
+	{
+		emitDecl(context, decl, kDeclEmitMode_Full);
+	}
     else
     {
         diagnose(getSink(context), stmt.loc, kDiagnostic_unimplemented, stmt.directClass.name);
