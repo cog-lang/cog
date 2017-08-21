@@ -5,7 +5,7 @@ import cog;
 struct ScopeLink
 {
 	var container : ContainerStmt;
-	var next : Ptr<ScopeLink> = nullptr;
+	var next : Ptr<ScopeLink> = null;
 }
 
 struct Scope

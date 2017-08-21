@@ -287,7 +287,7 @@ func tryRecoverBefore(parser: Parser*, code: TokenCode)
     var recoverBefore : FixedSizeArray<1, TokenCode>;
     recoverBefore[0] = code;
 
-    tryRecover(parser, 1, recoverBefore, 0, nullptr);
+    tryRecover(parser, 1, recoverBefore, 0, null);
 }
 
 
@@ -413,7 +413,7 @@ func getSyntaxDecl(
     }
 
     // nothing found, so bail
-    return nullptr;
+    return null;
 }
 
 func createNameExp(
@@ -1765,7 +1765,7 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
         // parse cases...
         for (;;)
         {
-            var arg : Arg = nullptr;
+            var arg : Arg = null;
             if (advanceIf(parser, TerminatedStringSpan("case")))
             {
                 arg = createObject<Arg>();
@@ -1775,7 +1775,7 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
             else if (advanceIf(parser, TerminatedStringSpan("default")))
             {
                 arg = createObject<Arg>();
-                arg.exp = nullptr;
+                arg.exp = null;
                 expect(parser, kTokenCode_Colon);
             }
             else

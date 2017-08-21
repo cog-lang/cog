@@ -1046,7 +1046,7 @@ func addDecl(
 	context: DeclSortContext*,
 	decl: Decl)
 {
-	decl.next = nullptr;
+	decl.next = null;
 	context.sortedDecls.add(decl);
 }
 
@@ -1056,7 +1056,7 @@ func addDecl(
 {
 	let decl = *declPtr;
 	*declPtr = cast<Decl>(decl.next);
-	decl.next = nullptr;
+	decl.next = null;
 
 	context.sortedDecls.add(decl);
 }
@@ -1080,16 +1080,16 @@ func addDependencies(
 	// that had a name match, before moving on to add it.
 	var dd = context.unsortedDecls;
 
-	var matchingDecls : Decl = nullptr;
+	var matchingDecls : Decl = null;
 	var matchingDeclLink = &matchingDecls;
 
 	var unsortedDeclLink = &context.unsortedDecls;
-	context.unsortedDecls = nullptr;
+	context.unsortedDecls = null;
 
 	while (dd)
 	{
 		let next = cast<Decl>(dd.next);
-		dd.next = nullptr;
+		dd.next = null;
 
 		if (dd.name == name)
 		{
@@ -1106,8 +1106,8 @@ func addDependencies(
 	}
 
 	// cap off that lists...
-	*matchingDeclLink = nullptr;
-	*unsortedDeclLink = nullptr;
+	*matchingDeclLink = null;
+	*unsortedDeclLink = null;
 
 	// Now for each of those decls that matched, process it
 
@@ -1115,7 +1115,7 @@ func addDependencies(
 	while (dd)
 	{
 		let next = cast<Decl>(dd.next);
-		dd.next = nullptr;
+		dd.next = null;
 
 		addDependencies(context, dd);
 		addDecl(context, dd);
@@ -1200,7 +1200,7 @@ func sortDecls(
 	{
 		let decl = sortContext.unsortedDecls;
 		sortContext.unsortedDecls = cast<Decl>(decl.next);
-		decl.next = nullptr;
+		decl.next = null;
 
 		// add dependent decls!!
 		addDependencies(&sortContext, decl);
@@ -1317,5 +1317,5 @@ func emitModule(
 		session,
 		moduleNameText,
 		buffer,
-		nullptr);
+		null);
 }

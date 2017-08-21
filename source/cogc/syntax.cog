@@ -4,8 +4,8 @@ import cog;
 
 struct TypeExp
 {
-	var exp : Exp = nullptr;
-	var type : Type = nullptr;
+	var exp : Exp = null;
+	var type : Type = null;
 
 	/*
 	operator Exp*()
@@ -20,7 +20,7 @@ func asBool(typeExp: TypeExp) -> Bool
 	return typeExp.exp;
 }
 
-struct SyntaxListIterator<T>
+struct SyntaxListIterator<T : Syntax>
 {
 	var current : T;
 
@@ -28,11 +28,6 @@ struct SyntaxListIterator<T>
 		current: T)
 	{
 		this.current = current;
-	}
-
-	func !=(other: SyntaxListIterator<T>) -> Bool
-	{
-		return current != other.current;
 	}
 
 	func *() -> T
@@ -46,6 +41,13 @@ struct SyntaxListIterator<T>
 	}
 }
 
+func !=(
+	left: SyntaxListIterator<T>,
+	right: SyntaxListIterator<T>)
+	-> Bool
+{
+	return left.current != right.current;
+}
 
 struct SyntaxList<T>
 {
@@ -157,7 +159,7 @@ struct FilteredSyntaxListIterator<T,U>
 				return t;
 			obj = obj.next;
 		}
-		return nullptr;
+		return null;
 	}
 
 }
@@ -175,12 +177,12 @@ struct FilteredSyntaxList<T,U>
 
 	func end() -> FilteredSyntaxListIterator<T,U>
 	{
-		return FilteredSyntaxListIterator<T,U>(nullptr);
+		return FilteredSyntaxListIterator<T,U>(null);
 	}
 
 	init()
 	{
-		this.head = nullptr;
+		this.head = null;
 	}
 
 	init(head: U)
@@ -224,7 +226,7 @@ class Stmt : Syntax
 			if(match)
 				return cast<Attr>(match);
 		}
-		return nullptr;
+		return null;
 	}
 
 	func findAttr<T>() -> T
@@ -358,13 +360,13 @@ struct DeclRefList<T>
 
 	func end() -> DeclRefListIterator<T>
 	{
-		return DeclRefListIterator<T>(nullptr, nullptr);
+		return DeclRefListIterator<T>(null, null);
 	}
 
 	init()
 	{
-		this.decl = nullptr;
-		this.specializations = nullptr;
+		this.decl = null;
+		this.specializations = null;
 	}
 
 	init(decl: Decl, specializations: Specializations)
@@ -675,7 +677,7 @@ struct LookupResultItem
 
 	init()
 	{
-		this.decl = nullptr;
+		this.decl = null;
 	}
 
 //    LookupResultItem(

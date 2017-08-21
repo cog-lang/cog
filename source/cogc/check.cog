@@ -81,7 +81,7 @@ func attachToScope(
 {
     let link = cast<Ptr<ScopeLink> >(malloc(sizeof(ScopeLink)));
 	link.container = decl;
-	link.next = nullptr;
+	link.next = null;
 
 	link.next = scope.directLink.next;
 	scope.directLink.next = link;
@@ -281,7 +281,7 @@ func checkStmt(
 	-> Stmt
 {
     if(!stmt)
-        return nullptr;
+        return null;
 
 	if(let blockStmt = as<BlockStmt>(stmt))
 	{
@@ -399,7 +399,7 @@ func coerceToExp(
 	-> Exp
 {
 	if(!term)
-		return nullptr;
+		return null;
 
     if(let exp = as<Exp>(term))
     {
@@ -448,7 +448,7 @@ func tryCoerceToTypeExpr(
     }
 	else
 	{
-		return nullptr;
+		return null;
 	}
 }
 
@@ -460,7 +460,7 @@ func tryCoerceToType(
 {
 	let typeExpr = tryCoerceToTypeExpr(context, exp);
 	if(!typeExpr)
-		return nullptr;
+		return null;
 
 	let exprType = typeExpr.type;
 	if(let typeType = as<TypeType>(exprType))
@@ -473,7 +473,7 @@ func tryCoerceToType(
     }
 	else
 	{
-		return nullptr;
+		return null;
 	}
 }
 
@@ -526,7 +526,7 @@ func checkTerm(
 	exp: Exp)
 	-> Exp
 {
-	if(!exp) return nullptr;
+	if(!exp) return null;
 
 	if(let nameExp = as<NameExp>(exp))
 	{
@@ -652,7 +652,7 @@ func checkTerm(
         var overloadContext : OverloadResolveContext;
         overloadContext.checkContext = context;
         overloadContext.appExp = appExp;
-        overloadContext.baseExp = nullptr;
+        overloadContext.baseExp = null;
 
 
         if(let baseMemberRef = as<MemberExp>(base))
@@ -690,7 +690,7 @@ func checkTerm(
         var overloadContext : OverloadResolveContext;
         overloadContext.checkContext = context;
         overloadContext.appExp = genericAppExpr;
-        overloadContext.baseExp = nullptr;
+        overloadContext.baseExp = null;
 
         if(let baseMemberRef = as<MemberExp>(base))
         {
@@ -972,7 +972,7 @@ func addGenericGenericOverloadCandidate(
 
     var candidate: OverloadCandidate;
     candidate.declRef = genericDeclRef;
-    candidate.resultType = nullptr;
+    candidate.resultType = null;
 
     addOverloadCandidate(context, candidate);
 }
@@ -1149,7 +1149,7 @@ func getBuiltinType(
     -> Type
 {
     let cogModuleName = getName(context.shared.session, "cog");
-    var cogModule : ModuleDecl = nullptr;
+    var cogModule : ModuleDecl = null;
     if(context.shared.session.moduleDecl.name == cogModuleName)
     {
         cogModule = context.shared.session.moduleDecl;
@@ -1386,7 +1386,7 @@ func coerce(
     type: 		Type)
     -> Exp
 {
-    var result : Exp = nullptr;
+    var result : Exp = null;
     if(tryCoerceImpl(
         context,
         exp,
@@ -1409,7 +1409,7 @@ func canCoerce(
     return tryCoerceImpl(
         context,
         exp,
-        nullptr,
+        null,
         type);
 }
 
@@ -1440,7 +1440,7 @@ struct OverloadResolveContext
 {
 	var checkContext 	: CheckContext*;
     var appExp 			: AppExpBase;
-    var baseExp 		: Exp = nullptr;
+    var baseExp 		: Exp = null;
 
     var mode : OverloadResolveMode = kOverloadResolveMode_justTrying;
 
@@ -1804,7 +1804,7 @@ func createDeclRefExp(
 	baseExp: Exp)
     -> Exp
 {
-    var declRefExp: DeclRefExp = nullptr;
+    var declRefExp: DeclRefExp = null;
     if(baseExp)
     {
         let memberRefExp = createObject<MemberExp>();
@@ -1852,7 +1852,7 @@ func createDeclRefExp(
 	loc: SourceLoc)
     -> Exp
 {
-	return createDeclRefExp(context, declRef, loc, nullptr);
+	return createDeclRefExp(context, declRef, loc, null);
 }
 
 func getGenericArgVal(
@@ -1944,7 +1944,7 @@ func completeOverload(
 
     let count = overloadContext.candidates.getCount();
 
-    var baseName : Name* = nullptr;
+    var baseName : Name* = null;
     if(let declRefExp = as<DeclRefExp>(appExp.base))
     {
         baseName = declRefExp.declRef.getDecl().name;
@@ -2027,7 +2027,7 @@ func isError(
 	type: Type)
     -> Bool
 {
-    return as<ErrorType>(type) != nullptr;
+    return as<ErrorType>(type) != null;
 }
 
 func isError(
@@ -2064,7 +2064,7 @@ func addTypeOverloadCandidates(
 struct GenericInferenceArg
 {
 	var paramDeclRef: DeclRefValImpl<GenericParamDecl>;
-	var val: Val = nullptr;
+	var val: Val = null;
 }
 
 struct GenericInferenceContext
@@ -2160,7 +2160,7 @@ func findGenericInferenceArg(
 		if(isSameDeclRef(context.args[ii].paramDeclRef, paramDeclRef))
 			return &context.args[ii];
 	}
-	return nullptr;
+	return null;
 }
 
 func doInferenceForTypes(
@@ -2238,7 +2238,7 @@ func inferGenericArgsForApp(
     if(!innerFuncDeclRef)
     {
         // TODO: consider generic types...
-        return nullptr;
+        return null;
     }
 
 
@@ -2274,7 +2274,7 @@ func inferGenericArgsForApp(
         if(!(aa != ae))
         {
             // Too few args!
-            return nullptr;
+            return null;
         }
 
         let arg = *aa;
@@ -2287,13 +2287,13 @@ func inferGenericArgsForApp(
             arg.exp,
             paramDeclRef))
         {
-            return nullptr;
+            return null;
         }
     }
     if(aa != ae)
     {
         // Too few args!
-        return nullptr;
+        return null;
     }
 
     // Now let's see if the arguments can be inferred from what
@@ -2301,7 +2301,7 @@ func inferGenericArgsForApp(
     foreach(arg in args)
     {
         if(!arg.val)
-            return nullptr;
+            return null;
     }
 
 	// Seems like we are good, so construct the specializations
@@ -2384,7 +2384,7 @@ func specializeVal(
 	}
 
 	cogAssert(!"unimplemented");
-	return nullptr;
+	return null;
 }
 
 func findSpecialization(
@@ -2400,7 +2400,7 @@ func findSpecialization(
 		}
 	}
 
-	return nullptr;
+	return null;
 }
 
 func specializeDeclRef(
@@ -2472,7 +2472,7 @@ func specializeType(
 		return errorType;
 
 	cogAssert(!"unimplemented");
-	return nullptr;
+	return null;
 }
 
 //

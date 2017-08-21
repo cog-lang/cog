@@ -76,8 +76,8 @@ struct TokenSpan
 
 	init()
 	{
-		this.begin_ = nullptr;
-		this.end_ = nullptr;
+		this.begin_ = null;
+		this.end_ = null;
 	}
 
 	init(begin: ConstPtr<Token>, end: ConstPtr<Token>)

@@ -47,7 +47,7 @@ struct ArgTypeList
 
 	init()
 	{
-		this.args = nullptr;
+		this.args = null;
 	}
 
 	init(args: Arg)

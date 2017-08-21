@@ -3,6 +3,7 @@
 // This file provides the Cog "standard library"
 
 struct Void {}
+struct Null {}
 
 struct Bool {}
 let true : Bool;
