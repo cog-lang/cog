@@ -22,8 +22,13 @@ struct UInt
 
 struct Ptr<T> {}
 struct ConstPtr<T> {}
+struct Ref<T> {}
+struct ConstRef<T> {}
 
 func !(val: Bool) -> Bool;
+
+// TODO: this obviously isn't correct
+func & <T>(val: T) -> Ptr<T>;
 
 func ++(val: Int) -> Int;
 func ++(val: UInt) -> UInt;
@@ -32,8 +37,33 @@ func -(left: Int, right: Int) -> Int;
 
 func - <T>(left: Ptr<T>, right: Ptr<T>) -> Int;
 
+func + <T>(left: Ptr<T>, right: Int) -> Ptr<T>;
+func + <T>(left: Ptr<T>, right: UInt) -> Ptr<T>;
+
+func - <T>(left: Ptr<T>, right: Int) -> Ptr<T>;
+func - <T>(left: Ptr<T>, right: UInt) -> Ptr<T>;
+
 func <(left: Int, right: Int) -> Bool;
 func <(left: UInt, right: UInt) -> Bool;
 
 func >(left: Int, right: Int) -> Bool;
 func >(left: UInt, right: UInt) -> Bool;
+
+func ==(left: Int, right: Int) -> Bool;
+func ==(left: UInt, right: UInt) -> Bool;
+
+func !=(left: Int, right: Int) -> Bool;
+func !=(left: UInt, right: UInt) -> Bool;
+
+struct Class {}
+
+class Object {}
+
+func as<T>(val: Object) -> T;
+
+func getClass<T>() -> Ptr<Class>;
+
+func createObject<T>() -> T;
+
+
+func strlen(s: ConstPtr<Char>) -> UInt;
