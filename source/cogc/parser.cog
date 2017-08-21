@@ -22,6 +22,8 @@ struct Parser
     var token: ConstPtr<Token>;
 
     var flags: ParserFlags;
+
+	var genericDepth: Int;
 }
 
 func debugState(parser: Parser*)
@@ -80,6 +82,7 @@ func initializeParser(
     parser.cursor = tokens.begin_;
     parser.end = tokens.end_;
     parser.flags = 0;
+	parser.genericDepth = 0;
 
     advanceToken(parser);
 }
@@ -821,7 +824,8 @@ func isInGenericClause(
     parser: Parser*)
     -> Bool
 {
-    return (parser.flags & kParserFlag_InsideGenericClause) != 0;
+    return (parser.flags & kParserFlag_InsideGenericClause) != 0
+		|| (parser.genericDepth > 0);
 }
 
 func parsePostfixExp(
@@ -1335,14 +1339,22 @@ func expectGenericClose(parser: Parser*)
 
 func parseGenericParam(parser: Parser*) -> Decl
 {
+	if(peekTokenCode(parser) != kTokenCode_Identifier)
+		return nullptr;
+
     let loc = peekLoc(parser);
     let name = expectIdentifier(parser);
-
-    // TODO: handle constraints
 
     let decl = createObject<GenericParamDecl>();
     decl.loc = loc;
     decl.name = name;
+
+	// allow a single generic parameter constraint
+	if(advanceIf(parser, kTokenCode_Colon))
+	{
+		decl.bound = parseType(parser);
+	}
+
     return decl;
 }
 
@@ -1361,6 +1373,10 @@ func parseGenericParams(parser: Parser*, ioDecls: Ptr<SyntaxListBuilder<Decl> >)
         {
             decls.add(decl);
         }
+		else
+		{
+			break;
+		}
 
         if(peekGenericClose(parser))
             return;
@@ -1402,6 +1418,7 @@ func maybeParseGenericParams(parser: Parser*,decl: Decl) -> Decl
     if(!tryParseGenericOpen(parser))
         return decl;
 
+	parser.genericDepth++;
 
     let genericDecl = createObject<GenericDecl>();
 
@@ -1415,6 +1432,8 @@ func maybeParseGenericParams(parser: Parser*,decl: Decl) -> Decl
     decl.parent = genericDecl;
 
     pushScope(parser, genericDecl);
+
+	parser.genericDepth--;
 
     expectGenericClose(parser);
     return genericDecl;
@@ -2016,6 +2035,12 @@ func parseCastExpr(parser: Parser*) -> Syntax
     return expr;
 }
 
+func parseNullExpr(parser: Parser*) -> Syntax
+{
+    let expr = createObject<NullLitExpr>();
+    return expr;
+}
+
 func createSyntaxDecl(
     session: Session,
     name: ConstPtr<Char>,
@@ -2092,6 +2117,7 @@ func parseFileIntoModule(
 
     globalDecls.add(createSyntaxDecl<Exp>(session, "this", &parseThisExpr));
     globalDecls.add(createSyntaxDecl<Exp>(session, "cast", &parseCastExpr));
+    globalDecls.add(createSyntaxDecl<Exp>(session, "null", &parseNullExpr));
 
     globals.getDecls() = globalDecls;
 

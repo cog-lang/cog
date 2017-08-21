@@ -796,3 +796,9 @@ class CastExpr : Exp
 	var toType : TypeExp;
 	var arg : Exp;
 }
+
+class NullLitExpr : Exp
+{
+}
+
+

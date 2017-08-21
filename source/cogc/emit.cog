@@ -367,6 +367,10 @@ func emitExp(
     {
         emit(context, "this");
     }
+    else if(let nullLitExpr = as<NullLitExpr>(exp))
+    {
+        emit(context, "nullptr");
+    }
     else if(let castExpr = as<CastExpr>(exp))
     {
         emit(context, "cast<");

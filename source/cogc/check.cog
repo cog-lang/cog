@@ -839,6 +839,11 @@ func checkTerm(
 		parenExpr.type = base.type;
 		return parenExpr;
 	}
+	else if(let nullLitExpr = as<NullLitExpr>(exp))
+	{
+		nullLitExpr.type = getBuiltinType(context, nullLitExpr.loc, "Null");
+		return nullLitExpr;
+	}
 	else
 	{
 		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
@@ -1451,13 +1456,23 @@ struct OverloadResolveContext
 func issueTooFewArgsError(
 	context: OverloadResolveContext*)
 {
-	diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooFewArgs);
+	if(context.mode == kOverloadResolveMode_justTrying)
+	{}
+	else
+	{
+		diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooFewArgs);
+	}
 }
 
 func issueTooManyArgsError(
 	context: OverloadResolveContext*)
 {
-	diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooManyArgs);
+	if(context.mode == kOverloadResolveMode_justTrying)
+	{}
+	else
+	{
+		diagnose(getSink(context.checkContext), context.appExp.loc, kDiagnostic_tooManyArgs);
+	}
 }
 
 func checkOverloadCandidateArity(
