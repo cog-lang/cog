@@ -40,5 +40,32 @@ Object createObject(Class* directClass)
 	return obj;
 }
 
+struct RegisteredClass
+{
+	Class*				clazz;
+	RegisteredClass*	next;
+};
+
+static RegisteredClass* gRegisteredClasses = nullptr;
+
+void registerClass(Class* clazz)
+{
+	RegisteredClass* reg = new RegisteredClass();
+	reg->clazz = clazz;
+
+	reg->next = gRegisteredClasses;
+	gRegisteredClasses = reg;
+}
+
+Class* findClassByName(char const* name)
+{
+	for (auto rr = gRegisteredClasses; rr; rr = rr->next)
+	{
+		if (strcmp(rr->clazz->name, name) == 0)
+			return rr->clazz;
+	}
+
+	return nullptr;
+}
 
 }

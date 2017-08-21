@@ -1281,6 +1281,19 @@ func emitModuleInner(
 		context.suppressLineDirective -= 1;
 	}
 
+	// Now code to register all the classes
+	emit(&context, "void init() {\n");
+	foreach(dd in moduleDecl.getDecls())
+	{
+		let classDecl = as<ClassDecl>(dd);
+		if (!classDecl) continue;
+
+		emit(&context, "registerClass(getClass<");
+		emitDeclName(&context, classDecl, kDeclEmitMode_Full);
+		emit(&context, ">());\n");
+	}
+	emit(&context, "}\n");
+
 	emit(&context, "}\n");
 
 	if(extra)

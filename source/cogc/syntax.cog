@@ -211,6 +211,11 @@ class BuiltinAttr : Attr
 	var name : Ptr<Name>;
 }
 
+class DeclRefClassAttr : Attr
+{
+	var syntaxClass : Ptr<Class>;
+}
+
 class Stmt : Syntax
 {
 	var attrs : SyntaxList<Attr>;

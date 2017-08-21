@@ -71,6 +71,12 @@ namespace cog
 	T* UNCONST(T const* val) { assert(val); return (T*)val; }
 
 	void loadAndEval(char const* path);
+
+	struct Class;
+
+
+	void registerClass(Class* clazz);
+	Class* findClassByName(char const* name);
 }
 
 #define COG_EXPORT extern "C"

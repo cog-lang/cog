@@ -1857,6 +1857,19 @@ func parseBuiltinAttr(parser: Parser*) -> Syntax
     return attr;
 }
 
+func parseDeclRefClassAttr(parser: Parser*) -> Syntax
+{
+    let attr = createObject<DeclRefClassAttr>();
+    expect(parser, kTokenCode_LParen);
+
+	let name = expectIdentifier(parser);
+
+	attr.syntaxClass = findClassByName(getText(name).begin);
+
+    expect(parser, kTokenCode_RParen);
+    return attr;
+}
+
 func parseParam(parser: Parser*) -> ParamDecl
 {
     let decl = createObject<ParamDecl>();
@@ -2114,6 +2127,7 @@ func parseFileIntoModule(
     globalDecls.add(createSyntaxDecl<Stmt>(session, "continue", &parseContinueStmt));
     globalDecls.add(createSyntaxDecl<Stmt>(session, "switch", &parseSwitchStmt));
     globalDecls.add(createSyntaxDecl<Attr>(session, "@__builtin", &parseBuiltinAttr));
+    globalDecls.add(createSyntaxDecl<Attr>(session, "@__declRefClass", &parseDeclRefClassAttr));
 
     globalDecls.add(createSyntaxDecl<Exp>(session, "this", &parseThisExpr));
     globalDecls.add(createSyntaxDecl<Exp>(session, "cast", &parseCastExpr));
