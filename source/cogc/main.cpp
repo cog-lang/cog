@@ -193,5 +193,7 @@ namespace cogc
 
 int main(int argc, char** argv)
 {
+	cogc::init();
+
 	return cogc::main(argc, argv);
 }

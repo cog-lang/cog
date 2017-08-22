@@ -746,6 +746,20 @@ class DeclRefType : Type
 	var declRef : CompactDeclRef;
 }
 
+// The custom type used to represent `Void`
+class VoidType : DeclRefType {}
+
+// The custom type used to represent `Null`
+class NullType : DeclRefType {}
+
+// An instantiation of the `Ptr<>` generic
+class PtrType : DeclRefType {}
+
+
+// A reference to a `class` decl
+class ClassType : DeclRefType {}
+
+
 // The "type" of another type
 class TypeType : Type
 {

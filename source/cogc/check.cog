@@ -808,7 +808,6 @@ func checkTerm(
 			if(aggTypeDecl)
 			{
 				thisExpr.type = createDeclRefType(
-					context,
 					DeclRefVal(aggTypeDecl));
 				return thisExpr;
 			}
@@ -1037,12 +1036,34 @@ func createFuncType(
 
 //
 
+func getSyntaxClassForDeclRef(
+	declRef: DeclRefVal)
+	-> Class*
+{
+	let decl = declRef.getDecl();
+
+	if(let declRefClassAttr = decl.findAttr<DeclRefClassAttr>())
+	{
+		if(let declRefSyntaxClass = declRefClassAttr.syntaxClass)
+		{
+			return declRefSyntaxClass;
+		}
+	}
+
+	if(let classDecl = as<ClassDecl>(decl))
+	{
+		return getClass<ClassType>();
+	}
+
+	return getClass<DeclRefType>();
+}
+
 func createDeclRefType(
-	context: CheckContext*,
 	declRef: DeclRefVal)
 	-> Type
 {
-	let type = createObject<DeclRefType>();
+	let syntaxClass = getSyntaxClassForDeclRef(declRef);
+	let type = cast<DeclRefType>(createObject(syntaxClass));
 	type.declRef = CompactDeclRef(declRef);
 	return type;
 }
@@ -1052,7 +1073,7 @@ func createDeclRefTypeType(
 	declRef: DeclRefVal)
 	-> Type
 {
-	let type = createDeclRefType(context, declRef);
+	let type = createDeclRefType(declRef);
 	let typeType = createTypeType(context, type);
 	return typeType;
 }
@@ -1169,10 +1190,7 @@ func getBuiltinType(
     {
         if(decl.name && getText(decl.name) == nameSpan)
         {
-            let type = createObject<DeclRefType>();
-            type.declRef = CompactDeclRef(decl);
-
-            return type;
+			return createDeclRefType(DeclRefVal(decl));
         }
     }
 
@@ -1197,7 +1215,7 @@ func getResultType(
     }
     else if(let typeDeclRef = as<AggTypeDecl>(decl))
     {
-        return createDeclRefType(context,
+        return createDeclRefType(
             CompactDeclRef(typeDeclRef));
     }
 	else
@@ -1325,6 +1343,19 @@ func isSameType(
     return false;
 }
 
+func createCastExpr(
+	toType:		Type,
+	fromExp:	Exp)
+	-> Exp
+{
+	let castExpr = createObject<CastExpr>();
+	castExpr.loc = fromExp.loc;
+	castExpr.toType.type = toType;
+	castExpr.type = toType;
+	castExpr.arg = fromExp;
+	return castExpr;
+}
+
 func tryCoerceImpl(
 	context: 	CheckContext*,
     fromExp: 	Exp,
@@ -1351,6 +1382,26 @@ func tryCoerceImpl(
         }
         return true;
     }
+
+	if(let fromNullType = as<NullType>(fromType))
+	{
+		if(let toClassType = as<ClassType>(toType))
+		{
+			if(toExp)
+			{
+				*toExp = createCastExpr(toType, fromExp);
+			}
+			return true;
+		}
+		if(let toPtrType = as<PtrType>(toType))
+		{
+			if(toExp)
+			{
+				*toExp = createCastExpr(toType, fromExp);
+			}
+			return true;
+		}
+	}
 
 //    fprintf(stderr, "FAILED: tryCoerceImpl(from:");
 //    formatType(stderr, fromType);
@@ -2478,9 +2529,7 @@ func specializeType(
 		// TODO: scavenge memory as needed
 		let specDeclRef = specializeDeclRef(declRefType.declRef, specializations);
 
-		let specType = createObject<DeclRefType>();
-		specType.declRef = CompactDeclRef(specDeclRef);
-		return specType;
+		return createDeclRefType(specDeclRef);
 	}
 
 	if(let errorType = as<ErrorType>(type))
