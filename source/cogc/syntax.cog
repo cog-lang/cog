@@ -70,12 +70,12 @@ struct SyntaxList<T>
 
 	func end() -> SyntaxListIterator<T>
 	{
-		return SyntaxListIterator<T>(0);
+		return SyntaxListIterator<T>(null);
 	}
 
 	init()
 	{
-		this.head = 0;
+		this.head = null;
 	}
 
 	init(head: T)

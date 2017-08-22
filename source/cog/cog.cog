@@ -5,6 +5,7 @@
 @__declRefClass(VoidType)
 struct Void {}
 
+@__declRefClass(NullType)
 struct Null {}
 
 struct Bool {}
@@ -23,8 +24,12 @@ struct UInt
 	init(val: Int);
 }
 
+@__declRefClass(PtrType)
 struct Ptr<T> {}
+
+@__declRefClass(PtrType)
 struct ConstPtr<T> {}
+
 struct Ref<T> {}
 struct ConstRef<T> {}
 
@@ -63,6 +68,7 @@ struct Class {}
 class Object {}
 
 func as<T>(val: Object) -> T;
+func as(obj: Object, clazz: Ptr<Class>) -> Object;
 
 func getClass<T>() -> Ptr<Class>;
 
