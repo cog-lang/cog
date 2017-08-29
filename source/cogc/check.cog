@@ -869,24 +869,14 @@ func extractVal(
 
 //
 
-func checkMemberExp(
-	context: CheckContext*,
-	exp: MemberExp)
-    -> Exp
+func lookUpMemberInType(
+	context:	CheckContext*,
+	exp:		MemberExp,
+	base:		Exp,
+	baseType:	Type,
+	memberName:	Name*)
+	-> Exp
 {
-    var base = exp.base;
-    base = checkTerm(context, base);
-
-    let memberName = exp.memberName;
-
-    // If there was an error in the base expression,
-    // en just return an error so we don't cascade
-    if(isError(context, base))
-    {
-        return createErrorExp(context, exp);
-    }
-
-    let baseType = base.type;
     if(let baseDeclRefType = as<DeclRefType>(baseType))
     {
         let baseDeclRef = baseDeclRefType.declRef;
@@ -918,8 +908,47 @@ func checkMemberExp(
                 return overloadedExpr;
             }
         }
+		else if(let genericParamDeclRef = as<GenericParamDecl>(baseDeclRef))
+		{
+			// we have a generic type param, so we really need to base things on
+			// the *bound* for the type parameter
+			//
+			let genericParamBoundType = getBoundType(genericParamDeclRef);
+			return lookUpMemberInType(
+				context,
+				exp,
+				base,
+				genericParamBoundType,
+				memberName);
+		}
     }
 
+	return null;
+}
+
+func checkMemberExp(
+	context: CheckContext*,
+	exp: MemberExp)
+    -> Exp
+{
+    var base = exp.base;
+    base = checkTerm(context, base);
+
+    let memberName = exp.memberName;
+
+    // If there was an error in the base expression,
+    // en just return an error so we don't cascade
+    if(isError(context, base))
+    {
+        return createErrorExp(context, exp);
+    }
+
+    let baseType = base.type;
+
+	if(let result = lookUpMemberInType(context, exp, base, baseType, memberName))
+	{
+		return result;
+	}
 
     diagnose(getSink(context), exp.loc, kDiagnostic_noMemberOfNameInType, memberName, baseType);
     return createErrorExp(context, exp);

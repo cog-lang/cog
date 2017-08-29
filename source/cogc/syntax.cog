@@ -353,6 +353,15 @@ class GenericParamDecl : TypeVarDecl
 {
 }
 
+func getBoundType(
+	declRef: DeclRefValImpl<GenericParamDecl>)
+	-> Type
+{
+	return specializeType(
+		declRef.getDecl().bound.type,
+		declRef.specializations);
+}
+
 class TypeAliasDecl : TypeVarDecl
 {
 }
