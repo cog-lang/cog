@@ -52,8 +52,17 @@ struct Array
 		return begin()[index];
 	}
 
-	T* begin() { return (T*) storage->getBegin(); }
-	T* end() { return (T*) storage->getEnd(); }
+	T* begin()
+	{
+		if (!storage) return nullptr;
+		return (T*) storage->getBegin();
+	}
+
+	T* end()
+	{
+		if (!storage) return nullptr;
+		return (T*) storage->getEnd();
+	}
 
 	T const* begin() const { return ignoreConst()->begin(); }
 	T const* end() const { return ignoreConst()->end(); }
@@ -65,6 +74,8 @@ struct Array
 
 	void append(T const& element)
 	{
+		if (!storage) storage = getEmptyArrayStorage();
+
 		size_t capacity = storage->getSize() + sizeof(T);
 		ensureUniquelyReferencedWithCapacity(capacity);
 
