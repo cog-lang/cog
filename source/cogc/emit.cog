@@ -212,11 +212,11 @@ func emitBinaryExp(
     exp: AppExpBase,
     op: Char*)
 {
-    emitExp(context, exp.args.head.exp);
+    emitExp(context, exp.args[0].exp);
     emit(context, " ");
     emit(context, op);
     emit(context, " ");
-    emitExp(context, exp.args.head.next.exp);
+    emitExp(context, exp.args[1].exp);
 }
 
 func emitStringVal(
@@ -296,20 +296,20 @@ func emitExp(
 	}
 	else if (let infixExp = as<InfixExp>(exp))
 	{
-		emitExp(context, infixExp.args.head.exp);
+		emitExp(context, infixExp.args[0].exp);
 		emit(context, " ");
 		emitExp(context, infixExp.base);
 		emit(context, " ");
-		emitExp(context, infixExp.args.head.next.exp);
+		emitExp(context, infixExp.args[1].exp);
 	}
 	else if (let prefixExp = as<PrefixExp>(exp))
 	{
 		emitExp(context, prefixExp.base);
-		emitExp(context, prefixExp.args.head.exp);
+		emitExp(context, prefixExp.args[0].exp);
 	}
 	else if (let postfixExp = as<PostfixExp>(exp))
 	{
-		emitExp(context, postfixExp.args.head.exp);
+		emitExp(context, postfixExp.args[0].exp);
 		emitExp(context, postfixExp.base);
 	}
 	else if (let indexExp = as<IndexExp>(exp))
@@ -513,9 +513,9 @@ func emitStmt(
 		emit(context, "switch(");
 		emitExp(context, switchStmt.condition);
 		emit(context, ")\n{\n");
-		for(var cc = switchStmt.cases; cc; cc = cc.next)
+		foreach(cc in switchStmt.cases)
 		{
-			for (var aa = cc.values; aa; aa = aa.next)
+			foreach(aa in cc.values)
 			{
 				if (aa.exp)
 				{
@@ -1042,27 +1042,15 @@ func emitDecls(
 
 struct DeclSortContext
 {
-	var sortedDecls: SyntaxListBuilder<Decl>;
-	var unsortedDecls: Decl;
+	var sortedDecls: Array<Decl>;
+	var unsortedDecls: Array<Decl>;
 }
 
 func addDecl(
 	context: DeclSortContext*,
 	decl: Decl)
 {
-	decl.next = null;
-	context.sortedDecls.add(decl);
-}
-
-func addDecl(
-	context: DeclSortContext*,
-	declPtr: Decl*)
-{
-	let decl = *declPtr;
-	*declPtr = cast<Decl>(decl.next);
-	decl.next = null;
-
-	context.sortedDecls.add(decl);
+	context.sortedDecls.append(decl);
 }
 
 func addDependencies(
@@ -1084,47 +1072,29 @@ func addDependencies(
 	// that had a name match, before moving on to add it.
 	var dd = context.unsortedDecls;
 
-	var matchingDecls : Decl = null;
-	var matchingDeclLink = &matchingDecls;
+	var matchingDecls : Array<Decl>;
+	var stillUnsortedDecls : Array<Decl>;
 
-	var unsortedDeclLink = &context.unsortedDecls;
-	context.unsortedDecls = null;
-
-	while (dd)
+	foreach(dd in context.unsortedDecls)
 	{
-		let next = cast<Decl>(dd.next);
-		dd.next = null;
-
 		if (dd.name == name)
 		{
-			*matchingDeclLink = dd;
-			matchingDeclLink = cast<Ptr<Decl> >(&dd.next);
+			matchingDecls.append(dd);
 		}
 		else
 		{
-			*unsortedDeclLink = dd;
-			unsortedDeclLink = cast<Ptr<Decl> >(&dd.next);
+			stillUnsortedDecls.append(dd);
 		}
-
-		dd = next;
 	}
 
-	// cap off that lists...
-	*matchingDeclLink = null;
-	*unsortedDeclLink = null;
+	context.unsortedDecls = stillUnsortedDecls;
 
 	// Now for each of those decls that matched, process it
 
-	dd = matchingDecls;
-	while (dd)
+	foreach(dd in matchingDecls)
 	{
-		let next = cast<Decl>(dd.next);
-		dd.next = null;
-
 		addDependencies(context, dd);
 		addDecl(context, dd);
-
-		dd = next;
 	}
 }
 
@@ -1198,18 +1168,18 @@ func sortDecls(
 	container: ContainerDecl)
 {
 	var sortContext : DeclSortContext;
-	sortContext.unsortedDecls = container.getDecls().head;
+	sortContext.unsortedDecls = container.getDecls();
 
-	while (sortContext.unsortedDecls)
+	while (sortContext.unsortedDecls.getCount())
 	{
-		let decl = sortContext.unsortedDecls;
-		sortContext.unsortedDecls = cast<Decl>(decl.next);
-		decl.next = null;
+		let decl = sortContext.unsortedDecls[0];
+
+		sortContext.unsortedDecls.removeAt(0);
 
 		// add dependent decls!!
 		addDependencies(&sortContext, decl);
 
-		addDecl(&sortContext, &decl);
+		addDecl(&sortContext, decl);
 	}
 }
 
@@ -1231,7 +1201,7 @@ func emitModuleInner(
 
 	emit(&context, "#include \"runtime/runtime.h\"\n");
 
-    for(var mm = session.loadedModules; mm; mm = cast<ModuleDecl>(mm.next))
+	foreach(mm in session.loadedModules)
     {
         if(mm == moduleDecl) continue;
 

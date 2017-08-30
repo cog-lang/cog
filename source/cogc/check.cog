@@ -350,9 +350,9 @@ func checkStmt(
     else if(let switchStmt = as<SwitchStmt>(stmt))
     {
         switchStmt.condition = checkExp(context, switchStmt.condition);
-		for(var c = switchStmt.cases; c; c = c.next)
+		foreach(c in switchStmt.cases)
 		{
-			for(var a = c.values; a; a = a.next)
+			foreach(a in c.values)
 			{
 				a.exp = checkExp(context, a.exp);
 			}
@@ -1970,8 +1970,6 @@ func completeOverloadCandidate(
 
 		var argCursor = appExp.args.begin();
 
-		var argLink = &specializations.args.head;
-
 		foreach(dd in getDecls(genericDeclRef))
 		{
 			if(let paramDeclRef = as<GenericParamDecl>(dd))
@@ -1983,8 +1981,7 @@ func completeOverloadCandidate(
 				specializationArg.param = paramDeclRef.getDecl();
 				specializationArg.value = getGenericArgVal(context, arg.exp);
 
-				*argLink = specializationArg;
-				argLink = &specializationArg.next;
+				specializations.args.append(specializationArg);
 			}
 		}
 
@@ -2065,7 +2062,7 @@ func completeOverload(
         if(overloadContext.candidates[0].state == kOverloadCandidateState_Applicable)
         {
             // ey were applicable, so this is ambiguous!
-            diagnose(getSink(context), appExp.loc, kDiagnostic_ambiguousCallToOverload, baseName, ArgTypeList(appExp.args.head));
+            diagnose(getSink(context), appExp.loc, kDiagnostic_ambiguousCallToOverload, baseName, ArgTypeList(appExp.args));
 
             foreach( cc in overloadContext.candidates)
             {
@@ -2077,7 +2074,7 @@ func completeOverload(
         else
         {
             // ey were applicable, so this is ambiguous!
-            diagnose(getSink(context), appExp.loc, kDiagnostic_noApplicableOverloadForCall, baseName, ArgTypeList(appExp.args.head));
+            diagnose(getSink(context), appExp.loc, kDiagnostic_noApplicableOverloadForCall, baseName, ArgTypeList(appExp.args));
 
             foreach(cc in overloadContext.candidates)
             {
@@ -2179,17 +2176,18 @@ func doInferenceForSpecializations(
         return false;
     }
 
-
     // Now walk through the arguments and try to unify
-    var aa = argSpec.args.head;
-    var pp = paramSpec.args.head;
-    while(aa)
+    var aa = argSpec.args.begin();
+	var ae = argSpec.args.end();
+
+    var pp = paramSpec.args.begin();
+    while(aa != ae)
     {
-        if(!doInferenceForVals(context, aa.value, pp.value))
+        if(!doInferenceForVals(context, (*aa).value, (*pp).value))
             return false;
 
-        aa = aa.next;
-        pp = pp.next;
+		++aa;
+		++pp;
     }
 
     return true;
@@ -2374,15 +2372,13 @@ func inferGenericArgsForApp(
 	let spec = createObject<Specializations>();
 	spec.genericDeclRef = genericDeclRef;
 
-	var argLink = &spec.args.head;
 	foreach(arg in args)
 	{
 		let specArg = createObject<SpecializationArg>();
 		specArg.param = arg.paramDeclRef.getDecl();
 		specArg.value = arg.val;
 
-		*argLink = specArg;
-		argLink = &specArg.next;
+		spec.args.append(specArg);
 	}
 
 	return spec;
@@ -2500,7 +2496,6 @@ func specializeDeclRef(
 		oldSpecializations.genericDeclRef,
 		specializations));
 
-	var argLink = &newSpec.args.head;
 	foreach(arg in oldSpecializations.args)
 	{
 		// TODO: need to substitute params too?
@@ -2509,8 +2504,7 @@ func specializeDeclRef(
 		newSpecArg.param = arg.param;
 		newSpecArg.value = specializeVal(arg.value, specializations);
 
-		*argLink = newSpecArg;
-		argLink = &newSpecArg.next;
+		newSpec.args.append(newSpecArg);
 	}
 
 	return DeclRefVal(oldDecl, newSpec);

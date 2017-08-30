@@ -43,14 +43,14 @@ struct DiagnosticSink
 
 struct ArgTypeList
 {
-	var args : Arg;
+	var args : Array<Arg>;
 
 	init()
 	{
-		this.args = null;
+		this.args = Array<Arg>();
 	}
 
-	init(args: Arg)
+	init(args: Array<Arg>)
 	{
 		this.args = args;
 	}
@@ -254,12 +254,14 @@ func printDeclRef(
 		if(declRef.getDecl().parent == spec.genericDeclRef.getDecl())
 		{
 			fprintf(stream, "<");
-			let firstArg = spec.args.head;
-			for(var arg = firstArg; arg; arg = arg.next)
+			let first = true;
+			foreach(arg : spec.args)
 			{
-				if(arg != firstArg) fprintf(stream, ",");
+				if(!first) fprintf(stream, ",");
 
 				printVal(stream, arg.value);
+
+				first = false;
 			}
 			fprintf(stream, ">");
 		}
@@ -339,7 +341,7 @@ func printDiagnosticArg(
 	case kFlavor_ArgTypeList:
 		{
 			var first = true;
-			for(var aa = arg.argTypeListVal.args; aa; aa = aa.next)
+			foreach(aa in arg.argTypeListVal.args)
 			{
 				if(!first) fprintf(stderr, ", ");
 				printType(stderr, aa.exp.type);

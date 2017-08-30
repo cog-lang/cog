@@ -9,12 +9,11 @@ class Session
 	var lastSourceLoc : UInt;
 	var sink : DiagnosticSink;
 	var moduleDecl : ModuleDecl;
-	var moduleDeclLink : Ptr<Decl>;
 
 	var moduleName2 : Ptr<Name>;
 	var modulePath2 : Ptr<Name>;
 
-	var loadedModules : ModuleDecl;
+	var loadedModules : Array<ModuleDecl>;
 
 	// Should we evaluate rather than compile?
 	var eval : Bool;

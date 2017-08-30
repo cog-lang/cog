@@ -49,150 +49,76 @@ func != <T>(
 	return left.current != right.current;
 }
 
-struct SyntaxList<T>
+struct FilteredArrayIter<T,U>
 {
-	var head: T;
+	var current : T*;
+	var end : U*;
 
-	subscript(index: UInt) -> T
+	init(current: U*, end: U*)
 	{
-        var item = head;
-        for(var ii : UInt = UInt(0); ii < index; ++ii)
-        {
-            item = cast<T>(item.next);
-        }
-        return item;
-    }
-
-	func begin() -> SyntaxListIterator<T>
-	{
-		return SyntaxListIterator<T>(head);
-	}
-
-	func end() -> SyntaxListIterator<T>
-	{
-		return SyntaxListIterator<T>(null);
-	}
-
-	init()
-	{
-		this.head = null;
-	}
-
-	init(head: T)
-	{
-		this.head = head;
-	}
-}
-
-struct SyntaxListBuilder<T> : SyntaxList<T>
-{
-	var link : Ptr<T>;
-
-	init()
-	{
-		this.link = &this.head;
-	}
-
-	init(other: SyntaxList<T>)
-	{
-		this.head = other.head;
-		this.link = &this.head;
-
-		adjust();
-	}
-
-	func adjust()
-	{
-		while (*link)
-		{
-			link = cast<Ptr<T> >(&(*link).next);
-		}
-	}
-
-	func add(element: T)
-	{
-		adjust();
-
-		*link = element;
-		element.next = 0;
-	}
-
-	func append(other: SyntaxListBuilder<T>)
-	{
-		adjust();
-
-		if(other.head)
-		{
-			*link = other.head;
-			link = other.link;
-		}
-	}
-}
-
-struct FilteredSyntaxListIterator<T,U>
-{
-	var current : T;
-
-	init(current: U)
-	{
+		this.end = end;
 		this.current = adjust(current);
 	}
 
-	func !=(other: FilteredSyntaxListIterator<T,U>) -> Bool
+	func !=(other: FilteredArrayIter<T,U>) -> Bool
 	{
         return current != other.current;
 	}
 
-    func *() -> T { return current; }
+    func *() -> T { return *current; }
 
 	func ++()
     {
-        current = adjust(current.next);
+        current = adjust(cast<Ptr<U> >(current + 1));
     }
 
-	func adjust(obj: U) -> T
+	func adjust(obj: U*) -> T*
 	{
-		while(obj)
+		while(obj != end)
 		{
-			let t = as<T>(obj);
+			let t = as<T>(*obj);
 			if(t)
-				return t;
-			obj = obj.next;
+				return cast<Ptr<T> >(obj);
+			obj = obj + 1;
 		}
-		return null;
+		return cast<Ptr<T> >(end);
 	}
 
 }
 
 
-struct FilteredSyntaxList<T,U>
+struct FilteredArray<T,U>
 {
-	var head : U;
+	var beginPtr : U*;
+	var endPtr : U*;
 
 
-	func begin() -> FilteredSyntaxListIterator<T,U>
+	func begin() -> FilteredArrayIter<T,U>
 	{
-		return FilteredSyntaxListIterator<T,U>(head);
+		return FilteredArrayIter<T,U>(beginPtr, endPtr);
 	}
 
-	func end() -> FilteredSyntaxListIterator<T,U>
+	func end() -> FilteredArrayIter<T,U>
 	{
-		return FilteredSyntaxListIterator<T,U>(null);
+		return FilteredArrayIter<T,U>(endPtr, endPtr);
 	}
 
 	init()
 	{
-		this.head = null;
+		this.beginPtr = null;
+		this.endPtr = null;
 	}
 
-	init(head: U)
+	init(beginPtr: U*, endPtr: U*)
 	{
-		this.head = head;
+		this.beginPtr = beginPtr;
+		this.endPtr = endPtr;
 	}
 
-	init(list: ConstRef<SyntaxList<U> >)
+	init(list: ConstRef<Array<U> >)
 	{
-		this.head = list.head;
+		this.beginPtr = list.begin();
+		this.endPtr = list.end();
 	}
 }
 
@@ -203,7 +129,6 @@ class Syntax
 
 class Attr : Syntax
 {
-	var next : Attr;
 }
 
 class BuiltinAttr : Attr
@@ -218,9 +143,7 @@ class DeclRefClassAttr : Attr
 
 class Stmt : Syntax
 {
-	var attrs : SyntaxList<Attr>;
-
-	var next : Stmt;
+	var attrs : Array<Attr>;
 
 	func findAttrImpl(attrClass: Ptr<Class>) -> Attr
 	{
@@ -262,8 +185,6 @@ class Decl : Stmt
 
 class SpecializationArg : Object
 {
-	var next : SpecializationArg;
-
 	var param : Decl;
 	var value : Val;
 }
@@ -271,7 +192,7 @@ class SpecializationArg : Object
 class Specializations : Object
 {
 	var genericDeclRef : DeclRefValImpl<GenericDecl>;
-	var args : SyntaxList<SpecializationArg>;
+	var args : Array<SpecializationArg>;
 }
 
 
@@ -292,16 +213,16 @@ class Val : Object
 
 class ContainerStmt : Decl
 {
-	var stmts : SyntaxList<Stmt>;
+	var stmts : Array<Stmt>;
 
-	func getStmts() -> SyntaxList<Stmt>
+	func getStmts() -> Array<Stmt>
 	{
 		return stmts;
 	}
 
-	func getDecls() -> FilteredSyntaxList<Decl, Stmt>
+	func getDecls() -> FilteredArray<Decl, Stmt>
 	{
-		return FilteredSyntaxList<Decl, Stmt>(stmts);
+		return FilteredArray<Decl, Stmt>(stmts);
 	}
 }
 
@@ -309,17 +230,22 @@ class ContainerDecl : ContainerStmt
 {
 	// TODO: this used to be by-reference, and that is probably counted on somewhere
 
-	func getDecls() -> Ref<SyntaxList<Decl> > { return *cast<Ptr<SyntaxList<Decl> > >(&stmts); }
+	func getDecls() -> Ref<Array<Decl> > { return *cast<Ptr<Array<Decl> > >(&stmts); }
 }
 
 struct DeclRefListIterator<T>
 {
-	var decl : Decl;
+	var current : Decl*;
+	var end : Decl*;
 	var specializations : Specializations;
 
-	init(decl: Decl, specializations: Specializations)
+	init(
+		current : Decl*,
+		end : Decl*,
+		specializations: Specializations)
 	{
-		this.decl = decl;
+		this.current = current;
+		this.end = end;
 		this.specializations = specializations;
 
 		adjust();
@@ -327,56 +253,56 @@ struct DeclRefListIterator<T>
 
 	func ++()
 	{
-		if(!decl)
+		if(current == end)
 			return;
-		decl = cast<Decl>(decl.next);
+		current = current + 1;
 		adjust();
 	}
 
 	func *() -> DeclRefValImpl<T>
 	{
 		return DeclRefValImpl<T>(
-			cast<T>(decl),
+			cast<T>(*current),
 			specializations);
 	}
 
 	func adjust()
 	{
-		while(decl)
+		while(current != end)
 		{
-			let declAsT = as<T>(decl);
+			let declAsT = as<T>(*current);
 			if(declAsT)
 				return;
 
-			decl = cast<Decl>(decl.next);
+			current = current + 1;
 		}
 	}
 }
 
 struct DeclRefList<T>
 {
-	var decl : Decl;
+	var decls : Array<Decl>;
 	var specializations : Specializations;
 
 	func begin() -> DeclRefListIterator<T>
 	{
-		return DeclRefListIterator<T>(decl, specializations);
+		return DeclRefListIterator<T>(decls.begin(), decls.end(), specializations);
 	}
 
 	func end() -> DeclRefListIterator<T>
 	{
-		return DeclRefListIterator<T>(null, null);
+		return DeclRefListIterator<T>(decls.end(), decls.end(), specializations);
 	}
 
 	init()
 	{
-		this.decl = null;
+		this.decls = Array<Decl>();
 		this.specializations = null;
 	}
 
-	init(decl: Decl, specializations: Specializations)
+	init(decls: Array<Decl>, specializations: Specializations)
 	{
-		this.decl = decl;
+		this.decls = decls;
 		this.specializations = specializations;
 	}
 }
@@ -385,14 +311,14 @@ func != <T>(
 	left: DeclRefListIterator<T>,
 	right: DeclRefListIterator<T>) -> Bool
 {
-	return left.decl != right.decl;
+	return left.current != right.current;
 }
 
 func getDecls(container: DeclRefValImpl<ContainerDecl>)
 	-> DeclRefList<Decl>
 {
 	return DeclRefList<Decl>(
-		container.getDecl().getDecls().head,
+		container.getDecl().getDecls(),
 		container.specializations);
 }
 
@@ -560,15 +486,14 @@ class ContinueStmt : Stmt
 
 class SwitchCase : Syntax
 {
-	var values : Arg;
+	var values : Array<Arg>;
 	var body : Stmt;
-	var next : SwitchCase;
 }
 
 class SwitchStmt : Stmt
 {
 	var condition : Exp;
-	var cases : SwitchCase;
+	var cases : Array<SwitchCase>;
 }
 
 // Arguments
@@ -576,7 +501,6 @@ class SwitchStmt : Stmt
 class Arg : Syntax
 {
 	var exp : Exp;
-	var next : Arg;
 }
 
 class PositionalArg : Arg
@@ -616,7 +540,7 @@ class CharacterLitExp : LitExp
 class AppExpBase : Exp
 {
 	var base : Exp;
-	var args : SyntaxList<Arg>;
+	var args : Array<Arg>;
 }
 
 class GenericAppExp : AppExpBase

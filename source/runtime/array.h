@@ -75,6 +75,14 @@ struct Array
 		storage->end = (char*) (elementPtr+1);
 	}
 
+	void append(Array<T> const& elements)
+	{
+		for(auto ee : elements)
+		{
+			append(ee);
+		}
+	}
+
 	void fastRemoveAt(size_t index)
 	{
 		size_t count = getCount();
@@ -85,6 +93,18 @@ struct Array
 		(*this)[index] = (*this)[count-1];
 
 		storage->end = (char*) (end() - 1);
+	}
+
+	void removeAt(size_t index)
+	{
+		size_t count = getCount();
+		assert(index < count);
+
+		for (size_t ii = index; (ii+1) < count; ++ii)
+		{
+			(*this)[ii] = (*this)[ii+1];
+		}
+		storage->end = (char*)(end() - 1);
 	}
 
 private:

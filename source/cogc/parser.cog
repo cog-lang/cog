@@ -450,9 +450,9 @@ func parseArg(parser: Parser*)
 
 func parseArgs(
     parser: Parser*)
-    -> SyntaxList<Arg>
+    -> Array<Arg>
 {
-    var args: SyntaxListBuilder<Arg>;
+    var args: Array<Arg>;
     switch(peekTokenCode(parser))
     {
     case kTokenCode_RParen:
@@ -470,7 +470,7 @@ func parseArgs(
         let arg = parseArg(parser);
         if(arg)
         {
-            args.add(arg);
+            args.append(arg);
         }
 
         switch(peekTokenCode(parser))
@@ -503,9 +503,9 @@ func parseGenericArg(parser: Parser*)
 
 func parseGenericArgs(
     parser: Parser*)
-    -> SyntaxList<Arg> 
+    -> Array<Arg> 
 {
-    var args: SyntaxListBuilder<Arg>;
+    var args: Array<Arg>;
     if(peekGenericClose(parser))
         return args;
 
@@ -514,7 +514,7 @@ func parseGenericArgs(
         let arg = parseGenericArg(parser);
         if(arg)
         {
-            args.add(arg);
+            args.append(arg);
         }
 
         if(peekGenericClose(parser))
@@ -796,8 +796,8 @@ func createApp(
     exp.loc = op.getLoc();
     exp.base = createNameExp(parser, op);
 
-    var args: SyntaxListBuilder<Arg>;
-    args.add(createPositionalArg(parser, argExp));
+    var args: Array<Arg>;
+    args.append(createPositionalArg(parser, argExp));
     exp.args = args;
     return exp;
 }
@@ -813,9 +813,9 @@ func createApp(
     exp.loc = op.getLoc();
     exp.base = createNameExp(parser, op);
 
-    var args: SyntaxListBuilder<Arg>;
-    args.add(createPositionalArg(parser, argExp0));
-    args.add(createPositionalArg(parser, argExp1));
+    var args: Array<Arg>;
+    args.append(createPositionalArg(parser, argExp0));
+    args.append(createPositionalArg(parser, argExp1));
     exp.args = args;
     return exp;
 }
@@ -980,7 +980,7 @@ func parseDecl(
     parser: Parser*)
     -> Decl
 {
-    var attrs: SyntaxListBuilder<Attr>;
+    var attrs: Array<Attr>;
 
     for(;;)
     {
@@ -1022,7 +1022,7 @@ func parseDecl(
                 {
                     let result = syntax.callback(parser);
                     let resultAttr = as<Attr>(result);
-                    attrs.add(resultAttr);
+                    attrs.append(resultAttr);
 
                     // Now that we have the attribute, look after it...
                     continue;
@@ -1059,7 +1059,7 @@ func findOrImportModule(
 {
     // we need to find the damn module
 
-    for(var mm = session.loadedModules; mm; mm = cast<ModuleDecl>(mm.next))
+    foreach(mm in session.loadedModules)
     {
         if(mm.name == name)
         {
@@ -1113,8 +1113,7 @@ func findOrImportModule(
     // checking it, so that it can resolve references
     // into itself (in the case of the stdlib module)
 
-    moduleDecl.next = session.loadedModules;
-    session.loadedModules = moduleDecl;
+	session.loadedModules.append(moduleDecl);
 
     // TODO: what if we have errors here?
     checkModule(session, moduleDecl);
@@ -1124,11 +1123,11 @@ func findOrImportModule(
 
 func parseDeclsInBody(
     parser: Parser* )
-    -> SyntaxList<Decl> 
+    -> Array<Decl> 
 {
     let savedScope = parser.scope;
 
-    var decls: SyntaxListBuilder<Decl>;
+    var decls: Array<Decl>;
     while(!isAtEnd(parser))
     {
         switch(peekTokenCode(parser))
@@ -1146,7 +1145,7 @@ func parseDeclsInBody(
         if(decl)
         {
             decl.parent = parser.scope.directLink.container;
-            decls.add(decl);
+            decls.append(decl);
 
         }
 
@@ -1159,7 +1158,7 @@ func parseDeclsInBody(
 
 func  parseDeclBody(
     parser: Parser* )
-    -> SyntaxList<Decl> 
+    -> Array<Decl> 
 {
     expect(parser, kTokenCode_LCurly);
     let decls = parseDeclsInBody(parser);
@@ -1250,9 +1249,9 @@ func  parseStmt(
 
 func parseStmtsInBody(
     parser: Parser* )
-    -> SyntaxListBuilder<Stmt> 
+    -> Array<Stmt> 
 {
-    var stmts: SyntaxListBuilder<Stmt>;
+    var stmts: Array<Stmt>;
     while(!isAtEnd(parser))
     {
         switch(peekTokenCode(parser))
@@ -1269,7 +1268,7 @@ func parseStmtsInBody(
         let stmt = parseStmt(parser);
         if(stmt)
         {
-            stmts.add(stmt);
+            stmts.append(stmt);
         }
 
         tryRecover(parser);
@@ -1358,10 +1357,10 @@ func parseGenericParam(parser: Parser*) -> Decl
     return decl;
 }
 
-func parseGenericParams(parser: Parser*, ioDecls: Ptr<SyntaxListBuilder<Decl> >)
+func parseGenericParams(parser: Parser*, ioDecls: Ptr<Array<Decl> >)
 {
     // TODO: should we keep references?
-    let decls : ConstRef<SyntaxListBuilder<Decl> > = *ioDecls;
+    let decls : ConstRef<Array<Decl> > = *ioDecls;
 
     if(peekGenericClose(parser))
         return;
@@ -1371,7 +1370,7 @@ func parseGenericParams(parser: Parser*, ioDecls: Ptr<SyntaxListBuilder<Decl> >)
         let decl = parseGenericParam(parser);
         if(decl)
         {
-            decls.add(decl);
+            decls.append(decl);
         }
 		else
 		{
@@ -1422,7 +1421,7 @@ func maybeParseGenericParams(parser: Parser*,decl: Decl) -> Decl
 
     let genericDecl = createObject<GenericDecl>();
 
-    var decls: SyntaxListBuilder<Decl>;
+    var decls: Array<Decl>;
     parseGenericParams(parser, &decls);
 
     genericDecl.name = decl.name;
@@ -1481,9 +1480,9 @@ func parseStructDecl(parser: Parser*) -> Syntax
     return parseAggTypeDeclCommon(parser, decl);
 }
 
-func parseEnumTags(parser: Parser*) -> SyntaxList<Decl>
+func parseEnumTags(parser: Parser*) -> Array<Decl>
 {
-    var decls: SyntaxListBuilder<Decl>;
+    var decls: Array<Decl>;
     for (;;)
     {
         switch (peekTokenCode(parser))
@@ -1505,7 +1504,7 @@ func parseEnumTags(parser: Parser*) -> SyntaxList<Decl>
             tag.init = parseExp(parser);
         }
 
-        decls.add(tag);
+        decls.append(tag);
 
         switch (peekTokenCode(parser))
         {
@@ -1542,7 +1541,7 @@ func parseEnumDecl(parser: Parser*) -> Syntax
     let decls = parseEnumTags(parser);
     expect(parser, kTokenCode_RCurly);
 
-    decl.stmts = decls.head;
+    decl.stmts = *cast<Ptr<Array<Stmt> > >(&decls);
 
     return result;
 }
@@ -1696,7 +1695,7 @@ func parseForStmt(parser: Parser*) -> Syntax
     default:
         // HACK: accept *any* statement, even if it doesn't make sense
         stmt.init = parseStmt(parser);
-		stmt.stmts.head = stmt.init;
+		stmt.stmts.append(stmt.init);
         break;
     }
 
@@ -1759,8 +1758,6 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
 
     expect(parser, kTokenCode_LCurly);
 
-    var caseLink = &stmt.cases;
-
     for (;;)
     {
         switch (peekTokenCode(parser))
@@ -1778,8 +1775,6 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
         let caseStart = peekLoc(parser);
         let c = createObject<SwitchCase>();
         c.loc = caseStart;
-
-        var valueLink = &c.values;
 
         // parse cases...
         for (;;)
@@ -1803,11 +1798,10 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
                 break;
             }
 
-            *valueLink = arg;
-            valueLink = &arg.next;
+			c.values.append(arg);
         }
 
-        if (!*valueLink)
+        if (c.values.getCount() == 0)
         {
             // there was nothing to match!!!
             // TODO: diagnose!
@@ -1816,8 +1810,7 @@ func parseSwitchStmt(parser: Parser*) -> Syntax
         // TODO: need to handle stmts until we see another `case` or `default`...
         c.body = parseStmt(parser);
 
-        *caseLink = c;
-        caseLink = &c.next;
+		stmt.cases.append(c);
 
         tryRecover(parser);
     }
@@ -1879,7 +1872,7 @@ func parseParam(parser: Parser*) -> ParamDecl
 
 func parseParams(parser: Parser*, decl: ContainerDecl)
 {
-    var params: SyntaxListBuilder<Decl>;
+    var params: Array<Decl>;
 
     switch(peekTokenCode(parser))
     {
@@ -1898,7 +1891,7 @@ func parseParams(parser: Parser*, decl: ContainerDecl)
         let param = parseParam(parser);
         if(param)
         {
-            params.add(param);
+            params.append(param);
         }
 
         tryRecover(parser);
@@ -2040,7 +2033,7 @@ func parseCastExpr(parser: Parser*) -> Syntax
     expectGenericClose(parser);
 
     let expr = createObject<CastExpr>();
-    expr.toType.exp = args.head.exp;
+    expr.toType.exp = args[0].exp;
     expect(parser, kTokenCode_LParen);
     expr.arg = parseExp(parser);
     expect(parser, kTokenCode_RParen);
@@ -2085,53 +2078,38 @@ func parseFileIntoModule(
     var parser: Parser;
     initializeParser(&parser, session, file);
 
-    // set up decl list to add to
-    var moduleDeclList: SyntaxListBuilder<Decl>;
-    moduleDeclList.head = moduleDecl.getDecls().head;
-
-    // TODO: support ?:
-    //moduleDeclList.link = moduleDeclList.head ? session.moduleDeclLink : &moduleDeclList.head;
-    if(moduleDeclList.head)
-    {
-        moduleDeclList.link = cast<Ptr<Decl> >(session.moduleDeclLink);
-    }
-    else
-    {
-        moduleDeclList.link = &moduleDeclList.head;
-    }
-
     //  parser.stmtList = &moduleDeclList;
 
     // set up super-global scope
 
     let globals = createObject<ContainerDecl>();
-    var globalDecls: SyntaxListBuilder<Decl>;
+    var globalDecls: Array<Decl>;
 
     // add decls here!
-    globalDecls.add(createSyntaxDecl<Decl>(session, "import", &parseImportDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "class", &parseClassDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "struct", &parseStructDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "enum", &parseEnumDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "var", &parseVarDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "let", &parseLetDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "func", &parseFuncDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "subscript", &parseSubscriptDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "init", &parseInitializerDecl));
-    globalDecls.add(createSyntaxDecl<Decl>(session, "typealias", &parseTypeAliasDecl));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "if", &parseIfStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "while", &parseWhileStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "for", &parseForStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "foreach", &parseForEachStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "return", &parseReturnStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "break", &parseBreakStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "continue", &parseContinueStmt));
-    globalDecls.add(createSyntaxDecl<Stmt>(session, "switch", &parseSwitchStmt));
-    globalDecls.add(createSyntaxDecl<Attr>(session, "@__builtin", &parseBuiltinAttr));
-    globalDecls.add(createSyntaxDecl<Attr>(session, "@__declRefClass", &parseDeclRefClassAttr));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "import", &parseImportDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "class", &parseClassDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "struct", &parseStructDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "enum", &parseEnumDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "var", &parseVarDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "let", &parseLetDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "func", &parseFuncDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "subscript", &parseSubscriptDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "init", &parseInitializerDecl));
+    globalDecls.append(createSyntaxDecl<Decl>(session, "typealias", &parseTypeAliasDecl));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "if", &parseIfStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "while", &parseWhileStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "for", &parseForStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "foreach", &parseForEachStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "return", &parseReturnStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "break", &parseBreakStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "continue", &parseContinueStmt));
+    globalDecls.append(createSyntaxDecl<Stmt>(session, "switch", &parseSwitchStmt));
+    globalDecls.append(createSyntaxDecl<Attr>(session, "@__builtin", &parseBuiltinAttr));
+    globalDecls.append(createSyntaxDecl<Attr>(session, "@__declRefClass", &parseDeclRefClassAttr));
 
-    globalDecls.add(createSyntaxDecl<Exp>(session, "this", &parseThisExpr));
-    globalDecls.add(createSyntaxDecl<Exp>(session, "cast", &parseCastExpr));
-    globalDecls.add(createSyntaxDecl<Exp>(session, "null", &parseNullExpr));
+    globalDecls.append(createSyntaxDecl<Exp>(session, "this", &parseThisExpr));
+    globalDecls.append(createSyntaxDecl<Exp>(session, "cast", &parseCastExpr));
+    globalDecls.append(createSyntaxDecl<Exp>(session, "null", &parseNullExpr));
 
     globals.getDecls() = globalDecls;
 
@@ -2153,9 +2131,7 @@ func parseFileIntoModule(
 
     expect(&parser, kTokenCode_EndOfFile);
 
-    moduleDeclList.append(fileDecls);
-
-    moduleDecl.getDecls() = moduleDeclList;
+	moduleDecl.getDecls().append(fileDecls);
 
     finalizeParser(&parser);
 }
@@ -2173,7 +2149,6 @@ func parseFile(
         moduleDecl = createObject<ModuleDecl>();
         moduleDecl.name = getModuleName(session);
         session.moduleDecl = moduleDecl;
-        session.moduleDeclLink = &moduleDecl.getDecls().head;
     }
 
     parseFileIntoModule(session, file, moduleDecl);
