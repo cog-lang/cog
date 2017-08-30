@@ -137,7 +137,8 @@ func checkDeclImpl(
 	}
 	else if(let genericParamDecl = as<GenericParamDecl>(decl))
 	{
-		// TODO: implement
+		checkTypeExp(context, &genericParamDecl.bound);
+		genericParamDecl.checkState = kDeclCheckState_Checked;
 	}
     else if(let importDecl = as<ImportDecl>(decl))
     {
@@ -162,6 +163,8 @@ func checkGenericDecl(
 
 	// check inner decl
 	checkDecl(context, decl.inner);
+
+	decl.checkState = kDeclCheckState_Checked;
 }
 
 func checkTypeAliasDecl(
@@ -179,6 +182,11 @@ func checkVarDecl(
 	checkTypeExp(context, &decl.type);
     var type = decl.type.type;
 
+	if(type)
+	{
+		decl.checkState = kDeclCheckState_CheckedHead;
+	}
+
     var initExpr = decl.init;
     if(initExpr)
     {
@@ -192,6 +200,7 @@ func checkVarDecl(
             // TODO: must coerce to usable...
 
             type = initExpr.type;
+			cogAssert(type);
         }
     }
     else
@@ -202,6 +211,8 @@ func checkVarDecl(
             type = createErrorType(context);
         }
     }
+
+	cogAssert(type);
 
 //    fprintf(stderr, "VAR(%s) TYPE(",
 //    	getText(decl.name).begin);
@@ -1137,7 +1148,7 @@ func getTypeForDeclRefImpl(
 {
     let decl = declRef.getDecl();
 
-    ensureDecl(context, decl);
+    ensureDecl(context, decl, kDeclCheckState_CheckedHead);
 
     if(let varDecl = as<VarDeclBase>(decl))
 	{
