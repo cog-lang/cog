@@ -96,6 +96,8 @@ struct Array
 
 	void fastRemoveAt(size_t index)
 	{
+		ensureUniquelyReferenced();
+
 		size_t count = getCount();
 		assert(index < count);
 
@@ -108,6 +110,8 @@ struct Array
 
 	void removeAt(size_t index)
 	{
+		ensureUniquelyReferenced();
+
 		size_t count = getCount();
 		assert(index < count);
 
@@ -139,6 +143,11 @@ private:
 		ArrayStorage* newStorage = oldStorage->cloneWithCapacity(capacity);
 
 		storage = newStorage;		
+	}
+
+	void ensureUniquelyReferenced()
+	{
+		ensureUniquelyReferencedWithCapacity(storage->getSize());
 	}
 };
 

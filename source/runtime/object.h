@@ -63,11 +63,6 @@ T createObject()
 #define COG_DEFINE_CLASS(C, Base) \
 	C##Impl::StaticClass C##Impl::staticClass = { (char*) #C, sizeof(C##Impl), COG_GET_CLASS(Base) };
 
-}
-
-
-
-
 //
 
 
@@ -172,6 +167,7 @@ private:
 
 
 
+}
 
 
 

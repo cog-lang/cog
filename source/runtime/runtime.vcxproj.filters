@@ -42,4 +42,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="cog.natvis" />
+  </ItemGroup>
 </Project>

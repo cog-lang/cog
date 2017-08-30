@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+<Type Name="cog::RefPtr&lt;*&gt;">
+    <SmartPointer Usage="Minimal">object</SmartPointer>
+    <DisplayString Condition="object == 0">null</DisplayString>
+    <DisplayString Condition="object != 0">{*object}</DisplayString>
+    <Expand>
+      <ExpandedItem>object</ExpandedItem>
+    </Expand>
+</Type>
+
+<Type Name="cog::String">
+    <DisplayString>{((char*) (storage.object+1)),s}</DisplayString>
+	<StringView>((char*) (storage.object+1)),s</StringView>
+</Type>
+
+<Type Name="cog::Array&lt;*&gt;">
+  <DisplayString>{{ count={($T1*)storage.object->end - ($T1*)(storage.object + 1)} }}</DisplayString>
+  <Expand>
+    <Item Name="[count]">($T1*)storage.object->end - ($T1*)(storage.object + 1)</Item>
+    <Item Name="[capacity]">($T1*)storage.object->limit - ($T1*)(storage.object + 1)</Item>
+    <ArrayItems>
+      <Size>($T1*)storage.object->end - ($T1*)(storage.object + 1)</Size>
+      <ValuePointer>($T1*)(storage.object + 1)</ValuePointer>
+    </ArrayItems>
+  </Expand>
+</Type>
+
+</AutoVisualizer>

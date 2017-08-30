@@ -1057,7 +1057,6 @@ func addDependencies(
 	context: DeclSortContext*,
 	decl: Decl);
 
-
 func addDependencies(
 	context: DeclSortContext*,
 	name: Name*)
@@ -1070,14 +1069,20 @@ func addDependencies(
 	//
 	// Then add any dependencies of each declaration
 	// that had a name match, before moving on to add it.
-	var dd = context.unsortedDecls;
 
 	var matchingDecls : Array<Decl>;
 	var stillUnsortedDecls : Array<Decl>;
 
 	foreach(dd in context.unsortedDecls)
 	{
-		if (dd.name == name)
+		// Is this a reference-type declaration?
+		// If so we don't care about adding its members yet.
+		//
+		if(let classDecl = as<ClassDecl>(dd))
+		{
+			stillUnsortedDecls.append(dd);
+		}
+		else if (dd.name == name)
 		{
 			matchingDecls.append(dd);
 		}
@@ -1181,6 +1186,8 @@ func sortDecls(
 
 		addDecl(&sortContext, decl);
 	}
+
+	container.getDecls() = sortContext.sortedDecls;
 }
 
 func emitModuleInner(
