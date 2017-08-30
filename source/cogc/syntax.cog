@@ -20,35 +20,6 @@ func asBool(typeExp: TypeExp) -> Bool
 	return typeExp.exp;
 }
 
-struct SyntaxListIterator<T : Syntax>
-{
-	var current : T;
-
-	init(
-		current: T)
-	{
-		this.current = current;
-	}
-
-	func *() -> T
-	{
-		return current;
-	}
-
-	func ++()
-	{
-		current = cast<T>(current.next);
-	}
-}
-
-func != <T>(
-	left: SyntaxListIterator<T>,
-	right: SyntaxListIterator<T>)
-	-> Bool
-{
-	return left.current != right.current;
-}
-
 struct FilteredArrayIter<T,U>
 {
 	var current : T*;
