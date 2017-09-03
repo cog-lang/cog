@@ -40784,7 +40784,7 @@ else
    "cogc-eval.cog.cpp", 
 
 #line 20 "eval.cog"
-   "COG_EXPORT int _cogc_eval() { return cogc_eval::main(0, null); }\n");
+   "COG_EXPORT int _cogc_eval() { return cogc_eval::main(0, nullptr); }\n");
 
 
 #line 22 "eval.cog"

@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cogc", "source\cogc\cogc.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "runtime", "source\runtime\runtime.vcxproj", "{9E0A7354-29D9-4525-BE90-9C557D8C36AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cog-test", "source\test\cog-test.vcxproj", "{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{9E0A7354-29D9-4525-BE90-9C557D8C36AE}.Release|x64.Build.0 = Release|x64
 		{9E0A7354-29D9-4525-BE90-9C557D8C36AE}.Release|x86.ActiveCfg = Release|Win32
 		{9E0A7354-29D9-4525-BE90-9C557D8C36AE}.Release|x86.Build.0 = Release|Win32
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Debug|x64.ActiveCfg = Debug|x64
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Debug|x64.Build.0 = Debug|x64
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Debug|x86.ActiveCfg = Debug|Win32
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Debug|x86.Build.0 = Debug|Win32
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Release|x64.ActiveCfg = Release|x64
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Release|x64.Build.0 = Release|x64
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Release|x86.ActiveCfg = Release|Win32
+		{2A89FB31-76D1-4A17-8AC2-922828A8D1AC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

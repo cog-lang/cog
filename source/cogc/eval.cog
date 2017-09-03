@@ -17,7 +17,7 @@ func evalModule(
 		session,
 		"cogc_eval",
 		"cogc-eval.cog.cpp",
-		"COG_EXPORT int _cogc_eval() { return cogc_eval::main(0, null); }\n");
+		"COG_EXPORT int _cogc_eval() { return cogc_eval::main(0, nullptr); }\n");
 
 	loadAndEval("cogc-eval.cog.cpp");
 }

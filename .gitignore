@@ -8,3 +8,10 @@ intermediate/
 *.VC.db
 *.so
 *.so.dSYM
+*.dll
+*.exp
+*.lib
+*.obj
+*.vcxproj.user
+*.actual
+*.bk

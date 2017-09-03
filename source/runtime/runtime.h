@@ -79,7 +79,7 @@ namespace cog
 	Class* findClassByName(char const* name);
 }
 
-#define COG_EXPORT extern "C"
+#define COG_EXPORT extern "C" __declspec(dllexport)
 
 #include "array.h"
 #include "object.h"
