@@ -1,5 +1,7 @@
 // eval.cpp
+
 #include "runtime.h"
+#include "process.h"
 
 // Includes needed for platform/OS interface
 
@@ -27,6 +29,8 @@ namespace cog
 {
 
 	//
+
+#if 0
 
 	enum
 	{
@@ -57,6 +61,8 @@ namespace cog
 
 		int spawnAndWait();
 	};
+
+#endif
 
 	//
 
@@ -135,6 +141,7 @@ namespace cog
 		}
 	}
 
+#if 0
 	int ProcessSpawner::spawnAndWait()
 	{
 		args[argCount] = nullptr;
@@ -172,6 +179,8 @@ namespace cog
 
 		return 0;
 	}
+#endif
+
 	void loadAndEval(char const* path)
 	{
 		String visualStudioPath = tryToFindVisualStudioPath();

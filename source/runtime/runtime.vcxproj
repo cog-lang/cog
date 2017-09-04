@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="array.h" />
     <ClInclude Include="object.h" />
+    <ClInclude Include="process.h" />
     <ClInclude Include="runtime.h" />
     <ClInclude Include="string.h" />
   </ItemGroup>
@@ -155,6 +156,7 @@
     <ClCompile Include="array.cpp" />
     <ClCompile Include="eval.cpp" />
     <ClCompile Include="object.cpp" />
+    <ClCompile Include="process.cpp" />
     <ClCompile Include="string.cpp" />
   </ItemGroup>
   <ItemGroup>
