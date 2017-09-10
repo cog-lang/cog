@@ -43,18 +43,13 @@ endif
 
 all: mkdirs $(OUTPUTDIR)/cogc $(OUTPUTDIR)/cog-test
 
-# bootstrapping step 0: a pure C++ compiler
-$(OUTPUTDIR)/cogc-bootstrap0: $(BOOTSTRAP_SOURCES) $(BOOTSTRAP_HEADERS)
-	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) $(BOOTSTRAP_SOURCES)
+# run cogc to generate the source for cogc
+source/cogc/cogc.cog.cpp: source/cogc/*.cog source/cog/cog.cog
+	cd source/cogc/
+	$(COGC) -m cogc *.cog
 
-# bootstrapping step 1: use the C++ compiler to compile the "real" compiler written in Cog
-$(OUTPUTDIR)/cogc-bootstrap: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap0 $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
-	$(OUTPUTDIR)/cogc-bootstrap0 -m cogc_bootstrap $(COGC_SOURCES)
-	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) -DCOGC_BOOTSTRAP source/cogc/main.cpp $(RUNTIME_SOURCES)
-
-# bootstrapping step 2: use the Cog-based compiler to compile itself
-$(OUTPUTDIR)/cogc: $(COGC_SOURCES) $(OUTPUTDIR)/cogc-bootstrap $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
-	$(OUTPUTDIR)/cogc-bootstrap -m cogc $(COGC_SOURCES)
+# use the host compiler to compile cogc
+$(OUTPUTDIR)/cogc: source/cogc/*.cpp
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) source/cogc/main.cpp $(RUNTIME_SOURCES)
 
 # test-runner program
@@ -62,18 +57,11 @@ $(OUTPUTDIR)/cog-test: source/test/*.cpp $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) source/test/*.cpp $(RUNTIME_SOURCES)
 
 
-%.cog.cpp %.cog.h: $(OUTPUTDIR)/cogc
-
-%.cog.cpp %.cog.h: %.cog
-	$(OUTPUTDIR)/cogc $<
-
-
 mkdirs:
 	@if test ! -d $(OUTPUTDIR); then mkdir $(OUTPUTDIR); fi
 	@if test ! -d $(GENDIR); then mkdir $(GENDIR); fi
 
 clean:
-	rm -rf $(OUTPUTDIR)/$(TARGET)
-	rm -rf $(OUTPUTDIR)/test
-	rm -rf $(OUTPUTDIR)/libtheta.a
+	rm -rf $(OUTPUTDIR)/cogc
+	rm -rf $(OUTPUTDIR)/cog-test
 

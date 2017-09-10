@@ -129,6 +129,12 @@ String::String()
 	storage = getEmptyStringStorage();
 }
 
+String::String(char const* text)
+{
+	storage = getEmptyStringStorage();
+	append(text);
+}
+
 String::String(StringSpan text)
 {
 	storage = getEmptyStringStorage();

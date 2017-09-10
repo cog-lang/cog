@@ -111,6 +111,7 @@ public:
 struct String
 {
 	String();
+	String(char const* text);
 	String(StringSpan text);
 
 	void append(StringSpan text);

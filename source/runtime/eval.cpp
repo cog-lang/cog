@@ -263,6 +263,8 @@ namespace cog
 	}
 
 #else
+
+	#if 0
 	int ProcessSpawner::spawnAndWait()
 	{
 		args[argCount] = nullptr;
@@ -293,6 +295,7 @@ namespace cog
 			}
 		}
 	}
+	#endif
 
 	void loadAndEval(char const* path)
 	{

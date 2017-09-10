@@ -1,6 +1,8 @@
 // process.cpp
 #include "process.h"
 
+#include <string.h>
+
 namespace cog
 {
 	// DirectoryEntry
@@ -102,7 +104,11 @@ namespace cog
 			// We need to skip entries that are named
 			// `.` or `..` since these represent
 			// the directory and its parent, respectively
+#ifdef WIN32
 			char const* cursor = entry.findData.cFileName;
+#else
+			char const* cursor = entry.entry->d_name;
+#endif
 			if (*cursor == '.')
 			{
 				cursor++;
@@ -488,7 +494,12 @@ namespace cog
 		return kOSError_None;
 #else
 
-		args[argCount] = nullptr;
+		Array<char const*> argPtrs;
+		for(auto aa : args)
+		{
+			argPtrs.append(aa.asSpan().begin);
+		}
+		argPtrs.append(nullptr);
 
 		int stdoutPipe[2];
 		int stderrPipe[2];
@@ -514,7 +525,9 @@ namespace cog
 			close(stderrPipe[0]);
 			close(stderrPipe[1]);
 
-			execv(args[0], args);
+			execv(
+				argPtrs[0],
+				(char* const*) &argPtrs[0]);
 
 			// Failed to `exec`!
 			fprintf(stderr, "`execv` failed\n");
