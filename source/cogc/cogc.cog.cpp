@@ -1046,31 +1046,34 @@ namespace cogc {
 struct SessionImpl;
 
 
-#line 25 "session.cog"
+#line 27 "session.cog"
  
 
-#line 32 "session.cog"
+#line 34 "session.cog"
  
 
-#line 37 "session.cog"
+#line 39 "session.cog"
  
 
-#line 49 "session.cog"
+#line 51 "session.cog"
  
 
-#line 56 "session.cog"
+#line 58 "session.cog"
  
 
-#line 63 "session.cog"
+#line 65 "session.cog"
  
 
-#line 70 "session.cog"
+#line 72 "session.cog"
  
 
-#line 76 "session.cog"
+#line 79 "session.cog"
  
 
-#line 86 "session.cog"
+#line 85 "session.cog"
+ 
+
+#line 95 "session.cog"
  
 
 #line 3 "source.cog"
@@ -8410,26 +8413,33 @@ static StaticClass staticClass;
   
 
 #line 16 "session.cog"
+                   TerminatedStringSpan outputPath;
+
+
+#line 18 "session.cog"
+  
+
+#line 18 "session.cog"
                            
 
-#line 16 "session.cog"
+#line 18 "session.cog"
                       Array<
 
-#line 16 "session.cog"
+#line 18 "session.cog"
                             ModuleDecl>  loadedModules;
 
 
-#line 19 "session.cog"
+#line 21 "session.cog"
   
 
-#line 19 "session.cog"
+#line 21 "session.cog"
              Bool eval;
 
 
-#line 22 "session.cog"
+#line 24 "session.cog"
   
 
-#line 22 "session.cog"
+#line 24 "session.cog"
                               Bool disableSemanticChecks;
 };
 } namespace cog {
@@ -8437,96 +8447,106 @@ template<> struct ObjectClassImpl<cogc::Session > { typedef cogc::SessionImpl Im
 } namespace cogc {
 
 
-#line 25 "session.cog"
+#line 27 "session.cog"
  
 
-#line 25 "session.cog"
+#line 27 "session.cog"
                          Session createSession();
 
 
-#line 32 "session.cog"
+#line 34 "session.cog"
  void destroySession(
 
-#line 32 "session.cog"
+#line 34 "session.cog"
                               Session session);
 
 
-#line 37 "session.cog"
+#line 39 "session.cog"
  void setModulePath(
 
-#line 38 "session.cog"
+#line 40 "session.cog"
            Session session, 
 
-#line 39 "session.cog"
+#line 41 "session.cog"
          StringSpan path);
 
 
-#line 49 "session.cog"
+#line 51 "session.cog"
  void setModulePath(
 
-#line 50 "session.cog"
+#line 52 "session.cog"
            Session session, 
 
-#line 51 "session.cog"
+#line 53 "session.cog"
         TerminatedStringSpan path);
 
 
-#line 56 "session.cog"
+#line 58 "session.cog"
  
 
-#line 58 "session.cog"
+#line 60 "session.cog"
         
 
-#line 58 "session.cog"
+#line 60 "session.cog"
      Ptr<
 
-#line 58 "session.cog"
+#line 60 "session.cog"
          Name>  getModulePath(
 
-#line 57 "session.cog"
+#line 59 "session.cog"
            Session session);
 
 
-#line 63 "session.cog"
- 
-
 #line 65 "session.cog"
-        
+ void setOutputPath(
 
-#line 65 "session.cog"
-     Ptr<
-
-#line 65 "session.cog"
-         Name>  getModuleName(
-
-#line 64 "session.cog"
-           Session session);
-
-
-#line 70 "session.cog"
- void setEvaluate(
-
-#line 71 "session.cog"
-           Session session);
-
-
-#line 76 "session.cog"
- void loadSourceFile(
-
-#line 77 "session.cog"
+#line 66 "session.cog"
            Session session, 
 
-#line 78 "session.cog"
+#line 67 "session.cog"
+         TerminatedStringSpan path);
+
+
+#line 72 "session.cog"
+ 
+
+#line 74 "session.cog"
+        
+
+#line 74 "session.cog"
+     Ptr<
+
+#line 74 "session.cog"
+         Name>  getModuleName(
+
+#line 73 "session.cog"
+           Session session);
+
+
+#line 79 "session.cog"
+ void setEvaluate(
+
+#line 80 "session.cog"
+           Session session);
+
+
+#line 85 "session.cog"
+ void loadSourceFile(
+
+#line 86 "session.cog"
+           Session session, 
+
+#line 87 "session.cog"
         TerminatedStringSpan path);
 
 
-#line 86 "session.cog"
+#line 95 "session.cog"
  
 
-#line 88 "session.cog"
+#line 97 "session.cog"
      Int getErrorCount(
 
-#line 87 "session.cog"
+#line 96 "session.cog"
            Session session);
 
 
@@ -41306,47 +41326,90 @@ else
                                     Char>  buffer;
 
 
-#line 1386 "emit.cog"
-         
+#line 1387 "emit.cog"
+  if(
 
-#line 1386 "emit.cog"
-         
+#line 1387 "emit.cog"
+                       DEREF(
 
-#line 1386 "emit.cog"
-  sprintf(
+#line 1387 "emit.cog"
+            DEREF(
 
-#line 1386 "emit.cog"
-          buffer, 
+#line 1387 "emit.cog"
+     session).outputPath).begin)
+{
 
-#line 1386 "emit.cog"
-                  "%s.cog.cpp", 
-
-#line 1386 "emit.cog"
-                                              DEREF(
-
-#line 1386 "emit.cog"
-                                modulePathText).begin);
-
-
-#line 1388 "emit.cog"
-                 
-
-#line 1388 "emit.cog"
-                 
-
-#line 1388 "emit.cog"
-  emitModuleInner(
 
 #line 1389 "emit.cog"
+          
+
+#line 1389 "emit.cog"
+          
+
+#line 1389 "emit.cog"
+   sprintf(
+
+#line 1389 "emit.cog"
+           buffer, 
+
+#line 1389 "emit.cog"
+                   "%s", 
+
+#line 1389 "emit.cog"
+                                           DEREF(
+
+#line 1389 "emit.cog"
+                                DEREF(
+
+#line 1389 "emit.cog"
+                         session).outputPath).begin);
+}
+else
+{
+
+
+#line 1393 "emit.cog"
+          
+
+#line 1393 "emit.cog"
+          
+
+#line 1393 "emit.cog"
+   sprintf(
+
+#line 1393 "emit.cog"
+           buffer, 
+
+#line 1393 "emit.cog"
+                   "%s.cog.cpp", 
+
+#line 1393 "emit.cog"
+                                               DEREF(
+
+#line 1393 "emit.cog"
+                                 modulePathText).begin);
+}
+
+
+#line 1396 "emit.cog"
+                 
+
+#line 1396 "emit.cog"
+                 
+
+#line 1396 "emit.cog"
+  emitModuleInner(
+
+#line 1397 "emit.cog"
    session, 
 
-#line 1390 "emit.cog"
+#line 1398 "emit.cog"
    moduleNameText, 
 
-#line 1391 "emit.cog"
+#line 1399 "emit.cog"
    buffer, 
 
-#line 1392 "emit.cog"
+#line 1400 "emit.cog"
    nullptr);
 }
 
@@ -63987,364 +64050,386 @@ for(;
 #line 5 "session.cog"
  
 
-#line 25 "session.cog"
+#line 27 "session.cog"
  
 
-#line 25 "session.cog"
+#line 27 "session.cog"
                          Session createSession()
 {
 
 
-#line 27 "session.cog"
+#line 29 "session.cog"
   
 
-#line 27 "session.cog"
+#line 29 "session.cog"
   auto session = 
 
-#line 27 "session.cog"
+#line 29 "session.cog"
                                      
 
-#line 27 "session.cog"
+#line 29 "session.cog"
                             
 
-#line 27 "session.cog"
+#line 29 "session.cog"
                 createObject<
 
-#line 27 "session.cog"
+#line 29 "session.cog"
                              Session> ();
 
 
-#line 28 "session.cog"
+#line 30 "session.cog"
               DEREF(
 
-#line 28 "session.cog"
+#line 30 "session.cog"
          DEREF(
 
-#line 28 "session.cog"
+#line 30 "session.cog"
   session).sink).session = 
 
-#line 28 "session.cog"
+#line 30 "session.cog"
                          session;
 
 
-#line 29 "session.cog"
+#line 31 "session.cog"
   return 
 
-#line 29 "session.cog"
+#line 31 "session.cog"
          session;
 }
 
 
-#line 32 "session.cog"
+#line 34 "session.cog"
  void destroySession(
 
-#line 32 "session.cog"
+#line 34 "session.cog"
                               Session session)
 {
 
 
-#line 34 "session.cog"
+#line 36 "session.cog"
       
 
-#line 34 "session.cog"
+#line 36 "session.cog"
       
 
-#line 34 "session.cog"
+#line 36 "session.cog"
   free(
 
-#line 34 "session.cog"
+#line 36 "session.cog"
        session);
 }
 
 
-#line 37 "session.cog"
+#line 39 "session.cog"
  void setModulePath(
 
-#line 38 "session.cog"
+#line 40 "session.cog"
            Session session, 
 
-#line 39 "session.cog"
+#line 41 "session.cog"
          StringSpan path)
 {
 
 
-#line 41 "session.cog"
+#line 43 "session.cog"
          DEREF(
 
-#line 41 "session.cog"
+#line 43 "session.cog"
   session).modulePath2 = 
 
-#line 41 "session.cog"
+#line 43 "session.cog"
                                
 
-#line 41 "session.cog"
+#line 43 "session.cog"
                         getName(
 
-#line 41 "session.cog"
+#line 43 "session.cog"
                                 session, 
 
-#line 41 "session.cog"
+#line 43 "session.cog"
                                          path);
 
 
-#line 43 "session.cog"
+#line 45 "session.cog"
   
 
-#line 43 "session.cog"
+#line 45 "session.cog"
   auto name = 
 
-#line 43 "session.cog"
+#line 45 "session.cog"
              path;
 
 
-#line 44 "session.cog"
+#line 46 "session.cog"
   name = 
 
-#line 44 "session.cog"
+#line 46 "session.cog"
                              
 
-#line 44 "session.cog"
+#line 46 "session.cog"
              DEREF(
 
-#line 44 "session.cog"
+#line 46 "session.cog"
          name).suffixAfterLast(
 
-#line 44 "session.cog"
+#line 46 "session.cog"
                               '/');
 
 
-#line 45 "session.cog"
+#line 47 "session.cog"
   name = 
 
-#line 45 "session.cog"
+#line 47 "session.cog"
                              
 
-#line 45 "session.cog"
+#line 47 "session.cog"
              DEREF(
 
-#line 45 "session.cog"
+#line 47 "session.cog"
          name).suffixAfterLast(
 
-#line 45 "session.cog"
+#line 47 "session.cog"
                               '\\');
 
 
-#line 46 "session.cog"
+#line 48 "session.cog"
          DEREF(
 
-#line 46 "session.cog"
+#line 48 "session.cog"
   session).moduleName2 = 
 
-#line 46 "session.cog"
+#line 48 "session.cog"
                                
 
-#line 46 "session.cog"
+#line 48 "session.cog"
                         getName(
 
-#line 46 "session.cog"
+#line 48 "session.cog"
                                 session, 
 
-#line 46 "session.cog"
+#line 48 "session.cog"
                                          name);
 }
 
 
-#line 49 "session.cog"
+#line 51 "session.cog"
  void setModulePath(
 
-#line 50 "session.cog"
+#line 52 "session.cog"
            Session session, 
 
-#line 51 "session.cog"
+#line 53 "session.cog"
         TerminatedStringSpan path)
 {
 
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                
 
-#line 53 "session.cog"
+#line 55 "session.cog"
   setModulePath(
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                 session, 
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                                    
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                          StringSpan(
 
-#line 53 "session.cog"
+#line 55 "session.cog"
                                     path));
 }
 
 
-#line 56 "session.cog"
+#line 58 "session.cog"
  
 
-#line 58 "session.cog"
+#line 60 "session.cog"
         
 
-#line 58 "session.cog"
+#line 60 "session.cog"
      Ptr<
 
-#line 58 "session.cog"
+#line 60 "session.cog"
          Name>  getModulePath(
 
-#line 57 "session.cog"
+#line 59 "session.cog"
            Session session)
 {
 
 
-#line 60 "session.cog"
+#line 62 "session.cog"
   return 
 
-#line 60 "session.cog"
+#line 62 "session.cog"
                 DEREF(
 
-#line 60 "session.cog"
+#line 62 "session.cog"
          session).modulePath2;
 }
 
 
-#line 63 "session.cog"
+#line 65 "session.cog"
+ void setOutputPath(
+
+#line 66 "session.cog"
+           Session session, 
+
+#line 67 "session.cog"
+         TerminatedStringSpan path)
+{
+
+
+#line 69 "session.cog"
+         DEREF(
+
+#line 69 "session.cog"
+  session).outputPath = 
+
+#line 69 "session.cog"
+                       path;
+}
+
+
+#line 72 "session.cog"
  
 
-#line 65 "session.cog"
+#line 74 "session.cog"
         
 
-#line 65 "session.cog"
+#line 74 "session.cog"
      Ptr<
 
-#line 65 "session.cog"
+#line 74 "session.cog"
          Name>  getModuleName(
 
-#line 64 "session.cog"
+#line 73 "session.cog"
            Session session)
 {
 
 
-#line 67 "session.cog"
+#line 76 "session.cog"
   return 
 
-#line 67 "session.cog"
+#line 76 "session.cog"
                 DEREF(
 
-#line 67 "session.cog"
+#line 76 "session.cog"
          session).moduleName2;
 }
 
 
-#line 70 "session.cog"
+#line 79 "session.cog"
  void setEvaluate(
 
-#line 71 "session.cog"
+#line 80 "session.cog"
            Session session)
 {
 
 
-#line 73 "session.cog"
+#line 82 "session.cog"
          DEREF(
 
-#line 73 "session.cog"
+#line 82 "session.cog"
   session).eval = 
 
-#line 73 "session.cog"
+#line 82 "session.cog"
                  true;
 }
 
 
-#line 76 "session.cog"
+#line 85 "session.cog"
  void loadSourceFile(
 
-#line 77 "session.cog"
+#line 86 "session.cog"
            Session session, 
 
-#line 78 "session.cog"
+#line 87 "session.cog"
         TerminatedStringSpan path)
 {
 
 
-#line 80 "session.cog"
+#line 89 "session.cog"
   
 
-#line 80 "session.cog"
+#line 89 "session.cog"
   auto file = 
 
-#line 80 "session.cog"
+#line 89 "session.cog"
                           
 
-#line 80 "session.cog"
+#line 89 "session.cog"
              getSourceFile(
 
-#line 80 "session.cog"
+#line 89 "session.cog"
                            session, 
 
-#line 80 "session.cog"
+#line 89 "session.cog"
                                     path);
 
 
-#line 81 "session.cog"
+#line 90 "session.cog"
   if(
 
-#line 81 "session.cog"
+#line 90 "session.cog"
      
 
-#line 81 "session.cog"
+#line 90 "session.cog"
      !
 
-#line 81 "session.cog"
+#line 90 "session.cog"
       file)
 {
 
 
-#line 81 "session.cog"
+#line 90 "session.cog"
             return;
 }
 
 
-#line 83 "session.cog"
+#line 92 "session.cog"
            
 
-#line 83 "session.cog"
+#line 92 "session.cog"
            
 
-#line 83 "session.cog"
+#line 92 "session.cog"
   parseFile(
 
-#line 83 "session.cog"
+#line 92 "session.cog"
             session, 
 
-#line 83 "session.cog"
+#line 92 "session.cog"
                      file);
 }
 
 
-#line 86 "session.cog"
+#line 95 "session.cog"
  
 
-#line 88 "session.cog"
+#line 97 "session.cog"
      Int getErrorCount(
 
-#line 87 "session.cog"
+#line 96 "session.cog"
            Session session)
 {
 
 
-#line 90 "session.cog"
+#line 99 "session.cog"
      return 
 
-#line 90 "session.cog"
+#line 99 "session.cog"
                         DEREF(
 
-#line 90 "session.cog"
+#line 99 "session.cog"
                    DEREF(
 
-#line 90 "session.cog"
+#line 99 "session.cog"
             session).sink).errorCount;
 }
 
