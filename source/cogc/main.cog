@@ -64,6 +64,11 @@ func parseCommandLine(
 				// We are going to evaluate rather than compile the input
 				setEvaluate(session);
 			}
+			else if (strcmp(arg, "-no-checking") == 0)
+			{
+				// Don't perform semantic checks
+				session.disableSemanticChecks = true;
+			}
 			else
 			{
 				fprintf(stderr, "command line: unknown option '%s'\n", arg);
@@ -116,10 +121,14 @@ func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
     if(getErrorCount(session) > 0)
         return 1;
 
-    checkModule(session);
+	if(!session.disableSemanticChecks)
+	{
+		checkModule(session);
 
-    if(getErrorCount(session) > 0)
-        return 1;
+		if(getErrorCount(session) > 0)
+			return 1;
+	}
+
 
 	if(session.eval)
 	{

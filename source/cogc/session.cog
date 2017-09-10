@@ -17,6 +17,9 @@ class Session
 
 	// Should we evaluate rather than compile?
 	var eval : Bool;
+
+	// Should we disable semantic checking?
+	var disableSemanticChecks : Bool;
 }
 
 func createSession() -> Session
