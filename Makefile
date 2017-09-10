@@ -1,5 +1,6 @@
 CC		 := clang++
 LD		 := clang++
+COGC := dependencies/cog/bin/cogc
 
 CFLAGS 		 := -g
 LDFLAGS		 :=
@@ -45,8 +46,7 @@ all: mkdirs $(OUTPUTDIR)/cogc $(OUTPUTDIR)/cog-test
 
 # run cogc to generate the source for cogc
 source/cogc/cogc.cog.cpp: source/cogc/*.cog source/cog/cog.cog
-	cd source/cogc/
-	$(COGC) -m cogc *.cog
+	$(COGC) -o $@ -no-checking -m cogc source/cogc/*.cog
 
 # use the host compiler to compile cogc
 $(OUTPUTDIR)/cogc: source/cogc/*.cpp

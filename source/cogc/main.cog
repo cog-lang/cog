@@ -56,7 +56,7 @@ func parseCommandLine(
 				else
 				{
 					let valArg = *argCursor++;
-					// setOutputPath(session, valArg);
+					setOutputPath(session, valArg);
 				}
 			}
 			else if (strcmp(arg, "-eval") == 0)

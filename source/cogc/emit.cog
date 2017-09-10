@@ -1386,10 +1386,12 @@ func emitModule(
 
 	if(session.outputPath.begin)
 	{
+		fprintf(stderr, "OUTPUT PATH: '%s'\n", session.outputPath.begin);
 		sprintf(buffer, "%s", session.outputPath.begin);
 	}
 	else
 	{
+		fprintf(stderr, "MODULE NAME: '%s'\n", modulePathText.begin);
 		sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
 	}
 

@@ -44,17 +44,26 @@ func getSourceFile(
 	path: TerminatedStringSpan)
 	-> Ptr<SourceFile>
 {
+	let file = tryGetSourceFile(session, path);
+	if(!file)
+	{
+		diagnose(&session.sink, SourceLoc(0), kDiagnostic_unimplemented, path);
+	}
+	return file;
+}
+
+func tryGetSourceFile(
+	session: Session,
+	path: TerminatedStringSpan)
+	-> Ptr<SourceFile>
+{
 	// TODO: dedupe files as needed
 
 	// Check that we can open the file for reading
 	let file = fopen(path.begin, "rb");
 	if(!file)
 	{
-		// TODO: error message!
-
-		diagnose(&session.sink, SourceLoc(0), kDiagnostic_unimplemented, path);
-
-		return 0;
+		return null;
 	}
 
 	// Check the size of the file
