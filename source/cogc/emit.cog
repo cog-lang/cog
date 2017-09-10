@@ -1383,7 +1383,15 @@ func emitModule(
 
 //	char buffer[1024];
 	var buffer : FixedSizeArray<1024, Char>;
-	sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
+
+	if(session.outputPath.begin)
+	{
+		sprintf(buffer, "%s", session.outputPath.begin);
+	}
+	else
+	{
+		sprintf(buffer, "%s.cog.cpp", modulePathText.begin);
+	}
 
 	emitModuleInner(
 		session,
