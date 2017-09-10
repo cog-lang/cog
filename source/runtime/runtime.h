@@ -85,4 +85,12 @@ namespace cog
 #include "object.h"
 #include "string.h"
 
+namespace cog
+{
+	void print(char const* val);
+	void print(String val);
+	void print(Int val);
+	void print(UInt val);
+}
+
 using namespace cog;

@@ -1,5 +1,7 @@
 // hello.cog
 
+import cog;
+
 // A basic "hello world" program
 
 func main(

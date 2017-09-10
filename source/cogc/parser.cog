@@ -1844,9 +1844,12 @@ func parseContinueStmt(parser: Parser*) -> Syntax
 func parseBuiltinAttr(parser: Parser*) -> Syntax
 {
     let attr = createObject<BuiltinAttr>();
-    expect(parser, kTokenCode_LParen);
-    attr.name = expectIdentifier(parser);
-    expect(parser, kTokenCode_RParen);
+
+	if(advanceIf(parser, kTokenCode_LParen))
+	{
+		attr.name = expectIdentifier(parser);
+		expect(parser, kTokenCode_RParen);
+	}
     return attr;
 }
 

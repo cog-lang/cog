@@ -55,10 +55,29 @@ func emitType(
 	emitExp(context, type);
 }
 
+func emitType(
+	context: EmitContext*,
+	type: Type)
+{
+	if(let declRefType = as<DeclRefType>(type))
+	{
+		emitDeclRef(context, declRefType.declRef);
+	}
+	else
+	{
+		cogAssert(!"unimplemented");
+	}
+}
+
 func emitVal(
     context: EmitContext*,
     val: Val)
 {
+	if(let type = as<Type>(val))
+	{
+		emitType(context, type);
+	}
+	else
     {
         cogAssert(!"unimplemented");
         emit(context, "UnknownVal");        
@@ -257,6 +276,54 @@ func emitStringVal(
 	emitStringVal(context, StringSpan(strSpan.begin, strSpan.end));
 }
 
+func emitGenericArgs(
+	context: EmitContext*,
+	spec: Specializations)
+{
+	emit(context, "<");
+	var first = true;
+	foreach(arg in spec.args)
+	{
+		if(!first) emit(context, ",");
+		emitVal(context, arg.value);
+		first = false;
+	}
+	emit(context, " >");
+}
+
+func emitDeclRef(
+	context: EmitContext*,
+	declRef: DeclRefVal)
+{
+	if(let spec = declRef.specializations)
+	{
+		if(spec.genericDeclRef.getDecl().inner == declRef.decl)
+		{
+			// Okay, we are specializing *this* declaration
+			emit(context, declRef.decl.name);
+			emitGenericArgs(context, spec);
+			return;
+		}
+		else
+		{
+			// The specialization args must apply to an outer
+			// declaration.
+			var parentDeclRef : DeclRefVal;
+			parentDeclRef.decl = declRef.decl.parent;
+			parentDeclRef.specializations = spec;
+
+			emitDeclRef(context, parentDeclRef);
+			emit(context, "::");
+			emit(context, declRef.decl.name);
+			return;
+		}
+	}
+
+	// TODO: may need to handle qualified names here
+	emit(context, declRef.decl.name);
+
+}
+
 func emitExp(
     context: EmitContext*,
 	exp: Exp)
@@ -379,6 +446,10 @@ func emitExp(
 		emitExp(context, castExpr.arg);
         emit(context, ")");
     }
+	else if(let declRefExpr = as<DeclRefExp>(exp))
+	{
+		emitDeclRef(context, declRefExpr.declRef);
+	}
     else
     {
         diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
@@ -919,6 +990,13 @@ func emitDecl(
         // Don't emit declarations for builtin stuff!
         return;
     }
+
+	// Also need to check for builtin generics
+	if(let genericDecl = as<GenericDecl>(decl))
+	{
+		if(let builtinAttr = genericDecl.inner.findAttr<BuiltinAttr>())
+			return;
+	}
 
 	emitLineDirective(context, decl);
 

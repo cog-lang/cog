@@ -1,5 +1,7 @@
 // factiorial.cog
 
+import cog;
+
 // A simple recursive factorial function
 
 func factorial(n : Int) -> Int
@@ -10,7 +12,10 @@ func factorial(n : Int) -> Int
 
 func testFactorial(n : Int)
 {
-	printf("%ld! = %ld\n", n, factorial(n));
+	print(n);
+	print("! = ");
+	print(factorial(n));
+	print("\n");
 }
 
 func main(

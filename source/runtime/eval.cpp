@@ -236,6 +236,10 @@ namespace cog
 		compilerSpawner.addArg(outArg.asSpan().begin);
 
 		int err = compilerSpawner.spawnAndWait();
+
+		fprintf(stderr, "%s",
+			compilerSpawner.stdoutText.asSpan().begin);
+
 		if (err)
 			return;
 
@@ -316,5 +320,29 @@ namespace cog
 	}
 
 #endif
+
+// Putting thesehere for lack of a better place
+
+void print(char const* val)
+{
+	fprintf(stdout, "%s", val);
+}
+
+void print(String val)
+{
+	fprintf(stdout, "%s", val.asSpan().begin);
+}
+
+void print(Int val)
+{
+	fprintf(stdout, "%lld", val);
+}
+
+void print(UInt val)
+{
+	fprintf(stdout, "%llu", val);
+}
+
+
 
 } // cog
