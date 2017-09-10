@@ -158,7 +158,7 @@
     <CustomBuild Include="main.cog">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
-     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) -no-checking *.cog
 )
 </Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cogc -m $(ProjectName) *.cog</Message>
@@ -172,7 +172,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName).cog.cpp</Outputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe;*.cog;%(AdditionalInputs)</AdditionalInputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">if exist "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" (
-     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) *.cog
+     "$(SolutionDir)dependencies\cog\bin\windows-x86\Debug\cogc.exe" -m $(ProjectName) -no-checking *.cog
 )
 </Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cogc -m $(ProjectName) *.cog</Message>
