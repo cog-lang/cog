@@ -207,6 +207,9 @@ namespace cog
 
 		ProcessSpawner compilerSpawner("cl", executablePath.asSpan().begin);
 
+		compilerSpawner.addArg("/GS");
+		compilerSpawner.addArg("/MDd");
+
 		compilerSpawner.addArg("/I");
 		compilerSpawner.addArg(".");
 
@@ -228,7 +231,14 @@ namespace cog
 		compilerSpawner.addArg("/LIBPATH:\"C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.14393.0\\ucrt\\x86\"");
 		compilerSpawner.addArg("/LIBPATH:\"C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.14393.0\\um\\x86\"");
 
+		compilerSpawner.addArg("/LIBPATH:.\\bin\\windows-x86\\Debug\\");
+		compilerSpawner.addArg("runtime.lib");
+
+		compilerSpawner.addArg("advapi32.lib");
+
 		compilerSpawner.addArg("/DLL");
+		compilerSpawner.addArg("/debug");
+
 
 		String outArg;
 		outArg.append("/OUT:");
@@ -237,8 +247,8 @@ namespace cog
 
 		int err = compilerSpawner.spawnAndWait();
 
-		fprintf(stderr, "%s",
-			compilerSpawner.stdoutText.asSpan().begin);
+//		fprintf(stderr, "%s",
+//			compilerSpawner.stdoutText.asSpan().begin);
 
 		if (err)
 			return;
@@ -335,12 +345,12 @@ void print(String val)
 
 void print(Int val)
 {
-	fprintf(stdout, "%lld", val);
+	fprintf(stdout, "%lld", (long long) val);
 }
 
 void print(UInt val)
 {
-	fprintf(stdout, "%llu", val);
+	fprintf(stdout, "%llu", (unsigned long long) val);
 }
 
 
