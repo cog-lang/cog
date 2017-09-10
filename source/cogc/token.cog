@@ -17,7 +17,6 @@ enum TokenCode : int16_t
 #define TOKEN(name, desc) kTokenCode_##name,
 #include "thtokendefs.h"
 */
-
 	kTokenCode_Invalid,
 	kTokenCode_EndOfFile,
 	kTokenCode_Identifier,
@@ -32,13 +31,10 @@ enum TokenCode : int16_t
 	kTokenCode_FloatingPointLiteral,
 	kTokenCode_StringLiteral,
 	kTokenCode_CharacterLiteral,
-
-
 kTokenCode_LSquare,
 kTokenCode_RSquare,
 kTokenCode_Assign,
 kTokenCode_Arrow,
-
 kTokenCode_LParen,
 kTokenCode_RParen,
 

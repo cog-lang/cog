@@ -2,77 +2,158 @@
 
 // This file provides the Cog "standard library"
 
+@__builtin
 @__declRefClass(VoidType)
 struct Void {}
 
+@__builtin
 @__declRefClass(NullType)
 struct Null {}
 
+@__builtin
 struct Bool {}
+
+@__builtin
 let true : Bool;
+
+@__builtin
 let false : Bool;
 
+@__builtin
 struct Char {}
 
+@__builtin
 struct Int
 {
 	init(val: UInt);
 }
 
+@__builtin
 struct UInt
 {
 	init(val: Int);
 }
 
+@__builtin
 @__declRefClass(PtrType)
 struct Ptr<T> {}
 
+@__builtin
 @__declRefClass(PtrType)
 struct ConstPtr<T> {}
 
+@__builtin
 struct Ref<T> {}
+
+@__builtin
 struct ConstRef<T> {}
 
+@__builtin
 func !(val: Bool) -> Bool;
 
 // TODO: this obviously isn't correct
+@__builtin
 func & <T>(val: T) -> Ptr<T>;
 
+@__builtin
 func ++(val: Int) -> Int;
+
+@__builtin
 func ++(val: UInt) -> UInt;
 
+@__builtin
+func +(left: Int, right: Int) -> Int;
+
+@__builtin
 func -(left: Int, right: Int) -> Int;
 
+@__builtin
+func *(left: Int, right: Int) -> Int;
+
+@__builtin
+func /(left: Int, right: Int) -> Int;
+
+@__builtin
 func - <T>(left: Ptr<T>, right: Ptr<T>) -> Int;
 
+@__builtin
 func + <T>(left: Ptr<T>, right: Int) -> Ptr<T>;
+
+@__builtin
 func + <T>(left: Ptr<T>, right: UInt) -> Ptr<T>;
 
+@__builtin
 func - <T>(left: Ptr<T>, right: Int) -> Ptr<T>;
+
+@__builtin
 func - <T>(left: Ptr<T>, right: UInt) -> Ptr<T>;
 
+@__builtin
 func <(left: Int, right: Int) -> Bool;
+
+@__builtin
 func <(left: UInt, right: UInt) -> Bool;
 
+@__builtin
+func <=(left: Int, right: Int) -> Bool;
+
+@__builtin
+func <=(left: UInt, right: UInt) -> Bool;
+
+@__builtin
 func >(left: Int, right: Int) -> Bool;
+
+@__builtin
 func >(left: UInt, right: UInt) -> Bool;
 
+@__builtin
+func >=(left: Int, right: Int) -> Bool;
+
+@__builtin
+func >=(left: UInt, right: UInt) -> Bool;
+
+@__builtin
 func ==(left: Int, right: Int) -> Bool;
+
+@__builtin
 func ==(left: UInt, right: UInt) -> Bool;
 
+@__builtin
 func !=(left: Int, right: Int) -> Bool;
+
+@__builtin
 func !=(left: UInt, right: UInt) -> Bool;
 
+@__builtin
 struct Class {}
 
+@__builtin
 class Object {}
 
+@__builtin
 func as<T>(val: Object) -> T;
+
+@__builtin
 func as(obj: Object, clazz: Ptr<Class>) -> Object;
 
+@__builtin
 func getClass<T>() -> Ptr<Class>;
 
+@__builtin
 func createObject<T>() -> T;
 
-
+@__builtin
 func strlen(s: ConstPtr<Char>) -> UInt;
+
+@__builtin
+struct String {}
+
+@__builtin
+func print(val: String);
+
+@__builtin
+func print(val: Int);
+
+@__builtin
+func print(val: UInt);
+
