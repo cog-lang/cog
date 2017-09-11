@@ -98,7 +98,11 @@ namespace cog
 #else
 			entry.entry = readdir(entry.directory->directory);
 			if (!entry.entry)
+			{
+				entry.directory = nullptr;
+				counter = 0;
 				return;
+			}
 #endif
 
 			// We need to skip entries that are named
@@ -261,6 +265,7 @@ namespace cog
 		argCount++;
 #else
 		args.append(arg);
+		argCount++;
 #endif
 	}
 
@@ -494,6 +499,14 @@ namespace cog
 		return kOSError_None;
 #else
 
+		#if 0
+		for(auto aa : args)
+		{
+			fprintf(stderr, "'%s' ", aa.asSpan().begin);
+		}
+		fprintf(stderr, "\n");
+		#endif
+
 		Array<char const*> argPtrs;
 		for(auto aa : args)
 		{
@@ -525,7 +538,7 @@ namespace cog
 			close(stderrPipe[0]);
 			close(stderrPipe[1]);
 
-			execv(
+			execvp(
 				argPtrs[0],
 				(char* const*) &argPtrs[0]);
 

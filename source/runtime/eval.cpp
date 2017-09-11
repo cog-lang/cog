@@ -319,7 +319,13 @@ namespace cog
 
 		compilerSpawner.addArg(path);
 
+		compilerSpawner.addArg("bin/cog.so");
+
 		compilerSpawner.spawnAndWait();
+
+//		fprintf(stderr, "RESULT:%d\n", compilerSpawner.resultCode);
+//		fprintf(stderr, "STDOUT:{{{%s}}}\n", compilerSpawner.stdoutText.asSpan().begin);
+//		fprintf(stderr, "STDERR:{{{%s}}}\n", compilerSpawner.stderrText.asSpan().begin);
 
 		void* dynamicLibraryHandle = dlopen(dynamicLibraryPath, 0);
 

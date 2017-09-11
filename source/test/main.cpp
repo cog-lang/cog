@@ -50,6 +50,8 @@ static int passedCount = 0;
 static void doTest(
 	char const* path)
 {
+//	fprintf(stderr, "TEST: '%s'\n", path);
+
 	testCount++;
 
 	// need to `exec` the compiler/evaluator on
@@ -85,11 +87,21 @@ static void doTest(
 		return;
 	}
 
-	fprintf(stderr, "FAILED: %s\n", path);
+//	fprintf(stderr, "STDOUT: {{{%s}}}\n",
+//		spawner.stdoutText.asSpan().begin);
+
+//	fprintf(stderr, "STDERR: {{{%s}}}\n",
+//		spawner.stderrText.asSpan().begin);
+
+
+//	fprintf(stderr, "FAILED: %s\n", path);
 
 	String actualOutputPath;
 	actualOutputPath.append(path);
 	actualOutputPath.append(".actual");
+
+//	fprintf(stderr, "OUTPUT PATH: '%s'\n",
+//		actualOutputPath.asSpan().begin);
 
 	FILE* file = fopen(actualOutputPath.asSpan().begin, "w");
 	fprintf(file, "%s", actualOutput.asSpan().begin);

@@ -42,15 +42,19 @@ LDFLAGS += -framework CoreFoundation
 LDFLAGS += -framework CoreServices
 endif
 
-all: mkdirs $(OUTPUTDIR)/cogc $(OUTPUTDIR)/cog-test
+all: mkdirs $(OUTPUTDIR)/cogc $(OUTPUTDIR)/cog-test $(OUTPUTDIR)/cog.so
 
 # run cogc to generate the source for cogc
 source/cogc/cogc.cog.cpp: source/cogc/*.cog source/cog/cog.cog
 	$(COGC) -o $@ -no-checking -m cogc source/cogc/*.cog
 
 # use the host compiler to compile cogc
-$(OUTPUTDIR)/cogc: source/cogc/*.cpp
+$(OUTPUTDIR)/cogc: source/cogc/*.cpp $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
 	$(CC) $(LDFLAGS) -o $@ $(CFLAGS) source/cogc/main.cpp $(RUNTIME_SOURCES)
+
+# compile runtime library
+$(OUTPUTDIR)/cog.so: $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
+	$(CC) -shared -o $@ $(CFLAGS) $(RUNTIME_SOURCES)
 
 # test-runner program
 $(OUTPUTDIR)/cog-test: source/test/*.cpp $(RUNTIME_SOURCES) $(RUNTIME_HEADERS)
