@@ -377,6 +377,7 @@ func checkStmt(
 	{
         diagnose(getSink(context), stmt.loc, kDiagnostic_unimplemented, stmt.directClass.name);
 		cogAssert(!"unimplemented");
+		return null;
 	}
 }
 
@@ -418,6 +419,7 @@ func coerceToExp(
     }
 
     cogAssert(!"need an exp");
+    return null;
 }
 
 //
@@ -627,13 +629,15 @@ func checkTerm(
         if(let baseDeclRefType = as<DeclRefType>(baseType))
         {
             let baseDeclRef = baseDeclRefType.declRef;
-            if(let aggTypeDeclRef = as<AggTypeDecl>(baseDeclRef))
+            let aggTypeDeclRef = as<AggTypeDecl>(baseDeclRef);
+            if(aggTypeDeclRef.decl)
             {
                 // now scan through the type's members looking for a subscript
 
                 foreach(memberDeclRef in getDecls(aggTypeDeclRef))
                 {
-                    if(let memberSubscriptDeclRef = as<SubscriptDecl>(memberDeclRef))
+                	let memberSubscriptDeclRef = as<SubscriptDecl>(memberDeclRef);
+                    if(memberSubscriptDeclRef.decl)
                     {
                         addSubscriptOverloadCandidate(&overloadContext, memberSubscriptDeclRef);
                     }
@@ -875,6 +879,7 @@ func extractVal(
     else
     {
         cogAssert(!"unimplemented");
+        return null;
     }
 }
 
@@ -891,14 +896,15 @@ func lookUpMemberInType(
     if(let baseDeclRefType = as<DeclRefType>(baseType))
     {
         let baseDeclRef = baseDeclRefType.declRef;
-        if(let aggTypeDeclRef = as<AggTypeDecl>(baseDeclRef))
+        let aggTypeDeclRef = as<AggTypeDecl>(baseDeclRef);
+        if(aggTypeDeclRef.decl)
         {
             // look up in the scope of that decl...
 
             // TODO: inheritance and all that...
 
             let lookupResult = lookupDirect(
-                aggTypeDeclRef,
+                aggTypeDeclRef.getDecl(),
                 memberName);
 
             if(lookupResult.isUnique())
@@ -919,18 +925,22 @@ func lookUpMemberInType(
                 return overloadedExpr;
             }
         }
-		else if(let genericParamDeclRef = as<GenericParamDecl>(baseDeclRef))
+		else
 		{
-			// we have a generic type param, so we really need to base things on
-			// the *bound* for the type parameter
-			//
-			let genericParamBoundType = getBoundType(genericParamDeclRef);
-			return lookUpMemberInType(
-				context,
-				exp,
-				base,
-				genericParamBoundType,
-				memberName);
+			let genericParamDeclRef = as<GenericParamDecl>(baseDeclRef);
+			if(genericParamDeclRef.decl)
+			{
+				// we have a generic type param, so we really need to base things on
+				// the *bound* for the type parameter
+				//
+				let genericParamBoundType = getBoundType(genericParamDeclRef);
+				return lookUpMemberInType(
+					context,
+					exp,
+					base,
+					genericParamBoundType,
+					memberName);			
+			}
 		}
     }
 
@@ -982,7 +992,7 @@ func addAppOverloadCandidates(
     {
 //        fprintf(stderr, "BBB\n");
         // We have a declaration, and we are trying to call it
-        addDeclRefOverloadCandidates(context, declRefExp.declRef);
+        addDeclRefOverloadCandidates(context, DeclRefVal(declRefExp.declRef));
     }
     else if(let overloadedExpr = as<OverloadedExpr>(baseExp))
     {
@@ -1025,7 +1035,8 @@ func addDeclRefGenericOverloadCandidates(
     context: OverloadResolveContext*,
     val: DeclRefVal)
 {
-    if(let genericDeclRef = as<GenericDecl>(val))
+	let genericDeclRef = as<GenericDecl>(val);
+    if(genericDeclRef.decl)
     {
         addGenericGenericOverloadCandidate(context, genericDeclRef);
     }
@@ -1167,7 +1178,9 @@ func getTypeForDeclRefImpl(
     {
         return createDeclRefTypeType(context, declRef);
     }
-    else if(let funcDeclRef = as<FuncDeclBase>(declRef))
+
+    let funcDeclRef = as<FuncDeclBase>(declRef);
+    if(funcDeclRef.decl)
     {
         return createFuncType(context, funcDeclRef);
     }
@@ -1245,15 +1258,21 @@ func getResultType(
 {
     // TODO(tfoley): this should be simplified to
     // just use the `FuncDeclBaseRef`
-	if(let funcDeclRef = as<FuncDecl>(decl))
+    let funcDeclRef = as<FuncDecl>(decl);
+	if(funcDeclRef.decl)
 	{
 		return getResultType(funcDeclRef);
 	}
-    else if(let subscriptDeclRef = as<SubscriptDecl>(decl))
+
+
+	let subscriptDeclRef = as<SubscriptDecl>(decl);
+    if(subscriptDeclRef.decl)
     {
         return getResultType(subscriptDeclRef);
     }
-    else if(let typeDeclRef = as<AggTypeDecl>(decl))
+
+    let typeDeclRef = as<AggTypeDecl>(decl);
+    if(typeDeclRef.decl)
     {
         return createDeclRefType(
             CompactDeclRef(typeDeclRef));
@@ -1464,6 +1483,7 @@ func tryCoerceImpl(
         // TODO: implement this case!
 
         cogAssert(!"unimplemented");
+        return false;
     }
     else
     {
@@ -1575,11 +1595,13 @@ func checkOverloadCandidateArity(
     let argCursor = args.begin();
     let argEnd = args.end();
 
-    if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
+    let funcDeclRef = as<FuncDeclBase>(candidate.declRef);
+    if(funcDeclRef.decl)
     {
         foreach(dd in getDecls(funcDeclRef))
         {
-            if(let paramDeclRef = as<ParamDecl>(dd))
+        	let paramDeclRef = as<ParamDecl>(dd);
+            if(paramDeclRef.decl)
             {
                 if(!(argCursor != argEnd))
                 {
@@ -1603,11 +1625,14 @@ func checkOverloadCandidateArity(
 
         return true;
     }
-	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+
+    let genericDeclRef = as<GenericDecl>(candidate.declRef);
+	if(genericDeclRef.decl)
 	{
 		foreach(dd in getDecls(genericDeclRef))
 		{
-			if(let genericParamDeclRef = as<GenericParamDecl>(dd))
+			let genericParamDeclRef = as<GenericParamDecl>(dd);
+			if(genericParamDeclRef.decl)
 			{
 				if(!(argCursor != argEnd))
 				{
@@ -1647,11 +1672,13 @@ func checkOverloadCandidateTypes(
     let argCursor = args.begin();
     let argEnd = args.end();
 
-    if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
+    let funcDeclRef = as<FuncDeclBase>(candidate.declRef);
+    if(funcDeclRef.decl)
     {
         foreach(dd in getDecls(funcDeclRef))
         {
-            if(let paramDeclRef = as<ParamDecl>(dd))
+        	let paramDeclRef = as<ParamDecl>(dd);
+            if(paramDeclRef.decl)
             {
                 if(!(argCursor != argEnd))
                 {
@@ -1698,11 +1725,14 @@ func checkOverloadCandidateTypes(
 
         return true;
     }
-	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+
+    let genericDeclRef = as<GenericDecl>(candidate.declRef);
+	if(genericDeclRef.decl)
 	{
         foreach(dd in getDecls(genericDeclRef))
         {
-            if(let paramDeclRef = as<GenericParamDecl>(dd))
+        	let paramDeclRef = as<GenericParamDecl>(dd);
+            if(paramDeclRef.decl)
             {
                 if(!(argCursor != argEnd))
                 {
@@ -1989,7 +2019,9 @@ func completeOverloadCandidate(
     let context = overloadContext.checkContext;
     let appExp = overloadContext.appExp;
 	let loc = appExp.loc;
-	if(let funcDeclRef = as<FuncDeclBase>(candidate.declRef))
+
+	let funcDeclRef = as<FuncDeclBase>(candidate.declRef);
+	if(funcDeclRef.decl)
 	{
 		let baseExp = createDeclRefExp(
 			context,
@@ -2001,7 +2033,9 @@ func completeOverloadCandidate(
 		appExp.type = candidate.resultType;
 		return appExp;
 	}
-	else if(let genericDeclRef = as<GenericDecl>(candidate.declRef))
+
+	let genericDeclRef = as<GenericDecl>(candidate.declRef);
+	if(genericDeclRef.decl)
 	{
 		// We need to construct a representation of the inner declaration
 		let innerDecl = genericDeclRef.getDecl().inner;
@@ -2012,7 +2046,8 @@ func completeOverloadCandidate(
 
 		foreach(dd in getDecls(genericDeclRef))
 		{
-			if(let paramDeclRef = as<GenericParamDecl>(dd))
+			let paramDeclRef = as<GenericParamDecl>(dd);
+			if(paramDeclRef.decl)
 			{
 				let arg = *argCursor;
 				++argCursor;
@@ -2035,6 +2070,7 @@ func completeOverloadCandidate(
 	else
 	{
 		diagnose(getSink(context), loc, kDiagnostic_unimplemented, "overload candidate flavor");
+		return null;
 	}
 }
 
@@ -2148,13 +2184,15 @@ func addTypeOverloadCandidates(
 {
     if(let declRefType = as<DeclRefType>(type))
     {
-        if(let aggTypeDeclRef = as<AggTypeDecl>(declRefType.declRef))
+    	let aggTypeDeclRef = as<AggTypeDecl>(declRefType.declRef);
+        if(aggTypeDeclRef.decl)
         {
             // Need to look for constructors
 
             foreach( memberDeclRef in getDecls(aggTypeDeclRef))
             {
-                if(let initializerDeclRef = as<InitializerDecl>(memberDeclRef))
+            	let initializerDeclRef = as<InitializerDecl>(memberDeclRef);
+                if(initializerDeclRef.decl)
                 {
                     addInitializerOverloadCandidate(context, type, initializerDeclRef);
                 }
@@ -2279,7 +2317,8 @@ func doInferenceForTypes(
 
     if(let paramDeclRefType = as<DeclRefType>(paramType))
     {
-        if(let genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType.declRef))
+    	let genericParamDeclRef = as<GenericParamDecl>(paramDeclRefType.declRef);
+        if(genericParamDeclRef.decl)
         {
 			// The type in parameter position is a generic parameter (we hope
 			// that it is a generic parameter of the declaration we hope to specialize).
@@ -2339,7 +2378,7 @@ func inferGenericArgsForApp(
 
     let innerDeclRef = getInner(genericDeclRef);
     let innerFuncDeclRef = as<FuncDeclBase>(innerDeclRef);
-    if(!innerFuncDeclRef)
+    if(!innerFuncDeclRef.decl)
     {
         // TODO: consider generic types...
         return null;
@@ -2349,7 +2388,8 @@ func inferGenericArgsForApp(
     var args: Array<GenericInferenceArg>;
     foreach( member in getDecls(genericDeclRef))
     {
-        if(let genericParamDeclRef = as<GenericParamDecl>(member))
+    	let genericParamDeclRef = as<GenericParamDecl>(member);
+        if(genericParamDeclRef.decl)
         {
             var arg: GenericInferenceArg;
             arg.paramDeclRef = genericParamDeclRef;
@@ -2372,7 +2412,7 @@ func inferGenericArgsForApp(
     foreach(member in getDecls(innerFuncDeclRef))
     {
         let paramDeclRef = as<ParamDecl>(member);
-        if(!paramDeclRef)
+        if(!paramDeclRef.decl)
             continue;
 
         if(!(aa != ae))
@@ -2459,11 +2499,15 @@ func addDeclRefOverloadCandidates(
     context: OverloadResolveContext*,
     val: DeclRefVal)
 {
-    if(let funcDeclRef = as<FuncDeclBase>(val))
+	let funcDeclRef = as<FuncDeclBase>(val);
+    if(funcDeclRef.decl)
     {
         addFuncOverloadCandidate(context, funcDeclRef);
+        return;
     }
-    else if(let genericDeclRef = as<GenericDecl>(val))
+
+    let genericDeclRef = as<GenericDecl>(val);
+    if(genericDeclRef.decl)
     {
         addGenericOverloadCandidate(context, genericDeclRef);
     }

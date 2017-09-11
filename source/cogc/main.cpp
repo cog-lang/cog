@@ -48,6 +48,7 @@ namespace cogc
 	struct SpecializedDeclImpl;
 	struct CompactDeclRef;
 
+#if 0
 	struct DeclRefVal
 	{
 		DeclImpl* decl;
@@ -146,6 +147,7 @@ namespace cogc
 	{
 		return as<T>(DeclRefVal(declRef));
 	}
+#endif
 
 	inline void cogAssert(bool condition)
 	{
@@ -157,6 +159,7 @@ namespace cogc
 
 namespace cogc
 {
+	#if 0
 	DeclRefVal::DeclRefVal(
 		CompactDeclRef const& declRef)
 	{
@@ -189,6 +192,7 @@ namespace cogc
 			this->value = specializedDecl;
 		}
 	}
+	#endif
 }
 
 int main(int argc, char** argv)

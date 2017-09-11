@@ -173,6 +173,142 @@ class SpecializedDecl : Object
 	var specializations: Specializations;
 }
 
+struct DeclRefVal
+{
+	var decl : Decl;
+	var specializations : Specializations;
+
+	init()
+	{
+		this.decl = null;
+		this.specializations = null;
+	}
+
+	init(decl: Decl)
+	{
+		this.decl = decl;
+		this.specializations = null;
+	}
+
+	init(
+		decl: Decl,
+		specializations: Specializations)
+	{
+		this.decl = decl;
+		this.specializations = specializations;
+	}
+
+	init(
+		declRef: CompactDeclRef)
+	{
+		let value = declRef.value;
+		if(let specializedDecl = as<SpecializedDecl>(value))
+		{
+			this.decl = specializedDecl.decl;
+			this.specializations = specializedDecl.specializations;
+		}
+		else
+		{
+			let declVal = as<Decl>(value);
+			this.decl = declVal;
+			this.specializations = null;
+		}
+	}
+
+	func getDecl() -> Decl { return decl; }
+	func getSpecializations()
+		-> Specializations
+	{
+		return specializations;
+	}
+}
+
+struct DeclRefValImpl<T> : DeclRefVal
+{
+	init()
+	{}
+
+	init(
+		decl: T,
+		specializations: Specializations)
+	{
+		this.decl = decl;
+		this.specializations = specializations;
+	}
+
+	init<U>(
+		other: DeclRefValImpl<U>,
+		t: T = cast<U>(null))
+	{
+		this.decl = other.decl;
+		this.specializations = other.specializations;
+	}
+
+	func getDecl() -> T
+	{
+		return cast<T>(decl);
+	}
+}
+
+struct CompactDeclRef
+{
+	var value : Object;
+
+	init(decl : Decl)
+	{
+		this.value = decl;
+	}
+
+	init(specialized: SpecializedDecl)
+	{
+		this.value = specialized;
+	}
+
+	init(declRef: DeclRefVal)
+	{
+		let specializations = declRef.specializations;
+		if(!specializations)
+		{
+			this.value = declRef.decl;
+		}
+		else
+		{
+			let specializedDecl = createObject<SpecializedDecl>();
+			specializedDecl.decl = declRef.decl;
+			specializedDecl.specializations = declRef.specializations;
+			this.value = specializedDecl;
+		}
+	}
+
+
+	func getDecl()
+		-> Decl
+	{
+		return DeclRefVal(*this).decl;
+	}
+
+	func getSpecializations()
+		-> Specializations
+	{
+		return DeclRefVal(*this).specializations;
+	}
+}
+
+func as<T>(declRef: DeclRefVal)
+	-> DeclRefValImpl<T>
+{
+	return DeclRefValImpl<T>(
+		as<T>(declRef.decl),
+		declRef.specializations);
+}
+
+func as<T>(declRef: CompactDeclRef)
+	-> DeclRefValImpl<T>
+{
+	return as<T>(DeclRefVal(declRef));
+}
+
+
 // Values
 
 // A value is a literal, and thus not syntax

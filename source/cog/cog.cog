@@ -35,6 +35,10 @@ struct UInt
 }
 
 @__builtin
+@__declRefClass(ArrayType)
+struct Array<T> {}
+
+@__builtin
 @__declRefClass(PtrType)
 struct Ptr<T> {}
 
