@@ -403,6 +403,10 @@ func diagnoseImpl(
         	cogAssert(!"fatal");
             exit(1);
         }
+        if(sink.errorCount >= 100)
+        {
+        	exit(1);
+        }
     }
 
 

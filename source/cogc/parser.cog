@@ -1735,7 +1735,11 @@ func parseForEachStmt(parser: Parser*) -> Syntax
     let stmt = createObject<ForEachStmt>();
     expect(parser, kTokenCode_LParen);
 
-    stmt.name = expectIdentifier(parser);
+    let varDecl = createObject<LetDecl>();
+    varDecl.name = expectIdentifier(parser);
+
+    stmt.stmts.append(varDecl);
+    stmt.varDecl = varDecl;
 
     if (!advanceIf(parser, TerminatedStringSpan("in")))
     {
@@ -1994,6 +1998,9 @@ func parseInitializerDecl(parser: Parser*) -> Syntax
 {
     let decl = createObject<InitializerDecl>();
 
+    // generic args, if any
+    let result = maybeParseGenericParams(parser, decl);
+
     pushScope(parser, decl);
 
     if(expect(parser, kTokenCode_LParen))
@@ -2019,7 +2026,7 @@ func parseInitializerDecl(parser: Parser*) -> Syntax
 
     popScope(parser);
 
-    return decl;
+    return result;
 }
 
 func parseThisExpr(parser: Parser*) -> Syntax

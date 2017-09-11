@@ -88,6 +88,31 @@ func emitGenericQuals(
 	context: EmitContext*,
 	decl: Decl)
 {
+	if(let parent = decl.parent)
+	{
+		emitGenericQuals(context, parent);
+	}
+
+	if(let genericParent = as<GenericDecl>(decl.parent))
+	{
+		emit(context, "template<");
+		var first = true;
+		foreach(dd in genericParent.getDecls())
+		{
+			let genericParamDecl = as<GenericParamDecl>(dd);
+			if (!genericParamDecl)
+				continue;
+
+			if (!first) emit(context, ", ");
+
+			emit(context, "typename ");
+			emit(context, genericParamDecl.name);
+			first = false;
+		}
+		emit(context, " > ");		
+	}
+
+/*
 	var pp = decl.parent;
 	while (pp)
 	{
@@ -113,6 +138,7 @@ func emitGenericQuals(
 
 		pp = pp.parent;
 	}
+*/
 }
 
 func emitDeclName(
@@ -551,7 +577,7 @@ func emitStmt(
 	else if (let forEachStmt = as<ForEachStmt>(stmt))
 	{
 		emit(context, "for(auto ");
-		emit(context, forEachStmt.name);
+		emit(context, forEachStmt.varDecl.name);
 		emit(context, " : ");
 		emitExp(context, forEachStmt.exp);
 		emit(context, ")\n{\n");
@@ -802,10 +828,20 @@ func emitVarDecl(
 }
 
 func emitParamDecl(
-	context: EmitContext*,
-	paramDecl: ParamDecl)
+	context: 	EmitContext*,
+	paramDecl: 	ParamDecl,
+	mode: 		DeclEmitMode)
 {
 	emitDeclarator(context, paramDecl.type, paramDecl, kDeclEmitMode_Full);
+
+	if(mode <= kDeclEmitMode_Forward)
+	{
+		if(let initExpr = paramDecl.init)
+		{
+	        emit(context, " = ");
+	        emitExp(context, initExpr);
+		}	
+	}
 }
 
 func emitFuncDecl(
@@ -843,7 +879,7 @@ func emitFuncDecl(
 		if(!param) continue;
 
 		if(!first) emit(context, ", ");
-		emitParamDecl(context, param);
+		emitParamDecl(context, param, mode);
 		first = false;
 	}
 
@@ -877,14 +913,20 @@ func emitInitializerDecl(
 		emitGenericQuals(context, initDecl);
 	}
 
+	var parent = initDecl.getParent();
+	if(let parentGeneric = as<GenericDecl>(parent))
+		parent = parentGeneric.getParent();
+
     // We emit an initializer as a C++ constructor (for now),
     // so we need to emit hte name of the enclosing type...
 	if (mode == kDeclEmitMode_Full)
 	{
-		emitDeclNameAndGenericArgs(context, initDecl.getParent(), mode);
+		emitDeclNameAndGenericArgs(context, parent, mode);
 		emit(context, "::");
 	}
-    emit(context, initDecl.getParent().name);
+
+
+    emit(context, parent.name);
 
     if(as<ClassDecl>(initDecl.getParent()))
     {
@@ -900,7 +942,7 @@ func emitInitializerDecl(
         if(!param) continue;
 
         if(!first) emit(context, ", ");
-        emitParamDecl(context, param);
+        emitParamDecl(context, param, mode);
         first = false;
     }
 
@@ -961,7 +1003,7 @@ func emitSubscriptDecl(
 		if (!param) continue;
 
 		if (!first) emit(context, ", ");
-		emitParamDecl(context, param);
+		emitParamDecl(context, param, mode);
 		first = false;
 	}
 
