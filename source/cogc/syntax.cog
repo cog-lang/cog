@@ -238,7 +238,7 @@ struct DeclRefValImpl<T> : DeclRefVal
 
 	init<U>(
 		other: DeclRefValImpl<U>,
-		t: T = cast<U>(null))
+		t: T = U(null))
 	{
 		this.decl = other.decl;
 		this.specializations = other.specializations;
