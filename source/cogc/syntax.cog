@@ -136,17 +136,24 @@ class Stmt : Syntax
 
 enum DeclCheckState
 {
-	kDeclCheckState_Unchecked = 0,
-	kDeclCheckState_CheckingHead,
-	kDeclCheckState_CheckedHead,
-	kDeclCheckState_Checked,
+	// Really this represents the phases of checking
+	// that a declaration can go through, and we need
+	// to ensure that every declaration goes through
+	// all of them.
+
+	kDeclCheckPhase_Initial = 0, // Nothing has been done.
+	kDeclCheckPhase_PreCheckHead, // look at the "head" and figure out what needs to be prepared
+	kDeclCheckPhase_CheckHead, // actually validate the "head" so that other decls can reference us
+
+	kDeclCheckPhase_PreCheckBody, // look at the body and figure out what is needed
+	kDeclCheckPhase_CheckBody, // actually validate the body
 }
 
 class Decl : Stmt
 {
 	var name : Ptr<Name>;
 	var parent : ContainerStmt;
-	var checkState : DeclCheckState = kDeclCheckState_Unchecked;
+	var checkState : DeclCheckState = kDeclCheckPhase_Initial;
 
 	func getParent() -> ContainerStmt
 	{
@@ -771,6 +778,20 @@ class OverloadedExpr : Exp
 
 class BlockStmt : ContainerDecl
 {
+}
+
+// Type Expressions
+//
+// A type expressions is a piece of syntax that
+// evaluates to a type in context.
+
+class TypeExpr : Exp
+{
+}
+
+class PtrTypeExpr : TypeExpr
+{
+	var base : Exp;
 }
 
 // Types

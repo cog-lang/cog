@@ -124,7 +124,7 @@ func main( argc : Int, argv : Ptr<Ptr<Char> >) -> Int
 	if(!session.disableSemanticChecks)
 	{
 		checkModule(session);
-
+		
 		if(getErrorCount(session) > 0)
 			return 1;
 	}

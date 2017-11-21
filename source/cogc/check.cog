@@ -19,12 +19,58 @@ func checkModule(
 	var context : CheckContext;
 	context.shared = &sharedContext;
 
-	checkModule(&context, moduleDecl);
+	addWorkItem(&sharedContext, moduleDecl, kDeclCheckPhase_PreCheckHead);
+
+	while(sharedContext.workList.getCount() != 0)
+	{
+		let count = sharedContext.workList.getCount();
+		let item = sharedContext.workList[count-1];
+		sharedContext.workList.removeAt(count-1);
+
+		checkDecl(&context, item.decl, item.state);
+
+		if(item.state != kDeclCheckPhase_CheckBody)
+		{
+			addWorkItem(&context, item.decl,
+				cast<DeclCheckState>(item.state + 1));
+		}
+	}
+}
+
+// One item that we need to process during semantic checking.
+//
+// This represents a request to ensure that `decl` has
+// been checked enough to satisfy the state `state.
+struct CheckWorkItem
+{
+	var decl : Decl;
+	var state : DeclCheckState;
 }
 
 struct SharedCheckContext
 {
 	var session : Session;
+
+	var workList : Array<CheckWorkItem>;
+}
+
+func addWorkItem(
+	shared: SharedCheckContext*,
+	decl: Decl,
+	state: DeclCheckState)
+{
+	var item : CheckWorkItem;
+	item.decl = decl;
+	item.state = state;
+	shared.workList.append(item);
+}
+
+func addWorkItem(
+	context: CheckContext*,
+	decl: Decl,
+	state: DeclCheckState)
+{
+	addWorkItem(context.shared, decl, state);
 }
 
 struct CheckContext
@@ -38,17 +84,14 @@ func getSink(
 	return &context.shared.session.sink;
 }
 
-func checkModule(
-	context: CheckContext*,
-	moduleDecl:	ModuleDecl)
-{
-	checkDecls(context, moduleDecl);
-}
-
 func checkImportDecls(
 	context: CheckContext*,
-	containerDecl: ContainerDecl)
+	containerDecl: ContainerDecl,
+	state: DeclCheckState)
 {
+	if(state != kDeclCheckPhase_PreCheckHead)
+		return;
+
 	foreach(decl in containerDecl.getDecls())
 	{
 		if(let importDecl = as<ImportDecl>(decl))
@@ -65,13 +108,14 @@ func checkImportDecls(
 
 func checkDecls(
 	context: 		CheckContext*,
-	containerDecl: 	ContainerDecl)
+	containerDecl: 	ContainerDecl,
+	state: DeclCheckState)
 {
-	checkImportDecls(context, containerDecl);
+	checkImportDecls(context, containerDecl, state);
 
 	foreach(decl in containerDecl.getDecls())
 	{
-		checkDecl(context, decl);
+		checkDecl(context, decl, state);
 	}
 }
 
@@ -88,191 +132,217 @@ func attachToScope(
 }
 
 func checkDecl(
-	context: 	CheckContext*,
-	decl:		Decl)
-{
-	// don't check decl we've already checked
-	if(decl.checkState == kDeclCheckState_Checked)
-		return;
-
-	if(decl.checkState != kDeclCheckState_Unchecked)
-	{
-		// we are already checking this one!
-		diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, "circularity");
-		return;
-	}
-
-	decl.checkState = kDeclCheckState_CheckingHead;
-	checkDeclImpl(context, decl);
-	decl.checkState = kDeclCheckState_Checked;
-}
-
-func checkDeclImpl(
-	context: 	CheckContext*,
-	decl:		Decl)
+	context: CheckContext*,
+	decl: Decl,
+	state: DeclCheckState)
 {
 	if(let classDecl = as<ClassDecl>(decl))
 	{
-		checkClassDecl(context, classDecl);
+		checkClassDecl(context, classDecl, state);
 	}
 	else if(let structDecl = as<StructDecl>(decl))
 	{
-		checkStructDecl(context, structDecl);
+		checkStructDecl(context, structDecl, state);
 	}
 	else if(let funcDecl = as<FuncDeclBase>(decl))
 	{
-		checkFuncDecl(context, funcDecl);
+		checkFuncDecl(context, funcDecl, state);
 	}
 	else if(let varDecl = as<VarDeclBase>(decl))
 	{
-		checkVarDecl(context, varDecl);
+		checkVarDecl(context, varDecl, state);
 	}
 	else if(let genericDecl = as<GenericDecl>(decl))
 	{
-		checkGenericDecl(context, genericDecl);
+		checkGenericDecl(context, genericDecl, state);
 	}
 	else if(let typeAliasDecl = as<TypeAliasDecl>(decl))
 	{
-		checkTypeAliasDecl(context, typeAliasDecl);
+		checkTypeAliasDecl(context, typeAliasDecl, state);
 	}
 	else if(let genericParamDecl = as<GenericParamDecl>(decl))
 	{
-		checkTypeExp(context, &genericParamDecl.bound);
-		genericParamDecl.checkState = kDeclCheckState_Checked;
+		checkGenericParamDecl(context, genericParamDecl, state);
 	}
     else if(let importDecl = as<ImportDecl>(decl))
     {
     	// Skip in this phase
     }
+	else if(let moduleDecl = as<ModuleDecl>(decl))
+	{
+		checkModuleDecl(context, moduleDecl, state);
+	}
+	else if(let enumDecl = as<EnumDecl>(decl))
+	{
+		checkEnumDecl(context, enumDecl, state);
+	}
 	else
 	{
-		//	diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, decl.directClass.name);	
+		diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, decl.directClass.name);	
 	}
+}
+
+func checkEnumDecl(
+	context: CheckContext*,
+	decl: EnumDecl,
+	state: DeclCheckState)
+{
+	// TODO: implement!
+}
+
+func checkModuleDecl(
+	context: CheckContext*,
+	decl: ModuleDecl,
+	state: DeclCheckState)
+{
+	checkDecls(context, decl, state);
+}
+
+func checkGenericParamDecl(
+	context: CheckContext*,
+	decl: GenericParamDecl,
+	state: DeclCheckState)
+{
+	checkTypeExp(context, &decl.bound);
 }
 
 func checkGenericDecl(
 	context: CheckContext*,
-	decl: GenericDecl)
+	decl: GenericDecl,
+	state: DeclCheckState)
 {
-//    fprintf(stderr, "CHECKING GENERIC\n");
-
-	// check params
-	checkDecls(context, decl);
-
-	decl.checkState = kDeclCheckState_CheckedHead;
-
-	// check inner decl
-	checkDecl(context, decl.inner);
-
-	decl.checkState = kDeclCheckState_Checked;
+	checkDecls(context, decl, state);
+	checkDecl(context, decl.inner, state);
 }
 
 func checkTypeAliasDecl(
 	context: CheckContext*,
-	decl: TypeAliasDecl)
+	decl: TypeAliasDecl,
+	state: DeclCheckState)
 {
 	// TODO: implement this...
 }
 
 func checkVarDecl(
 	context: CheckContext*,
-	decl: VarDeclBase)
+	decl: VarDeclBase,
+	state: DeclCheckState)
 {
-	// check type, if any
-	checkTypeExp(context, &decl.type);
-    var type = decl.type.type;
-
-	if(type)
+	switch(state)
 	{
-		decl.checkState = kDeclCheckState_CheckedHead;
-	}
+	case kDeclCheckPhase_CheckHead:
+		{
+			// check type, if any
+			checkTypeExp(context, &decl.type);
+		}
+		break;
 
-    var initExpr = decl.init;
-    if(initExpr)
-    {
-        initExpr = checkTerm(context, initExpr);
-        if(type)
-        {
-            initExpr = coerce(context, initExpr, type);
-        }
-        else
-        {
-            // TODO: must coerce to usable...
+	case kDeclCheckPhase_CheckBody:
+		{
+			var type = decl.type.type;
+			var initExpr = decl.init;
+			if(initExpr)
+			{
+				initExpr = checkTerm(context, initExpr);
+				if(type)
+				{
+					initExpr = coerce(context, initExpr, type);
+				}
+				else
+				{
+					// TODO: must coerce to usable...
 
-            type = initExpr.type;
+					type = initExpr.type;
+					cogAssert(type);
+				}
+			}
+			else
+			{
+				if(!type)
+				{
+					diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, "decl without init must have type");
+					type = createErrorType(context);
+				}
+			}
+
 			cogAssert(type);
-        }
-    }
-    else
-    {
-        if(!type)
-        {
-            diagnose(getSink(context), decl.loc, kDiagnostic_unimplemented, "decl without init must have type");
-            type = createErrorType(context);
-        }
-    }
 
-	cogAssert(type);
+		//    fprintf(stderr, "VAR(%s) TYPE(",
+		//    	getText(decl.name).begin);
+		//    printType(stderr, type);
+		//    fprintf(stderr, ")\n");
 
-//    fprintf(stderr, "VAR(%s) TYPE(",
-//    	getText(decl.name).begin);
-//    printType(stderr, type);
-//    fprintf(stderr, ")\n");
-
-    decl.init = initExpr;
-    decl.type.type = type;
+			decl.init = initExpr;
+			decl.type.type = type;
+		}
+		break;
+	}
 }
 
 func checkFuncDecl(
 	context: CheckContext*,
-	decl: FuncDeclBase)
+	decl: FuncDeclBase,
+	state: DeclCheckState)
 {
 	// check parameters
-	checkDecls(context, decl);
+	checkDecls(context, decl, state);
 
-	// check result type clause, if any
-	checkTypeExp(context, &decl.resultType);
-    if(!asBool(decl.resultType))
-    {
-        decl.resultType.type = getBuiltinType(context, decl.loc, "Void");
-    }
-
-	decl.checkState = kDeclCheckState_CheckedHead;    
-
-	if(let body = decl.body)
+	switch(state)
 	{
-		decl.body = checkStmt(context, body);
+	case kDeclCheckPhase_CheckHead:
+		{
+			// check result type clause, if any
+			checkTypeExp(context, &decl.resultType);
+			if(!asBool(decl.resultType))
+			{
+				decl.resultType.type = getBuiltinType(context, decl.loc, "Void");
+			}
+		}
+		break;
+
+	case kDeclCheckPhase_CheckBody:
+		{
+			if(let body = decl.body)
+			{
+				decl.body = checkStmt(context, body);
+			}
+		}
+		break;
 	}
 }
 
 func checkClassDecl(
 	context: CheckContext*,
-	decl: ClassDecl)
+	decl: ClassDecl,
+	state: DeclCheckState)
 {
-	checkAggTypeDeclCommon(context, decl);
+	checkAggTypeDeclCommon(context, decl, state);
 }
 
 func checkStructDecl(
 	context: CheckContext*,
-	decl: StructDecl)
+	decl: StructDecl,
+	state: DeclCheckState)
 {
-	checkAggTypeDeclCommon(context, decl);
+	checkAggTypeDeclCommon(context, decl, state);
 }
 
 func checkAggTypeDeclCommon(
 	context: CheckContext*,
-	decl: AggTypeDecl)
+	decl: AggTypeDecl,
+	state: DeclCheckState)
 {
-	// check base clause, if any
-	checkTypeExp(context, &decl.base);
+	switch(state)
+	{
+	case kDeclCheckPhase_CheckHead:
+		{
+			checkTypeExp(context, &decl.base);
+		}
+		break;
+	}
 
-	decl.checkState = kDeclCheckState_CheckedHead;
-
-	// TODO: validate that the base (if any)
-	// names a class, and satisfies any constraints
-
-	// check members in the context of the parent
-	checkDecls(context, decl);
+	// check members up to the same level as the parent
+	checkDecls(context, decl, state);
 }
 
 //
@@ -284,6 +354,18 @@ func checkPrediateExpr(
 {
 	// TODO: add coercion step
 	return checkExp(context, expr);
+}
+
+func checkDeclFully(
+	context: CheckContext*,
+	decl: Decl)
+{
+	let state : Int = kDeclCheckPhase_PreCheckHead;
+	while(state <= kDeclCheckPhase_CheckBody)
+	{
+		checkDecl(context, decl, cast<DeclCheckState>(state));
+		state = state + 1;
+	}
 }
 
 func checkStmt(
@@ -298,11 +380,6 @@ func checkStmt(
 	{
 		return checkBlockStmt(context, blockStmt);
 	}
-    else if(let decl = as<Decl>(stmt))
-    {
-        checkDecl(context, decl);
-        return decl;
-    }
     else if(let exp = as<Exp>(stmt))
     {
         return checkExp(context, exp);
@@ -372,6 +449,11 @@ func checkStmt(
 		}
 
         return switchStmt;
+    }
+    else if(let decl = as<Decl>(stmt))
+    {
+        checkDeclFully(context, decl);
+        return decl;
     }
 	else
 	{
@@ -648,38 +730,35 @@ func checkTerm(
 
         return completeOverload(&overloadContext);
     }
+	else if(let postfixExp = as<PostfixExp>(exp))
+	{
+		let uncheckedBase = postfixExp.base;
+		checkAppExpArgs(context, postfixExp);
+
+		if(let argTypeExpr = tryCoerceToTypeExpr(context, postfixExp.args[0].exp))
+		{
+			let argType = as<TypeType>(argTypeExpr.type).type;
+
+			// Okay, we have a reference to a type, so lets see if
+			// the operator is postfix `*`.
+			if(let baseNameExp = as<NameExp>(uncheckedBase))
+			{
+				if(getText(baseNameExp.name) == TerminatedStringSpan("*"))
+				{
+					let ptrType = getPtrType(context, exp.loc, argType);
+					let ptrTypeExpr = createObject<PtrTypeExpr>();
+					ptrTypeExpr.base = argTypeExpr;
+					ptrTypeExpr.type = createTypeType(context, ptrType);
+					return ptrTypeExpr;
+				}
+			}
+		}
+
+		return checkAppExpWithCheckedArgs(context, postfixExp);
+	}
     else if(let appExp = as<AppExp>(exp))
     {
-        let base = checkTerm(context, appExp.base);
-        appExp.base = base;
-        foreach(arg in appExp.args)
-        {
-            arg.exp = checkTerm(context, arg.exp);
-        }
-
-        // If the base expression or any argument is in error,
-        // en don't bother trying to resolve things
-        if(isError(context, base))
-        {
-            return createErrorExp(context, appExp);
-        }
-
-        var overloadContext : OverloadResolveContext;
-        overloadContext.checkContext = context;
-        overloadContext.appExp = appExp;
-        overloadContext.baseExp = null;
-
-
-        if(let baseMemberRef = as<MemberExp>(base))
-        {
-            overloadContext.baseExp = baseMemberRef.base;
-        }
-
-        addAppOverloadCandidates(
-            &overloadContext,
-            base);
-
-        return completeOverload(&overloadContext);
+		return checkAppExp(context, appExp);
     }
 	else if(let subscriptExpr = as<IndexExp>(exp))
 	{
@@ -718,101 +797,6 @@ func checkTerm(
 
         return completeOverload(&overloadContext);
 	}
-	/*
-	else if(let appExp = as<AppExpBase>(exp))
-	{
-		let base = checkTerm(context, appExp.base);
-        appExp.base = base;
-		foreach(arg in appExp.args)
-		{
-			arg.exp = checkTerm(context, arg.exp);
-		}
-
-        // If the base expression or any argument is in error,
-        // en don't bother trying to resolve things
-        if(as<ErrorExp>(base))
-        {
-            return createErrorExp(context, appExp.loc);
-        }
-
-
-		// inspect the base expression, and check it against
-		// the operands...
-		if(let baseDeclRefExp = as<DeclRefExp>(base))
-		{
-			// the base refers to an explicit declaration, so we can
-			// check for how to apply it...
-            let baseDeclRef = baseDeclRefExp.declRef;
-            if(let patternDeclRef = as<PatternDecl>(baseDeclRef))
-			{
-				var argIter : Arg = appExp.args.head;
-
-				foreach(declRef in getDecls(patternDeclRef))
-				{
-					let paramRef = as<ParamDecl>(declRef);
-					if(!paramRef) continue;
-
-					let arg : Arg = argIter;
-					argIter = argIter.next;
-
-					// try to match things up!
-				}
-
-				//
-				appExp.type = getResultType(context, patternDeclRef);
-				return appExp;
-			}
-			else if(let genericDeclRef = as<GenericDecl>(baseDeclRef))
-			{
-				var argIter = appExp.args.head;
-
-				foreach(decl in getDecls(genericDeclRef))
-				{
-					let param = as<GenericParamDecl>(decl);
-					if(!param) continue;
-
-					let arg = argIter;
-					argIter = argIter.next;
-
-					// try to match things up!
-				}
-
-                let specializations = createObject<Specializations>();
-                specializations.genericDeclRef = genericDeclRef;
-
-                var specArgLink = &specializations.args.head;
-                argIter = appExp.args.head;
-                foreach(decl in getDecls(genericDeclRef))
-                {
-                    let param = as<GenericParamDecl>(decl);
-                    if(!param) continue;
-
-                    let arg = argIter;
-                    argIter = argIter.next;
-
-                    // try to match things up!
-                    let specArg = createObject<SpecializationArg>();
-					specArg.param = param;
-                    specArg.value = extractVal(arg.exp);
-
-                    *specArgLink = specArg;
-                    specArgLink = &specArg.next;
-                }
-
-                let innerDeclRef = DeclRefVal(genericDeclRef.getDecl().inner, specializations);
-
-                return createDeclRefExp(
-                    context,
-                    innerDeclRef,
-                    appExp.loc);
-			}
-		}
-
-		diagnose(getSink(context), exp.loc, kDiagnostic_unimplemented, exp.directClass.name);
-		cogAssert(!"unimplemented");
-		return 0;
-	}
-	*/
 	else if(let thisExpr = as<ThisExpr>(exp))
 	{
 		var scope = thisExpr.scope;
@@ -864,6 +848,58 @@ func checkTerm(
 		cogAssert(!"unimplemented");
 		return 0;
 	}
+}
+
+func checkAppExp(
+	context: CheckContext*,
+	appExp: AppExp)
+	-> Exp
+{
+	checkAppExpArgs(context, appExp);
+	return checkAppExpWithCheckedArgs(context, appExp);
+}
+
+func checkAppExpArgs(
+	context: CheckContext*,
+	appExp: AppExp)
+{
+    let base = checkTerm(context, appExp.base);
+    appExp.base = base;
+    foreach(arg in appExp.args)
+    {
+        arg.exp = checkTerm(context, arg.exp);
+    }
+}
+
+func checkAppExpWithCheckedArgs(
+	context: CheckContext*,
+	appExp: AppExp)
+	-> Exp
+{
+    // If the base expression or any argument is in error,
+    // then don't bother trying to resolve things
+	let base = appExp.base;
+    if(isError(context, base))
+    {
+        return createErrorExp(context, appExp);
+    }
+
+    var overloadContext : OverloadResolveContext;
+    overloadContext.checkContext = context;
+    overloadContext.appExp = appExp;
+    overloadContext.baseExp = null;
+
+
+    if(let baseMemberRef = as<MemberExp>(base))
+    {
+        overloadContext.baseExp = baseMemberRef.base;
+    }
+
+    addAppOverloadCandidates(
+        &overloadContext,
+        base);
+
+    return completeOverload(&overloadContext);
 }
 
 //
@@ -1022,7 +1058,7 @@ func addGenericGenericOverloadCandidate(
     context: OverloadResolveContext*,
 	genericDeclRef: DeclRefValImpl<GenericDecl>)
 {
-	ensureDecl(context.checkContext, genericDeclRef.getDecl());
+//	ensureDecl(context.checkContext, genericDeclRef.getDecl());
 
     var candidate: OverloadCandidate;
     candidate.declRef = genericDeclRef;
@@ -1159,7 +1195,7 @@ func getTypeForDeclRefImpl(
 {
     let decl = declRef.getDecl();
 
-    ensureDecl(context, decl, kDeclCheckState_CheckedHead);
+//    ensureDecl(context, decl, kDeclCheckState_CheckedHead);
 
     if(let varDecl = as<VarDeclBase>(decl))
 	{
@@ -1221,11 +1257,36 @@ func createErrorType(
     return createObject<ErrorType>();
 }
 
-func getBuiltinType(
+func getPtrType(
+	context: CheckContext*,
+	loc: SourceLoc,
+	valueType: Type)
+	-> Type
+{
+	if(let ptrTypeDecl = getBuiltinDecl(context, loc, "Ptr"))
+	{
+		if(let ptrGeneric = as<GenericDecl>(ptrTypeDecl))
+		{
+			var specArg = createObject<SpecializationArg>();
+			specArg.param = ptrGeneric.getDecls()[0];
+			specArg.value = valueType;
+
+			var spec = createObject<Specializations>();
+			spec.genericDeclRef = DeclRefValImpl<GenericDecl>(ptrGeneric, null);
+			spec.args.append(specArg);
+
+			let declRef = DeclRefVal(ptrGeneric.inner, spec);
+			return createDeclRefType(declRef);
+		}
+	}
+	return createErrorType(context);
+}
+
+func getBuiltinDecl(
 	context: CheckContext*,
 	loc: SourceLoc,
 	name: ConstPtr<Char>)
-    -> Type
+    -> Decl
 {
     let cogModuleName = getName(context.shared.session, "cog");
     var cogModule : ModuleDecl = null;
@@ -1243,11 +1304,24 @@ func getBuiltinType(
     {
         if(decl.name && getText(decl.name) == nameSpan)
         {
-			return createDeclRefType(DeclRefVal(decl));
+			return decl;
         }
     }
 
     diagnose(getSink(context), loc, kDiagnostic_failedToFindBuiltinType, name);
+	return null;
+}
+
+func getBuiltinType(
+	context: CheckContext*,
+	loc: SourceLoc,
+	name: ConstPtr<Char>)
+    -> Type
+{
+	if(let decl = getBuiltinDecl(context, loc, name))
+	{
+		return createDeclRefType(DeclRefVal(decl));
+	}
     return createErrorType(context);
 }
 
@@ -1900,7 +1974,7 @@ func addSubscriptOverloadCandidate(
 {
     // TODO: actually do stuff!
 
-	ensureDecl(context.checkContext, declRef.getDecl());
+//	ensureDecl(context.checkContext, declRef.getDecl());
 
     var candidate: OverloadCandidate;
     candidate.declRef = declRef;
@@ -1913,7 +1987,7 @@ func addFuncOverloadCandidate(
     context: OverloadResolveContext*,
     declRef: DeclRefValImpl<FuncDeclBase>)
 {
-	ensureDecl(context.checkContext, declRef.getDecl());
+//	ensureDecl(context.checkContext, declRef.getDecl());
 
     var candidate: OverloadCandidate;
     candidate.declRef = declRef;
@@ -2468,7 +2542,7 @@ func addGenericOverloadCandidate(
     context: OverloadResolveContext*,
     genericDeclRef: DeclRefValImpl<GenericDecl>)
 {
-	ensureDecl(context.checkContext, genericDeclRef.getDecl());
+//	ensureDecl(context.checkContext, genericDeclRef.getDecl());
 
     // Need to infer argument types and then apply
     // based on those.
@@ -2618,21 +2692,3 @@ func specializeType(
 }
 
 //
-
-func ensureDecl(
-	context: CheckContext*,
-	decl: Decl,
-	state: DeclCheckState)
-{
-	if(decl.checkState >= state)
-		return;
-
-	checkDecl(context, decl);
-}
-
-func ensureDecl(
-	context: CheckContext*,
-	decl: Decl)
-{
-	ensureDecl(context, decl, kDeclCheckState_CheckedHead);
-}
