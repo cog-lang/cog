@@ -52,8 +52,8 @@ kTokenCode_Dot,
 
 struct Token
 {
-	var rawLoc : UIntPtr;
-	var rawSize : UIntPtr;
+	var rawLoc : UInt;
+	var rawSize : UInt;
 	var rawData : Ptr<Void>;
 	var code : TokenCode;
 	var flags : TokenFlags;

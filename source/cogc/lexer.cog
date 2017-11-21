@@ -8,7 +8,7 @@ struct Lexer
 	var file: SourceFile*;
 
 	var cursor: ConstPtr<Char>;
-	var rawStartPtr: UIntPtr;
+	var rawStartPtr: UInt;
 	var tokenFlags: TokenFlags;
 }
 

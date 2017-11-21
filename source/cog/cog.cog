@@ -35,6 +35,18 @@ struct UInt
 }
 
 @__builtin
+struct Int32
+{
+	init(val: Int);
+}
+
+@__builtin
+struct UInt32
+{
+	init(val: UInt);
+}
+
+@__builtin
 @__declRefClass(ArrayType)
 struct Array<T> {}
 
@@ -160,3 +172,6 @@ func print(val: Int);
 
 @__builtin
 func print(val: UInt);
+
+@__builtin
+struct FILE {}

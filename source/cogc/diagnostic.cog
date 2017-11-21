@@ -367,7 +367,7 @@ func diagnoseImpl(
 	sink: Ptr<DiagnosticSink>,
 	loc: SourceLoc,
 	id: DiagnosticID,
-	argCount: int,
+	argCount: Int,
 	args: Ptr<Ptr<DiagnosticArg> >)
 {
 //	DiagnosticInfo const& info = kDiagnostics[id];
