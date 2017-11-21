@@ -4831,7 +4831,7 @@ static StaticClass staticClass;
       DiagnosticID id, 
 
 #line 370 "diagnostic.cog"
-            int argCount, 
+            Int argCount, 
 
 #line 371 "diagnostic.cog"
            
@@ -5802,7 +5802,7 @@ static StaticClass staticClass;
   
 
 #line 11 "lexer.cog"
-                   UIntPtr rawStartPtr;
+                   UInt rawStartPtr;
 
 
 #line 12 "lexer.cog"
@@ -6161,14 +6161,14 @@ static StaticClass staticClass;
   
 
 #line 55 "token.cog"
-               UIntPtr rawLoc;
+               UInt rawLoc;
 
 
 #line 56 "token.cog"
   
 
 #line 56 "token.cog"
-                UIntPtr rawSize;
+                UInt rawSize;
 
 
 #line 57 "token.cog"
@@ -31724,7 +31724,7 @@ default:
       DiagnosticID id, 
 
 #line 370 "diagnostic.cog"
-            int argCount, 
+            Int argCount, 
 
 #line 371 "diagnostic.cog"
            
