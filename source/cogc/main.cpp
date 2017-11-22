@@ -12,7 +12,7 @@ namespace cogc
 	struct Parser;
 	struct SyntaxImpl;
 
-	typedef SyntaxImpl* (*SyntaxCallback)(Parser* parser);
+//	typedef SyntaxImpl* (*SyntaxCallback)(Parser* parser);
 
 	template<int N, typename T>
 	struct FixedSizeArray
