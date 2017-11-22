@@ -42,17 +42,115 @@ func emit(
 	emit(context, getText(name));
 }
 
+enum DeclaratorFlavor
+{
+	kDeclaratorFlavor_Simple,
+	kDeclaratorFlavor_Ptr,
+	kDeclaratorFlavor_Func,
+	kDeclaratorFlavor_DeclName,
+}
+
+struct Declarator
+{
+	var flavor : DeclaratorFlavor;
+	var name : Name*;
+	var decl : Decl;
+	var mode : DeclEmitMode;
+
+	var next : Declarator*;
+}
+
+
+func emitDeclaratorImpl(
+	context: EmitContext*,
+	declarator: Declarator*)
+{
+	if(!declarator)
+		return;
+
+	switch(declarator.flavor)
+	{
+	case kDeclaratorFlavor_Simple:
+		{
+			emit(context, declarator.name);
+		}
+		break;
+
+	case kDeclaratorFlavor_DeclName:
+		{
+			emitDeclName(context, declarator.decl, declarator.mode);
+		}
+		break;
+
+	case kDeclaratorFlavor_Ptr:
+		{
+			emit(context, "*");
+			emitDeclaratorImpl(context, declarator.next);
+		}
+		break;
+
+	case kDeclaratorFlavor_Func:
+		{
+			emit(context, "(*");
+			emitDeclaratorImpl(context, declarator.next);
+			emit(context, ")");
+		}
+		break;
+	}
+}
+
+func emitDeclarator(
+	context: EmitContext*,
+	declarator: Declarator*)
+{
+	if(!declarator)
+		return;
+
+	emit(context, " ");
+	emitDeclaratorImpl(context, declarator);
+}
+
+func emitType(
+	context: EmitContext*,
+	type: Exp,
+	declarator: Declarator*)
+{
+    if(!type)
+    {
+        emit(context, "NullType ");
+		emitDeclarator(context, declarator);
+    }
+	else if(let ptrTypeExpr = as<PtrTypeExpr>(type))
+	{
+		var ptrDeclarator : Declarator;
+		ptrDeclarator.flavor = kDeclaratorFlavor_Ptr;
+		ptrDeclarator.next = declarator;
+
+		emitType(context, ptrTypeExpr.base, &ptrDeclarator);
+	}
+	else if(let funcTypeExpr = as<FuncTypeExpr>(type))
+	{
+		var funcDeclarator : Declarator;
+		funcDeclarator.flavor = kDeclaratorFlavor_Func;
+		funcDeclarator.next = declarator;
+
+		emitType(context, funcTypeExpr.result, &funcDeclarator);
+//		emit(context, "(");
+		emitType(context, funcTypeExpr.params, null);
+//		emit(context, ")");
+	}
+	else
+	{
+		emitExp(context, type);
+		emitDeclarator(context, declarator);
+	}
+}
+
 func emitType(
 	context: EmitContext*,
 	type: Exp)
 {
-    if(!type)
-    {
-        emit(context, "NullType");
-        return;
-    }
-
-	emitExp(context, type);
+	emitType(context, type, null);
 }
 
 func emitType(
@@ -235,10 +333,12 @@ func emitDeclarator(
 	decl: Decl,
 	mode: DeclEmitMode)
 {
-	emitType(context, type);
-	emit(context, " ");
+	var declarator : Declarator;
+	declarator.flavor = kDeclaratorFlavor_DeclName;
+	declarator.decl = decl;
+	declarator.mode = mode;
 
-	emitDeclName(context, decl, mode);
+	emitType(context, type, &declarator);
 }
 
 func emitDeclarator(
@@ -1103,9 +1203,15 @@ func emitDecl(
 	{ }
 	else if (let typeAliasDecl = as<TypeAliasDecl>(decl))
 	{
-		emit(context, "typedef ");
-		emitDeclarator(context, typeAliasDecl.init, typeAliasDecl, mode);
-		emit(context, ";\n");
+		if(mode != kDeclEmitMode_Forward)
+			return;
+
+		if(typeAliasDecl.init.exp)
+		{
+			emit(context, "typedef ");
+			emitDeclarator(context, typeAliasDecl.init, typeAliasDecl, mode);
+			emit(context, ";\n");
+		}
 	}
 	else if (let genericDecl = as<GenericDecl>(decl))
 	{
