@@ -474,121 +474,138 @@ struct DeclRefValImpl;
  
 
 #line 45 "emit.cog"
+ enum DeclaratorFlavor : int;
+
+
+#line 53 "emit.cog"
+ struct Declarator;
+
+
+#line 64 "emit.cog"
  
 
-#line 58 "emit.cog"
+#line 102 "emit.cog"
  
 
-#line 72 "emit.cog"
+#line 113 "emit.cog"
  
 
-#line 87 "emit.cog"
+#line 149 "emit.cog"
  
 
-#line 144 "emit.cog"
+#line 156 "emit.cog"
  
 
-#line 189 "emit.cog"
+#line 170 "emit.cog"
  
 
-#line 197 "emit.cog"
+#line 185 "emit.cog"
  
 
-#line 232 "emit.cog"
+#line 242 "emit.cog"
  
 
-#line 244 "emit.cog"
+#line 287 "emit.cog"
  
 
-#line 255 "emit.cog"
+#line 295 "emit.cog"
  
 
-#line 267 "emit.cog"
+#line 330 "emit.cog"
  
 
-#line 297 "emit.cog"
+#line 344 "emit.cog"
  
 
-#line 305 "emit.cog"
+#line 355 "emit.cog"
  
 
-#line 320 "emit.cog"
+#line 367 "emit.cog"
  
 
-#line 353 "emit.cog"
+#line 397 "emit.cog"
  
 
-#line 489 "emit.cog"
+#line 405 "emit.cog"
  
 
-#line 501 "emit.cog"
+#line 420 "emit.cog"
  
 
-#line 517 "emit.cog"
+#line 453 "emit.cog"
  
 
-#line 526 "emit.cog"
+#line 589 "emit.cog"
  
 
-#line 554 "emit.cog"
+#line 601 "emit.cog"
  
 
-#line 691 "emit.cog"
+#line 617 "emit.cog"
  
 
-#line 761 "emit.cog"
+#line 626 "emit.cog"
  
 
-#line 805 "emit.cog"
+#line 654 "emit.cog"
  
 
-#line 830 "emit.cog"
+#line 791 "emit.cog"
  
 
-#line 847 "emit.cog"
+#line 861 "emit.cog"
  
 
-#line 900 "emit.cog"
+#line 905 "emit.cog"
  
 
-#line 963 "emit.cog"
+#line 930 "emit.cog"
  
 
-#line 1024 "emit.cog"
+#line 947 "emit.cog"
  
 
-#line 1152 "emit.cog"
+#line 1000 "emit.cog"
  
 
-#line 1163 "emit.cog"
+#line 1063 "emit.cog"
+ 
+
+#line 1124 "emit.cog"
+ 
+
+#line 1258 "emit.cog"
+ 
+
+#line 1269 "emit.cog"
  struct DeclSortContext;
 
 
-#line 1169 "emit.cog"
+#line 1275 "emit.cog"
  
 
-#line 1176 "emit.cog"
+#line 1282 "emit.cog"
  
 
-#line 1180 "emit.cog"
+#line 1286 "emit.cog"
  
 
-#line 1226 "emit.cog"
+#line 1332 "emit.cog"
  
 
-#line 1256 "emit.cog"
+#line 1362 "emit.cog"
  
 
-#line 1263 "emit.cog"
+#line 1369 "emit.cog"
  
 
-#line 1291 "emit.cog"
+#line 1397 "emit.cog"
  
 
-#line 1313 "emit.cog"
+#line 1419 "emit.cog"
  
 
-#line 1405 "emit.cog"
+#line 1511 "emit.cog"
  
 
 #line 3 "eval.cog"
@@ -605,11 +622,7 @@ struct DeclRefValImpl;
 
 
 #line 5 "token.cog"
- typedef 
-
-#line 5 "token.cog"
-                        UInt16 TokenFlags;
-
+ 
 
 #line 5 "lexer.cog"
  struct Lexer;
@@ -729,11 +742,7 @@ struct DeclRefValImpl;
  
 
 #line 5 "parser.cog"
- typedef 
-
-#line 5 "parser.cog"
-                         UInt32 ParserFlags;
-
+ 
 
 #line 7 "parser.cog"
  enum ParserFlag : int;
@@ -827,11 +836,11 @@ struct DeclRefValImpl;
 #line 381 "parser.cog"
  
 
-#line 725 "syntax.cog"
+#line 727 "syntax.cog"
  struct LookupResultItem;
 
 
-#line 744 "syntax.cog"
+#line 746 "syntax.cog"
  struct LookupResult;
 
 
@@ -865,12 +874,8 @@ struct DeclRefValImpl;
 #line 572 "parser.cog"
  
 
-#line 645 "syntax.cog"
- typedef 
-
-#line 645 "syntax.cog"
-                       Int64 IntLitVal;
-
+#line 647 "syntax.cog"
+ 
 
 #line 595 "parser.cog"
  
@@ -1047,6 +1052,9 @@ struct DeclRefValImpl;
  
 
 #line 2068 "parser.cog"
+ 
+
+#line 556 "syntax.cog"
  
 
 #line 2074 "parser.cog"
@@ -1343,267 +1351,267 @@ struct LetDeclImpl;
 struct ParamDeclImpl;
 
 
-#line 556 "syntax.cog"
+#line 558 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl;
 
 
-#line 564 "syntax.cog"
+#line 566 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl;
 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl;
 
 
-#line 576 "syntax.cog"
+#line 578 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl;
 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl;
 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl;
 
 
-#line 597 "syntax.cog"
+#line 599 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl;
 
 
-#line 602 "syntax.cog"
+#line 604 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl;
 
 
-#line 606 "syntax.cog"
+#line 608 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl;
 
 
-#line 610 "syntax.cog"
+#line 612 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl;
 
 
-#line 616 "syntax.cog"
+#line 618 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl;
 
 
-#line 624 "syntax.cog"
+#line 626 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl;
 
 
-#line 629 "syntax.cog"
+#line 631 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl;
 
 
-#line 636 "syntax.cog"
+#line 638 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl;
 
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl;
 
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl;
 
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl;
 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl;
 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl;
 
 
-#line 669 "syntax.cog"
+#line 671 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl;
 
 
-#line 673 "syntax.cog"
+#line 675 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl;
 
 
-#line 677 "syntax.cog"
+#line 679 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl;
 
 
-#line 681 "syntax.cog"
+#line 683 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl;
 
 
-#line 685 "syntax.cog"
+#line 687 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl;
 
 
-#line 689 "syntax.cog"
+#line 691 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl;
 
 
-#line 693 "syntax.cog"
+#line 695 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl;
 
 
-#line 697 "syntax.cog"
+#line 699 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl;
 
 
-#line 703 "syntax.cog"
+#line 705 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl;
 
 
-#line 708 "syntax.cog"
+#line 710 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl;
 
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl;
 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl;
 
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl;
 
 
-#line 779 "syntax.cog"
+#line 781 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl;
 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  using TypeExpr = struct TypeExprImpl* ;
 struct TypeExprImpl;
 
 
-#line 792 "syntax.cog"
+#line 794 "syntax.cog"
  using PtrTypeExpr = struct PtrTypeExprImpl* ;
 struct PtrTypeExprImpl;
 
 
-#line 798 "syntax.cog"
+#line 800 "syntax.cog"
  using FuncTypeExpr = struct FuncTypeExprImpl* ;
 struct FuncTypeExprImpl;
 
 
-#line 807 "syntax.cog"
+#line 809 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl;
 
 
-#line 812 "syntax.cog"
+#line 814 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl;
 
 
-#line 818 "syntax.cog"
+#line 820 "syntax.cog"
  using VoidType = struct VoidTypeImpl* ;
 struct VoidTypeImpl;
 
 
-#line 821 "syntax.cog"
+#line 823 "syntax.cog"
  using NullType = struct NullTypeImpl* ;
 struct NullTypeImpl;
 
 
-#line 824 "syntax.cog"
+#line 826 "syntax.cog"
  using PtrType = struct PtrTypeImpl* ;
 struct PtrTypeImpl;
 
 
-#line 828 "syntax.cog"
+#line 830 "syntax.cog"
  using ClassType = struct ClassTypeImpl* ;
 struct ClassTypeImpl;
 
 
-#line 832 "syntax.cog"
+#line 834 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl;
 
 
-#line 838 "syntax.cog"
+#line 840 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl;
 
 
-#line 844 "syntax.cog"
+#line 846 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl;
 
 
-#line 849 "syntax.cog"
+#line 851 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl;
 
 
-#line 856 "syntax.cog"
+#line 858 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl;
 
 
-#line 859 "syntax.cog"
+#line 861 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl;
 
 
-#line 862 "syntax.cog"
+#line 864 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl;
 
 
-#line 869 "syntax.cog"
+#line 871 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl;
 
 
-#line 876 "syntax.cog"
+#line 878 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl;
 
 
-#line 881 "syntax.cog"
+#line 883 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl;
 
 
-#line 887 "syntax.cog"
+#line 889 "syntax.cog"
  using NullLitExpr = struct NullLitExprImpl* ;
 struct NullLitExprImpl;
 
@@ -4985,713 +4993,847 @@ kDeclEmitMode_Full,
 
 
 #line 45 "emit.cog"
- void emitType(
+ enum DeclaratorFlavor : int
+{
+kDeclaratorFlavor_Simple,
+kDeclaratorFlavor_Ptr,
+kDeclaratorFlavor_Func,
+kDeclaratorFlavor_DeclName,
+};
 
-#line 46 "emit.cog"
-                      
 
-#line 46 "emit.cog"
-           EmitContext
+#line 53 "emit.cog"
+ struct Declarator
+{
+typedef cog::Class StaticClass;
+static StaticClass staticClass;
 
-#line 46 "emit.cog"
-                      * context, 
 
-#line 47 "emit.cog"
-        Exp type);
+#line 55 "emit.cog"
+  
+
+#line 55 "emit.cog"
+               DeclaratorFlavor flavor;
+
+
+#line 56 "emit.cog"
+  
+
+#line 56 "emit.cog"
+                 
+
+#line 56 "emit.cog"
+             Name
+
+#line 56 "emit.cog"
+                 * name;
+
+
+#line 57 "emit.cog"
+  
+
+#line 57 "emit.cog"
+             Decl decl;
 
 
 #line 58 "emit.cog"
- void emitType(
+  
 
-#line 59 "emit.cog"
-                      
+#line 58 "emit.cog"
+             DeclEmitMode mode;
 
-#line 59 "emit.cog"
-           EmitContext
-
-#line 59 "emit.cog"
-                      * context, 
 
 #line 60 "emit.cog"
+  
+
+#line 60 "emit.cog"
+                       
+
+#line 60 "emit.cog"
+             Declarator
+
+#line 60 "emit.cog"
+                       * next;
+};
+
+
+#line 64 "emit.cog"
+ void emitDeclaratorImpl(
+
+#line 65 "emit.cog"
+                      
+
+#line 65 "emit.cog"
+           EmitContext
+
+#line 65 "emit.cog"
+                      * context, 
+
+#line 66 "emit.cog"
+                        
+
+#line 66 "emit.cog"
+              Declarator
+
+#line 66 "emit.cog"
+                        * declarator);
+
+
+#line 102 "emit.cog"
+ void emitDeclarator(
+
+#line 103 "emit.cog"
+                      
+
+#line 103 "emit.cog"
+           EmitContext
+
+#line 103 "emit.cog"
+                      * context, 
+
+#line 104 "emit.cog"
+                        
+
+#line 104 "emit.cog"
+              Declarator
+
+#line 104 "emit.cog"
+                        * declarator);
+
+
+#line 113 "emit.cog"
+ void emitType(
+
+#line 114 "emit.cog"
+                      
+
+#line 114 "emit.cog"
+           EmitContext
+
+#line 114 "emit.cog"
+                      * context, 
+
+#line 115 "emit.cog"
+        Exp type, 
+
+#line 116 "emit.cog"
+                        
+
+#line 116 "emit.cog"
+              Declarator
+
+#line 116 "emit.cog"
+                        * declarator);
+
+
+#line 149 "emit.cog"
+ void emitType(
+
+#line 150 "emit.cog"
+                      
+
+#line 150 "emit.cog"
+           EmitContext
+
+#line 150 "emit.cog"
+                      * context, 
+
+#line 151 "emit.cog"
+        Exp type);
+
+
+#line 156 "emit.cog"
+ void emitType(
+
+#line 157 "emit.cog"
+                      
+
+#line 157 "emit.cog"
+           EmitContext
+
+#line 157 "emit.cog"
+                      * context, 
+
+#line 158 "emit.cog"
         Type type);
 
 
-#line 72 "emit.cog"
+#line 170 "emit.cog"
  void emitVal(
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
                          
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
               EmitContext
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
                          * context, 
 
-#line 74 "emit.cog"
+#line 172 "emit.cog"
           Val val);
 
 
-#line 87 "emit.cog"
+#line 185 "emit.cog"
  void emitGenericQuals(
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
                       
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
            EmitContext
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
                       * context, 
 
-#line 89 "emit.cog"
+#line 187 "emit.cog"
         Decl decl);
 
 
-#line 144 "emit.cog"
+#line 242 "emit.cog"
  void emitDeclName(
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
                       
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
            EmitContext
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
                       * context, 
 
-#line 146 "emit.cog"
+#line 244 "emit.cog"
         Decl decl, 
 
-#line 147 "emit.cog"
+#line 245 "emit.cog"
         DeclEmitMode mode, 
 
-#line 148 "emit.cog"
+#line 246 "emit.cog"
                  Bool includeModule);
 
 
-#line 189 "emit.cog"
+#line 287 "emit.cog"
  void emitDeclName(
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
                       
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
            EmitContext
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
                       * context, 
 
-#line 191 "emit.cog"
+#line 289 "emit.cog"
         Decl decl, 
 
-#line 192 "emit.cog"
+#line 290 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 197 "emit.cog"
+#line 295 "emit.cog"
  void emitDeclNameAndGenericArgs(
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
                       
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
            EmitContext
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
                       * context, 
 
-#line 199 "emit.cog"
+#line 297 "emit.cog"
         Decl decl, 
 
-#line 200 "emit.cog"
+#line 298 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 232 "emit.cog"
+#line 330 "emit.cog"
  void emitDeclarator(
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
                       
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
            EmitContext
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
                       * context, 
 
-#line 234 "emit.cog"
+#line 332 "emit.cog"
         Exp type, 
 
-#line 235 "emit.cog"
+#line 333 "emit.cog"
         Decl decl, 
 
-#line 236 "emit.cog"
+#line 334 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 244 "emit.cog"
+#line 344 "emit.cog"
  void emitDeclarator(
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
                       
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
            EmitContext
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
                       * context, 
 
-#line 246 "emit.cog"
+#line 346 "emit.cog"
         TypeExp type, 
 
-#line 247 "emit.cog"
+#line 347 "emit.cog"
         Decl decl, 
 
-#line 248 "emit.cog"
+#line 348 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 255 "emit.cog"
+#line 355 "emit.cog"
  void emitBinaryExp(
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
                          
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
               EmitContext
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
                          * context, 
 
-#line 257 "emit.cog"
+#line 357 "emit.cog"
           AppExpBase exp, 
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
              
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
          Char
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
              * op);
 
 
-#line 267 "emit.cog"
+#line 367 "emit.cog"
  void emitStringVal(
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
                          
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
               EmitContext
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
                          * context, 
 
-#line 269 "emit.cog"
+#line 369 "emit.cog"
           StringSpan str);
 
 
-#line 297 "emit.cog"
+#line 397 "emit.cog"
  void emitStringVal(
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
                          
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
               EmitContext
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
                          * context, 
 
-#line 299 "emit.cog"
+#line 399 "emit.cog"
           String str);
 
 
-#line 305 "emit.cog"
+#line 405 "emit.cog"
  void emitGenericArgs(
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
                       
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
            EmitContext
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
                       * context, 
 
-#line 307 "emit.cog"
+#line 407 "emit.cog"
         Specializations spec);
 
 
-#line 320 "emit.cog"
+#line 420 "emit.cog"
  void emitDeclRef(
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
                       
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
            EmitContext
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
                       * context, 
 
-#line 322 "emit.cog"
+#line 422 "emit.cog"
            DeclRefVal declRef);
 
 
-#line 353 "emit.cog"
+#line 453 "emit.cog"
  void emitExp(
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
                          
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
               EmitContext
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
                          * context, 
 
-#line 355 "emit.cog"
+#line 455 "emit.cog"
        Exp exp);
 
 
-#line 489 "emit.cog"
+#line 589 "emit.cog"
  void emitBlockStmt(
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
                       
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
            EmitContext
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
                       * context, 
 
-#line 491 "emit.cog"
+#line 591 "emit.cog"
         BlockStmt stmt);
 
 
-#line 501 "emit.cog"
+#line 601 "emit.cog"
  void emitBlockStmt(
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
                          
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
               EmitContext
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
                          * context, 
 
-#line 503 "emit.cog"
+#line 603 "emit.cog"
         Stmt stmt);
 
 
-#line 517 "emit.cog"
+#line 617 "emit.cog"
  void emit(
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
                       
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
            EmitContext
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
                       * context, 
 
-#line 519 "emit.cog"
+#line 619 "emit.cog"
          Int value);
 
 
-#line 526 "emit.cog"
+#line 626 "emit.cog"
  void emitLineDirective(
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
                       
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
            EmitContext
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
                       * context, 
 
-#line 528 "emit.cog"
+#line 628 "emit.cog"
        Syntax syn);
 
 
-#line 554 "emit.cog"
+#line 654 "emit.cog"
  void emitStmt(
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
                       
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
            EmitContext
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
                       * context, 
 
-#line 556 "emit.cog"
+#line 656 "emit.cog"
         Stmt stmt);
 
 
-#line 691 "emit.cog"
+#line 791 "emit.cog"
  void emitClassDecl(
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
                       
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
            EmitContext
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
                       * context, 
 
-#line 693 "emit.cog"
+#line 793 "emit.cog"
               ClassDecl aggDecl, 
 
-#line 694 "emit.cog"
+#line 794 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 761 "emit.cog"
+#line 861 "emit.cog"
  void emitStructDecl(
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
                       
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
            EmitContext
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
                       * context, 
 
-#line 763 "emit.cog"
+#line 863 "emit.cog"
               StructDecl aggDecl, 
 
-#line 764 "emit.cog"
+#line 864 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 805 "emit.cog"
+#line 905 "emit.cog"
  void emitVarDecl(
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
                       
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
            EmitContext
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
                       * context, 
 
-#line 807 "emit.cog"
+#line 907 "emit.cog"
            VarDeclBase varDecl, 
 
-#line 808 "emit.cog"
+#line 908 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 830 "emit.cog"
+#line 930 "emit.cog"
  void emitParamDecl(
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
                        
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
             EmitContext
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
                        * context, 
 
-#line 832 "emit.cog"
+#line 932 "emit.cog"
               ParamDecl paramDecl, 
 
-#line 833 "emit.cog"
+#line 933 "emit.cog"
           DeclEmitMode mode);
 
 
-#line 847 "emit.cog"
+#line 947 "emit.cog"
  void emitFuncDecl(
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
                       
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
            EmitContext
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
                       * context, 
 
-#line 849 "emit.cog"
+#line 949 "emit.cog"
             FuncDecl funcDecl, 
 
-#line 850 "emit.cog"
+#line 950 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 900 "emit.cog"
+#line 1000 "emit.cog"
  void emitInitializerDecl(
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
                          
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
               EmitContext
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
                          * context, 
 
-#line 902 "emit.cog"
+#line 1002 "emit.cog"
                InitializerDecl initDecl, 
 
-#line 903 "emit.cog"
+#line 1003 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 963 "emit.cog"
+#line 1063 "emit.cog"
  void emitSubscriptDecl(
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
                       
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
            EmitContext
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
                       * context, 
 
-#line 965 "emit.cog"
+#line 1065 "emit.cog"
         SubscriptDecl decl, 
 
-#line 966 "emit.cog"
+#line 1066 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 1024 "emit.cog"
+#line 1124 "emit.cog"
  void emitDecl(
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
                       
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
            EmitContext
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
                       * context, 
 
-#line 1026 "emit.cog"
+#line 1126 "emit.cog"
         Decl decl, 
 
-#line 1027 "emit.cog"
+#line 1127 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 1152 "emit.cog"
+#line 1258 "emit.cog"
  void emitDecls(
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
                       
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
            EmitContext
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
                       * context, 
 
-#line 1154 "emit.cog"
+#line 1260 "emit.cog"
                  ContainerDecl containerDecl, 
 
-#line 1155 "emit.cog"
+#line 1261 "emit.cog"
         DeclEmitMode mode);
 
 
-#line 1163 "emit.cog"
+#line 1269 "emit.cog"
  struct DeclSortContext
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 1165 "emit.cog"
+#line 1271 "emit.cog"
   
 
-#line 1165 "emit.cog"
+#line 1271 "emit.cog"
                         
 
-#line 1165 "emit.cog"
+#line 1271 "emit.cog"
                    Array<
 
-#line 1165 "emit.cog"
+#line 1271 "emit.cog"
                          Decl>  sortedDecls;
 
 
-#line 1166 "emit.cog"
+#line 1272 "emit.cog"
   
 
-#line 1166 "emit.cog"
+#line 1272 "emit.cog"
                           
 
-#line 1166 "emit.cog"
+#line 1272 "emit.cog"
                      Array<
 
-#line 1166 "emit.cog"
+#line 1272 "emit.cog"
                            Decl>  unsortedDecls;
 };
 
 
-#line 1169 "emit.cog"
+#line 1275 "emit.cog"
  void addDecl(
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
                           
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
            DeclSortContext
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
                           * context, 
 
-#line 1171 "emit.cog"
+#line 1277 "emit.cog"
         Decl decl);
 
 
-#line 1176 "emit.cog"
+#line 1282 "emit.cog"
  void addDependencies(
 
-#line 1177 "emit.cog"
+#line 1283 "emit.cog"
                           
 
-#line 1177 "emit.cog"
+#line 1283 "emit.cog"
            DeclSortContext
 
-#line 1177 "emit.cog"
+#line 1283 "emit.cog"
                           * context, 
 
-#line 1178 "emit.cog"
+#line 1284 "emit.cog"
         Decl decl);
 
 
-#line 1180 "emit.cog"
+#line 1286 "emit.cog"
  void addDependencies(
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
                           
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
            DeclSortContext
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
                           * context, 
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
             
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
         Name
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
             * name);
 
 
-#line 1226 "emit.cog"
+#line 1332 "emit.cog"
  void addDependencies(
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
                           
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
            DeclSortContext
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
                           * context, 
 
-#line 1228 "emit.cog"
+#line 1334 "emit.cog"
        Exp exp);
 
 
-#line 1256 "emit.cog"
+#line 1362 "emit.cog"
  void addDependencies(
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
                           
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
            DeclSortContext
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
                           * context, 
 
-#line 1258 "emit.cog"
+#line 1364 "emit.cog"
            TypeExp typeExp);
 
 
-#line 1263 "emit.cog"
+#line 1369 "emit.cog"
  void addDependencies(
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
                           
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
            DeclSortContext
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
                           * context, 
 
-#line 1265 "emit.cog"
+#line 1371 "emit.cog"
         Decl decl);
 
 
-#line 1291 "emit.cog"
+#line 1397 "emit.cog"
  void sortDecls(
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
                       
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
            EmitContext
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
                       * context, 
 
-#line 1293 "emit.cog"
+#line 1399 "emit.cog"
              ContainerDecl container);
 
 
-#line 1313 "emit.cog"
+#line 1419 "emit.cog"
  void emitModuleInner(
 
-#line 1314 "emit.cog"
+#line 1420 "emit.cog"
              Session session, 
 
-#line 1315 "emit.cog"
+#line 1421 "emit.cog"
                   TerminatedStringSpan moduleNameText, 
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                   
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                Ptr<
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                    Char>  outputPath, 
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
               
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
            Ptr<
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
                Char>  extra);
 
 
-#line 1405 "emit.cog"
+#line 1511 "emit.cog"
  void emitModule(
 
-#line 1406 "emit.cog"
+#line 1512 "emit.cog"
            Session session);
 
 
@@ -7257,103 +7399,103 @@ static StaticClass staticClass;
                TokenCode expected);
 
 
-#line 725 "syntax.cog"
+#line 727 "syntax.cog"
  struct LookupResultItem
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
   
 
-#line 728 "syntax.cog"
+#line 730 "syntax.cog"
              Decl decl;
 
 
-#line 730 "syntax.cog"
+#line 732 "syntax.cog"
   LookupResultItem();
 
 
-#line 738 "syntax.cog"
+#line 740 "syntax.cog"
   LookupResultItem(
 
-#line 738 "syntax.cog"
+#line 740 "syntax.cog"
              Decl decl);
 };
 
 
-#line 744 "syntax.cog"
+#line 746 "syntax.cog"
  struct LookupResult
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 746 "syntax.cog"
+#line 748 "syntax.cog"
   
 
-#line 746 "syntax.cog"
+#line 748 "syntax.cog"
                    
 
-#line 746 "syntax.cog"
+#line 748 "syntax.cog"
               Array<
 
-#line 746 "syntax.cog"
+#line 748 "syntax.cog"
                     LookupResultItem>  items;
 
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
   
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                      
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                   Ptr<
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                       LookupResultItem>  begin();
 
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
   
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                    
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                 Ptr<
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                     LookupResultItem>  end();
 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
   
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                     Bool isEmpty();
 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
      
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                         Bool isUnique();
 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
      
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                             Bool isOverloaded();
 
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
      
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
                        Decl getDecl();
 };
 
@@ -7551,10 +7693,10 @@ static StaticClass staticClass;
            Exp base);
 
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
  typedef 
 
-#line 645 "syntax.cog"
+#line 647 "syntax.cog"
                        Int64 IntLitVal;
 
 
@@ -8587,6 +8729,25 @@ static StaticClass staticClass;
 
 #line 2068 "parser.cog"
                                   * parser);
+
+
+#line 556 "syntax.cog"
+ typedef 
+
+#line 556 "syntax.cog"
+                                         Syntax (*SyntaxCallback)
+
+#line 556 "syntax.cog"
+                            (
+
+#line 556 "syntax.cog"
+                                   
+
+#line 556 "syntax.cog"
+                             Parser
+
+#line 556 "syntax.cog"
+                                   *);
 
 
 #line 2074 "parser.cog"
@@ -10429,34 +10590,34 @@ template<> struct ObjectClassImpl<cogc::ParamDecl > { typedef cogc::ParamDeclImp
 } namespace cogc {
 
 
-#line 556 "syntax.cog"
+#line 558 "syntax.cog"
  using SyntaxDecl = struct SyntaxDeclImpl* ;
 struct SyntaxDeclImpl : 
 
-#line 556 "syntax.cog"
+#line 558 "syntax.cog"
                     DeclImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 558 "syntax.cog"
+#line 560 "syntax.cog"
   
 
-#line 558 "syntax.cog"
+#line 560 "syntax.cog"
                        
 
-#line 558 "syntax.cog"
+#line 560 "syntax.cog"
                     Ptr<
 
-#line 558 "syntax.cog"
+#line 560 "syntax.cog"
                         Class>  syntaxClass;
 
 
-#line 559 "syntax.cog"
+#line 561 "syntax.cog"
   
 
-#line 559 "syntax.cog"
+#line 561 "syntax.cog"
                  SyntaxCallback callback;
 };
 } namespace cog {
@@ -10464,28 +10625,28 @@ template<> struct ObjectClassImpl<cogc::SyntaxDecl > { typedef cogc::SyntaxDeclI
 } namespace cogc {
 
 
-#line 564 "syntax.cog"
+#line 566 "syntax.cog"
  using IfStmtBase = struct IfStmtBaseImpl* ;
 struct IfStmtBaseImpl : 
 
-#line 564 "syntax.cog"
+#line 566 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 566 "syntax.cog"
+#line 568 "syntax.cog"
   
 
-#line 566 "syntax.cog"
+#line 568 "syntax.cog"
                  Stmt thenStmt;
 
 
-#line 567 "syntax.cog"
+#line 569 "syntax.cog"
   
 
-#line 567 "syntax.cog"
+#line 569 "syntax.cog"
                  Stmt elseStmt;
 };
 } namespace cog {
@@ -10493,21 +10654,21 @@ template<> struct ObjectClassImpl<cogc::IfStmtBase > { typedef cogc::IfStmtBaseI
 } namespace cogc {
 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  using IfStmt = struct IfStmtImpl* ;
 struct IfStmtImpl : 
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
                 IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 573 "syntax.cog"
+#line 575 "syntax.cog"
   
 
-#line 573 "syntax.cog"
+#line 575 "syntax.cog"
                   Exp condition;
 };
 } namespace cog {
@@ -10515,34 +10676,34 @@ template<> struct ObjectClassImpl<cogc::IfStmt > { typedef cogc::IfStmtImpl Impl
 } namespace cogc {
 
 
-#line 576 "syntax.cog"
+#line 578 "syntax.cog"
  using IfLetStmt = struct IfLetStmtImpl* ;
 struct IfLetStmtImpl : 
 
-#line 576 "syntax.cog"
+#line 578 "syntax.cog"
                    IfStmtBaseImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
   
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
                  
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
              Name
 
-#line 578 "syntax.cog"
+#line 580 "syntax.cog"
                  * name;
 
 
-#line 579 "syntax.cog"
+#line 581 "syntax.cog"
   
 
-#line 579 "syntax.cog"
+#line 581 "syntax.cog"
              Exp init;
 };
 } namespace cog {
@@ -10550,28 +10711,28 @@ template<> struct ObjectClassImpl<cogc::IfLetStmt > { typedef cogc::IfLetStmtImp
 } namespace cogc {
 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  using WhileStmt = struct WhileStmtImpl* ;
 struct WhileStmtImpl : 
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 585 "syntax.cog"
+#line 587 "syntax.cog"
   
 
-#line 585 "syntax.cog"
+#line 587 "syntax.cog"
                   Exp condition;
 
 
-#line 586 "syntax.cog"
+#line 588 "syntax.cog"
   
 
-#line 586 "syntax.cog"
+#line 588 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -10579,42 +10740,42 @@ template<> struct ObjectClassImpl<cogc::WhileStmt > { typedef cogc::WhileStmtImp
 } namespace cogc {
 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  using ForStmt = struct ForStmtImpl* ;
 struct ForStmtImpl : 
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
                  ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 591 "syntax.cog"
+#line 593 "syntax.cog"
   
 
-#line 591 "syntax.cog"
+#line 593 "syntax.cog"
              Stmt init;
 
 
-#line 592 "syntax.cog"
+#line 594 "syntax.cog"
   
 
-#line 592 "syntax.cog"
+#line 594 "syntax.cog"
                   Exp condition;
 
 
-#line 593 "syntax.cog"
+#line 595 "syntax.cog"
   
 
-#line 593 "syntax.cog"
+#line 595 "syntax.cog"
              Exp iter;
 
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
   
 
-#line 594 "syntax.cog"
+#line 596 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -10622,21 +10783,21 @@ template<> struct ObjectClassImpl<cogc::ForStmt > { typedef cogc::ForStmtImpl Im
 } namespace cogc {
 
 
-#line 597 "syntax.cog"
+#line 599 "syntax.cog"
  using ReturnStmt = struct ReturnStmtImpl* ;
 struct ReturnStmtImpl : 
 
-#line 597 "syntax.cog"
+#line 599 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
   
 
-#line 599 "syntax.cog"
+#line 601 "syntax.cog"
               Exp value;
 };
 } namespace cog {
@@ -10644,11 +10805,11 @@ template<> struct ObjectClassImpl<cogc::ReturnStmt > { typedef cogc::ReturnStmtI
 } namespace cogc {
 
 
-#line 602 "syntax.cog"
+#line 604 "syntax.cog"
  using BreakStmt = struct BreakStmtImpl* ;
 struct BreakStmtImpl : 
 
-#line 602 "syntax.cog"
+#line 604 "syntax.cog"
                    StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -10659,11 +10820,11 @@ template<> struct ObjectClassImpl<cogc::BreakStmt > { typedef cogc::BreakStmtImp
 } namespace cogc {
 
 
-#line 606 "syntax.cog"
+#line 608 "syntax.cog"
  using ContinueStmt = struct ContinueStmtImpl* ;
 struct ContinueStmtImpl : 
 
-#line 606 "syntax.cog"
+#line 608 "syntax.cog"
                       StmtImpl
 {
 typedef cog::Class StaticClass;
@@ -10674,34 +10835,34 @@ template<> struct ObjectClassImpl<cogc::ContinueStmt > { typedef cogc::ContinueS
 } namespace cogc {
 
 
-#line 610 "syntax.cog"
+#line 612 "syntax.cog"
  using SwitchCase = struct SwitchCaseImpl* ;
 struct SwitchCaseImpl : 
 
-#line 610 "syntax.cog"
+#line 612 "syntax.cog"
                     SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 612 "syntax.cog"
+#line 614 "syntax.cog"
   
 
-#line 612 "syntax.cog"
+#line 614 "syntax.cog"
                     
 
-#line 612 "syntax.cog"
+#line 614 "syntax.cog"
                Array<
 
-#line 612 "syntax.cog"
+#line 614 "syntax.cog"
                      Arg>  values;
 
 
-#line 613 "syntax.cog"
+#line 615 "syntax.cog"
   
 
-#line 613 "syntax.cog"
+#line 615 "syntax.cog"
              Stmt body;
 };
 } namespace cog {
@@ -10709,34 +10870,34 @@ template<> struct ObjectClassImpl<cogc::SwitchCase > { typedef cogc::SwitchCaseI
 } namespace cogc {
 
 
-#line 616 "syntax.cog"
+#line 618 "syntax.cog"
  using SwitchStmt = struct SwitchStmtImpl* ;
 struct SwitchStmtImpl : 
 
-#line 616 "syntax.cog"
+#line 618 "syntax.cog"
                     StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 618 "syntax.cog"
+#line 620 "syntax.cog"
   
 
-#line 618 "syntax.cog"
+#line 620 "syntax.cog"
                   Exp condition;
 
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
   
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
                    
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
               Array<
 
-#line 619 "syntax.cog"
+#line 621 "syntax.cog"
                     SwitchCase>  cases;
 };
 } namespace cog {
@@ -10744,21 +10905,21 @@ template<> struct ObjectClassImpl<cogc::SwitchStmt > { typedef cogc::SwitchStmtI
 } namespace cogc {
 
 
-#line 624 "syntax.cog"
+#line 626 "syntax.cog"
  using Arg = struct ArgImpl* ;
 struct ArgImpl : 
 
-#line 624 "syntax.cog"
+#line 626 "syntax.cog"
              SyntaxImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 626 "syntax.cog"
+#line 628 "syntax.cog"
   
 
-#line 626 "syntax.cog"
+#line 628 "syntax.cog"
             Exp exp;
 };
 } namespace cog {
@@ -10766,11 +10927,11 @@ template<> struct ObjectClassImpl<cogc::Arg > { typedef cogc::ArgImpl Impl; };
 } namespace cogc {
 
 
-#line 629 "syntax.cog"
+#line 631 "syntax.cog"
  using PositionalArg = struct PositionalArgImpl* ;
 struct PositionalArgImpl : 
 
-#line 629 "syntax.cog"
+#line 631 "syntax.cog"
                        ArgImpl
 {
 typedef cog::Class StaticClass;
@@ -10781,21 +10942,21 @@ template<> struct ObjectClassImpl<cogc::PositionalArg > { typedef cogc::Position
 } namespace cogc {
 
 
-#line 636 "syntax.cog"
+#line 638 "syntax.cog"
  using Exp = struct ExpImpl* ;
 struct ExpImpl : 
 
-#line 636 "syntax.cog"
+#line 638 "syntax.cog"
              StmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 638 "syntax.cog"
+#line 640 "syntax.cog"
   
 
-#line 638 "syntax.cog"
+#line 640 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -10803,11 +10964,11 @@ template<> struct ObjectClassImpl<cogc::Exp > { typedef cogc::ExpImpl Impl; };
 } namespace cogc {
 
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
  using LitExp = struct LitExpImpl* ;
 struct LitExpImpl : 
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
                 ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10818,21 +10979,21 @@ template<> struct ObjectClassImpl<cogc::LitExp > { typedef cogc::LitExpImpl Impl
 } namespace cogc {
 
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
  using IntLitExp = struct IntLitExpImpl* ;
 struct IntLitExpImpl : 
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
                    LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 649 "syntax.cog"
+#line 651 "syntax.cog"
   
 
-#line 649 "syntax.cog"
+#line 651 "syntax.cog"
             IntLitVal val;
 };
 } namespace cog {
@@ -10840,21 +11001,21 @@ template<> struct ObjectClassImpl<cogc::IntLitExp > { typedef cogc::IntLitExpImp
 } namespace cogc {
 
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
  using StringLitExp = struct StringLitExpImpl* ;
 struct StringLitExpImpl : 
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
                       LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 654 "syntax.cog"
+#line 656 "syntax.cog"
   
 
-#line 654 "syntax.cog"
+#line 656 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -10862,21 +11023,21 @@ template<> struct ObjectClassImpl<cogc::StringLitExp > { typedef cogc::StringLit
 } namespace cogc {
 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  using CharacterLitExp = struct CharacterLitExpImpl* ;
 struct CharacterLitExpImpl : 
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
                          LitExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 659 "syntax.cog"
+#line 661 "syntax.cog"
   
 
-#line 659 "syntax.cog"
+#line 661 "syntax.cog"
             String val;
 };
 } namespace cog {
@@ -10884,34 +11045,34 @@ template<> struct ObjectClassImpl<cogc::CharacterLitExp > { typedef cogc::Charac
 } namespace cogc {
 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  using AppExpBase = struct AppExpBaseImpl* ;
 struct AppExpBaseImpl : 
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 665 "syntax.cog"
+#line 667 "syntax.cog"
   
 
-#line 665 "syntax.cog"
+#line 667 "syntax.cog"
              Exp base;
 
 
-#line 666 "syntax.cog"
+#line 668 "syntax.cog"
   
 
-#line 666 "syntax.cog"
+#line 668 "syntax.cog"
                   
 
-#line 666 "syntax.cog"
+#line 668 "syntax.cog"
              Array<
 
-#line 666 "syntax.cog"
+#line 668 "syntax.cog"
                    Arg>  args;
 };
 } namespace cog {
@@ -10919,11 +11080,11 @@ template<> struct ObjectClassImpl<cogc::AppExpBase > { typedef cogc::AppExpBaseI
 } namespace cogc {
 
 
-#line 669 "syntax.cog"
+#line 671 "syntax.cog"
  using GenericAppExp = struct GenericAppExpImpl* ;
 struct GenericAppExpImpl : 
 
-#line 669 "syntax.cog"
+#line 671 "syntax.cog"
                        AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10934,11 +11095,11 @@ template<> struct ObjectClassImpl<cogc::GenericAppExp > { typedef cogc::GenericA
 } namespace cogc {
 
 
-#line 673 "syntax.cog"
+#line 675 "syntax.cog"
  using AppExp = struct AppExpImpl* ;
 struct AppExpImpl : 
 
-#line 673 "syntax.cog"
+#line 675 "syntax.cog"
                 AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10949,11 +11110,11 @@ template<> struct ObjectClassImpl<cogc::AppExp > { typedef cogc::AppExpImpl Impl
 } namespace cogc {
 
 
-#line 677 "syntax.cog"
+#line 679 "syntax.cog"
  using IndexExp = struct IndexExpImpl* ;
 struct IndexExpImpl : 
 
-#line 677 "syntax.cog"
+#line 679 "syntax.cog"
                   AppExpBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -10964,11 +11125,11 @@ template<> struct ObjectClassImpl<cogc::IndexExp > { typedef cogc::IndexExpImpl 
 } namespace cogc {
 
 
-#line 681 "syntax.cog"
+#line 683 "syntax.cog"
  using OperatorAppExp = struct OperatorAppExpImpl* ;
 struct OperatorAppExpImpl : 
 
-#line 681 "syntax.cog"
+#line 683 "syntax.cog"
                         AppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10979,11 +11140,11 @@ template<> struct ObjectClassImpl<cogc::OperatorAppExp > { typedef cogc::Operato
 } namespace cogc {
 
 
-#line 685 "syntax.cog"
+#line 687 "syntax.cog"
  using InfixExp = struct InfixExpImpl* ;
 struct InfixExpImpl : 
 
-#line 685 "syntax.cog"
+#line 687 "syntax.cog"
                   OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -10994,11 +11155,11 @@ template<> struct ObjectClassImpl<cogc::InfixExp > { typedef cogc::InfixExpImpl 
 } namespace cogc {
 
 
-#line 689 "syntax.cog"
+#line 691 "syntax.cog"
  using PrefixExp = struct PrefixExpImpl* ;
 struct PrefixExpImpl : 
 
-#line 689 "syntax.cog"
+#line 691 "syntax.cog"
                    OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11009,11 +11170,11 @@ template<> struct ObjectClassImpl<cogc::PrefixExp > { typedef cogc::PrefixExpImp
 } namespace cogc {
 
 
-#line 693 "syntax.cog"
+#line 695 "syntax.cog"
  using PostfixExp = struct PostfixExpImpl* ;
 struct PostfixExpImpl : 
 
-#line 693 "syntax.cog"
+#line 695 "syntax.cog"
                     OperatorAppExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11024,28 +11185,28 @@ template<> struct ObjectClassImpl<cogc::PostfixExp > { typedef cogc::PostfixExpI
 } namespace cogc {
 
 
-#line 697 "syntax.cog"
+#line 699 "syntax.cog"
  using AssignExp = struct AssignExpImpl* ;
 struct AssignExpImpl : 
 
-#line 697 "syntax.cog"
+#line 699 "syntax.cog"
                    ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 699 "syntax.cog"
+#line 701 "syntax.cog"
   
 
-#line 699 "syntax.cog"
+#line 701 "syntax.cog"
              Exp left;
 
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
   
 
-#line 700 "syntax.cog"
+#line 702 "syntax.cog"
               Exp right;
 };
 } namespace cog {
@@ -11053,21 +11214,21 @@ template<> struct ObjectClassImpl<cogc::AssignExp > { typedef cogc::AssignExpImp
 } namespace cogc {
 
 
-#line 703 "syntax.cog"
+#line 705 "syntax.cog"
  using DeclRefExp = struct DeclRefExpImpl* ;
 struct DeclRefExpImpl : 
 
-#line 703 "syntax.cog"
+#line 705 "syntax.cog"
                     ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 705 "syntax.cog"
+#line 707 "syntax.cog"
   
 
-#line 705 "syntax.cog"
+#line 707 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -11075,40 +11236,40 @@ template<> struct ObjectClassImpl<cogc::DeclRefExp > { typedef cogc::DeclRefExpI
 } namespace cogc {
 
 
-#line 708 "syntax.cog"
+#line 710 "syntax.cog"
  using NameExp = struct NameExpImpl* ;
 struct NameExpImpl : 
 
-#line 708 "syntax.cog"
+#line 710 "syntax.cog"
                  DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 710 "syntax.cog"
+#line 712 "syntax.cog"
   
 
-#line 710 "syntax.cog"
+#line 712 "syntax.cog"
                 
 
-#line 710 "syntax.cog"
+#line 712 "syntax.cog"
              Ptr<
 
-#line 710 "syntax.cog"
+#line 712 "syntax.cog"
                  Name>  name;
 
 
-#line 711 "syntax.cog"
+#line 713 "syntax.cog"
   
 
-#line 711 "syntax.cog"
+#line 713 "syntax.cog"
                  
 
-#line 711 "syntax.cog"
+#line 713 "syntax.cog"
               Ptr<
 
-#line 711 "syntax.cog"
+#line 713 "syntax.cog"
                   Scope>  scope;
 };
 } namespace cog {
@@ -11116,34 +11277,34 @@ template<> struct ObjectClassImpl<cogc::NameExp > { typedef cogc::NameExpImpl Im
 } namespace cogc {
 
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
  using MemberExp = struct MemberExpImpl* ;
 struct MemberExpImpl : 
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
                    DeclRefExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 717 "syntax.cog"
+#line 719 "syntax.cog"
   
 
-#line 717 "syntax.cog"
+#line 719 "syntax.cog"
              Exp base;
 
 
-#line 718 "syntax.cog"
+#line 720 "syntax.cog"
   
 
-#line 718 "syntax.cog"
+#line 720 "syntax.cog"
                       
 
-#line 718 "syntax.cog"
+#line 720 "syntax.cog"
                    Ptr<
 
-#line 718 "syntax.cog"
+#line 720 "syntax.cog"
                        Name>  memberName;
 };
 } namespace cog {
@@ -11151,11 +11312,11 @@ template<> struct ObjectClassImpl<cogc::MemberExp > { typedef cogc::MemberExpImp
 } namespace cogc {
 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
  using ErrorExp = struct ErrorExpImpl* ;
 struct ErrorExpImpl : 
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11166,28 +11327,28 @@ template<> struct ObjectClassImpl<cogc::ErrorExp > { typedef cogc::ErrorExpImpl 
 } namespace cogc {
 
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
  using OverloadedExpr = struct OverloadedExprImpl* ;
 struct OverloadedExprImpl : 
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
                         ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 773 "syntax.cog"
+#line 775 "syntax.cog"
   
 
-#line 773 "syntax.cog"
+#line 775 "syntax.cog"
                      LookupResult lookupResult;
 
 
-#line 774 "syntax.cog"
+#line 776 "syntax.cog"
   
 
-#line 774 "syntax.cog"
+#line 776 "syntax.cog"
              Exp base;
 };
 } namespace cog {
@@ -11195,11 +11356,11 @@ template<> struct ObjectClassImpl<cogc::OverloadedExpr > { typedef cogc::Overloa
 } namespace cogc {
 
 
-#line 779 "syntax.cog"
+#line 781 "syntax.cog"
  using BlockStmt = struct BlockStmtImpl* ;
 struct BlockStmtImpl : 
 
-#line 779 "syntax.cog"
+#line 781 "syntax.cog"
                    ContainerDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -11210,11 +11371,11 @@ template<> struct ObjectClassImpl<cogc::BlockStmt > { typedef cogc::BlockStmtImp
 } namespace cogc {
 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  using TypeExpr = struct TypeExprImpl* ;
 struct TypeExprImpl : 
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11225,21 +11386,21 @@ template<> struct ObjectClassImpl<cogc::TypeExpr > { typedef cogc::TypeExprImpl 
 } namespace cogc {
 
 
-#line 792 "syntax.cog"
+#line 794 "syntax.cog"
  using PtrTypeExpr = struct PtrTypeExprImpl* ;
 struct PtrTypeExprImpl : 
 
-#line 792 "syntax.cog"
+#line 794 "syntax.cog"
                      TypeExprImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 794 "syntax.cog"
+#line 796 "syntax.cog"
   
 
-#line 794 "syntax.cog"
+#line 796 "syntax.cog"
              Exp base;
 };
 } namespace cog {
@@ -11247,28 +11408,28 @@ template<> struct ObjectClassImpl<cogc::PtrTypeExpr > { typedef cogc::PtrTypeExp
 } namespace cogc {
 
 
-#line 798 "syntax.cog"
+#line 800 "syntax.cog"
  using FuncTypeExpr = struct FuncTypeExprImpl* ;
 struct FuncTypeExprImpl : 
 
-#line 798 "syntax.cog"
+#line 800 "syntax.cog"
                       TypeExprImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 800 "syntax.cog"
+#line 802 "syntax.cog"
   
 
-#line 800 "syntax.cog"
+#line 802 "syntax.cog"
                Exp params;
 
 
-#line 801 "syntax.cog"
+#line 803 "syntax.cog"
   
 
-#line 801 "syntax.cog"
+#line 803 "syntax.cog"
                Exp result;
 };
 } namespace cog {
@@ -11276,11 +11437,11 @@ template<> struct ObjectClassImpl<cogc::FuncTypeExpr > { typedef cogc::FuncTypeE
 } namespace cogc {
 
 
-#line 807 "syntax.cog"
+#line 809 "syntax.cog"
  using Type = struct TypeImpl* ;
 struct TypeImpl : 
 
-#line 807 "syntax.cog"
+#line 809 "syntax.cog"
               ValImpl
 {
 typedef cog::Class StaticClass;
@@ -11291,21 +11452,21 @@ template<> struct ObjectClassImpl<cogc::Type > { typedef cogc::TypeImpl Impl; };
 } namespace cogc {
 
 
-#line 812 "syntax.cog"
+#line 814 "syntax.cog"
  using DeclRefType = struct DeclRefTypeImpl* ;
 struct DeclRefTypeImpl : 
 
-#line 812 "syntax.cog"
+#line 814 "syntax.cog"
                      TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 814 "syntax.cog"
+#line 816 "syntax.cog"
   
 
-#line 814 "syntax.cog"
+#line 816 "syntax.cog"
                 CompactDeclRef declRef;
 };
 } namespace cog {
@@ -11313,11 +11474,11 @@ template<> struct ObjectClassImpl<cogc::DeclRefType > { typedef cogc::DeclRefTyp
 } namespace cogc {
 
 
-#line 818 "syntax.cog"
+#line 820 "syntax.cog"
  using VoidType = struct VoidTypeImpl* ;
 struct VoidTypeImpl : 
 
-#line 818 "syntax.cog"
+#line 820 "syntax.cog"
                   DeclRefTypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11328,11 +11489,11 @@ template<> struct ObjectClassImpl<cogc::VoidType > { typedef cogc::VoidTypeImpl 
 } namespace cogc {
 
 
-#line 821 "syntax.cog"
+#line 823 "syntax.cog"
  using NullType = struct NullTypeImpl* ;
 struct NullTypeImpl : 
 
-#line 821 "syntax.cog"
+#line 823 "syntax.cog"
                   DeclRefTypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11343,11 +11504,11 @@ template<> struct ObjectClassImpl<cogc::NullType > { typedef cogc::NullTypeImpl 
 } namespace cogc {
 
 
-#line 824 "syntax.cog"
+#line 826 "syntax.cog"
  using PtrType = struct PtrTypeImpl* ;
 struct PtrTypeImpl : 
 
-#line 824 "syntax.cog"
+#line 826 "syntax.cog"
                  DeclRefTypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11358,11 +11519,11 @@ template<> struct ObjectClassImpl<cogc::PtrType > { typedef cogc::PtrTypeImpl Im
 } namespace cogc {
 
 
-#line 828 "syntax.cog"
+#line 830 "syntax.cog"
  using ClassType = struct ClassTypeImpl* ;
 struct ClassTypeImpl : 
 
-#line 828 "syntax.cog"
+#line 830 "syntax.cog"
                    DeclRefTypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11373,21 +11534,21 @@ template<> struct ObjectClassImpl<cogc::ClassType > { typedef cogc::ClassTypeImp
 } namespace cogc {
 
 
-#line 832 "syntax.cog"
+#line 834 "syntax.cog"
  using TypeType = struct TypeTypeImpl* ;
 struct TypeTypeImpl : 
 
-#line 832 "syntax.cog"
+#line 834 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 834 "syntax.cog"
+#line 836 "syntax.cog"
   
 
-#line 834 "syntax.cog"
+#line 836 "syntax.cog"
              Type type;
 };
 } namespace cog {
@@ -11395,11 +11556,11 @@ template<> struct ObjectClassImpl<cogc::TypeType > { typedef cogc::TypeTypeImpl 
 } namespace cogc {
 
 
-#line 838 "syntax.cog"
+#line 840 "syntax.cog"
  using FuncType = struct FuncTypeImpl* ;
 struct FuncTypeImpl : 
 
-#line 838 "syntax.cog"
+#line 840 "syntax.cog"
                   TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11410,11 +11571,11 @@ template<> struct ObjectClassImpl<cogc::FuncType > { typedef cogc::FuncTypeImpl 
 } namespace cogc {
 
 
-#line 844 "syntax.cog"
+#line 846 "syntax.cog"
  using ErrorType = struct ErrorTypeImpl* ;
 struct ErrorTypeImpl : 
 
-#line 844 "syntax.cog"
+#line 846 "syntax.cog"
                    TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11425,11 +11586,11 @@ template<> struct ObjectClassImpl<cogc::ErrorType > { typedef cogc::ErrorTypeImp
 } namespace cogc {
 
 
-#line 849 "syntax.cog"
+#line 851 "syntax.cog"
  using OverloadGroupType = struct OverloadGroupTypeImpl* ;
 struct OverloadGroupTypeImpl : 
 
-#line 849 "syntax.cog"
+#line 851 "syntax.cog"
                            TypeImpl
 {
 typedef cog::Class StaticClass;
@@ -11440,11 +11601,11 @@ template<> struct ObjectClassImpl<cogc::OverloadGroupType > { typedef cogc::Over
 } namespace cogc {
 
 
-#line 856 "syntax.cog"
+#line 858 "syntax.cog"
  using EnumDecl = struct EnumDeclImpl* ;
 struct EnumDeclImpl : 
 
-#line 856 "syntax.cog"
+#line 858 "syntax.cog"
                   AggTypeDeclImpl
 {
 typedef cog::Class StaticClass;
@@ -11455,11 +11616,11 @@ template<> struct ObjectClassImpl<cogc::EnumDecl > { typedef cogc::EnumDeclImpl 
 } namespace cogc {
 
 
-#line 859 "syntax.cog"
+#line 861 "syntax.cog"
  using EnumTagDecl = struct EnumTagDeclImpl* ;
 struct EnumTagDeclImpl : 
 
-#line 859 "syntax.cog"
+#line 861 "syntax.cog"
                      VarDeclBaseImpl
 {
 typedef cog::Class StaticClass;
@@ -11470,35 +11631,35 @@ template<> struct ObjectClassImpl<cogc::EnumTagDecl > { typedef cogc::EnumTagDec
 } namespace cogc {
 
 
-#line 862 "syntax.cog"
+#line 864 "syntax.cog"
  using ForEachStmt = struct ForEachStmtImpl* ;
 struct ForEachStmtImpl : 
 
-#line 862 "syntax.cog"
+#line 864 "syntax.cog"
                      ContainerStmtImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 864 "syntax.cog"
+#line 866 "syntax.cog"
   
 
-#line 864 "syntax.cog"
+#line 866 "syntax.cog"
                 VarDeclBase varDecl;
 
 
-#line 865 "syntax.cog"
+#line 867 "syntax.cog"
   
 
-#line 865 "syntax.cog"
+#line 867 "syntax.cog"
            Exp exp;
 
 
-#line 866 "syntax.cog"
+#line 868 "syntax.cog"
   
 
-#line 866 "syntax.cog"
+#line 868 "syntax.cog"
             Stmt body;
 };
 } namespace cog {
@@ -11506,21 +11667,21 @@ template<> struct ObjectClassImpl<cogc::ForEachStmt > { typedef cogc::ForEachStm
 } namespace cogc {
 
 
-#line 869 "syntax.cog"
+#line 871 "syntax.cog"
  using ParenExp = struct ParenExpImpl* ;
 struct ParenExpImpl : 
 
-#line 869 "syntax.cog"
+#line 871 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 871 "syntax.cog"
+#line 873 "syntax.cog"
   
 
-#line 871 "syntax.cog"
+#line 873 "syntax.cog"
             Exp base;
 };
 } namespace cog {
@@ -11528,27 +11689,27 @@ template<> struct ObjectClassImpl<cogc::ParenExp > { typedef cogc::ParenExpImpl 
 } namespace cogc {
 
 
-#line 876 "syntax.cog"
+#line 878 "syntax.cog"
  using ThisExpr = struct ThisExprImpl* ;
 struct ThisExprImpl : 
 
-#line 876 "syntax.cog"
+#line 878 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 878 "syntax.cog"
+#line 880 "syntax.cog"
   
 
-#line 878 "syntax.cog"
+#line 880 "syntax.cog"
                    
 
-#line 878 "syntax.cog"
+#line 880 "syntax.cog"
               Scope
 
-#line 878 "syntax.cog"
+#line 880 "syntax.cog"
                    * scope;
 };
 } namespace cog {
@@ -11556,28 +11717,28 @@ template<> struct ObjectClassImpl<cogc::ThisExpr > { typedef cogc::ThisExprImpl 
 } namespace cogc {
 
 
-#line 881 "syntax.cog"
+#line 883 "syntax.cog"
  using CastExpr = struct CastExprImpl* ;
 struct CastExprImpl : 
 
-#line 881 "syntax.cog"
+#line 883 "syntax.cog"
                   ExpImpl
 {
 typedef cog::Class StaticClass;
 static StaticClass staticClass;
 
 
-#line 883 "syntax.cog"
+#line 885 "syntax.cog"
   
 
-#line 883 "syntax.cog"
+#line 885 "syntax.cog"
                TypeExp toType;
 
 
-#line 884 "syntax.cog"
+#line 886 "syntax.cog"
   
 
-#line 884 "syntax.cog"
+#line 886 "syntax.cog"
             Exp arg;
 };
 } namespace cog {
@@ -11585,11 +11746,11 @@ template<> struct ObjectClassImpl<cogc::CastExpr > { typedef cogc::CastExprImpl 
 } namespace cogc {
 
 
-#line 887 "syntax.cog"
+#line 889 "syntax.cog"
  using NullLitExpr = struct NullLitExprImpl* ;
 struct NullLitExprImpl : 
 
-#line 887 "syntax.cog"
+#line 889 "syntax.cog"
                      ExpImpl
 {
 typedef cog::Class StaticClass;
@@ -11770,7 +11931,13 @@ kTokenFlag_AfterSpace =
                                           != 
 
 #line 24 "check.cog"
-                                             0)
+                                                 
+
+#line 24 "check.cog"
+                                             UInt(
+
+#line 24 "check.cog"
+                                                  0))
 {
 {
 
@@ -11819,7 +11986,13 @@ kTokenFlag_AfterSpace =
                                           - 
 
 #line 27 "check.cog"
-                                           1];
+                                               
+
+#line 27 "check.cog"
+                                           UInt(
+
+#line 27 "check.cog"
+                                                1)];
 
 
 #line 28 "check.cog"
@@ -11847,7 +12020,13 @@ kTokenFlag_AfterSpace =
                                         - 
 
 #line 28 "check.cog"
-                                         1);
+                                             
+
+#line 28 "check.cog"
+                                         UInt(
+
+#line 28 "check.cog"
+                                              1));
 
 
 #line 30 "check.cog"
@@ -32355,646 +32534,1231 @@ for(;
 
 
 #line 45 "emit.cog"
- void emitType(
+ 
 
-#line 46 "emit.cog"
+#line 53 "emit.cog"
+ 
+
+#line 64 "emit.cog"
+ void emitDeclaratorImpl(
+
+#line 65 "emit.cog"
                       
 
-#line 46 "emit.cog"
+#line 65 "emit.cog"
            EmitContext
 
-#line 46 "emit.cog"
+#line 65 "emit.cog"
                       * context, 
 
-#line 47 "emit.cog"
-        Exp type)
+#line 66 "emit.cog"
+                        
+
+#line 66 "emit.cog"
+              Declarator
+
+#line 66 "emit.cog"
+                        * declarator)
 {
 
 
-#line 49 "emit.cog"
-     if(
+#line 68 "emit.cog"
+  if(
 
-#line 49 "emit.cog"
+#line 68 "emit.cog"
+     
+
+#line 68 "emit.cog"
+     !
+
+#line 68 "emit.cog"
+      declarator)
+{
+
+
+#line 69 "emit.cog"
+   return;
+}
+
+
+#line 71 "emit.cog"
+  switch(
+
+#line 71 "emit.cog"
+                   DEREF(
+
+#line 71 "emit.cog"
+         declarator).flavor)
+{
+case 
+
+#line 73 "emit.cog"
+       kDeclaratorFlavor_Simple:
+{
+{
+
+
+#line 75 "emit.cog"
         
 
-#line 49 "emit.cog"
+#line 75 "emit.cog"
+        
+
+#line 75 "emit.cog"
+    emit(
+
+#line 75 "emit.cog"
+         context, 
+
+#line 75 "emit.cog"
+                            DEREF(
+
+#line 75 "emit.cog"
+                  declarator).name);
+}
+}
+{
+
+
+#line 77 "emit.cog"
+   break;
+}
+case 
+
+#line 79 "emit.cog"
+       kDeclaratorFlavor_DeclName:
+{
+{
+
+
+#line 81 "emit.cog"
+                
+
+#line 81 "emit.cog"
+                
+
+#line 81 "emit.cog"
+    emitDeclName(
+
+#line 81 "emit.cog"
+                 context, 
+
+#line 81 "emit.cog"
+                                    DEREF(
+
+#line 81 "emit.cog"
+                          declarator).decl, 
+
+#line 81 "emit.cog"
+                                                     DEREF(
+
+#line 81 "emit.cog"
+                                           declarator).mode);
+}
+}
+{
+
+
+#line 83 "emit.cog"
+   break;
+}
+case 
+
+#line 85 "emit.cog"
+       kDeclaratorFlavor_Ptr:
+{
+{
+
+
+#line 87 "emit.cog"
+        
+
+#line 87 "emit.cog"
+        
+
+#line 87 "emit.cog"
+    emit(
+
+#line 87 "emit.cog"
+         context, 
+
+#line 87 "emit.cog"
+                  "*");
+
+
+#line 88 "emit.cog"
+                      
+
+#line 88 "emit.cog"
+                      
+
+#line 88 "emit.cog"
+    emitDeclaratorImpl(
+
+#line 88 "emit.cog"
+                       context, 
+
+#line 88 "emit.cog"
+                                          DEREF(
+
+#line 88 "emit.cog"
+                                declarator).next);
+}
+}
+{
+
+
+#line 90 "emit.cog"
+   break;
+}
+case 
+
+#line 92 "emit.cog"
+       kDeclaratorFlavor_Func:
+{
+{
+
+
+#line 94 "emit.cog"
+        
+
+#line 94 "emit.cog"
+        
+
+#line 94 "emit.cog"
+    emit(
+
+#line 94 "emit.cog"
+         context, 
+
+#line 94 "emit.cog"
+                  "(*");
+
+
+#line 95 "emit.cog"
+                      
+
+#line 95 "emit.cog"
+                      
+
+#line 95 "emit.cog"
+    emitDeclaratorImpl(
+
+#line 95 "emit.cog"
+                       context, 
+
+#line 95 "emit.cog"
+                                          DEREF(
+
+#line 95 "emit.cog"
+                                declarator).next);
+
+
+#line 96 "emit.cog"
+        
+
+#line 96 "emit.cog"
+        
+
+#line 96 "emit.cog"
+    emit(
+
+#line 96 "emit.cog"
+         context, 
+
+#line 96 "emit.cog"
+                  ")");
+}
+}
+{
+
+
+#line 98 "emit.cog"
+   break;
+}
+}
+}
+
+
+#line 102 "emit.cog"
+ void emitDeclarator(
+
+#line 103 "emit.cog"
+                      
+
+#line 103 "emit.cog"
+           EmitContext
+
+#line 103 "emit.cog"
+                      * context, 
+
+#line 104 "emit.cog"
+                        
+
+#line 104 "emit.cog"
+              Declarator
+
+#line 104 "emit.cog"
+                        * declarator)
+{
+
+
+#line 106 "emit.cog"
+  if(
+
+#line 106 "emit.cog"
+     
+
+#line 106 "emit.cog"
+     !
+
+#line 106 "emit.cog"
+      declarator)
+{
+
+
+#line 107 "emit.cog"
+   return;
+}
+
+
+#line 109 "emit.cog"
+      
+
+#line 109 "emit.cog"
+      
+
+#line 109 "emit.cog"
+  emit(
+
+#line 109 "emit.cog"
+       context, 
+
+#line 109 "emit.cog"
+                " ");
+
+
+#line 110 "emit.cog"
+                    
+
+#line 110 "emit.cog"
+                    
+
+#line 110 "emit.cog"
+  emitDeclaratorImpl(
+
+#line 110 "emit.cog"
+                     context, 
+
+#line 110 "emit.cog"
+                              declarator);
+}
+
+
+#line 113 "emit.cog"
+ void emitType(
+
+#line 114 "emit.cog"
+                      
+
+#line 114 "emit.cog"
+           EmitContext
+
+#line 114 "emit.cog"
+                      * context, 
+
+#line 115 "emit.cog"
+        Exp type, 
+
+#line 116 "emit.cog"
+                        
+
+#line 116 "emit.cog"
+              Declarator
+
+#line 116 "emit.cog"
+                        * declarator)
+{
+
+
+#line 118 "emit.cog"
+     if(
+
+#line 118 "emit.cog"
+        
+
+#line 118 "emit.cog"
         !
 
-#line 49 "emit.cog"
+#line 118 "emit.cog"
          type)
 {
 
 
-#line 51 "emit.cog"
+#line 120 "emit.cog"
              
 
-#line 51 "emit.cog"
+#line 120 "emit.cog"
              
 
-#line 51 "emit.cog"
+#line 120 "emit.cog"
          emit(
 
-#line 51 "emit.cog"
+#line 120 "emit.cog"
               context, 
 
-#line 51 "emit.cog"
-                       "NullType");
+#line 120 "emit.cog"
+                       "NullType ");
 
 
-#line 52 "emit.cog"
-         return;
+#line 121 "emit.cog"
+                 
+
+#line 121 "emit.cog"
+                 
+
+#line 121 "emit.cog"
+   emitDeclarator(
+
+#line 121 "emit.cog"
+                  context, 
+
+#line 121 "emit.cog"
+                           declarator);
+}
+else
+{
+
+
+#line 123 "emit.cog"
+       if(auto ptrTypeExpr = 
+
+#line 123 "emit.cog"
+                                           
+
+#line 123 "emit.cog"
+                              
+
+#line 123 "emit.cog"
+                            as<
+
+#line 123 "emit.cog"
+                               PtrTypeExpr> (
+
+#line 123 "emit.cog"
+                                            type))
+{
+
+
+#line 125 "emit.cog"
+   
+
+#line 125 "emit.cog"
+   
+
+#line 125 "emit.cog"
+                       Declarator ptrDeclarator;
+
+
+#line 126 "emit.cog"
+                DEREF(
+
+#line 126 "emit.cog"
+   ptrDeclarator).flavor = 
+
+#line 126 "emit.cog"
+                          kDeclaratorFlavor_Ptr;
+
+
+#line 127 "emit.cog"
+                DEREF(
+
+#line 127 "emit.cog"
+   ptrDeclarator).next = 
+
+#line 127 "emit.cog"
+                        declarator;
+
+
+#line 129 "emit.cog"
+           
+
+#line 129 "emit.cog"
+           
+
+#line 129 "emit.cog"
+   emitType(
+
+#line 129 "emit.cog"
+            context, 
+
+#line 129 "emit.cog"
+                                DEREF(
+
+#line 129 "emit.cog"
+                     ptrTypeExpr).base, 
+
+#line 129 "emit.cog"
+                                       
+
+#line 129 "emit.cog"
+                                       &
+
+#line 129 "emit.cog"
+                                        ptrDeclarator);
+}
+else
+{
+
+
+#line 131 "emit.cog"
+       if(auto funcTypeExpr = 
+
+#line 131 "emit.cog"
+                                             
+
+#line 131 "emit.cog"
+                               
+
+#line 131 "emit.cog"
+                             as<
+
+#line 131 "emit.cog"
+                                FuncTypeExpr> (
+
+#line 131 "emit.cog"
+                                              type))
+{
+
+
+#line 133 "emit.cog"
+   
+
+#line 133 "emit.cog"
+   
+
+#line 133 "emit.cog"
+                        Declarator funcDeclarator;
+
+
+#line 134 "emit.cog"
+                 DEREF(
+
+#line 134 "emit.cog"
+   funcDeclarator).flavor = 
+
+#line 134 "emit.cog"
+                           kDeclaratorFlavor_Func;
+
+
+#line 135 "emit.cog"
+                 DEREF(
+
+#line 135 "emit.cog"
+   funcDeclarator).next = 
+
+#line 135 "emit.cog"
+                         declarator;
+
+
+#line 137 "emit.cog"
+           
+
+#line 137 "emit.cog"
+           
+
+#line 137 "emit.cog"
+   emitType(
+
+#line 137 "emit.cog"
+            context, 
+
+#line 137 "emit.cog"
+                                 DEREF(
+
+#line 137 "emit.cog"
+                     funcTypeExpr).result, 
+
+#line 137 "emit.cog"
+                                          
+
+#line 137 "emit.cog"
+                                          &
+
+#line 137 "emit.cog"
+                                           funcDeclarator);
+
+
+#line 139 "emit.cog"
+           
+
+#line 139 "emit.cog"
+           
+
+#line 139 "emit.cog"
+   emitType(
+
+#line 139 "emit.cog"
+            context, 
+
+#line 139 "emit.cog"
+                                 DEREF(
+
+#line 139 "emit.cog"
+                     funcTypeExpr).params, 
+
+#line 139 "emit.cog"
+                                          nullptr);
+}
+else
+{
+
+
+#line 144 "emit.cog"
+          
+
+#line 144 "emit.cog"
+          
+
+#line 144 "emit.cog"
+   emitExp(
+
+#line 144 "emit.cog"
+           context, 
+
+#line 144 "emit.cog"
+                    type);
+
+
+#line 145 "emit.cog"
+                 
+
+#line 145 "emit.cog"
+                 
+
+#line 145 "emit.cog"
+   emitDeclarator(
+
+#line 145 "emit.cog"
+                  context, 
+
+#line 145 "emit.cog"
+                           declarator);
+}
+}
+}
 }
 
 
-#line 55 "emit.cog"
-         
-
-#line 55 "emit.cog"
-         
-
-#line 55 "emit.cog"
-  emitExp(
-
-#line 55 "emit.cog"
-          context, 
-
-#line 55 "emit.cog"
-                   type);
-}
-
-
-#line 58 "emit.cog"
+#line 149 "emit.cog"
  void emitType(
 
-#line 59 "emit.cog"
+#line 150 "emit.cog"
                       
 
-#line 59 "emit.cog"
+#line 150 "emit.cog"
            EmitContext
 
-#line 59 "emit.cog"
+#line 150 "emit.cog"
                       * context, 
 
-#line 60 "emit.cog"
+#line 151 "emit.cog"
+        Exp type)
+{
+
+
+#line 153 "emit.cog"
+          
+
+#line 153 "emit.cog"
+          
+
+#line 153 "emit.cog"
+  emitType(
+
+#line 153 "emit.cog"
+           context, 
+
+#line 153 "emit.cog"
+                    type, 
+
+#line 153 "emit.cog"
+                          nullptr);
+}
+
+
+#line 156 "emit.cog"
+ void emitType(
+
+#line 157 "emit.cog"
+                      
+
+#line 157 "emit.cog"
+           EmitContext
+
+#line 157 "emit.cog"
+                      * context, 
+
+#line 158 "emit.cog"
         Type type)
 {
 
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
   if(auto declRefType = 
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
                                       
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
                          
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
                        as<
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
                           DeclRefType> (
 
-#line 62 "emit.cog"
+#line 160 "emit.cog"
                                        type))
 {
 
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
               
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
               
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
    emitDeclRef(
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
                context, 
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
                                    DEREF(
 
-#line 64 "emit.cog"
+#line 162 "emit.cog"
                         declRefType).declRef);
 }
 else
 {
 
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
             
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
             
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
    cogAssert(
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
              
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
              !
 
-#line 68 "emit.cog"
+#line 166 "emit.cog"
               "unimplemented");
 }
 }
 
 
-#line 72 "emit.cog"
+#line 170 "emit.cog"
  void emitVal(
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
                          
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
               EmitContext
 
-#line 73 "emit.cog"
+#line 171 "emit.cog"
                          * context, 
 
-#line 74 "emit.cog"
+#line 172 "emit.cog"
           Val val)
 {
 
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
   if(auto type = 
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
                         
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
                   
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
                 as<
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
                    Type> (
 
-#line 76 "emit.cog"
+#line 174 "emit.cog"
                          val))
 {
 
 
-#line 78 "emit.cog"
+#line 176 "emit.cog"
            
 
-#line 78 "emit.cog"
+#line 176 "emit.cog"
            
 
-#line 78 "emit.cog"
+#line 176 "emit.cog"
    emitType(
 
-#line 78 "emit.cog"
+#line 176 "emit.cog"
             context, 
 
-#line 78 "emit.cog"
+#line 176 "emit.cog"
                      type);
 }
 else
 {
 
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
                   
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
                   
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
          cogAssert(
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
                    
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
                    !
 
-#line 82 "emit.cog"
+#line 180 "emit.cog"
                     "unimplemented");
 
 
-#line 83 "emit.cog"
+#line 181 "emit.cog"
              
 
-#line 83 "emit.cog"
+#line 181 "emit.cog"
              
 
-#line 83 "emit.cog"
+#line 181 "emit.cog"
          emit(
 
-#line 83 "emit.cog"
+#line 181 "emit.cog"
               context, 
 
-#line 83 "emit.cog"
+#line 181 "emit.cog"
                        "UnknownVal");
 }
 }
 
 
-#line 87 "emit.cog"
+#line 185 "emit.cog"
  void emitGenericQuals(
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
                       
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
            EmitContext
 
-#line 88 "emit.cog"
+#line 186 "emit.cog"
                       * context, 
 
-#line 89 "emit.cog"
+#line 187 "emit.cog"
         Decl decl)
 {
 
 
-#line 91 "emit.cog"
+#line 189 "emit.cog"
   if(auto parent = 
 
-#line 91 "emit.cog"
+#line 189 "emit.cog"
                       DEREF(
 
-#line 91 "emit.cog"
+#line 189 "emit.cog"
                   decl).parent)
 {
 
 
-#line 93 "emit.cog"
+#line 191 "emit.cog"
                    
 
-#line 93 "emit.cog"
+#line 191 "emit.cog"
                    
 
-#line 93 "emit.cog"
+#line 191 "emit.cog"
    emitGenericQuals(
 
-#line 93 "emit.cog"
+#line 191 "emit.cog"
                     context, 
 
-#line 93 "emit.cog"
+#line 191 "emit.cog"
                              parent);
 }
 
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
   if(auto genericParent = 
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                                         
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                            
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                          as<
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                             GenericDecl> (
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                                              DEREF(
 
-#line 96 "emit.cog"
+#line 194 "emit.cog"
                                          decl).parent))
 {
 
 
-#line 98 "emit.cog"
+#line 196 "emit.cog"
        
 
-#line 98 "emit.cog"
+#line 196 "emit.cog"
        
 
-#line 98 "emit.cog"
+#line 196 "emit.cog"
    emit(
 
-#line 98 "emit.cog"
+#line 196 "emit.cog"
         context, 
 
-#line 98 "emit.cog"
+#line 196 "emit.cog"
                  "template<");
 
 
-#line 99 "emit.cog"
+#line 197 "emit.cog"
    
 
-#line 99 "emit.cog"
+#line 197 "emit.cog"
    auto first = 
 
-#line 99 "emit.cog"
+#line 197 "emit.cog"
                true;
 
 
-#line 100 "emit.cog"
+#line 198 "emit.cog"
    for(auto dd : 
 
-#line 100 "emit.cog"
+#line 198 "emit.cog"
                                        
 
-#line 100 "emit.cog"
+#line 198 "emit.cog"
                               DEREF(
 
-#line 100 "emit.cog"
+#line 198 "emit.cog"
                  genericParent).getDecls())
 {
 {
 
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
     
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
     auto genericParamDecl = 
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
                                                
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
                              
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
                            as<
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
                               GenericParamDecl> (
 
-#line 102 "emit.cog"
+#line 200 "emit.cog"
                                                 dd);
 
 
-#line 103 "emit.cog"
+#line 201 "emit.cog"
     if(
 
-#line 103 "emit.cog"
+#line 201 "emit.cog"
         
 
-#line 103 "emit.cog"
+#line 201 "emit.cog"
         !
 
-#line 103 "emit.cog"
+#line 201 "emit.cog"
          genericParamDecl)
 {
 
 
-#line 104 "emit.cog"
+#line 202 "emit.cog"
      continue;
 }
 
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
     if(
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
         
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
         !
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
          first)
 {
 
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
                     
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
                     
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
                 emit(
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
                      context, 
 
-#line 106 "emit.cog"
+#line 204 "emit.cog"
                               ", ");
 }
 
 
-#line 108 "emit.cog"
+#line 206 "emit.cog"
         
 
-#line 108 "emit.cog"
+#line 206 "emit.cog"
         
 
-#line 108 "emit.cog"
+#line 206 "emit.cog"
     emit(
 
-#line 108 "emit.cog"
+#line 206 "emit.cog"
          context, 
 
-#line 108 "emit.cog"
+#line 206 "emit.cog"
                   "typename ");
 
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
         
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
         
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
     emit(
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
          context, 
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
                                   DEREF(
 
-#line 109 "emit.cog"
+#line 207 "emit.cog"
                   genericParamDecl).name);
 
 
-#line 110 "emit.cog"
+#line 208 "emit.cog"
     first = 
 
-#line 110 "emit.cog"
+#line 208 "emit.cog"
             false;
 }
 }
 
 
-#line 112 "emit.cog"
+#line 210 "emit.cog"
        
 
-#line 112 "emit.cog"
+#line 210 "emit.cog"
        
 
-#line 112 "emit.cog"
+#line 210 "emit.cog"
    emit(
 
-#line 112 "emit.cog"
+#line 210 "emit.cog"
         context, 
 
-#line 112 "emit.cog"
+#line 210 "emit.cog"
                  " > ");
 }
 }
 
 
-#line 144 "emit.cog"
+#line 242 "emit.cog"
  void emitDeclName(
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
                       
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
            EmitContext
 
-#line 145 "emit.cog"
+#line 243 "emit.cog"
                       * context, 
 
-#line 146 "emit.cog"
+#line 244 "emit.cog"
         Decl decl, 
 
-#line 147 "emit.cog"
+#line 245 "emit.cog"
         DeclEmitMode mode, 
 
-#line 148 "emit.cog"
+#line 246 "emit.cog"
                  Bool includeModule)
 {
 
 
-#line 150 "emit.cog"
+#line 248 "emit.cog"
   
 
-#line 150 "emit.cog"
+#line 248 "emit.cog"
   auto parent = 
 
-#line 150 "emit.cog"
+#line 248 "emit.cog"
                    DEREF(
 
-#line 150 "emit.cog"
+#line 248 "emit.cog"
                decl).parent;
 
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
   
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
   auto genericParent = 
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
                                      
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
                         
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
                       as<
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
                          GenericDecl> (
 
-#line 152 "emit.cog"
+#line 250 "emit.cog"
                                       parent);
 
 
-#line 153 "emit.cog"
+#line 251 "emit.cog"
   if(
 
-#line 153 "emit.cog"
+#line 251 "emit.cog"
       genericParent)
 {
 
 
-#line 155 "emit.cog"
+#line 253 "emit.cog"
    parent = 
 
-#line 155 "emit.cog"
+#line 253 "emit.cog"
                          DEREF(
 
-#line 155 "emit.cog"
+#line 253 "emit.cog"
             genericParent).parent;
 }
 
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
   
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
   auto aggTypeDecl = 
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
                                     
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
                        
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
                     as<
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
                         AggTypeDecl> (
 
-#line 158 "emit.cog"
+#line 256 "emit.cog"
                                      parent);
 
 
-#line 159 "emit.cog"
+#line 257 "emit.cog"
   if(
 
-#line 159 "emit.cog"
+#line 257 "emit.cog"
       aggTypeDecl)
 {
 
 
-#line 161 "emit.cog"
+#line 259 "emit.cog"
    if(
 
-#line 161 "emit.cog"
+#line 259 "emit.cog"
             
 
-#line 161 "emit.cog"
+#line 259 "emit.cog"
        mode 
 
-#line 161 "emit.cog"
+#line 259 "emit.cog"
             == 
 
-#line 161 "emit.cog"
+#line 259 "emit.cog"
                kDeclEmitMode_Full)
 {
 
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
                               
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
                               
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
     emitDeclNameAndGenericArgs(
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
                                context, 
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
                                         parent, 
 
-#line 163 "emit.cog"
+#line 261 "emit.cog"
                                                 mode);
 
 
-#line 164 "emit.cog"
+#line 262 "emit.cog"
         
 
-#line 164 "emit.cog"
+#line 262 "emit.cog"
         
 
-#line 164 "emit.cog"
+#line 262 "emit.cog"
     emit(
 
-#line 164 "emit.cog"
+#line 262 "emit.cog"
          context, 
 
-#line 164 "emit.cog"
+#line 262 "emit.cog"
                   "::");
 }
 }
@@ -33002,151 +33766,151 @@ else
 {
 
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
        if(auto moduleDecl = 
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
                                          
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
                              
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
                            as<
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
                               ModuleDecl> (
 
-#line 167 "emit.cog"
+#line 265 "emit.cog"
                                           parent))
 {
 
 
-#line 169 "emit.cog"
+#line 267 "emit.cog"
    if(
 
-#line 169 "emit.cog"
+#line 267 "emit.cog"
       includeModule)
 {
 
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
                 
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
                 
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
     emitDeclName(
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
                  context, 
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
                           parent, 
 
-#line 171 "emit.cog"
+#line 269 "emit.cog"
                                   mode);
 
 
-#line 172 "emit.cog"
+#line 270 "emit.cog"
         
 
-#line 172 "emit.cog"
+#line 270 "emit.cog"
         
 
-#line 172 "emit.cog"
+#line 270 "emit.cog"
     emit(
 
-#line 172 "emit.cog"
+#line 270 "emit.cog"
          context, 
 
-#line 172 "emit.cog"
+#line 270 "emit.cog"
                   "::");
 }
 }
 }
 
 
-#line 176 "emit.cog"
+#line 274 "emit.cog"
   
 
-#line 176 "emit.cog"
+#line 274 "emit.cog"
   auto name = 
 
-#line 176 "emit.cog"
+#line 274 "emit.cog"
                  DEREF(
 
-#line 176 "emit.cog"
+#line 274 "emit.cog"
              decl).name;
 
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
   
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
   auto text = 
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
                           DEREF(
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
                     
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
              getText(
 
-#line 177 "emit.cog"
+#line 275 "emit.cog"
                      name)).begin;
 
 
-#line 178 "emit.cog"
+#line 276 "emit.cog"
   
 
-#line 178 "emit.cog"
+#line 276 "emit.cog"
   auto c = 
 
-#line 178 "emit.cog"
+#line 276 "emit.cog"
               
 
-#line 178 "emit.cog"
+#line 276 "emit.cog"
           text[
 
-#line 178 "emit.cog"
+#line 276 "emit.cog"
                0];
 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
   if(
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
           
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
       'a' 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
           <= 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
              c 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                && 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                     
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                   c 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                     <= 
 
-#line 179 "emit.cog"
+#line 277 "emit.cog"
                        'z')
 {
 }
@@ -33154,37 +33918,37 @@ else
 {
 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
        if(
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
            'A' 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                <= 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                     
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                   c 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                     && 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                          
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                        c 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                          <= 
 
-#line 180 "emit.cog"
+#line 278 "emit.cog"
                             'Z')
 {
 }
@@ -33192,37 +33956,37 @@ else
 {
 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
        if(
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
            '_' 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                == 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                     
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                   c 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                     || 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                          
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                        0 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                          == 
 
-#line 181 "emit.cog"
+#line 279 "emit.cog"
                             c)
 {
 }
@@ -33230,871 +33994,885 @@ else
 {
 
 
-#line 184 "emit.cog"
+#line 282 "emit.cog"
        
 
-#line 184 "emit.cog"
+#line 282 "emit.cog"
        
 
-#line 184 "emit.cog"
+#line 282 "emit.cog"
    emit(
 
-#line 184 "emit.cog"
+#line 282 "emit.cog"
         context, 
 
-#line 184 "emit.cog"
+#line 282 "emit.cog"
                  "operator");
 }
 }
 }
 
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
       
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
       
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
   emit(
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
        context, 
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
                     DEREF(
 
-#line 186 "emit.cog"
+#line 284 "emit.cog"
                 decl).name);
 }
 
 
-#line 189 "emit.cog"
+#line 287 "emit.cog"
  void emitDeclName(
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
                       
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
            EmitContext
 
-#line 190 "emit.cog"
+#line 288 "emit.cog"
                       * context, 
 
-#line 191 "emit.cog"
+#line 289 "emit.cog"
         Decl decl, 
 
-#line 192 "emit.cog"
+#line 290 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
               
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
               
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
   emitDeclName(
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
                context, 
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
                         decl, 
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
                               mode, 
 
-#line 194 "emit.cog"
+#line 292 "emit.cog"
                                     false);
 }
 
 
-#line 197 "emit.cog"
+#line 295 "emit.cog"
  void emitDeclNameAndGenericArgs(
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
                       
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
            EmitContext
 
-#line 198 "emit.cog"
+#line 296 "emit.cog"
                       * context, 
 
-#line 199 "emit.cog"
+#line 297 "emit.cog"
         Decl decl, 
 
-#line 200 "emit.cog"
+#line 298 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 202 "emit.cog"
+#line 300 "emit.cog"
   
 
-#line 202 "emit.cog"
+#line 300 "emit.cog"
   auto parent = 
 
-#line 202 "emit.cog"
+#line 300 "emit.cog"
                    DEREF(
 
-#line 202 "emit.cog"
+#line 300 "emit.cog"
                decl).parent;
 
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
   
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
   auto genericParent = 
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
                                      
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
                         
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
                       as<
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
                          GenericDecl> (
 
-#line 204 "emit.cog"
+#line 302 "emit.cog"
                                       parent);
 
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
               
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
               
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
   emitDeclName(
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
                context, 
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
                         decl, 
 
-#line 206 "emit.cog"
+#line 304 "emit.cog"
                               mode);
 
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
   if(auto classDecl = 
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
                                   
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
                        
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
                      as<
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
                         ClassDecl> (
 
-#line 208 "emit.cog"
+#line 306 "emit.cog"
                                    decl))
 {
 
 
-#line 210 "emit.cog"
+#line 308 "emit.cog"
        
 
-#line 210 "emit.cog"
+#line 308 "emit.cog"
        
 
-#line 210 "emit.cog"
+#line 308 "emit.cog"
    emit(
 
-#line 210 "emit.cog"
+#line 308 "emit.cog"
         context, 
 
-#line 210 "emit.cog"
+#line 308 "emit.cog"
                  "Impl");
 }
 
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
   if(
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                     
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
       genericParent 
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                     && 
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                        (
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                              
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                         mode 
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                              == 
 
-#line 213 "emit.cog"
+#line 311 "emit.cog"
                                 kDeclEmitMode_Full))
 {
 
 
-#line 215 "emit.cog"
+#line 313 "emit.cog"
        
 
-#line 215 "emit.cog"
+#line 313 "emit.cog"
        
 
-#line 215 "emit.cog"
+#line 313 "emit.cog"
    emit(
 
-#line 215 "emit.cog"
+#line 313 "emit.cog"
         context, 
 
-#line 215 "emit.cog"
+#line 313 "emit.cog"
                  "<");
 
 
-#line 216 "emit.cog"
+#line 314 "emit.cog"
    
 
-#line 216 "emit.cog"
+#line 314 "emit.cog"
    auto first = 
 
-#line 216 "emit.cog"
+#line 314 "emit.cog"
                true;
 
 
-#line 217 "emit.cog"
+#line 315 "emit.cog"
    for(auto dd : 
 
-#line 217 "emit.cog"
+#line 315 "emit.cog"
                                        
 
-#line 217 "emit.cog"
+#line 315 "emit.cog"
                               DEREF(
 
-#line 217 "emit.cog"
+#line 315 "emit.cog"
                  genericParent).getDecls())
 {
 {
 
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
     
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
     auto genericParamDecl = 
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
                                                
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
                              
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
                            as<
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
                               GenericParamDecl> (
 
-#line 219 "emit.cog"
+#line 317 "emit.cog"
                                                 dd);
 
 
-#line 220 "emit.cog"
+#line 318 "emit.cog"
     if(
 
-#line 220 "emit.cog"
+#line 318 "emit.cog"
         
 
-#line 220 "emit.cog"
+#line 318 "emit.cog"
         !
 
-#line 220 "emit.cog"
+#line 318 "emit.cog"
          genericParamDecl)
 {
 
 
-#line 221 "emit.cog"
+#line 319 "emit.cog"
      continue;
 }
 
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
     if(
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
         
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
         !
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
          first)
 {
 
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
                     
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
                     
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
                 emit(
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
                      context, 
 
-#line 223 "emit.cog"
+#line 321 "emit.cog"
                               ", ");
 }
 
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
         
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
         
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
     emit(
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
          context, 
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
                                   DEREF(
 
-#line 225 "emit.cog"
+#line 323 "emit.cog"
                   genericParamDecl).name);
 
 
-#line 226 "emit.cog"
+#line 324 "emit.cog"
     first = 
 
-#line 226 "emit.cog"
+#line 324 "emit.cog"
             false;
 }
 }
 
 
-#line 228 "emit.cog"
+#line 326 "emit.cog"
        
 
-#line 228 "emit.cog"
+#line 326 "emit.cog"
        
 
-#line 228 "emit.cog"
+#line 326 "emit.cog"
    emit(
 
-#line 228 "emit.cog"
+#line 326 "emit.cog"
         context, 
 
-#line 228 "emit.cog"
+#line 326 "emit.cog"
                  " > ");
 }
 }
 
 
-#line 232 "emit.cog"
+#line 330 "emit.cog"
  void emitDeclarator(
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
                       
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
            EmitContext
 
-#line 233 "emit.cog"
+#line 331 "emit.cog"
                       * context, 
 
-#line 234 "emit.cog"
+#line 332 "emit.cog"
         Exp type, 
 
-#line 235 "emit.cog"
+#line 333 "emit.cog"
         Decl decl, 
 
-#line 236 "emit.cog"
+#line 334 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 238 "emit.cog"
+#line 336 "emit.cog"
+  
+
+#line 336 "emit.cog"
+  
+
+#line 336 "emit.cog"
+                   Declarator declarator;
+
+
+#line 337 "emit.cog"
+            DEREF(
+
+#line 337 "emit.cog"
+  declarator).flavor = 
+
+#line 337 "emit.cog"
+                      kDeclaratorFlavor_DeclName;
+
+
+#line 338 "emit.cog"
+            DEREF(
+
+#line 338 "emit.cog"
+  declarator).decl = 
+
+#line 338 "emit.cog"
+                    decl;
+
+
+#line 339 "emit.cog"
+            DEREF(
+
+#line 339 "emit.cog"
+  declarator).mode = 
+
+#line 339 "emit.cog"
+                    mode;
+
+
+#line 341 "emit.cog"
           
 
-#line 238 "emit.cog"
+#line 341 "emit.cog"
           
 
-#line 238 "emit.cog"
+#line 341 "emit.cog"
   emitType(
 
-#line 238 "emit.cog"
+#line 341 "emit.cog"
            context, 
 
-#line 238 "emit.cog"
-                    type);
+#line 341 "emit.cog"
+                    type, 
 
+#line 341 "emit.cog"
+                          
 
-#line 239 "emit.cog"
-      
+#line 341 "emit.cog"
+                          &
 
-#line 239 "emit.cog"
-      
-
-#line 239 "emit.cog"
-  emit(
-
-#line 239 "emit.cog"
-       context, 
-
-#line 239 "emit.cog"
-                " ");
-
-
-#line 241 "emit.cog"
-              
-
-#line 241 "emit.cog"
-              
-
-#line 241 "emit.cog"
-  emitDeclName(
-
-#line 241 "emit.cog"
-               context, 
-
-#line 241 "emit.cog"
-                        decl, 
-
-#line 241 "emit.cog"
-                              mode);
+#line 341 "emit.cog"
+                           declarator);
 }
 
 
-#line 244 "emit.cog"
+#line 344 "emit.cog"
  void emitDeclarator(
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
                       
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
            EmitContext
 
-#line 245 "emit.cog"
+#line 345 "emit.cog"
                       * context, 
 
-#line 246 "emit.cog"
+#line 346 "emit.cog"
         TypeExp type, 
 
-#line 247 "emit.cog"
+#line 347 "emit.cog"
         Decl decl, 
 
-#line 248 "emit.cog"
+#line 348 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
   emitDeclarator(
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                  context, 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                               DEREF(
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                           type).exp, 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                                     decl, 
 
-#line 250 "emit.cog"
+#line 350 "emit.cog"
                                           mode);
 }
 
 
-#line 255 "emit.cog"
+#line 355 "emit.cog"
  void emitBinaryExp(
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
                          
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
               EmitContext
 
-#line 256 "emit.cog"
+#line 356 "emit.cog"
                          * context, 
 
-#line 257 "emit.cog"
+#line 357 "emit.cog"
           AppExpBase exp, 
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
              
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
          Char
 
-#line 258 "emit.cog"
+#line 358 "emit.cog"
              * op)
 {
 
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
             
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
             
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
      emitExp(
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
              context, 
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
                                  DEREF(
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
                               
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
                          DEREF(
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
                       exp).args[
 
-#line 260 "emit.cog"
+#line 360 "emit.cog"
                                0]).exp);
 
 
-#line 261 "emit.cog"
+#line 361 "emit.cog"
          
 
-#line 261 "emit.cog"
+#line 361 "emit.cog"
          
 
-#line 261 "emit.cog"
+#line 361 "emit.cog"
      emit(
 
-#line 261 "emit.cog"
+#line 361 "emit.cog"
           context, 
 
-#line 261 "emit.cog"
+#line 361 "emit.cog"
                    " ");
 
 
-#line 262 "emit.cog"
+#line 362 "emit.cog"
          
 
-#line 262 "emit.cog"
+#line 362 "emit.cog"
          
 
-#line 262 "emit.cog"
+#line 362 "emit.cog"
      emit(
 
-#line 262 "emit.cog"
+#line 362 "emit.cog"
           context, 
 
-#line 262 "emit.cog"
+#line 362 "emit.cog"
                    op);
 
 
-#line 263 "emit.cog"
+#line 363 "emit.cog"
          
 
-#line 263 "emit.cog"
+#line 363 "emit.cog"
          
 
-#line 263 "emit.cog"
+#line 363 "emit.cog"
      emit(
 
-#line 263 "emit.cog"
+#line 363 "emit.cog"
           context, 
 
-#line 263 "emit.cog"
+#line 363 "emit.cog"
                    " ");
 
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
             
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
             
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
      emitExp(
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
              context, 
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
                                  DEREF(
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
                               
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
                          DEREF(
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
                       exp).args[
 
-#line 264 "emit.cog"
+#line 364 "emit.cog"
                                1]).exp);
 }
 
 
-#line 267 "emit.cog"
+#line 367 "emit.cog"
  void emitStringVal(
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
                          
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
               EmitContext
 
-#line 268 "emit.cog"
+#line 368 "emit.cog"
                          * context, 
 
-#line 269 "emit.cog"
+#line 369 "emit.cog"
           StringSpan str)
 {
 
 
-#line 271 "emit.cog"
+#line 371 "emit.cog"
      
 
-#line 271 "emit.cog"
+#line 371 "emit.cog"
      auto cursor = 
 
-#line 271 "emit.cog"
+#line 371 "emit.cog"
                      DEREF(
 
-#line 271 "emit.cog"
+#line 371 "emit.cog"
                   str).begin;
 
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
      while(
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
                   
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
            cursor 
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
                   != 
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
                         DEREF(
 
-#line 272 "emit.cog"
+#line 372 "emit.cog"
                      str).end)
 {
 {
 
 
-#line 274 "emit.cog"
+#line 374 "emit.cog"
          switch(
 
-#line 274 "emit.cog"
+#line 374 "emit.cog"
                 
 
-#line 274 "emit.cog"
+#line 374 "emit.cog"
                 *
 
-#line 274 "emit.cog"
+#line 374 "emit.cog"
                  cursor)
 {
 case 
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
               '\n':
 {
 
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                         
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                         
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                     emit(
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                          context, 
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                                   "\\n");
 }
 {
 
 
-#line 276 "emit.cog"
+#line 376 "emit.cog"
                                           break;
 }
 case 
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
         '\r':
 {
 
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
                   
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
                   
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
               emit(
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
                    context, 
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
                             "\\r");
 }
 {
 
 
-#line 277 "emit.cog"
+#line 377 "emit.cog"
                                     break;
 }
 case 
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
         '\\':
 {
 
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
                   
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
                   
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
               emit(
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
                    context, 
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
                             "\\\\");
 }
 {
 
 
-#line 278 "emit.cog"
+#line 378 "emit.cog"
                                      break;
 }
 case 
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
         '\t':
 {
 
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
                   
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
                   
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
               emit(
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
                    context, 
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
                             "\\t");
 }
 {
 
 
-#line 279 "emit.cog"
+#line 379 "emit.cog"
                                     break;
 }
 case 
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
         '\'':
 {
 
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
                   
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
                   
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
               emit(
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
                    context, 
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
                             "\\\'");
 }
 {
 
 
-#line 280 "emit.cog"
+#line 380 "emit.cog"
                                      break;
 }
 case 
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
         '\"':
 {
 
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
                   
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
                   
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
               emit(
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
                    context, 
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
                             "\\\"");
 }
 {
 
 
-#line 281 "emit.cog"
+#line 381 "emit.cog"
                                      break;
 }
 default:
@@ -34102,2101 +34880,2101 @@ default:
 {
 
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
      
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
      
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
                               
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
                 FixedSizeArray<
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
                                2, 
 
-#line 285 "emit.cog"
+#line 385 "emit.cog"
                                   Char>  text;
 
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
          
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
      text[
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
           0] = 
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
                
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
                *
 
-#line 286 "emit.cog"
+#line 386 "emit.cog"
                 cursor;
 
 
-#line 287 "emit.cog"
+#line 387 "emit.cog"
          
 
-#line 287 "emit.cog"
+#line 387 "emit.cog"
      text[
 
-#line 287 "emit.cog"
+#line 387 "emit.cog"
           1] = 
 
-#line 287 "emit.cog"
+#line 387 "emit.cog"
                0;
 
 
-#line 289 "emit.cog"
+#line 389 "emit.cog"
                      
 
-#line 289 "emit.cog"
+#line 389 "emit.cog"
                      
 
-#line 289 "emit.cog"
+#line 389 "emit.cog"
                  emit(
 
-#line 289 "emit.cog"
+#line 389 "emit.cog"
                       context, 
 
-#line 289 "emit.cog"
+#line 389 "emit.cog"
                                text);
 }
 }
 {
 
 
-#line 291 "emit.cog"
+#line 391 "emit.cog"
              break;
 }
 }
 
 
-#line 293 "emit.cog"
+#line 393 "emit.cog"
                
 
-#line 293 "emit.cog"
+#line 393 "emit.cog"
                
 
-#line 293 "emit.cog"
+#line 393 "emit.cog"
          cursor
 
-#line 293 "emit.cog"
+#line 393 "emit.cog"
                ++;
 }
 }
 }
 
 
-#line 297 "emit.cog"
+#line 397 "emit.cog"
  void emitStringVal(
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
                          
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
               EmitContext
 
-#line 298 "emit.cog"
+#line 398 "emit.cog"
                          * context, 
 
-#line 299 "emit.cog"
+#line 399 "emit.cog"
           String str)
 {
 
 
-#line 301 "emit.cog"
+#line 401 "emit.cog"
   
 
-#line 301 "emit.cog"
+#line 401 "emit.cog"
   auto strSpan = 
 
-#line 301 "emit.cog"
+#line 401 "emit.cog"
                           
 
-#line 301 "emit.cog"
+#line 401 "emit.cog"
                    DEREF(
 
-#line 301 "emit.cog"
+#line 401 "emit.cog"
                 str).asSpan();
 
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
   emitStringVal(
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                 context, 
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                                    
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                          StringSpan(
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                                            DEREF(
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                                     strSpan).begin, 
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                                                           DEREF(
 
-#line 302 "emit.cog"
+#line 402 "emit.cog"
                                                    strSpan).end));
 }
 
 
-#line 305 "emit.cog"
+#line 405 "emit.cog"
  void emitGenericArgs(
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
                       
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
            EmitContext
 
-#line 306 "emit.cog"
+#line 406 "emit.cog"
                       * context, 
 
-#line 307 "emit.cog"
+#line 407 "emit.cog"
         Specializations spec)
 {
 
 
-#line 309 "emit.cog"
+#line 409 "emit.cog"
       
 
-#line 309 "emit.cog"
+#line 409 "emit.cog"
       
 
-#line 309 "emit.cog"
+#line 409 "emit.cog"
   emit(
 
-#line 309 "emit.cog"
+#line 409 "emit.cog"
        context, 
 
-#line 309 "emit.cog"
+#line 409 "emit.cog"
                 "<");
 
 
-#line 310 "emit.cog"
+#line 410 "emit.cog"
   
 
-#line 310 "emit.cog"
+#line 410 "emit.cog"
   auto first = 
 
-#line 310 "emit.cog"
+#line 410 "emit.cog"
               true;
 
 
-#line 311 "emit.cog"
+#line 411 "emit.cog"
   for(auto arg : 
 
-#line 311 "emit.cog"
+#line 411 "emit.cog"
                      DEREF(
 
-#line 311 "emit.cog"
+#line 411 "emit.cog"
                  spec).args)
 {
 {
 
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
    if(
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
       
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
       !
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
        first)
 {
 
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
                   
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
                   
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
               emit(
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
                    context, 
 
-#line 313 "emit.cog"
+#line 413 "emit.cog"
                             ",");
 }
 
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
           
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
           
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
    emitVal(
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
            context, 
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
                        DEREF(
 
-#line 314 "emit.cog"
+#line 414 "emit.cog"
                     arg).value);
 
 
-#line 315 "emit.cog"
+#line 415 "emit.cog"
    first = 
 
-#line 315 "emit.cog"
+#line 415 "emit.cog"
            false;
 }
 }
 
 
-#line 317 "emit.cog"
+#line 417 "emit.cog"
       
 
-#line 317 "emit.cog"
+#line 417 "emit.cog"
       
 
-#line 317 "emit.cog"
+#line 417 "emit.cog"
   emit(
 
-#line 317 "emit.cog"
+#line 417 "emit.cog"
        context, 
 
-#line 317 "emit.cog"
+#line 417 "emit.cog"
                 " >");
 }
 
 
-#line 320 "emit.cog"
+#line 420 "emit.cog"
  void emitDeclRef(
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
                       
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
            EmitContext
 
-#line 321 "emit.cog"
+#line 421 "emit.cog"
                       * context, 
 
-#line 322 "emit.cog"
+#line 422 "emit.cog"
            DeclRefVal declRef)
 {
 
 
-#line 324 "emit.cog"
+#line 424 "emit.cog"
   if(auto spec = 
 
-#line 324 "emit.cog"
+#line 424 "emit.cog"
                        DEREF(
 
-#line 324 "emit.cog"
+#line 424 "emit.cog"
                 declRef).specializations)
 {
 
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
    if(
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                           
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                    DEREF(
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                  
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                          DEREF(
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
           DEREF(
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
       spec).genericDeclRef).getDecl()).inner 
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                           == 
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                                     DEREF(
 
-#line 326 "emit.cog"
+#line 426 "emit.cog"
                                              declRef).decl)
 {
 
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
         
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
         
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
     emit(
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
          context, 
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
                               DEREF(
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
                          DEREF(
 
-#line 329 "emit.cog"
+#line 429 "emit.cog"
                   declRef).decl).name);
 
 
-#line 330 "emit.cog"
+#line 430 "emit.cog"
                    
 
-#line 330 "emit.cog"
+#line 430 "emit.cog"
                    
 
-#line 330 "emit.cog"
+#line 430 "emit.cog"
     emitGenericArgs(
 
-#line 330 "emit.cog"
+#line 430 "emit.cog"
                     context, 
 
-#line 330 "emit.cog"
+#line 430 "emit.cog"
                              spec);
 
 
-#line 331 "emit.cog"
+#line 431 "emit.cog"
     return;
 }
 else
 {
 
 
-#line 337 "emit.cog"
+#line 437 "emit.cog"
     
 
-#line 337 "emit.cog"
+#line 437 "emit.cog"
     
 
-#line 337 "emit.cog"
+#line 437 "emit.cog"
                         DeclRefVal parentDeclRef;
 
 
-#line 338 "emit.cog"
+#line 438 "emit.cog"
                  DEREF(
 
-#line 338 "emit.cog"
+#line 438 "emit.cog"
     parentDeclRef).decl = 
 
-#line 338 "emit.cog"
+#line 438 "emit.cog"
                                      DEREF(
 
-#line 338 "emit.cog"
+#line 438 "emit.cog"
                                 DEREF(
 
-#line 338 "emit.cog"
+#line 438 "emit.cog"
                          declRef).decl).parent;
 
 
-#line 339 "emit.cog"
+#line 439 "emit.cog"
                  DEREF(
 
-#line 339 "emit.cog"
+#line 439 "emit.cog"
     parentDeclRef).specializations = 
 
-#line 339 "emit.cog"
+#line 439 "emit.cog"
                                     spec;
 
 
-#line 341 "emit.cog"
+#line 441 "emit.cog"
                
 
-#line 341 "emit.cog"
+#line 441 "emit.cog"
                
 
-#line 341 "emit.cog"
+#line 441 "emit.cog"
     emitDeclRef(
 
-#line 341 "emit.cog"
+#line 441 "emit.cog"
                 context, 
 
-#line 341 "emit.cog"
+#line 441 "emit.cog"
                          parentDeclRef);
 
 
-#line 342 "emit.cog"
+#line 442 "emit.cog"
         
 
-#line 342 "emit.cog"
+#line 442 "emit.cog"
         
 
-#line 342 "emit.cog"
+#line 442 "emit.cog"
     emit(
 
-#line 342 "emit.cog"
+#line 442 "emit.cog"
          context, 
 
-#line 342 "emit.cog"
+#line 442 "emit.cog"
                   "::");
 
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
         
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
         
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
     emit(
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
          context, 
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
                               DEREF(
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
                          DEREF(
 
-#line 343 "emit.cog"
+#line 443 "emit.cog"
                   declRef).decl).name);
 
 
-#line 344 "emit.cog"
+#line 444 "emit.cog"
     return;
 }
 }
 
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
       
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
       
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
   emit(
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
        context, 
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
                             DEREF(
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
                        DEREF(
 
-#line 349 "emit.cog"
+#line 449 "emit.cog"
                 declRef).decl).name);
 }
 
 
-#line 353 "emit.cog"
+#line 453 "emit.cog"
  void emitExp(
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
                          
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
               EmitContext
 
-#line 354 "emit.cog"
+#line 454 "emit.cog"
                          * context, 
 
-#line 355 "emit.cog"
+#line 455 "emit.cog"
        Exp exp)
 {
 
 
-#line 357 "emit.cog"
+#line 457 "emit.cog"
                    
 
-#line 357 "emit.cog"
+#line 457 "emit.cog"
                    
 
-#line 357 "emit.cog"
+#line 457 "emit.cog"
   emitLineDirective(
 
-#line 357 "emit.cog"
+#line 457 "emit.cog"
                     context, 
 
-#line 357 "emit.cog"
+#line 457 "emit.cog"
                              exp);
 
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
   if(auto nameExp = 
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
                                
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
                       
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
                     as<
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
                        NameExp> (
 
-#line 359 "emit.cog"
+#line 459 "emit.cog"
                                 exp))
 {
 
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
        
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
        
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
    emit(
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
         context, 
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
                         DEREF(
 
-#line 361 "emit.cog"
+#line 461 "emit.cog"
                  nameExp).name);
 }
 else
 {
 
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
        if(auto memberExpr = 
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
                                          
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
                               
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
                             as<
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
                                MemberExp> (
 
-#line 363 "emit.cog"
+#line 463 "emit.cog"
                                           exp))
 {
 
 
-#line 365 "emit.cog"
+#line 465 "emit.cog"
        
 
-#line 365 "emit.cog"
+#line 465 "emit.cog"
        
 
-#line 365 "emit.cog"
+#line 465 "emit.cog"
    emit(
 
-#line 365 "emit.cog"
+#line 465 "emit.cog"
         context, 
 
-#line 365 "emit.cog"
+#line 465 "emit.cog"
                  "DEREF(");
 
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
           
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
           
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
    emitExp(
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
            context, 
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
                               DEREF(
 
-#line 366 "emit.cog"
+#line 466 "emit.cog"
                     memberExpr).base);
 
 
-#line 367 "emit.cog"
+#line 467 "emit.cog"
        
 
-#line 367 "emit.cog"
+#line 467 "emit.cog"
        
 
-#line 367 "emit.cog"
+#line 467 "emit.cog"
    emit(
 
-#line 367 "emit.cog"
+#line 467 "emit.cog"
         context, 
 
-#line 367 "emit.cog"
+#line 467 "emit.cog"
                  ")");
 
 
-#line 368 "emit.cog"
+#line 468 "emit.cog"
        
 
-#line 368 "emit.cog"
+#line 468 "emit.cog"
        
 
-#line 368 "emit.cog"
+#line 468 "emit.cog"
    emit(
 
-#line 368 "emit.cog"
+#line 468 "emit.cog"
         context, 
 
-#line 368 "emit.cog"
+#line 468 "emit.cog"
                  ".");
 
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
        
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
        
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
    emit(
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
         context, 
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
                            DEREF(
 
-#line 369 "emit.cog"
+#line 469 "emit.cog"
                  memberExpr).memberName);
 }
 else
 {
 
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
        if(auto parenExpr = 
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
                                        
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
                              
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
                            as<
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
                               ParenExp> (
 
-#line 371 "emit.cog"
+#line 471 "emit.cog"
                                         exp))
 {
 
 
-#line 373 "emit.cog"
+#line 473 "emit.cog"
        
 
-#line 373 "emit.cog"
+#line 473 "emit.cog"
        
 
-#line 373 "emit.cog"
+#line 473 "emit.cog"
    emit(
 
-#line 373 "emit.cog"
+#line 473 "emit.cog"
         context, 
 
-#line 373 "emit.cog"
+#line 473 "emit.cog"
                  "(");
 
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
           
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
           
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
    emitExp(
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
            context, 
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
                              DEREF(
 
-#line 374 "emit.cog"
+#line 474 "emit.cog"
                     parenExpr).base);
 
 
-#line 375 "emit.cog"
+#line 475 "emit.cog"
        
 
-#line 375 "emit.cog"
+#line 475 "emit.cog"
        
 
-#line 375 "emit.cog"
+#line 475 "emit.cog"
    emit(
 
-#line 375 "emit.cog"
+#line 475 "emit.cog"
         context, 
 
-#line 375 "emit.cog"
+#line 475 "emit.cog"
                  ")");
 }
 else
 {
 
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
        if(auto genericAppExp = 
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
                                                 
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
                                  
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
                                as<
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
                                   GenericAppExp> (
 
-#line 377 "emit.cog"
+#line 477 "emit.cog"
                                                  exp))
 {
 
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
           
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
           
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
    emitExp(
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
            context, 
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
                                  DEREF(
 
-#line 379 "emit.cog"
+#line 479 "emit.cog"
                     genericAppExp).base);
 
 
-#line 380 "emit.cog"
+#line 480 "emit.cog"
        
 
-#line 380 "emit.cog"
+#line 480 "emit.cog"
        
 
-#line 380 "emit.cog"
+#line 480 "emit.cog"
    emit(
 
-#line 380 "emit.cog"
+#line 480 "emit.cog"
         context, 
 
-#line 380 "emit.cog"
+#line 480 "emit.cog"
                  "<");
 
 
-#line 381 "emit.cog"
+#line 481 "emit.cog"
    
 
-#line 381 "emit.cog"
+#line 481 "emit.cog"
    auto first = 
 
-#line 381 "emit.cog"
+#line 481 "emit.cog"
                true;
 
 
-#line 382 "emit.cog"
+#line 482 "emit.cog"
    for(auto arg : 
 
-#line 382 "emit.cog"
+#line 482 "emit.cog"
                                DEREF(
 
-#line 382 "emit.cog"
+#line 482 "emit.cog"
                   genericAppExp).args)
 {
 {
 
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
     if(
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
         
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
         !
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
          first)
 {
 
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
                     
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
                     
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
                 emit(
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
                      context, 
 
-#line 384 "emit.cog"
+#line 484 "emit.cog"
                               ", ");
 }
 
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
            
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
            
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
     emitExp(
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
             context, 
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
                         DEREF(
 
-#line 385 "emit.cog"
+#line 485 "emit.cog"
                      arg).exp);
 
 
-#line 386 "emit.cog"
+#line 486 "emit.cog"
     first = 
 
-#line 386 "emit.cog"
+#line 486 "emit.cog"
             false;
 }
 }
 
 
-#line 388 "emit.cog"
+#line 488 "emit.cog"
        
 
-#line 388 "emit.cog"
+#line 488 "emit.cog"
        
 
-#line 388 "emit.cog"
+#line 488 "emit.cog"
    emit(
 
-#line 388 "emit.cog"
+#line 488 "emit.cog"
         context, 
 
-#line 388 "emit.cog"
+#line 488 "emit.cog"
                  "> ");
 }
 else
 {
 
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
        if(auto infixExp = 
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
                                       
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
                             
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
                           as<
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
                              InfixExp> (
 
-#line 390 "emit.cog"
+#line 490 "emit.cog"
                                        exp))
 {
 
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
           
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
           
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
    emitExp(
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
            context, 
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
                                     DEREF(
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
                                  
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
                             DEREF(
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
                     infixExp).args[
 
-#line 392 "emit.cog"
+#line 492 "emit.cog"
                                   0]).exp);
 
 
-#line 393 "emit.cog"
+#line 493 "emit.cog"
        
 
-#line 393 "emit.cog"
+#line 493 "emit.cog"
        
 
-#line 393 "emit.cog"
+#line 493 "emit.cog"
    emit(
 
-#line 393 "emit.cog"
+#line 493 "emit.cog"
         context, 
 
-#line 393 "emit.cog"
+#line 493 "emit.cog"
                  " ");
 
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
           
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
           
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
    emitExp(
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
            context, 
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
                             DEREF(
 
-#line 394 "emit.cog"
+#line 494 "emit.cog"
                     infixExp).base);
 
 
-#line 395 "emit.cog"
+#line 495 "emit.cog"
        
 
-#line 395 "emit.cog"
+#line 495 "emit.cog"
        
 
-#line 395 "emit.cog"
+#line 495 "emit.cog"
    emit(
 
-#line 395 "emit.cog"
+#line 495 "emit.cog"
         context, 
 
-#line 395 "emit.cog"
+#line 495 "emit.cog"
                  " ");
 
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
           
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
           
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
    emitExp(
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
            context, 
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
                                     DEREF(
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
                                  
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
                             DEREF(
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
                     infixExp).args[
 
-#line 396 "emit.cog"
+#line 496 "emit.cog"
                                   1]).exp);
 }
 else
 {
 
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
        if(auto prefixExp = 
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
                                         
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
                              
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
                            as<
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
                               PrefixExp> (
 
-#line 398 "emit.cog"
+#line 498 "emit.cog"
                                          exp))
 {
 
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
           
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
           
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
    emitExp(
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
            context, 
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
                              DEREF(
 
-#line 400 "emit.cog"
+#line 500 "emit.cog"
                     prefixExp).base);
 
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
           
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
           
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
    emitExp(
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
            context, 
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
                                      DEREF(
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
                                   
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
                              DEREF(
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
                     prefixExp).args[
 
-#line 401 "emit.cog"
+#line 501 "emit.cog"
                                    0]).exp);
 }
 else
 {
 
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
        if(auto postfixExp = 
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
                                           
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
                               
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
                             as<
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
                                PostfixExp> (
 
-#line 403 "emit.cog"
+#line 503 "emit.cog"
                                            exp))
 {
 
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
           
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
           
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
    emitExp(
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
            context, 
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
                                       DEREF(
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
                                    
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
                               DEREF(
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
                     postfixExp).args[
 
-#line 405 "emit.cog"
+#line 505 "emit.cog"
                                     0]).exp);
 
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
           
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
           
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
    emitExp(
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
            context, 
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
                               DEREF(
 
-#line 406 "emit.cog"
+#line 506 "emit.cog"
                     postfixExp).base);
 }
 else
 {
 
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
        if(auto indexExp = 
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
                                       
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
                             
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
                           as<
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
                              IndexExp> (
 
-#line 408 "emit.cog"
+#line 508 "emit.cog"
                                        exp))
 {
 
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
           
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
           
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
    emitExp(
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
            context, 
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
                             DEREF(
 
-#line 410 "emit.cog"
+#line 510 "emit.cog"
                     indexExp).base);
 
 
-#line 411 "emit.cog"
+#line 511 "emit.cog"
        
 
-#line 411 "emit.cog"
+#line 511 "emit.cog"
        
 
-#line 411 "emit.cog"
+#line 511 "emit.cog"
    emit(
 
-#line 411 "emit.cog"
+#line 511 "emit.cog"
         context, 
 
-#line 411 "emit.cog"
+#line 511 "emit.cog"
                  "[");
 
 
-#line 412 "emit.cog"
+#line 512 "emit.cog"
    
 
-#line 412 "emit.cog"
+#line 512 "emit.cog"
    auto first = 
 
-#line 412 "emit.cog"
+#line 512 "emit.cog"
                true;
 
 
-#line 413 "emit.cog"
+#line 513 "emit.cog"
    for(auto arg : 
 
-#line 413 "emit.cog"
+#line 513 "emit.cog"
                           DEREF(
 
-#line 413 "emit.cog"
+#line 513 "emit.cog"
                   indexExp).args)
 {
 {
 
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
     if(
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
         
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
         !
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
          first)
 {
 
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
                     
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
                     
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
                 emit(
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
                      context, 
 
-#line 415 "emit.cog"
+#line 515 "emit.cog"
                               ", ");
 }
 
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
            
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
            
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
     emitExp(
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
             context, 
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
                         DEREF(
 
-#line 416 "emit.cog"
+#line 516 "emit.cog"
                      arg).exp);
 
 
-#line 417 "emit.cog"
+#line 517 "emit.cog"
     first = 
 
-#line 417 "emit.cog"
+#line 517 "emit.cog"
             false;
 }
 }
 
 
-#line 419 "emit.cog"
+#line 519 "emit.cog"
        
 
-#line 419 "emit.cog"
+#line 519 "emit.cog"
        
 
-#line 419 "emit.cog"
+#line 519 "emit.cog"
    emit(
 
-#line 419 "emit.cog"
+#line 519 "emit.cog"
         context, 
 
-#line 419 "emit.cog"
+#line 519 "emit.cog"
                  "]");
 }
 else
 {
 
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
        if(auto appExp = 
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
                                      
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
                          
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
                        as<
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
                           AppExpBase> (
 
-#line 421 "emit.cog"
+#line 521 "emit.cog"
                                       exp))
 {
 
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
                 
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
                 
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
          emitExp(
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
                  context, 
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
                                 DEREF(
 
-#line 423 "emit.cog"
+#line 523 "emit.cog"
                           appExp).base);
 
 
-#line 424 "emit.cog"
+#line 524 "emit.cog"
              
 
-#line 424 "emit.cog"
+#line 524 "emit.cog"
              
 
-#line 424 "emit.cog"
+#line 524 "emit.cog"
          emit(
 
-#line 424 "emit.cog"
+#line 524 "emit.cog"
               context, 
 
-#line 424 "emit.cog"
+#line 524 "emit.cog"
                        "(");
 
 
-#line 425 "emit.cog"
+#line 525 "emit.cog"
          
 
-#line 425 "emit.cog"
+#line 525 "emit.cog"
          auto first = 
 
-#line 425 "emit.cog"
+#line 525 "emit.cog"
                      true;
 
 
-#line 426 "emit.cog"
+#line 526 "emit.cog"
          for(auto arg : 
 
-#line 426 "emit.cog"
+#line 526 "emit.cog"
                               DEREF(
 
-#line 426 "emit.cog"
+#line 526 "emit.cog"
                         appExp).args)
 {
 {
 
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
              if(
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                 
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                 !
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                  first)
 {
 
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                             
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                             
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                         emit(
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                              context, 
 
-#line 428 "emit.cog"
+#line 528 "emit.cog"
                                       ", ");
 }
 
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
                     
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
                     
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
              emitExp(
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
                      context, 
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
                                  DEREF(
 
-#line 429 "emit.cog"
+#line 529 "emit.cog"
                               arg).exp);
 
 
-#line 430 "emit.cog"
+#line 530 "emit.cog"
              first = 
 
-#line 430 "emit.cog"
+#line 530 "emit.cog"
                      false;
 }
 }
 
 
-#line 432 "emit.cog"
+#line 532 "emit.cog"
              
 
-#line 432 "emit.cog"
+#line 532 "emit.cog"
              
 
-#line 432 "emit.cog"
+#line 532 "emit.cog"
          emit(
 
-#line 432 "emit.cog"
+#line 532 "emit.cog"
               context, 
 
-#line 432 "emit.cog"
+#line 532 "emit.cog"
                        ")");
 }
 else
 {
 
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
           if(auto assignExp = 
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
                                           
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
                                
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
                              as<
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
                                 AssignExp> (
 
-#line 434 "emit.cog"
+#line 534 "emit.cog"
                                            exp))
 {
 
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
                 
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
                 
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
          emitExp(
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
                  context, 
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
                                    DEREF(
 
-#line 436 "emit.cog"
+#line 536 "emit.cog"
                           assignExp).left);
 
 
-#line 437 "emit.cog"
+#line 537 "emit.cog"
              
 
-#line 437 "emit.cog"
+#line 537 "emit.cog"
              
 
-#line 437 "emit.cog"
+#line 537 "emit.cog"
          emit(
 
-#line 437 "emit.cog"
+#line 537 "emit.cog"
               context, 
 
-#line 437 "emit.cog"
+#line 537 "emit.cog"
                        " = ");
 
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
                 
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
                 
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
          emitExp(
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
                  context, 
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
                                    DEREF(
 
-#line 438 "emit.cog"
+#line 538 "emit.cog"
                           assignExp).right);
 }
 else
 {
 
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
           if(auto intLitExp = 
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
                                           
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
                                
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
                              as<
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
                                 IntLitExp> (
 
-#line 440 "emit.cog"
+#line 540 "emit.cog"
                                            exp))
 {
 
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
    
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
    
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
                               
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
                 FixedSizeArray<
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
                                16, 
 
-#line 443 "emit.cog"
+#line 543 "emit.cog"
                                   Char>  buffer;
 
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                 
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                 
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
          sprintf(
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                  buffer, 
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                          "%lld", 
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                                           DEREF(
 
-#line 444 "emit.cog"
+#line 544 "emit.cog"
                                  intLitExp).val);
 
 
-#line 445 "emit.cog"
+#line 545 "emit.cog"
              
 
-#line 445 "emit.cog"
+#line 545 "emit.cog"
              
 
-#line 445 "emit.cog"
+#line 545 "emit.cog"
          emit(
 
-#line 445 "emit.cog"
+#line 545 "emit.cog"
               context, 
 
-#line 445 "emit.cog"
+#line 545 "emit.cog"
                        buffer);
 }
 else
 {
 
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
           if(auto strLitExp = 
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
                                              
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
                                
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
                              as<
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
                                 StringLitExp> (
 
-#line 447 "emit.cog"
+#line 547 "emit.cog"
                                               exp))
 {
 
 
-#line 449 "emit.cog"
+#line 549 "emit.cog"
              
 
-#line 449 "emit.cog"
+#line 549 "emit.cog"
              
 
-#line 449 "emit.cog"
+#line 549 "emit.cog"
          emit(
 
-#line 449 "emit.cog"
+#line 549 "emit.cog"
               context, 
 
-#line 449 "emit.cog"
+#line 549 "emit.cog"
                        "\"");
 
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
                       
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
                       
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
          emitStringVal(
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
                        context, 
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
                                          DEREF(
 
-#line 450 "emit.cog"
+#line 550 "emit.cog"
                                 strLitExp).val);
 
 
-#line 451 "emit.cog"
+#line 551 "emit.cog"
              
 
-#line 451 "emit.cog"
+#line 551 "emit.cog"
              
 
-#line 451 "emit.cog"
+#line 551 "emit.cog"
          emit(
 
-#line 451 "emit.cog"
+#line 551 "emit.cog"
               context, 
 
-#line 451 "emit.cog"
+#line 551 "emit.cog"
                        "\"");
 }
 else
 {
 
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
           if(auto charLitExp = 
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
                                                  
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
                                 
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
                               as<
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
                                  CharacterLitExp> (
 
-#line 453 "emit.cog"
+#line 553 "emit.cog"
                                                   exp))
 {
 
 
-#line 455 "emit.cog"
+#line 555 "emit.cog"
              
 
-#line 455 "emit.cog"
+#line 555 "emit.cog"
              
 
-#line 455 "emit.cog"
+#line 555 "emit.cog"
          emit(
 
-#line 455 "emit.cog"
+#line 555 "emit.cog"
               context, 
 
-#line 455 "emit.cog"
+#line 555 "emit.cog"
                        "\'");
 
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
                       
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
                       
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
          emitStringVal(
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
                        context, 
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
                                           DEREF(
 
-#line 456 "emit.cog"
+#line 556 "emit.cog"
                                 charLitExp).val);
 
 
-#line 457 "emit.cog"
+#line 557 "emit.cog"
              
 
-#line 457 "emit.cog"
+#line 557 "emit.cog"
              
 
-#line 457 "emit.cog"
+#line 557 "emit.cog"
          emit(
 
-#line 457 "emit.cog"
+#line 557 "emit.cog"
               context, 
 
-#line 457 "emit.cog"
+#line 557 "emit.cog"
                        "\'");
 }
 else
 {
 
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
           if(auto thisExpr = 
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
                                         
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
                               
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
                             as<
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
                                ThisExpr> (
 
-#line 459 "emit.cog"
+#line 559 "emit.cog"
                                          exp))
 {
 
 
-#line 461 "emit.cog"
+#line 561 "emit.cog"
              
 
-#line 461 "emit.cog"
+#line 561 "emit.cog"
              
 
-#line 461 "emit.cog"
+#line 561 "emit.cog"
          emit(
 
-#line 461 "emit.cog"
+#line 561 "emit.cog"
               context, 
 
-#line 461 "emit.cog"
+#line 561 "emit.cog"
                        "this");
 }
 else
 {
 
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
           if(auto nullLitExpr = 
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
                                               
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
                                  
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
                                as<
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
                                   NullLitExpr> (
 
-#line 463 "emit.cog"
+#line 563 "emit.cog"
                                                exp))
 {
 
 
-#line 465 "emit.cog"
+#line 565 "emit.cog"
              
 
-#line 465 "emit.cog"
+#line 565 "emit.cog"
              
 
-#line 465 "emit.cog"
+#line 565 "emit.cog"
          emit(
 
-#line 465 "emit.cog"
+#line 565 "emit.cog"
               context, 
 
-#line 465 "emit.cog"
+#line 565 "emit.cog"
                        "nullptr");
 }
 else
 {
 
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
           if(auto castExpr = 
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
                                         
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
                               
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
                             as<
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
                                CastExpr> (
 
-#line 467 "emit.cog"
+#line 567 "emit.cog"
                                          exp))
 {
 
 
-#line 469 "emit.cog"
+#line 569 "emit.cog"
              
 
-#line 469 "emit.cog"
+#line 569 "emit.cog"
              
 
-#line 469 "emit.cog"
+#line 569 "emit.cog"
          emit(
 
-#line 469 "emit.cog"
+#line 569 "emit.cog"
               context, 
 
-#line 469 "emit.cog"
+#line 569 "emit.cog"
                        "cast<");
 
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
            
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
            
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
    emitType(
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
             context, 
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
                                     DEREF(
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
                              DEREF(
 
-#line 470 "emit.cog"
+#line 570 "emit.cog"
                      castExpr).toType).exp);
 
 
-#line 471 "emit.cog"
+#line 571 "emit.cog"
              
 
-#line 471 "emit.cog"
+#line 571 "emit.cog"
              
 
-#line 471 "emit.cog"
+#line 571 "emit.cog"
          emit(
 
-#line 471 "emit.cog"
+#line 571 "emit.cog"
               context, 
 
-#line 471 "emit.cog"
+#line 571 "emit.cog"
                        ">(");
 
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
           
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
           
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
    emitExp(
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
            context, 
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
                             DEREF(
 
-#line 472 "emit.cog"
+#line 572 "emit.cog"
                     castExpr).arg);
 
 
-#line 473 "emit.cog"
+#line 573 "emit.cog"
              
 
-#line 473 "emit.cog"
+#line 573 "emit.cog"
              
 
-#line 473 "emit.cog"
+#line 573 "emit.cog"
          emit(
 
-#line 473 "emit.cog"
+#line 573 "emit.cog"
               context, 
 
-#line 473 "emit.cog"
+#line 573 "emit.cog"
                        ")");
 }
 else
 {
 
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
        if(auto declRefExpr = 
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
                                           
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
                               
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
                             as<
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
                                DeclRefExp> (
 
-#line 475 "emit.cog"
+#line 575 "emit.cog"
                                            exp))
 {
 
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
               
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
               
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
    emitDeclRef(
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
                context, 
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
                                    DEREF(
 
-#line 477 "emit.cog"
+#line 577 "emit.cog"
                         declRefExpr).declRef);
 }
 else
 {
 
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                  
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                  
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
          diagnose(
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                          
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                   getSink(
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                           context), 
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                        DEREF(
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                     exp).loc, 
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                              kDiagnostic_unimplemented, 
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                                                                        DEREF(
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                                                            DEREF(
 
-#line 481 "emit.cog"
+#line 581 "emit.cog"
                                                                         exp).directClass).name);
 
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
                   
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
                   
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
          cogAssert(
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
                    
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
                    !
 
-#line 482 "emit.cog"
+#line 582 "emit.cog"
                     "unimplemented");
 }
 }
@@ -36218,1500 +36996,1500 @@ else
 }
 
 
-#line 489 "emit.cog"
+#line 589 "emit.cog"
  void emitBlockStmt(
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
                       
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
            EmitContext
 
-#line 490 "emit.cog"
+#line 590 "emit.cog"
                       * context, 
 
-#line 491 "emit.cog"
+#line 591 "emit.cog"
         BlockStmt stmt)
 {
 
 
-#line 493 "emit.cog"
+#line 593 "emit.cog"
       
 
-#line 493 "emit.cog"
+#line 593 "emit.cog"
       
 
-#line 493 "emit.cog"
+#line 593 "emit.cog"
   emit(
 
-#line 493 "emit.cog"
+#line 593 "emit.cog"
        context, 
 
-#line 493 "emit.cog"
+#line 593 "emit.cog"
                 "{\n");
 
 
-#line 494 "emit.cog"
+#line 594 "emit.cog"
   for(auto stmt : 
 
-#line 494 "emit.cog"
+#line 594 "emit.cog"
                                
 
-#line 494 "emit.cog"
+#line 594 "emit.cog"
                       DEREF(
 
-#line 494 "emit.cog"
+#line 594 "emit.cog"
                   stmt).getStmts())
 {
 {
 
 
-#line 496 "emit.cog"
+#line 596 "emit.cog"
            
 
-#line 496 "emit.cog"
+#line 596 "emit.cog"
            
 
-#line 496 "emit.cog"
+#line 596 "emit.cog"
    emitStmt(
 
-#line 496 "emit.cog"
+#line 596 "emit.cog"
             context, 
 
-#line 496 "emit.cog"
+#line 596 "emit.cog"
                      stmt);
 }
 }
 
 
-#line 498 "emit.cog"
+#line 598 "emit.cog"
       
 
-#line 498 "emit.cog"
+#line 598 "emit.cog"
       
 
-#line 498 "emit.cog"
+#line 598 "emit.cog"
   emit(
 
-#line 498 "emit.cog"
+#line 598 "emit.cog"
        context, 
 
-#line 498 "emit.cog"
+#line 598 "emit.cog"
                 "}\n");
 }
 
 
-#line 501 "emit.cog"
+#line 601 "emit.cog"
  void emitBlockStmt(
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
                          
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
               EmitContext
 
-#line 502 "emit.cog"
+#line 602 "emit.cog"
                          * context, 
 
-#line 503 "emit.cog"
+#line 603 "emit.cog"
         Stmt stmt)
 {
 
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
      if(auto blockStmt = 
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
                                      
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
                           
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
                         as<
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
                            BlockStmt> (
 
-#line 505 "emit.cog"
+#line 605 "emit.cog"
                                       stmt))
 {
 
 
-#line 507 "emit.cog"
+#line 607 "emit.cog"
                       
 
-#line 507 "emit.cog"
+#line 607 "emit.cog"
                       
 
-#line 507 "emit.cog"
+#line 607 "emit.cog"
          emitBlockStmt(
 
-#line 507 "emit.cog"
+#line 607 "emit.cog"
                        context, 
 
-#line 507 "emit.cog"
+#line 607 "emit.cog"
                                 blockStmt);
 }
 else
 {
 
 
-#line 511 "emit.cog"
+#line 611 "emit.cog"
              
 
-#line 511 "emit.cog"
+#line 611 "emit.cog"
              
 
-#line 511 "emit.cog"
+#line 611 "emit.cog"
          emit(
 
-#line 511 "emit.cog"
+#line 611 "emit.cog"
               context, 
 
-#line 511 "emit.cog"
+#line 611 "emit.cog"
                        "{\n");
 
 
-#line 512 "emit.cog"
+#line 612 "emit.cog"
                  
 
-#line 512 "emit.cog"
+#line 612 "emit.cog"
                  
 
-#line 512 "emit.cog"
+#line 612 "emit.cog"
          emitStmt(
 
-#line 512 "emit.cog"
+#line 612 "emit.cog"
                   context, 
 
-#line 512 "emit.cog"
+#line 612 "emit.cog"
                            stmt);
 
 
-#line 513 "emit.cog"
+#line 613 "emit.cog"
              
 
-#line 513 "emit.cog"
+#line 613 "emit.cog"
              
 
-#line 513 "emit.cog"
+#line 613 "emit.cog"
          emit(
 
-#line 513 "emit.cog"
+#line 613 "emit.cog"
               context, 
 
-#line 513 "emit.cog"
+#line 613 "emit.cog"
                        "}\n");
 }
 }
 
 
-#line 517 "emit.cog"
+#line 617 "emit.cog"
  void emit(
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
                       
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
            EmitContext
 
-#line 518 "emit.cog"
+#line 618 "emit.cog"
                       * context, 
 
-#line 519 "emit.cog"
+#line 619 "emit.cog"
          Int value)
 {
 
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
   
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
   
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
                              
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
                FixedSizeArray<
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
                               32, 
 
-#line 521 "emit.cog"
+#line 621 "emit.cog"
                                  Char>  buffer;
 
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
          
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
          
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
   sprintf(
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
           buffer, 
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
                   "%lld", 
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
                                
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
                           Int64(
 
-#line 522 "emit.cog"
+#line 622 "emit.cog"
                                 value));
 
 
-#line 523 "emit.cog"
+#line 623 "emit.cog"
       
 
-#line 523 "emit.cog"
+#line 623 "emit.cog"
       
 
-#line 523 "emit.cog"
+#line 623 "emit.cog"
   emit(
 
-#line 523 "emit.cog"
+#line 623 "emit.cog"
        context, 
 
-#line 523 "emit.cog"
+#line 623 "emit.cog"
                 buffer);
 }
 
 
-#line 526 "emit.cog"
+#line 626 "emit.cog"
  void emitLineDirective(
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
                       
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
            EmitContext
 
-#line 527 "emit.cog"
+#line 627 "emit.cog"
                       * context, 
 
-#line 528 "emit.cog"
+#line 628 "emit.cog"
        Syntax syn)
 {
 
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
   if(
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
                                    
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
             DEREF(
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
      context).suppressLineDirective 
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
                                    > 
 
-#line 530 "emit.cog"
+#line 630 "emit.cog"
                                      0)
 {
 
 
-#line 531 "emit.cog"
+#line 631 "emit.cog"
    return;
 }
 
 
-#line 533 "emit.cog"
+#line 633 "emit.cog"
   
 
-#line 533 "emit.cog"
+#line 633 "emit.cog"
   auto loc = 
 
-#line 533 "emit.cog"
+#line 633 "emit.cog"
                DEREF(
 
-#line 533 "emit.cog"
+#line 633 "emit.cog"
             syn).loc;
 
 
-#line 534 "emit.cog"
+#line 634 "emit.cog"
   if(
 
-#line 534 "emit.cog"
+#line 634 "emit.cog"
      
 
-#line 534 "emit.cog"
+#line 634 "emit.cog"
      !
 
-#line 534 "emit.cog"
+#line 634 "emit.cog"
          DEREF(
 
-#line 534 "emit.cog"
+#line 634 "emit.cog"
       loc).raw)
 {
 
 
-#line 535 "emit.cog"
+#line 635 "emit.cog"
    return;
 }
 
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
   
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
   auto expandedLoc = 
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
                              
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
                     expandLoc(
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
                                      DEREF(
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
                               context).session, 
 
-#line 537 "emit.cog"
+#line 637 "emit.cog"
                                                loc);
 
 
-#line 541 "emit.cog"
+#line 641 "emit.cog"
       
 
-#line 541 "emit.cog"
+#line 641 "emit.cog"
       
 
-#line 541 "emit.cog"
+#line 641 "emit.cog"
   emit(
 
-#line 541 "emit.cog"
+#line 641 "emit.cog"
        context, 
 
-#line 541 "emit.cog"
+#line 641 "emit.cog"
                 "\n\n#line ");
 
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
       
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
       
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
   emit(
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
        context, 
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
                            DEREF(
 
-#line 542 "emit.cog"
+#line 642 "emit.cog"
                 expandedLoc).line);
 
 
-#line 543 "emit.cog"
+#line 643 "emit.cog"
       
 
-#line 543 "emit.cog"
+#line 643 "emit.cog"
       
 
-#line 543 "emit.cog"
+#line 643 "emit.cog"
   emit(
 
-#line 543 "emit.cog"
+#line 643 "emit.cog"
        context, 
 
-#line 543 "emit.cog"
+#line 643 "emit.cog"
                 " \"");
 
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
       
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
       
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
   emit(
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
        context, 
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
                            DEREF(
 
-#line 544 "emit.cog"
+#line 644 "emit.cog"
                 expandedLoc).file);
 
 
-#line 545 "emit.cog"
+#line 645 "emit.cog"
       
 
-#line 545 "emit.cog"
+#line 645 "emit.cog"
       
 
-#line 545 "emit.cog"
+#line 645 "emit.cog"
   emit(
 
-#line 545 "emit.cog"
+#line 645 "emit.cog"
        context, 
 
-#line 545 "emit.cog"
+#line 645 "emit.cog"
                 "\"\n");
 
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
   {
 
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
       
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
       
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                Int ii = 
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                      0;
 for(;
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                            
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                         ii 
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                            < 
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                                         DEREF(
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                              expandedLoc).column;
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                                                  
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                                                  ++
 
-#line 548 "emit.cog"
+#line 648 "emit.cog"
                                                    ii)
 {
 {
 
 
-#line 550 "emit.cog"
+#line 650 "emit.cog"
        
 
-#line 550 "emit.cog"
+#line 650 "emit.cog"
        
 
-#line 550 "emit.cog"
+#line 650 "emit.cog"
    emit(
 
-#line 550 "emit.cog"
+#line 650 "emit.cog"
         context, 
 
-#line 550 "emit.cog"
+#line 650 "emit.cog"
                  " ");
 }
 }}
 }
 
 
-#line 554 "emit.cog"
+#line 654 "emit.cog"
  void emitStmt(
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
                       
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
            EmitContext
 
-#line 555 "emit.cog"
+#line 655 "emit.cog"
                       * context, 
 
-#line 556 "emit.cog"
+#line 656 "emit.cog"
         Stmt stmt)
 {
 
 
-#line 558 "emit.cog"
+#line 658 "emit.cog"
                    
 
-#line 558 "emit.cog"
+#line 658 "emit.cog"
                    
 
-#line 558 "emit.cog"
+#line 658 "emit.cog"
   emitLineDirective(
 
-#line 558 "emit.cog"
+#line 658 "emit.cog"
                     context, 
 
-#line 558 "emit.cog"
+#line 658 "emit.cog"
                              stmt);
 
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
   if(auto blockStmt = 
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
                                   
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
                        
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
                      as<
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
                         BlockStmt> (
 
-#line 560 "emit.cog"
+#line 660 "emit.cog"
                                    stmt))
 {
 
 
-#line 562 "emit.cog"
+#line 662 "emit.cog"
                 
 
-#line 562 "emit.cog"
+#line 662 "emit.cog"
                 
 
-#line 562 "emit.cog"
+#line 662 "emit.cog"
    emitBlockStmt(
 
-#line 562 "emit.cog"
+#line 662 "emit.cog"
                  context, 
 
-#line 562 "emit.cog"
+#line 662 "emit.cog"
                           blockStmt);
 }
 else
 {
 
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
           if(auto exp = 
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
                               
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
                          
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
                        as<
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
                           Exp> (
 
-#line 564 "emit.cog"
+#line 664 "emit.cog"
                                stmt))
 {
 
 
-#line 566 "emit.cog"
+#line 666 "emit.cog"
                 
 
-#line 566 "emit.cog"
+#line 666 "emit.cog"
                 
 
-#line 566 "emit.cog"
+#line 666 "emit.cog"
          emitExp(
 
-#line 566 "emit.cog"
+#line 666 "emit.cog"
                  context, 
 
-#line 566 "emit.cog"
+#line 666 "emit.cog"
                           exp);
 
 
-#line 567 "emit.cog"
+#line 667 "emit.cog"
              
 
-#line 567 "emit.cog"
+#line 667 "emit.cog"
              
 
-#line 567 "emit.cog"
+#line 667 "emit.cog"
          emit(
 
-#line 567 "emit.cog"
+#line 667 "emit.cog"
               context, 
 
-#line 567 "emit.cog"
+#line 667 "emit.cog"
                        ";\n");
 }
 else
 {
 
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
           if(auto whileStmt = 
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
                                           
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
                                
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
                              as<
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
                                 WhileStmt> (
 
-#line 569 "emit.cog"
+#line 669 "emit.cog"
                                            stmt))
 {
 
 
-#line 571 "emit.cog"
+#line 671 "emit.cog"
              
 
-#line 571 "emit.cog"
+#line 671 "emit.cog"
              
 
-#line 571 "emit.cog"
+#line 671 "emit.cog"
          emit(
 
-#line 571 "emit.cog"
+#line 671 "emit.cog"
               context, 
 
-#line 571 "emit.cog"
+#line 671 "emit.cog"
                        "while(");
 
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
                 
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
                 
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
          emitExp(
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
                  context, 
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
                                    DEREF(
 
-#line 572 "emit.cog"
+#line 672 "emit.cog"
                           whileStmt).condition);
 
 
-#line 573 "emit.cog"
+#line 673 "emit.cog"
              
 
-#line 573 "emit.cog"
+#line 673 "emit.cog"
              
 
-#line 573 "emit.cog"
+#line 673 "emit.cog"
          emit(
 
-#line 573 "emit.cog"
+#line 673 "emit.cog"
               context, 
 
-#line 573 "emit.cog"
+#line 673 "emit.cog"
                        ")\n{\n");
 
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
                  
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
                  
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
          emitStmt(
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
                   context, 
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
                                     DEREF(
 
-#line 574 "emit.cog"
+#line 674 "emit.cog"
                            whileStmt).body);
 
 
-#line 575 "emit.cog"
+#line 675 "emit.cog"
              
 
-#line 575 "emit.cog"
+#line 675 "emit.cog"
              
 
-#line 575 "emit.cog"
+#line 675 "emit.cog"
          emit(
 
-#line 575 "emit.cog"
+#line 675 "emit.cog"
               context, 
 
-#line 575 "emit.cog"
+#line 675 "emit.cog"
                        "}\n");
 }
 else
 {
 
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
        if(auto forEachStmt = 
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
                                             
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
                                
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
                              as<
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
                                 ForEachStmt> (
 
-#line 577 "emit.cog"
+#line 677 "emit.cog"
                                              stmt))
 {
 
 
-#line 579 "emit.cog"
+#line 679 "emit.cog"
        
 
-#line 579 "emit.cog"
+#line 679 "emit.cog"
        
 
-#line 579 "emit.cog"
+#line 679 "emit.cog"
    emit(
 
-#line 579 "emit.cog"
+#line 679 "emit.cog"
         context, 
 
-#line 579 "emit.cog"
+#line 679 "emit.cog"
                  "for(auto ");
 
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
        
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
        
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
    emit(
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
         context, 
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
                                     DEREF(
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
                             DEREF(
 
-#line 580 "emit.cog"
+#line 680 "emit.cog"
                  forEachStmt).varDecl).name);
 
 
-#line 581 "emit.cog"
+#line 681 "emit.cog"
        
 
-#line 581 "emit.cog"
+#line 681 "emit.cog"
        
 
-#line 581 "emit.cog"
+#line 681 "emit.cog"
    emit(
 
-#line 581 "emit.cog"
+#line 681 "emit.cog"
         context, 
 
-#line 581 "emit.cog"
+#line 681 "emit.cog"
                  " : ");
 
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
           
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
           
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
    emitExp(
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
            context, 
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
                                DEREF(
 
-#line 582 "emit.cog"
+#line 682 "emit.cog"
                     forEachStmt).exp);
 
 
-#line 583 "emit.cog"
+#line 683 "emit.cog"
        
 
-#line 583 "emit.cog"
+#line 683 "emit.cog"
        
 
-#line 583 "emit.cog"
+#line 683 "emit.cog"
    emit(
 
-#line 583 "emit.cog"
+#line 683 "emit.cog"
         context, 
 
-#line 583 "emit.cog"
+#line 683 "emit.cog"
                  ")\n{\n");
 
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
            
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
            
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
    emitStmt(
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
             context, 
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
                                 DEREF(
 
-#line 584 "emit.cog"
+#line 684 "emit.cog"
                      forEachStmt).body);
 
 
-#line 585 "emit.cog"
+#line 685 "emit.cog"
        
 
-#line 585 "emit.cog"
+#line 685 "emit.cog"
        
 
-#line 585 "emit.cog"
+#line 685 "emit.cog"
    emit(
 
-#line 585 "emit.cog"
+#line 685 "emit.cog"
         context, 
 
-#line 585 "emit.cog"
+#line 685 "emit.cog"
                  "}\n");
 }
 else
 {
 
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
        if(auto forStmt = 
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
                                     
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
                            
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
                          as<
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
                             ForStmt> (
 
-#line 587 "emit.cog"
+#line 687 "emit.cog"
                                      stmt))
 {
 
 
-#line 589 "emit.cog"
+#line 689 "emit.cog"
        
 
-#line 589 "emit.cog"
+#line 689 "emit.cog"
        
 
-#line 589 "emit.cog"
+#line 689 "emit.cog"
    emit(
 
-#line 589 "emit.cog"
+#line 689 "emit.cog"
         context, 
 
-#line 589 "emit.cog"
+#line 689 "emit.cog"
                  "{\n");
 
 
-#line 590 "emit.cog"
+#line 690 "emit.cog"
    if(
 
-#line 590 "emit.cog"
+#line 690 "emit.cog"
               DEREF(
 
-#line 590 "emit.cog"
+#line 690 "emit.cog"
        forStmt).init)
 {
 
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
             
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
             
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
     emitStmt(
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
              context, 
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
                              DEREF(
 
-#line 592 "emit.cog"
+#line 692 "emit.cog"
                       forStmt).init);
 }
 
 
-#line 594 "emit.cog"
+#line 694 "emit.cog"
        
 
-#line 594 "emit.cog"
+#line 694 "emit.cog"
        
 
-#line 594 "emit.cog"
+#line 694 "emit.cog"
    emit(
 
-#line 594 "emit.cog"
+#line 694 "emit.cog"
         context, 
 
-#line 594 "emit.cog"
+#line 694 "emit.cog"
                  "for(;");
 
 
-#line 595 "emit.cog"
+#line 695 "emit.cog"
    if(
 
-#line 595 "emit.cog"
+#line 695 "emit.cog"
               DEREF(
 
-#line 595 "emit.cog"
+#line 695 "emit.cog"
        forStmt).condition)
 {
 
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
            
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
            
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
     emitExp(
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
             context, 
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
                             DEREF(
 
-#line 597 "emit.cog"
+#line 697 "emit.cog"
                      forStmt).condition);
 }
 
 
-#line 599 "emit.cog"
+#line 699 "emit.cog"
        
 
-#line 599 "emit.cog"
+#line 699 "emit.cog"
        
 
-#line 599 "emit.cog"
+#line 699 "emit.cog"
    emit(
 
-#line 599 "emit.cog"
+#line 699 "emit.cog"
         context, 
 
-#line 599 "emit.cog"
+#line 699 "emit.cog"
                  ";");
 
 
-#line 600 "emit.cog"
+#line 700 "emit.cog"
    if(
 
-#line 600 "emit.cog"
+#line 700 "emit.cog"
               DEREF(
 
-#line 600 "emit.cog"
+#line 700 "emit.cog"
        forStmt).iter)
 {
 
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
            
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
            
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
     emitExp(
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
             context, 
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
                             DEREF(
 
-#line 602 "emit.cog"
+#line 702 "emit.cog"
                      forStmt).iter);
 }
 
 
-#line 604 "emit.cog"
+#line 704 "emit.cog"
        
 
-#line 604 "emit.cog"
+#line 704 "emit.cog"
        
 
-#line 604 "emit.cog"
+#line 704 "emit.cog"
    emit(
 
-#line 604 "emit.cog"
+#line 704 "emit.cog"
         context, 
 
-#line 604 "emit.cog"
+#line 704 "emit.cog"
                  ")\n{\n");
 
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
            
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
            
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
    emitStmt(
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
             context, 
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
                             DEREF(
 
-#line 605 "emit.cog"
+#line 705 "emit.cog"
                      forStmt).body);
 
 
-#line 606 "emit.cog"
+#line 706 "emit.cog"
        
 
-#line 606 "emit.cog"
+#line 706 "emit.cog"
        
 
-#line 606 "emit.cog"
+#line 706 "emit.cog"
    emit(
 
-#line 606 "emit.cog"
+#line 706 "emit.cog"
         context, 
 
-#line 606 "emit.cog"
+#line 706 "emit.cog"
                  "}}\n");
 }
 else
 {
 
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
        if(auto switchStmt = 
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
                                           
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
                               
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
                             as<
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
                                SwitchStmt> (
 
-#line 608 "emit.cog"
+#line 708 "emit.cog"
                                            stmt))
 {
 
 
-#line 610 "emit.cog"
+#line 710 "emit.cog"
        
 
-#line 610 "emit.cog"
+#line 710 "emit.cog"
        
 
-#line 610 "emit.cog"
+#line 710 "emit.cog"
    emit(
 
-#line 610 "emit.cog"
+#line 710 "emit.cog"
         context, 
 
-#line 610 "emit.cog"
+#line 710 "emit.cog"
                  "switch(");
 
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
           
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
           
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
    emitExp(
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
            context, 
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
                               DEREF(
 
-#line 611 "emit.cog"
+#line 711 "emit.cog"
                     switchStmt).condition);
 
 
-#line 612 "emit.cog"
+#line 712 "emit.cog"
        
 
-#line 612 "emit.cog"
+#line 712 "emit.cog"
        
 
-#line 612 "emit.cog"
+#line 712 "emit.cog"
    emit(
 
-#line 612 "emit.cog"
+#line 712 "emit.cog"
         context, 
 
-#line 612 "emit.cog"
+#line 712 "emit.cog"
                  ")\n{\n");
 
 
-#line 613 "emit.cog"
+#line 713 "emit.cog"
    for(auto cc : 
 
-#line 613 "emit.cog"
+#line 713 "emit.cog"
                            DEREF(
 
-#line 613 "emit.cog"
+#line 713 "emit.cog"
                  switchStmt).cases)
 {
 {
 
 
-#line 615 "emit.cog"
+#line 715 "emit.cog"
     for(auto aa : 
 
-#line 615 "emit.cog"
+#line 715 "emit.cog"
                     DEREF(
 
-#line 615 "emit.cog"
+#line 715 "emit.cog"
                   cc).values)
 {
 {
 
 
-#line 617 "emit.cog"
+#line 717 "emit.cog"
      if(
 
-#line 617 "emit.cog"
+#line 717 "emit.cog"
            DEREF(
 
-#line 617 "emit.cog"
+#line 717 "emit.cog"
          aa).exp)
 {
 
 
-#line 619 "emit.cog"
+#line 719 "emit.cog"
           
 
-#line 619 "emit.cog"
+#line 719 "emit.cog"
           
 
-#line 619 "emit.cog"
+#line 719 "emit.cog"
       emit(
 
-#line 619 "emit.cog"
+#line 719 "emit.cog"
            context, 
 
-#line 619 "emit.cog"
+#line 719 "emit.cog"
                     "case ");
 
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
              
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
              
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
       emitExp(
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
               context, 
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
                          DEREF(
 
-#line 620 "emit.cog"
+#line 720 "emit.cog"
                        aa).exp);
 }
 else
 {
 
 
-#line 624 "emit.cog"
+#line 724 "emit.cog"
           
 
-#line 624 "emit.cog"
+#line 724 "emit.cog"
           
 
-#line 624 "emit.cog"
+#line 724 "emit.cog"
       emit(
 
-#line 624 "emit.cog"
+#line 724 "emit.cog"
            context, 
 
-#line 624 "emit.cog"
+#line 724 "emit.cog"
                     "default");
 }
 
 
-#line 626 "emit.cog"
+#line 726 "emit.cog"
          
 
-#line 626 "emit.cog"
+#line 726 "emit.cog"
          
 
-#line 626 "emit.cog"
+#line 726 "emit.cog"
      emit(
 
-#line 626 "emit.cog"
+#line 726 "emit.cog"
           context, 
 
-#line 626 "emit.cog"
+#line 726 "emit.cog"
                    ":\n");
 }
 }
 
 
-#line 628 "emit.cog"
+#line 728 "emit.cog"
         
 
-#line 628 "emit.cog"
+#line 728 "emit.cog"
         
 
-#line 628 "emit.cog"
+#line 728 "emit.cog"
     emit(
 
-#line 628 "emit.cog"
+#line 728 "emit.cog"
          context, 
 
-#line 628 "emit.cog"
+#line 728 "emit.cog"
                   "{\n");
 
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
             
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
             
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
     emitStmt(
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
              context, 
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
                         DEREF(
 
-#line 629 "emit.cog"
+#line 729 "emit.cog"
                       cc).body);
 
 
-#line 630 "emit.cog"
+#line 730 "emit.cog"
         
 
-#line 630 "emit.cog"
+#line 730 "emit.cog"
         
 
-#line 630 "emit.cog"
+#line 730 "emit.cog"
     emit(
 
-#line 630 "emit.cog"
+#line 730 "emit.cog"
          context, 
 
-#line 630 "emit.cog"
+#line 730 "emit.cog"
                   "}\n");
 }
 }
 
 
-#line 632 "emit.cog"
+#line 732 "emit.cog"
        
 
-#line 632 "emit.cog"
+#line 732 "emit.cog"
        
 
-#line 632 "emit.cog"
+#line 732 "emit.cog"
    emit(
 
-#line 632 "emit.cog"
+#line 732 "emit.cog"
         context, 
 
-#line 632 "emit.cog"
+#line 732 "emit.cog"
                  "}\n");
 }
 else
 {
 
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
        if(auto ifStmt = 
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
                                  
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
                          
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
                        as<
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
                           IfStmt> (
 
-#line 634 "emit.cog"
+#line 734 "emit.cog"
                                   stmt))
 {
 
 
-#line 636 "emit.cog"
+#line 736 "emit.cog"
              
 
-#line 636 "emit.cog"
+#line 736 "emit.cog"
              
 
-#line 636 "emit.cog"
+#line 736 "emit.cog"
          emit(
 
-#line 636 "emit.cog"
+#line 736 "emit.cog"
               context, 
 
-#line 636 "emit.cog"
+#line 736 "emit.cog"
                        "if(");
 
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
                 
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
                 
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
          emitExp(
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
                  context, 
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
                                 DEREF(
 
-#line 637 "emit.cog"
+#line 737 "emit.cog"
                           ifStmt).condition);
 
 
-#line 638 "emit.cog"
+#line 738 "emit.cog"
              
 
-#line 638 "emit.cog"
+#line 738 "emit.cog"
              
 
-#line 638 "emit.cog"
+#line 738 "emit.cog"
          emit(
 
-#line 638 "emit.cog"
+#line 738 "emit.cog"
               context, 
 
-#line 638 "emit.cog"
+#line 738 "emit.cog"
                        ")\n");
 
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
                       
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
                       
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
          emitBlockStmt(
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
                        context, 
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
                                       DEREF(
 
-#line 639 "emit.cog"
+#line 739 "emit.cog"
                                 ifStmt).thenStmt);
 
 
-#line 640 "emit.cog"
+#line 740 "emit.cog"
          if(auto elseStmt = 
 
-#line 640 "emit.cog"
+#line 740 "emit.cog"
                                  DEREF(
 
-#line 640 "emit.cog"
+#line 740 "emit.cog"
                            ifStmt).elseStmt)
 {
 
 
-#line 642 "emit.cog"
+#line 742 "emit.cog"
                  
 
-#line 642 "emit.cog"
+#line 742 "emit.cog"
                  
 
-#line 642 "emit.cog"
+#line 742 "emit.cog"
              emit(
 
-#line 642 "emit.cog"
+#line 742 "emit.cog"
                   context, 
 
-#line 642 "emit.cog"
+#line 742 "emit.cog"
                            "else\n");
 
 
-#line 643 "emit.cog"
+#line 743 "emit.cog"
                           
 
-#line 643 "emit.cog"
+#line 743 "emit.cog"
                           
 
-#line 643 "emit.cog"
+#line 743 "emit.cog"
              emitBlockStmt(
 
-#line 643 "emit.cog"
+#line 743 "emit.cog"
                            context, 
 
-#line 643 "emit.cog"
+#line 743 "emit.cog"
                                     elseStmt);
 }
 }
@@ -37719,171 +38497,171 @@ else
 {
 
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
        if(auto ifLetStmt = 
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
                                        
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
                             
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
                           as<
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
                              IfLetStmt> (
 
-#line 646 "emit.cog"
+#line 746 "emit.cog"
                                         stmt))
 {
 
 
-#line 648 "emit.cog"
+#line 748 "emit.cog"
              
 
-#line 648 "emit.cog"
+#line 748 "emit.cog"
              
 
-#line 648 "emit.cog"
+#line 748 "emit.cog"
          emit(
 
-#line 648 "emit.cog"
+#line 748 "emit.cog"
               context, 
 
-#line 648 "emit.cog"
+#line 748 "emit.cog"
                        "if(auto ");
 
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
              
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
              
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
          emit(
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
               context, 
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
                                 DEREF(
 
-#line 649 "emit.cog"
+#line 749 "emit.cog"
                        ifLetStmt).name);
 
 
-#line 650 "emit.cog"
+#line 750 "emit.cog"
              
 
-#line 650 "emit.cog"
+#line 750 "emit.cog"
              
 
-#line 650 "emit.cog"
+#line 750 "emit.cog"
          emit(
 
-#line 650 "emit.cog"
+#line 750 "emit.cog"
               context, 
 
-#line 650 "emit.cog"
+#line 750 "emit.cog"
                        " = ");
 
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
                 
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
                 
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
          emitExp(
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
                  context, 
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
                                    DEREF(
 
-#line 651 "emit.cog"
+#line 751 "emit.cog"
                           ifLetStmt).init);
 
 
-#line 652 "emit.cog"
+#line 752 "emit.cog"
              
 
-#line 652 "emit.cog"
+#line 752 "emit.cog"
              
 
-#line 652 "emit.cog"
+#line 752 "emit.cog"
          emit(
 
-#line 652 "emit.cog"
+#line 752 "emit.cog"
               context, 
 
-#line 652 "emit.cog"
+#line 752 "emit.cog"
                        ")\n");
 
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
                       
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
                       
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
          emitBlockStmt(
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
                        context, 
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
                                          DEREF(
 
-#line 653 "emit.cog"
+#line 753 "emit.cog"
                                 ifLetStmt).thenStmt);
 
 
-#line 654 "emit.cog"
+#line 754 "emit.cog"
          if(auto elseStmt = 
 
-#line 654 "emit.cog"
+#line 754 "emit.cog"
                                     DEREF(
 
-#line 654 "emit.cog"
+#line 754 "emit.cog"
                            ifLetStmt).elseStmt)
 {
 
 
-#line 656 "emit.cog"
+#line 756 "emit.cog"
                  
 
-#line 656 "emit.cog"
+#line 756 "emit.cog"
                  
 
-#line 656 "emit.cog"
+#line 756 "emit.cog"
              emit(
 
-#line 656 "emit.cog"
+#line 756 "emit.cog"
                   context, 
 
-#line 656 "emit.cog"
+#line 756 "emit.cog"
                            "else\n");
 
 
-#line 657 "emit.cog"
+#line 757 "emit.cog"
                           
 
-#line 657 "emit.cog"
+#line 757 "emit.cog"
                           
 
-#line 657 "emit.cog"
+#line 757 "emit.cog"
              emitBlockStmt(
 
-#line 657 "emit.cog"
+#line 757 "emit.cog"
                            context, 
 
-#line 657 "emit.cog"
+#line 757 "emit.cog"
                                     elseStmt);
 }
 }
@@ -37891,278 +38669,278 @@ else
 {
 
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
           if(auto returnStmt = 
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
                                             
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
                                 
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
                               as<
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
                                  ReturnStmt> (
 
-#line 660 "emit.cog"
+#line 760 "emit.cog"
                                              stmt))
 {
 
 
-#line 662 "emit.cog"
+#line 762 "emit.cog"
              
 
-#line 662 "emit.cog"
+#line 762 "emit.cog"
              
 
-#line 662 "emit.cog"
+#line 762 "emit.cog"
          emit(
 
-#line 662 "emit.cog"
+#line 762 "emit.cog"
               context, 
 
-#line 662 "emit.cog"
+#line 762 "emit.cog"
                        "return");
 
 
-#line 663 "emit.cog"
+#line 763 "emit.cog"
          if(auto value = 
 
-#line 663 "emit.cog"
+#line 763 "emit.cog"
                                   DEREF(
 
-#line 663 "emit.cog"
+#line 763 "emit.cog"
                         returnStmt).value)
 {
 
 
-#line 665 "emit.cog"
+#line 765 "emit.cog"
                  
 
-#line 665 "emit.cog"
+#line 765 "emit.cog"
                  
 
-#line 665 "emit.cog"
+#line 765 "emit.cog"
              emit(
 
-#line 665 "emit.cog"
+#line 765 "emit.cog"
                   context, 
 
-#line 665 "emit.cog"
+#line 765 "emit.cog"
                            " ");
 
 
-#line 666 "emit.cog"
+#line 766 "emit.cog"
                     
 
-#line 666 "emit.cog"
+#line 766 "emit.cog"
                     
 
-#line 666 "emit.cog"
+#line 766 "emit.cog"
              emitExp(
 
-#line 666 "emit.cog"
+#line 766 "emit.cog"
                      context, 
 
-#line 666 "emit.cog"
+#line 766 "emit.cog"
                               value);
 }
 
 
-#line 668 "emit.cog"
+#line 768 "emit.cog"
              
 
-#line 668 "emit.cog"
+#line 768 "emit.cog"
              
 
-#line 668 "emit.cog"
+#line 768 "emit.cog"
          emit(
 
-#line 668 "emit.cog"
+#line 768 "emit.cog"
               context, 
 
-#line 668 "emit.cog"
+#line 768 "emit.cog"
                        ";\n");
 }
 else
 {
 
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
           if(auto breakStmt = 
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
                                           
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
                                
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
                              as<
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
                                 BreakStmt> (
 
-#line 670 "emit.cog"
+#line 770 "emit.cog"
                                            stmt))
 {
 
 
-#line 672 "emit.cog"
+#line 772 "emit.cog"
              
 
-#line 672 "emit.cog"
+#line 772 "emit.cog"
              
 
-#line 672 "emit.cog"
+#line 772 "emit.cog"
          emit(
 
-#line 672 "emit.cog"
+#line 772 "emit.cog"
               context, 
 
-#line 672 "emit.cog"
+#line 772 "emit.cog"
                        "break;\n");
 }
 else
 {
 
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
           if(auto continueStmt = 
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
                                                 
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
                                   
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
                                 as<
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
                                    ContinueStmt> (
 
-#line 674 "emit.cog"
+#line 774 "emit.cog"
                                                  stmt))
 {
 
 
-#line 676 "emit.cog"
+#line 776 "emit.cog"
              
 
-#line 676 "emit.cog"
+#line 776 "emit.cog"
              
 
-#line 676 "emit.cog"
+#line 776 "emit.cog"
          emit(
 
-#line 676 "emit.cog"
+#line 776 "emit.cog"
               context, 
 
-#line 676 "emit.cog"
+#line 776 "emit.cog"
                        "continue;\n");
 }
 else
 {
 
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
        if(auto decl = 
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
                              
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
                        
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
                      as<
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
                         Decl> (
 
-#line 678 "emit.cog"
+#line 778 "emit.cog"
                               stmt))
 {
 
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
            
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
            
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
    emitDecl(
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
             context, 
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
                      decl, 
 
-#line 680 "emit.cog"
+#line 780 "emit.cog"
                            kDeclEmitMode_Full);
 }
 else
 {
 
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                  
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                  
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
          diagnose(
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                          
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                   getSink(
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                           context), 
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                         DEREF(
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                     stmt).loc, 
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                               kDiagnostic_unimplemented, 
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                                                                          DEREF(
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                                                              DEREF(
 
-#line 684 "emit.cog"
+#line 784 "emit.cog"
                                                                          stmt).directClass).name);
 
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
                   
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
                   
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
          cogAssert(
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
                    
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
                    !
 
-#line 685 "emit.cog"
+#line 785 "emit.cog"
                     "unimplemented");
 }
 }
@@ -38179,3325 +38957,3325 @@ else
 }
 
 
-#line 691 "emit.cog"
+#line 791 "emit.cog"
  void emitClassDecl(
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
                       
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
            EmitContext
 
-#line 692 "emit.cog"
+#line 792 "emit.cog"
                       * context, 
 
-#line 693 "emit.cog"
+#line 793 "emit.cog"
               ClassDecl aggDecl, 
 
-#line 694 "emit.cog"
+#line 794 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 697 "emit.cog"
+#line 797 "emit.cog"
   if(
 
-#line 697 "emit.cog"
+#line 797 "emit.cog"
            
 
-#line 697 "emit.cog"
+#line 797 "emit.cog"
       mode 
 
-#line 697 "emit.cog"
+#line 797 "emit.cog"
            == 
 
-#line 697 "emit.cog"
+#line 797 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 699 "emit.cog"
+#line 799 "emit.cog"
    for(auto dd : 
 
-#line 699 "emit.cog"
+#line 799 "emit.cog"
                                  
 
-#line 699 "emit.cog"
+#line 799 "emit.cog"
                         DEREF(
 
-#line 699 "emit.cog"
+#line 799 "emit.cog"
                  aggDecl).getDecls())
 {
 {
 
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
     if(auto varDecl = 
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
                                  
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
                         
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
                       as<
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
                          VarDecl> (
 
-#line 701 "emit.cog"
+#line 801 "emit.cog"
                                   dd))
 {
 
 
-#line 702 "emit.cog"
+#line 802 "emit.cog"
      continue;
 }
 
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
             
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
             
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
     emitDecl(
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
              context, 
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
                       dd, 
 
-#line 704 "emit.cog"
+#line 804 "emit.cog"
                           kDeclEmitMode_Full);
 }
 }
 
 
-#line 707 "emit.cog"
+#line 807 "emit.cog"
    return;
 }
 
 
-#line 710 "emit.cog"
+#line 810 "emit.cog"
       
 
-#line 710 "emit.cog"
+#line 810 "emit.cog"
       
 
-#line 710 "emit.cog"
+#line 810 "emit.cog"
   emit(
 
-#line 710 "emit.cog"
+#line 810 "emit.cog"
        context, 
 
-#line 710 "emit.cog"
+#line 810 "emit.cog"
                 "using ");
 
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
          
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
          
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
      emit(
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
           context, 
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
                           DEREF(
 
-#line 711 "emit.cog"
+#line 811 "emit.cog"
                    aggDecl).name);
 
 
-#line 712 "emit.cog"
+#line 812 "emit.cog"
          
 
-#line 712 "emit.cog"
+#line 812 "emit.cog"
          
 
-#line 712 "emit.cog"
+#line 812 "emit.cog"
      emit(
 
-#line 712 "emit.cog"
+#line 812 "emit.cog"
           context, 
 
-#line 712 "emit.cog"
+#line 812 "emit.cog"
                    " = struct ");
 
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
          
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
          
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
      emit(
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
           context, 
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
                           DEREF(
 
-#line 713 "emit.cog"
+#line 813 "emit.cog"
                    aggDecl).name);
 
 
-#line 714 "emit.cog"
+#line 814 "emit.cog"
          
 
-#line 714 "emit.cog"
+#line 814 "emit.cog"
          
 
-#line 714 "emit.cog"
+#line 814 "emit.cog"
      emit(
 
-#line 714 "emit.cog"
+#line 814 "emit.cog"
           context, 
 
-#line 714 "emit.cog"
+#line 814 "emit.cog"
                    "Impl* ");
 
 
-#line 715 "emit.cog"
+#line 815 "emit.cog"
          
 
-#line 715 "emit.cog"
+#line 815 "emit.cog"
          
 
-#line 715 "emit.cog"
+#line 815 "emit.cog"
      emit(
 
-#line 715 "emit.cog"
+#line 815 "emit.cog"
           context, 
 
-#line 715 "emit.cog"
+#line 815 "emit.cog"
                    ";\n");
 
 
-#line 717 "emit.cog"
+#line 817 "emit.cog"
       
 
-#line 717 "emit.cog"
+#line 817 "emit.cog"
       
 
-#line 717 "emit.cog"
+#line 817 "emit.cog"
   emit(
 
-#line 717 "emit.cog"
+#line 817 "emit.cog"
        context, 
 
-#line 717 "emit.cog"
+#line 817 "emit.cog"
                 "struct ");
 
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
          
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
          
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
      emit(
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
           context, 
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
                           DEREF(
 
-#line 718 "emit.cog"
+#line 818 "emit.cog"
                    aggDecl).name);
 
 
-#line 719 "emit.cog"
+#line 819 "emit.cog"
       
 
-#line 719 "emit.cog"
+#line 819 "emit.cog"
       
 
-#line 719 "emit.cog"
+#line 819 "emit.cog"
   emit(
 
-#line 719 "emit.cog"
+#line 819 "emit.cog"
        context, 
 
-#line 719 "emit.cog"
+#line 819 "emit.cog"
                 "Impl");
 
 
-#line 721 "emit.cog"
+#line 821 "emit.cog"
   if(
 
-#line 721 "emit.cog"
+#line 821 "emit.cog"
            
 
-#line 721 "emit.cog"
+#line 821 "emit.cog"
       mode 
 
-#line 721 "emit.cog"
+#line 821 "emit.cog"
            <= 
 
-#line 721 "emit.cog"
+#line 821 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 723 "emit.cog"
+#line 823 "emit.cog"
        
 
-#line 723 "emit.cog"
+#line 823 "emit.cog"
        
 
-#line 723 "emit.cog"
+#line 823 "emit.cog"
    emit(
 
-#line 723 "emit.cog"
+#line 823 "emit.cog"
         context, 
 
-#line 723 "emit.cog"
+#line 823 "emit.cog"
                  ";\n");
 
 
-#line 724 "emit.cog"
+#line 824 "emit.cog"
    return;
 }
 
 
-#line 727 "emit.cog"
+#line 827 "emit.cog"
      if(auto base = 
 
-#line 727 "emit.cog"
+#line 827 "emit.cog"
                                DEREF(
 
-#line 727 "emit.cog"
+#line 827 "emit.cog"
                           DEREF(
 
-#line 727 "emit.cog"
+#line 827 "emit.cog"
                    aggDecl).base).exp)
 {
 
 
-#line 729 "emit.cog"
+#line 829 "emit.cog"
        
 
-#line 729 "emit.cog"
+#line 829 "emit.cog"
        
 
-#line 729 "emit.cog"
+#line 829 "emit.cog"
    emit(
 
-#line 729 "emit.cog"
+#line 829 "emit.cog"
         context, 
 
-#line 729 "emit.cog"
+#line 829 "emit.cog"
                  " : ");
 
 
-#line 730 "emit.cog"
+#line 830 "emit.cog"
            
 
-#line 730 "emit.cog"
+#line 830 "emit.cog"
            
 
-#line 730 "emit.cog"
+#line 830 "emit.cog"
    emitType(
 
-#line 730 "emit.cog"
+#line 830 "emit.cog"
             context, 
 
-#line 730 "emit.cog"
+#line 830 "emit.cog"
                      base);
 
 
-#line 731 "emit.cog"
+#line 831 "emit.cog"
        
 
-#line 731 "emit.cog"
+#line 831 "emit.cog"
        
 
-#line 731 "emit.cog"
+#line 831 "emit.cog"
    emit(
 
-#line 731 "emit.cog"
+#line 831 "emit.cog"
         context, 
 
-#line 731 "emit.cog"
+#line 831 "emit.cog"
                  "Impl");
 }
 else
 {
 
 
-#line 735 "emit.cog"
+#line 835 "emit.cog"
        
 
-#line 735 "emit.cog"
+#line 835 "emit.cog"
        
 
-#line 735 "emit.cog"
+#line 835 "emit.cog"
    emit(
 
-#line 735 "emit.cog"
+#line 835 "emit.cog"
         context, 
 
-#line 735 "emit.cog"
+#line 835 "emit.cog"
                  " : cog::ObjectImpl");
 }
 
 
-#line 738 "emit.cog"
+#line 838 "emit.cog"
       
 
-#line 738 "emit.cog"
+#line 838 "emit.cog"
       
 
-#line 738 "emit.cog"
+#line 838 "emit.cog"
   emit(
 
-#line 738 "emit.cog"
+#line 838 "emit.cog"
        context, 
 
-#line 738 "emit.cog"
+#line 838 "emit.cog"
                 "\n{\n");
 
 
-#line 740 "emit.cog"
+#line 840 "emit.cog"
       
 
-#line 740 "emit.cog"
+#line 840 "emit.cog"
       
 
-#line 740 "emit.cog"
+#line 840 "emit.cog"
   emit(
 
-#line 740 "emit.cog"
+#line 840 "emit.cog"
        context, 
 
-#line 740 "emit.cog"
+#line 840 "emit.cog"
                 "typedef cog::Class StaticClass;\n");
 
 
-#line 741 "emit.cog"
+#line 841 "emit.cog"
       
 
-#line 741 "emit.cog"
+#line 841 "emit.cog"
       
 
-#line 741 "emit.cog"
+#line 841 "emit.cog"
   emit(
 
-#line 741 "emit.cog"
+#line 841 "emit.cog"
        context, 
 
-#line 741 "emit.cog"
+#line 841 "emit.cog"
                 "static StaticClass staticClass;\n");
 
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
               
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
               
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
      emitDecls(
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
                context, 
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
                         aggDecl, 
 
-#line 744 "emit.cog"
+#line 844 "emit.cog"
                                  kDeclEmitMode_Forward);
 
 
-#line 745 "emit.cog"
+#line 845 "emit.cog"
       
 
-#line 745 "emit.cog"
+#line 845 "emit.cog"
       
 
-#line 745 "emit.cog"
+#line 845 "emit.cog"
   emit(
 
-#line 745 "emit.cog"
+#line 845 "emit.cog"
        context, 
 
-#line 745 "emit.cog"
+#line 845 "emit.cog"
                 "};\n");
 
 
-#line 747 "emit.cog"
+#line 847 "emit.cog"
       
 
-#line 747 "emit.cog"
+#line 847 "emit.cog"
       
 
-#line 747 "emit.cog"
+#line 847 "emit.cog"
   emit(
 
-#line 747 "emit.cog"
+#line 847 "emit.cog"
        context, 
 
-#line 747 "emit.cog"
+#line 847 "emit.cog"
                 "} namespace cog {\n");
 
 
-#line 749 "emit.cog"
+#line 849 "emit.cog"
       
 
-#line 749 "emit.cog"
+#line 849 "emit.cog"
       
 
-#line 749 "emit.cog"
+#line 849 "emit.cog"
   emit(
 
-#line 749 "emit.cog"
+#line 849 "emit.cog"
        context, 
 
-#line 749 "emit.cog"
+#line 849 "emit.cog"
                 "template<> struct ObjectClassImpl<");
 
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
               
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
               
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
   emitDeclName(
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
                context, 
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
                         aggDecl, 
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
                                  kDeclEmitMode_Full, 
 
-#line 750 "emit.cog"
+#line 850 "emit.cog"
                                                      true);
 
 
-#line 751 "emit.cog"
+#line 851 "emit.cog"
       
 
-#line 751 "emit.cog"
+#line 851 "emit.cog"
       
 
-#line 751 "emit.cog"
+#line 851 "emit.cog"
   emit(
 
-#line 751 "emit.cog"
+#line 851 "emit.cog"
        context, 
 
-#line 751 "emit.cog"
+#line 851 "emit.cog"
                 " > { typedef ");
 
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
               
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
               
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
   emitDeclName(
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
                context, 
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
                         aggDecl, 
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
                                  kDeclEmitMode_Full, 
 
-#line 752 "emit.cog"
+#line 852 "emit.cog"
                                                      true);
 
 
-#line 753 "emit.cog"
+#line 853 "emit.cog"
       
 
-#line 753 "emit.cog"
+#line 853 "emit.cog"
       
 
-#line 753 "emit.cog"
+#line 853 "emit.cog"
   emit(
 
-#line 753 "emit.cog"
+#line 853 "emit.cog"
        context, 
 
-#line 753 "emit.cog"
+#line 853 "emit.cog"
                 "Impl Impl; };\n");
 
 
-#line 755 "emit.cog"
+#line 855 "emit.cog"
       
 
-#line 755 "emit.cog"
+#line 855 "emit.cog"
       
 
-#line 755 "emit.cog"
+#line 855 "emit.cog"
   emit(
 
-#line 755 "emit.cog"
+#line 855 "emit.cog"
        context, 
 
-#line 755 "emit.cog"
+#line 855 "emit.cog"
                 "} namespace ");
 
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
       
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
       
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
   emit(
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
        context, 
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
                                           DEREF(
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
                                DEREF(
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
                        DEREF(
 
-#line 756 "emit.cog"
+#line 856 "emit.cog"
                 context).session).moduleDecl).name);
 
 
-#line 757 "emit.cog"
+#line 857 "emit.cog"
       
 
-#line 757 "emit.cog"
+#line 857 "emit.cog"
       
 
-#line 757 "emit.cog"
+#line 857 "emit.cog"
   emit(
 
-#line 757 "emit.cog"
+#line 857 "emit.cog"
        context, 
 
-#line 757 "emit.cog"
+#line 857 "emit.cog"
                 " {\n");
 }
 
 
-#line 761 "emit.cog"
+#line 861 "emit.cog"
  void emitStructDecl(
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
                       
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
            EmitContext
 
-#line 762 "emit.cog"
+#line 862 "emit.cog"
                       * context, 
 
-#line 763 "emit.cog"
+#line 863 "emit.cog"
               StructDecl aggDecl, 
 
-#line 764 "emit.cog"
+#line 864 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 767 "emit.cog"
+#line 867 "emit.cog"
   if(
 
-#line 767 "emit.cog"
+#line 867 "emit.cog"
            
 
-#line 767 "emit.cog"
+#line 867 "emit.cog"
       mode 
 
-#line 767 "emit.cog"
+#line 867 "emit.cog"
            == 
 
-#line 767 "emit.cog"
+#line 867 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 769 "emit.cog"
+#line 869 "emit.cog"
    for(auto dd : 
 
-#line 769 "emit.cog"
+#line 869 "emit.cog"
                                  
 
-#line 769 "emit.cog"
+#line 869 "emit.cog"
                         DEREF(
 
-#line 769 "emit.cog"
+#line 869 "emit.cog"
                  aggDecl).getDecls())
 {
 {
 
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
     if(auto varDecl = 
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
                                  
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
                         
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
                       as<
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
                          VarDecl> (
 
-#line 771 "emit.cog"
+#line 871 "emit.cog"
                                   dd))
 {
 
 
-#line 772 "emit.cog"
+#line 872 "emit.cog"
      continue;
 }
 
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
             
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
             
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
     emitDecl(
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
              context, 
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
                       dd, 
 
-#line 774 "emit.cog"
+#line 874 "emit.cog"
                           kDeclEmitMode_Full);
 }
 }
 
 
-#line 777 "emit.cog"
+#line 877 "emit.cog"
    return;
 }
 
 
-#line 780 "emit.cog"
+#line 880 "emit.cog"
       
 
-#line 780 "emit.cog"
+#line 880 "emit.cog"
       
 
-#line 780 "emit.cog"
+#line 880 "emit.cog"
   emit(
 
-#line 780 "emit.cog"
+#line 880 "emit.cog"
        context, 
 
-#line 780 "emit.cog"
+#line 880 "emit.cog"
                 "struct ");
 
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
          
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
          
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
      emit(
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
           context, 
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
                           DEREF(
 
-#line 781 "emit.cog"
+#line 881 "emit.cog"
                    aggDecl).name);
 
 
-#line 783 "emit.cog"
+#line 883 "emit.cog"
   if(
 
-#line 783 "emit.cog"
+#line 883 "emit.cog"
            
 
-#line 783 "emit.cog"
+#line 883 "emit.cog"
       mode 
 
-#line 783 "emit.cog"
+#line 883 "emit.cog"
            <= 
 
-#line 783 "emit.cog"
+#line 883 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 785 "emit.cog"
+#line 885 "emit.cog"
        
 
-#line 785 "emit.cog"
+#line 885 "emit.cog"
        
 
-#line 785 "emit.cog"
+#line 885 "emit.cog"
    emit(
 
-#line 785 "emit.cog"
+#line 885 "emit.cog"
         context, 
 
-#line 785 "emit.cog"
+#line 885 "emit.cog"
                  ";\n");
 
 
-#line 786 "emit.cog"
+#line 886 "emit.cog"
    return;
 }
 
 
-#line 789 "emit.cog"
+#line 889 "emit.cog"
      if(auto base = 
 
-#line 789 "emit.cog"
+#line 889 "emit.cog"
                                DEREF(
 
-#line 789 "emit.cog"
+#line 889 "emit.cog"
                           DEREF(
 
-#line 789 "emit.cog"
+#line 889 "emit.cog"
                    aggDecl).base).exp)
 {
 
 
-#line 791 "emit.cog"
+#line 891 "emit.cog"
        
 
-#line 791 "emit.cog"
+#line 891 "emit.cog"
        
 
-#line 791 "emit.cog"
+#line 891 "emit.cog"
    emit(
 
-#line 791 "emit.cog"
+#line 891 "emit.cog"
         context, 
 
-#line 791 "emit.cog"
+#line 891 "emit.cog"
                  " : ");
 
 
-#line 792 "emit.cog"
+#line 892 "emit.cog"
            
 
-#line 792 "emit.cog"
+#line 892 "emit.cog"
            
 
-#line 792 "emit.cog"
+#line 892 "emit.cog"
    emitType(
 
-#line 792 "emit.cog"
+#line 892 "emit.cog"
             context, 
 
-#line 792 "emit.cog"
+#line 892 "emit.cog"
                      base);
 }
 
 
-#line 795 "emit.cog"
+#line 895 "emit.cog"
       
 
-#line 795 "emit.cog"
+#line 895 "emit.cog"
       
 
-#line 795 "emit.cog"
+#line 895 "emit.cog"
   emit(
 
-#line 795 "emit.cog"
+#line 895 "emit.cog"
        context, 
 
-#line 795 "emit.cog"
+#line 895 "emit.cog"
                 "\n{\n");
 
 
-#line 797 "emit.cog"
+#line 897 "emit.cog"
       
 
-#line 797 "emit.cog"
+#line 897 "emit.cog"
       
 
-#line 797 "emit.cog"
+#line 897 "emit.cog"
   emit(
 
-#line 797 "emit.cog"
+#line 897 "emit.cog"
        context, 
 
-#line 797 "emit.cog"
+#line 897 "emit.cog"
                 "typedef cog::Class StaticClass;\n");
 
 
-#line 798 "emit.cog"
+#line 898 "emit.cog"
       
 
-#line 798 "emit.cog"
+#line 898 "emit.cog"
       
 
-#line 798 "emit.cog"
+#line 898 "emit.cog"
   emit(
 
-#line 798 "emit.cog"
+#line 898 "emit.cog"
        context, 
 
-#line 798 "emit.cog"
+#line 898 "emit.cog"
                 "static StaticClass staticClass;\n");
 
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
               
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
               
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
      emitDecls(
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
                context, 
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
                         aggDecl, 
 
-#line 801 "emit.cog"
+#line 901 "emit.cog"
                                  kDeclEmitMode_Forward);
 
 
-#line 802 "emit.cog"
+#line 902 "emit.cog"
       
 
-#line 802 "emit.cog"
+#line 902 "emit.cog"
       
 
-#line 802 "emit.cog"
+#line 902 "emit.cog"
   emit(
 
-#line 802 "emit.cog"
+#line 902 "emit.cog"
        context, 
 
-#line 802 "emit.cog"
+#line 902 "emit.cog"
                 "};\n");
 }
 
 
-#line 805 "emit.cog"
+#line 905 "emit.cog"
  void emitVarDecl(
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
                       
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
            EmitContext
 
-#line 806 "emit.cog"
+#line 906 "emit.cog"
                       * context, 
 
-#line 807 "emit.cog"
+#line 907 "emit.cog"
            VarDeclBase varDecl, 
 
-#line 808 "emit.cog"
+#line 908 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 810 "emit.cog"
+#line 910 "emit.cog"
   if(
 
-#line 810 "emit.cog"
+#line 910 "emit.cog"
            
 
-#line 810 "emit.cog"
+#line 910 "emit.cog"
       mode 
 
-#line 810 "emit.cog"
+#line 910 "emit.cog"
            == 
 
-#line 810 "emit.cog"
+#line 910 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 811 "emit.cog"
+#line 911 "emit.cog"
    return;
 }
 
 
-#line 813 "emit.cog"
+#line 913 "emit.cog"
   if(auto type = 
 
-#line 813 "emit.cog"
+#line 913 "emit.cog"
                              DEREF(
 
-#line 813 "emit.cog"
+#line 913 "emit.cog"
                         DEREF(
 
-#line 813 "emit.cog"
+#line 913 "emit.cog"
                  varDecl).type).exp)
 {
 
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                  
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                  
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
    emitDeclarator(
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                   context, 
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                            type, 
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                                  varDecl, 
 
-#line 815 "emit.cog"
+#line 915 "emit.cog"
                                           mode);
 }
 else
 {
 
 
-#line 819 "emit.cog"
+#line 919 "emit.cog"
        
 
-#line 819 "emit.cog"
+#line 919 "emit.cog"
        
 
-#line 819 "emit.cog"
+#line 919 "emit.cog"
    emit(
 
-#line 819 "emit.cog"
+#line 919 "emit.cog"
         context, 
 
-#line 819 "emit.cog"
+#line 919 "emit.cog"
                  "auto ");
 
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
                
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
                
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
    emitDeclName(
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
                 context, 
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
                          varDecl, 
 
-#line 820 "emit.cog"
+#line 920 "emit.cog"
                                   mode);
 }
 
 
-#line 822 "emit.cog"
+#line 922 "emit.cog"
      if(auto initExp = 
 
-#line 822 "emit.cog"
+#line 922 "emit.cog"
                              DEREF(
 
-#line 822 "emit.cog"
+#line 922 "emit.cog"
                       varDecl).init)
 {
 
 
-#line 824 "emit.cog"
+#line 924 "emit.cog"
              
 
-#line 824 "emit.cog"
+#line 924 "emit.cog"
              
 
-#line 824 "emit.cog"
+#line 924 "emit.cog"
          emit(
 
-#line 824 "emit.cog"
+#line 924 "emit.cog"
               context, 
 
-#line 824 "emit.cog"
+#line 924 "emit.cog"
                        " = ");
 
 
-#line 825 "emit.cog"
+#line 925 "emit.cog"
                 
 
-#line 825 "emit.cog"
+#line 925 "emit.cog"
                 
 
-#line 825 "emit.cog"
+#line 925 "emit.cog"
          emitExp(
 
-#line 825 "emit.cog"
+#line 925 "emit.cog"
                  context, 
 
-#line 825 "emit.cog"
+#line 925 "emit.cog"
                           initExp);
 }
 
 
-#line 827 "emit.cog"
+#line 927 "emit.cog"
       
 
-#line 827 "emit.cog"
+#line 927 "emit.cog"
       
 
-#line 827 "emit.cog"
+#line 927 "emit.cog"
   emit(
 
-#line 827 "emit.cog"
+#line 927 "emit.cog"
        context, 
 
-#line 827 "emit.cog"
+#line 927 "emit.cog"
                 ";\n");
 }
 
 
-#line 830 "emit.cog"
+#line 930 "emit.cog"
  void emitParamDecl(
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
                        
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
             EmitContext
 
-#line 831 "emit.cog"
+#line 931 "emit.cog"
                        * context, 
 
-#line 832 "emit.cog"
+#line 932 "emit.cog"
               ParamDecl paramDecl, 
 
-#line 833 "emit.cog"
+#line 933 "emit.cog"
           DeclEmitMode mode)
 {
 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
   emitDeclarator(
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                  context, 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                                    DEREF(
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                           paramDecl).type, 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                                           paramDecl, 
 
-#line 835 "emit.cog"
+#line 935 "emit.cog"
                                                      kDeclEmitMode_Full);
 
 
-#line 837 "emit.cog"
+#line 937 "emit.cog"
   if(
 
-#line 837 "emit.cog"
+#line 937 "emit.cog"
           
 
-#line 837 "emit.cog"
+#line 937 "emit.cog"
      mode 
 
-#line 837 "emit.cog"
+#line 937 "emit.cog"
           <= 
 
-#line 837 "emit.cog"
+#line 937 "emit.cog"
              kDeclEmitMode_Forward)
 {
 
 
-#line 839 "emit.cog"
+#line 939 "emit.cog"
    if(auto initExpr = 
 
-#line 839 "emit.cog"
+#line 939 "emit.cog"
                               DEREF(
 
-#line 839 "emit.cog"
+#line 939 "emit.cog"
                      paramDecl).init)
 {
 
 
-#line 841 "emit.cog"
+#line 941 "emit.cog"
               
 
-#line 841 "emit.cog"
+#line 941 "emit.cog"
               
 
-#line 841 "emit.cog"
+#line 941 "emit.cog"
           emit(
 
-#line 841 "emit.cog"
+#line 941 "emit.cog"
                context, 
 
-#line 841 "emit.cog"
+#line 941 "emit.cog"
                         " = ");
 
 
-#line 842 "emit.cog"
+#line 942 "emit.cog"
                  
 
-#line 842 "emit.cog"
+#line 942 "emit.cog"
                  
 
-#line 842 "emit.cog"
+#line 942 "emit.cog"
           emitExp(
 
-#line 842 "emit.cog"
+#line 942 "emit.cog"
                   context, 
 
-#line 842 "emit.cog"
+#line 942 "emit.cog"
                            initExpr);
 }
 }
 }
 
 
-#line 847 "emit.cog"
+#line 947 "emit.cog"
  void emitFuncDecl(
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
                       
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
            EmitContext
 
-#line 848 "emit.cog"
+#line 948 "emit.cog"
                       * context, 
 
-#line 849 "emit.cog"
+#line 949 "emit.cog"
             FuncDecl funcDecl, 
 
-#line 850 "emit.cog"
+#line 950 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 852 "emit.cog"
+#line 952 "emit.cog"
   if(
 
-#line 852 "emit.cog"
+#line 952 "emit.cog"
            
 
-#line 852 "emit.cog"
+#line 952 "emit.cog"
       mode 
 
-#line 852 "emit.cog"
+#line 952 "emit.cog"
            == 
 
-#line 852 "emit.cog"
+#line 952 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 853 "emit.cog"
+#line 953 "emit.cog"
    return;
 }
 
 
-#line 855 "emit.cog"
+#line 955 "emit.cog"
   if(
 
-#line 855 "emit.cog"
+#line 955 "emit.cog"
            
 
-#line 855 "emit.cog"
+#line 955 "emit.cog"
       mode 
 
-#line 855 "emit.cog"
+#line 955 "emit.cog"
            == 
 
-#line 855 "emit.cog"
+#line 955 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 857 "emit.cog"
+#line 957 "emit.cog"
    if(
 
-#line 857 "emit.cog"
+#line 957 "emit.cog"
        
 
-#line 857 "emit.cog"
+#line 957 "emit.cog"
        !
 
-#line 857 "emit.cog"
+#line 957 "emit.cog"
                 DEREF(
 
-#line 857 "emit.cog"
+#line 957 "emit.cog"
         funcDecl).body)
 {
 
 
-#line 858 "emit.cog"
+#line 958 "emit.cog"
     return;
 }
 
 
-#line 860 "emit.cog"
+#line 960 "emit.cog"
                    
 
-#line 860 "emit.cog"
+#line 960 "emit.cog"
                    
 
-#line 860 "emit.cog"
+#line 960 "emit.cog"
    emitGenericQuals(
 
-#line 860 "emit.cog"
+#line 960 "emit.cog"
                     context, 
 
-#line 860 "emit.cog"
+#line 960 "emit.cog"
                              funcDecl);
 }
 
 
-#line 863 "emit.cog"
+#line 963 "emit.cog"
   if(auto resultType = 
 
-#line 863 "emit.cog"
+#line 963 "emit.cog"
                                           DEREF(
 
-#line 863 "emit.cog"
+#line 963 "emit.cog"
                                DEREF(
 
-#line 863 "emit.cog"
+#line 963 "emit.cog"
                        funcDecl).resultType).exp)
 {
 
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                  
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                  
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
    emitDeclarator(
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                   context, 
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                            resultType, 
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                                        funcDecl, 
 
-#line 865 "emit.cog"
+#line 965 "emit.cog"
                                                  mode);
 }
 else
 {
 
 
-#line 869 "emit.cog"
+#line 969 "emit.cog"
        
 
-#line 869 "emit.cog"
+#line 969 "emit.cog"
        
 
-#line 869 "emit.cog"
+#line 969 "emit.cog"
    emit(
 
-#line 869 "emit.cog"
+#line 969 "emit.cog"
         context, 
 
-#line 869 "emit.cog"
+#line 969 "emit.cog"
                  "void ");
 
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
                
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
                
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
    emitDeclName(
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
                 context, 
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
                          funcDecl, 
 
-#line 870 "emit.cog"
+#line 970 "emit.cog"
                                    mode);
 }
 
 
-#line 873 "emit.cog"
+#line 973 "emit.cog"
       
 
-#line 873 "emit.cog"
+#line 973 "emit.cog"
       
 
-#line 873 "emit.cog"
+#line 973 "emit.cog"
   emit(
 
-#line 873 "emit.cog"
+#line 973 "emit.cog"
        context, 
 
-#line 873 "emit.cog"
+#line 973 "emit.cog"
                 "(");
 
 
-#line 875 "emit.cog"
+#line 975 "emit.cog"
   
 
-#line 875 "emit.cog"
+#line 975 "emit.cog"
   auto first = 
 
-#line 875 "emit.cog"
+#line 975 "emit.cog"
               true;
 
 
-#line 876 "emit.cog"
+#line 976 "emit.cog"
   for(auto decl : 
 
-#line 876 "emit.cog"
+#line 976 "emit.cog"
                                     
 
-#line 876 "emit.cog"
+#line 976 "emit.cog"
                            DEREF(
 
-#line 876 "emit.cog"
+#line 976 "emit.cog"
                    funcDecl).getDecls())
 {
 {
 
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
    
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
    auto param = 
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
                             
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
                  
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
                as<
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
                   ParamDecl> (
 
-#line 878 "emit.cog"
+#line 978 "emit.cog"
                              decl);
 
 
-#line 879 "emit.cog"
+#line 979 "emit.cog"
    if(
 
-#line 879 "emit.cog"
+#line 979 "emit.cog"
       
 
-#line 879 "emit.cog"
+#line 979 "emit.cog"
       !
 
-#line 879 "emit.cog"
+#line 979 "emit.cog"
        param)
 {
 
 
-#line 879 "emit.cog"
+#line 979 "emit.cog"
               continue;
 }
 
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
    if(
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
       
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
       !
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
        first)
 {
 
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
                   
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
                   
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
               emit(
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
                    context, 
 
-#line 881 "emit.cog"
+#line 981 "emit.cog"
                             ", ");
 }
 
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
                 
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
                 
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
    emitParamDecl(
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
                  context, 
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
                           param, 
 
-#line 882 "emit.cog"
+#line 982 "emit.cog"
                                  mode);
 
 
-#line 883 "emit.cog"
+#line 983 "emit.cog"
    first = 
 
-#line 883 "emit.cog"
+#line 983 "emit.cog"
            false;
 }
 }
 
 
-#line 886 "emit.cog"
+#line 986 "emit.cog"
       
 
-#line 886 "emit.cog"
+#line 986 "emit.cog"
       
 
-#line 886 "emit.cog"
+#line 986 "emit.cog"
   emit(
 
-#line 886 "emit.cog"
+#line 986 "emit.cog"
        context, 
 
-#line 886 "emit.cog"
+#line 986 "emit.cog"
                 ")");
 
 
-#line 888 "emit.cog"
+#line 988 "emit.cog"
   
 
-#line 888 "emit.cog"
+#line 988 "emit.cog"
   auto body = 
 
-#line 888 "emit.cog"
+#line 988 "emit.cog"
                      DEREF(
 
-#line 888 "emit.cog"
+#line 988 "emit.cog"
              funcDecl).body;
 
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
   if(
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
           
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
      body 
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
           && 
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
                   
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
              mode 
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
                   == 
 
-#line 889 "emit.cog"
+#line 989 "emit.cog"
                      kDeclEmitMode_Full)
 {
 
 
-#line 891 "emit.cog"
+#line 991 "emit.cog"
              
 
-#line 891 "emit.cog"
+#line 991 "emit.cog"
              
 
-#line 891 "emit.cog"
+#line 991 "emit.cog"
          emit(
 
-#line 891 "emit.cog"
+#line 991 "emit.cog"
               context, 
 
-#line 891 "emit.cog"
+#line 991 "emit.cog"
                        "\n");
 
 
-#line 892 "emit.cog"
+#line 992 "emit.cog"
                 
 
-#line 892 "emit.cog"
+#line 992 "emit.cog"
                 
 
-#line 892 "emit.cog"
+#line 992 "emit.cog"
    emitBlockStmt(
 
-#line 892 "emit.cog"
+#line 992 "emit.cog"
                  context, 
 
-#line 892 "emit.cog"
+#line 992 "emit.cog"
                           body);
 }
 else
 {
 
 
-#line 896 "emit.cog"
+#line 996 "emit.cog"
        
 
-#line 896 "emit.cog"
+#line 996 "emit.cog"
        
 
-#line 896 "emit.cog"
+#line 996 "emit.cog"
    emit(
 
-#line 896 "emit.cog"
+#line 996 "emit.cog"
         context, 
 
-#line 896 "emit.cog"
+#line 996 "emit.cog"
                  ";\n");
 }
 }
 
 
-#line 900 "emit.cog"
+#line 1000 "emit.cog"
  void emitInitializerDecl(
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
                          
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
               EmitContext
 
-#line 901 "emit.cog"
+#line 1001 "emit.cog"
                          * context, 
 
-#line 902 "emit.cog"
+#line 1002 "emit.cog"
                InitializerDecl initDecl, 
 
-#line 903 "emit.cog"
+#line 1003 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 905 "emit.cog"
+#line 1005 "emit.cog"
   if(
 
-#line 905 "emit.cog"
+#line 1005 "emit.cog"
            
 
-#line 905 "emit.cog"
+#line 1005 "emit.cog"
       mode 
 
-#line 905 "emit.cog"
+#line 1005 "emit.cog"
            == 
 
-#line 905 "emit.cog"
+#line 1005 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 906 "emit.cog"
+#line 1006 "emit.cog"
    return;
 }
 
 
-#line 908 "emit.cog"
+#line 1008 "emit.cog"
   if(
 
-#line 908 "emit.cog"
+#line 1008 "emit.cog"
            
 
-#line 908 "emit.cog"
+#line 1008 "emit.cog"
       mode 
 
-#line 908 "emit.cog"
+#line 1008 "emit.cog"
            == 
 
-#line 908 "emit.cog"
+#line 1008 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 910 "emit.cog"
+#line 1010 "emit.cog"
    if(
 
-#line 910 "emit.cog"
+#line 1010 "emit.cog"
        
 
-#line 910 "emit.cog"
+#line 1010 "emit.cog"
        !
 
-#line 910 "emit.cog"
+#line 1010 "emit.cog"
                 DEREF(
 
-#line 910 "emit.cog"
+#line 1010 "emit.cog"
         initDecl).body)
 {
 
 
-#line 911 "emit.cog"
+#line 1011 "emit.cog"
     return;
 }
 
 
-#line 913 "emit.cog"
+#line 1013 "emit.cog"
                    
 
-#line 913 "emit.cog"
+#line 1013 "emit.cog"
                    
 
-#line 913 "emit.cog"
+#line 1013 "emit.cog"
    emitGenericQuals(
 
-#line 913 "emit.cog"
+#line 1013 "emit.cog"
                     context, 
 
-#line 913 "emit.cog"
+#line 1013 "emit.cog"
                              initDecl);
 }
 
 
-#line 916 "emit.cog"
+#line 1016 "emit.cog"
   
 
-#line 916 "emit.cog"
+#line 1016 "emit.cog"
   auto parent = 
 
-#line 916 "emit.cog"
+#line 1016 "emit.cog"
                                  
 
-#line 916 "emit.cog"
+#line 1016 "emit.cog"
                        DEREF(
 
-#line 916 "emit.cog"
+#line 1016 "emit.cog"
                initDecl).getParent();
 
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
   if(auto parentGeneric = 
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
                                         
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
                            
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
                          as<
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
                             GenericDecl> (
 
-#line 917 "emit.cog"
+#line 1017 "emit.cog"
                                          parent))
 {
 
 
-#line 918 "emit.cog"
+#line 1018 "emit.cog"
    parent = 
 
-#line 918 "emit.cog"
+#line 1018 "emit.cog"
                                    
 
-#line 918 "emit.cog"
+#line 1018 "emit.cog"
                          DEREF(
 
-#line 918 "emit.cog"
+#line 1018 "emit.cog"
             parentGeneric).getParent();
 }
 
 
-#line 922 "emit.cog"
+#line 1022 "emit.cog"
   if(
 
-#line 922 "emit.cog"
+#line 1022 "emit.cog"
            
 
-#line 922 "emit.cog"
+#line 1022 "emit.cog"
       mode 
 
-#line 922 "emit.cog"
+#line 1022 "emit.cog"
            == 
 
-#line 922 "emit.cog"
+#line 1022 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
                              
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
                              
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
    emitDeclNameAndGenericArgs(
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
                               context, 
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
                                        parent, 
 
-#line 924 "emit.cog"
+#line 1024 "emit.cog"
                                                mode);
 
 
-#line 925 "emit.cog"
+#line 1025 "emit.cog"
        
 
-#line 925 "emit.cog"
+#line 1025 "emit.cog"
        
 
-#line 925 "emit.cog"
+#line 1025 "emit.cog"
    emit(
 
-#line 925 "emit.cog"
+#line 1025 "emit.cog"
         context, 
 
-#line 925 "emit.cog"
+#line 1025 "emit.cog"
                  "::");
 }
 
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
          
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
          
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
      emit(
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
           context, 
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
                          DEREF(
 
-#line 929 "emit.cog"
+#line 1029 "emit.cog"
                    parent).name);
 
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
      if(
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
                      
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
           
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
         as<
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
            ClassDecl> (
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
                                         
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
                               DEREF(
 
-#line 931 "emit.cog"
+#line 1031 "emit.cog"
                       initDecl).getParent()))
 {
 
 
-#line 933 "emit.cog"
+#line 1033 "emit.cog"
           
 
-#line 933 "emit.cog"
+#line 1033 "emit.cog"
           
 
-#line 933 "emit.cog"
+#line 1033 "emit.cog"
       emit(
 
-#line 933 "emit.cog"
+#line 1033 "emit.cog"
            context, 
 
-#line 933 "emit.cog"
+#line 1033 "emit.cog"
                     "Impl");
 }
 
 
-#line 936 "emit.cog"
+#line 1036 "emit.cog"
          
 
-#line 936 "emit.cog"
+#line 1036 "emit.cog"
          
 
-#line 936 "emit.cog"
+#line 1036 "emit.cog"
      emit(
 
-#line 936 "emit.cog"
+#line 1036 "emit.cog"
           context, 
 
-#line 936 "emit.cog"
+#line 1036 "emit.cog"
                    "(");
 
 
-#line 938 "emit.cog"
+#line 1038 "emit.cog"
      
 
-#line 938 "emit.cog"
+#line 1038 "emit.cog"
      auto first = 
 
-#line 938 "emit.cog"
+#line 1038 "emit.cog"
                  true;
 
 
-#line 939 "emit.cog"
+#line 1039 "emit.cog"
      for(auto decl : 
 
-#line 939 "emit.cog"
+#line 1039 "emit.cog"
                                        
 
-#line 939 "emit.cog"
+#line 1039 "emit.cog"
                               DEREF(
 
-#line 939 "emit.cog"
+#line 1039 "emit.cog"
                       initDecl).getDecls())
 {
 {
 
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
          
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
          auto param = 
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
                                   
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
                        
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
                      as<
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
                         ParamDecl> (
 
-#line 941 "emit.cog"
+#line 1041 "emit.cog"
                                    decl);
 
 
-#line 942 "emit.cog"
+#line 1042 "emit.cog"
          if(
 
-#line 942 "emit.cog"
+#line 1042 "emit.cog"
             
 
-#line 942 "emit.cog"
+#line 1042 "emit.cog"
             !
 
-#line 942 "emit.cog"
+#line 1042 "emit.cog"
              param)
 {
 
 
-#line 942 "emit.cog"
+#line 1042 "emit.cog"
                     continue;
 }
 
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
          if(
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
             
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
             !
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
              first)
 {
 
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
                         
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
                         
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
                     emit(
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
                          context, 
 
-#line 944 "emit.cog"
+#line 1044 "emit.cog"
                                   ", ");
 }
 
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
                       
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
                       
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
          emitParamDecl(
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
                        context, 
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
                                 param, 
 
-#line 945 "emit.cog"
+#line 1045 "emit.cog"
                                        mode);
 
 
-#line 946 "emit.cog"
+#line 1046 "emit.cog"
          first = 
 
-#line 946 "emit.cog"
+#line 1046 "emit.cog"
                  false;
 }
 }
 
 
-#line 949 "emit.cog"
+#line 1049 "emit.cog"
          
 
-#line 949 "emit.cog"
+#line 1049 "emit.cog"
          
 
-#line 949 "emit.cog"
+#line 1049 "emit.cog"
      emit(
 
-#line 949 "emit.cog"
+#line 1049 "emit.cog"
           context, 
 
-#line 949 "emit.cog"
+#line 1049 "emit.cog"
                    ")");
 
 
-#line 951 "emit.cog"
+#line 1051 "emit.cog"
   
 
-#line 951 "emit.cog"
+#line 1051 "emit.cog"
   auto body = 
 
-#line 951 "emit.cog"
+#line 1051 "emit.cog"
                      DEREF(
 
-#line 951 "emit.cog"
+#line 1051 "emit.cog"
              initDecl).body;
 
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
   if(
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
            
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
       body 
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
            && 
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
                    
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
               mode 
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
                    == 
 
-#line 952 "emit.cog"
+#line 1052 "emit.cog"
                       kDeclEmitMode_Full)
 {
 
 
-#line 954 "emit.cog"
+#line 1054 "emit.cog"
        
 
-#line 954 "emit.cog"
+#line 1054 "emit.cog"
        
 
-#line 954 "emit.cog"
+#line 1054 "emit.cog"
    emit(
 
-#line 954 "emit.cog"
+#line 1054 "emit.cog"
         context, 
 
-#line 954 "emit.cog"
+#line 1054 "emit.cog"
                  "\n");
 
 
-#line 955 "emit.cog"
+#line 1055 "emit.cog"
                 
 
-#line 955 "emit.cog"
+#line 1055 "emit.cog"
                 
 
-#line 955 "emit.cog"
+#line 1055 "emit.cog"
    emitBlockStmt(
 
-#line 955 "emit.cog"
+#line 1055 "emit.cog"
                  context, 
 
-#line 955 "emit.cog"
+#line 1055 "emit.cog"
                           body);
 }
 else
 {
 
 
-#line 959 "emit.cog"
+#line 1059 "emit.cog"
        
 
-#line 959 "emit.cog"
+#line 1059 "emit.cog"
        
 
-#line 959 "emit.cog"
+#line 1059 "emit.cog"
    emit(
 
-#line 959 "emit.cog"
+#line 1059 "emit.cog"
         context, 
 
-#line 959 "emit.cog"
+#line 1059 "emit.cog"
                  ";\n");
 }
 }
 
 
-#line 963 "emit.cog"
+#line 1063 "emit.cog"
  void emitSubscriptDecl(
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
                       
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
            EmitContext
 
-#line 964 "emit.cog"
+#line 1064 "emit.cog"
                       * context, 
 
-#line 965 "emit.cog"
+#line 1065 "emit.cog"
         SubscriptDecl decl, 
 
-#line 966 "emit.cog"
+#line 1066 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 968 "emit.cog"
+#line 1068 "emit.cog"
   if(
 
-#line 968 "emit.cog"
+#line 1068 "emit.cog"
            
 
-#line 968 "emit.cog"
+#line 1068 "emit.cog"
       mode 
 
-#line 968 "emit.cog"
+#line 1068 "emit.cog"
            == 
 
-#line 968 "emit.cog"
+#line 1068 "emit.cog"
               kDeclEmitMode_MinimalForward)
 {
 
 
-#line 969 "emit.cog"
+#line 1069 "emit.cog"
    return;
 }
 
 
-#line 971 "emit.cog"
+#line 1071 "emit.cog"
   if(
 
-#line 971 "emit.cog"
+#line 1071 "emit.cog"
            
 
-#line 971 "emit.cog"
+#line 1071 "emit.cog"
       mode 
 
-#line 971 "emit.cog"
+#line 1071 "emit.cog"
            == 
 
-#line 971 "emit.cog"
+#line 1071 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 973 "emit.cog"
+#line 1073 "emit.cog"
    if(
 
-#line 973 "emit.cog"
+#line 1073 "emit.cog"
        
 
-#line 973 "emit.cog"
+#line 1073 "emit.cog"
        !
 
-#line 973 "emit.cog"
+#line 1073 "emit.cog"
             DEREF(
 
-#line 973 "emit.cog"
+#line 1073 "emit.cog"
         decl).body)
 {
 
 
-#line 974 "emit.cog"
+#line 1074 "emit.cog"
     return;
 }
 
 
-#line 976 "emit.cog"
+#line 1076 "emit.cog"
                    
 
-#line 976 "emit.cog"
+#line 1076 "emit.cog"
                    
 
-#line 976 "emit.cog"
+#line 1076 "emit.cog"
    emitGenericQuals(
 
-#line 976 "emit.cog"
+#line 1076 "emit.cog"
                     context, 
 
-#line 976 "emit.cog"
+#line 1076 "emit.cog"
                              decl);
 }
 
 
-#line 979 "emit.cog"
+#line 1079 "emit.cog"
   if(auto resultType = 
 
-#line 979 "emit.cog"
+#line 1079 "emit.cog"
                                       DEREF(
 
-#line 979 "emit.cog"
+#line 1079 "emit.cog"
                            DEREF(
 
-#line 979 "emit.cog"
+#line 1079 "emit.cog"
                        decl).resultType).exp)
 {
 
 
-#line 981 "emit.cog"
+#line 1081 "emit.cog"
            
 
-#line 981 "emit.cog"
+#line 1081 "emit.cog"
            
 
-#line 981 "emit.cog"
+#line 1081 "emit.cog"
    emitType(
 
-#line 981 "emit.cog"
+#line 1081 "emit.cog"
             context, 
 
-#line 981 "emit.cog"
+#line 1081 "emit.cog"
                      resultType);
 
 
-#line 982 "emit.cog"
+#line 1082 "emit.cog"
        
 
-#line 982 "emit.cog"
+#line 1082 "emit.cog"
        
 
-#line 982 "emit.cog"
+#line 1082 "emit.cog"
    emit(
 
-#line 982 "emit.cog"
+#line 1082 "emit.cog"
         context, 
 
-#line 982 "emit.cog"
+#line 1082 "emit.cog"
                  " ");
 }
 else
 {
 
 
-#line 986 "emit.cog"
+#line 1086 "emit.cog"
        
 
-#line 986 "emit.cog"
+#line 1086 "emit.cog"
        
 
-#line 986 "emit.cog"
+#line 1086 "emit.cog"
    emit(
 
-#line 986 "emit.cog"
+#line 1086 "emit.cog"
         context, 
 
-#line 986 "emit.cog"
+#line 1086 "emit.cog"
                  "void ");
 }
 
 
-#line 991 "emit.cog"
+#line 1091 "emit.cog"
   if(
 
-#line 991 "emit.cog"
+#line 1091 "emit.cog"
            
 
-#line 991 "emit.cog"
+#line 1091 "emit.cog"
       mode 
 
-#line 991 "emit.cog"
+#line 1091 "emit.cog"
            == 
 
-#line 991 "emit.cog"
+#line 1091 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                              
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                              
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
    emitDeclNameAndGenericArgs(
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                               context, 
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                                                      
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                                            DEREF(
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                                        decl).getParent(), 
 
-#line 993 "emit.cog"
+#line 1093 "emit.cog"
                                                          mode);
 
 
-#line 994 "emit.cog"
+#line 1094 "emit.cog"
        
 
-#line 994 "emit.cog"
+#line 1094 "emit.cog"
        
 
-#line 994 "emit.cog"
+#line 1094 "emit.cog"
    emit(
 
-#line 994 "emit.cog"
+#line 1094 "emit.cog"
         context, 
 
-#line 994 "emit.cog"
+#line 1094 "emit.cog"
                  "::");
 }
 
 
-#line 997 "emit.cog"
+#line 1097 "emit.cog"
       
 
-#line 997 "emit.cog"
+#line 1097 "emit.cog"
       
 
-#line 997 "emit.cog"
+#line 1097 "emit.cog"
   emit(
 
-#line 997 "emit.cog"
+#line 1097 "emit.cog"
        context, 
 
-#line 997 "emit.cog"
+#line 1097 "emit.cog"
                 "operator[](");
 
 
-#line 999 "emit.cog"
+#line 1099 "emit.cog"
   
 
-#line 999 "emit.cog"
+#line 1099 "emit.cog"
   auto first = 
 
-#line 999 "emit.cog"
+#line 1099 "emit.cog"
               true;
 
 
-#line 1000 "emit.cog"
+#line 1100 "emit.cog"
   for(auto decl : 
 
-#line 1000 "emit.cog"
+#line 1100 "emit.cog"
                                
 
-#line 1000 "emit.cog"
+#line 1100 "emit.cog"
                       DEREF(
 
-#line 1000 "emit.cog"
+#line 1100 "emit.cog"
                   decl).getDecls())
 {
 {
 
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
    
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
    auto param = 
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
                             
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
                  
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
                as<
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
                   ParamDecl> (
 
-#line 1002 "emit.cog"
+#line 1102 "emit.cog"
                              decl);
 
 
-#line 1003 "emit.cog"
+#line 1103 "emit.cog"
    if(
 
-#line 1003 "emit.cog"
+#line 1103 "emit.cog"
        
 
-#line 1003 "emit.cog"
+#line 1103 "emit.cog"
        !
 
-#line 1003 "emit.cog"
+#line 1103 "emit.cog"
         param)
 {
 
 
-#line 1003 "emit.cog"
+#line 1103 "emit.cog"
                continue;
 }
 
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
    if(
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
        
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
        !
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
         first)
 {
 
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
                    
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
                    
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
                emit(
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
                     context, 
 
-#line 1005 "emit.cog"
+#line 1105 "emit.cog"
                              ", ");
 }
 
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
                 
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
                 
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
    emitParamDecl(
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
                  context, 
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
                           param, 
 
-#line 1006 "emit.cog"
+#line 1106 "emit.cog"
                                  mode);
 
 
-#line 1007 "emit.cog"
+#line 1107 "emit.cog"
    first = 
 
-#line 1007 "emit.cog"
+#line 1107 "emit.cog"
            false;
 }
 }
 
 
-#line 1010 "emit.cog"
+#line 1110 "emit.cog"
       
 
-#line 1010 "emit.cog"
+#line 1110 "emit.cog"
       
 
-#line 1010 "emit.cog"
+#line 1110 "emit.cog"
   emit(
 
-#line 1010 "emit.cog"
+#line 1110 "emit.cog"
        context, 
 
-#line 1010 "emit.cog"
+#line 1110 "emit.cog"
                 ")");
 
 
-#line 1012 "emit.cog"
+#line 1112 "emit.cog"
   
 
-#line 1012 "emit.cog"
+#line 1112 "emit.cog"
   auto body = 
 
-#line 1012 "emit.cog"
+#line 1112 "emit.cog"
                  DEREF(
 
-#line 1012 "emit.cog"
+#line 1112 "emit.cog"
              decl).body;
 
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
   if(
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
            
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
       body 
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
            && 
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
                    
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
               mode 
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
                    == 
 
-#line 1013 "emit.cog"
+#line 1113 "emit.cog"
                       kDeclEmitMode_Full)
 {
 
 
-#line 1015 "emit.cog"
+#line 1115 "emit.cog"
        
 
-#line 1015 "emit.cog"
+#line 1115 "emit.cog"
        
 
-#line 1015 "emit.cog"
+#line 1115 "emit.cog"
    emit(
 
-#line 1015 "emit.cog"
+#line 1115 "emit.cog"
         context, 
 
-#line 1015 "emit.cog"
+#line 1115 "emit.cog"
                  "\n");
 
 
-#line 1016 "emit.cog"
+#line 1116 "emit.cog"
                 
 
-#line 1016 "emit.cog"
+#line 1116 "emit.cog"
                 
 
-#line 1016 "emit.cog"
+#line 1116 "emit.cog"
    emitBlockStmt(
 
-#line 1016 "emit.cog"
+#line 1116 "emit.cog"
                  context, 
 
-#line 1016 "emit.cog"
+#line 1116 "emit.cog"
                           body);
 }
 else
 {
 
 
-#line 1020 "emit.cog"
+#line 1120 "emit.cog"
        
 
-#line 1020 "emit.cog"
+#line 1120 "emit.cog"
        
 
-#line 1020 "emit.cog"
+#line 1120 "emit.cog"
    emit(
 
-#line 1020 "emit.cog"
+#line 1120 "emit.cog"
         context, 
 
-#line 1020 "emit.cog"
+#line 1120 "emit.cog"
                  ";\n");
 }
 }
 
 
-#line 1024 "emit.cog"
+#line 1124 "emit.cog"
  void emitDecl(
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
                       
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
            EmitContext
 
-#line 1025 "emit.cog"
+#line 1125 "emit.cog"
                       * context, 
 
-#line 1026 "emit.cog"
+#line 1126 "emit.cog"
         Decl decl, 
 
-#line 1027 "emit.cog"
+#line 1127 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
   
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
   auto builtinAttr = 
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
                                               
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
                                  
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
                         DEREF(
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
                     decl).findAttr<
 
-#line 1029 "emit.cog"
+#line 1129 "emit.cog"
                                   BuiltinAttr> ();
 
 
-#line 1030 "emit.cog"
+#line 1130 "emit.cog"
      if(
 
-#line 1030 "emit.cog"
+#line 1130 "emit.cog"
          builtinAttr)
 {
 
 
-#line 1033 "emit.cog"
+#line 1133 "emit.cog"
          return;
 }
 
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
   if(auto genericDecl = 
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
                                       
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
                          
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
                        as<
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
                           GenericDecl> (
 
-#line 1037 "emit.cog"
+#line 1137 "emit.cog"
                                        decl))
 {
 
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
    if(auto builtinAttr = 
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                                                                
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                                                   
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                                          DEREF(
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                                    DEREF(
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                         genericDecl).inner).findAttr<
 
-#line 1039 "emit.cog"
+#line 1139 "emit.cog"
                                                    BuiltinAttr> ())
 {
 
 
-#line 1040 "emit.cog"
+#line 1140 "emit.cog"
     return;
 }
 }
 
 
-#line 1043 "emit.cog"
+#line 1143 "emit.cog"
                    
 
-#line 1043 "emit.cog"
+#line 1143 "emit.cog"
                    
 
-#line 1043 "emit.cog"
+#line 1143 "emit.cog"
   emitLineDirective(
 
-#line 1043 "emit.cog"
+#line 1143 "emit.cog"
                     context, 
 
-#line 1043 "emit.cog"
+#line 1143 "emit.cog"
                              decl);
 
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
   if(auto classDecl = 
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
                                   
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
                        
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
                      as<
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
                         ClassDecl> (
 
-#line 1045 "emit.cog"
+#line 1145 "emit.cog"
                                    decl))
 {
 
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
                 
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
                 
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
    emitClassDecl(
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
                  context, 
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
                           classDecl, 
 
-#line 1047 "emit.cog"
+#line 1147 "emit.cog"
                                      mode);
 }
 else
 {
 
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
           if(auto structDecl = 
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
                                             
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
                                 
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
                               as<
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
                                  StructDecl> (
 
-#line 1049 "emit.cog"
+#line 1149 "emit.cog"
                                              decl))
 {
 
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
                  
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
                  
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
    emitStructDecl(
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
                   context, 
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
                            structDecl, 
 
-#line 1051 "emit.cog"
+#line 1151 "emit.cog"
                                        mode);
 }
 else
 {
 
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
        if(auto tagDecl = 
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
                                         
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
                            
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
                          as<
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
                             EnumTagDecl> (
 
-#line 1054 "emit.cog"
+#line 1154 "emit.cog"
                                          decl))
 {
 
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
        
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
        
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
    emit(
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
         context, 
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
                         DEREF(
 
-#line 1056 "emit.cog"
+#line 1156 "emit.cog"
                  tagDecl).name);
 
 
-#line 1057 "emit.cog"
+#line 1157 "emit.cog"
    if(
 
-#line 1057 "emit.cog"
+#line 1157 "emit.cog"
               DEREF(
 
-#line 1057 "emit.cog"
+#line 1157 "emit.cog"
        tagDecl).init)
 {
 
 
-#line 1059 "emit.cog"
+#line 1159 "emit.cog"
         
 
-#line 1059 "emit.cog"
+#line 1159 "emit.cog"
         
 
-#line 1059 "emit.cog"
+#line 1159 "emit.cog"
     emit(
 
-#line 1059 "emit.cog"
+#line 1159 "emit.cog"
          context, 
 
-#line 1059 "emit.cog"
+#line 1159 "emit.cog"
                   " = ");
 
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
            
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
            
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
     emitExp(
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
             context, 
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
                             DEREF(
 
-#line 1060 "emit.cog"
+#line 1160 "emit.cog"
                      tagDecl).init);
 }
 
 
-#line 1062 "emit.cog"
+#line 1162 "emit.cog"
        
 
-#line 1062 "emit.cog"
+#line 1162 "emit.cog"
        
 
-#line 1062 "emit.cog"
+#line 1162 "emit.cog"
    emit(
 
-#line 1062 "emit.cog"
+#line 1162 "emit.cog"
         context, 
 
-#line 1062 "emit.cog"
+#line 1162 "emit.cog"
                  ",\n");
 }
 else
 {
 
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
        if(auto varDecl = 
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
                                        
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
                           
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
                         as<
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
                            VarDeclBase> (
 
-#line 1064 "emit.cog"
+#line 1164 "emit.cog"
                                         decl))
 {
 
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
               
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
               
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
    emitVarDecl(
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
                context, 
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
                         varDecl, 
 
-#line 1066 "emit.cog"
+#line 1166 "emit.cog"
                                  mode);
 }
 else
 {
 
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
        if(auto funcDecl = 
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
                                      
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
                            
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
                          as<
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
                             FuncDecl> (
 
-#line 1068 "emit.cog"
+#line 1168 "emit.cog"
                                       decl))
 {
 
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
                
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
                
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
    emitFuncDecl(
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
                 context, 
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
                          funcDecl, 
 
-#line 1070 "emit.cog"
+#line 1170 "emit.cog"
                                    mode);
 }
 else
 {
 
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
           if(auto initDecl = 
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
                                                
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
                               
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
                             as<
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
                                InitializerDecl> (
 
-#line 1072 "emit.cog"
+#line 1172 "emit.cog"
                                                 decl))
 {
 
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
                       
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
                       
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
    emitInitializerDecl(
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
                        context, 
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
                                 initDecl, 
 
-#line 1074 "emit.cog"
+#line 1174 "emit.cog"
                                           mode);
 }
 else
 {
 
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
        if(auto subscriptDecl = 
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
                                                 
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
                                  
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
                                as<
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
                                   SubscriptDecl> (
 
-#line 1076 "emit.cog"
+#line 1176 "emit.cog"
                                                  decl))
 {
 
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
                     
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
                     
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
    emitSubscriptDecl(
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
                      context, 
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
                               subscriptDecl, 
 
-#line 1078 "emit.cog"
+#line 1178 "emit.cog"
                                              mode);
 }
 else
 {
 
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
        if(auto enumDecl = 
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
                                       
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
                             
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
                           as<
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
                              EnumDecl> (
 
-#line 1080 "emit.cog"
+#line 1180 "emit.cog"
                                        decl))
 {
 
 
-#line 1082 "emit.cog"
+#line 1182 "emit.cog"
    if(
 
-#line 1082 "emit.cog"
+#line 1182 "emit.cog"
             
 
-#line 1082 "emit.cog"
+#line 1182 "emit.cog"
        mode 
 
-#line 1082 "emit.cog"
+#line 1182 "emit.cog"
             >= 
 
-#line 1082 "emit.cog"
+#line 1182 "emit.cog"
                kDeclEmitMode_Full)
 {
 
 
-#line 1083 "emit.cog"
+#line 1183 "emit.cog"
     return;
 }
 
 
-#line 1085 "emit.cog"
+#line 1185 "emit.cog"
        
 
-#line 1085 "emit.cog"
+#line 1185 "emit.cog"
        
 
-#line 1085 "emit.cog"
+#line 1185 "emit.cog"
    emit(
 
-#line 1085 "emit.cog"
+#line 1185 "emit.cog"
         context, 
 
-#line 1085 "emit.cog"
+#line 1185 "emit.cog"
                  "enum ");
 
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
                
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
                
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
    emitDeclName(
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
                 context, 
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
                          enumDecl, 
 
-#line 1086 "emit.cog"
+#line 1186 "emit.cog"
                                    mode);
 
 
-#line 1087 "emit.cog"
+#line 1187 "emit.cog"
        
 
-#line 1087 "emit.cog"
+#line 1187 "emit.cog"
        
 
-#line 1087 "emit.cog"
+#line 1187 "emit.cog"
    emit(
 
-#line 1087 "emit.cog"
+#line 1187 "emit.cog"
         context, 
 
-#line 1087 "emit.cog"
+#line 1187 "emit.cog"
                  " : int");
 
 
-#line 1089 "emit.cog"
+#line 1189 "emit.cog"
    if(
 
-#line 1089 "emit.cog"
+#line 1189 "emit.cog"
             
 
-#line 1089 "emit.cog"
+#line 1189 "emit.cog"
        mode 
 
-#line 1089 "emit.cog"
+#line 1189 "emit.cog"
             <= 
 
-#line 1089 "emit.cog"
+#line 1189 "emit.cog"
                kDeclEmitMode_MinimalForward)
 {
 
 
-#line 1091 "emit.cog"
+#line 1191 "emit.cog"
         
 
-#line 1091 "emit.cog"
+#line 1191 "emit.cog"
         
 
-#line 1091 "emit.cog"
+#line 1191 "emit.cog"
     emit(
 
-#line 1091 "emit.cog"
+#line 1191 "emit.cog"
          context, 
 
-#line 1091 "emit.cog"
+#line 1191 "emit.cog"
                   ";\n");
 
 
-#line 1092 "emit.cog"
+#line 1192 "emit.cog"
     return;
 }
 
 
-#line 1095 "emit.cog"
+#line 1195 "emit.cog"
        
 
-#line 1095 "emit.cog"
+#line 1195 "emit.cog"
        
 
-#line 1095 "emit.cog"
+#line 1195 "emit.cog"
    emit(
 
-#line 1095 "emit.cog"
+#line 1195 "emit.cog"
         context, 
 
-#line 1095 "emit.cog"
+#line 1195 "emit.cog"
                  "\n{\n");
 
 
-#line 1096 "emit.cog"
+#line 1196 "emit.cog"
    for(auto dd : 
 
-#line 1096 "emit.cog"
+#line 1196 "emit.cog"
                                   
 
-#line 1096 "emit.cog"
+#line 1196 "emit.cog"
                          DEREF(
 
-#line 1096 "emit.cog"
+#line 1196 "emit.cog"
                  enumDecl).getDecls())
 {
 {
 
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
             
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
             
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
     emitDecl(
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
              context, 
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
                       dd, 
 
-#line 1098 "emit.cog"
+#line 1198 "emit.cog"
                           kDeclEmitMode_Full);
 }
 }
 
 
-#line 1100 "emit.cog"
+#line 1200 "emit.cog"
        
 
-#line 1100 "emit.cog"
+#line 1200 "emit.cog"
        
 
-#line 1100 "emit.cog"
+#line 1200 "emit.cog"
    emit(
 
-#line 1100 "emit.cog"
+#line 1200 "emit.cog"
         context, 
 
-#line 1100 "emit.cog"
+#line 1200 "emit.cog"
                  "};\n");
 }
 else
 {
 
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
        if(auto importDecl = 
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
                                          
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
                              
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
                            as<
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
                               ImportDecl> (
 
-#line 1102 "emit.cog"
+#line 1202 "emit.cog"
                                           decl))
 {
 }
@@ -41505,310 +42283,347 @@ else
 {
 
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
        if(auto typeAliasDecl = 
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
                                                 
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
                                  
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
                                as<
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
                                   TypeAliasDecl> (
 
-#line 1104 "emit.cog"
+#line 1204 "emit.cog"
                                                  decl))
 {
 
 
-#line 1106 "emit.cog"
-       
+#line 1206 "emit.cog"
+   if(
 
-#line 1106 "emit.cog"
-       
+#line 1206 "emit.cog"
+           
 
-#line 1106 "emit.cog"
-   emit(
+#line 1206 "emit.cog"
+      mode 
 
-#line 1106 "emit.cog"
-        context, 
+#line 1206 "emit.cog"
+           != 
 
-#line 1106 "emit.cog"
-                 "typedef ");
-
-
-#line 1107 "emit.cog"
-                 
-
-#line 1107 "emit.cog"
-                 
-
-#line 1107 "emit.cog"
-   emitDeclarator(
-
-#line 1107 "emit.cog"
-                  context, 
-
-#line 1107 "emit.cog"
-                                        DEREF(
-
-#line 1107 "emit.cog"
-                           typeAliasDecl).init, 
-
-#line 1107 "emit.cog"
-                                               typeAliasDecl, 
-
-#line 1107 "emit.cog"
-                                                              mode);
+#line 1206 "emit.cog"
+              kDeclEmitMode_Forward)
+{
 
 
-#line 1108 "emit.cog"
-       
+#line 1207 "emit.cog"
+    return;
+}
 
-#line 1108 "emit.cog"
-       
 
-#line 1108 "emit.cog"
-   emit(
+#line 1209 "emit.cog"
+   if(
 
-#line 1108 "emit.cog"
-        context, 
+#line 1209 "emit.cog"
+                        DEREF(
 
-#line 1108 "emit.cog"
-                 ";\n");
+#line 1209 "emit.cog"
+                   DEREF(
+
+#line 1209 "emit.cog"
+      typeAliasDecl).init).exp)
+{
+
+
+#line 1211 "emit.cog"
+        
+
+#line 1211 "emit.cog"
+        
+
+#line 1211 "emit.cog"
+    emit(
+
+#line 1211 "emit.cog"
+         context, 
+
+#line 1211 "emit.cog"
+                  "typedef ");
+
+
+#line 1212 "emit.cog"
+                  
+
+#line 1212 "emit.cog"
+                  
+
+#line 1212 "emit.cog"
+    emitDeclarator(
+
+#line 1212 "emit.cog"
+                   context, 
+
+#line 1212 "emit.cog"
+                                         DEREF(
+
+#line 1212 "emit.cog"
+                            typeAliasDecl).init, 
+
+#line 1212 "emit.cog"
+                                                typeAliasDecl, 
+
+#line 1212 "emit.cog"
+                                                               mode);
+
+
+#line 1213 "emit.cog"
+        
+
+#line 1213 "emit.cog"
+        
+
+#line 1213 "emit.cog"
+    emit(
+
+#line 1213 "emit.cog"
+         context, 
+
+#line 1213 "emit.cog"
+                  ";\n");
+}
 }
 else
 {
 
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
        if(auto genericDecl = 
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
                                             
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
                                
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
                              as<
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
                                 GenericDecl> (
 
-#line 1110 "emit.cog"
+#line 1216 "emit.cog"
                                              decl))
 {
 
 
-#line 1115 "emit.cog"
+#line 1221 "emit.cog"
    if(
 
-#line 1115 "emit.cog"
+#line 1221 "emit.cog"
             
 
-#line 1115 "emit.cog"
+#line 1221 "emit.cog"
        mode 
 
-#line 1115 "emit.cog"
+#line 1221 "emit.cog"
             < 
 
-#line 1115 "emit.cog"
+#line 1221 "emit.cog"
               kDeclEmitMode_Full)
 {
 
 
-#line 1117 "emit.cog"
+#line 1223 "emit.cog"
     
 
-#line 1117 "emit.cog"
+#line 1223 "emit.cog"
     auto innerDecl = 
 
-#line 1117 "emit.cog"
+#line 1223 "emit.cog"
                                DEREF(
 
-#line 1117 "emit.cog"
+#line 1223 "emit.cog"
                     genericDecl).inner;
 
 
-#line 1120 "emit.cog"
+#line 1226 "emit.cog"
     if(
 
-#line 1120 "emit.cog"
+#line 1226 "emit.cog"
              
 
-#line 1120 "emit.cog"
+#line 1226 "emit.cog"
         mode 
 
-#line 1120 "emit.cog"
+#line 1226 "emit.cog"
              <= 
 
-#line 1120 "emit.cog"
+#line 1226 "emit.cog"
                 kDeclEmitMode_MinimalForward)
 {
 
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
      if(
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
                          
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
            
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
          as<
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
             FuncDeclBase> (
 
-#line 1122 "emit.cog"
+#line 1228 "emit.cog"
                           innerDecl))
 {
 
 
-#line 1123 "emit.cog"
+#line 1229 "emit.cog"
       return;
 }
 }
 
 
-#line 1126 "emit.cog"
+#line 1232 "emit.cog"
         
 
-#line 1126 "emit.cog"
+#line 1232 "emit.cog"
         
 
-#line 1126 "emit.cog"
+#line 1232 "emit.cog"
     emit(
 
-#line 1126 "emit.cog"
+#line 1232 "emit.cog"
          context, 
 
-#line 1126 "emit.cog"
+#line 1232 "emit.cog"
                   "template<");
 
 
-#line 1127 "emit.cog"
+#line 1233 "emit.cog"
     
 
-#line 1127 "emit.cog"
+#line 1233 "emit.cog"
     auto first = 
 
-#line 1127 "emit.cog"
+#line 1233 "emit.cog"
                 true;
 
 
-#line 1128 "emit.cog"
+#line 1234 "emit.cog"
     for(auto dd : 
 
-#line 1128 "emit.cog"
+#line 1234 "emit.cog"
                                       
 
-#line 1128 "emit.cog"
+#line 1234 "emit.cog"
                              DEREF(
 
-#line 1128 "emit.cog"
+#line 1234 "emit.cog"
                   genericDecl).getDecls())
 {
 {
 
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
      if(auto typeParam = 
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
                                              
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
                            
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
                          as<
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
                             GenericParamDecl> (
 
-#line 1130 "emit.cog"
+#line 1236 "emit.cog"
                                               dd))
 {
 
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
       if(
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
           
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
           !
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
            first)
 {
 
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
                       
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
                       
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
                   emit(
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
                        context, 
 
-#line 1132 "emit.cog"
+#line 1238 "emit.cog"
                                 ", ");
 }
 
 
-#line 1133 "emit.cog"
+#line 1239 "emit.cog"
           
 
-#line 1133 "emit.cog"
+#line 1239 "emit.cog"
           
 
-#line 1133 "emit.cog"
+#line 1239 "emit.cog"
       emit(
 
-#line 1133 "emit.cog"
+#line 1239 "emit.cog"
            context, 
 
-#line 1133 "emit.cog"
+#line 1239 "emit.cog"
                     "typename ");
 
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
           
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
           
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
       emit(
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
            context, 
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
                              DEREF(
 
-#line 1134 "emit.cog"
+#line 1240 "emit.cog"
                     typeParam).name);
 
 
-#line 1135 "emit.cog"
+#line 1241 "emit.cog"
       first = 
 
-#line 1135 "emit.cog"
+#line 1241 "emit.cog"
               false;
 }
 else
@@ -41818,64 +42633,64 @@ else
 }
 
 
-#line 1141 "emit.cog"
+#line 1247 "emit.cog"
         
 
-#line 1141 "emit.cog"
+#line 1247 "emit.cog"
         
 
-#line 1141 "emit.cog"
+#line 1247 "emit.cog"
     emit(
 
-#line 1141 "emit.cog"
+#line 1247 "emit.cog"
          context, 
 
-#line 1141 "emit.cog"
+#line 1247 "emit.cog"
                   " >\n");
 }
 
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
            
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
            
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
    emitDecl(
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
             context, 
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
                                 DEREF(
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
                      genericDecl).inner, 
 
-#line 1143 "emit.cog"
+#line 1249 "emit.cog"
                                         mode);
 }
 else
 {
 
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
             
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
             
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
    cogAssert(
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
              
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
              !
 
-#line 1147 "emit.cog"
+#line 1253 "emit.cog"
               "unimplemented");
 }
 }
@@ -41891,277 +42706,277 @@ else
 }
 
 
-#line 1152 "emit.cog"
+#line 1258 "emit.cog"
  void emitDecls(
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
                       
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
            EmitContext
 
-#line 1153 "emit.cog"
+#line 1259 "emit.cog"
                       * context, 
 
-#line 1154 "emit.cog"
+#line 1260 "emit.cog"
                  ContainerDecl containerDecl, 
 
-#line 1155 "emit.cog"
+#line 1261 "emit.cog"
         DeclEmitMode mode)
 {
 
 
-#line 1157 "emit.cog"
+#line 1263 "emit.cog"
   for(auto decl : 
 
-#line 1157 "emit.cog"
+#line 1263 "emit.cog"
                                         
 
-#line 1157 "emit.cog"
+#line 1263 "emit.cog"
                                DEREF(
 
-#line 1157 "emit.cog"
+#line 1263 "emit.cog"
                   containerDecl).getDecls())
 {
 {
 
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
            
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
            
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
    emitDecl(
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
             context, 
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
                      decl, 
 
-#line 1159 "emit.cog"
+#line 1265 "emit.cog"
                            mode);
 }
 }
 }
 
 
-#line 1163 "emit.cog"
+#line 1269 "emit.cog"
  
 
-#line 1169 "emit.cog"
+#line 1275 "emit.cog"
  void addDecl(
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
                           
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
            DeclSortContext
 
-#line 1170 "emit.cog"
+#line 1276 "emit.cog"
                           * context, 
 
-#line 1171 "emit.cog"
+#line 1277 "emit.cog"
         Decl decl)
 {
 
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
                             
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
                             
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
                      DEREF(
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
          DEREF(
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
   context).sortedDecls).append(
 
-#line 1173 "emit.cog"
+#line 1279 "emit.cog"
                              decl);
 }
 
 
-#line 1176 "emit.cog"
+#line 1282 "emit.cog"
  
 
-#line 1180 "emit.cog"
+#line 1286 "emit.cog"
  void addDependencies(
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
                           
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
            DeclSortContext
 
-#line 1181 "emit.cog"
+#line 1287 "emit.cog"
                           * context, 
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
             
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
         Name
 
-#line 1182 "emit.cog"
+#line 1288 "emit.cog"
             * name)
 {
 
 
-#line 1184 "emit.cog"
+#line 1290 "emit.cog"
            
 
-#line 1184 "emit.cog"
+#line 1290 "emit.cog"
            
 
-#line 1184 "emit.cog"
+#line 1290 "emit.cog"
   cogAssert(
 
-#line 1184 "emit.cog"
+#line 1290 "emit.cog"
             name);
 
 
-#line 1193 "emit.cog"
+#line 1299 "emit.cog"
   
 
-#line 1193 "emit.cog"
+#line 1299 "emit.cog"
   
 
-#line 1193 "emit.cog"
+#line 1299 "emit.cog"
                            
 
-#line 1193 "emit.cog"
+#line 1299 "emit.cog"
                       Array<
 
-#line 1193 "emit.cog"
+#line 1299 "emit.cog"
                             Decl>  matchingDecls;
 
 
-#line 1194 "emit.cog"
+#line 1300 "emit.cog"
   
 
-#line 1194 "emit.cog"
+#line 1300 "emit.cog"
   
 
-#line 1194 "emit.cog"
+#line 1300 "emit.cog"
                                 
 
-#line 1194 "emit.cog"
+#line 1300 "emit.cog"
                            Array<
 
-#line 1194 "emit.cog"
+#line 1300 "emit.cog"
                                  Decl>  stillUnsortedDecls;
 
 
-#line 1196 "emit.cog"
+#line 1302 "emit.cog"
   for(auto dd : 
 
-#line 1196 "emit.cog"
+#line 1302 "emit.cog"
                        DEREF(
 
-#line 1196 "emit.cog"
+#line 1302 "emit.cog"
                 context).unsortedDecls)
 {
 {
 
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
    if(auto classDecl = 
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
                                    
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
                         
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
                       as<
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
                          ClassDecl> (
 
-#line 1201 "emit.cog"
+#line 1307 "emit.cog"
                                     dd))
 {
 
 
-#line 1203 "emit.cog"
+#line 1309 "emit.cog"
                              
 
-#line 1203 "emit.cog"
+#line 1309 "emit.cog"
                              
 
-#line 1203 "emit.cog"
+#line 1309 "emit.cog"
                       DEREF(
 
-#line 1203 "emit.cog"
+#line 1309 "emit.cog"
     stillUnsortedDecls).append(
 
-#line 1203 "emit.cog"
+#line 1309 "emit.cog"
                               dd);
 }
 else
 {
 
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
         if(
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
                     
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
               DEREF(
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
             dd).name 
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
                     == 
 
-#line 1205 "emit.cog"
+#line 1311 "emit.cog"
                        name)
 {
 
 
-#line 1207 "emit.cog"
+#line 1313 "emit.cog"
                         
 
-#line 1207 "emit.cog"
+#line 1313 "emit.cog"
                         
 
-#line 1207 "emit.cog"
+#line 1313 "emit.cog"
                  DEREF(
 
-#line 1207 "emit.cog"
+#line 1313 "emit.cog"
     matchingDecls).append(
 
-#line 1207 "emit.cog"
+#line 1313 "emit.cog"
                          dd);
 }
 else
 {
 
 
-#line 1211 "emit.cog"
+#line 1317 "emit.cog"
                              
 
-#line 1211 "emit.cog"
+#line 1317 "emit.cog"
                              
 
-#line 1211 "emit.cog"
+#line 1317 "emit.cog"
                       DEREF(
 
-#line 1211 "emit.cog"
+#line 1317 "emit.cog"
     stillUnsortedDecls).append(
 
-#line 1211 "emit.cog"
+#line 1317 "emit.cog"
                               dd);
 }
 }
@@ -42169,335 +42984,335 @@ else
 }
 
 
-#line 1215 "emit.cog"
+#line 1321 "emit.cog"
          DEREF(
 
-#line 1215 "emit.cog"
+#line 1321 "emit.cog"
   context).unsortedDecls = 
 
-#line 1215 "emit.cog"
+#line 1321 "emit.cog"
                           stillUnsortedDecls;
 
 
-#line 1219 "emit.cog"
+#line 1325 "emit.cog"
   for(auto dd : 
 
-#line 1219 "emit.cog"
+#line 1325 "emit.cog"
                 matchingDecls)
 {
 {
 
 
-#line 1221 "emit.cog"
+#line 1327 "emit.cog"
                   
 
-#line 1221 "emit.cog"
+#line 1327 "emit.cog"
                   
 
-#line 1221 "emit.cog"
+#line 1327 "emit.cog"
    addDependencies(
 
-#line 1221 "emit.cog"
+#line 1327 "emit.cog"
                    context, 
 
-#line 1221 "emit.cog"
+#line 1327 "emit.cog"
                             dd);
 
 
-#line 1222 "emit.cog"
+#line 1328 "emit.cog"
           
 
-#line 1222 "emit.cog"
+#line 1328 "emit.cog"
           
 
-#line 1222 "emit.cog"
+#line 1328 "emit.cog"
    addDecl(
 
-#line 1222 "emit.cog"
+#line 1328 "emit.cog"
            context, 
 
-#line 1222 "emit.cog"
+#line 1328 "emit.cog"
                     dd);
 }
 }
 }
 
 
-#line 1226 "emit.cog"
+#line 1332 "emit.cog"
  void addDependencies(
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
                           
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
            DeclSortContext
 
-#line 1227 "emit.cog"
+#line 1333 "emit.cog"
                           * context, 
 
-#line 1228 "emit.cog"
+#line 1334 "emit.cog"
        Exp exp)
 {
 
 
-#line 1230 "emit.cog"
+#line 1336 "emit.cog"
   if(
 
-#line 1230 "emit.cog"
+#line 1336 "emit.cog"
       
 
-#line 1230 "emit.cog"
+#line 1336 "emit.cog"
       !
 
-#line 1230 "emit.cog"
+#line 1336 "emit.cog"
        exp)
 {
 
 
-#line 1230 "emit.cog"
+#line 1336 "emit.cog"
             return;
 }
 
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
   if(auto genericAppExpr = 
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
                                             
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
                              
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
                            as<
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
                               GenericAppExp> (
 
-#line 1233 "emit.cog"
+#line 1339 "emit.cog"
                                              exp))
 {
 
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
    if(auto nameExpr = 
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                                  
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                         
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                       as<
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                          NameExp> (
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                                                 DEREF(
 
-#line 1235 "emit.cog"
+#line 1341 "emit.cog"
                                   genericAppExpr).base))
 {
 
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
     if(
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                                                     
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
               
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
         strcmp(
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                "Ptr", 
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                                             DEREF(
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                              
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                       getText(
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                                       DEREF(
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                               nameExpr).name)).begin) 
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                                                     == 
 
-#line 1237 "emit.cog"
+#line 1343 "emit.cog"
                                                        0)
 {
 
 
-#line 1238 "emit.cog"
+#line 1344 "emit.cog"
      return;
 }
 
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
     if(
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                                          
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
               
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
         strcmp(
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                "ConstPtr", 
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                                  DEREF(
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                   
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                            getText(
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                            DEREF(
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                    nameExpr).name)).begin) 
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                                          == 
 
-#line 1239 "emit.cog"
+#line 1345 "emit.cog"
                                                             0)
 {
 
 
-#line 1240 "emit.cog"
+#line 1346 "emit.cog"
      return;
 }
 }
 }
 
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
   if(auto nameExp = 
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
                                
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
                       
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
                     as<
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
                        NameExp> (
 
-#line 1244 "emit.cog"
+#line 1350 "emit.cog"
                                 exp))
 {
 
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
                   
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
                   
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
    addDependencies(
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
                    context, 
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
                                    DEREF(
 
-#line 1246 "emit.cog"
+#line 1352 "emit.cog"
                             nameExp).name);
 }
 else
 {
 
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
        if(auto appExp = 
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
                                       
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
                           
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
                         as<
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
                            AppExpBase> (
 
-#line 1248 "emit.cog"
+#line 1354 "emit.cog"
                                        exp))
 {
 
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
                   
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
                   
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
    addDependencies(
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
                    context, 
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
                                   DEREF(
 
-#line 1250 "emit.cog"
+#line 1356 "emit.cog"
                             appExp).base);
 
 
-#line 1251 "emit.cog"
+#line 1357 "emit.cog"
    for(auto aa : 
 
-#line 1251 "emit.cog"
+#line 1357 "emit.cog"
                        DEREF(
 
-#line 1251 "emit.cog"
+#line 1357 "emit.cog"
                  appExp).args)
 {
 
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
                    
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
                    
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
     addDependencies(
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
                     context, 
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
                                DEREF(
 
-#line 1252 "emit.cog"
+#line 1358 "emit.cog"
                              aa).exp);
 }
 }
@@ -42505,169 +43320,169 @@ else
 }
 
 
-#line 1256 "emit.cog"
+#line 1362 "emit.cog"
  void addDependencies(
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
                           
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
            DeclSortContext
 
-#line 1257 "emit.cog"
+#line 1363 "emit.cog"
                           * context, 
 
-#line 1258 "emit.cog"
+#line 1364 "emit.cog"
            TypeExp typeExp)
 {
 
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
                  
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
                  
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
   addDependencies(
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
                   context, 
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
                                   DEREF(
 
-#line 1260 "emit.cog"
+#line 1366 "emit.cog"
                            typeExp).exp);
 }
 
 
-#line 1263 "emit.cog"
+#line 1369 "emit.cog"
  void addDependencies(
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
                           
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
            DeclSortContext
 
-#line 1264 "emit.cog"
+#line 1370 "emit.cog"
                           * context, 
 
-#line 1265 "emit.cog"
+#line 1371 "emit.cog"
         Decl decl)
 {
 
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
   if(auto varDecl = 
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
                                    
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
                       
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
                     as<
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
                        VarDeclBase> (
 
-#line 1268 "emit.cog"
+#line 1374 "emit.cog"
                                     decl))
 {
 
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
                   
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
                   
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
    addDependencies(
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
                    context, 
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
                                    DEREF(
 
-#line 1270 "emit.cog"
+#line 1376 "emit.cog"
                             varDecl).type);
 }
 else
 {
 
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
        if(auto funcDecl = 
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
                                           
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
                             
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
                           as<
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
                              FuncDeclBase> (
 
-#line 1272 "emit.cog"
+#line 1378 "emit.cog"
                                            decl))
 {
 
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
                   
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
                   
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
    addDependencies(
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
                    context, 
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
                                     DEREF(
 
-#line 1274 "emit.cog"
+#line 1380 "emit.cog"
                             funcDecl).resultType);
 
 
-#line 1275 "emit.cog"
+#line 1381 "emit.cog"
    for(auto dd : 
 
-#line 1275 "emit.cog"
+#line 1381 "emit.cog"
                                   
 
-#line 1275 "emit.cog"
+#line 1381 "emit.cog"
                          DEREF(
 
-#line 1275 "emit.cog"
+#line 1381 "emit.cog"
                  funcDecl).getDecls())
 {
 {
 
 
-#line 1277 "emit.cog"
+#line 1383 "emit.cog"
                    
 
-#line 1277 "emit.cog"
+#line 1383 "emit.cog"
                    
 
-#line 1277 "emit.cog"
+#line 1383 "emit.cog"
     addDependencies(
 
-#line 1277 "emit.cog"
+#line 1383 "emit.cog"
                     context, 
 
-#line 1277 "emit.cog"
+#line 1383 "emit.cog"
                              dd);
 }
 }
@@ -42676,73 +43491,73 @@ else
 {
 
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
        if(auto aggTypeDecl = 
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
                                             
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
                                
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
                              as<
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
                                 AggTypeDecl> (
 
-#line 1280 "emit.cog"
+#line 1386 "emit.cog"
                                              decl))
 {
 
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
                   
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
                   
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
    addDependencies(
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
                    context, 
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
                                        DEREF(
 
-#line 1282 "emit.cog"
+#line 1388 "emit.cog"
                             aggTypeDecl).base);
 
 
-#line 1283 "emit.cog"
+#line 1389 "emit.cog"
    for(auto dd : 
 
-#line 1283 "emit.cog"
+#line 1389 "emit.cog"
                                      
 
-#line 1283 "emit.cog"
+#line 1389 "emit.cog"
                             DEREF(
 
-#line 1283 "emit.cog"
+#line 1389 "emit.cog"
                  aggTypeDecl).getDecls())
 {
 {
 
 
-#line 1285 "emit.cog"
+#line 1391 "emit.cog"
                    
 
-#line 1285 "emit.cog"
+#line 1391 "emit.cog"
                    
 
-#line 1285 "emit.cog"
+#line 1391 "emit.cog"
     addDependencies(
 
-#line 1285 "emit.cog"
+#line 1391 "emit.cog"
                     context, 
 
-#line 1285 "emit.cog"
+#line 1391 "emit.cog"
                              dd);
 }
 }
@@ -42752,1445 +43567,1445 @@ else
 }
 
 
-#line 1291 "emit.cog"
+#line 1397 "emit.cog"
  void sortDecls(
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
                       
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
            EmitContext
 
-#line 1292 "emit.cog"
+#line 1398 "emit.cog"
                       * context, 
 
-#line 1293 "emit.cog"
+#line 1399 "emit.cog"
              ContainerDecl container)
 {
 
 
-#line 1295 "emit.cog"
+#line 1401 "emit.cog"
   
 
-#line 1295 "emit.cog"
+#line 1401 "emit.cog"
   
 
-#line 1295 "emit.cog"
+#line 1401 "emit.cog"
                     DeclSortContext sortContext;
 
 
-#line 1296 "emit.cog"
+#line 1402 "emit.cog"
              DEREF(
 
-#line 1296 "emit.cog"
+#line 1402 "emit.cog"
   sortContext).unsortedDecls = 
 
-#line 1296 "emit.cog"
+#line 1402 "emit.cog"
                                                 
 
-#line 1296 "emit.cog"
+#line 1402 "emit.cog"
                                        DEREF(
 
-#line 1296 "emit.cog"
+#line 1402 "emit.cog"
                               container).getDecls();
 
 
-#line 1298 "emit.cog"
+#line 1404 "emit.cog"
   while(
 
-#line 1298 "emit.cog"
+#line 1404 "emit.cog"
                                            
 
-#line 1298 "emit.cog"
+#line 1404 "emit.cog"
                                   DEREF(
 
-#line 1298 "emit.cog"
+#line 1404 "emit.cog"
                     DEREF(
 
-#line 1298 "emit.cog"
+#line 1404 "emit.cog"
          sortContext).unsortedDecls).getCount())
 {
 {
 
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
    
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
    auto decl = 
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
                                        
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
                          DEREF(
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
               sortContext).unsortedDecls[
 
-#line 1300 "emit.cog"
+#line 1406 "emit.cog"
                                         0];
 
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
                                      
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
                                      
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
                             DEREF(
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
               DEREF(
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
    sortContext).unsortedDecls).removeAt(
 
-#line 1302 "emit.cog"
+#line 1408 "emit.cog"
                                       0);
 
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                   
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                   
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
    addDependencies(
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                    
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                    &
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                     sortContext, 
 
-#line 1305 "emit.cog"
+#line 1411 "emit.cog"
                                  decl);
 
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
           
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
           
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
    addDecl(
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
            
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
            &
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
             sortContext, 
 
-#line 1307 "emit.cog"
+#line 1413 "emit.cog"
                          decl);
 }
 }
 
 
-#line 1310 "emit.cog"
+#line 1416 "emit.cog"
                     
 
-#line 1310 "emit.cog"
+#line 1416 "emit.cog"
            DEREF(
 
-#line 1310 "emit.cog"
+#line 1416 "emit.cog"
   container).getDecls() = 
 
-#line 1310 "emit.cog"
+#line 1416 "emit.cog"
                                     DEREF(
 
-#line 1310 "emit.cog"
+#line 1416 "emit.cog"
                          sortContext).sortedDecls;
 }
 
 
-#line 1313 "emit.cog"
+#line 1419 "emit.cog"
  void emitModuleInner(
 
-#line 1314 "emit.cog"
+#line 1420 "emit.cog"
              Session session, 
 
-#line 1315 "emit.cog"
+#line 1421 "emit.cog"
                   TerminatedStringSpan moduleNameText, 
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                   
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                Ptr<
 
-#line 1316 "emit.cog"
+#line 1422 "emit.cog"
                    Char>  outputPath, 
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
               
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
            Ptr<
 
-#line 1317 "emit.cog"
+#line 1423 "emit.cog"
                Char>  extra)
 {
 
 
-#line 1319 "emit.cog"
+#line 1425 "emit.cog"
   
 
-#line 1319 "emit.cog"
+#line 1425 "emit.cog"
   auto moduleDecl = 
 
-#line 1319 "emit.cog"
+#line 1425 "emit.cog"
                           DEREF(
 
-#line 1319 "emit.cog"
+#line 1425 "emit.cog"
                    session).moduleDecl;
 
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
   
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
   auto stream = 
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
                     
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
                fopen(
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
                      outputPath, 
 
-#line 1321 "emit.cog"
+#line 1427 "emit.cog"
                                  "wb");
 
 
-#line 1324 "emit.cog"
+#line 1430 "emit.cog"
   
 
-#line 1324 "emit.cog"
+#line 1430 "emit.cog"
   
 
-#line 1324 "emit.cog"
+#line 1430 "emit.cog"
                 EmitContext context;
 
 
-#line 1325 "emit.cog"
+#line 1431 "emit.cog"
          DEREF(
 
-#line 1325 "emit.cog"
+#line 1431 "emit.cog"
   context).session = 
 
-#line 1325 "emit.cog"
+#line 1431 "emit.cog"
                     session;
 
 
-#line 1326 "emit.cog"
+#line 1432 "emit.cog"
          DEREF(
 
-#line 1326 "emit.cog"
+#line 1432 "emit.cog"
   context).stream = 
 
-#line 1326 "emit.cog"
+#line 1432 "emit.cog"
                    stream;
 
 
-#line 1327 "emit.cog"
+#line 1433 "emit.cog"
          DEREF(
 
-#line 1327 "emit.cog"
+#line 1433 "emit.cog"
   context).suppressLineDirective = 
 
-#line 1327 "emit.cog"
+#line 1433 "emit.cog"
                                   0;
 
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
       
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
       
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
   emit(
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
        
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
        &
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
         context, 
 
-#line 1329 "emit.cog"
+#line 1435 "emit.cog"
                  "#include \"runtime/runtime.h\"\n");
 
 
-#line 1331 "emit.cog"
+#line 1437 "emit.cog"
   for(auto mm : 
 
-#line 1331 "emit.cog"
+#line 1437 "emit.cog"
                        DEREF(
 
-#line 1331 "emit.cog"
+#line 1437 "emit.cog"
                 session).loadedModules)
 {
 {
 
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
          if(
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
                
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
             mm 
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
                == 
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
                   moduleDecl)
 {
 
 
-#line 1333 "emit.cog"
+#line 1439 "emit.cog"
                               continue;
 }
 
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
             
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
             
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
    sortDecls(
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
              
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
              &
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
               context, 
 
-#line 1335 "emit.cog"
+#line 1441 "emit.cog"
                        mm);
 
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
          
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
          
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
      emit(
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
           
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
           &
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
            context, 
 
-#line 1338 "emit.cog"
+#line 1444 "emit.cog"
                     "namespace ");
 
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
          
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
          
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
      emit(
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
           
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
           &
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
            context, 
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
                       DEREF(
 
-#line 1339 "emit.cog"
+#line 1445 "emit.cog"
                     mm).name);
 
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
          
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
          
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
      emit(
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
           
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
           &
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
            context, 
 
-#line 1340 "emit.cog"
+#line 1446 "emit.cog"
                     " {\n");
 
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
            
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
            
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
   emitDecls(
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
             
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
             &
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
              context, 
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
                       mm, 
 
-#line 1341 "emit.cog"
+#line 1447 "emit.cog"
                           kDeclEmitMode_MinimalForward);
 
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
            
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
            
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
   emitDecls(
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
             
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
             &
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
              context, 
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
                       mm, 
 
-#line 1342 "emit.cog"
+#line 1448 "emit.cog"
                           kDeclEmitMode_Forward);
 
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
          
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
          
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
      emit(
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
           
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
           &
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
            context, 
 
-#line 1343 "emit.cog"
+#line 1449 "emit.cog"
                     "}\n");
 }
 }
 
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
            
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
            
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
   sortDecls(
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
             
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
             &
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
              context, 
 
-#line 1348 "emit.cog"
+#line 1454 "emit.cog"
                       moduleDecl);
 
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
          
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
          
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
      emit(
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
           
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
           &
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
            context, 
 
-#line 1350 "emit.cog"
+#line 1456 "emit.cog"
                     "namespace ");
 
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
          
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
          
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
      emit(
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
           
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
           &
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
            context, 
 
-#line 1351 "emit.cog"
+#line 1457 "emit.cog"
                     moduleNameText);
 
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
          
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
          
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
      emit(
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
           
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
           &
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
            context, 
 
-#line 1352 "emit.cog"
+#line 1458 "emit.cog"
                     " {\n");
 
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
            
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
            
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
   emitDecls(
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
             
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
             &
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
              context, 
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
                       moduleDecl, 
 
-#line 1353 "emit.cog"
+#line 1459 "emit.cog"
                                   kDeclEmitMode_MinimalForward);
 
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
            
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
            
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
   emitDecls(
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
             
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
             &
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
              context, 
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
                       moduleDecl, 
 
-#line 1354 "emit.cog"
+#line 1460 "emit.cog"
                                   kDeclEmitMode_Forward);
 
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
            
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
            
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
   emitDecls(
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
             
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
             &
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
              context, 
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
                       moduleDecl, 
 
-#line 1355 "emit.cog"
+#line 1461 "emit.cog"
                                   kDeclEmitMode_Full);
 
 
-#line 1358 "emit.cog"
+#line 1464 "emit.cog"
   for(auto dd : 
 
-#line 1358 "emit.cog"
+#line 1464 "emit.cog"
                                    
 
-#line 1358 "emit.cog"
+#line 1464 "emit.cog"
                           DEREF(
 
-#line 1358 "emit.cog"
+#line 1464 "emit.cog"
                 moduleDecl).getDecls())
 {
 {
 
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
    
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
    auto classDecl = 
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
                                 
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
                      
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
                    as<
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
                       ClassDecl> (
 
-#line 1360 "emit.cog"
+#line 1466 "emit.cog"
                                  dd);
 
 
-#line 1361 "emit.cog"
+#line 1467 "emit.cog"
    if(
 
-#line 1361 "emit.cog"
+#line 1467 "emit.cog"
        
 
-#line 1361 "emit.cog"
+#line 1467 "emit.cog"
        !
 
-#line 1361 "emit.cog"
+#line 1467 "emit.cog"
         classDecl)
 {
 
 
-#line 1361 "emit.cog"
+#line 1467 "emit.cog"
                    continue;
 }
 
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
                                  
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
                                  
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
           DEREF(
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
    context).suppressLineDirective 
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
                                  += 
 
-#line 1363 "emit.cog"
+#line 1469 "emit.cog"
                                     1;
 
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
        
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
        
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
    emit(
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
         
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
         &
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
          context, 
 
-#line 1365 "emit.cog"
+#line 1471 "emit.cog"
                   "COG_DEFINE_CLASS(");
 
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
    emitDeclName(
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                 
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                 &
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                  context, 
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                           classDecl, 
 
-#line 1366 "emit.cog"
+#line 1472 "emit.cog"
                                      kDeclEmitMode_Full);
 
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
        
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
        
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
    emit(
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
         
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
         &
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
          context, 
 
-#line 1367 "emit.cog"
+#line 1473 "emit.cog"
                   ", ");
 
 
-#line 1368 "emit.cog"
+#line 1474 "emit.cog"
    if(auto base = 
 
-#line 1368 "emit.cog"
+#line 1474 "emit.cog"
                                 DEREF(
 
-#line 1368 "emit.cog"
+#line 1474 "emit.cog"
                            DEREF(
 
-#line 1368 "emit.cog"
+#line 1474 "emit.cog"
                   classDecl).base).exp)
 {
 
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
            
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
            
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
     emitExp(
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
             
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
             &
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
              context, 
 
-#line 1370 "emit.cog"
+#line 1476 "emit.cog"
                       base);
 }
 else
 {
 
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
         
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
         
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
     emit(
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
          
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
          &
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
           context, 
 
-#line 1374 "emit.cog"
+#line 1480 "emit.cog"
                    "cog::Object");
 }
 
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
        
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
        
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
    emit(
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
         
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
         &
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
          context, 
 
-#line 1376 "emit.cog"
+#line 1482 "emit.cog"
                   ")\n");
 
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
                                  
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
                                  
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
           DEREF(
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
    context).suppressLineDirective 
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
                                  -= 
 
-#line 1378 "emit.cog"
+#line 1484 "emit.cog"
                                     1;
 }
 }
 
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
       
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
       
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
   emit(
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
        
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
        &
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
         context, 
 
-#line 1382 "emit.cog"
+#line 1488 "emit.cog"
                  "void init() {\n");
 
 
-#line 1383 "emit.cog"
+#line 1489 "emit.cog"
   for(auto dd : 
 
-#line 1383 "emit.cog"
+#line 1489 "emit.cog"
                                    
 
-#line 1383 "emit.cog"
+#line 1489 "emit.cog"
                           DEREF(
 
-#line 1383 "emit.cog"
+#line 1489 "emit.cog"
                 moduleDecl).getDecls())
 {
 {
 
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
    
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
    auto classDecl = 
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
                                 
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
                      
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
                    as<
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
                       ClassDecl> (
 
-#line 1385 "emit.cog"
+#line 1491 "emit.cog"
                                  dd);
 
 
-#line 1386 "emit.cog"
+#line 1492 "emit.cog"
    if(
 
-#line 1386 "emit.cog"
+#line 1492 "emit.cog"
        
 
-#line 1386 "emit.cog"
+#line 1492 "emit.cog"
        !
 
-#line 1386 "emit.cog"
+#line 1492 "emit.cog"
         classDecl)
 {
 
 
-#line 1386 "emit.cog"
+#line 1492 "emit.cog"
                    continue;
 }
 
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
        
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
        
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
    emit(
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
         
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
         &
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
          context, 
 
-#line 1388 "emit.cog"
+#line 1494 "emit.cog"
                   "registerClass(getClass<");
 
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
    emitDeclName(
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                 
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                 &
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                  context, 
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                           classDecl, 
 
-#line 1389 "emit.cog"
+#line 1495 "emit.cog"
                                      kDeclEmitMode_Full);
 
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
        
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
        
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
    emit(
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
         
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
         &
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
          context, 
 
-#line 1390 "emit.cog"
+#line 1496 "emit.cog"
                   ">());\n");
 }
 }
 
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
       
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
       
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
   emit(
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
        
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
        &
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
         context, 
 
-#line 1392 "emit.cog"
+#line 1498 "emit.cog"
                  "}\n");
 
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
       
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
       
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
   emit(
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
        
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
        &
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
         context, 
 
-#line 1394 "emit.cog"
+#line 1500 "emit.cog"
                  "}\n");
 
 
-#line 1396 "emit.cog"
+#line 1502 "emit.cog"
   if(
 
-#line 1396 "emit.cog"
+#line 1502 "emit.cog"
      extra)
 {
 
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
        
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
        
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
    emit(
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
         
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
         &
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
          context, 
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
                                       
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
                   TerminatedStringSpan(
 
-#line 1398 "emit.cog"
+#line 1504 "emit.cog"
                                        extra));
 }
 
 
-#line 1401 "emit.cog"
+#line 1507 "emit.cog"
         
 
-#line 1401 "emit.cog"
+#line 1507 "emit.cog"
         
 
-#line 1401 "emit.cog"
+#line 1507 "emit.cog"
   fclose(
 
-#line 1401 "emit.cog"
+#line 1507 "emit.cog"
          stream);
 }
 
 
-#line 1405 "emit.cog"
+#line 1511 "emit.cog"
  void emitModule(
 
-#line 1406 "emit.cog"
+#line 1512 "emit.cog"
            Session session)
 {
 
 
-#line 1408 "emit.cog"
+#line 1514 "emit.cog"
      if(
 
-#line 1408 "emit.cog"
+#line 1514 "emit.cog"
         
 
-#line 1408 "emit.cog"
+#line 1514 "emit.cog"
         !
 
-#line 1408 "emit.cog"
+#line 1514 "emit.cog"
                 DEREF(
 
-#line 1408 "emit.cog"
+#line 1514 "emit.cog"
          session).sourceFiles)
 {
 
 
-#line 1409 "emit.cog"
+#line 1515 "emit.cog"
          return;
 }
 
 
-#line 1410 "emit.cog"
+#line 1516 "emit.cog"
      if(
 
-#line 1410 "emit.cog"
+#line 1516 "emit.cog"
         
 
-#line 1410 "emit.cog"
+#line 1516 "emit.cog"
         !
 
-#line 1410 "emit.cog"
+#line 1516 "emit.cog"
                 DEREF(
 
-#line 1410 "emit.cog"
+#line 1516 "emit.cog"
          session).moduleDecl)
 {
 
 
-#line 1411 "emit.cog"
+#line 1517 "emit.cog"
          return;
 }
 
 
-#line 1414 "emit.cog"
+#line 1520 "emit.cog"
   
 
-#line 1414 "emit.cog"
+#line 1520 "emit.cog"
   auto moduleDecl = 
 
-#line 1414 "emit.cog"
+#line 1520 "emit.cog"
                           DEREF(
 
-#line 1414 "emit.cog"
+#line 1520 "emit.cog"
                    session).moduleDecl;
 
 
-#line 1415 "emit.cog"
+#line 1521 "emit.cog"
   
 
-#line 1415 "emit.cog"
+#line 1521 "emit.cog"
   auto moduleName = 
 
-#line 1415 "emit.cog"
+#line 1521 "emit.cog"
                              DEREF(
 
-#line 1415 "emit.cog"
+#line 1521 "emit.cog"
                    moduleDecl).name;
 
 
-#line 1416 "emit.cog"
+#line 1522 "emit.cog"
               
 
-#line 1416 "emit.cog"
+#line 1522 "emit.cog"
               
 
-#line 1416 "emit.cog"
+#line 1522 "emit.cog"
      cogAssert(
 
-#line 1416 "emit.cog"
+#line 1522 "emit.cog"
                moduleName);
 
 
-#line 1418 "emit.cog"
+#line 1524 "emit.cog"
      
 
-#line 1418 "emit.cog"
+#line 1524 "emit.cog"
      auto modulePath = 
 
-#line 1418 "emit.cog"
+#line 1524 "emit.cog"
                              DEREF(
 
-#line 1418 "emit.cog"
+#line 1524 "emit.cog"
                       session).modulePath2;
 
 
-#line 1419 "emit.cog"
+#line 1525 "emit.cog"
               
 
-#line 1419 "emit.cog"
+#line 1525 "emit.cog"
               
 
-#line 1419 "emit.cog"
+#line 1525 "emit.cog"
      cogAssert(
 
-#line 1419 "emit.cog"
+#line 1525 "emit.cog"
                modulePath);
 
 
-#line 1421 "emit.cog"
+#line 1527 "emit.cog"
   
 
-#line 1421 "emit.cog"
+#line 1527 "emit.cog"
   auto moduleNameText = 
 
-#line 1421 "emit.cog"
+#line 1527 "emit.cog"
                               
 
-#line 1421 "emit.cog"
+#line 1527 "emit.cog"
                        getText(
 
-#line 1421 "emit.cog"
+#line 1527 "emit.cog"
                                moduleName);
 
 
-#line 1422 "emit.cog"
+#line 1528 "emit.cog"
      
 
-#line 1422 "emit.cog"
+#line 1528 "emit.cog"
      auto modulePathText = 
 
-#line 1422 "emit.cog"
+#line 1528 "emit.cog"
                                  
 
-#line 1422 "emit.cog"
+#line 1528 "emit.cog"
                           getText(
 
-#line 1422 "emit.cog"
+#line 1528 "emit.cog"
                                   modulePath);
 
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
   
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
   
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
                              
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
                FixedSizeArray<
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
                               1024, 
 
-#line 1427 "emit.cog"
+#line 1533 "emit.cog"
                                     Char>  buffer;
 
 
-#line 1429 "emit.cog"
+#line 1535 "emit.cog"
   if(
 
-#line 1429 "emit.cog"
+#line 1535 "emit.cog"
                        DEREF(
 
-#line 1429 "emit.cog"
+#line 1535 "emit.cog"
             DEREF(
 
-#line 1429 "emit.cog"
+#line 1535 "emit.cog"
      session).outputPath).begin)
 {
 
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
           
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
           
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
    fprintf(
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
            stderr, 
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
                    "OUTPUT PATH: \'%s\'\n", 
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
                                                             DEREF(
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
                                                  DEREF(
 
-#line 1431 "emit.cog"
+#line 1537 "emit.cog"
                                           session).outputPath).begin);
 
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
           
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
           
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
    sprintf(
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
            buffer, 
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
                    "%s", 
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
                                            DEREF(
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
                                 DEREF(
 
-#line 1432 "emit.cog"
+#line 1538 "emit.cog"
                          session).outputPath).begin);
 }
 else
 {
 
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
           
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
           
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
    fprintf(
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
            stderr, 
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
                    "MODULE NAME: \'%s\'\n", 
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
                                                         DEREF(
 
-#line 1436 "emit.cog"
+#line 1542 "emit.cog"
                                           modulePathText).begin);
 
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
           
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
           
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
    sprintf(
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
            buffer, 
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
                    "%s.cog.cpp", 
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
                                                DEREF(
 
-#line 1437 "emit.cog"
+#line 1543 "emit.cog"
                                  modulePathText).begin);
 }
 
 
-#line 1440 "emit.cog"
+#line 1546 "emit.cog"
                  
 
-#line 1440 "emit.cog"
+#line 1546 "emit.cog"
                  
 
-#line 1440 "emit.cog"
+#line 1546 "emit.cog"
   emitModuleInner(
 
-#line 1441 "emit.cog"
+#line 1547 "emit.cog"
    session, 
 
-#line 1442 "emit.cog"
+#line 1548 "emit.cog"
    moduleNameText, 
 
-#line 1443 "emit.cog"
+#line 1549 "emit.cog"
    buffer, 
 
-#line 1444 "emit.cog"
+#line 1550 "emit.cog"
    nullptr);
 }
 
@@ -44281,11 +45096,7 @@ else
  
 
 #line 5 "token.cog"
- typedef 
-
-#line 5 "token.cog"
-                        UInt16 TokenFlags;
-
+ 
 
 #line 5 "lexer.cog"
  
@@ -50772,11 +51583,7 @@ for(;
  
 
 #line 5 "parser.cog"
- typedef 
-
-#line 5 "parser.cog"
-                         UInt32 ParserFlags;
-
+ 
 
 #line 7 "parser.cog"
  
@@ -53054,233 +53861,233 @@ else
 }
 
 
-#line 725 "syntax.cog"
+#line 727 "syntax.cog"
  
 
-#line 730 "syntax.cog"
+#line 732 "syntax.cog"
   LookupResultItem::LookupResultItem()
 {
 
 
-#line 732 "syntax.cog"
+#line 734 "syntax.cog"
        DEREF(
 
-#line 732 "syntax.cog"
+#line 734 "syntax.cog"
    this).decl = 
 
-#line 732 "syntax.cog"
+#line 734 "syntax.cog"
                nullptr;
 }
 
 
-#line 738 "syntax.cog"
+#line 740 "syntax.cog"
   LookupResultItem::LookupResultItem(
 
-#line 738 "syntax.cog"
+#line 740 "syntax.cog"
              Decl decl)
 {
 
 
-#line 740 "syntax.cog"
+#line 742 "syntax.cog"
        DEREF(
 
-#line 740 "syntax.cog"
+#line 742 "syntax.cog"
    this).decl = 
 
-#line 740 "syntax.cog"
+#line 742 "syntax.cog"
                decl;
 }
 
 
-#line 744 "syntax.cog"
+#line 746 "syntax.cog"
  
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
   
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                      
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                   Ptr<
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                       LookupResultItem>  LookupResult::begin()
 {
 
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                                           return 
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                                                             
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                                                       DEREF(
 
-#line 748 "syntax.cog"
+#line 750 "syntax.cog"
                                                  items).begin();
 }
 
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
   
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                    
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                 Ptr<
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                     LookupResultItem>  LookupResult::end()
 {
 
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                                         return 
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                                                         
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                                                     DEREF(
 
-#line 749 "syntax.cog"
+#line 751 "syntax.cog"
                                                items).end();
 }
 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
   
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                     Bool LookupResult::isEmpty()
 {
 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                            return 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                                    
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                                 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                        DEREF(
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                   items).getCount() 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                                    == 
 
-#line 752 "syntax.cog"
+#line 754 "syntax.cog"
                                                       0;
 }
 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
      
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                         Bool LookupResult::isUnique()
 {
 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                return 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                                        
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                                     
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                            DEREF(
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                       items).getCount() 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                                        == 
 
-#line 753 "syntax.cog"
+#line 755 "syntax.cog"
                                                           1;
 }
 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
      
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                             Bool LookupResult::isOverloaded()
 {
 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                    return 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                                            
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                                         
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                                DEREF(
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                           items).getCount() 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                                            > 
 
-#line 754 "syntax.cog"
+#line 756 "syntax.cog"
                                                              1;
 }
 
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
      
 
-#line 756 "syntax.cog"
+#line 758 "syntax.cog"
                        Decl LookupResult::getDecl()
 {
 
 
-#line 758 "syntax.cog"
+#line 760 "syntax.cog"
                   
 
-#line 758 "syntax.cog"
+#line 760 "syntax.cog"
                   
 
-#line 758 "syntax.cog"
+#line 760 "syntax.cog"
          cogAssert(
 
-#line 758 "syntax.cog"
+#line 760 "syntax.cog"
                            
 
-#line 758 "syntax.cog"
+#line 760 "syntax.cog"
                    isUnique());
 
 
-#line 759 "syntax.cog"
+#line 761 "syntax.cog"
          return 
 
-#line 759 "syntax.cog"
+#line 761 "syntax.cog"
                         DEREF(
 
-#line 759 "syntax.cog"
+#line 761 "syntax.cog"
                      
 
-#line 759 "syntax.cog"
+#line 761 "syntax.cog"
                 items[
 
-#line 759 "syntax.cog"
+#line 761 "syntax.cog"
                       0]).decl;
 }
 
@@ -54435,12 +55242,8 @@ default:
 }
 
 
-#line 645 "syntax.cog"
- typedef 
-
-#line 645 "syntax.cog"
-                       Int64 IntLitVal;
-
+#line 647 "syntax.cog"
+ 
 
 #line 595 "parser.cog"
  
@@ -65165,6 +65968,9 @@ else
 }
 
 
+#line 556 "syntax.cog"
+ 
+
 #line 2074 "parser.cog"
  
 
@@ -70458,163 +71264,163 @@ default:
 #line 552 "syntax.cog"
  
 
-#line 556 "syntax.cog"
+#line 558 "syntax.cog"
  
 
-#line 564 "syntax.cog"
+#line 566 "syntax.cog"
  
 
-#line 571 "syntax.cog"
+#line 573 "syntax.cog"
  
 
-#line 576 "syntax.cog"
+#line 578 "syntax.cog"
  
 
-#line 583 "syntax.cog"
+#line 585 "syntax.cog"
  
 
-#line 589 "syntax.cog"
+#line 591 "syntax.cog"
  
 
-#line 597 "syntax.cog"
+#line 599 "syntax.cog"
  
 
-#line 602 "syntax.cog"
+#line 604 "syntax.cog"
  
 
-#line 606 "syntax.cog"
+#line 608 "syntax.cog"
  
 
-#line 610 "syntax.cog"
+#line 612 "syntax.cog"
  
 
-#line 616 "syntax.cog"
+#line 618 "syntax.cog"
  
 
-#line 624 "syntax.cog"
+#line 626 "syntax.cog"
  
 
-#line 629 "syntax.cog"
+#line 631 "syntax.cog"
  
 
-#line 636 "syntax.cog"
+#line 638 "syntax.cog"
  
 
-#line 641 "syntax.cog"
+#line 643 "syntax.cog"
  
 
-#line 647 "syntax.cog"
+#line 649 "syntax.cog"
  
 
-#line 652 "syntax.cog"
+#line 654 "syntax.cog"
  
 
-#line 657 "syntax.cog"
+#line 659 "syntax.cog"
  
 
-#line 663 "syntax.cog"
+#line 665 "syntax.cog"
  
 
-#line 669 "syntax.cog"
+#line 671 "syntax.cog"
  
 
-#line 673 "syntax.cog"
+#line 675 "syntax.cog"
  
 
-#line 677 "syntax.cog"
+#line 679 "syntax.cog"
  
 
-#line 681 "syntax.cog"
+#line 683 "syntax.cog"
  
 
-#line 685 "syntax.cog"
+#line 687 "syntax.cog"
  
 
-#line 689 "syntax.cog"
+#line 691 "syntax.cog"
  
 
-#line 693 "syntax.cog"
+#line 695 "syntax.cog"
  
 
-#line 697 "syntax.cog"
+#line 699 "syntax.cog"
  
 
-#line 703 "syntax.cog"
+#line 705 "syntax.cog"
  
 
-#line 708 "syntax.cog"
+#line 710 "syntax.cog"
  
 
-#line 715 "syntax.cog"
+#line 717 "syntax.cog"
  
 
-#line 721 "syntax.cog"
+#line 723 "syntax.cog"
  
 
-#line 771 "syntax.cog"
+#line 773 "syntax.cog"
  
 
-#line 779 "syntax.cog"
+#line 781 "syntax.cog"
  
 
-#line 788 "syntax.cog"
+#line 790 "syntax.cog"
  
 
-#line 792 "syntax.cog"
+#line 794 "syntax.cog"
  
 
-#line 798 "syntax.cog"
+#line 800 "syntax.cog"
  
 
-#line 807 "syntax.cog"
+#line 809 "syntax.cog"
  
 
-#line 812 "syntax.cog"
+#line 814 "syntax.cog"
  
 
-#line 818 "syntax.cog"
+#line 820 "syntax.cog"
  
 
-#line 821 "syntax.cog"
+#line 823 "syntax.cog"
  
 
-#line 824 "syntax.cog"
+#line 826 "syntax.cog"
  
 
-#line 828 "syntax.cog"
+#line 830 "syntax.cog"
  
 
-#line 832 "syntax.cog"
+#line 834 "syntax.cog"
  
 
-#line 838 "syntax.cog"
+#line 840 "syntax.cog"
  
 
-#line 844 "syntax.cog"
+#line 846 "syntax.cog"
  
 
-#line 849 "syntax.cog"
+#line 851 "syntax.cog"
  
 
-#line 856 "syntax.cog"
+#line 858 "syntax.cog"
  
 
-#line 859 "syntax.cog"
+#line 861 "syntax.cog"
  
 
-#line 862 "syntax.cog"
+#line 864 "syntax.cog"
  
 
-#line 869 "syntax.cog"
+#line 871 "syntax.cog"
  
 
-#line 876 "syntax.cog"
+#line 878 "syntax.cog"
  
 
-#line 881 "syntax.cog"
+#line 883 "syntax.cog"
  
 
-#line 887 "syntax.cog"
+#line 889 "syntax.cog"
  
 
 #line 3 "token.cog"
