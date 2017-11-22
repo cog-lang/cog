@@ -48,7 +48,12 @@ struct UInt32
 
 @__builtin
 @__declRefClass(ArrayType)
-struct Array<T> {}
+struct Array<T>
+{
+	func getCount() -> UInt;
+
+	func removeAt(index: UInt);
+}
 
 @__builtin
 @__declRefClass(PtrType)
@@ -88,6 +93,23 @@ func *(left: Int, right: Int) -> Int;
 
 @__builtin
 func /(left: Int, right: Int) -> Int;
+
+
+@__builtin
+func +(left: UInt, right: UInt) -> UInt;
+
+@__builtin
+func -(left: UInt, right: UInt) -> UInt;
+
+@__builtin
+func *(left: UInt, right: UInt) -> UInt;
+
+@__builtin
+func /(left: UInt, right: UInt) -> UInt;
+
+
+
+
 
 @__builtin
 func - <T>(left: Ptr<T>, right: Ptr<T>) -> Int;

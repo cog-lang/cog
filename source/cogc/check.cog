@@ -21,11 +21,11 @@ func checkModule(
 
 	addWorkItem(&sharedContext, moduleDecl, kDeclCheckPhase_PreCheckHead);
 
-	while(sharedContext.workList.getCount() != 0)
+	while(sharedContext.workList.getCount() != UInt(0))
 	{
 		let count = sharedContext.workList.getCount();
-		let item = sharedContext.workList[count-1];
-		sharedContext.workList.removeAt(count-1);
+		let item = sharedContext.workList[count-UInt(1)];
+		sharedContext.workList.removeAt(count-UInt(1));
 
 		checkDecl(&context, item.decl, item.state);
 

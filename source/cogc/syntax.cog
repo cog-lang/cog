@@ -553,6 +553,8 @@ class ParamDecl : LetDecl
 {
 }
 
+typealias SyntaxCallback = (Parser*) => Syntax;
+
 class SyntaxDecl : Decl
 {
 	var syntaxClass : Ptr<Class>;
