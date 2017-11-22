@@ -794,6 +794,13 @@ class PtrTypeExpr : TypeExpr
 	var base : Exp;
 }
 
+// A function type expression `A -> B`
+class FuncTypeExpr : TypeExpr
+{
+	var params : Exp;
+	var result : Exp;
+}
+
 // Types
 
 // A type is a value, since it is immutable

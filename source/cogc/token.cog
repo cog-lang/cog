@@ -35,6 +35,7 @@ kTokenCode_LSquare,
 kTokenCode_RSquare,
 kTokenCode_Assign,
 kTokenCode_Arrow,
+kTokenCode_ExtraArrow,
 kTokenCode_LParen,
 kTokenCode_RParen,
 

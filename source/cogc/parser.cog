@@ -892,6 +892,20 @@ func parsePostfixExp(
             }
             break;
 
+
+		case kTokenCode_ExtraArrow:
+			{
+				let op = advanceToken(parser);
+				let right = parsePrefixExp(parser);
+
+				let funcTypeExpr = createObject<FuncTypeExpr>();
+				funcTypeExpr.params = exp;
+				funcTypeExpr.result = right;
+
+				exp = funcTypeExpr;
+			}
+			break;
+
         default:
             return exp;
         }

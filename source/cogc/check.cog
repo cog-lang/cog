@@ -883,6 +883,13 @@ func checkAppExpWithCheckedArgs(
     {
         return createErrorExp(context, appExp);
     }
+	foreach(arg in appExp.args)
+	{
+		if(isError(context, arg.exp))
+		{
+			return createErrorExp(context, appExp);
+		}
+	}
 
     var overloadContext : OverloadResolveContext;
     overloadContext.checkContext = context;

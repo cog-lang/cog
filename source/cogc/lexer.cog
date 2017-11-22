@@ -401,6 +401,14 @@ func lexTokenImpl(
 		advanceByte(lexer);
 		{
 			let d = peekByte(lexer);
+
+			// HACK: allow `=>` as an arrow for now
+			if(d == '>')
+			{
+				advanceByte(lexer);
+				return kTokenCode_ExtraArrow;
+			}
+
 			if(isOperatorChar(d))
 			{
 				return lexOperator(lexer);
